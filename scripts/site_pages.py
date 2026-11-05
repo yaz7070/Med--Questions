@@ -103,7 +103,9 @@ for b, (name, wk, topics) in BLOCKS.items():
             body += f'<h2 class="section-title">{label}</h2>\n' + rows([row(href(b, kind, s), t, dd) for s, t, a, dd in items])
     if not any_res:
         body += '<p class="empty-note">No questions or flowcharts yet. Ask Claude to build a set for this block.</p>\n'
-    body += '<h2 class="section-title" id="weeks">Weeks</h2>\n' + rows([row(h, t, dd) for h, t, dd in weeks(b)])
+    wk_rows = weeks(b)
+    if wk_rows:
+        body += '<h2 class="section-title" id="weeks">Weekly notes</h2>\n' + rows([row(h, t, dd) for h, t, dd in wk_rows])
     (d / "index.md").write_text(fm(f"Block {b} (Weeks {wk.split()[1]})", f"tags:\n  - block-{b}\n") + body)
 
 # question bank overview
@@ -117,6 +119,76 @@ for b, (name, wk, _) in BLOCKS.items():
         qb += '<p class="empty-note">No sets yet.</p>\n'
 (C / "question-bank").mkdir(exist_ok=True)
 (C / "question-bank" / "index.md").write_text(fm("Question Bank") + qb)
+
+# progress page
+import json as _json
+QDATA = ROOT / "scripts" / "quiz" / "data"
+plist = []
+for b, slug, title, aid, _u, kind, blurb in ITEMS:
+    f = QDATA / f"{slug}.json"
+    if kind in ("quiz", "test") and f.exists():
+        n = len(_json.loads(f.read_text())["questions"])
+        plist.append({"b": b, "slug": slug, "title": title, "n": n, "href": href(b, kind, slug), "kind": kind})
+plist.sort(key=lambda x: (x["b"], x["kind"] != "test", week_key(x["slug"]), x["slug"]))
+total_all = sum(x["n"] for x in plist)
+(C / "progress").mkdir(exist_ok=True)
+(C / "progress" / "index.md").write_text(fm("Progress", 'description: "Your progress across every question bank and practice test."\n') + f"""Your progress across every question bank and practice test. It reads what you have answered in this browser.
+
+<div class="prog" id="prog">
+<section class="prog-hero">
+<div class="prog-num"><span id="p-ans">0</span><span class="prog-of">/ {total_all}</span></div>
+<p class="prog-label">questions answered</p>
+<div class="prog-bar" aria-hidden="true"><span id="p-bar"></span></div>
+<p class="prog-stats" id="p-stats">Start any question bank and your progress shows here.</p>
+</section>
+<div id="p-blocks"></div>
+</div>
+
+<script>
+(function(){{
+  const QUIZZES = {_json.dumps(plist)};
+  const NAMES = {_json.dumps({b: n for b, (n, w, t) in BLOCKS.items()})};
+  function read(slug){{
+    try {{ return JSON.parse(localStorage.getItem("differential-" + slug) || "null"); }} catch(e) {{ return null; }}
+  }}
+  function esc(s){{ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }}
+  function render(){{
+    const root = document.getElementById("p-blocks");
+    if (!root) return;
+    let ans = 0, ok = 0, total = 0, started = 0;
+    const byBlock = {{}};
+    for (const q of QUIZZES) {{
+      const d = read(q.slug);
+      let a = 0, c = 0;
+      if (d && d.answers) for (const k in d.answers) {{
+        const r = d.answers[k];
+        if (r && r.pick !== null && r.pick !== undefined) {{ a++; if (r.ok) c++; }}
+      }}
+      a = Math.min(a, q.n);
+      ans += a; ok += c; total += q.n; if (a) started++;
+      (byBlock[q.b] = byBlock[q.b] || []).push(Object.assign({{a, c}}, q));
+    }}
+    document.getElementById("p-ans").textContent = ans;
+    document.getElementById("p-bar").style.width = (total ? 100 * ans / total : 0) + "%";
+    document.getElementById("p-stats").textContent = ans
+      ? Math.round(100 * ans / total) + "% of all questions. " + ok + " correct (" + Math.round(100 * ok / ans) + "%). " + started + " of " + QUIZZES.length + " sets started."
+      : "Start any question bank and your progress shows here.";
+    root.innerHTML = Object.keys(byBlock).map(b => {{
+      const list = byBlock[b];
+      const ba = list.reduce((s, x) => s + x.a, 0), bt = list.reduce((s, x) => s + x.n, 0);
+      return `<h2 class="section-title">Block ${{b}}: ${{esc(NAMES[b])}} <span class="prog-sub">${{ba}} / ${{bt}}</span></h2>
+        <ul class="rows">${{list.map(x => `<li><a class="row prog-row" href="${{x.href}}"><span><strong>${{esc(x.title)}}</strong>
+        <span class="prog-mini"><i style="width:${{100 * x.a / x.n}}%"></i></span>
+        <span class="desc">${{x.a ? x.a + " of " + x.n + " answered, " + x.c + " correct" : x.n + " questions, not started"}}</span></span>
+        <span class="prog-pct">${{Math.round(100 * x.a / x.n)}}%</span></a></li>`).join("")}}</ul>`;
+    }}).join("");
+  }}
+  render();
+  document.addEventListener("nav", render);
+  window.addEventListener("storage", render);
+}})();
+</script>
+""")
 
 # FoM index
 (FOM / "index.md").write_text(fm("Foundations of Medicine") + rows(

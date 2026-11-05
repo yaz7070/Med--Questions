@@ -19,10 +19,3 @@ Tasks of a physician, the human body, early life, the well child and adolescent.
 <li><a class="row" href="/fom/block-1/question-bank/week-3-question-bank"><span><strong>Week 3 Question Bank</strong><span class="desc">98 questions. Genetics &amp; Prenatal, Development &amp; Milestones, Attachment &amp; Theory.</span></span><span class="go" aria-hidden="true">›</span></a></li>
 <li><a class="row" href="/fom/block-1/question-bank/week-4-question-bank"><span><strong>Week 4 Question Bank</strong><span class="desc">80 questions. Immunology &amp; Vaccines, Childhood Behaviour &amp; ADHD, Genetic &amp; Medical Conditions.</span></span><span class="go" aria-hidden="true">›</span></a></li>
 </ul>
-<h2 class="section-title" id="weeks">Weeks</h2>
-<ul class="rows">
-<li><a class="row" href="/fom/block-1/week-01-the-tasks-of-a-physician"><span><strong>Week 1: The Tasks of a Physician</strong><span class="desc">Notes coming</span></span><span class="go" aria-hidden="true">›</span></a></li>
-<li><a class="row" href="/fom/block-1/week-02-foundations-of-the-human-body"><span><strong>Week 2: Foundations of the Human Body</strong><span class="desc">Notes coming</span></span><span class="go" aria-hidden="true">›</span></a></li>
-<li><a class="row" href="/fom/block-1/week-03-approach-to-early-life"><span><strong>Week 3: Approach to Early Life</strong><span class="desc">Notes coming</span></span><span class="go" aria-hidden="true">›</span></a></li>
-<li><a class="row" href="/fom/block-1/week-04-approach-to-well-child-adolescent"><span><strong>Week 4: Approach to Well Child/Adolescent</strong><span class="desc">Notes coming</span></span><span class="go" aria-hidden="true">›</span></a></li>
-</ul>
