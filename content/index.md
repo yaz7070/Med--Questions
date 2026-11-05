@@ -1,27 +1,30 @@
 ---
-title: Med Notes
-description: Yazdaan's study hub for Schulich MD2030.
+title: "Differential"
+description: "Study hub for Schulich Foundations of Medicine."
 ---
 
-Your study hub for Schulich MD2030. Search with `Ctrl K` (or `⌘ K`).
+<section class="hero">
+<h1>Differential</h1>
+<p>Practice questions, workup maps and notes for Schulich Foundations of Medicine. Built by a student, for the years after.</p>
+<div class="hero-actions">
+<a class="btn primary" href="/question-bank/">Start practising</a>
+<a class="btn" href="/fom/block-3/flowcharts/">Browse flowcharts</a>
+</div>
+</section>
 
-## Foundations of Medicine
+<ul class="blocks">
+<li class="block-row"><span class="block-num" aria-hidden="true">1</span><div class="block-main"><span class="weeks">Weeks 1–4</span><h3><a href="/fom/block-1/">Early life and foundations</a></h3><p>Tasks of a physician, the human body, early life, the well child and adolescent.</p></div><div class="block-links"><a class="chip" href="/fom/block-1/question-bank/"><b>13</b> quizzes</a></div></li>
+<li class="block-row"><span class="block-num" aria-hidden="true">2</span><div class="block-main"><span class="weeks">Weeks 5–8</span><h3><a href="/fom/block-2/">Screening, cancer, aging and prescribing</a></h3><p>Adult screening, cancer, aging, therapeutics and prescribing.</p></div><div class="block-links"><a class="chip" href="/fom/block-2/question-bank/"><b>6</b> quizzes</a></div></li>
+<li class="block-row"><span class="block-num" aria-hidden="true">3</span><div class="block-main"><span class="weeks">Weeks 9–12</span><h3><a href="/fom/block-3/">Hematology</a></h3><p>Anemia, bleeding, myeloid disorders, lymphadenopathy and lymphoid disorders.</p></div><div class="block-links"><a class="chip" href="/fom/block-3/question-bank/"><b>1</b> quiz</a><a class="chip" href="/fom/block-3/flowcharts/"><b>5</b> flowcharts</a><a class="chip" href="/fom/block-3/#weeks"><b>4</b> weeks of notes</a></div></li>
+<li class="block-row"><span class="block-num" aria-hidden="true">4</span><div class="block-main"><span class="weeks">Weeks 13–15</span><h3><a href="/fom/block-4/">Infection and immunity</a></h3><p>Fever, antibiotics, sepsis and immune dysfunction.</p></div><div class="block-links"><a class="chip" href="/fom/block-4/#weeks"><b>3</b> weeks of notes</a></div></li>
+</ul>
 
-| Block | Weeks | Topics |
-|---|---|---|
-| [[fom/block-1/index\|Block 1]] | 1 to 4 | Tasks of a physician, the human body, early life, well child |
-| [[fom/block-2/index\|Block 2]] | 5 to 8 | Adult screening, cancer, aging, prescribing |
-| [[fom/block-3/index\|Block 3]] | 9 to 12 | Anemia, bleeding, myeloid, lymphoid |
-| [[fom/block-4/index\|Block 4]] | 13 to 15 | Fever, antibiotics, sepsis, immune dysfunction |
+<h2 class="section-title">Recently added</h2>
+<ul class="rows">
+<li><a class="row" href="/fom/block-3/flowcharts/hemostasis-workup-map"><span><strong>Hemostasis Workup Map</strong><span class="desc">Bleeding, platelets, VTE, anticoagulants, transfusion.</span></span><span class="go" aria-hidden="true">›</span></a></li>
+<li><a class="row" href="/fom/block-3/flowcharts/anemia-workup-map"><span><strong>Anemia Workup Map</strong><span class="desc">From CBC to diagnosis, every branch.</span></span><span class="go" aria-hidden="true">›</span></a></li>
+<li><a class="row" href="/fom/block-3/question-bank/bleeding-block-drill"><span><strong>Bleeding Block Drill</strong><span class="desc">Week 10 practice set.</span></span><span class="go" aria-hidden="true">›</span></a></li>
+<li><a class="row" href="/fom/block-2/question-bank/block-2-mock-exam"><span><strong>Block 2 Mock Exam</strong><span class="desc">40 questions on the predicted blueprint.</span></span><span class="go" aria-hidden="true">›</span></a></li>
+</ul>
 
-## Practice
-
-- [[question-bank/index|Question bank]]: quizzes by week and block
-
-## Add to this site
-
-Ask Claude in chat:
-
-- "Add my week 9 lecture slides to the site"
-- "Build a 20-question quiz for Block 3"
-- "Write a high-yield summary for Week 10"
+<p class="empty-note">Search anything from the sidebar, or press Ctrl K. Facts come from Nicole's Notes and course quizzes. Check details against your lecture slides.</p>

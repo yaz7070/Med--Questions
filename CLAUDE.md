@@ -1,4 +1,4 @@
-# Med Notes: rules for Claude
+# Differential: rules for Claude
 
 Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the site on Cloudflare Workers.
 
@@ -12,6 +12,12 @@ Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the
 - `quartz/static/pages/slug.html`: raw quiz and flowchart HTML, embedded by wrapper pages via iframe to `/static/pages/slug.html`
 - `content/question-bank/index.md`: overview of every quiz across blocks
 - `content/templates/week.md`: template for new week pages (not published)
+
+## Page style
+
+- Site name: Differential. Teal accent (--secondary), styles in `quartz/styles/custom.scss`.
+- Home, block, folder and question bank pages use raw HTML lists: `<ul class="rows">` with `<a class="row">` items (strong title + span.desc). Home uses `.hero`, `.blocks`/`.block-row`, `.chip`. Buttons use `.btn` and `.btn.primary`.
+- `scripts/site_pages.py` regenerates these pages from the ITEMS list in `scripts/restructure.py`. Add new quizzes or flowcharts to ITEMS, then rerun it. Update paths in the scripts if run outside the original session.
 
 ## Rules
 

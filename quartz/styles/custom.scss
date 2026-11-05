@@ -1,27 +1,137 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// Differential: site styles
+// Accent is --secondary (teal). Hairlines are --lightgray.
 
-// Embedded quizzes and flowcharts
-.embed-page {
-  width: 100%;
-  height: 85vh;
-  min-height: 600px;
-  border: 1px solid var(--lightgray);
-  border-radius: 8px;
-  margin-top: 0.5rem;
+:root {
+  --soft: rgba(14, 124, 123, 0.09);
+  --radius-s: 6px;
+  --radius-m: 10px;
+}
+
+// ---------- Page frame ----------
+
+body {
   background: var(--light);
 }
-.embed-open {
-  font-weight: 600;
-}
 
-// Hide the empty right column
 .sidebar.right {
   display: none !important;
 }
 
-// Top navigation bar (footer plugin placed in the header)
+.page > #quartz-body .center,
+.center {
+  max-width: none !important;
+  width: 100%;
+  padding: 0 2.5rem 4rem !important;
+  box-sizing: border-box;
+  @media #{$mobile} {
+    padding: 0 1rem 3rem !important;
+  }
+}
+
+article {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  & > p,
+  & > ul,
+  & > ol {
+    max-width: 78ch;
+  }
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.01em;
+}
+
+.article-title {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  margin: 0.4rem 0 1rem;
+}
+
+// ---------- Left sidebar ----------
+
+.sidebar.left {
+  background: color-mix(in srgb, var(--secondary) 4%, var(--light));
+  border-right: 1px solid var(--lightgray);
+  padding: 2rem 1.1rem !important;
+  gap: 1.1rem !important;
+
+  & .page-title {
+    font-size: 1.45rem;
+    margin: 0;
+    & a {
+      color: var(--secondary);
+      letter-spacing: -0.02em;
+    }
+  }
+
+  & .explorer {
+    font-size: 0.86rem;
+    & .explorer-toggle,
+    & button.title-button {
+      font-size: 0.8rem;
+      color: var(--gray);
+      font-weight: 600;
+    }
+    & ul {
+      padding-left: 0.15rem;
+    }
+    & li {
+      margin: 0.1rem 0;
+    }
+    & li > a {
+      font-size: 0.85rem;
+      line-height: 1.35;
+      color: var(--darkgray);
+      opacity: 0.85;
+      display: block;
+      padding: 0.15rem 0.4rem;
+      border-radius: var(--radius-s);
+      &:hover {
+        opacity: 1;
+        color: var(--secondary);
+        background: var(--soft);
+      }
+      &.active {
+        opacity: 1;
+        color: var(--secondary);
+        background: var(--soft);
+        font-weight: 600;
+      }
+    }
+    & .folder-container .folder-button,
+    & .folder-container div > a {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--dark);
+      white-space: nowrap;
+    }
+    & .folder-outer > ul {
+      border-left: 1px solid var(--lightgray);
+      padding-left: 0.55rem;
+      margin-left: 0.35rem;
+    }
+  }
+}
+
+// ---------- Top navigation (footer plugin placed in the header) ----------
+
+.page-header header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--light) 92%, transparent);
+  backdrop-filter: blur(8px);
+  margin: 0 -2.5rem;
+  padding: 0 2.5rem;
+  border-bottom: 1px solid var(--lightgray);
+  @media #{$mobile} {
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
+}
+
 .page-header footer,
 header footer {
   margin: 0;
@@ -32,72 +142,364 @@ header footer {
   }
   & ul {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: 0.25rem;
     list-style: none;
-    padding: 0.5rem 0;
+    padding: 0.7rem 0;
     margin: 0;
-    border-bottom: 1px solid var(--lightgray);
+    overflow-x: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  & li {
+    flex: none;
   }
   & li a {
     display: inline-block;
-    padding: 0.3rem 0.75rem;
+    padding: 0.35rem 0.8rem;
     border-radius: 999px;
+    font-family: var(--headerFont);
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--dark);
-    background: var(--highlight) !important;
-    color: var(--secondary) !important;
+    color: var(--darkgray) !important;
+    background: transparent !important;
     text-decoration: none;
-    border: 1px solid var(--lightgray);
     &:hover {
-      color: var(--light) !important;
-      background: var(--secondary) !important;
+      color: var(--secondary) !important;
+      background: var(--soft) !important;
+    }
+    &:focus-visible {
+      outline: 2px solid var(--secondary);
+      outline-offset: 2px;
     }
   }
 }
 
-// Narrower, cleaner left sidebar
-.sidebar.left {
-  gap: 1rem !important;
-  & .page-title {
-    font-size: 1.4rem;
+// Breadcrumbs: small and quiet
+.breadcrumb-container {
+  margin: 1.4rem 0 0;
+  font-size: 0.85rem;
+  & a {
+    color: var(--gray) !important;
+    background: none !important;
+    font-weight: 500;
+    &:hover {
+      color: var(--secondary) !important;
+    }
   }
-  & .explorer {
-    font-size: 0.88rem;
-    & .folder-container .folder-button,
-    & .folder-container div > a {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--dark);
+  & p {
+    margin: 0;
+  }
+}
+
+// ---------- Links, callouts, tables ----------
+
+a.internal:not(.btn):not(.chip):not(.row) {
+  background: transparent;
+  color: var(--secondary);
+  font-weight: 600;
+  border-radius: 0;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--secondary) 35%, transparent);
+  text-underline-offset: 3px;
+  &:hover {
+    text-decoration-color: var(--secondary);
+  }
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  & th {
+    font-family: var(--headerFont);
+    background: var(--soft);
+  }
+  & th,
+  & td {
+    border: 1px solid var(--lightgray);
+    padding: 0.45rem 0.7rem;
+  }
+}
+
+.callout {
+  border-radius: var(--radius-m);
+}
+
+// Hide Quartz's automatic folder listings; index pages carry their own lists
+.page-listing,
+.folder-listing,
+article + .page-listing {
+  display: none !important;
+}
+
+// ---------- Home page ----------
+
+.hero {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--lightgray);
+  margin-bottom: 1rem;
+  & h1 {
+    font-family: var(--headerFont);
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: 0 0 1rem;
+    color: var(--dark);
+  }
+  & p {
+    font-size: 1.2rem;
+    color: var(--darkgray);
+    max-width: 52ch;
+    margin: 0 0 1.6rem;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.center a.btn,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--headerFont);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none !important;
+  border: 1.5px solid var(--secondary);
+  background: transparent;
+  color: var(--secondary) !important;
+  cursor: pointer;
+  &:hover {
+    background: var(--soft);
+  }
+  &.primary {
+    background: var(--secondary);
+    color: var(--light) !important;
+    &:hover {
+      background: var(--tertiary);
+      border-color: var(--tertiary);
     }
-    & li > a {
-      font-size: 0.86rem;
-      line-height: 1.3;
-      color: var(--darkgray);
-      opacity: 0.9;
-    }
-    & ul {
-      padding-left: 0.2rem;
-    }
-    & .folder-outer > ul {
-      border-left: 1px solid var(--lightgray);
-      padding-left: 0.6rem;
+  }
+  &:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+  }
+  & kbd {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    padding: 0 0.3rem;
+    background: transparent;
+  }
+}
+
+// Block rows: the signature element
+.blocks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.block-row {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--lightgray);
+  @media #{$mobile} {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    gap: 0.9rem;
+    & .block-links {
+      grid-column: 1 / -1;
     }
   }
 }
 
-.page-header header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: var(--light);
+.block-num {
+  font-family: var(--headerFont);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 0.85;
+  color: var(--secondary);
+  letter-spacing: -0.05em;
 }
-.page > #quartz-body .center,
-.center {
-  max-width: 960px;
+
+.block-main {
+  min-width: 0;
+  & h3 {
+    font-size: 1.45rem;
+    margin: 0 0 0.25rem;
+    & a {
+      color: var(--dark) !important;
+      background: none !important;
+      text-decoration: none !important;
+      &:hover {
+        color: var(--secondary) !important;
+      }
+    }
+  }
+  & p {
+    margin: 0;
+    color: var(--darkgray);
+  }
+  & .weeks {
+    color: var(--gray);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
 }
-.sidebar.left .explorer .folder-container div > a,
-.sidebar.left .explorer .folder-container .folder-button {
+
+.block-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: flex-end;
+  @media #{$mobile} {
+    justify-content: flex-start;
+  }
+}
+
+.center a.chip,
+.chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--secondary) !important;
+  text-decoration: none !important;
   white-space: nowrap;
+  & b {
+    font-family: var(--headerFont);
+    font-size: 1rem;
+  }
+  &:hover {
+    background: var(--secondary);
+    color: var(--light) !important;
+  }
+  &.empty {
+    background: transparent;
+    color: var(--gray) !important;
+    border: 1px dashed var(--lightgray);
+    pointer-events: none;
+  }
+}
+
+.section-title {
+  font-size: 1.15rem;
+  margin: 2.6rem 0 0.6rem;
+  color: var(--dark);
+}
+
+// Resource rows: lists of quizzes, flowcharts, weeks
+.rows {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  border-top: 1px solid var(--lightgray);
+  & li {
+    margin: 0;
+    padding: 0;
+  }
+  & a.row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.85rem 0.6rem;
+    border-bottom: 1px solid var(--lightgray);
+    text-decoration: none !important;
+    background: none !important;
+    color: var(--dark) !important;
+    font-weight: 400;
+    &:hover {
+      background: var(--soft) !important;
+      & .go {
+        color: var(--secondary);
+        transform: translateX(3px);
+      }
+    }
+    & strong {
+      display: block;
+      font-family: var(--headerFont);
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+    & span.desc {
+      display: block;
+      color: var(--darkgray);
+      font-size: 0.92rem;
+    }
+    & .go {
+      color: var(--gray);
+      font-size: 1.1rem;
+      transition: transform 0.15s ease, color 0.15s ease;
+    }
+  }
+}
+
+.empty-note {
+  color: var(--gray);
+  padding: 1rem 0;
+}
+
+// ---------- Quiz and flowchart pages ----------
+
+.embed-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.4rem 0 1rem;
+}
+
+.embed-page {
+  width: 100%;
+  height: calc(100vh - 9rem);
+  min-height: 640px;
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius-m);
+  background: var(--light);
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rows a.row .go {
+    transition: none;
+  }
+}
+
+.page > #quartz-body .center > .page-header,
+.center > .page-header {
+  margin-top: 0.75rem !important;
+}
+body[data-slug="index"] .article-title,
+body[data-slug="index"] .breadcrumb-container {
+  display: none;
+}
+.center a.btn,
+.center a.chip {
+  line-height: 1.2;
+}
+.rows a.row svg.external-icon,
+.center a.btn svg.external-icon {
+  display: none;
+}
+.sidebar.left {
+  @media #{$mobile} {
+    border-right: none;
+    border-bottom: 1px solid var(--lightgray);
+  }
 }
