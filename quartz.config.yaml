@@ -158,10 +158,7 @@ plugins:
   - source: "@quartz-community/tag-page"
     enabled: true
   - source: "@quartz-community/explorer"
-    enabled: true
-    layout:
-      position: left
-      priority: 50
+    enabled: false
   - source: "@quartz-community/graph"
     enabled: false
     layout:
@@ -170,11 +167,8 @@ plugins:
   - source: "@quartz-community/search"
     enabled: true
     layout:
-      position: left
-      priority: 20
-      group: toolbar
-      groupOptions:
-        grow: true
+      position: header
+      priority: 90
   - source: "@quartz-community/backlinks"
     enabled: false
     layout:
@@ -198,20 +192,15 @@ plugins:
   - source: "@quartz-community/page-title"
     enabled: true
     layout:
-      position: left
-      priority: 10
+      position: header
+      priority: 5
   - source: "@quartz-community/darkmode"
     enabled: true
     layout:
-      position: left
-      priority: 30
-      group: toolbar
+      position: header
+      priority: 95
   - source: "@quartz-community/reader-mode"
-    enabled: true
-    layout:
-      position: left
-      priority: 35
-      group: toolbar
+    enabled: false
   - source: "@quartz-community/breadcrumbs"
     enabled: true
     layout:
@@ -244,13 +233,7 @@ plugins:
   - source: "@quartz-community/recent-notes"
     enabled: false
   - source: "@quartz-community/spacer"
-    enabled: true
-    options: {}
-    order: 25
-    layout:
-      position: left
-      priority: 25
-      display: mobile-only
+    enabled: false
   - source: "@quartz-community/bases-page"
     enabled: true
     options: {}
@@ -291,15 +274,14 @@ layout:
         beforeBody: []
         left: []
         right: []
-    content: {}
+    content:
+      template: differential
     folder:
-      exclude:
-        - reader-mode
+      template: differential
       positions:
         right: []
     tag:
-      exclude:
-        - reader-mode
+      template: differential
       positions:
         right: []
     canvas: {}

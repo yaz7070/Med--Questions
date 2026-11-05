@@ -27,4 +27,4 @@ description: "Study hub for Schulich Foundations of Medicine."
 <li><a class="row" href="/fom/block-2/practice-tests/block-2-practice-exam"><span><strong>Block 2 Practice Exam</strong><span class="desc">40 questions on the predicted blueprint.</span></span><span class="go" aria-hidden="true">›</span></a></li>
 </ul>
 
-<p class="empty-note">Search anything from the sidebar, or press Ctrl K. Questions come from Nicole's Notes and course quizzes. Check details against your lecture slides.</p>
+<p class="empty-note">Search anything from the bar at the top, or press Ctrl K.</p>

@@ -20,6 +20,8 @@ Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the
 - `scripts/items.py` lists every quiz, practice test and flowchart. `python3 scripts/site_pages.py` regenerates all wrapper, folder, block and home pages from it.
 - Quiz pages share one template: `scripts/quiz/template.html`. Question data lives in `scripts/quiz/data/<slug>.json` ({title, context, questions, objectives}). Run `python3 scripts/quiz/build.py` to write every quiz to `quartz/static/pages/`. Never hand-edit the built quiz HTML. Change the template or the data, then rebuild. Each block has `question-bank/` (one bank per week, no duplicates across banks), `practice-tests/` (full block tests) and `flowcharts/`.
 
+- Layout: custom page frame `quartz/components/frames/DifferentialFrame.tsx` (no sidebars, top bar with title, nav, search and theme toggle, footer with credits and disclaimer). Set via `template: differential` in `quartz.config.yaml`. Edit credits or the disclaimer in that file.
+
 ## Rules
 
 1. Keep Nicole's Notes wording for facts, cutoffs and tables. Label anything added from outside the notes.

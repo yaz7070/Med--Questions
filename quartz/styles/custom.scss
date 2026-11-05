@@ -49,107 +49,102 @@ h1, h2, h3, h4 {
   margin: 0.4rem 0 1rem;
 }
 
-// ---------- Left sidebar ----------
+// ---------- Frame: no sidebars ----------
 
-.sidebar.left {
-  background: color-mix(in srgb, var(--secondary) 4%, var(--light));
-  border-right: 1px solid var(--lightgray);
-  padding: 2rem 1.1rem !important;
-  gap: 1.1rem !important;
-
-  & .page-title {
-    font-size: 1.45rem;
-    margin: 0;
-    & a {
-      color: var(--secondary);
-      letter-spacing: -0.02em;
-    }
-  }
-
-  & .explorer {
-    font-size: 0.86rem;
-    & .explorer-toggle,
-    & button.title-button {
-      font-size: 0.8rem;
-      color: var(--gray);
-      font-weight: 600;
-    }
-    & ul {
-      padding-left: 0.15rem;
-    }
-    & li {
-      margin: 0.1rem 0;
-    }
-    & li > a {
-      font-size: 0.85rem;
-      line-height: 1.35;
-      color: var(--darkgray);
-      opacity: 0.85;
-      display: block;
-      padding: 0.15rem 0.4rem;
-      border-radius: var(--radius-s);
-      &:hover {
-        opacity: 1;
-        color: var(--secondary);
-        background: var(--soft);
-      }
-      &.active {
-        opacity: 1;
-        color: var(--secondary);
-        background: var(--soft);
-        font-weight: 600;
-      }
-    }
-    & .folder-container .folder-button,
-    & .folder-container div > a {
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--dark);
-      white-space: nowrap;
-    }
-    & .folder-outer > ul {
-      border-left: 1px solid var(--lightgray);
-      padding-left: 0.55rem;
-      margin-left: 0.35rem;
-    }
+.page[data-frame="differential"] > #quartz-body {
+  display: block;
+  & .center.differential {
+    max-width: 1280px !important;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
-// ---------- Top navigation (footer plugin placed in the header) ----------
+// ---------- Top bar: title, navigation, search, theme ----------
 
 .page-header header {
   position: sticky;
   top: 0;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
   background: color-mix(in srgb, var(--light) 92%, transparent);
   backdrop-filter: blur(8px);
   margin: 0 -2.5rem;
-  padding: 0 2.5rem;
+  padding: 0.6rem 2.5rem;
   border-bottom: 1px solid var(--lightgray);
   @media #{$mobile} {
+    flex-wrap: wrap;
     margin: 0 -1rem;
-    padding: 0 1rem;
+    padding: 0.6rem 1rem 0;
+  }
+
+  & .page-title {
+    flex: none;
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1;
+    & a {
+      color: var(--secondary);
+      letter-spacing: -0.02em;
+      background: none !important;
+    }
+  }
+
+  & .search {
+    flex: 0 1 240px;
+    min-width: 0;
+    margin: 0;
+    @media #{$mobile} {
+      order: 2;
+      flex: 1 1 auto;
+    }
+  }
+  & .search > .search-button {
+    height: 2.2rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--secondary) 5%, var(--light));
+    border: 1px solid var(--lightgray);
+    padding: 0 0.9rem;
+  }
+
+  & .darkmode {
+    flex: none;
+    margin: 0;
+    @media #{$mobile} {
+      order: 3;
+    }
   }
 }
 
+// Navigation links (footer plugin placed in the header)
 .page-header footer,
 header footer {
+  flex: 1 1 auto;
+  min-width: 0;
   margin: 0;
   opacity: 1;
-  width: 100%;
+  @media #{$mobile} {
+    order: 4;
+    flex-basis: 100%;
+  }
   & > p {
     display: none;
   }
   & ul {
     display: flex;
-    gap: 0.25rem;
+    gap: 0.15rem;
     list-style: none;
-    padding: 0.7rem 0;
+    padding: 0;
     margin: 0;
     overflow-x: auto;
     scrollbar-width: none;
     &::-webkit-scrollbar {
       display: none;
+    }
+    @media #{$mobile} {
+      padding: 0.5rem 0;
     }
   }
   & li {
@@ -157,10 +152,10 @@ header footer {
   }
   & li a {
     display: inline-block;
-    padding: 0.35rem 0.8rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 999px;
     font-family: var(--headerFont);
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     font-weight: 600;
     color: var(--darkgray) !important;
     background: transparent !important;
@@ -173,6 +168,32 @@ header footer {
       outline: 2px solid var(--secondary);
       outline-offset: 2px;
     }
+  }
+}
+
+// ---------- Site footer: credits and disclaimer ----------
+
+.site-footer {
+  margin: 4rem 0 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lightgray);
+  display: grid;
+  gap: 0.6rem;
+  max-width: 78ch;
+  font-size: 0.9rem;
+  & p {
+    margin: 0;
+  }
+  & .credit {
+    color: var(--darkgray);
+    & strong {
+      color: var(--secondary);
+      font-weight: 700;
+    }
+  }
+  & .disclaimer {
+    color: var(--gray);
+    line-height: 1.5;
   }
 }
 
@@ -496,12 +517,6 @@ body[data-slug="index"] .breadcrumb-container {
 .rows a.row svg.external-icon,
 .center a.btn svg.external-icon {
   display: none;
-}
-.sidebar.left {
-  @media #{$mobile} {
-    border-right: none;
-    border-bottom: 1px solid var(--lightgray);
-  }
 }
 
 // Progress page

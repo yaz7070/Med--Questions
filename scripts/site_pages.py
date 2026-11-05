@@ -251,7 +251,7 @@ home = fm("Differential", 'description: "Study hub for Schulich Foundations of M
 
 <h2 class="section-title">Recently added</h2>
 {rows([row(h, t, d) for h, t, d in recent])}
-<p class="empty-note">Search anything from the sidebar, or press Ctrl K. Questions come from Nicole's Notes and course quizzes. Check details against your lecture slides.</p>
+<p class="empty-note">Search anything from the bar at the top, or press Ctrl K.</p>
 '''
 (C / "index.md").write_text(home)
 print("ok", {f"B{k[0]} {k[1]}": len(v) for k, v in sorted(by.items())}, "questions:", total_q)
