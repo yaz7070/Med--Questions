@@ -469,9 +469,9 @@ article + .page-listing {
   width: 100%;
   height: calc(100vh - 9rem);
   min-height: 640px;
-  border: 1px solid var(--lightgray);
-  border-radius: var(--radius-m);
-  background: var(--light);
+  border: 0;
+  border-top: 1px solid var(--lightgray);
+  background: transparent;
   display: block;
 }
 

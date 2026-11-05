@@ -1,0 +1,657 @@
+{
+ "title": "Block 1 Practice Test 2",
+ "context": "Foundations of Medicine, Block 1, Weeks 1 to 4",
+ "questions": [
+  {
+   "c": "Week 1",
+   "p": "A physician diagnoses a patient with hypertension, decides the therapeutic objective is to lower blood pressure to reduce cardiovascular risk, then reviews the patient's other medications for interactions before selecting an antihypertensive. Which step of the WHO 6-step framework for rational prescribing does reviewing for interactions and comedications best represent?",
+   "o": [
+    "Treatment choice",
+    "Patient's problem",
+    "Therapeutic objective",
+    "Monitor treatment"
+   ],
+   "a": 0,
+   "e": "Correct: A. Reviewing contraindications, interactions, and comedications before selecting a specific drug is the \"treatment choice\" step, distinct from defining the patient's problem or therapeutic objective earlier in the framework.",
+   "l": []
+  },
+  {
+   "c": "Week 1",
+   "p": "A student is asked to distinguish \"pharmacology\" from \"therapeutics.\" Which statement correctly differentiates the two?",
+   "o": [
+    "Pharmacology refers only to drug side effects, while therapeutics refers only to dosing",
+    "Pharmacology is the study of how drugs affect the body and are affected by it, while therapeutics is the practical application of that knowledge to treat disease",
+    "The two terms are interchangeable and have no meaningful distinction",
+    "Therapeutics refers only to non-pharmacological treatment approaches"
+   ],
+   "a": 1,
+   "e": "Correct: B. Pharmacology is the broader science of drug action and disposition, therapeutics is the applied practice of using that knowledge (pharmacological and non-pharmacological) to treat patients.",
+   "l": []
+  },
+  {
+   "c": "Week 1",
+   "p": "After starting a new medication, a physician schedules a follow-up visit specifically to determine whether the drug is working, needs a dose adjustment, or should be discontinued. Which principle of rational prescribing does this best reflect?",
+   "o": [
+    "Give patient information",
+    "Start treatment",
+    "Monitor treatment",
+    "Treatment choice"
+   ],
+   "a": 2,
+   "e": "Correct: C. Monitoring treatment, the final WHO step, involves following up to continue, adjust, or stop therapy based on response.",
+   "l": []
+  },
+  {
+   "c": "Week 1",
+   "p": "A 50-year-old man has a 20-pack-year smoking history and is also found to have hypertension on a routine visit. Which statement correctly classifies these two findings?",
+   "o": [
+    "Smoking is a risk condition, hypertension is a risk factor",
+    "Both are risk factors",
+    "Both are risk conditions",
+    "Smoking is a risk factor, hypertension is a risk condition"
+   ],
+   "a": 3,
+   "e": "Correct: D. A risk factor is an individual characteristic or behaviour (like smoking) that increases the likelihood of a negative outcome. A risk condition is itself a chronic condition (like hypertension) that contributes to further risk.",
+   "l": []
+  },
+  {
+   "c": "Week 1",
+   "p": "A public health nutritionist notes that even though patients are individually counselled about healthy eating, food deserts in their neighbourhood limit access to fresh produce. Which approach would most directly address this structural barrier?",
+   "o": [
+    "A population-based strategy addressing the determinants of incidence at a community level",
+    "A high-risk individual clinical strategy targeting counselled patients",
+    "Tertiary prevention",
+    "A purely informative model of the physician-patient relationship"
+   ],
+   "a": 0,
+   "e": "Correct: A. A population strategy targets the determinants of incidence at a community level (like food access), shifting the distribution of risk, rather than focusing only on high-risk individuals one at a time.",
+   "l": []
+  },
+  {
+   "c": "Week 1",
+   "p": "A resident feels deep unease after being required to continue aggressive treatment she personally believes is futile, even though there is no genuine disagreement among the care team about the correct course of action. Which term best describes her experience?",
+   "o": [
+    "An ethical dilemma, since two competing but equally valid options exist",
+    "Moral distress, since she knows the right action but feels constrained from acting on it",
+    "A procedural framework failure",
+    "Casuistry"
+   ],
+   "a": 1,
+   "e": "Correct: B. Moral distress occurs when a person knows what they believe is the right action but feels unable to act on it due to institutional or other constraints, distinct from an ethical dilemma, where two comparably weighted options genuinely conflict.",
+   "l": []
+  },
+  {
+   "c": "Week 1",
+   "p": "A committee resolving an ethical conflict first gathers relevant clinical data and identifies the values at stake, then clarifies the specific goals and names the ethical conflict precisely, before evaluating why the problem exists. Which two steps of the practical ethical decision-making framework are being described, in order?",
+   "o": [
+    "Determination, then Implementation",
+    "Designation, then Recognition",
+    "Recognition, then Designation",
+    "Clarification, then Evaluation"
+   ],
+   "a": 2,
+   "e": "Correct: C. Recognition (gathering data, identifying relevant values) comes first, followed by Designation (clarifying goals and naming the ethical conflict), before Evaluation, Clarification, Determination, and Implementation.",
+   "l": []
+  },
+  {
+   "c": "Week 1",
+   "p": "A 19th-century researcher isolates a bacterium suspected of causing a disease, develops a laboratory test to detect it, and later identifies a chemical agent capable of treating the resulting infection. Which historical framework does this three-part process best exemplify?",
+   "o": [
+    "Humoral theory",
+    "Hippocratic diagnostic method",
+    "Galenic anatomical framework",
+    "Germ theory"
+   ],
+   "a": 3,
+   "e": "Correct: D. Germ theory's three-part process is: identify the micro-organism, develop a laboratory diagnostic test, and discover a chemotherapeutic agent, exactly the sequence described.",
+   "l": []
+  },
+  {
+   "c": "Week 1",
+   "p": "A historian describes a physician who took the clinically grounded practice inherited from his predecessor and set it within a broader framework of anatomy and physiology, greatly expanding the theoretical basis of medical practice. Which historical figure does this best describe?",
+   "o": [
+    "Galen",
+    "Hippocrates",
+    "William Osler",
+    "Not attributable to any of these figures"
+   ],
+   "a": 0,
+   "e": "Correct: A. Galen took Hippocratic clinical medicine and set it within a wider anatomy and physiology framework, distinct from Hippocrates (who introduced the practitioner as diagnostician/therapist) and Osler (known for emphasizing the doctor-patient relationship).",
+   "l": []
+  },
+  {
+   "c": "Week 1",
+   "p": "A clinic serving a large refugee population is reviewing WHO guidance on refugee and migrant health. Which of the following statements from that guidance is accurate?",
+   "o": [
+    "Refugees and migrants are, as a group, generally unhealthy on arrival due to their journey",
+    "Refugees and migrants have a lower risk of most cancers compared to the host population, but a higher rate of diabetes",
+    "The number of migrants globally is typically underestimated by the public",
+    "Children traveling with at least one parent face the same vulnerability as unaccompanied minors"
+   ],
+   "a": 1,
+   "e": "Correct: B. WHO guidance notes refugees/migrants are generally healthy on arrival, that migrant numbers are often overestimated (not underestimated), that they have lower cancer risk (except cervical cancer) but higher diabetes rates, and that children without any parent or guardian are especially vulnerable.",
+   "l": []
+  },
+  {
+   "c": "Week 1",
+   "p": "A hospital's billing policy is challenged because it charges an extra fee for a medically necessary service already covered under provincial health insurance, on top of what the province pays. Which principle of the Canada Health Act does this violate?",
+   "o": [
+    "Portability",
+    "Universality",
+    "Accessibility",
+    "Comprehensiveness"
+   ],
+   "a": 2,
+   "e": "Correct: C. The accessibility principle requires reasonable access to insured services without financial barriers such as extra-billing or user fees, which this billing policy violates.",
+   "l": []
+  },
+  {
+   "c": "Week 1",
+   "p": "An occupational therapist notes that an elderly patient can still bathe, dress, and feed herself independently, but has recently been unable to manage her own finances or prepare meals safely. Which statement correctly classifies these findings?",
+   "o": [
+    "Both sets of findings reflect ADL deficits",
+    "Both sets of findings reflect IADL deficits",
+    "The preserved skills are IADLs, the impaired skills are ADLs",
+    "The preserved skills are ADLs, the impaired skills are IADLs"
+   ],
+   "a": 3,
+   "e": "Correct: D. Bathing, dressing, and feeding are activities of daily living (ADLs), which are preserved here. Managing finances and preparing meals are instrumental activities of daily living (IADLs), which are impaired.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A biochemist compares two nucleic acid samples: one is double-stranded, relatively stable, and contains thymine with a methyl group, the other is single-stranded, degrades quickly, and contains uracil instead of thymine. Which molecules are being described, respectively?",
+   "o": [
+    "DNA, then RNA",
+    "RNA, then DNA",
+    "Both are DNA",
+    "Both are RNA"
+   ],
+   "a": 0,
+   "e": "Correct: A. DNA is double-stranded, relatively stable, and uses thymine (with a methyl group), RNA is single-stranded, degrades quickly, and uses uracil instead of thymine.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A drug binds to the active site of an enzyme, directly preventing substrate from binding. Increasing the substrate concentration can overcome this effect and restore maximal enzyme activity. Which type of enzyme inhibition does this describe?",
+   "o": [
+    "Noncompetitive inhibition",
+    "Competitive inhibition",
+    "Irreversible inhibition",
+    "Allosteric activation"
+   ],
+   "a": 1,
+   "e": "Correct: B. Competitive inhibition involves a molecule competing with substrate for the active site, because it's a reversible competition, sufficiently high substrate concentration can outcompete the inhibitor and restore maximal activity.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A different drug binds to a site on an enzyme distinct from the active site, reducing the enzyme's activity in a way that cannot be overcome by adding more substrate. Which type of inhibition does this describe?",
+   "o": [
+    "Competitive inhibition",
+    "Substrate saturation",
+    "Noncompetitive inhibition",
+    "Positive cooperativity"
+   ],
+   "a": 2,
+   "e": "Correct: C. Noncompetitive inhibition involves binding at a site other than the active site, since the inhibitor doesn't compete directly with substrate, adding more substrate cannot overcome the inhibition.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "As blood glucose rises after a meal, insulin secretion increases, which promotes glucose uptake into cells and lowers blood glucose back toward baseline, subsequently reducing further insulin release. Which type of feedback control system is this?",
+   "o": [
+    "Positive feedback",
+    "Feedforward control only",
+    "An open-loop system with no feedback",
+    "Negative feedback"
+   ],
+   "a": 3,
+   "e": "Correct: D. This is negative feedback: the response (falling glucose) counteracts and reduces the original stimulus (elevated insulin secretion), returning the system toward its set point.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A red blood cell is placed in a solution with a lower effective osmolality (hypotonic) than the intracellular fluid. What is the expected result?",
+   "o": [
+    "The cell will swell and may lyse as water moves in",
+    "The cell will shrink as water moves out",
+    "The cell will remain unchanged in size",
+    "The cell membrane will become impermeable to water"
+   ],
+   "a": 0,
+   "e": "Correct: A. In a hypotonic solution, water moves into the cell (toward the higher effective solute concentration inside), causing the cell to swell and potentially lyse.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A different red blood cell is placed in a hypertonic solution relative to the intracellular fluid. What is the expected result?",
+   "o": [
+    "The cell will swell and may lyse",
+    "The cell will shrink as water moves out of the cell",
+    "No net water movement will occur",
+    "The cell will divide"
+   ],
+   "a": 1,
+   "e": "Correct: B. In a hypertonic solution, water moves out of the cell toward the higher effective solute concentration outside, causing the cell to shrink (crenate).",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "Under polarized light microscopy, skeletal muscle shows alternating light and dark bands. The dark band, which does not change its overall length during contraction (though a central zone within it narrows), corresponds to the region containing myosin thick filaments. Which band is being described?",
+   "o": [
+    "I band",
+    "H zone",
+    "A band",
+    "Z line"
+   ],
+   "a": 2,
+   "e": "Correct: C. The A band (anisotropic) contains the full length of the thick filaments and does not change length during contraction, even though the H zone within it narrows as filaments slide, distinct from the I band, which does shorten.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A physiology student describes a specialized junction where an axon terminal releases neurotransmitter that diffuses across a narrow gap to bind receptors on an adjacent cell, converting an electrical signal into a chemical one and then back into an electrical signal. Which structure is being described?",
+   "o": [
+    "Gap junction",
+    "Desmosome",
+    "Tight junction",
+    "Synapse"
+   ],
+   "a": 3,
+   "e": "Correct: D. This describes a synapse, where an electrical signal is converted to a chemical signal (neurotransmitter release) and back to an electrical signal on the postsynaptic side, distinct from a gap junction, which allows direct electrical/chemical continuity without a chemical intermediary step.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A patient recovering from a peripheral nerve injury is told that although neurons themselves do not divide, some functional recovery is still possible. Which statement correctly describes the basis for this recovery?",
+   "o": [
+    "Axonal sprouts form and Schwann cells re-innervate the muscle, restoring some function",
+    "New neurons regenerate from local stem cells",
+    "Oligodendrocytes migrate to the peripheral nervous system to assist repair",
+    "Complete recovery of severed axons is universal and rapid"
+   ],
+   "a": 0,
+   "e": "Correct: A. Peripheral nerve repair occurs through axonal sprouting, with Schwann cells (not oligodendrocytes, which are CNS-specific) re-innervating the target muscle, neurons themselves do not regenerate by division.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A researcher studies a CNS support cell that transforms into a phagocytic, migratory cell in response to tissue damage, acting as part of the CNS's defence system. Which neuroglial cell is this?",
+   "o": [
+    "Astrocyte",
+    "Microglia",
+    "Ependymal cell",
+    "Schwann cell"
+   ],
+   "a": 1,
+   "e": "Correct: B. Microglia transform into phagocytic, migratory cells in a damaged CNS as part of its defence system, distinct from astrocytes (blood-brain barrier maintenance) and ependymal cells (CSF propulsion).",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A single nucleotide change in a gene results in a codon that specifies the same amino acid as before, with no change to the resulting protein. Which type of mutation does this describe?",
+   "o": [
+    "Missense mutation",
+    "Nonsense mutation",
+    "Silent mutation",
+    "Frameshift mutation"
+   ],
+   "a": 2,
+   "e": "Correct: C. A silent mutation changes the DNA sequence without changing the resulting amino acid, due to the redundancy (degeneracy) of the genetic code.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A different mutation involves the insertion of a single nucleotide, shifting the reading frame for every codon downstream of the insertion and typically producing a severely altered or truncated protein. Which type of mutation is this?",
+   "o": [
+    "Silent mutation",
+    "Missense mutation",
+    "Synonymous mutation",
+    "Frameshift mutation"
+   ],
+   "a": 3,
+   "e": "Correct: D. A frameshift mutation results from insertions or deletions that are not multiples of three nucleotides, shifting the reading frame downstream and typically producing a severely altered protein.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A fluoroquinolone antibiotic is prescribed for a urinary tract infection. Which statement correctly describes its mechanism at the level of bacterial DNA replication?",
+   "o": [
+    "It inhibits bacterial DNA gyrase/topoisomerase, preventing DNA unwinding and replication",
+    "It binds the bacterial 30S ribosomal subunit, blocking protein synthesis",
+    "It inhibits bacterial cell wall synthesis",
+    "It directly damages bacterial RNA"
+   ],
+   "a": 0,
+   "e": "Correct: A. Fluoroquinolones inhibit bacterial DNA gyrase and topoisomerase IV, enzymes required for DNA unwinding and replication, distinct from antibiotics that target the ribosome or cell wall.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A macrolide antibiotic is prescribed for a respiratory infection. Which statement correctly describes its mechanism?",
+   "o": [
+    "It inhibits bacterial DNA gyrase",
+    "It binds the bacterial 50S ribosomal subunit, blocking protein synthesis",
+    "It inhibits folic acid synthesis",
+    "It disrupts the bacterial cell membrane directly"
+   ],
+   "a": 1,
+   "e": "Correct: B. Macrolides bind the bacterial 50S ribosomal subunit, blocking protein synthesis, distinct from fluoroquinolones (DNA gyrase) or sulfonamides (folic acid synthesis).",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "Researchers running a multi-center trial want to ensure that important prognostic variables, such as disease severity, are evenly distributed between treatment and control groups at each site. Which randomization method is specifically designed to achieve this balance across known subgroups?",
+   "o": [
+    "Simple randomization",
+    "Block randomization",
+    "Stratified randomization",
+    "No randomization is needed if allocation concealment is used"
+   ],
+   "a": 2,
+   "e": "Correct: C. Stratified randomization divides participants into subgroups (strata) based on key prognostic variables before randomizing within each stratum, ensuring balance across those specific variables.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A trial analyzes outcomes according to the treatment group patients were originally assigned to, regardless of whether they actually completed that treatment. Which type of analysis is this, and what is one advantage of this approach?",
+   "o": [
+    "Per-protocol analysis, it isolates the true biological effect of the treatment",
+    "Per-protocol analysis, it always overestimates treatment effect",
+    "Intention-to-treat analysis, it excludes all non-adherent patients",
+    "Intention-to-treat analysis, it preserves the benefits of randomization and better reflects real-world effectiveness"
+   ],
+   "a": 3,
+   "e": "Correct: D. Intention-to-treat analysis keeps patients in their originally assigned group regardless of adherence, preserving the benefits of randomization (balanced confounders) and better reflecting real-world treatment effectiveness, as opposed to per-protocol analysis, which only includes those who completed treatment as assigned.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A rigorously designed trial with excellent methodology produces highly credible results within the specific population studied, but that population was narrowly selected and may not represent patients seen in general practice. Which statement is correct?",
+   "o": [
+    "The trial has high internal validity but may have limited external validity",
+    "The trial has high external validity but limited internal validity",
+    "Both internal and external validity are necessarily high in this scenario",
+    "Internal and external validity always rise and fall together"
+   ],
+   "a": 0,
+   "e": "Correct: A. Internal validity reflects correct study methodology (credible results within the study), while external validity reflects generalizability to a broader population, a trial can have one without the other, as described here.",
+   "l": []
+  },
+  {
+   "c": "Week 2",
+   "p": "A researcher combines the results of ten smaller trials addressing the same clinical question into a single summary effect estimate. Which of the following is a recognized limitation of this approach?",
+   "o": [
+    "It always produces a less precise estimate than any single included trial",
+    "It can be affected by publication bias if studies with negative results were less likely to be published and therefore included",
+    "It cannot combine data from different study populations under any circumstances",
+    "It eliminates the need to assess the quality of individual included studies"
+   ],
+   "a": 1,
+   "e": "Correct: B. Meta-analyses can be skewed by publication bias, since studies with negative or null results are historically less likely to be published and therefore less likely to be included, potentially inflating the apparent effect.",
+   "l": []
+  },
+  {
+   "c": "Week 3",
+   "p": "A genetic counselor explains that two different mutations within the same gene can each independently cause the same inherited disorder. Which concept does this describe, and how does it differ from a related but distinct concept?",
+   "o": [
+    "Locus heterogeneity, describing different mutations in the same gene, distinct from allelic heterogeneity, involving different genes",
+    "Both terms describe mutations in different genes causing different phenotypes",
+    "Allelic heterogeneity, describing different mutations in the same gene causing the same phenotype, distinct from locus heterogeneity, where mutations in different genes cause the same phenotype",
+    "These terms are synonymous"
+   ],
+   "a": 2,
+   "e": "Correct: C. Allelic heterogeneity describes different mutations (alleles) within the same gene producing the same phenotype. Locus heterogeneity describes mutations in entirely different genes producing a similar or identical phenotype.",
+   "l": []
+  },
+  {
+   "c": "Week 3",
+   "p": "Two family members carry the identical pathogenic variant for the same autosomal dominant condition. One shows severe features of the disease, while the other shows only mild, barely noticeable features, though both are clinically affected. Which concept explains this variability, as opposed to one family member showing no features at all despite carrying the variant?",
+   "o": [
+    "Incomplete penetrance explains differing severity, variable expressivity explains a carrier with no features",
+    "Both scenarios describe anticipation",
+    "Both scenarios describe pleiotropy",
+    "Variable expressivity explains differing severity among affected individuals, incomplete penetrance would instead explain an individual carrying the variant but showing no features at all"
+   ],
+   "a": 3,
+   "e": "Correct: D. Variable expressivity describes a range of severity among individuals who are all clinically affected. Incomplete penetrance instead describes a carrier of the pathogenic variant who shows no features of the condition at all.",
+   "l": []
+  },
+  {
+   "c": "Week 3",
+   "p": "On a standard medical pedigree, a circle with a diagonal line through it appears for one individual, while a filled-in (shaded) square appears for another. Which statement correctly interprets these symbols?",
+   "o": [
+    "The circle with a diagonal line represents a deceased female, the filled square represents an affected male",
+    "The circle with a diagonal line represents an affected female, the filled square represents a deceased male",
+    "Both symbols represent unaffected individuals",
+    "The filled square represents a female, the circle represents a male"
+   ],
+   "a": 0,
+   "e": "Correct: A. On standard pedigree notation, a diagonal line through a symbol indicates the individual is deceased, and a filled (shaded) symbol indicates the individual is affected. A circle denotes female and a square denotes male.",
+   "l": []
+  },
+  {
+   "c": "Week 3",
+   "p": "A proposed newborn screening test detects a condition that is extremely rare, has no available treatment even if detected early, and for which early detection does not change the outcome. Applying standard principles of population-based screening, is this an appropriate candidate for a screening program?",
+   "o": [
+    "Yes, since any test with high accuracy should be included in screening programs",
+    "No, since a good screening program requires that a treatment or intervention exist that changes the outcome if the condition is detected early",
+    "Yes, but only because it is rare",
+    "No, only because rare conditions cannot be tested for"
+   ],
+   "a": 1,
+   "e": "Correct: B. A core principle of population-based screening is that an effective treatment or intervention must exist and meaningfully change the outcome if the condition is detected early, without this, screening does not provide a net benefit.",
+   "l": []
+  },
+  {
+   "c": "Week 3",
+   "p": "On examination of a healthy newborn, a physician specifically checks for symmetry of posture, movement, and reflexes. Why is this a key part of the newborn exam?",
+   "o": [
+    "Symmetry has no clinical significance in newborns",
+    "Symmetry is only relevant after 6 months of age",
+    "Asymmetry is an important physical finding that warrants further evaluation to determine the underlying cause",
+    "Asymmetric findings are always a normal variant in newborns"
+   ],
+   "a": 2,
+   "e": "Correct: C. Symmetry is an important physical finding in the newborn exam, asymmetry warrants a careful examination to determine the underlying cause, rather than being assumed to be a normal variant.",
+   "l": []
+  },
+  {
+   "c": "Week 3",
+   "p": "A geneticist compares two types of chromosomal translocations. In one, two acrocentric chromosomes fuse near their centromeres with loss of the short arms, reducing the total chromosome count. In the other, segments are exchanged between two non-homologous chromosomes without loss of genetic material, and the chromosome count remains unchanged. Which translocation types are being described, respectively?",
+   "o": [
+    "Reciprocal, then Robertsonian",
+    "Both describe Robertsonian translocations",
+    "Both describe reciprocal translocations",
+    "Robertsonian, then reciprocal"
+   ],
+   "a": 3,
+   "e": "Correct: D. A Robertsonian translocation involves fusion of two acrocentric chromosomes with loss of the short arms and a reduced chromosome count (45). A reciprocal translocation exchanges segments between two non-homologous chromosomes without material loss, keeping the chromosome count at 46.",
+   "l": []
+  },
+  {
+   "c": "Week 3",
+   "p": "A child undergoes genetic testing for a suspected syndrome, and the laboratory reports a variant of uncertain significance rather than a clearly pathogenic or clearly benign result. What is the most appropriate way to interpret this finding?",
+   "o": [
+    "The variant's clinical significance is not yet established, and it cannot be used alone to confirm or exclude a diagnosis at this time",
+    "The variant should be treated as definitively disease-causing",
+    "The variant should be treated as definitively benign",
+    "This type of result never occurs in genetic testing"
+   ],
+   "a": 0,
+   "e": "Correct: A. A variant of uncertain significance means the evidence is insufficient to classify the finding as clearly pathogenic or clearly benign, it cannot, on its own, confirm or exclude a diagnosis and often requires further evaluation over time.",
+   "l": []
+  },
+  {
+   "c": "Week 3",
+   "p": "A mother of a 14-month-old asks about appropriate feeding at this age, now that her toddler has transitioned off formula. Which statement is most consistent with recommended toddler feeding practices?",
+   "o": [
+    "Toddlers should continue exclusively on infant formula until age 3",
+    "Toddlers 12-24 months should be transitioned to homogenized (whole) cow's milk alongside a varied solid diet, with skim or low-fat milk not yet appropriate",
+    "Skim milk is preferred over whole milk at this age for cardiovascular health",
+    "Toddlers no longer require any milk product after 12 months"
+   ],
+   "a": 1,
+   "e": "Correct: B. Toddlers 12-24 months are generally transitioned to whole (homogenized) cow's milk alongside a varied diet, lower-fat milk is not yet recommended, since toddlers still need the additional calories and fat for growth and brain development.",
+   "l": []
+  },
+  {
+   "c": "Week 3",
+   "p": "A new mother is struggling with a painful latch and low milk supply. Her physician refers her to a specialist who can directly assess and support breastfeeding technique. Which member of the interdisciplinary team is most appropriate for this referral?",
+   "o": [
+    "A physiotherapist",
+    "A speech-language pathologist",
+    "A lactation consultant",
+    "A social worker"
+   ],
+   "a": 2,
+   "e": "Correct: C. A lactation consultant specializes in assessing and supporting breastfeeding technique, latch, and supply issues, as part of the interdisciplinary supports available to breastfeeding mothers.",
+   "l": []
+  },
+  {
+   "c": "Week 3",
+   "p": "A family, unable to afford commercial infant formula, considers making a homemade formula from evaporated milk and corn syrup for their 3-month-old. What is the most appropriate guidance?",
+   "o": [
+    "This is an acceptable substitute as long as it is prepared carefully",
+    "This is only a concern after 6 months of age",
+    "This is preferred over commercial formula for cost reasons",
+    "This is not recommended, since homemade formulas are typically nutritionally inadequate and unsafe for infants"
+   ],
+   "a": 3,
+   "e": "Correct: D. Homemade infant formulas are generally nutritionally inadequate and unsafe, lacking the balanced composition of commercial formula, families facing affordability barriers should be connected with appropriate resources rather than using homemade substitutes.",
+   "l": []
+  },
+  {
+   "c": "Week 3",
+   "p": "A mother reports her son coos and makes vowel-like sounds, has not yet started babbling, and shows interest in faces when spoken to. At approximately what age would this pattern be most expected?",
+   "o": [
+    "2 months",
+    "6 months",
+    "12 months",
+    "18 months"
+   ],
+   "a": 0,
+   "e": "Correct: A. Cooing and vowel-like sounds, with interest in faces during speech, is expected around 2 months, before babbling typically begins.",
+   "l": []
+  },
+  {
+   "c": "Week 3",
+   "p": "A different infant produces repetitive consonant-vowel sounds like \"bababa\" and \"dadada,\" without yet using these as meaningful words. At approximately what age would this be most expected?",
+   "o": [
+    "2 months",
+    "6 months",
+    "12 months",
+    "24 months"
+   ],
+   "a": 1,
+   "e": "Correct: B. Repetitive consonant-vowel babbling is expected around 6 months, preceding the emergence of first meaningful words around 12 months.",
+   "l": []
+  },
+  {
+   "c": "Week 4",
+   "p": "A patient asks how an mRNA vaccine differs from a traditional live attenuated vaccine. Which statement correctly describes the mRNA vaccine's mechanism?",
+   "o": [
+    "It contains a weakened but live form of the virus, similar to a live attenuated vaccine",
+    "It works by directly injecting pre-made antibodies against the pathogen",
+    "It delivers genetic instructions that host cells use to temporarily produce a viral protein, triggering an immune response, without introducing any live or replicating pathogen",
+    "It functions identically to a whole inactivated vaccine"
+   ],
+   "a": 2,
+   "e": "Correct: C. mRNA vaccines deliver genetic instructions for host cells to transiently produce a viral antigen, triggering an immune response without ever introducing a live or replicating pathogen, mechanistically distinct from live attenuated, inactivated, or antibody-based approaches.",
+   "l": []
+  },
+  {
+   "c": "Week 4",
+   "p": "A cytotoxic T cell recognizes a virally infected cell and releases perforin and granzyme to induce its death. Which arm of the immune system does this effector mechanism belong to?",
+   "o": [
+    "Innate immunity exclusively",
+    "Adaptive immunity, humoral only",
+    "Passive immunity",
+    "Adaptive immunity, cell-mediated"
+   ],
+   "a": 3,
+   "e": "Correct: D. Cytotoxic T cells are antigen-specific lymphocytes that develop immunologic memory, placing this mechanism within adaptive, cell-mediated immunity, distinct from the humoral (antibody-based) arm of adaptive immunity.",
+   "l": []
+  },
+  {
+   "c": "Week 4",
+   "p": "A macrophage engulfs and destroys a bacterium after complement proteins coat its surface, enhancing recognition by the phagocyte. Which term describes complement's role in this process?",
+   "o": [
+    "Opsonization",
+    "Neutralization",
+    "Agglutination",
+    "Antibody-dependent cellular cytotoxicity"
+   ],
+   "a": 0,
+   "e": "Correct: A. Opsonization is the coating of a pathogen with molecules (such as complement or antibody) that enhance its recognition and engulfment by phagocytic cells.",
+   "l": []
+  },
+  {
+   "c": "Week 4",
+   "p": "A physician sees a 5-year-old for a pre-kindergarten visit and specifically assesses attentional, emotional, and cognitive readiness domains, in addition to the physical exam. Which statement best describes the physician's role in this context?",
+   "o": [
+    "Physicians have no role in assessing school readiness, which is solely an educational responsibility",
+    "Physicians can help identify readiness concerns across multiple domains and guide families toward appropriate supports before school entry",
+    "Physicians should only assess physical readiness",
+    "School readiness assessment is only relevant after a child has already started school"
+   ],
+   "a": 1,
+   "e": "Correct: B. Physicians play an active role in assessing school readiness across multiple domains and connecting families with appropriate supports, ideally before school entry rather than only afterward.",
+   "l": []
+  },
+  {
+   "c": "Week 4",
+   "p": "A 12-year-old spends most free time in a same-sex peer group with little romantic interest, while a 17-year-old has shifted toward individual romantic relationships and a more consolidated sense of identity. Which statement correctly contrasts these two stages of adolescence?",
+   "o": [
+    "Both patterns are characteristic of early adolescence",
+    "Both patterns are characteristic of late adolescence",
+    "The 12-year-old is in early adolescence, characterized by same-sex peer group focus, the 17-year-old is in late adolescence, characterized by individual relationships and identity consolidation",
+    "Peer relationship patterns do not change across adolescence"
+   ],
+   "a": 2,
+   "e": "Correct: C. Early adolescence is typically characterized by same-sex peer group affiliation with limited romantic interest, while late adolescence shows a shift toward individual romantic relationships and a more consolidated identity.",
+   "l": []
+  },
+  {
+   "c": "Week 4",
+   "p": "A pediatrician explains to parents that in male puberty, one particular change is typically the first visible sign, occurring before the growth spurt and voice changes. Which change is this?",
+   "o": [
+    "Peak height velocity",
+    "Deepening of the voice",
+    "Facial hair growth",
+    "Testicular enlargement"
+   ],
+   "a": 3,
+   "e": "Correct: D. Testicular enlargement is typically the first visible sign of male puberty, preceding the growth spurt, voice deepening, and facial hair growth.",
+   "l": []
+  },
+  {
+   "c": "Week 4",
+   "p": "A child initially diagnosed with a nonspecific \"developmental delay\" as a toddler is later given a more specific diagnosis of a learning disability once he reaches school age and standardized testing becomes possible. What does this progression best illustrate?",
+   "o": [
+    "Diagnostic labels for disability can appropriately change and become more specific as a child grows and more information becomes available",
+    "The initial diagnosis was necessarily incorrect",
+    "A diagnosis, once given, should never be revised",
+    "Developmental delay and learning disability are always the same diagnosis"
+   ],
+   "a": 0,
+   "e": "Correct: A. Diagnostic labels for disability can appropriately evolve and become more specific as a child develops and more assessment information (such as standardized testing at school age) becomes available.",
+   "l": []
+  },
+  {
+   "c": "Week 4",
+   "p": "A child experiences several adverse childhood experiences, including household instability, but also has a consistently supportive relationship with a grandparent and strong community connections. Which concept best describes the role these supportive relationships may play?",
+   "o": [
+    "They have no bearing on outcomes once ACEs have occurred",
+    "They function as protective factors that may buffer or mitigate the negative impact of adverse childhood experiences",
+    "They are themselves classified as additional adverse childhood experiences",
+    "They eliminate the need for any further assessment or intervention"
+   ],
+   "a": 1,
+   "e": "Correct: B. Supportive relationships and community connections can function as protective factors, buffering or mitigating the negative impact of adverse childhood experiences, even though they do not eliminate the need for ongoing assessment and support.",
+   "l": []
+  }
+ ],
+ "objectives": {}
+}

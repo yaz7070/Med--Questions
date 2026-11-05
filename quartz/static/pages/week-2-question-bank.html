@@ -2,91 +2,135 @@
 <title>Week 2 Question Bank</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
-/* Layout: single exam card column, header strip with score and tick map, results replace the card */
+/* Differential quiz page. Matches the site: teal accent, Bricolage Grotesque for display, Source Sans 3 for reading. */
 :root{
-  --bg:#EEF0EA;--paper:#FFFFFF;--ink:#1F2A24;--muted:#5B6A61;--line:#D7DBD2;
-  --accent:#2F6F5E;--wash:#E4EDE9;
-  --ok:#2E7D4F;--okw:#E4F2E8;--bad:#A13D2C;--badw:#F6E7E3;--tick:#C9CFC4;
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
-  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --bg:#f6f9f8;--paper:#ffffff;--ink:#0f2624;--muted:#3d5452;--faint:#7f9895;--line:#d9e5e3;
+  --accent:#0e7c7b;--deep:#0a5f5e;--soft:#e7f1f0;
+  --ok:#1d7a46;--okw:#e7f4ec;--bad:#b42318;--badw:#fcecea;--tick:#dde8e6;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --r:12px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#171C18;--paper:#1F251F;--ink:#EDEFE9;--muted:#9BA79C;--line:#333A32;
-  --accent:#6FBBA3;--wash:#24302A;--ok:#6FBB8B;--okw:#1F3226;--bad:#E28C79;--badw:#3A2420;--tick:#3E463D;color-scheme:dark}}
+  --bg:#0e1716;--paper:#142120;--ink:#ecf4f3;--muted:#c7d8d5;--faint:#7f9895;--line:#24413e;
+  --accent:#4fc1b8;--deep:#82d8d0;--soft:#18302e;
+  --ok:#5ccf8f;--okw:#13301f;--bad:#f2877c;--badw:#3a1c1a;--tick:#22403c;color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#171C18;--paper:#1F251F;--ink:#EDEFE9;--muted:#9BA79C;--line:#333A32;
-  --accent:#6FBBA3;--wash:#24302A;--ok:#6FBB8B;--okw:#1F3226;--bad:#E28C79;--badw:#3A2420;--tick:#3E463D;color-scheme:dark}
+  --bg:#0e1716;--paper:#142120;--ink:#ecf4f3;--muted:#c7d8d5;--faint:#7f9895;--line:#24413e;
+  --accent:#4fc1b8;--deep:#82d8d0;--soft:#18302e;
+  --ok:#5ccf8f;--okw:#13301f;--bad:#f2877c;--badw:#3a1c1a;--tick:#22403c;color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55}
-.wrap{max-width:760px;margin:0 auto;padding-block:28px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:18px}
-header{display:flex;flex-direction:column;gap:12px}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,5vw,34px);line-height:1.15;margin:0;text-wrap:balance}
-.stats{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
-.stats b{color:var(--ink);font-weight:500}
-.save{font-family:var(--mono);font-size:12px;color:var(--muted)}
-.save.ok{color:var(--ok)}.save.bad{color:var(--bad)}
-.ticks{display:flex;flex-wrap:wrap;gap:4px}
-.tick{width:16px;height:16px;border:0;background:var(--tick);padding:0;cursor:pointer}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:820px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:20px}
+
+/* Header */
+header{display:flex;flex-direction:column;gap:10px}
+.context{margin:0;color:var(--faint);font-size:14px;font-weight:600}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,40px);line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.stats{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+.stats b{color:var(--ink);font-weight:700}
+.bar{height:6px;border-radius:999px;background:var(--tick);overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:var(--accent);border-radius:999px;transition:width .25s ease}
+.map summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:14px;width:max-content;list-style:none;padding:2px 0}
+.map summary::-webkit-details-marker{display:none}
+.map summary::before{content:"▸";display:inline-block;margin-right:6px;transition:transform .15s ease}
+.map[open] summary::before{transform:rotate(90deg)}
+.map summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.ticks{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.tick{width:14px;height:14px;border:0;border-radius:4px;background:var(--tick);padding:0;cursor:pointer}
+.tick:hover{background:var(--faint)}
 .tick.ok{background:var(--ok)}.tick.bad{background:var(--bad)}
-.tick.cur{outline:2px solid var(--ink);outline-offset:1px}
-.tick:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.card{background:var(--paper);border:1px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:16px}
-.chead{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.tag{color:var(--accent);background:var(--wash);padding:2px 8px}
-.stem{font-family:var(--serif);font-size:18px;line-height:1.55;margin:0;white-space:pre-line}
-.opts{display:flex;flex-direction:column;gap:8px}
-.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;background:var(--paper);color:var(--ink);border:1px solid var(--line);padding:12px 14px;font:inherit;cursor:pointer}
-.opt:hover:not(:disabled){border-color:var(--accent);background:var(--wash)}
-.opt:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
-.opt:disabled{cursor:default}
-.opt .k{font-family:var(--mono);font-weight:500;color:var(--muted);min-width:1.2em}
-.opt.right{border-color:var(--ok);background:var(--okw)}.opt.right .k{color:var(--ok)}
-.opt.wrong{border-color:var(--bad);background:var(--badw)}.opt.wrong .k{color:var(--bad)}
-.fb{border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:8px}
-.verdict{font-weight:600}.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
-.fb p{margin:0}
-.obj{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.5;border-left:2px solid var(--line);padding-left:10px}
-.nav{display:flex;justify-content:space-between;gap:10px}
-.btn{font:inherit;font-weight:500;padding:10px 18px;border:1px solid var(--accent);background:var(--accent);color:var(--paper);cursor:pointer}
-.btn.ghost{background:transparent;color:var(--accent)}
-.btn:disabled{opacity:.4;cursor:default}
-.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-.big{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-td,th{text-align:left;padding:6px 0;border-bottom:1px solid var(--line);font-size:14px}
-th{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-td:last-child,th:last-child{text-align:right}
-h2{font-family:var(--serif);font-size:20px;font-weight:600;margin:0}
-h3{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:6px 0 0;font-weight:500}
-.miss{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px}
-.miss code{font-family:var(--mono);color:var(--bad);margin-right:6px}
-.optrow{display:flex;gap:6px;align-items:stretch}
-.optrow .opt{flex:1;min-width:0}
-.strike{flex:0 0 auto;width:40px;border:1px solid var(--line);background:var(--paper);color:var(--muted);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.strike:hover{border-color:var(--accent);color:var(--accent)}
-.strike:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
-.strike[aria-pressed="true"]{background:var(--wash);color:var(--ink)}
-.optrow.struck .opt > span:last-child{text-decoration:line-through;color:var(--muted)}
-.optrow.struck .opt .k{color:var(--line)}
-.tries{font-family:var(--mono);font-size:12px;color:var(--muted)}
-.tries .bad{color:var(--bad)}.tries .ok{color:var(--ok)}
-.hint{font-family:var(--mono);font-size:12px;color:var(--muted)}
-.fbtools{display:flex;justify-content:flex-end}
+.tick.cur{outline:2px solid var(--accent);outline-offset:2px}
 .tick.redo{box-shadow:inset 0 -3px 0 var(--accent)}
-@media (prefers-reduced-motion:no-preference){.fb{animation:in .18s ease-out}@keyframes in{from{opacity:.4;transform:translateY(3px)}to{opacity:1;transform:none}}}
+.tick:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.save{font-size:13px;color:var(--faint)}
+.save.ok{color:var(--ok)}.save.bad{color:var(--bad)}
+
+/* Question card */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:18px}
+.chead{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tag{font-size:13px;font-weight:700;color:var(--accent);background:var(--soft);padding:4px 11px;border-radius:999px}
+.qn{font-family:var(--display);font-weight:700;font-size:15px;color:var(--faint);font-variant-numeric:tabular-nums}
+.stem{font-size:18.5px;line-height:1.6;margin:0;white-space:pre-line;max-width:70ch}
+.hint{font-size:13px;color:var(--faint)}
+.tries{font-size:13px;color:var(--muted)}
+.tries .bad{color:var(--bad);font-weight:600}.tries .ok{color:var(--ok);font-weight:600}
+
+/* Options */
+.opts{display:flex;flex-direction:column;gap:10px}
+.optrow{display:flex;gap:8px;align-items:stretch}
+.optrow .opt{flex:1;min-width:0}
+.opt{display:flex;gap:14px;align-items:center;text-align:left;width:100%;background:var(--paper);color:var(--ink);border:1.5px solid var(--line);border-radius:var(--r);padding:12px 16px;font:inherit;font-size:16.5px;line-height:1.45;cursor:pointer;transition:border-color .12s ease,background .12s ease}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--soft)}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opt:disabled{cursor:default}
+.opt .k{flex:none;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--soft);color:var(--accent);font-family:var(--display);font-weight:700;font-size:14px}
+.opt.right{border-color:var(--ok);background:var(--okw)}
+.opt.right .k{background:var(--ok);color:var(--paper)}
+.opt.wrong{border-color:var(--bad);background:var(--badw)}
+.opt.wrong .k{background:var(--bad);color:var(--paper)}
+.strike{flex:none;width:44px;border:1.5px solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--faint);font-size:14px;cursor:pointer;display:grid;place-items:center}
+.strike:hover{border-color:var(--accent);color:var(--accent)}
+.strike:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.strike[aria-pressed="true"]{background:var(--soft);color:var(--ink)}
+.optrow.struck .opt > span:last-child{text-decoration:line-through;color:var(--faint)}
+.optrow.struck .opt .k{opacity:.45}
+
+/* Feedback */
+.fb{background:var(--bg);border-radius:var(--r);padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.verdict{font-family:var(--display);font-weight:700;font-size:18px;display:flex;align-items:center;gap:8px}
+.verdict::before{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;font-size:13px;color:var(--paper)}
+.verdict.ok{color:var(--ok)}.verdict.ok::before{content:"✓";background:var(--ok)}
+.verdict.bad{color:var(--bad)}.verdict.bad::before{content:"✕";background:var(--bad)}
+.fb p{margin:0;max-width:72ch}
+.fb .why,.fb .alt{display:flex;gap:10px;align-items:baseline}
+.fb .why{font-weight:600}
+.lk{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--muted);font-family:var(--display);font-weight:700;font-size:12px;transform:translateY(-1px)}
+.lk.ok{background:var(--ok);color:var(--paper)}
+.fb .alt{color:var(--muted)}
+.fb .take{border-left:3px solid var(--accent);padding:2px 0 2px 12px;color:var(--ink)}
+.fb .take b{color:var(--accent)}
+.obj{font-size:13.5px;color:var(--faint);line-height:1.5}
+.obj b{color:var(--muted)}
+.fbtools{display:flex;justify-content:flex-end}
+
+/* Buttons */
+.nav{display:flex;justify-content:space-between;gap:10px}
+.btn{font-family:var(--display);font-weight:700;font-size:15px;padding:10px 20px;border:1.5px solid var(--accent);border-radius:999px;background:var(--accent);color:var(--paper);cursor:pointer}
+.btn:hover:not(:disabled){background:var(--deep);border-color:var(--deep)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.ghost:hover:not(:disabled){background:var(--soft);color:var(--accent);border-color:var(--accent)}
+.btn:disabled{opacity:.35;cursor:default}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* Results */
+.big{font-family:var(--display);font-size:clamp(48px,9vw,72px);font-weight:700;line-height:1;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td,th{text-align:left;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;vertical-align:middle}
+th{font-size:13px;font-weight:700;color:var(--faint)}
+td:last-child,th:last-child{text-align:right;white-space:nowrap;padding-left:12px}
+.meter{display:block;height:5px;border-radius:999px;background:var(--tick);margin-top:6px;max-width:320px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--accent);border-radius:999px}
+h2{font-family:var(--display);font-size:21px;font-weight:700;margin:6px 0 0}
+h3{font-size:14px;font-weight:700;color:var(--faint);margin:6px 0 0}
+.miss{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.miss code{font-family:var(--display);font-weight:700;font-size:13px;color:var(--bad);background:var(--badw);padding:1px 7px;border-radius:999px;margin-right:8px}
+
+@media (max-width:560px){.card{padding:18px;border-radius:14px}.stem{font-size:17.5px}.opt{padding:11px 12px;gap:10px}.strike{width:40px}}
+@media (prefers-reduced-motion:no-preference){.fb{animation:in .2s ease-out}@keyframes in{from{opacity:.3;transform:translateY(4px)}to{opacity:1;transform:none}}}
+@media (prefers-reduced-motion:reduce){.bar span,.opt,.map summary::before{transition:none}}
 </style>
 
 <div class="wrap">
   <header>
-    <div class="eyebrow">Foundations of Medicine · Block 1 · Week 2</div>
-    <h1>Week 2 Question Bank: 165 Questions</h1>
+    <p class="context">Foundations of Medicine, Block 1, Week 2</p>
+    <h1>Week 2 Question Bank</h1>
     <div class="stats" id="stats"></div>
+    <div class="bar" aria-hidden="true"><span id="barfill"></span></div>
+    <details class="map" id="map"><summary>Question map</summary><div class="ticks" id="ticks" aria-label="Question map"></div></details>
     <div class="save" id="save" role="status">Progress saves in this browser.</div>
-    <div class="ticks" id="ticks" aria-label="Question map"></div>
   </header>
   <main id="main"></main>
 </div>
@@ -101,6 +145,7 @@ let ans = new Array(N).fill(null);           // current pick per question
 let tries = QUESTIONS.map(()=>[]);           // every locked attempt: {pick, ok, at}
 let strikes = QUESTIONS.map(()=>[]);         // struck option indexes for the open attempt
 let history = [], db = null, uid = null, writing = false, dirty = false;
+const MAP=document.getElementById("map"); if(MAP && QUESTIONS.length<=60) MAP.open=true;
 const LS_KEY = "differential-week-2-question-bank";
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
@@ -111,7 +156,8 @@ function firstTryScore(){ return tries.reduce((n,t)=>n+(t.length&&t[0].ok?1:0),0
 function firstTryCount(){ return tries.filter(t=>t.length).length; }
 
 function renderHeader(){
-  $("#stats").innerHTML = `<span>Item <b>${showResults?"–":cur+1}</b> of <b>${N}</b></span><span>Answered <b>${answered()}</b></span><span>Score <b>${score()} / ${answered()}</b></span>`;
+  const bf=$("#barfill"); if(bf) bf.style.width=(100*answered()/N)+"%";
+  $("#stats").innerHTML = `<span>Question <b>${showResults?"–":cur+1}</b> of <b>${N}</b></span><span>Answered <b>${answered()}</b></span><span>Score <b>${score()} / ${answered()}</b></span>`;
   $("#ticks").innerHTML = QUESTIONS.map((q,i)=>{
     const st = ans[i]===null?"":(ans[i]===q.a?"ok":"bad");
     const redo = tries[i].length>1 || (ans[i]===null && tries[i].length>0);
@@ -127,6 +173,17 @@ function triesLine(i, includeCurrent){
   return `<div class="tries">Attempts ${parts}</div>`;
 }
 
+function fmtLine(t){
+  let m;
+  if((m=t.match(/^Correct:\s*([A-E])\.?\s*(.*)$/)) || (m=t.match(/^([A-E]) is correct\.?\s*(.*)$/)))
+    return `<p class="why"><span class="lk ok">${m[1]}</span><span>${esc(m[2])}</span></p>`;
+  if((m=t.match(/^([A-E]):\s*(.*)$/)))
+    return `<p class="alt"><span class="lk">${m[1]}</span><span>${esc(m[2])}</span></p>`;
+  if((m=t.match(/^(Takeaway|High yield|High-yield|Key point|Clues):\s*(.*)$/i)))
+    return `<p class="take"><b>${esc(m[1])}.</b> ${esc(m[2])}</p>`;
+  return `<p>${esc(t)}</p>`;
+}
+
 function renderQ(){
   const q = QUESTIONS[cur], a = ans[cur], done = a!==null, st = strikes[cur];
   const opts = q.o.map((o,i)=>{
@@ -139,14 +196,14 @@ function renderQ(){
   let fb = "";
   if(done){
     const ok = a===q.a;
-    const lines = q.e.split("\n").map(t=>`<p>${esc(t)}</p>`).join("");
-    const objs = q.l.map(id=>`<div class="obj">Objective: ${esc(id)}. ${esc(OBJECTIVES[id]||"")}</div>`).join("");
+    const lines = q.e.split("\n").map(fmtLine).join("");
+    const objs = q.l.map(id=>`<div class="obj"><b>Objective ${esc(id)}</b> ${esc(OBJECTIVES[id]||"")}</div>`).join("");
     fb = `<div class="fb" role="status"><div class="verdict ${ok?"ok":"bad"}">${ok?"Correct.":"Incorrect. The answer is "+L[q.a]+"."}</div>${lines}${objs}${triesLine(cur)}<div class="fbtools"><button class="btn ghost" id="redo">Reset and redo this question</button></div></div>`;
   }
   const pre = (!done && tries[cur].length) ? `<div class="hint">Redo. Your earlier attempts are saved.</div>${triesLine(cur)}` : (!done ? `<div class="hint">Tap ✕ to strike out an option. Right-click works too.</div>` : "");
   const last = cur===N-1;
   $("#main").innerHTML = `<article class="card">
-    <div class="chead"><span class="tag">${esc(q.c)}</span><span>Q${cur+1}</span></div>
+    <div class="chead"><span class="tag">${esc(q.c)}</span><span class="qn">${cur+1} of ${N}</span></div>
     <p class="stem">${esc(q.p)}</p>
     ${pre}
     <div class="opts">${opts}</div>${fb}
@@ -173,7 +230,7 @@ function renderResults(){
   const s = score(), pct = Math.round(100*s/N);
   const cats = {};
   QUESTIONS.forEach((q,i)=>{ cats[q.c]=cats[q.c]||[0,0]; cats[q.c][1]++; if(ans[i]===q.a) cats[q.c][0]++; });
-  const rows = Object.entries(cats).map(([c,[r,t]])=>`<tr><td>${esc(c)}</td><td>${r} / ${t}</td></tr>`).join("");
+  const rows = Object.entries(cats).map(([c,[r,t]])=>`<tr><td>${esc(c)}<span class="meter"><i style="width:${Math.round(100*r/t)}%"></i></span></td><td>${r} / ${t}</td></tr>`).join("");
   const missed = {};
   QUESTIONS.forEach((q,i)=>{ const wrongFirst = tries[i].length && !tries[i][0].ok; if(ans[i]!==q.a || wrongFirst) q.l.forEach(id=>{ const w=id.split(" ")[0]; missed[w]=missed[w]||new Set(); missed[w].add(id); }); });
   const weeks = Object.keys(missed).sort((x,y)=>parseInt(x.slice(1))-parseInt(y.slice(1)));
@@ -183,7 +240,7 @@ function renderResults(){
   $("#main").innerHTML = `<article class="card">
     <div class="chead"><span class="tag">Results</span><span>${un?un+" unanswered":"Complete"}</span></div>
     <div><div class="big">${s} / ${N}</div><div class="stats"><span><b>${pct}%</b> correct now</span><span>First try <b>${firstTryScore()} / ${firstTryCount()}</b></span><span>Redone <b>${redone}</b></span></div></div>
-    <table><thead><tr><th>Category</th><th>Score</th></tr></thead><tbody>${rows}</tbody></table>
+    <table><thead><tr><th>Topic</th><th>Score</th></tr></thead><tbody>${rows}</tbody></table>
     <h2>Objectives to review</h2><p class="hint">Includes questions you missed on the first try, even if a redo got them right.</p>${missHtml}${history.length?`<h2>Past attempts</h2><table><thead><tr><th>Date</th><th>Score</th></tr></thead><tbody>${history.slice().reverse().map(h=>`<tr><td>${new Date(h.date).toLocaleDateString()}</td><td>${h.score} / ${h.total}</td></tr>`).join("")}</tbody></table>`:""}
     <div class="nav"><button class="btn ghost" id="back">Back to questions</button><button class="btn" id="restart">Restart all</button></div>
   </article>`;

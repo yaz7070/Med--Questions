@@ -1,0 +1,715 @@
+{
+ "title": "Block 2 Practice Exam",
+ "context": "Foundations of Medicine, Block 2, Weeks 5 to 8",
+ "questions": [
+  {
+   "c": "Week 5",
+   "p": "Ana, 24, sprints for a bus and her adrenal medulla releases epinephrine. What happens to the arterioles in her working leg muscles, and to arterioles in blood vessels throughout the rest of her body, in order?",
+   "o": [
+    "Dilate via beta-2 receptors, then constrict via alpha",
+    "Dilate in skeletal muscle and dilate throughout the body",
+    "Constrict via alpha receptors, then dilate via beta-2",
+    "Constrict in skeletal muscle and constrict throughout"
+   ],
+   "a": 0,
+   "e": "A is correct. Epinephrine on beta-2 receptors in skeletal muscle, cardiac muscle and liver vessels causes vasodilation. On alpha receptors in vessels throughout the body it causes vasoconstriction.\nB: Alpha receptors elsewhere constrict, not dilate.\nC: This reverses the receptor effects.\nD: Beta-2 receptors in skeletal muscle dilate, not constrict.\nHigh yield: AC/BD: vasoconstrictors are epinephrine (alpha), angiotensin II, ADH. Vasodilators are epinephrine (beta-2), ANP.",
+   "l": [
+    "W5 9.2"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "At a periodic health encounter, Mr. Lam's blood pressure is 130/85 mmHg. Using the formula in your notes, what is his mean arterial pressure?",
+   "o": [
+    "95 mmHg",
+    "107.5 mmHg",
+    "115 mmHg",
+    "93 mmHg",
+    "100 mmHg"
+   ],
+   "a": 4,
+   "e": "E is correct. MAP = DP + 1/3(SP minus DP) = 85 + 1/3(45) = 85 + 15 = 100 mmHg.\nA: 95 adds one third of diastolic minus 85, a misapplied formula.\nB: 107.5 is the simple average of systolic and diastolic. Diastole lasts longer, so it carries more weight.\nC: 115 subtracts one third of the pulse pressure from systolic instead of adding it to diastolic.\nD: 93 mmHg is the MAP for a BP of 120/80.\nHigh yield: MAP = CO x TPR. CO = HR x SV.",
+   "l": [
+    "W5 9.3"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "A home care nurse draws blood from Mrs. Vu, 70, at 9 am. The tubes sit in a hot car until 4 pm before reaching the lab. Several results come back far outside her usual values. Which category of error best explains this?",
+   "o": [
+    "Analytical random error",
+    "A sample mix-up by the lab",
+    "Pre-analytical error",
+    "Post-analytical transcription error",
+    "An inappropriate reference interval"
+   ],
+   "a": 2,
+   "e": "C is correct. Extreme temperature or storage conditions and delayed transportation happen before analysis, so they are pre-analytical errors.\nA: Random error happens during the analysis itself.\nB: A sample mix-up by the lab is an analytical explanation, and nothing suggests it here.\nD: Transcription errors happen after analysis, when results are reported.\nE: An inappropriate reference interval is a post-analytical problem with interpretation, not the sample.\nHigh yield: Your Week 5 quiz tested another pre-analytical error: K-EDTA contamination from the wrong tube.",
+   "l": [
+    "W5 7.3"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "A lab compares two screening tests using receiver operating characteristic (ROC) curves. Which statement is correct?",
+   "o": [
+    "Pretest probability has no effect on the PPV",
+    "More area under the curve means a better test",
+    "The y-axis plots the false positive rate",
+    "The x-axis plots specificity on its own",
+    "The x-axis plots the sensitivity of the test"
+   ],
+   "a": 1,
+   "e": "B is correct. An ROC curve plots the false positive rate (1 minus specificity) on the x-axis against the true positive rate (sensitivity) on the y-axis. More area under the curve means a more effective test.\nA: A higher pretest probability gives a higher PPV.\nC: The false positive rate sits on the x-axis.\nD: The x-axis is 1 minus specificity, not specificity.\nE: Sensitivity sits on the y-axis.\nHigh yield: Prevalence changes predictive values, not sensitivity or specificity.",
+   "l": [
+    "W5 7.1"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "At his periodic health encounter, Raj, 38, says he smokes a pack a day. You have asked about his tobacco use and advised him to quit. Which step comes next?",
+   "o": [
+    "Assist with the quit attempt",
+    "Ask again about his tobacco use",
+    "Assess his readiness to quit",
+    "Arrange follow-up care"
+   ],
+   "a": 2,
+   "e": "C is correct. The steps for smoking are ask, advise, assess readiness, assist with the quit attempt, then arrange follow-up.\nA: Assisting follows the readiness assessment.\nB: Asking is already done.\nD: Arranging follow-up is the last step.\nHigh yield: Smoking is screened for everyone at every PHE.",
+   "l": [
+    "W5 11.2",
+    "W5 1.2"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "A cancer screening program reports longer survival in screened patients. Analysts find the screened group holds a much larger share of slow-growing, symptom-free tumours, while fast-growing tumours mostly appear with symptoms between screens. Which explanation fits best?",
+   "o": [
+    "Length bias",
+    "A true drop in disease-specific mortality",
+    "Lead-time bias",
+    "Publication bias"
+   ],
+   "a": 0,
+   "e": "A is correct. Length bias overestimates survival in screened groups because screening disproportionately finds slowly progressing, asymptomatic cases, while fast cases appear with symptoms.\nB: A true benefit is shown by lower disease-specific mortality, which the stem does not show.\nC: Lead-time bias comes from earlier diagnosis of the same tumours, not a different tumour mix.\nD: Publication bias affects which studies are published.\nHigh yield: Judge screening benefit by disease-specific mortality.",
+   "l": [
+    "W5 6.4"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Greg, 45, completes the AUDIT at his periodic health encounter and scores 18. Which interpretation and advice match his score?",
+   "o": [
+    "High risk, cut down or stop drinking",
+    "Medium risk, try to cut down or stop drinking",
+    "Addiction likely, medication and counselling",
+    "High suspicion for alcoholism on CAGE scoring",
+    "Low risk, continue drinking in moderation"
+   ],
+   "a": 0,
+   "e": "A is correct. An AUDIT of 16-19 is high risk, with advice to cut down or stop drinking completely.\nB: 8-15 is medium risk.\nC: 20 or more means addiction is likely.\nD: CAGE is a separate 4-question tool. A CAGE score of 2-3 gives high suspicion.\nE: 0-7 is low risk.\nHigh yield: Your Week 5 quiz used CAGE for alcohol, PHQ-9 for depression and DAST-10 for drugs.",
+   "l": [
+    "W5 3.2"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "After a large meal, Omar, 30, relaxes on the couch. His parasympathetic activity rises, and his arterioles dilate. What is the mechanism of the vasodilation?",
+   "o": [
+    "ANP released from stretched atrial muscle cells",
+    "Epinephrine acting on alpha receptors in vessels",
+    "Withdrawal of tonic sympathetic activity to arterioles",
+    "Increased ADH secretion acting on the vessels",
+    "Parasympathetic fibres releasing transmitter onto arterioles"
+   ],
+   "a": 2,
+   "e": "C is correct. The PNS does not innervate blood vessels. When the PNS is activated the SNS is shut off, and with less sympathetic tone the vessels dilate.\nA: ANP dilates vessels when atria stretch, but it is not the mechanism here.\nB: Alpha receptors cause vasoconstriction.\nD: ADH promotes water reabsorption and is grouped with vasoconstrictors.\nE: Parasympathetic fibres do not reach blood vessels.\nHigh yield: The SNS changes TPR in both directions by changing tonic activity to arterioles.",
+   "l": [
+    "W5 9.2",
+    "W5 9.7"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Two patients show cellular adaptation. Patient 1 has long-standing hypertension, and his cardiac muscle cells have enlarged. Patient 2 has worn a leg cast for 6 weeks, and her thigh muscle has shrunk. Which adaptation fits each, in order?",
+   "o": [
+    "Hypertrophy, then atrophy",
+    "Hyperplasia, then atrophy",
+    "Hyperplasia, then hypertrophy",
+    "Hypertrophy, then metaplasia"
+   ],
+   "a": 0,
+   "e": "A is correct. Cardiac myocytes are permanent cells, so they adapt by getting larger (hypertrophy), not by dividing. Disuse shrinks cells (atrophy).\nB: Permanent cells cannot use hyperplasia.\nC: Permanent cells cannot use hyperplasia, and disuse causes atrophy.\nD: Metaplasia is a change of cell type, not shrinkage.\nHigh yield: Atrophy causes: low blood supply, disuse, low hormones, poor nutrition, pressure, denervation.",
+   "l": [
+    "W5 9.9",
+    "W5 9.8"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "A seminar reviews how the poorest fifth of Canadians fare in health care compared with the richest fifth. Which of the following statements is FALSE?",
+   "o": [
+    "The poorest fifth make more specialist visits",
+    "The poorest fifth have more avoidable deaths",
+    "The poorest fifth face longer wait times",
+    "The poorest fifth have more emergency hospitalizations",
+    "The poorest fifth use cancer screening less often"
+   ],
+   "a": 0,
+   "e": "A is correct. The poorest fifth have fewer specialist visits, not more.\nB: True. They have more avoidable deaths.\nC: True. They face longer wait times.\nD: True. They have higher rates of emergency hospitalizations.\nE: True. They are less likely to use cancer screening services.\nHigh yield: Life expectancy in full health is about 11 years shorter in the poorest fifth.",
+   "l": [
+    "W5 4.1",
+    "W5 4.2"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Clinical Scenario: Part 1 of 2\n\nJoan, 64, noticed a breast lump 2 months ago. On examination there is a firm, fixed, painless mass. The overlying skin is thickened and dimpled like orange peel. How should this presentation be categorized in your breast mass differential?",
+   "o": [
+    "Life-threatening: metastasis compressing the cord",
+    "Benign neoplasm: a fibroadenoma",
+    "Urgent: cancer involving the skin or lymphatics",
+    "Cyst: fibrocystic change",
+    "Infection: a breast abscess"
+   ],
+   "a": 2,
+   "e": "C is correct. Firm, fixed and painless is the typical description of a carcinoma. Skin changes like orange peel (peau d'orange) put it in the urgent category: cancer in skin or lymphatics, inflammatory cancer.\nA: Life-threatening presentations involve metastases compressing the spinal cord or major vessels.\nB: A fibroadenoma is mobile and well circumscribed.\nD: Fibrocystic change gives lumpy breasts that vary with the menstrual cycle.\nE: An abscess is a painful collection of pus with acute inflammation.\nHigh yield: Your Week 6 quiz: a carcinoma mass is firm, fixed and painless.",
+   "l": [
+    "W6 2.4",
+    "W6 1.6"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Clinical Scenario: Part 2 of 2\n\nJoan's core needle biopsy confirms invasive carcinoma. Which imaging is used next to stage her cancer for distant spread?",
+   "o": [
+    "Repeat diagnostic mammogram",
+    "Breast MRI alone",
+    "Breast tomosynthesis",
+    "Targeted breast ultrasound",
+    "Full body CT"
+   ],
+   "a": 4,
+   "e": "E is correct. Full body CT is performed after biopsy for cancer staging. It is not used in the workup or screening.\nA: Mammography is used for screening and diagnosis.\nB: Breast MRI stages local disease, not distant spread.\nC: Tomosynthesis creates 3D breast images for screening and diagnosis.\nD: Ultrasound is the first test for a palpable lump, not staging.\nHigh yield: Staging guides treatment and estimates prognosis.",
+   "l": [
+    "W6 3.2",
+    "W6 6.4"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Dr. Chan reviews the pathology report for a resected colon cancer. Which description matches the synoptic report?",
+   "o": [
+    "A concise checklist of key findings that guides treatment",
+    "The gross description with the ink and section codes",
+    "The ACMG classification of any genetic variant found",
+    "The clinical history copied from the requisition",
+    "An overall summary listing only the final diagnosis"
+   ],
+   "a": 0,
+   "e": "A is correct. The synoptic report is a concise cancer summary and checklist of the most important findings. It covers the specimen, tumour, margins, lymph nodes and stage, predicts outcomes and guides treatment and testing.\nB: The gross description has the ink and section codes.\nC: ACMG classes appear in the cancer genetic report.\nD: Clinical information is a separate section.\nE: The overall summary is the Diagnosis section.\nHigh yield: Biomarker reports (ER, PR, Her2) sit within the microscopic description.",
+   "l": [
+    "W6 4.4",
+    "W6 4.5"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Three tumours are examined. Tumour 1 arises from the lining epithelium of the colon. Tumour 2 arises from muscle in the thigh. Tumour 3 arises from immune cells in a lymph node. Which cancer type fits each, in order?",
+   "o": [
+    "Carcinoma, sarcoma, melanoma",
+    "Carcinoma, sarcoma, lymphoma",
+    "Sarcoma, carcinoma, lymphoma",
+    "Carcinoma, lymphoma, sarcoma"
+   ],
+   "a": 1,
+   "e": "B is correct. Carcinomas come from epithelial cells. Sarcomas come from connective tissue, nerves and muscle. Lymphomas and leukemias come from immune and blood cells.\nA: Melanoma comes from melanocytes, not immune cells.\nC: This swaps carcinoma and sarcoma.\nD: This swaps sarcoma and lymphoma.\nHigh yield: Melanoma: melanocytic cells.",
+   "l": [
+    "W6 4.1",
+    "W6 7.2"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Mr. Torres, 41, has longstanding HIV with a low CD4 count. He develops purple skin lesions, and biopsy confirms Kaposi sarcoma. Which virus is linked to this cancer?",
+   "o": [
+    "Human herpesvirus 8",
+    "Human T-lymphotropic virus 1",
+    "Human papillomavirus",
+    "Epstein-Barr virus",
+    "Hepatitis B virus"
+   ],
+   "a": 0,
+   "e": "A is correct. HHV8 (Kaposi sarcoma-associated herpesvirus) causes Kaposi sarcoma, typically in people with HIV.\nB: HTLV-1 causes adult T-cell lymphoma.\nC: HPV causes cervical, anal and oropharyngeal cancers.\nD: EBV causes nasopharyngeal cancer, Burkitt lymphoma, Hodgkin lymphoma and post-transplant lymphoproliferative disorder.\nE: HBV causes hepatocellular carcinoma.\nHigh yield: HIV-related immunosuppression also raises the risk of non-Hodgkin lymphoma.",
+   "l": [
+    "W6 7.7"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Sandra, 55, feels well and has no bowel symptoms. Her father was diagnosed with colorectal cancer at 60. She asks about the colorectal screening program. Which statement is correct?",
+   "o": [
+    "Flexible sigmoidoscopy every 2 years applies",
+    "FIT every 2 years applies, as for any adult 50-74",
+    "She is outside the average-risk FIT program",
+    "FIT every year applies until age 74",
+    "No screening, since she has no symptoms"
+   ],
+   "a": 2,
+   "e": "C is correct. A first-degree relative with colorectal cancer places her outside the average-risk FIT program for adults 50-74.\nA: Flexible sigmoidoscopy is every 10 years.\nB: FIT every 2 years is for asymptomatic adults not at high risk.\nD: FIT is every 2 years, not yearly.\nE: Screening targets people without symptoms.\nHigh yield: Also out: previous CRC or adenomatous polyps, IBD, symptoms such as anemia or bowel changes.",
+   "l": [
+    "W6 7.11"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "A family physician reviews four family histories for possible hereditary cancer. Which history LEAST suggests a hereditary cancer syndrome?",
+   "o": [
+    "A sister with breast cancer diagnosed at 38",
+    "One aunt with breast cancer diagnosed at 72",
+    "Ashkenazi Jewish ancestry with family breast cancer",
+    "A mother with ovarian cancer diagnosed at 52",
+    "A cousin with bilateral breast cancer"
+   ],
+   "a": 1,
+   "e": "B is correct. A single late-onset breast cancer in one relative has none of the red flags. Most cancers are sporadic (70-85%).\nA: Breast cancer under 50 is early onset.\nC: BRCA1/2 variants are more common in the Ashkenazi Jewish population.\nD: Ovarian cancer under 60 is early onset.\nE: Bilateral breast cancer counts as multiple primary cancers.\nHigh yield: Red flags: early onset, multiple primaries, many relatives on the same side, overall pattern, ethnic background.",
+   "l": [
+    "W6 6.3"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Two cancer drugs are described. Drug 1 blocks PD-L1 so that T-cells resume killing tumour cells. Drug 2 is a tyrosine kinase inhibitor aimed at the BCR-ABL fusion in CML. Which category fits each, in order?",
+   "o": [
+    "Cytotoxic chemotherapy, then endocrine therapy",
+    "Targeted therapy, then immunotherapy",
+    "Cancer vaccine, then cytotoxic chemotherapy",
+    "Immunotherapy, then targeted therapy"
+   ],
+   "a": 3,
+   "e": "D is correct. Immune checkpoint inhibitors that block PD-L1 are immunotherapy. Imatinib, a tyrosine kinase inhibitor for CML, is targeted therapy.\nA: Neither drug is cytotoxic or endocrine.\nB: This reverses the two.\nC: Neither drug is a vaccine or cytotoxic.\nHigh yield: CML: the BCR-ABL1 fusion turns the ABL proto-oncogene into an oncogene.",
+   "l": [
+    "W6 6.1"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "You have set up a private room, asked Mr. Haddad what he understands, and he has asked you to tell him everything. You now give a warning shot, avoid medical jargon and share the biopsy result in small chunks. Which SPIKES step are you performing?",
+   "o": [
+    "Strategy and summary",
+    "Empathy",
+    "Perception",
+    "Invitation",
+    "Knowledge"
+   ],
+   "a": 4,
+   "e": "E is correct. Knowledge means giving a warning, avoiding jargon, using the patient's language and sharing information in small chunks.\nA: Strategy and summary comes last, with concerns and a clear plan.\nB: Empathy responds to emotions as they arise.\nC: Perception was asking what he understands.\nD: Invitation was his request to hear everything.\nHigh yield: Your Week 6 quiz asked for the full SPIKES order.",
+   "l": [
+    "W6 5.5"
+   ]
+  },
+  {
+   "c": "Week 7",
+   "p": "Mr. Stein, 70, a retired engineer, has noticed subtle trouble remembering names over the past year. He still manages all his own affairs. Which screening test is best suited to pick up mild cognitive impairment in him?",
+   "o": [
+    "Mini-Cog",
+    "GDS-15",
+    "4-AT",
+    "MoCA",
+    "MMSE"
+   ],
+   "a": 3,
+   "e": "D is correct. The MoCA tests executive function and language and is better at detecting MCI and mild dementia.\nA: The Mini-Cog is a quick screen with recall and a clock draw.\nB: The GDS-15 screens for depression.\nC: The 4-AT screens for delirium.\nE: The MMSE is not sensitive for mild dementia or MCI.\nHigh yield: MoCA under 26 suggests cognitive impairment. MMSE under 24.",
+   "l": [
+    "W7 4.1"
+   ]
+  },
+  {
+   "c": "Week 7",
+   "p": "Two older adults are assessed for cognitive change. Patient 1 has declined slowly over 2 years, with good and bad days, normal alertness and normal attention. Patient 2 became confused over one day, drifts in and out of alertness and cannot list the months backwards. Which diagnosis fits each, in order?",
+   "o": [
+    "Depression, then delirium",
+    "Delirium, then dementia",
+    "Dementia, then delirium",
+    "Dementia, then depression"
+   ],
+   "a": 2,
+   "e": "C is correct. Dementia has an insidious onset over months to years, with good and bad days and normal consciousness until late stages. Delirium is acute, with fluctuating consciousness and poor attention.\nA: Depression has onset over weeks to months, and Patient 1 fits dementia.\nB: This reverses the two.\nD: Patient 2's acute fluctuating course is delirium.\nHigh yield: Delirium: reversible. Dementia: irreversible.",
+   "l": [
+    "W7 8.1"
+   ]
+  },
+  {
+   "c": "Week 7",
+   "p": "Ravi, 48, asks how to lower his future risk of dementia. Which of the following is a mid-life risk factor for dementia?",
+   "o": [
+    "Air pollution",
+    "Hearing loss",
+    "Social isolation",
+    "Less education",
+    "Physical inactivity"
+   ],
+   "a": 1,
+   "e": "B is correct. Mid-life risk factors are hearing loss, traumatic brain injury, hypertension, alcohol over 21 units a week and obesity.\nA: Air pollution is a later-life factor.\nC: Social isolation is a later-life factor.\nD: Less education is an early-life factor.\nE: Physical inactivity is a later-life factor.\nHigh yield: About 40% of dementia risk is potentially modifiable.",
+   "l": [
+    "W7 7.2"
+   ]
+  },
+  {
+   "c": "Week 7",
+   "p": "During a geriatric assessment, you ask Mrs. O'Neill, 87, what is most important to her. She says staying in her own home matters more to her than living longer. Which of the Geriatric 5Ms are you addressing?",
+   "o": [
+    "Multi-complexity",
+    "Mobility",
+    "Medications",
+    "Matters most",
+    "Mind"
+   ],
+   "a": 3,
+   "e": "D is correct. Matters most asks what the patient values and prioritizes.\nA: Multi-complexity addresses control and impact of medical conditions.\nB: Mobility addresses function and movement at home.\nC: Medications addresses the medication history.\nE: Mind addresses memory concerns.\nHigh yield: Patient-centred goals guide every later decision.",
+   "l": [
+    "W7 2.1"
+   ]
+  },
+  {
+   "c": "Week 7",
+   "p": "Mrs. Ferreira, 66, is healthy and up to date on routine screening. Which set of preventive measures is due at her periodic health exam?",
+   "o": [
+    "Bone density test only, plus tetanus every 5 years",
+    "Pneumovax only, as Shingrix starts at age 70",
+    "Shingrix two doses and a screening chest X-ray",
+    "Shingrix two doses, Pneumovax, bone density",
+    "Shingrix one dose, plus a screening thyroid test"
+   ],
+   "a": 3,
+   "e": "D is correct. Shingrix is 2 injections 2-6 months apart for adults 65-70. Pneumovax is for adults 65 and over. Bone mineral density is for women 65 and over.\nA: Tetanus is every 10 years.\nB: Shingrix starts at 65.\nC: CXR is not ordered for routine screening.\nE: Shingrix needs 2 doses, and thyroid screening is not recommended without symptoms.\nHigh yield: Influenza vaccine yearly. Tetanus every 10 years.",
+   "l": [
+    "W7 2.3",
+    "W7 2.6"
+   ]
+  },
+  {
+   "c": "Week 7",
+   "p": "Mr. Kaur, 59, has 2 weeks of arm weakness confined to the muscles of a single myotome. Those muscles are wasted, the matching tendon reflex is reduced and the plantar response is flexor. Where is the lesion?",
+   "o": [
+    "Neuromuscular junction",
+    "Spinal root",
+    "Thoracic spinal cord",
+    "Brainstem",
+    "Muscle"
+   ],
+   "a": 1,
+   "e": "B is correct. LMN signs limited to a single myotome match the distribution of one root.\nA: The NMJ affects eyes and swallowing.\nC: A cord lesion gives UMN signs below it.\nD: The brainstem is a UMN site with cranial nerve findings.\nE: Muscle disease gives generalized proximal weakness.\nHigh yield: LMN patterns: single myotome (root), single nerve, multiple nerves.",
+   "l": [
+    "W7 6.4",
+    "W7 6.3"
+   ]
+  },
+  {
+   "c": "Week 7",
+   "p": "Which of the following age-related changes in volume regulation increase an older adult's risk of dehydration?\ni) Decreased thirst drive\nii) Decreased ability to concentrate urine\niii) Increased sensitivity to ADH\niv) Change in the body water to fat ratio",
+   "o": [
+    "i) and ii) only",
+    "i), ii) and iv) only",
+    "ii) and iii) only",
+    "i), iii) and iv) only",
+    "All of the above"
+   ],
+   "a": 1,
+   "e": "B is correct. Aging brings decreased thirst drive, decreased sensitivity to ADH, a change in the body water to fat ratio and decreased ability to concentrate urine.\nA: Statement iv is also true.\nC: Statement iii is false and i is true.\nD: Statement iii is false and ii is true.\nE: Statement iii is false. ADH sensitivity falls with age.\nHigh yield: Your Week 7 quiz tested the related change: decreased ability to thermoregulate.",
+   "l": [
+    "W7 1.6"
+   ]
+  },
+  {
+   "c": "Week 7",
+   "p": "After a stroke, Mr. Dumont, 72, has paralysis of his right arm. He is no longer able to dress himself, and his employer refuses to let him return as a cashier because of his disability. Using the ICF framework, how do you classify his trouble dressing and the employer's refusal, in order?",
+   "o": [
+    "Participation restriction, then activity limitation",
+    "Impairment, then an activity limitation of function",
+    "Impairment, then a participation restriction",
+    "Activity limitation, then participation restriction"
+   ],
+   "a": 3,
+   "e": "D is correct. Activity limitations are difficulties executing activities such as walking or eating. Participation restrictions are problems with involvement in life, such as discrimination in employment. The paralysis itself is the impairment.\nA: This reverses the two.\nB: Trouble dressing is an activity limitation, not an impairment.\nC: The impairment is the paralysis, not the trouble dressing.\nHigh yield: Disability is the interaction between a health condition and personal and environmental factors.",
+   "l": [
+    "W7 9.3"
+   ]
+  },
+  {
+   "c": "Week 7",
+   "p": "Mr. Hughes, 79, denies feeling sad. His daughter reports he sleeps poorly, eats much less and has stopped his weekly card game. His PHQ-2 score is 4. What is the most appropriate interpretation and next step?",
+   "o": [
+    "Positive screen, confirm with a clinical exam",
+    "Positive screen, which confirms major depression",
+    "Negative screen, since he denies sadness",
+    "Diagnose depression and start an SSRI today",
+    "Screen for delirium with the 4-AT instead"
+   ],
+   "a": 0,
+   "e": "A is correct. A PHQ-2 at or above the cut-off of 3 is a positive screen. Older adults often deny sadness and present with appetite and sleep changes. Screening tools alone do not diagnose depression.\nB: Screening tools alone are not adequate to diagnose depression, as in your Week 7 quiz.\nC: Lack of sadness is a typical presentation in older adults.\nD: A screen needs a clinical assessment before diagnosis.\nE: Nothing suggests an acute fluctuating change.\nHigh yield: PHQ-9 cut-off is 10.",
+   "l": [
+    "W7 5.3",
+    "W7 5.4"
+   ]
+  },
+  {
+   "c": "Week 8",
+   "p": "Mr. Patel needs a drug with a long half-life to reach a therapeutic plasma concentration quickly. Waiting 3-5 half-lives on the maintenance dose would take too long. What is the best approach?",
+   "o": [
+    "Double the maintenance dose each day for a week",
+    "Give a loading dose above the maintenance dose",
+    "Give the same dose more often with no loading dose",
+    "Switch to a drug with an even longer half-life",
+    "Keep the maintenance dose and wait 3-5 half-lives"
+   ],
+   "a": 1,
+   "e": "B is correct. A loading dose is larger than the maintenance dose and reaches therapeutic concentrations more rapidly. The maintenance dose then keeps levels in range.\nA: Doubling the daily dose raises the steady state and risks toxicity.\nC: Time to steady state depends on half-life, not dose frequency alone.\nD: A longer half-life takes even longer to reach steady state.\nE: Waiting is what the scenario needs to avoid.\nHigh yield: Maintenance dose keeps the peak below toxic and the trough above effective.",
+   "l": [
+    "W8 O29",
+    "W8 O32"
+   ]
+  },
+  {
+   "c": "Week 8",
+   "p": "A drug needs an oral dose ten times larger than the IV dose to give the same plasma level. Which explanation best accounts for the difference?",
+   "o": [
+    "Higher plasma protein binding when oral",
+    "Faster renal clearance after IV dosing",
+    "Better blood brain barrier entry by IV",
+    "Enterohepatic recycling of the IV dose",
+    "Poor absorption and first-pass metabolism"
+   ],
+   "a": 4,
+   "e": "E is correct. Bioavailability is the proportion of the parent drug that reaches the systemic circulation unaltered. Oral drugs face limited absorption and first-pass metabolism, while IV drugs need no absorption.\nA: Protein binding affects distribution, not how much drug enters the circulation.\nB: Clearance does not depend on the route of administration.\nC: BBB entry affects distribution to the brain, not plasma level.\nD: Recycling would raise, not lower, the IV level.\nHigh yield: Your Week 8 quiz: IV bioavailability is complete, but IV costs more and carries infection risk.",
+   "l": [
+    "W8 O7",
+    "W8 O9"
+   ]
+  },
+  {
+   "c": "Week 8",
+   "p": "Mrs. Rossi, 84, takes diazepam at the same dose she used at 50. She is now drowsy most of the day. Which change with age best explains the longer half-life of diazepam?",
+   "o": [
+    "Faster gastric emptying with higher absorption",
+    "Lower clearance with a larger distribution volume",
+    "Increased clearance with decreased volume of distribution",
+    "Increased liver mass with faster metabolism",
+    "Increased renal blood flow with faster elimination"
+   ],
+   "a": 1,
+   "e": "B is correct. In older adults, diazepam half-life increases because clearance falls and volume of distribution rises, with more body fat and less albumin.\nA: Gastric emptying slows with age.\nC: Higher clearance would shorten half-life.\nD: Liver function and blood flow fall with age.\nE: Renal blood flow and GFR fall with age.\nHigh yield: Older adults also have increased sensitivity to benzodiazepine sedation.",
+   "l": [
+    "W8 O37",
+    "W8 O33"
+   ]
+  },
+  {
+   "c": "Week 8",
+   "p": "A pharmacology tutor reviews drug actions at receptors. Which statement is correct?",
+   "o": [
+    "A partial agonist produces complete activation of the receptor",
+    "A positive allosteric modulator prevents agonist binding",
+    "A non-competitive antagonist always binds reversibly",
+    "A competitive antagonist has intrinsic activity of its own",
+    "An inverse agonist lowers the number of active receptors"
+   ],
+   "a": 4,
+   "e": "E is correct. An inverse agonist decreases the number of activated receptors.\nA: A partial agonist produces less than the full effect.\nB: A positive allosteric modulator enhances agonist binding. A negative one prevents it.\nC: Non-competitive antagonists include irreversible binders.\nD: Antagonists have no intrinsic activity.\nHigh yield: Full agonists produce complete activation of the receptor.",
+   "l": [
+    "W8 O4"
+   ]
+  },
+  {
+   "c": "Week 8",
+   "p": "A drug trial plots the percentage of patients who show a response against the log of the dose. Which statement about this type of curve is correct?",
+   "o": [
+    "A quantal curve that gives a population ED50",
+    "The LD50 on it measures the drug's potency",
+    "Doubling the dose on it doubles the effect",
+    "Its ED50 equals the drug's maximal efficacy",
+    "It is a graded curve that describes one patient"
+   ],
+   "a": 0,
+   "e": "A is correct. A quantal dose-response curve shows an all-or-none effect in a population of patients and gives the ED50, TD50 and LD50.\nB: Potency is the EC50 or ED50. LD50 is the lethal dose, as your Week 8 quiz tested.\nC: Doubling the dose does not double the effect.\nD: Efficacy is the maximal response (Emax).\nE: A graded curve describes one patient.\nHigh yield: Lower EC50 means a more potent drug.",
+   "l": [
+    "W8 O5",
+    "W8 O6"
+   ]
+  },
+  {
+   "c": "Week 8",
+   "p": "Mr. Ahmed, 58, takes theophylline and has smoked for 30 years. He quits smoking abruptly. What is expected to happen to his theophylline level?",
+   "o": [
+    "It stays the same, as smoke affects only CYP3A4",
+    "It rises because cigarette smoke inhibits CYP1A2",
+    "It falls as his renal clearance increases",
+    "It rises as CYP1A2 induction wears off",
+    "It falls as smoking cessation inhibits CYP1A2"
+   ],
+   "a": 3,
+   "e": "D is correct. Theophylline is a CYP1A2 substrate. Cigarette smoke induces CYP1A2, and induction lowers drug levels. When induction stops, metabolism slows and levels rise.\nA: Cigarette smoke is a CYP1A2 inducer.\nB: Smoke is an inducer, not an inhibitor.\nC: Theophylline here is cleared by CYP1A2 metabolism.\nE: Quitting removes induction rather than inhibiting the enzyme.\nHigh yield: Enzyme induction lowers drug levels. Inhibition raises them. Reverse both for prodrugs.",
+   "l": [
+    "W8 O34",
+    "W8 O39"
+   ]
+  },
+  {
+   "c": "Week 8",
+   "p": "An infant absorbs more of an oral penicillin dose than an adult given the same dose per kilogram. Which difference best explains this?",
+   "o": [
+    "Higher stomach acid, which speeds absorption",
+    "Higher GFR at birth that recycles the drug",
+    "Larger skin surface area per kilogram of weight",
+    "Mature CYP3A4 that activates the penicillin",
+    "Lower stomach acid degrades less penicillin"
+   ],
+   "a": 4,
+   "e": "E is correct. Infants produce less stomach acid, so less penicillin is degraded by acid and more is absorbed.\nA: Infants have lower, not higher, stomach acid.\nB: GFR is low at birth.\nC: Skin surface area affects topical drugs, not oral absorption.\nD: CYP activity is low at birth.\nHigh yield: Infants also have higher gut motility and immature enzyme and transporter function.",
+   "l": [
+    "W8 O37"
+   ]
+  },
+  {
+   "c": "Week 8",
+   "p": "Two drug interactions are described. In Case 1, a patient on an MAOI takes an over-the-counter cold medicine and develops severe hypertension. In Case 2, ketoconazole is absorbed poorly because another drug changes gastric pH. Which type of interaction is each, in order?",
+   "o": [
+    "Pharmacodynamic in both of the two cases",
+    "Pharmacodynamic, then pharmacokinetic",
+    "Pharmacokinetic, then pharmacodynamic",
+    "Pharmacokinetic in both of the two cases"
+   ],
+   "a": 1,
+   "e": "B is correct. An MAOI with cold medicine causes hypertension through combined drug effects, a pharmacodynamic interaction. A change in gastric pH alters bioavailability, a pharmacokinetic interaction.\nA: Case 2 alters absorption, which is pharmacokinetic.\nC: This reverses the two.\nD: Case 1 involves combined effects, not altered drug handling.\nHigh yield: Altered elimination is the most common cause of adverse drug interactions.",
+   "l": [
+    "W8 O46",
+    "W8 O45"
+   ]
+  },
+  {
+   "c": "Week 8",
+   "p": "Mrs. Leung takes a narrow therapeutic window drug cleared by liver metabolism, and her levels have been stable for a year. She develops influenza and, within days, shows signs of toxicity at her usual dose. Which explanation fits best?",
+   "o": [
+    "Poor adherence during her illness",
+    "Enzyme induction by the virus raising clearance",
+    "Type B idiosyncratic reaction to the drug",
+    "Drug-disease interaction, slower metabolism",
+    "Drug-food interaction from a change in diet"
+   ],
+   "a": 3,
+   "e": "D is correct. Viral infections such as influenza alter drug metabolism, typically by inhibition, which raises levels and leads to toxicity.\nA: Missed doses would lower levels.\nB: Induction would lower levels, not cause toxicity.\nC: The effect is predictable from slowed metabolism.\nE: Nothing in the stem suggests a food change.\nHigh yield: Narrow window drugs are highest risk for interactions.",
+   "l": [
+    "W8 O45",
+    "W8 O38"
+   ]
+  },
+  {
+   "c": "Week 8",
+   "p": "Mr. Diaz cannot afford his brand-name blood pressure pill. You review his insurance coverage and switch him to the generic version. Which STEPS factor are you addressing?",
+   "o": [
+    "Tolerability",
+    "Effectiveness",
+    "Price",
+    "Simplicity",
+    "Safety"
+   ],
+   "a": 2,
+   "e": "C is correct. Price means clarifying medical insurance coverage and choosing affordable medications, such as generics over brand names.\nA: Tolerability is the patient's tolerance and quality of life.\nB: Effectiveness is the evidence that a drug helps the patient live longer.\nD: Simplicity makes the regimen as simple as possible, such as once a day.\nE: Safety covers ADRs, toxicity and drug monitoring.\nHigh yield: Your Week 8 quiz tested Simplicity: switching to a once-daily pill.",
+   "l": [
+    "W8 O58",
+    "W8 O20"
+   ]
+  },
+  {
+   "c": "Week 8",
+   "p": "Mrs. Chen, 82, has advanced heart failure. You ask what she hopes for, and together you agree to focus on symptom relief rather than prolonging life. Which WHO rational prescribing step is this?",
+   "o": [
+    "Step 4, start the treatment",
+    "Step 1, define the patient's problem",
+    "Step 3a, choose standard treatment",
+    "Step 6, monitor or stop treatment",
+    "Step 2, specify the objective"
+   ],
+   "a": 4,
+   "e": "E is correct. Step 2 is patient-centred: ask about goals of care and choose curative or palliative aims.\nA: Step 4 checks the patient understands and starts treatment.\nB: Step 1 uses the diagnostic pathway to define the problem.\nC: Step 3a weighs efficacy and safety of a standard treatment.\nD: Step 6 is follow-up and stopping treatment.\nHigh yield: Palliative care focuses on managing symptoms.",
+   "l": [
+    "W8 O12",
+    "W8 O57"
+   ]
+  },
+  {
+   "c": "Week 8",
+   "p": "A newly approved cancer drug moves toward public coverage. Body 1 sets the maximum price for this patented drug. Body 2 later negotiates the actual price with the company for federal, provincial and territorial plans. Which bodies are these, in order?",
+   "o": [
+    "CADTH, then pCPA",
+    "pCPA, then PMPRB",
+    "PMPRB, then pCPA",
+    "Health Canada, then CADTH"
+   ],
+   "a": 2,
+   "e": "C is correct. The Patented Medicine Prices Review Board sets price ceilings. The pan-Canadian Pharmaceutical Alliance negotiates the price with the company.\nA: CADTH evaluates value for money, not price ceilings.\nB: This reverses the two.\nD: Health Canada approves drugs on quality, safety and efficacy.\nHigh yield: Drug plans then set formularies and reimbursement criteria.",
+   "l": [
+    "W8 O21"
+   ]
+  }
+ ],
+ "objectives": {
+  "W5 1.2": "Describe the key components of a comprehensive well adult screening history, including a mental health screen, and physical examination",
+  "W5 11.2": "Outline strategies to promote healthy behaviours of patients including health promotion, disease prevention and health surveillance",
+  "W5 3.2": "Build an approach to evaluating patients for depression, anxiety and alcohol and substance use using published mental health screening templates",
+  "W5 4.1": "Understand the concepts of inequality and inequity, and the relationship between social determinants and lifetime health experiences",
+  "W5 4.2": "Recognize barriers to healthy behaviors",
+  "W5 6.4": "Outline the principles of a screening test",
+  "W5 7.1": "Define screening lab test performance parameters (e.g. accuracy, precision, predictive value, sensitivity, specificity)",
+  "W5 7.3": "Explain the impact of pre-analytical, analytical and post-analytical factors affecting the integrity of lab test results, including collection and transport and the proper pre- analytical process to reduce errors",
+  "W5 9.2": "Explain the basic mechanisms of neuronal and endocrine regulation of cardiovascular and renal systems",
+  "W5 9.3": "Explain the basic mechanisms of body fluid & blood pressure regulation",
+  "W5 9.7": "Describe the general organization and pathways of the somatic and autonomic nervous system",
+  "W5 9.8": "Describe the different mechanisms of short- and long-term cellular responses to injury, potential end-organ effects and mechanisms of repair",
+  "W5 9.9": "Identify the appropriate adaptive response to cellular stress / injury",
+  "W6 1.6": "List common urgent presentations of cancer",
+  "W6 2.4": "Identify clues in history & physical examination to narrow differential diagnosis of a mass in general and a breast mass specifically",
+  "W6 3.2": "Select appropriate investigations from a diagnostic toolkit using a Choosing Wisely approach",
+  "W6 4.1": "Explain common pathology terminology",
+  "W6 4.4": "Explain meaning of a pathology report",
+  "W6 4.5": "Interpret a cancer synoptic report and cancer genetics test report",
+  "W6 5.5": "Use a framework for breaking bad news and disclosing a diagnosis of cancer",
+  "W6 6.1": "Describe the basic categories of cancer therapy (chemotherapy, radiation and hormonal therapy)",
+  "W6 6.3": "Explain benefits of referral for cancer genetic counseling, including risk assessment, informed consent for genetic testing, and screening of additional family members",
+  "W6 6.4": "Explain how cancer staging and molecular pathology can be used to inform prognosis and treatment",
+  "W6 7.11": "Use knowledge of cancer screening programs in Canada to prepare cancer screening plans for adults with diverse risk profiles",
+  "W6 7.2": "Describe the macroscopic, histologic, genetic and molecular features of cancer",
+  "W6 7.7": "Match important viral/microbial carcinogens with their corresponding cancers",
+  "W7 1.6": "Summarize the physiological and anatomical changes that occur in humans due to aging",
+  "W7 2.1": "Outline the components of a periodic health exam relevant to the older adult",
+  "W7 2.3": "Propose appropriate screening investigations",
+  "W7 2.6": "Explain evidence-based disease prevention strategies in older adults",
+  "W7 4.1": "Identify which cognitive screening test to apply in the investigation of subjective cognitive changes",
+  "W7 5.3": "Select an appropriate standardized tool to screen for late-life depression",
+  "W7 5.4": "Identify the unique features of how late life depression presents compared to younger adults",
+  "W7 6.3": "Distinguish between upper motor neuron vs lower motor neuron signs",
+  "W7 6.4": "Develop an approach to localization of lesions in the nervous system",
+  "W7 7.2": "Evaluate risk factors for cognitive impairment",
+  "W7 8.1": "Differentiate between delirium, mild cognitive impairment and dementia",
+  "W7 9.3": "Determine the severity of frailty, and conduct an assessment of function",
+  "W8 O12": "Explain how therapeutic goals are developed",
+  "W8 O20": "Discuss how the SDH and healthcare resources may impact access to therapies",
+  "W8 O21": "Summarize the process and regulatory control of drug development and funding",
+  "W8 O29": "Define half-life of a drug, therapeutic range, steady state concentration and loading/maintenance dose",
+  "W8 O32": "Explain the effects of pharmacokinetics on drug dose regimen",
+  "W8 O33": "Explain how the interplay between pharmacokinetics and pharmacodynamics affects drug response",
+  "W8 O34": "Apply basic principles of pharmacokinetics and pharmacodynamics to clinical scenarios",
+  "W8 O37": "Compare the pharmacokinetics and pharmacodynamics changes across the lifespan",
+  "W8 O38": "Identify factors that lead to adverse drug reactions across the lifespan",
+  "W8 O39": "Identify factors that affect therapeutics in different populations",
+  "W8 O4": "Compare and contrast the actions of an agonist (full, partial and inverse) and antagonist (competitive and noncompetitive)",
+  "W8 O45": "Explain the pharmacological basis of adverse drug reactions, including pharmacokinetic and pharmacodynamic mechanisms.",
+  "W8 O46": "Describe potential outcomes of pharmacokinetic and pharmacodynamic drug interactions, including both harmful and beneficial effects.",
+  "W8 O5": "Describe a dose-response curve",
+  "W8 O57": "Determine therapeutic goals to address the problem",
+  "W8 O58": "Propose approaches to the therapeutic goal with consideration of the suitability to the individual patient with respect to access, efficacy and safety",
+  "W8 O6": "Describe potency and efficacy of drugs",
+  "W8 O7": "Describe the four basic processes of pharmacokinetics: drug absorption, distribution, metabolism and excretion",
+  "W8 O9": "Compare the different routes of administration with regards to their main advantages and disadvantages"
+ }
+}

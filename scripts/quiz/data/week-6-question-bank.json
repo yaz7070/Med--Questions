@@ -1,0 +1,543 @@
+{
+ "title": "Week 6 Question Bank",
+ "context": "Foundations of Medicine, Block 2, Week 6",
+ "questions": [
+  {
+   "c": "Week 6",
+   "p": "Grace, 48, has a 1.4 cm breast carcinoma excised with sentinel node biopsy. The report reads poorly differentiated invasive ductal carcinoma, 0 of 3 lymph nodes positive. Staging CT shows no distant spread. Which statement best describes her tumour?",
+   "o": [
+    "Advanced stage with an aggressive, high grade",
+    "Early stage with an aggressive, high grade",
+    "Early stage with an indolent, low grade",
+    "Advanced stage with an indolent, low grade"
+   ],
+   "a": 1,
+   "e": "B is correct. Stage describes size and spread. A small tumour with N0 and M0 is early stage. Grade describes how cells look. Poorly differentiated is grade III, aggressive.\nA: Grade is right, but N0 M0 at 1.4 cm is not advanced.\nC: The stage is right, but poorly differentiated cells are high grade.\nD: No nodes or metastases rules out advanced stage, and poor differentiation rules out low grade.\nHigh yield: Grade and stage are separate. Both inform prognosis and treatment.",
+   "l": [
+    "W6 4.2",
+    "W6 6.4"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Two families attend a cancer genetics clinic. In Family 1, a single activating mutation in one allele of RET drives medullary thyroid cancer. In Family 2, a child inherits one mutated Rb allele and develops cancer after a second mutation. Which classification of each gene is correct, in order?",
+   "o": [
+    "Oncogene in both of the two families",
+    "Tumour suppressor in both of the families",
+    "Oncogene, then tumour suppressor gene",
+    "Tumour suppressor gene, then oncogene"
+   ],
+   "a": 2,
+   "e": "C is correct. RET is a proto-oncogene, and a single hit in one allele makes it an oncogene (gain of function). Rb is a tumour suppressor gene that needs two hits (loss of function), and an inherited first hit raises risk.\nA: Rb needs two hits, the hallmark of a tumour suppressor.\nB: RET needs only one hit, the hallmark of an oncogene.\nD: This reverses the two mechanisms.\nHigh yield: One hit: Ras, c-myc, Her2-neu, RET. Two hits: p53, Rb, PTEN, BRCA1/2.",
+   "l": [
+    "W6 7.9"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Ahmed, 47, grew up in rural Egypt and had a parasitic infection as a child that was never treated. He now has painless blood in his urine, and cystoscopy shows a bladder mass. Which organism most likely contributed to his cancer?",
+   "o": [
+    "Helicobacter pylori",
+    "Human T-lymphotropic virus 1",
+    "Southeast Asian liver fluke",
+    "Schistosoma blood flukes"
+   ],
+   "a": 3,
+   "e": "D is correct. Schistosoma (blood flukes) is linked to bladder cancer.\nA: H. pylori causes gastric cancer.\nB: HTLV-1 causes adult T-cell lymphoma.\nC: The Southeast Asian liver fluke causes cholangiocarcinoma.\nHigh yield: HPV: cervical, anal, oropharyngeal. HBV and HCV: hepatocellular. EBV: nasopharyngeal, Burkitt, Hodgkin. HHV8: Kaposi sarcoma.",
+   "l": [
+    "W6 7.7"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "A cervical biopsy from Mei, 33, shows dysplastic cells spanning the full thickness of the squamous epithelium. The basement membrane is intact throughout and no dysplastic cells are seen beneath it. Which term and implication fit best?",
+   "o": [
+    "Carcinoma in situ, not yet a malignant neoplasm",
+    "Invasive carcinoma, at risk of nodal spread",
+    "Metaplasia, a reversible adaptive change",
+    "Metastasis, spread from a distant primary"
+   ],
+   "a": 0,
+   "e": "A is correct. Dysplastic cells involving the entire epithelial thickness and pushing against an intact basement membrane define carcinoma in situ (high grade dysplasia), which is pre-malignant.\nB: A malignant neoplasm needs cells past the basement membrane.\nC: Metaplasia is a change of cell type without dysplasia.\nD: Metastasis is spread to and invasion of other tissues.\nHigh yield: Pap testing screens for this pre-cancer stage.",
+   "l": [
+    "W6 4.1",
+    "W6 7.4"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Chloe, 24, notices a new lump in her left breast. On exam there is a 2 cm smooth, firm, mobile, non-tender mass with no skin or nipple changes and no palpable axillary nodes. Which is the most appropriate first imaging test?",
+   "o": [
+    "Breast ultrasound",
+    "Staging CT of the chest",
+    "Contrast breast MRI",
+    "Diagnostic mammogram"
+   ],
+   "a": 0,
+   "e": "A is correct. Ultrasound is the first modality for a palpable lump and for women under 30.\nB: CT is for staging after biopsy and is not used in the workup.\nC: MRI is for high-risk screening, high breast density and local staging.\nD: Mammography is not the first modality for a palpable lump in a woman under 30.\nHigh yield: Firm, mobile, well-circumscribed fits fibroadenoma, a benign neoplasm.",
+   "l": [
+    "W6 3.2",
+    "W6 1.3"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Hannah, 32, tested positive for a pathogenic BRCA1 variant after her mother's ovarian cancer diagnosis. She has no breast symptoms and a normal clinical breast exam. Which breast screening plan fits?",
+   "o": [
+    "Annual mammogram alone, from age 40",
+    "Mammogram every 2 years, from age 50",
+    "Annual MRI and mammogram, from now",
+    "Clinical breast exams only until 35"
+   ],
+   "a": 2,
+   "e": "C is correct. BRCA carriers have an annual mammogram from 30 and breast MRI from 30 to 69. She is 32, so screening applies now.\nA: Mammogram alone misses MRI, and 40 is too late.\nB: Every 2 years from 50 is the average-risk program.\nD: Clinical exams alone are not the plan. Age 35 is the BRCA1 prophylactic surgery milestone.\nHigh yield: Prophylactic surgery: age 35 for BRCA1, age 40 for BRCA2.",
+   "l": [
+    "W6 7.11"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Ruth, 66, has a breast mass that radiology rates as highly suspicious for malignancy. Her core needle biopsy returns as benign breast tissue. What is the most appropriate next step?",
+   "o": [
+    "Reassure her and return to routine screening",
+    "Repeat a screening mammogram in 2 years",
+    "Discuss the discordance with the pathologist",
+    "Refer for mastectomy without further review"
+   ],
+   "a": 2,
+   "e": "C is correct. Clinical-pathological non-concordance is a reason to communicate directly, beyond the requisition.\nA: Reassurance ignores imaging and pathology that disagree.\nB: Routine interval screening ignores a suspicious lesion.\nD: Surgery skips resolving the discordance.\nHigh yield: Other triggers: unusual or ambiguous result, missing information, rare diagnosis, urgent result needed.",
+   "l": [
+    "W6 3.6"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Three patients attend a breast cancer clinic. Patient 1 receives chemotherapy before surgery to shrink a 6 cm tumour. Patient 2 receives radiation after surgery for micro-metastatic disease. Patient 3 receives radiation to relieve pain from a spinal metastasis. Which intent applies to each, in order?",
+   "o": [
+    "Adjuvant, palliative, neoadjuvant",
+    "Neoadjuvant, adjuvant, palliative",
+    "Neoadjuvant, adjuvant, curative",
+    "Adjuvant, neoadjuvant, palliative"
+   ],
+   "a": 1,
+   "e": "B is correct. Before surgery to shrink a tumour is neoadjuvant. After surgery for micro-metastatic disease is adjuvant. Radiation to relieve symptoms of metastatic disease is palliative.\nA: Patient 2 is post-surgical (adjuvant) and Patient 3 is palliative.\nC: Symptom relief for a metastasis is palliative, not curative.\nD: This swaps the first two.\nHigh yield: Radiation oncology aims to reduce local recurrence or metastasis, or to relieve symptoms.",
+   "l": [
+    "W6 6.2",
+    "W6 6.1"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Tamara, 41, carries a pathogenic BRCA2 variant. She asks you to order the same test for her healthy 12-year-old daughter so the family has time to plan. Which response best follows the ethics of cancer genetic testing?",
+   "o": [
+    "Test only if the daughter develops breast changes",
+    "Defer testing until she is an adult and chooses",
+    "Test now, since results will guide her screening",
+    "Test now, since a parent holds full decision rights"
+   ],
+   "a": 1,
+   "e": "B is correct. Avoid testing children for adult-onset conditions because of stigmatization, anxiety and vulnerable child parenting. Autonomy makes testing each person's own choice.\nA: Symptoms call for diagnostic workup, not predictive testing of a minor.\nC: BRCA surveillance starts at 30, so a result guides nothing in childhood.\nD: The decision belongs to the person tested, under autonomy.\nHigh yield: Confirm a mutation in an affected relative before testing unaffected relatives.",
+   "l": [
+    "W6 9.1"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Jonah, 39, tests positive for a pathogenic variant causing Lynch syndrome. He does not want his sister told, citing a long family conflict. Which approach best reflects the ethics of sharing genetic results?",
+   "o": [
+    "Contact his sister directly, since beneficence wins",
+    "Insist results be shared with all first-degree relatives",
+    "Withhold further counselling until he agrees to share",
+    "Respect his choice and explain the benefit to relatives"
+   ],
+   "a": 3,
+   "e": "D is correct. Under autonomy, it is the patient's right to choose who knows his results. Beneficence supports explaining that relatives have the option of surveillance.\nA: Disclosure without consent violates his autonomy.\nB: No rule makes sharing mandatory.\nC: Withholding counselling breaches non-maleficence and justice.\nHigh yield: Autonomy, beneficence, non-maleficence and justice all apply to genetic testing.",
+   "l": [
+    "W6 9.2"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Regarding cancer statistics in Canada, which of the following statements are true?\ni) Colorectal cancer is the second leading cause of cancer death\nii) Breast cancer is the leading cause of cancer death in women\niii) About 1 in 2 Canadians will develop cancer in their lifetime\niv) Prostate cancer is the most often diagnosed cancer overall",
+   "o": [
+    "i) and ii) only",
+    "ii) and iv) only",
+    "i), iii) and iv) only",
+    "i) and iii) only",
+    "All of the above"
+   ],
+   "a": 3,
+   "e": "D is correct. Canadian cancer mortality ranks lung, colorectum, then pancreas. 1 in 2 Canadians develop cancer and 1 in 4 die of it.\nA: Lung leads cancer deaths in women. Breast is second.\nB: Statements ii and iv are both false.\nC: Lung is the most diagnosed cancer overall. Prostate is first in men only.\nE: Statements ii and iv are false.\nHigh yield: High-income countries have higher incidence and lower mortality.",
+   "l": [
+    "W6 7.1"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "You meet Mr. Laurent, 70, to discuss biopsy results confirming metastatic pancreatic cancer. When you ask what he understands so far, he says the scan showed a cyst and he expects to be back at work next week. Within SPIKES, which step are you in, and what is the best approach?",
+   "o": [
+    "Perception, do not confront his denial at this visit",
+    "Knowledge, correct his understanding with all details",
+    "Empathy, name his emotion before checking understanding",
+    "Invitation, ask permission before sharing information"
+   ],
+   "a": 0,
+   "e": "A is correct. Asking what he knows before you tell is Perception. If a patient is in denial, do not confront the denial at the first interview.\nB: Knowledge comes later, with a warning, no jargon and small chunks.\nC: Empathy responds to emotions as they arise after news is given.\nD: Invitation follows Perception and asks how much he wants to know.\nHigh yield: Setting, Perception, Invitation, Knowledge, Empathy, Strategy and summary.",
+   "l": [
+    "W6 5.5"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Doug, 63, smoked for decades and has a 45 pack-year history. He quit 18 years ago. He feels well and has no symptoms. He asks about lung cancer screening. Which response is correct?",
+   "o": [
+    "He qualifies for a screening chest X-ray each year",
+    "He qualifies for annual low-dose CT, up to 3 times",
+    "He is not eligible, since he quit over 15 years ago",
+    "He qualifies, since pack-years alone define eligibility"
+   ],
+   "a": 2,
+   "e": "C is correct. Lung screening covers adults 55-74 with a 30 pack-year history who currently smoke or quit less than 15 years ago. Quitting 18 years ago excludes him.\nA: CXR is not ordered for routine screening.\nB: He meets age and pack-years but fails the quit-time criterion.\nD: Eligibility needs age, pack-years and quit time together.\nHigh yield: Check every criterion, not only the most striking one.",
+   "l": [
+    "W6 7.11"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Lena, 58, has metastatic breast cancer. Over one week she has had back pain, and now both legs are weak with brisk reflexes and upgoing plantar responses. Her arms are normal. Which cancer emergency is most likely?",
+   "o": [
+    "Superior vena cava obstruction",
+    "Spinal cord compression",
+    "Hypercalcemia",
+    "Brain metastasis with edema"
+   ],
+   "a": 1,
+   "e": "B is correct. UMN signs in both legs with normal arms (paraparesis) localize to the thoracic cord. In a patient with cancer this fits spinal cord compression, a listed cancer emergency.\nA: SVC obstruction does not cause leg weakness with UMN signs.\nC: Hypercalcemia does not produce a cord-level UMN pattern.\nD: A brain lesion gives a hemibody pattern, not weakness of both legs with normal arms.\nHigh yield: Life-threatening: metastases compressing the spinal cord or major vessels.",
+   "l": [
+    "W6 1.6"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Priya, 34, reports lumpy, nodular breasts on both sides. The lumps become tender in the days before her period and settle afterward. Exam shows no dominant mass, skin change or nipple change. Which diagnosis fits best?",
+   "o": [
+    "Fibrocystic change",
+    "Breast abscess",
+    "Single fibroadenoma",
+    "Simple cyst"
+   ],
+   "a": 0,
+   "e": "A is correct. Fibrocystic change gives lumpy, nodular breasts with pain and tenderness that varies through the menstrual cycle.\nB: An abscess is a collection of pus from bacterial infection, with acute inflammation.\nC: A fibroadenoma is a single, well-circumscribed, firm, mobile nodule.\nD: A cyst is a single sac that collapses when fluid is removed.\nHigh yield: VITAMIN C&D for a breast mass: infection, trauma, neoplasm, cyst.",
+   "l": [
+    "W6 2.4",
+    "W6 2.3"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Dana, 45, had a car accident 3 weeks ago and still has a seatbelt bruise across her chest. She now feels a firm lump in the breast under the bruise. Using the VITAMIN C&D approach, which cause best fits?",
+   "o": [
+    "Cyst, from fibrocystic change",
+    "Infection, with an abscess",
+    "Trauma, with fat necrosis",
+    "Neoplasm, as a fibroadenoma"
+   ],
+   "a": 2,
+   "e": "C is correct. The trauma category of VITAMIN C&D for a breast mass is fat necrosis. The recent blunt injury at the same site is the clue.\nA: Fibrocystic change varies with the menstrual cycle.\nB: An abscess follows infection, with acute inflammation.\nD: A fibroadenoma is a benign neoplasm unrelated to injury.\nHigh yield: Increasing age raises the likelihood of cancer, so a persistent mass still needs workup.",
+   "l": [
+    "W6 2.2",
+    "W6 2.1"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "A family physician is building a workup for a new palpable breast mass in a 52-year-old. Which investigation has no role in diagnosing the type of breast mass?",
+   "o": [
+    "Diagnostic mammography views",
+    "A blood tumour marker panel",
+    "Image-guided core biopsy",
+    "Targeted breast ultrasound"
+   ],
+   "a": 1,
+   "e": "B is correct. No blood or urine test helps identify the type of breast mass, so lab medicine has no role in diagnosis.\nA: Mammography is used in screening and diagnosis.\nC: Biopsy under ultrasound or stereotactic guidance gives the tissue diagnosis.\nD: Ultrasound is a primary diagnostic tool for a palpable lump.\nHigh yield: Your Week 6 quiz listed tumour markers as a distractor for the same reason.",
+   "l": [
+    "W6 3.1",
+    "W6 3.3"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "A surgeon completes the pathology requisition for a lumpectomy specimen. Which item belongs on the requisition rather than in the pathology report?",
+   "o": [
+    "The ACMG classification of a variant",
+    "The time the specimen went into formalin",
+    "The synoptic summary of the margins",
+    "The ER, PR and Her2 biomarker test results"
+   ],
+   "a": 1,
+   "e": "B is correct. The requisition carries patient ID, ischemic time, date and time of procurement and formalin, exact sites and clinical information.\nA: ACMG classification appears in the cancer genetic report.\nC: The synoptic report is part of the microscopic description in the pathology report.\nD: ER, PR and Her2 results appear in the pathology report.\nHigh yield: Clinical information on the requisition: history, imaging, reason for test, DDx, pitfalls, ancillary tests.",
+   "l": [
+    "W6 3.4"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Four core biopsy reports use different phrases. Which phrase signals the greatest concern for cancer while stopping short of a definite malignant diagnosis?",
+   "o": [
+    "Atypia present, cannot exclude malignancy",
+    "Atypia present, favour reactive",
+    "Suspicious for malignancy",
+    "Negative for malignancy"
+   ],
+   "a": 2,
+   "e": "C is correct. The narrative scale runs: positive, suspicious, atypia that cannot exclude malignancy, atypia favouring reactive, negative. Suspicious sits directly below positive.\nA: This sits one step below suspicious.\nB: This leans toward a benign, reactive process.\nD: This rules out malignancy.\nHigh yield: An ambiguous result is a reason to talk to the pathologist directly.",
+   "l": [
+    "W6 3.5"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Helen, 44, has a hereditary cancer panel. The report lists one variant with an ACMG classification of 3. How should this result be described to her?",
+   "o": [
+    "Variant of uncertain significance",
+    "Pathogenic variant",
+    "A likely pathogenic variant that raises risk",
+    "Likely benign variant"
+   ],
+   "a": 0,
+   "e": "A is correct. ACMG classes: 1 pathogenic, 2 likely pathogenic, 3 VUS, 4 likely benign, 5 benign.\nB: Pathogenic is class 1.\nC: Likely pathogenic is class 2.\nD: Likely benign is class 4.\nHigh yield: The panel tests 37 genes on a blood sample.",
+   "l": [
+    "W6 4.5"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "Regarding the drawbacks of cancer genetic testing, which of the following statements are true?\ni) Results include false positives and false negatives\nii) Current tests identify all inherited gene changes linked to cancer\niii) Effective risk reduction or early detection methods might not exist\niv) A positive result often leads to more worry, appointments and tests",
+   "o": [
+    "i), iii) and iv) only",
+    "i) and iv) only",
+    "ii) and iii) only",
+    "i), ii) and iii) only",
+    "All of the above"
+   ],
+   "a": 0,
+   "e": "A is correct. Drawbacks include false results, tests that miss some inherited changes, a lack of effective risk reduction for some cancers, and more worry and procedures after a positive result.\nB: Statement iii is also true.\nC: Statement ii is false.\nD: Statement ii is false and iv is true.\nE: Statement ii is false.\nHigh yield: Benefits: better risk prediction, relief of uncertainty, testing options for relatives, earlier detection.",
+   "l": [
+    "W6 6.3"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "In culture, cells from a patient's tumour keep dividing well past 70 divisions without stopping, and their telomeres stay long. Which hallmark of cancer does this show?",
+   "o": [
+    "Self-sufficiency in growth signals",
+    "Sustained angiogenesis",
+    "Limitless replicative potential",
+    "Evasion of apoptosis"
+   ],
+   "a": 2,
+   "e": "C is correct. Cancer cells produce telomerase, which lengthens telomeres and overcomes the Hayflick limit of 60-70 divisions.\nA: Self-sufficiency involves making their own growth factors and always-on receptors.\nB: Sustained angiogenesis involves the angiogenic switch.\nD: Evasion of apoptosis most often involves p53 mutations.\nHigh yield: Emerging hallmarks: immune evasion, tumour-promoting inflammation, genome instability, deregulated energetics.",
+   "l": [
+    "W6 7.8",
+    "W6 7.2"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "In the two stage clonal expansion model, a genetic alteration has produced premalignant cells, and these cells are now proliferating. Which stage comes next?",
+   "o": [
+    "Angiogenic switch",
+    "Initiation",
+    "Progression",
+    "Transformation"
+   ],
+   "a": 3,
+   "e": "D is correct. The model runs initiation, promotion, transformation, then progression. After premalignant cells proliferate (promotion), a second rapid alteration produces a malignant cell (transformation).\nA: The angiogenic switch is a hallmark of cancer, not a stage of this model.\nB: Initiation already happened when the premalignant cell formed.\nC: Progression follows transformation, from malignant cell to clinical cancer.\nHigh yield: Cancer is usually a cascade of mutations, not one.",
+   "l": [
+    "W6 7.3",
+    "W6 7.4"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "During a breast cancer risk review, two factors are noted for Amira, 47: early menarche and never breastfeeding, and then regular tanning bed use. How is each risk factor classified, in order?",
+   "o": [
+    "Modifiable in both of the cases",
+    "Non-modifiable, then modifiable",
+    "Non-modifiable in both of the cases",
+    "Modifiable, then non-modifiable"
+   ],
+   "a": 1,
+   "e": "B is correct. Reproductive history (breastfeeding, menarche, menopause) is a non-modifiable factor in GGRAPES. Tanning beds are a modifiable factor.\nA: Reproductive history is non-modifiable.\nC: Tanning bed use is modifiable.\nD: This reverses the two.\nHigh yield: GGRAPES: geography, genetic susceptibility, reproductive history, age, precursor lesions, ethnicity, sex.",
+   "l": [
+    "W6 8.3",
+    "W6 7.5"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "An Indigenous patient with a strong family history of breast cancer meets two team members. Member 1 does her risk assessment, takes informed consent for genetic testing and plans screening of her relatives. Member 2 helps her navigate the health care system and provides counselling. Who are they, in order?",
+   "o": [
+    "Genetics counsellor, then Indigenous health navigator",
+    "Medical oncologist, then social worker",
+    "Primary care physician, then palliative care physician",
+    "Social worker, then genetics counsellor"
+   ],
+   "a": 0,
+   "e": "A is correct. The genetics counsellor does risk assessment, consent for genetic testing and screening of family members. The Indigenous health navigator advocates by helping navigate the health care system, plus counselling.\nB: The medical oncologist gives systemic therapies.\nC: Primary care does screening, symptom relief and referrals. Palliative care relieves suffering.\nD: The social worker helps navigate the journey to recovery, and does not take consent for genetic testing.\nHigh yield: Gynecological surgeon: fertility and pregnancy options, prophylactic surgery.",
+   "l": [
+    "W6 12.1"
+   ]
+  },
+  {
+   "c": "Week 6",
+   "p": "A staging report reads T2 N1 M1. The N and M categories each describe a route of cancer spread. Which routes do they capture, in order?",
+   "o": [
+    "Hematogenous, then lymphatic",
+    "Lymphatic, then direct",
+    "Direct, then lymphatic",
+    "Lymphatic, then hematogenous"
+   ],
+   "a": 3,
+   "e": "D is correct. T reflects direct local growth, N reflects lymphatic spread to regional nodes, and M reflects hematogenous metastasis.\nA: This reverses the two.\nB: M captures hematogenous spread, not direct growth.\nC: Direct growth is captured by T.\nHigh yield: M1 means stage IV: spread to at least one other organ.",
+   "l": [
+    "W6 7.10",
+    "W6 6.4"
+   ]
+  },
+  {
+   "c": "Pathology reports",
+   "p": "Two sections of a surgical pathology report are described. Section 1 gives the location and type of the tissue sample. Section 2 is the overall summary of the most important findings and influences management. Which sections are these, in order?",
+   "o": [
+    "Specimen, then Diagnosis",
+    "Clinical information, then Diagnosis",
+    "Specimen, then Synoptic report",
+    "Gross description, then Synoptic report"
+   ],
+   "a": 0,
+   "e": "A is correct. The Specimen section gives the location and type of tissue. The Diagnosis section is the overall summary of the most important findings, and it influences management.\nB: Clinical information carries the history from the requisition.\nC: The synoptic report is a checklist, not the overall summary.\nD: The gross description covers the specimen's appearance, ink and section codes. The synoptic report is the checklist within the microscopic description.\nHigh yield: Your mock exam miss: the synoptic report is the checklist, and the Diagnosis section is the summary.",
+   "l": [
+    "W6 4.4"
+   ]
+  },
+  {
+   "c": "Pathology reports",
+   "p": "An oncologist needs the margin status, lymph node findings and stage classification for a resected breast cancer. In which part of the pathology report are these found?",
+   "o": [
+    "The specimen section",
+    "The Diagnosis section summary",
+    "The clinical information section",
+    "The gross description of the whole specimen",
+    "The synoptic report, microscopic section"
+   ],
+   "a": 4,
+   "e": "E is correct. The synoptic report, within the microscopic description, lists specimen, tumour, margins, lymph nodes, stage classification, additional findings and comments.\nA: The specimen section gives location and type of tissue.\nB: The Diagnosis is an overall summary, not the full checklist.\nC: Clinical information comes from the requisition.\nD: The gross description gives specimen, main findings, ink code and section code.\nHigh yield: ER, PR and Her2 biomarker results also sit in the microscopic description.",
+   "l": [
+    "W6 4.5",
+    "W6 6.4"
+   ]
+  },
+  {
+   "c": "Pathology reports",
+   "p": "Helen's hereditary cancer genetic report is marked ABNORMAL. Which statement about this type of report is correct?",
+   "o": [
+    "Its Interpretation gives significance from ClinVar",
+    "The hereditary cancer panel tests 5 genes",
+    "A variant of uncertain significance is ACMG class 2",
+    "Its specimen is tumour tissue from the biopsy site",
+    "An ACMG class 5 variant is pathogenic"
+   ],
+   "a": 0,
+   "e": "A is correct. The Interpretation section states the result, the findings (type of mutation, exon, gene) and the clinical significance from ClinVar and the literature.\nB: The multi-gene panel tests 37 genes.\nC: A VUS is class 3. Class 2 is likely pathogenic.\nD: The specimen is blood.\nE: Class 5 is benign. Class 1 is pathogenic.\nHigh yield: ACMG: 1 pathogenic, 2 likely pathogenic, 3 VUS, 4 likely benign, 5 benign.",
+   "l": [
+    "W6 4.5",
+    "W6 6.3"
+   ]
+  },
+  {
+   "c": "Cancer screening",
+   "p": "A medical student lists screening intervals for average-risk adults. Which interval is correct?",
+   "o": [
+    "FIT every year",
+    "Flexible sigmoidoscopy every 5 years",
+    "Prostate PSA every year from age 55",
+    "Mammogram every year from age 50",
+    "Pap test every 3 years"
+   ],
+   "a": 4,
+   "e": "E is correct. Cervical screening with a Pap test is every 3 years for women 25-70.\nA: FIT is every 2 years.\nB: Flexible sigmoidoscopy or colonoscopy is every 10 years.\nC: PSA for men 55-69 is every 2-4 years.\nD: Average-risk mammograms are every 2 years from 50 to 74.\nHigh yield: Your first-try miss on the mock: sigmoidoscopy is every 10 years, not 2.",
+   "l": [
+    "W6 7.11"
+   ]
+  },
+  {
+   "c": "Cancer screening",
+   "p": "Mrs. Leclerc, 71, is healthy and has had three negative Pap tests in a row over the last 10 years. She asks whether she still needs cervical screening. What is the best answer?",
+   "o": [
+    "Continue Pap tests every 3 years for life",
+    "Continue Pap tests every 3 years until age 74",
+    "She has aged out of cervical screening",
+    "Switch to mammograms in place of Pap tests",
+    "Switch to a yearly Pap test after age 70"
+   ],
+   "a": 2,
+   "e": "C is correct. Cervical screening runs ages 25-70. Women over 70 with 3 or more successive negative tests in the last 10 years are out.\nA: Screening stops at 70 with a negative history.\nB: 74 is the stop age for breast and colorectal screening, not cervical.\nD: Mammograms screen for breast cancer, not cervical cancer.\nE: No yearly Pap test is recommended after 70.\nHigh yield: Stop ages: cervical 70, breast 74, colorectal 74, prostate 69.",
+   "l": [
+    "W6 7.11"
+   ]
+  },
+  {
+   "c": "Cancer screening",
+   "p": "Mr. Becker, 74, feels well and asks his family doctor to start yearly PSA tests for prostate cancer screening. Which response fits the screening guidance?",
+   "o": [
+    "He is outside the PSA group at age 70+",
+    "Order a low-dose CT scan instead",
+    "Start PSA because everyone over 55 qualifies",
+    "Start a yearly PSA with a yearly DRE",
+    "Start PSA every 2-4 years until age 80"
+   ],
+   "a": 0,
+   "e": "A is correct. PSA screening is for men 55-69 every 2-4 years. Men 70 and over are out.\nB: Low-dose CT screens for lung cancer.\nC: The window is 55-69, not everyone over 55.\nD: Yearly PSA and DRE from 45 is for BRCA-positive men.\nE: Screening ends at 69.\nHigh yield: Of 1,000 men tested, about 1 escapes death, which is why PSA screening is controversial.",
+   "l": [
+    "W6 7.11"
+   ]
+  }
+ ],
+ "objectives": {
+  "W6 1.3": "Modify the approach to a breast mass based on age groups (20-55 years), symptoms, past & family history, prior risk factors and what risk factors and diseases are common",
+  "W6 1.6": "List common urgent presentations of cancer",
+  "W6 12.1": "Demonstrate an understanding of the roles of the interprofessional health care team in the treatment and follow-up of cancer patients including end of life care",
+  "W6 2.1": "Outline the process of creating a differential diagnosis for a mass in general and a breast mass specifically",
+  "W6 2.2": "Develop a list of problems that can lead to a differential diagnosis of a mass based on knowledge of anatomy, cell and tissue types, and general pathologic processes",
+  "W6 2.3": "Identify relevant information in history & physical examination to build a differential diagnosis of a mass in general and a breast mass specifically",
+  "W6 2.4": "Identify clues in history & physical examination to narrow differential diagnosis of a mass in general and a breast mass specifically",
+  "W6 3.1": "Build an approach to selecting investigation",
+  "W6 3.2": "Select appropriate investigations from a diagnostic toolkit using a Choosing Wisely approach",
+  "W6 3.3": "Apply Choosing Wisely principles to reduce inappropriate test utilization & unnecessary testing",
+  "W6 3.4": "Demonstrate how to appropriately complete a pathology requisition",
+  "W6 3.5": "Interpret common phrases pathologists use to communicate uncertainty in pathology reports",
+  "W6 3.6": "List examples of scenarios when clinicians and pathologists should communicate directly with one another (i.e. communication “above & beyond” the requisition, pathology report)",
+  "W6 4.1": "Explain common pathology terminology",
+  "W6 4.2": "Explain terminology related to neoplasia in order to interpret investigation outcomes",
+  "W6 4.4": "Explain meaning of a pathology report",
+  "W6 4.5": "Interpret a cancer synoptic report and cancer genetics test report",
+  "W6 5.5": "Use a framework for breaking bad news and disclosing a diagnosis of cancer",
+  "W6 6.1": "Describe the basic categories of cancer therapy (chemotherapy, radiation and hormonal therapy)",
+  "W6 6.2": "Demonstrate a basic understanding of treatment approaches for cancer patients and intent (curative, adjuvant, neoadjuvant and palliative)",
+  "W6 6.3": "Explain benefits of referral for cancer genetic counseling, including risk assessment, informed consent for genetic testing, and screening of additional family members",
+  "W6 6.4": "Explain how cancer staging and molecular pathology can be used to inform prognosis and treatment",
+  "W6 7.1": "Compare & contrast Canadian versus global cancer health burden statistics",
+  "W6 7.10": "Describe potential anatomical routes for cancer spread",
+  "W6 7.11": "Use knowledge of cancer screening programs in Canada to prepare cancer screening plans for adults with diverse risk profiles",
+  "W6 7.2": "Describe the macroscopic, histologic, genetic and molecular features of cancer",
+  "W6 7.3": "Outline general principles of carcinogenesis",
+  "W6 7.4": "Describe the basic steps of carcinogenesis from premalignant cell to invasive cancer",
+  "W6 7.5": "Outline risk factors for development of cancer",
+  "W6 7.7": "Match important viral/microbial carcinogens with their corresponding cancers",
+  "W6 7.8": "List and discuss the molecular hallmarks of cancer",
+  "W6 7.9": "Define oncogene, proto-oncogene and tumour suppressor gene",
+  "W6 8.3": "List several non-modifiable and lifestyle risk factors associated with cancer",
+  "W6 9.1": "Describe ethics principles related to cancer genetic screening of family member",
+  "W6 9.2": "Explain the ethics concepts regarding disclosure of cancer genetic results to family"
+ }
+}

@@ -1,0 +1,1282 @@
+{
+ "title": "Week 3 Question Bank",
+ "context": "Foundations of Medicine, Block 1, Week 3",
+ "questions": [
+  {
+   "c": "Genetics & Prenatal",
+   "p": "All of the following are indications for referral for genetic assessment EXCEPT:",
+   "o": [
+    "Positive family history of a known genetic disorder",
+    "Family history of early-onset heart disease (before age 50)",
+    "The wife's second cousin recently had a common cold",
+    "Consanguinity in the couple themselves",
+    "History of 3 or more previous miscarriages"
+   ],
+   "a": 2,
+   "e": "Correct: C. A distant relative's cold has no genetic significance. Consanguinity in the couple, recurrent miscarriage, early-onset heart disease, and a positive family history are all recognized indications for genetic referral.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "A newborn with Down syndrome has the karyotype 46,XX,der(14,21)(q10,q10),+21. This is best explained by:",
+   "o": [
+    "Robertsonian translocation",
+    "Balanced reciprocal translocation",
+    "Meiotic nondisjunction",
+    "Somatic mosaicism"
+   ],
+   "a": 0,
+   "e": "Correct: A. An extra chromosome 21 attached to chromosome 14 is the classic Robertsonian translocation mechanism of trisomy 21.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "A karyotype report reads 46,XY[20]/47,XY,+21[10]. This finding indicates:",
+   "o": [
+    "Full trisomy 21 in all cells",
+    "A balanced translocation carrier",
+    "A Robertsonian translocation",
+    "Mosaic trisomy 21"
+   ],
+   "a": 3,
+   "e": "Correct: D. The presence of two cell lines, one normal (46,XY) and one trisomic (47,XY,+21), defines mosaicism.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "Which cytogenetic test can detect a balanced translocation but would be missed on chromosomal microarray?",
+   "o": [
+    "Targeted FISH probe",
+    "Karyotype (G-banding)",
+    "Chromosomal microarray",
+    "QF-PCR"
+   ],
+   "a": 1,
+   "e": "Correct: B. Karyotype shows chromosome structure, including balanced rearrangements, which microarray cannot detect since there is no net gain or loss of material.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "A child with global developmental delay and multiple congenital anomalies is being investigated. Which test is most appropriate to order first, and would detect a 22q11.2 microdeletion?",
+   "o": [
+    "Skeletal survey",
+    "Karyotype alone",
+    "QF-PCR only",
+    "Chromosomal microarray"
+   ],
+   "a": 3,
+   "e": "Correct: D. Microarray detects gene-content imbalances like microdeletions and microduplications and is indicated for moderate-severe developmental delay with congenital anomalies.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "A nuchal translucency (NT) of 4.2 mm at 12 weeks gestation increases risk for all of the following EXCEPT:",
+   "o": [
+    "Neural tube defect",
+    "Congenital heart defect",
+    "Noonan syndrome",
+    "Trisomy 21"
+   ],
+   "a": 0,
+   "e": "Correct: A. Elevated NT is associated with aneuploidy, congenital heart defects, skeletal dysplasia, and Noonan syndrome. Neural tube defects are screened for on the fetal anatomy scan, not NT.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "A 42-year-old is currently pregnant and had a previous pregnancy affected by trisomy 21. Which prenatal test is most appropriate to offer based on her risk profile?",
+   "o": [
+    "Fetal anatomy scan alone",
+    "Non-invasive prenatal testing (NIPT)",
+    "No testing indicated, population risk only",
+    "Nuchal translucency ultrasound alone"
+   ],
+   "a": 1,
+   "e": "Correct: B. NIPT is indicated with previous trisomy, maternal age 40 or older, elevated NT, or a positive eFTS.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "Which invasive prenatal diagnostic test is performed earliest in gestation and carries the higher of the two invasive-test miscarriage risks?",
+   "o": [
+    "Fetal anatomy scan",
+    "Non-invasive prenatal testing",
+    "Chorionic villi sampling (CVS)",
+    "Amniocentesis"
+   ],
+   "a": 2,
+   "e": "Correct: C. CVS is done at 11-13 weeks with roughly a 1/100 miscarriage risk, compared to amniocentesis at 15-20 weeks with roughly a 1/200 risk.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "A phenotypically normal woman is found to carry a balanced reciprocal translocation. What is the main reproductive implication?",
+   "o": [
+    "Only male offspring are at increased risk",
+    "Increased risk of miscarriage or an unbalanced translocation in offspring",
+    "All offspring will be affected with trisomy",
+    "No increased risk, all offspring will be phenotypically normal carriers"
+   ],
+   "a": 1,
+   "e": "Correct: B. Balanced translocation carriers are at increased risk for stillbirths or miscarriages, and for offspring who inherit an unbalanced form of the rearrangement.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "An infant presents with cleft palate, a congenital heart defect, hypocalcemia, and recurrent infections. This is most consistent with:",
+   "o": [
+    "47,XXY (Klinefelter syndrome)",
+    "Trisomy 13",
+    "15q11-q13 paternal deletion",
+    "22q11.2 microdeletion (DiGeorge syndrome)"
+   ],
+   "a": 3,
+   "e": "Correct: D. Cleft palate, congenital heart defect, hypocalcemia, and immunodeficiency are the classic features of DiGeorge syndrome (22q11.2 microdeletion).",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "A child with hypotonia, hypogonadism, and obesity is found to have a deletion of the paternally inherited 15q11-q13 region. What syndrome is this?",
+   "o": [
+    "DiGeorge syndrome",
+    "Angelman syndrome",
+    "Prader-Willi syndrome",
+    "Turner syndrome"
+   ],
+   "a": 2,
+   "e": "Correct: C. Prader-Willi syndrome results from loss of the paternally inherited 15q11-q13 region. The same region lost maternally causes Angelman syndrome.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "A child has a small head, seizures, a happy demeanor, and a stiff-legged gait with arms held up. This presentation is most consistent with:",
+   "o": [
+    "Angelman syndrome",
+    "Patau syndrome",
+    "Prader-Willi syndrome",
+    "Edward syndrome"
+   ],
+   "a": 0,
+   "e": "Correct: A. This is the classic phenotype of Angelman syndrome, caused by maternal deletion of 15q11-q13.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "A newborn girl has puffy hands and feet, a webbed neck, and coarctation of the aorta. Her karyotype is most likely:",
+   "o": [
+    "47,XX,+21",
+    "47,XXY",
+    "46,XY",
+    "45,X"
+   ],
+   "a": 3,
+   "e": "Correct: D. These are classic features of Turner syndrome, with karyotype 45,X (or mosaic variants).",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "Which trisomy presents with midline defects, cleft palate, polydactyly, and severe developmental delay?",
+   "o": [
+    "Klinefelter syndrome",
+    "Trisomy 13 (Patau syndrome)",
+    "Trisomy 21 (Down syndrome)",
+    "Trisomy 18 (Edward syndrome)"
+   ],
+   "a": 1,
+   "e": "Correct: B. Midline defects, cleft palate, and polydactyly with severe developmental delay describe Patau syndrome (trisomy 13).",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "A male newborn has cardiac defects, delicate facial features, overlapping fingers, and rocker-bottom feet. This is most consistent with:",
+   "o": [
+    "Turner syndrome",
+    "Patau syndrome",
+    "Edward syndrome",
+    "Klinefelter syndrome"
+   ],
+   "a": 2,
+   "e": "Correct: C. Overlapping fingers, rocker-bottom feet, cardiac defects, and delicate facial features are classic for trisomy 18 (Edward syndrome).",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "Genomic imprinting refers to:",
+   "o": [
+    "Differential expression of a gene depending on parent of origin",
+    "A mixture of normal and mutant mtDNA in a single cell",
+    "Amplification of a specific DNA repeat sequence",
+    "Random inactivation of one X chromosome in females"
+   ],
+   "a": 0,
+   "e": "Correct: A. Genomic imprinting is the parent-of-origin-dependent expression of a gene, maintained by methylation.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "A family with Huntington disease notices that each successive generation develops symptoms at a younger age and with greater severity. This phenomenon is called:",
+   "o": [
+    "Locus heterogeneity",
+    "Anticipation",
+    "Pleiotropy",
+    "Penetrance"
+   ],
+   "a": 1,
+   "e": "Correct: B. Anticipation describes worsening severity or earlier onset in successive generations, characteristic of triplet-repeat disorders like Huntington disease.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Prenatal",
+   "p": "A single pathogenic variant in one gene causes effects across the skeletal, cardiovascular, and ocular systems. This phenomenon is called:",
+   "o": [
+    "Pleiotropy",
+    "Haploinsufficiency",
+    "Locus heterogeneity",
+    "Incomplete penetrance"
+   ],
+   "a": 0,
+   "e": "Correct: A. Pleiotropy describes one gene's pathogenic variant producing effects across multiple, seemingly unrelated organ systems.",
+   "l": []
+  },
+  {
+   "c": "Development & Milestones",
+   "p": "At a well-child visit, at what age would you typically expect an infant to sit without support?",
+   "o": [
+    "12 months",
+    "4 months",
+    "9 months",
+    "6 months"
+   ],
+   "a": 3,
+   "e": "Correct: D. Sitting without support is a 6-month gross motor milestone.",
+   "l": []
+  },
+  {
+   "c": "Development & Milestones",
+   "p": "A pincer grasp, allowing an infant to pick up small finger foods, typically emerges at:",
+   "o": [
+    "6 months",
+    "9 months",
+    "10 months",
+    "12 months"
+   ],
+   "a": 2,
+   "e": "Correct: C. Pincer grasp for objects and finger foods is a 10-month fine motor milestone.",
+   "l": []
+  },
+  {
+   "c": "Development & Milestones",
+   "p": "By what age would you expect a toddler to be walking independently?",
+   "o": [
+    "15 months",
+    "10 months",
+    "9 months",
+    "12 months"
+   ],
+   "a": 3,
+   "e": "Correct: D. Independent walking is expected around 12 months.",
+   "l": []
+  },
+  {
+   "c": "Development & Milestones",
+   "p": "Which of the following is a recognized red flag for abnormal development?",
+   "o": [
+    "Not walking by 15 months",
+    "No single words with meaning by 18 months",
+    "Hand preference established at 3 years of age",
+    "Not pointing to objects of interest by 12 months"
+   ],
+   "a": 1,
+   "e": "Correct: B. No single words by 18 months is a true red flag. The listed cutoffs for pointing (15 months), walking (18 months), and hand preference (before 2 years) were altered in the other options.",
+   "l": []
+  },
+  {
+   "c": "Development & Milestones",
+   "p": "Which of the following is NOT considered a red flag for abnormal development?",
+   "o": [
+    "Stuttering or stammering at 3 years of age",
+    "No social smiling by 2 months",
+    "Loss of previously acquired skills",
+    "Not sitting by 9 months"
+   ],
+   "a": 0,
+   "e": "Correct: A. Stutter/stammer is a common and expected finding around 36 months. The other options are all recognized red flags.",
+   "l": []
+  },
+  {
+   "c": "Development & Milestones",
+   "p": "A 4-year-old cannot hop on one foot and is unable to stack 10 blocks or draw a circle. This should be interpreted as:",
+   "o": [
+    "Normal as long as speech is intelligible",
+    "Normal, since these skills are not expected until age 5",
+    "A red flag warranting developmental evaluation",
+    "Significant only if accompanied by short stature"
+   ],
+   "a": 2,
+   "e": "Correct: C. Inability to hop by 4 years and to stack 10 blocks/draw a circle by 4 years are both listed red flags for abnormal development.",
+   "l": []
+  },
+  {
+   "c": "Development & Milestones",
+   "p": "Critical periods in brain development are best described as:",
+   "o": [
+    "Windows in which skill acquisition is easier but not essential",
+    "Enhancement of frequently used neural pathways",
+    "Time windows in which a permanent deficit results if needed stimuli are not received",
+    "The process of eliminating unused neural connections"
+   ],
+   "a": 2,
+   "e": "Correct: C. Critical periods (e.g., visual development) cause permanent deficits if stimuli are missed, distinct from sensitive periods where skill acquisition is merely harder if missed.",
+   "l": []
+  },
+  {
+   "c": "Development & Milestones",
+   "p": "The elimination of unused neural connections and pathways during brain development is called:",
+   "o": [
+    "Synaptogenesis",
+    "Pruning",
+    "Myelination",
+    "Sculpting"
+   ],
+   "a": 1,
+   "e": "Correct: B. Pruning is the elimination of unused connections, sculpting is the enhancement of frequently used ones.",
+   "l": []
+  },
+  {
+   "c": "Development & Milestones",
+   "p": "Global developmental delay is defined as:",
+   "o": [
+    "Failure to meet expected milestones in 2 or more domains by age 5 or younger",
+    "Delay in a single domain of development, at any age",
+    "Any delay reported by a parent, regardless of formal assessment",
+    "Failure to meet milestones in any domain by age 2"
+   ],
+   "a": 0,
+   "e": "Correct: A. Global developmental delay requires failure in 2 or more areas of function at or before age 5.",
+   "l": []
+  },
+  {
+   "c": "Development & Milestones",
+   "p": "Which tool is used for ongoing developmental surveillance at routine well-child visits, as opposed to a formal screening tool?",
+   "o": [
+    "Denver Developmental Screening Test",
+    "Ages and Stages Questionnaire (ASQ)",
+    "Nipissing District Developmental Screen",
+    "Rourke Baby Record"
+   ],
+   "a": 3,
+   "e": "Correct: D. The Rourke Baby Record is a surveillance tool, while Nipissing/LookSee and ASQ are formal screening instruments.",
+   "l": []
+  },
+  {
+   "c": "Development & Milestones",
+   "p": "On the Nipissing District Developmental Screen, how many \"no\" responses constitute a positive screen requiring further follow-up?",
+   "o": [
+    "A total score below a numeric cutoff",
+    "One",
+    "Two",
+    "Three or more"
+   ],
+   "a": 1,
+   "e": "Correct: B. On the Nipissing/LookSee tool, a single \"no\" response is considered a positive screen.",
+   "l": []
+  },
+  {
+   "c": "Development & Milestones",
+   "p": "A toddler continues to show persistence of primitive reflexes well beyond the expected age. This finding should be considered:",
+   "o": [
+    "A normal variant",
+    "Concerning only if reflexes are asymmetric",
+    "Expected and benign until 18 months",
+    "A red flag for abnormal development"
+   ],
+   "a": 3,
+   "e": "Correct: D. Persistence of primitive reflexes beyond the expected age is a listed red flag for abnormal development.",
+   "l": []
+  },
+  {
+   "c": "Attachment & Theory",
+   "p": "An infant uses the caregiver as a secure base to explore, briefly protests on separation, and is easily comforted upon the caregiver's return. This describes:",
+   "o": [
+    "Secure attachment",
+    "Insecure-ambivalent attachment",
+    "Disorganized attachment",
+    "Insecure-avoidant attachment"
+   ],
+   "a": 0,
+   "e": "Correct: A. This is the classic pattern of secure attachment, seen in roughly 60-65% of infants.",
+   "l": []
+  },
+  {
+   "c": "Attachment & Theory",
+   "p": "An infant shows little to no response when the caregiver leaves or returns, and does not treat the caregiver differently from a stranger. This describes:",
+   "o": [
+    "Insecure-ambivalent attachment",
+    "Secure attachment",
+    "Insecure-avoidant attachment",
+    "Disorganized attachment"
+   ],
+   "a": 2,
+   "e": "Correct: C. Little to no response to separation or reunion, with the caregiver treated like a stranger, describes insecure-avoidant attachment.",
+   "l": []
+  },
+  {
+   "c": "Attachment & Theory",
+   "p": "During a stressful separation, a child approaches the returning caregiver with their back turned, then freezes and rocks. This behaviour is most consistent with:",
+   "o": [
+    "Insecure-ambivalent attachment",
+    "Disorganized attachment",
+    "Insecure-avoidant attachment",
+    "Secure attachment"
+   ],
+   "a": 1,
+   "e": "Correct: B. Contradictory behaviours such as approaching with the back turned, or freezing and rocking, are the hallmark of disorganized attachment.",
+   "l": []
+  },
+  {
+   "c": "Attachment & Theory",
+   "p": "According to Erikson, the psychosocial crisis faced between roughly 18 months and 3 years is:",
+   "o": [
+    "Industry vs. inferiority",
+    "Initiative vs. guilt",
+    "Trust vs. mistrust",
+    "Autonomy vs. shame/doubt"
+   ],
+   "a": 3,
+   "e": "Correct: D. Autonomy vs. shame/doubt (basic virtue: will) is Erikson's stage for 18 months to 3 years.",
+   "l": []
+  },
+  {
+   "c": "Attachment & Theory",
+   "p": "A 5-year-old has developed symbolic play and language, has declining egocentricity, but has not yet mastered conservation. According to Piaget, this child is in which stage?",
+   "o": [
+    "Preoperational",
+    "Formal operational",
+    "Sensorimotor",
+    "Concrete operational"
+   ],
+   "a": 0,
+   "e": "Correct: A. Symbolic play, developing language, and declining egocentricity without conservation describe the preoperational stage (ages 2-7).",
+   "l": []
+  },
+  {
+   "c": "Attachment & Theory",
+   "p": "Which theorist described operant conditioning, including positive/negative reinforcement and punishment?",
+   "o": [
+    "Gessell",
+    "Pavlov",
+    "Skinner",
+    "Erikson"
+   ],
+   "a": 2,
+   "e": "Correct: C. Skinner described operant conditioning, distinct from Pavlov's classical conditioning.",
+   "l": []
+  },
+  {
+   "c": "Nutrition",
+   "p": "A 6-month-old exclusively breastfed infant living in Canada presents with delayed milestones and bowing of the legs. Which deficiency is most likely?",
+   "o": [
+    "Vitamin C",
+    "Iron",
+    "Vitamin A",
+    "Vitamin D"
+   ],
+   "a": 3,
+   "e": "Correct: D. Vitamin D deficiency causes rickets, especially in breastfed infants without supplementation in northern climates.",
+   "l": []
+  },
+  {
+   "c": "Nutrition",
+   "p": "An 18-month-old recently weaned from breastfeeding, on a diet high in carbohydrates with minimal protein, presents with generalized edema and irritability. What is the most likely diagnosis?",
+   "o": [
+    "Kwashiorkor",
+    "Marasmus",
+    "Rickets",
+    "Scurvy"
+   ],
+   "a": 0,
+   "e": "Correct: A. Kwashiorkor results from protein deficiency and presents with edema from low plasma protein, often after weaning.",
+   "l": []
+  },
+  {
+   "c": "Nutrition",
+   "p": "A deficiency in which vitamin, involved in purine synthesis, classically causes megaloblastic anemia?",
+   "o": [
+    "Vitamin B12",
+    "Folate",
+    "Vitamin B6",
+    "Iron"
+   ],
+   "a": 1,
+   "e": "Correct: B. Folate is a coenzyme in purine synthesis, its deficiency causes megaloblastic anemia.",
+   "l": []
+  },
+  {
+   "c": "Nutrition",
+   "p": "A deficiency of which vitamin impairs collagen and hydroxyproline formation, historically causing scurvy in sailors?",
+   "o": [
+    "Vitamin C",
+    "Vitamin K",
+    "Vitamin B1",
+    "Vitamin E"
+   ],
+   "a": 0,
+   "e": "Correct: A. Vitamin C is a coenzyme in hydroxyproline and collagen formation, deficiency causes scurvy.",
+   "l": []
+  },
+  {
+   "c": "Nutrition",
+   "p": "A deficiency of which vitamin, a coenzyme in pyruvate and alpha-ketoacid metabolism, classically presents as beriberi?",
+   "o": [
+    "Vitamin B6 (pyridoxine)",
+    "Vitamin B2 (riboflavin)",
+    "Vitamin B1 (thiamine)",
+    "Vitamin B3 (niacin)"
+   ],
+   "a": 2,
+   "e": "Correct: C. Thiamine (B1) is a coenzyme in pyruvate and alpha-ketoacid metabolism, deficiency causes beriberi.",
+   "l": []
+  },
+  {
+   "c": "Nutrition",
+   "p": "A child with growth impairment, poor immune response, a skin rash, and diarrhea most likely has a deficiency of:",
+   "o": [
+    "Iron",
+    "Vitamin A",
+    "Vitamin K",
+    "Zinc"
+   ],
+   "a": 3,
+   "e": "Correct: D. Zinc deficiency presents with impaired growth, poor immune response, skin rash, hair/vision loss, and diarrhea.",
+   "l": []
+  },
+  {
+   "c": "Nutrition",
+   "p": "Which dietary reference intake value is calculated as EAR + 2 SD and meets the needs of 97.5% of the population?",
+   "o": [
+    "Tolerable Upper Intake Level (UL)",
+    "Recommended Dietary Allowance (RDA)",
+    "Estimated Average Requirement (EAR)",
+    "Adequate Intake (AI)"
+   ],
+   "a": 1,
+   "e": "Correct: B. RDA = EAR + 2 SD, meeting the needs of 97.5% of the population.",
+   "l": []
+  },
+  {
+   "c": "Nutrition",
+   "p": "Which macronutrient has the highest caloric density per gram?",
+   "o": [
+    "Carbohydrates (4 kcal/g)",
+    "Alcohol (7 kcal/g)",
+    "Lipids (9 kcal/g)",
+    "Protein (4 kcal/g)"
+   ],
+   "a": 2,
+   "e": "Correct: C. Lipids provide 9 kcal/gram, higher than carbohydrates, protein, or alcohol.",
+   "l": []
+  },
+  {
+   "c": "Growth & Feeding",
+   "p": "A mother of a 2-week-old term infant asks for feeding advice. Current recommendations support:",
+   "o": [
+    "Exclusive breastfeeding for 3 months, then introduce solids",
+    "Mixed feeding with solids starting at 4 months",
+    "Exclusive breastfeeding for 6 months",
+    "Switching to formula after 1 month"
+   ],
+   "a": 2,
+   "e": "Correct: C. Current recommendations support exclusive breastfeeding for the first 6 months, continuing alongside complementary foods up to 2 years.",
+   "l": []
+  },
+  {
+   "c": "Growth & Feeding",
+   "p": "A term newborn typically regains their birth weight by approximately:",
+   "o": [
+    "6 weeks of life",
+    "10-14 days of life",
+    "3-5 days of life",
+    "3-4 weeks of life"
+   ],
+   "a": 1,
+   "e": "Correct: B. After an expected 5-10% weight loss in the first 1-3 days, infants regain their birth weight by 10-14 days of life.",
+   "l": []
+  },
+  {
+   "c": "Growth & Feeding",
+   "p": "At approximately what age does a healthy infant's birth weight typically double?",
+   "o": [
+    "4-5 months",
+    "12 months",
+    "8-9 months",
+    "1-2 months"
+   ],
+   "a": 0,
+   "e": "Correct: A. Birth weight typically doubles by 4-5 months and triples by 1 year.",
+   "l": []
+  },
+  {
+   "c": "Growth & Feeding",
+   "p": "Honey should be avoided in infants younger than 12 months of age because of the risk of:",
+   "o": [
+    "Dental caries",
+    "Iron deficiency",
+    "Allergic reaction",
+    "Infantile botulism"
+   ],
+   "a": 3,
+   "e": "Correct: D. Honey can contain Clostridium botulinum spores, posing a risk of infantile botulism before 12 months.",
+   "l": []
+  },
+  {
+   "c": "Growth & Feeding",
+   "p": "According to Canadian feeding guidelines for infants 6-24 months, which statement is correct?",
+   "o": [
+    "There should be no delay in introducing allergenic foods",
+    "Homogenized milk can fully replace breastmilk or formula before 12 months",
+    "Allergenic foods like eggs and peanut products should be delayed until 12 months",
+    "Bottles should be introduced at 6 months to support the transition to a cup"
+   ],
+   "a": 0,
+   "e": "Correct: A. Current guidelines recommend no delay in starting allergenic foods such as eggs and peanut products.",
+   "l": []
+  },
+  {
+   "c": "Growth & Feeding",
+   "p": "A previously healthy infant's weight, which had tracked at the 50th percentile, has now crossed two major percentile lines downward, while height remains preserved at the 50th percentile. This is best described as:",
+   "o": [
+    "Marasmus",
+    "Stunting",
+    "Growth faltering",
+    "Constitutional growth delay"
+   ],
+   "a": 2,
+   "e": "Correct: C. Growth faltering (replacing the older term \"failure to thrive\") describes a drop in weight percentiles crossing two major percentile lines.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Cytogenetics",
+   "p": "A couple's child is diagnosed with Down syndrome outside the expected maternal-age range. The child's karyotype shows 46,XY,der(14,21)(q10,q10),+21. The father's karyotype is normal, but the mother's karyotype shows 45,XX,t(14,21)(q10,q10). Which statement best explains this family's situation?",
+   "o": [
+    "The child's trisomy 21 arose from standard meiotic nondisjunction, unrelated to the mother's karyotype",
+    "The mother carries a balanced Robertsonian translocation, is phenotypically normal, but is at increased risk of transmitting an unbalanced form to her children",
+    "The mother's result means every future pregnancy will be affected with certainty",
+    "The mother has trisomy 21 herself but is only mildly affected"
+   ],
+   "a": 1,
+   "e": "Correct: B. A balanced Robertsonian translocation carrier has normal total chromosome material rearranged, so they are typically unaffected, but they are at increased risk of producing gametes with unbalanced chromosome complements, as happened here, producing a child with translocation trisomy 21.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Cytogenetics",
+   "p": "A 5-year-old boy has moderate intellectual disability and subtle dysmorphic features, but a standard karyotype performed in infancy was reported as normal. His parents ask why microarray testing is now being recommended instead of simply repeating the karyotype.",
+   "o": [
+    "Microarray testing removes the need for any further genetic counselling",
+    "Microarray is only a higher-resolution version of karyotype with no differences in what it can detect",
+    "Microarray can detect balanced translocations that karyotype misses",
+    "Microarray detects submicroscopic gains and losses of genetic material too small to see on a karyotype, such as a microdeletion or microduplication"
+   ],
+   "a": 3,
+   "e": "Correct: D. Microarray is designed to detect gains/losses of genetic material (copy number changes) below the resolution of a standard karyotype, such as microdeletions and microduplications, but it cannot detect balanced rearrangements, since there is no net change in material.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Cytogenetics",
+   "p": "Parents of a child recently diagnosed with 22q11.2 microdeletion syndrome ask why the laboratory also recommends FISH testing on both of them, even though neither parent has any features of the condition.",
+   "o": [
+    "Parental FISH testing is done purely for research purposes and does not change counselling",
+    "To determine whether the deletion arose de novo or was inherited from a parent who is an unaffected or mildly affected carrier, which changes the recurrence risk for future pregnancies",
+    "To confirm the diagnosis a second time using a more expensive test",
+    "Because karyotype cannot technically be performed on parents"
+   ],
+   "a": 1,
+   "e": "Correct: B. Establishing whether a microdeletion is de novo or inherited is essential for accurate recurrence-risk counselling for future pregnancies, since an inherited deletion carries a much higher recurrence risk than a de novo one.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Cytogenetics",
+   "p": "A newborn is found on microarray to have a deletion of 15q11-q13 inherited from the father, presenting with hypotonia and poor feeding. An unrelated infant with the same deletion inherited from the mother instead has seizures, a happy demeanor, and a stiff-legged gait. What best explains why the parent of origin changes the phenotype so dramatically?",
+   "o": [
+    "Genomic imprinting, where expression of the region depends on whether it came from the mother or the father",
+    "Locus heterogeneity",
+    "Pleiotropy",
+    "Anticipation"
+   ],
+   "a": 0,
+   "e": "Correct: A. This describes Prader-Willi syndrome (paternal deletion) versus Angelman syndrome (maternal deletion) of the same 15q11-q13 region, a classic example of genomic imprinting, where the same deleted region produces very different phenotypes depending on parental origin.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Cytogenetics",
+   "p": "A young man with a family history of a neurodegenerative disorder learns his grandfather developed symptoms in his 60s, his mother in her 40s, and he himself was just diagnosed in his 20s with more severe symptoms than either relative had at the same age. Which genetic phenomenon does this best illustrate?",
+   "o": [
+    "Pleiotropy",
+    "Incomplete penetrance",
+    "Anticipation",
+    "Mosaicism"
+   ],
+   "a": 2,
+   "e": "Correct: C. Earlier onset and increased severity in successive generations is the definition of anticipation, classically seen in triplet-repeat expansion disorders such as Huntington disease.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Cytogenetics",
+   "p": "A clinician explains to a family that their child's single gene mutation is responsible for several seemingly unrelated findings: skeletal overgrowth, lens dislocation in the eye, and aortic root dilation. Which concept explains how one mutation produces effects across so many organ systems?",
+   "o": [
+    "Variable expressivity alone",
+    "Locus heterogeneity",
+    "X-inactivation",
+    "Pleiotropy"
+   ],
+   "a": 3,
+   "e": "Correct: D. Pleiotropy describes a single gene's pathogenic variant producing effects across multiple, seemingly unrelated organ systems, as in this connective tissue disorder affecting the skeleton, eyes, and aorta.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Cytogenetics",
+   "p": "Marissa is 12 weeks pregnant and worried about her relative Gerry, who has Duchenne muscular dystrophy. Gerry is the son of Marissa's maternal aunt. Which statement about the genetic risk to Marissa's pregnancy is correct?",
+   "o": [
+    "Marissa is only at risk if Gerry is her paternal cousin",
+    "The risk applies only to future daughters, not sons",
+    "Marissa's mother could be a carrier of the X-linked DMD mutation, meaning Marissa herself has a chance of being a carrier and passing the mutation to a son",
+    "There is no meaningful risk, because DMD is autosomal recessive"
+   ],
+   "a": 2,
+   "e": "Correct: C. DMD is X-linked. Since Gerry's mother (Marissa's maternal aunt) may be a carrier, Marissa's mother could also be a carrier through their shared maternal line, putting Marissa at risk of being a carrier who could pass the mutation to a son.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Cytogenetics",
+   "p": "A 30-year-old woman is found on karyotype to have two cell lines: 45,X in some cells and 46,XX in others. Which term correctly describes this finding, and what might it mean clinically?",
+   "o": [
+    "A balanced translocation, typically associated with no clinical features",
+    "Mosaicism, which can produce a variably milder or atypical presentation of Turner syndrome depending on the proportion of affected cells",
+    "Uniparental disomy, typically presenting with overgrowth",
+    "Full monosomy X, with a classic severe Turner phenotype expected in every case"
+   ],
+   "a": 1,
+   "e": "Correct: B. The presence of two different cell lines (45,X and 46,XX) defines mosaicism. Mosaic Turner syndrome can present with a milder or more variable phenotype than full monosomy X, depending on the tissue distribution of each cell line.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Cytogenetics",
+   "p": "A newborn boy has hypospadias and undescended testes. Karyotype shows 47,XXY. His parents ask what to expect. Which statement is most accurate?",
+   "o": [
+    "This chromosomal abnormality is incompatible with survival past infancy",
+    "This karyotype guarantees severe intellectual disability",
+    "This is Turner syndrome and the child should be raised as female",
+    "This is Klinefelter syndrome, features such as tall stature, hypogonadism, and learning differences often are not obvious in the newborn period and emerge later"
+   ],
+   "a": 3,
+   "e": "Correct: D. 47,XXY is Klinefelter syndrome. Many of its features (tall stature, hypogonadism, gynecomastia, learning differences) become apparent later in childhood or adolescence rather than being obvious at birth.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Cytogenetics",
+   "p": "A couple's infant died shortly after birth with multiple midline anomalies, cleft palate, and polydactyly. Genetic testing on the child confirmed trisomy of a specific autosome. Which chromosome was most likely involved?",
+   "o": [
+    "Chromosome 13",
+    "Chromosome 21",
+    "Chromosome 18",
+    "Chromosome 22"
+   ],
+   "a": 0,
+   "e": "Correct: A. Midline defects, cleft palate, polydactyly, and severe developmental delay/early mortality describe Patau syndrome, trisomy 13.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Cytogenetics",
+   "p": "All of the following are appropriate indications to refer a couple for genetic counselling before conception EXCEPT:",
+   "o": [
+    "The male partner carries a known balanced translocation",
+    "The female partner's cousin, with no shared ancestry with her partner and no family history of note, had a single isolated febrile seizure as a toddler",
+    "The female partner's mother carries a known balanced translocation",
+    "The couple has experienced 3 prior first-trimester miscarriages"
+   ],
+   "a": 1,
+   "e": "Correct: B. An isolated febrile seizure in a distantly related family member with no other history is not a genetic red flag. Known balanced translocations in either partner or a parent, and recurrent miscarriage, are all recognized indications for referral.",
+   "l": []
+  },
+  {
+   "c": "Genetics & Cytogenetics",
+   "p": "A metabolic specialist explains that a teenage boy in status epilepticus has an extremely elevated ammonia level and a urea cycle disorder is suspected. The family asks why measuring the specific liver enzyme's activity directly, rather than doing DNA testing, is not a practical first step. Which of the following best answers this?",
+   "o": [
+    "DNA testing cannot distinguish between different urea cycle disorders",
+    "Enzyme testing is more accurate than DNA testing and should always be done first",
+    "Enzyme activity testing would require an invasive liver biopsy, whereas DNA/molecular testing can be done from a blood sample and also identifies the exact causative variant",
+    "There is no meaningful difference between the two approaches"
+   ],
+   "a": 2,
+   "e": "Correct: C. Directly measuring the deficient enzyme's activity would require liver tissue, an invasive procedure. Molecular/DNA testing avoids this, can be done on a blood sample, and pinpoints the exact pathogenic variant.",
+   "l": []
+  },
+  {
+   "c": "Prenatal & Newborn Screening",
+   "p": "A 38-year-old woman at 12 weeks gestation has a nuchal translucency measurement of 3.8 mm, above the normal range, but her NIPT for common aneuploidies returns low-risk. Which statement best reflects how to interpret these two results together?",
+   "o": [
+    "An elevated NT with a reassuring NIPT still warrants a detailed fetal anatomy and cardiac evaluation, since NT is also associated with structural anomalies like congenital heart defects, not only aneuploidy",
+    "Elevated NT with a normal NIPT is diagnostic of a completely normal pregnancy",
+    "Because NIPT is low-risk, the elevated NT can be safely ignored entirely",
+    "The elevated NT means the NIPT result must be invalid and should be repeated"
+   ],
+   "a": 0,
+   "e": "Correct: A. NT screens for more than aneuploidy, it is also associated with congenital heart defects and other structural anomalies. A reassuring NIPT (which screens for aneuploidy) does not eliminate the need to further evaluate an elevated NT with detailed anatomy/cardiac imaging.",
+   "l": []
+  },
+  {
+   "c": "Prenatal & Newborn Screening",
+   "p": "A 41-year-old pregnant woman with a prior pregnancy affected by trisomy 21 wants a result she can act on with certainty, and is willing to accept a small procedural risk to get it as early as possible. Which test is most appropriate to offer her at 13 weeks gestation?",
+   "o": [
+    "Serum-only first trimester screening",
+    "Repeat ultrasound only, deferring any testing until 20 weeks",
+    "NIPT, since it is the most sensitive screening option",
+    "Chorionic villus sampling (CVS), because it is diagnostic and can be performed earlier than amniocentesis"
+   ],
+   "a": 3,
+   "e": "Correct: D. CVS is a diagnostic (not screening) test that can be performed as early as 11-13 weeks, making it the appropriate choice for a patient who wants a definitive answer early and is willing to accept the associated procedural risk.",
+   "l": []
+  },
+  {
+   "c": "Prenatal & Newborn Screening",
+   "p": "A baby's newborn screening result flags as positive for one of the disorders on the provincial panel. The parents are distressed and ask if their baby definitely has the disease. What is the most accurate response?",
+   "o": [
+    "Yes, the newborn screen is diagnostic and no further testing is required",
+    "A positive newborn screen is not diagnostic, the baby needs clinical assessment and confirmatory testing before a diagnosis can be made",
+    "The baby should start treatment immediately without further testing, given how rare these conditions are",
+    "No, false positives never occur with newborn screening"
+   ],
+   "a": 1,
+   "e": "Correct: B. Screening tests, including newborn screening, are not diagnostic. A positive screen requires clinical assessment and definitive/confirmatory testing before a diagnosis is made.",
+   "l": []
+  },
+  {
+   "c": "Prenatal & Newborn Screening",
+   "p": "A couple undergoes preconception carrier screening and both are found to be carriers of the same autosomal recessive condition. Which recurrence risk should they be counselled about for each pregnancy?",
+   "o": [
+    "25% chance of an affected child, 50% chance of a carrier child, 25% chance of an unaffected, non-carrier child",
+    "50% chance of an affected child",
+    "No increased risk, since both parents are themselves unaffected",
+    "100% of children will be carriers"
+   ],
+   "a": 0,
+   "e": "Correct: A. Two carrier parents of the same autosomal recessive condition have, for each pregnancy, a 25% chance of an affected child, 50% chance of a carrier child, and 25% chance of a child who is neither affected nor a carrier, the classic 1:2:1 ratio.",
+   "l": []
+  },
+  {
+   "c": "Prenatal & Newborn Screening",
+   "p": "A pregnant patient wants results as early as possible and asks her physician to compare the timing and risk trade-offs of CVS versus amniocentesis. What is the most accurate comparison?",
+   "o": [
+    "CVS is performed later than amniocentesis but has a lower miscarriage risk",
+    "Amniocentesis and CVS are performed at the same gestational age with identical risks",
+    "CVS cannot provide karyotype information, only amniocentesis can",
+    "CVS is performed earlier (around 11-13 weeks) than amniocentesis (15-20 weeks) but carries a somewhat higher procedural miscarriage risk"
+   ],
+   "a": 3,
+   "e": "Correct: D. CVS is done earlier in gestation (11-13 weeks) than amniocentesis (15-20 weeks), which is valuable for patients wanting an earlier answer, but it carries a somewhat higher miscarriage risk (roughly 1/100 versus roughly 1/200 for amniocentesis).",
+   "l": []
+  },
+  {
+   "c": "Prenatal & Newborn Screening",
+   "p": "Which of the following statements about non-invasive prenatal testing (NIPT) is correct?",
+   "o": [
+    "NIPT is a diagnostic test that eliminates the need for any further confirmation",
+    "NIPT is only informative for structural anomalies, not for aneuploidy",
+    "NIPT analyzes cell-free fetal DNA in maternal blood and is a highly sensitive screening test, but a positive result still requires diagnostic confirmation with CVS or amniocentesis",
+    "NIPT can be performed reliably in the first days after a missed period"
+   ],
+   "a": 2,
+   "e": "Correct: C. NIPT is a highly sensitive screening test based on cell-free fetal DNA, but like any screening test it is not diagnostic, a positive result requires confirmation with an invasive diagnostic test.",
+   "l": []
+  },
+  {
+   "c": "Development & Red Flags",
+   "p": "A mother brings her 16-month-old to clinic. The child is not yet walking independently, says no words with meaning, and does not point to show interest in objects. The mother isn't worried, since her older child also \"walked a little late.\" What is the most appropriate response?",
+   "o": [
+    "Order chromosomal microarray immediately without any clinical history or exam",
+    "Recognize that this combination of red flags spans multiple domains (gross motor, language, joint attention), meeting criteria for global developmental delay, and pursue assessment",
+    "Tell her to return only if the child is still not walking by 3 years of age",
+    "Reassure her, since late walking alone is a common normal variant and no other findings matter here"
+   ],
+   "a": 1,
+   "e": "Correct: B. Global developmental delay requires delay in 2 or more domains. This child has concerns in gross motor, expressive language, and joint attention/pointing, a pattern that warrants formal developmental assessment rather than reassurance based on a sibling's history.",
+   "l": []
+  },
+  {
+   "c": "Development & Red Flags",
+   "p": "At a 2-year well-child visit, a toddler jumps with both feet off the ground, uses two- to three-word phrases, and removes some of her own clothing. Her parents ask if this is appropriate for her age. Which of the following best supports a normal assessment?",
+   "o": [
+    "Two-word phrases are markedly delayed for age 2",
+    "Undressing independently is itself a red flag at this age",
+    "Jumping with both feet is not expected until age 4",
+    "These are all age-appropriate 2-year milestones"
+   ],
+   "a": 3,
+   "e": "Correct: D. Jumping with both feet, 2-3 word phrases, and partial undressing are all consistent with typical 2-year development.",
+   "l": []
+  },
+  {
+   "c": "Development & Red Flags",
+   "p": "A physician distinguishes for a resident the concept of a \"critical period\" from general developmental variation, using the example of visual development after early, prolonged visual deprivation. Which statement best reflects the concept of a critical period?",
+   "o": [
+    "If the necessary sensory input is not received during this specific developmental window, a permanent deficit results that cannot be fully reversed later",
+    "Missing a critical period has no lasting consequence as long as the child is otherwise healthy",
+    "Skills learned during this window are easier to acquire but can be fully compensated for later if missed",
+    "Critical periods apply only to language acquisition, not to sensory systems like vision"
+   ],
+   "a": 0,
+   "e": "Correct: A. A critical period, unlike a general sensitive period, is a window in which missing the necessary stimulus causes a permanent deficit, classically demonstrated with early, prolonged visual deprivation causing irreversible visual impairment.",
+   "l": []
+  },
+  {
+   "c": "Development & Red Flags",
+   "p": "Parents are told their 4-year-old, who cannot yet hop on one foot, stack 10 blocks, or draw a circle, needs further developmental assessment. They are confused, since the child speaks in full sentences and separates easily from them at daycare. Which statement best addresses their concern?",
+   "o": [
+    "Since language and social-emotional domains are age-appropriate, no further assessment is needed",
+    "The child cannot have a developmental problem if verbal skills are strong",
+    "Delay can be domain-specific, motor red flags at age 4 warrant assessment even when language and social skills are intact",
+    "These motor skills are not expected until age 6, so there is no concern"
+   ],
+   "a": 2,
+   "e": "Correct: C. Developmental delay can be isolated to one domain. Motor red flags at age 4 (unable to hop, stack 10 blocks, or draw a circle) warrant evaluation on their own, regardless of normal language and social development.",
+   "l": []
+  },
+  {
+   "c": "Development & Red Flags",
+   "p": "A family physician uses one tool at every well-child visit to track development longitudinally, while a different tool is administered periodically and generates a formal positive/negative result that triggers follow-up if failed. Which pairing correctly matches the tool to its purpose?",
+   "o": [
+    "Nipissing District Developmental Screen = surveillance, Rourke Baby Record = formal screening",
+    "Rourke Baby Record = surveillance, Nipissing District Developmental Screen = formal screening",
+    "Both tools serve an identical function and are used interchangeably",
+    "Denver Developmental Screening Test = surveillance, Rourke Baby Record = formal screening"
+   ],
+   "a": 1,
+   "e": "Correct: B. The Rourke Baby Record is used for ongoing surveillance at routine visits, while the Nipissing District Developmental Screen is a formal periodic screening tool with a defined positive/negative result.",
+   "l": []
+  },
+  {
+   "c": "Development & Red Flags",
+   "p": "A father completes the Nipissing District Developmental Screen for his 18-month-old and answers \"no\" to a single item asking whether his child points to a desired object. He asks whether one \"no\" answer really matters. What should he be told?",
+   "o": [
+    "A single \"no\" response constitutes a positive screen and warrants further follow-up",
+    "The screen only becomes meaningful once the child is 3 years old",
+    "A single \"no\" is not significant, at least 3 are required to trigger follow-up",
+    "Only \"no\" answers on gross motor items are counted"
+   ],
+   "a": 0,
+   "e": "Correct: A. On the Nipissing/LookSee tool, even one \"no\" response is considered a positive screen requiring follow-up.",
+   "l": []
+  },
+  {
+   "c": "Development & Red Flags",
+   "p": "A 3-year-old still exhibits a persistent primitive reflex that would typically have disappeared in early infancy. How should this finding be interpreted?",
+   "o": [
+    "As an expected finding until school age",
+    "As significant only if it occurs on one side of the body",
+    "As a red flag for abnormal neurodevelopment warranting further work-up",
+    "As a normal variant of muscle tone in toddlers"
+   ],
+   "a": 2,
+   "e": "Correct: C. Persistence of primitive reflexes well beyond the age at which they should have disappeared is a recognized red flag for abnormal neurodevelopment.",
+   "l": []
+  },
+  {
+   "c": "Development & Red Flags",
+   "p": "A pediatric resident is asked to differentiate \"pruning\" from \"sculpting\" during brain development. Which explanation is correct?",
+   "o": [
+    "Pruning and sculpting are synonyms for the same process",
+    "Pruning eliminates unused neural connections, while sculpting enhances frequently used pathways",
+    "Pruning strengthens frequently used neural pathways, while sculpting eliminates unused connections",
+    "Both terms refer exclusively to processes occurring only in adolescence"
+   ],
+   "a": 1,
+   "e": "Correct: B. Pruning is the elimination of unused neural connections, sculpting is the enhancement of frequently used pathways. These complementary processes shape brain circuitry across early development.",
+   "l": []
+  },
+  {
+   "c": "Development & Red Flags",
+   "p": "A child has isolated fine motor delay at age 2 but is otherwise meeting all gross motor, language, cognitive, and social milestones. Which term most precisely describes this presentation, in contrast to global developmental delay?",
+   "o": [
+    "Global developmental delay",
+    "Failure to thrive",
+    "Regression",
+    "An isolated, domain-specific developmental delay, since only one domain is affected"
+   ],
+   "a": 3,
+   "e": "Correct: D. Global developmental delay requires delay across 2 or more domains. A single affected domain, as here, is described as an isolated or domain-specific delay.",
+   "l": []
+  },
+  {
+   "c": "Development & Red Flags",
+   "p": "A concerned parent describes that their previously talkative 3-year-old has stopped using words he had clearly mastered months earlier and is becoming increasingly withdrawn. Which statement is correct regarding this history?",
+   "o": [
+    "Regression is only concerning if it involves gross motor skills, not language",
+    "This should only be investigated if the child is also not growing appropriately",
+    "Loss of previously acquired skills (regression) is a red flag for abnormal development and always warrants prompt evaluation",
+    "Loss of previously acquired skills is expected toddler behavior and not a red flag"
+   ],
+   "a": 2,
+   "e": "Correct: C. Loss of previously acquired skills, or regression, is one of the clearest red flags for abnormal development and warrants prompt evaluation regardless of which domain is affected.",
+   "l": []
+  },
+  {
+   "c": "Attachment & Theory",
+   "p": "In a laboratory observation, an infant shows minimal distress when the mother leaves the room and does not seek her out or treat her differently from a stranger upon return, continuing to play with toys throughout. Which attachment classification best fits, and what does it typically reflect about the caregiving relationship?",
+   "o": [
+    "Insecure-avoidant attachment, often associated with a caregiving pattern that is dismissive of or unresponsive to the infant's distress",
+    "Insecure-ambivalent attachment, associated with inconsistent caregiving",
+    "Disorganized attachment, associated with frightening or frightened caregiving behavior",
+    "Secure attachment, reflecting consistently responsive caregiving"
+   ],
+   "a": 0,
+   "e": "Correct: A. Minimal response to separation or reunion, with the caregiver treated like a stranger, is the hallmark of insecure-avoidant attachment, often linked to a dismissive or unresponsive caregiving style.",
+   "l": []
+  },
+  {
+   "c": "Attachment & Theory",
+   "p": "A toddler becomes intensely distressed when the caregiver leaves the room, is difficult to console upon reunion, and alternates between clinging to and angrily resisting the caregiver. Which attachment style is this, and with what caregiving pattern is it typically associated?",
+   "o": [
+    "Secure attachment, associated with predictable caregiving",
+    "Insecure-avoidant attachment, associated with dismissive caregiving",
+    "Disorganized attachment, associated with maltreatment",
+    "Insecure-ambivalent attachment, associated with inconsistent or unpredictable caregiving"
+   ],
+   "a": 3,
+   "e": "Correct: D. Intense distress with difficulty being consoled, and ambivalent clinging/resisting behavior toward the caregiver, describes insecure-ambivalent attachment, typically associated with inconsistent caregiving.",
+   "l": []
+  },
+  {
+   "c": "Attachment & Theory",
+   "p": "A 2-year-old insists on choosing her own clothes and becomes defiant when her parents intervene, repeating \"me do it.\" According to Erikson, which psychosocial stage does this behavior best reflect, and what happens if caregivers are overly critical or controlling during this stage?",
+   "o": [
+    "Initiative vs. guilt, the child may become fearful of taking initiative",
+    "Autonomy vs. shame and doubt, excessive criticism may lead to feelings of shame and self-doubt rather than a sense of independence",
+    "Trust vs. mistrust, the child may develop general distrust of caregivers",
+    "Industry vs. inferiority, the child may develop a sense of inferiority"
+   ],
+   "a": 1,
+   "e": "Correct: B. This is Erikson's autonomy vs. shame/doubt stage (roughly 18 months to 3 years). Overly critical or controlling caregiving during this stage can foster shame and self-doubt rather than healthy independence.",
+   "l": []
+  },
+  {
+   "c": "Attachment & Theory",
+   "p": "A 4-year-old insists that a tall, thin glass has \"more juice\" than a short, wide glass, even after watching the same amount of juice poured from one into the other. Which Piagetian concept explains this, and what stage is the child in?",
+   "o": [
+    "The child has not yet mastered conservation, preoperational stage",
+    "The child is demonstrating abstract reasoning, formal operational stage",
+    "The child has not yet developed object permanence, sensorimotor stage",
+    "The child is demonstrating logical operations on concrete objects, concrete operational stage"
+   ],
+   "a": 0,
+   "e": "Correct: A. Failure to recognize that quantity is conserved despite a change in container shape is the classic conservation task failure of the preoperational stage (roughly ages 2-7).",
+   "l": []
+  },
+  {
+   "c": "Attachment & Theory",
+   "p": "A behavioral psychologist rewards a child with praise each time the child completes homework independently, gradually increasing the amount of homework required before praise is given. Which learning theory and theorist best describes this technique?",
+   "o": [
+    "Psychosocial theory, Erikson",
+    "Classical conditioning, Pavlov",
+    "Operant conditioning, Skinner",
+    "Cognitive development theory, Piaget"
+   ],
+   "a": 2,
+   "e": "Correct: C. Shaping behavior through reinforcement (praise) contingent on a desired action is operant conditioning, as described by Skinner.",
+   "l": []
+  },
+  {
+   "c": "Attachment & Theory",
+   "p": "A child raised in an unpredictable environment with inconsistent, sometimes frightening caregiver responses shows contradictory behavior on reunion with the caregiver, such as approaching while looking away, or freezing mid-motion. Which attachment classification is most consistent with this presentation, and which caregiving pattern is most associated with it?",
+   "o": [
+    "Insecure-avoidant attachment, consistently dismissive caregiving",
+    "Insecure-ambivalent attachment, inconsistent caregiving",
+    "Secure attachment, consistently responsive caregiving",
+    "Disorganized attachment, caregiving that is frightening or itself a source of fear for the child"
+   ],
+   "a": 3,
+   "e": "Correct: D. Contradictory, freezing, or approach-avoidance behaviors on reunion are the hallmark of disorganized attachment, classically associated with caregiving that is itself frightening or unpredictable in a threatening way.",
+   "l": []
+  },
+  {
+   "c": "Nutrition & Deficiencies",
+   "p": "An infant weaned early from breastfeeding and placed on a diet consisting mostly of starchy cereal with very little protein develops generalized edema, a distended abdomen, and irritability, despite adequate total caloric intake. Which condition best fits, and what is the underlying mechanism?",
+   "o": [
+    "Kwashiorkor, due to protein deficiency leading to low plasma oncotic pressure",
+    "Rickets, due to vitamin D deficiency",
+    "Scurvy, due to vitamin C deficiency",
+    "Marasmus, due to total caloric deficiency"
+   ],
+   "a": 0,
+   "e": "Correct: A. Adequate calories but inadequate protein, presenting with edema, describes kwashiorkor, low plasma protein reduces oncotic pressure, allowing fluid to shift into the interstitium.",
+   "l": []
+  },
+  {
+   "c": "Nutrition & Deficiencies",
+   "p": "A breastfed infant with no vitamin D supplementation presents at 8 months with delayed gross motor milestones and bowing of the legs. Which statement about this presentation is most accurate?",
+   "o": [
+    "Bowing of the legs at 8 months is a normal, expected finding unrelated to nutrition",
+    "This presentation is more consistent with iron deficiency than vitamin D deficiency",
+    "Breast milk is naturally low in vitamin D, so all exclusively or partially breastfed infants require vitamin D supplementation to prevent rickets",
+    "Breast milk alone provides sufficient vitamin D, so supplementation is unnecessary for breastfed infants"
+   ],
+   "a": 2,
+   "e": "Correct: C. Breast milk is low in vitamin D. Without supplementation, breastfed infants are at risk for rickets, presenting with delayed motor milestones and long bone bowing.",
+   "l": []
+  },
+  {
+   "c": "Nutrition & Deficiencies",
+   "p": "A child presents with poor wound healing, hair loss, a rash around the mouth and extremities, and chronic diarrhea. Which micronutrient deficiency best explains this constellation of findings?",
+   "o": [
+    "Vitamin A",
+    "Vitamin B12",
+    "Iron",
+    "Zinc"
+   ],
+   "a": 3,
+   "e": "Correct: D. Impaired growth, poor immune function, a periorificial/acral rash, and diarrhea are classic features of zinc deficiency.",
+   "l": []
+  },
+  {
+   "c": "Nutrition & Deficiencies",
+   "p": "A historical case describes a sailor with gum bleeding, poor wound healing, and corkscrew hairs after months of a diet devoid of fresh fruits and vegetables. This presentation reflects impaired synthesis of which substance, and which vitamin is deficient?",
+   "o": [
+    "Impaired collagen/hydroxyproline synthesis, vitamin C deficiency (scurvy)",
+    "Impaired myelin synthesis, vitamin B12 deficiency",
+    "Impaired clotting factor synthesis, vitamin K deficiency",
+    "Impaired purine synthesis, folate deficiency"
+   ],
+   "a": 0,
+   "e": "Correct: A. Vitamin C is a required coenzyme for hydroxyproline and collagen synthesis. Its deficiency (scurvy) impairs wound healing and connective tissue integrity, producing gum bleeding and corkscrew hairs.",
+   "l": []
+  },
+  {
+   "c": "Nutrition & Deficiencies",
+   "p": "An infant develops microcytic anemia with pallor and fatigue after being exclusively breastfed with no iron-rich complementary foods introduced by 10 months of age. What is the most likely explanation?",
+   "o": [
+    "Breast milk contains adequate iron indefinitely, so this must be a different cause",
+    "Iron stores present at birth are typically depleted by around 6 months, so iron-rich complementary foods are needed after that point to prevent deficiency",
+    "This presentation suggests folate deficiency rather than iron deficiency",
+    "Iron deficiency cannot occur in breastfed infants"
+   ],
+   "a": 1,
+   "e": "Correct: B. Term infants are born with iron stores that typically last about 6 months. Without iron-rich complementary foods introduced around that time, breastfed infants are at risk of iron deficiency anemia (microcytic).",
+   "l": []
+  },
+  {
+   "c": "Nutrition & Deficiencies",
+   "p": "Which dietary reference intake describes the nutrient intake level thought to meet the needs of only 50% of a healthy population, and which is used as the basis for calculating the RDA?",
+   "o": [
+    "Recommended Dietary Allowance (RDA)",
+    "Tolerable Upper Intake Level (UL)",
+    "Estimated Average Requirement (EAR)",
+    "Adequate Intake (AI)"
+   ],
+   "a": 2,
+   "e": "Correct: C. The EAR meets the needs of 50% of the population by definition, the RDA is then calculated as EAR + 2 standard deviations, covering about 97.5% of the population.",
+   "l": []
+  },
+  {
+   "c": "Nutrition & Deficiencies",
+   "p": "A dietitian explains to a family why a low-fat, high-carbohydrate diet may not provide enough calories for an infant recovering from growth faltering. Which statement is accurate?",
+   "o": [
+    "Fat provides roughly the same calories per gram as carbohydrate and protein",
+    "Fat provides substantially more calories per gram (about 9 kcal/g) than carbohydrate or protein (about 4 kcal/g each), so restricting fat can make it harder to meet caloric needs in a small volume",
+    "Protein is the most calorie-dense macronutrient",
+    "Alcohol has the lowest caloric density of any macronutrient"
+   ],
+   "a": 1,
+   "e": "Correct: B. Fat is the most calorie-dense macronutrient at about 9 kcal/g, versus about 4 kcal/g for carbohydrate and protein. Restricting fat in a small-volume diet (as in infants) can make it difficult to meet total caloric needs.",
+   "l": []
+  },
+  {
+   "c": "Nutrition & Deficiencies",
+   "p": "A toddler with poor dietary variety and minimal intake of folate-rich foods develops fatigue and pallor. Blood work shows macrocytic red blood cells. Which process is most directly impaired by folate deficiency, explaining this anemia?",
+   "o": [
+    "Hemoglobin oxygen binding",
+    "Myelin sheath formation",
+    "Collagen cross-linking",
+    "Purine synthesis needed for DNA replication in developing red blood cells"
+   ],
+   "a": 3,
+   "e": "Correct: D. Folate is a coenzyme required for purine synthesis, which is needed for DNA replication during red blood cell production. Deficiency impairs this process, producing megaloblastic (macrocytic) anemia.",
+   "l": []
+  },
+  {
+   "c": "Growth & Infant Feeding",
+   "p": "A 12-day-old term infant weighs about 200 g less than birth weight, having lost roughly 6% of birth weight in the first few days before beginning to regain. The mother is anxious this means breastfeeding has failed. What is the most appropriate response?",
+   "o": [
+    "All weight loss after birth is abnormal and requires investigation",
+    "A weight loss of up to about 5-10% in the first few days, with return to birth weight by 10-14 days, is expected, and this infant's course is consistent with that pattern",
+    "Growth faltering should be diagnosed based on this single data point",
+    "This is outside the normal range and formula supplementation should start immediately"
+   ],
+   "a": 1,
+   "e": "Correct: B. A 5-10% weight loss in the first days of life, with regain of birth weight by 10-14 days, is a normal and expected pattern for term breastfed infants.",
+   "l": []
+  },
+  {
+   "c": "Growth & Infant Feeding",
+   "p": "A father asks when he can expect his son's birth weight to have roughly doubled, and separately, roughly tripled. Which pairing is correct?",
+   "o": [
+    "Doubled by 1 year, tripled by 2 years",
+    "Doubled by 6 weeks, tripled by 4 months",
+    "Doubled by 2 months, tripled by 6 months",
+    "Doubled by 4-5 months, tripled by about 1 year"
+   ],
+   "a": 3,
+   "e": "Correct: D. Healthy infants typically double their birth weight by about 4-5 months and triple it by about 1 year of age.",
+   "l": []
+  },
+  {
+   "c": "Growth & Infant Feeding",
+   "p": "New parents ask whether they can put a small amount of honey on a pacifier to soothe their 5-month-old during teething. What is the most appropriate response and rationale?",
+   "o": [
+    "The main concern with early honey exposure is dental caries, not infection",
+    "This is safe as long as the honey is pasteurized",
+    "Honey should be avoided until after 12 months of age due to the risk of infantile botulism from Clostridium botulinum spores",
+    "Honey is safe starting at 3 months of age"
+   ],
+   "a": 2,
+   "e": "Correct: C. Honey can contain Clostridium botulinum spores, which pose a risk of infantile botulism in infants younger than 12 months, regardless of pasteurization status.",
+   "l": []
+  },
+  {
+   "c": "Growth & Infant Feeding",
+   "p": "A family asks when they should introduce allergenic foods such as peanut products and egg to their infant, having heard conflicting advice from relatives about delaying these foods. What is the current recommendation?",
+   "o": [
+    "There is no recommended delay, allergenic foods should be introduced along with other complementary foods, generally around 6 months",
+    "Delay allergenic foods until at least 12 months to reduce allergy risk",
+    "Only one new allergenic food should be introduced per month, starting at 18 months",
+    "Allergenic foods should never be introduced before age 2"
+   ],
+   "a": 0,
+   "e": "Correct: A. Current guidelines recommend no delay in introducing allergenic foods, they should be introduced along with other complementary foods around 6 months of age.",
+   "l": []
+  },
+  {
+   "c": "Growth & Infant Feeding",
+   "p": "An infant who had been tracking steadily at the 50th percentile for weight is now found to have crossed two major percentile lines downward at a follow-up visit, while length remains near the 50th percentile. Which term best describes this, and how does it differ from stunting?",
+   "o": [
+    "Wasting, defined purely by head circumference changes",
+    "This pattern is a normal variation requiring no further assessment",
+    "Stunting, this term applies whenever weight changes, regardless of height",
+    "Growth faltering, a drop in weight-for-age percentiles, stunting instead refers to a chronic process that reduces linear growth (height/length)"
+   ],
+   "a": 3,
+   "e": "Correct: D. Growth faltering (replacing the older term \"failure to thrive\") describes a drop in weight percentiles crossing two major lines. Stunting is a distinct, chronic process that impairs linear growth (height/length), which is preserved in this case.",
+   "l": []
+  },
+  {
+   "c": "Growth & Infant Feeding",
+   "p": "A mother asks how long she should continue breastfeeding and when to introduce complementary solid foods. Which statement reflects current recommendations?",
+   "o": [
+    "Exclusive breastfeeding for the first 6 months, with continued breastfeeding alongside complementary foods recommended up to 2 years or beyond",
+    "Formula should replace breastfeeding by 4 months for adequate nutrition",
+    "Breastfeeding should stop entirely once solids are introduced at 6 months",
+    "Exclusive breastfeeding for only the first 3 months before solids must be introduced"
+   ],
+   "a": 0,
+   "e": "Correct: A. Current recommendations support exclusive breastfeeding for the first 6 months of life, with continued breastfeeding alongside complementary foods recommended up to 2 years of age or beyond.",
+   "l": []
+  }
+ ],
+ "objectives": {}
+}

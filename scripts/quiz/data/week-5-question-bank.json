@@ -1,0 +1,768 @@
+{
+ "title": "Week 5 Question Bank",
+ "context": "Foundations of Medicine, Block 2, Week 5",
+ "questions": [
+  {
+   "c": "Week 5",
+   "p": "A public health unit pilots a new blood test for an asymptomatic condition in 1,000 adults. The condition has a prevalence of 2% in this group. The test has a sensitivity of 90% and a specificity of 95% against the gold standard. A participant's result comes back positive. What is the approximate probability that she truly has the condition?",
+   "o": [
+    "About 27%",
+    "About 99.8%",
+    "About 90%",
+    "About 95%"
+   ],
+   "a": 0,
+   "e": "A is correct. Build the 2x2 table. 20 of 1,000 have the condition, so TP = 18. 980 are healthy and 5% of them test positive, so FP = 49. PPV = TP / (TP + FP) = 18 / 67, about 27%. The deciding clue is the low prevalence.\nB: 99.8% is the NPV. It answers the question for a negative result.\nC: 90% is the sensitivity, the chance of a positive test when disease is present.\nD: 95% is the specificity, the chance of a negative test when disease is absent.\nHigh yield: Predictive value changes with prevalence. Use a sensitive screen, then a specific test for diagnosis.",
+   "l": [
+    "W5 7.1"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Your hospital lab is adding a new assay and plans to set its own reference interval instead of adopting the manufacturer's. Which statement about reference intervals is correct?",
+   "o": [
+    "An RI applies equally well to pregnant and pediatric patients",
+    "An RI holds the central 99% of values from a healthy population",
+    "Establishing a new RI needs over 120 healthy subjects per partition",
+    "Verifying an existing RI needs over 120 local patients per partition",
+    "A result outside the RI confirms that disease is present"
+   ],
+   "a": 2,
+   "e": "C is correct. Establishing an RI needs more than 120 subjects per partition. Verifying an existing RI needs more than 20.\nA: Pediatric, geriatric, transgender and pregnant patients are challenging populations for RIs.\nB: The RI is the central 95% of healthy values, not 99%.\nD: Verification needs only more than 20 patients per partition.\nE: 2.5% of healthy people fall outside each tail, so an abnormal flag does not prove disease.\nHigh yield: Limitations of RIs include demographics, excluded tails, sampling time, sample type and method.",
+   "l": [
+    "W5 7.2.1",
+    "W5 7.2.3"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Omar, 50, feels well, but his routine potassium returns at 6.8 mmol/L. His previous values were all normal and his other electrolytes are unremarkable. You review the collection and transport, the lab's analytical run and the final report, and find no explanation. Following the approach to unexpected lab test results, what is the next step?",
+   "o": [
+    "Repeat the test with no further review of the result",
+    "Report it as a post-analytical transcription error",
+    "Accept the result as correct and start treatment",
+    "Consult a lab professional for explanation and options"
+   ],
+   "a": 3,
+   "e": "D is correct. After pre-analytical, analytical and post-analytical explanations are considered, step 5 is to consult a lab professional, who explains and suggests other tests or methods.\nA: Repeat testing is step 6 and follows the lab consultation.\nB: Nothing in the review points to a transcription error, which was already considered.\nC: Accepting the result as correct is the final step, reached only after the earlier steps.\nHigh yield: Order: understand the issue, pre-analytical, analytical, post-analytical, consult the lab, additional testing, consider the result is correct.",
+   "l": [
+    "W5 7.4",
+    "W5 7.3"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Priya, a 29-year-old runner, finishes a hot-weather marathon after drinking little. Her plasma osmolality is high, her urine is dark and concentrated, and she reports intense thirst. Which change is the first homeostatic step in restoring her osmolality?",
+   "o": [
+    "Hypothalamic osmoreceptors fire and trigger ADH release",
+    "Kidneys lower water permeability and raise urine output",
+    "Stretch receptor activity rises and suppresses ADH",
+    "Atrial stretch triggers release of natriuretic peptide"
+   ],
+   "a": 0,
+   "e": "A is correct. In dehydration the hypothalamus increases osmoreceptor activity, decreases stretch receptor activity and releases ADH. The kidneys then raise water permeability and cut urine output, and thirst restores volume.\nB: Kidneys increase water permeability and decrease urine output to conserve fluid.\nC: Stretch receptor activity falls with low volume, and ADH release increases.\nD: ANP is released when atrial muscle is stretched and inhibits RAAS, the opposite of what she needs.\nHigh yield: Restore osmolality, conserve fluid, restore volume, increase BP.",
+   "l": [
+    "W5 9.3",
+    "W5 9.4"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "A tumour arises in a pelvic organ that lies below the pelvic pain line, the lower limit of the peritoneum. The patient describes a vague, deep, poorly localized ache. Along which route do visceral pain signals from this organ reach the spinal cord?",
+   "o": [
+    "With sympathetics to the T1-L3 levels",
+    "With parasympathetics to the S2-S4 levels",
+    "With the vagus nerve to the medulla",
+    "With the phrenic nerve to the C3-C5 levels"
+   ],
+   "a": 1,
+   "e": "B is correct. Below the pelvic pain line, visceral afferents follow parasympathetic fibres to S2-S4. Above it, they follow sympathetic fibres to T1-L3.\nA: Sympathetic routes to T1-L3 carry pain from viscera above the pelvic pain line.\nC: The vagus carries parasympathetic output to thoracic and abdominal viscera, not pelvic pain below the line.\nD: The phrenic nerve carries diaphragm irritation, referred to the shoulder.\nHigh yield: Above the line, follow sympathetics. Below the line, follow parasympathetics.",
+   "l": [
+    "W5 9.5"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Joseph, a 52-year-old with a 30 pack-year smoking history, has bronchoscopy for chronic cough. Biopsy shows squamous cells lining the bronchus where columnar cells normally sit. Nuclei are uniform, maturation is orderly and there is no atypia. Which response does this represent?",
+   "o": [
+    "Hyperplasia",
+    "Hypertrophy",
+    "Dysplasia",
+    "Metaplasia"
+   ],
+   "a": 3,
+   "e": "D is correct. Metaplasia is a reversible change from one type of specialized cell to another, here columnar to squamous. Orderly maturation and no nuclear changes argue against dysplasia.\nA: Hyperplasia is more cells of the same type, as in breast, colon or endometrium.\nB: Hypertrophy is larger cells with no new cells.\nC: Dysplasia shows disordered growth and maturation with nuclear changes and is premalignant.\nHigh yield: Adaptation is reversible. Dysplasia is pre-malignant.",
+   "l": [
+    "W5 9.9",
+    "W5 9.8"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Two patients attend the emergency department. Patient 1 has a shallow kitchen burn limited to the skin surface of her forearm. Patient 2 has a confirmed myocardial infarction from an occluded coronary artery. Which pairing best predicts how each injured tissue heals, in order?",
+   "o": [
+    "Regeneration, then scarring",
+    "Regeneration in both patients",
+    "Scar formation in both patients",
+    "Scar formation, then regeneration"
+   ],
+   "a": 0,
+   "e": "A is correct. Skin epithelium regenerates constantly, so a mild injury restores normal function. Cardiac myocytes are permanent cells, so the infarct heals by angiogenesis, granulation tissue and a fibrous scar.\nB: Cardiac myocytes cannot regenerate.\nC: A mild skin injury does not need scarring. Scar follows severe injury that destroys supporting structures.\nD: This reverses the two tissue types.\nHigh yield: Permanent cells (cardiac myocytes, neurons, skeletal muscle) always heal by scarring.",
+   "l": [
+    "W5 9.12",
+    "W5 9.11"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Daniel, 38, completes a PHQ-9 at his periodic health encounter. His total is 12. He denies thoughts of self-harm and still works full time, though he has lost interest in hockey and sleeps poorly. Based on PHQ-9 score bands, which management is most appropriate?",
+   "o": [
+    "Pharmacotherapy, CBT and psychiatry referral",
+    "Reassurance with no further action required",
+    "Watchful waiting, then repeat at follow-up",
+    "Consider starting pharmacotherapy or CBT"
+   ],
+   "a": 3,
+   "e": "D is correct. A PHQ-9 of 10-14 is moderate depression, where pharmacotherapy or CBT should be considered.\nA: Adding psychiatry referral fits 20-27, severe depression.\nB: Reassurance fits 0-4, minimal depression.\nC: Watchful waiting fits 5-9, mild depression.\nHigh yield: PHQ-9 bands: 0-4, 5-9, 10-14, 15-19, 20-27.",
+   "l": [
+    "W5 3.2"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Leila, 44, lost her job five weeks ago. She worries daily about money, sleeps poorly and has trouble focusing during job searches. She still parents her two children, attends interviews and sees friends weekly. Her GAD-7 score is 9. Which interpretation fits best?",
+   "o": [
+    "Generalized anxiety disorder, based on the GAD-7",
+    "Situational stress, an expected response to job loss",
+    "Major depressive disorder, given insomnia and poor focus",
+    "Anxiety disorder, since symptoms have passed 2 weeks"
+   ],
+   "a": 1,
+   "e": "B is correct. An expectable response to a common stressor or loss is not a mental disorder. Her symptoms are recent and do not interfere with functioning. A GAD-7 of 9 is mild anxiety.\nA: An anxiety disorder needs sustained, excessive symptoms, usually for 6 months, that interfere with functioning.\nC: Depression needs depressed mood or loss of interest with interference in functioning, neither of which is described.\nD: The 2-week window applies to major depression. Anxiety disorders usually need 6 months.\nHigh yield: The key to a mental disorder is the duration of symptoms and the level of interference.",
+   "l": [
+    "W5 3.1"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "A family health team notices its refugee patients complete far fewer ordered blood tests than other patients. The team now books these patients longer visits with interpreters and gives them transit tokens for lab visits. Other patients keep standard bookings. Which concept best describes this policy?",
+   "o": [
+    "Horizontal equity",
+    "Health inequality",
+    "Health surveillance",
+    "Vertical equity"
+   ],
+   "a": 3,
+   "e": "D is correct. Vertical equity is unequal treatment for those who are unequal in relevant respects. The team gives more support to a group facing more barriers.\nA: Horizontal equity is equal treatment of equals, which is what the standard bookings provide.\nB: Health inequality is the gap the team observed, not the policy that responds to it.\nC: Health surveillance is ongoing monitoring of health, not a service policy.\nHigh yield: Childcare, transit, employment and understanding of a test all affect follow-through on care.",
+   "l": [
+    "W5 4.1",
+    "W5 4.3"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "A trial compares annual screening for a cancer against usual care. Tumours in both arms show the same mix of slow and fast growth. Median survival from diagnosis is 7 years in the screened arm and 4 years in the control arm, yet disease-specific mortality and average age at death are identical. Which bias best explains the apparent survival gain?",
+   "o": [
+    "Length bias",
+    "Selection bias",
+    "Lead-time bias",
+    "Publication bias"
+   ],
+   "a": 2,
+   "e": "C is correct. Screening moved the date of diagnosis earlier without delaying death, so survival measured from diagnosis grows. Identical mortality is the clue.\nA: Length bias over-represents slow-growing cases in the screened group. The stem rules this out with the same growth mix in both arms.\nB: Selection bias arises when groups differ at the start, which the stem does not describe.\nD: Publication bias affects which studies get published, not results inside one trial.\nHigh yield: Judge screening benefit by reduction in disease-specific mortality.",
+   "l": [
+    "W5 6.4"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Rahul, a 46-year-old with no symptoms, has screening labs at his periodic health encounter. Fasting plasma glucose is 6.4 mmol/L and HbA1c is 6.2%. His BMI is 29 and his father has type 2 diabetes. Which category do these results place him in?",
+   "o": [
+    "At risk only",
+    "Normal glycemia",
+    "Prediabetes",
+    "Type 2 diabetes"
+   ],
+   "a": 2,
+   "e": "C is correct. FPG 6.1-6.9 mmol/L and HbA1c 6.0-6.4% both define prediabetes.\nA: At risk is FPG 5.6-6.0 or HbA1c 5.5-5.9%.\nB: Normal is FPG under 5.6 and HbA1c under 5.5%.\nD: Diabetes needs FPG of 7.0 mmol/L or more, or HbA1c of 6.5% or more.\nHigh yield: With risk factors, rescreen every 6-12 months instead of every 3 years.",
+   "l": [
+    "W5 6.5",
+    "W5 8.1"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Sofia is a healthy 45-year-old premenopausal woman with no family history of cancer or heart disease. She does not smoke, her BMI is normal and her last Pap test 3 years ago was negative. Using the periodic health screening guidance, which tests are due today?",
+   "o": [
+    "Pap test, plus a diabetes screen with FPG or HbA1c",
+    "Pap test, lipid panel and fecal immunochemical test",
+    "Lipid panel and a diabetes screen with FPG or HbA1c",
+    "Diabetes screen, FIT and a lipid panel together"
+   ],
+   "a": 0,
+   "e": "A is correct. Cervical screening runs ages 25-70 every 3 years, and hers is due. Diabetes screening starts at 40 and repeats every 3 years.\nB: Lipids start at 50 for women (or postmenopausal), and FIT starts at 50.\nC: The lipid panel is not yet due, and this option misses the Pap test.\nD: FIT and lipids both start at 50, and this option misses the Pap test.\nHigh yield: Men start lipid screening at 40. Women start at 50 or at menopause.",
+   "l": [
+    "W5 8.1",
+    "W5 6.5"
+   ]
+  },
+  {
+   "c": "Week 7",
+   "p": "Mrs. Leblanc, 87, lives in long-term care. A urine culture sent at admission grows E. coli. She has no fever, dysuria, urgency, flank pain or change in mental status. What is the most appropriate management?",
+   "o": [
+    "Start ciprofloxacin to prevent urosepsis",
+    "Start nitrofurantoin for 5 days now",
+    "Repeat the culture and treat if positive",
+    "No antibiotics, as she has no symptoms"
+   ],
+   "a": 3,
+   "e": "D is correct. Choosing Wisely advises against antimicrobials for bacteriuria in older adults unless specific urinary tract symptoms are present.\nA: No antibiotic is indicated without symptoms, whichever drug is chosen.\nB: Treatment without symptoms adds harm without benefit.\nC: A repeat positive culture still does not justify treatment without symptoms.\nHigh yield: Also avoid benzodiazepines as first choice for insomnia, agitation or delirium.",
+   "l": [
+    "W5 6.7"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Kofi, 34, books his first periodic health encounter with you. He has no complaints, takes no medications and wants to know which tests he needs. Following the PHE diagnostic pathway for a young, healthy patient, what comes first?",
+   "o": [
+    "Perform a full head-to-toe physical exam",
+    "Take a history focused on his risk factors",
+    "Order a standard screening blood panel",
+    "Confirm he is stable and check his vitals"
+   ],
+   "a": 3,
+   "e": "D is correct. The pathway starts with stability and vitals (airway, breathing, circulation, BP, HR, RR, temperature, O2 saturation). History of risk factors, a focused exam and investigations follow.\nA: There is little evidence for exam maneuvers beyond BMI and vitals unless a specific concern exists.\nB: The risk-factor history is the second step.\nC: There is no one-size-fits-all panel. Investigations depend on risk factors, symptoms and guidelines.\nHigh yield: PHE exam: BMI and vitals. Other maneuvers only for specific concerns.",
+   "l": [
+    "W5 1.1",
+    "W5 1.2"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Mr. Petrov, 52, has no symptoms. A non-fasting lipid panel and the Framingham risk score place his 10-year cardiovascular risk at 14%. Which management plan fits?",
+   "o": [
+    "Lifestyle changes plus a moderate-potency statin",
+    "Lifestyle, a high-potency statin, consider aspirin",
+    "A high-potency statin with no lifestyle changes",
+    "Lifestyle changes, then retest risk in 5 years"
+   ],
+   "a": 0,
+   "e": "A is correct. A risk of 10-19% is medium. Management is lifestyle interventions plus a moderate-potency statin.\nB: A high-potency statin with consideration of aspirin fits a high risk of 20% or more.\nC: Lifestyle interventions apply at every risk level.\nD: Lifestyle and retesting in 5 years fits a low risk under 10%.\nHigh yield: Lipid screening: men 40+, women 50+ or postmenopausal, every 5 years.",
+   "l": [
+    "W5 2.2",
+    "W5 11.1"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "A quality team reviews two causes of test overuse. In Case 1, a physician orders extra imaging mainly out of fear of being sued. In Case 2, a patient demands a full-body scan after reading online that more testing is always better. Which stakeholder group does each driver belong to, in order?",
+   "o": [
+    "Patient, then physician",
+    "Laboratory, then health system",
+    "Health system, then patient",
+    "Physician, then patient"
+   ],
+   "a": 3,
+   "e": "D is correct. Malpractice fear is a physician driver. A belief that more is better and Dr. Google are patient drivers.\nA: This reverses the two.\nB: Lab drivers are revenue, poor quality programs and lack of expertise. Neither case fits.\nC: Health system drivers are poor quality management, inadequate resources and historical practice.\nHigh yield: Other physician drivers: patient pressure, incentives, fee for service.",
+   "l": [
+    "W5 6.6",
+    "W5 6.9"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Regarding inappropriate use of laboratory tests, which of the following statements are true?\ni) It leads to unnecessary procedures and treatment\nii) It risks inappropriate care or patient harm\niii) It increases the cost burden on the health care system\niv) Choosing Wisely targets overutilization only, never underutilization",
+   "o": [
+    "i) and iii) only",
+    "ii) and iv) only",
+    "i), ii) and iii) only",
+    "i), ii) and iv) only",
+    "All of the above"
+   ],
+   "a": 2,
+   "e": "C is correct. Inappropriate test use drives unnecessary procedures and treatment, inappropriate care or harm, and higher system costs. Appropriate use balances both underutilization and overutilization.\nA: Statement ii is also true.\nB: Statement iv is false.\nD: Statement iv is false and iii is true.\nE: Statement iv is false.\nHigh yield: Choosing Wisely recommendations are evidence-based and made by multi-disciplinary stakeholders.",
+   "l": [
+    "W5 6.8",
+    "W5 6.7"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "A community hospital lab plans to adopt the manufacturer's reference interval for a new assay instead of building its own. To verify the interval, which approach is correct?",
+   "o": [
+    "Test over 20 local patients without checking the source population",
+    "Recruit over 120 healthy local subjects per partition and derive a new RI",
+    "Adopt the RI as printed, since the manufacturer validated it",
+    "Check the source population fits, then test over 20 locals per partition"
+   ],
+   "a": 3,
+   "e": "D is correct. Verifying an RI starts by determining if the patient population source is appropriate, then testing the local population with more than 20 patients per partition.\nA: The first verification step is checking the source population.\nB: More than 120 per partition is for establishing a new RI, not verifying one.\nC: Verification needs local testing.\nHigh yield: Establish: define population, test, analyze, over 120 per partition. Verify: check source, test locals, over 20 per partition.",
+   "l": [
+    "W5 7.2.5",
+    "W5 7.2.6"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "A lab runs a control sample with a true potassium of 5.0 mmol/L four times. The analyzer returns 5.5, 5.5, 5.6 and 5.5 mmol/L. How do you describe this analyzer's performance?",
+   "o": [
+    "Accurate but not precise",
+    "Precise but not accurate",
+    "Both accurate and precise",
+    "Neither accurate nor precise"
+   ],
+   "a": 1,
+   "e": "B is correct. The values sit close to each other (precise) but miss the true value of 5.0 (not accurate).\nA: Accuracy means matching the true value, which these results miss.\nC: The results miss the true value.\nD: The results cluster tightly, so precision is good.\nHigh yield: Accuracy: match the true value. Precision: spread of the data.",
+   "l": [
+    "W5 7.1"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "A screening program lowers the cut-point of its blood test so that more results count as positive. Which change in test performance is expected?",
+   "o": [
+    "Higher specificity, lower sensitivity",
+    "Higher sensitivity and specificity",
+    "Higher sensitivity, lower specificity",
+    "No change in sensitivity or specificity"
+   ],
+   "a": 2,
+   "e": "C is correct. Lowering a screening cut-point increases sensitivity but lowers specificity.\nA: This is the effect of raising the cut-point.\nB: Moving the cut-point trades one against the other.\nD: Moving the cut-point always shifts the balance.\nHigh yield: Use a highly sensitive screen in asymptomatic people, then a highly specific test for diagnosis.",
+   "l": [
+    "W5 6.4",
+    "W5 7.1"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Hours after Sam, 19, gets a wood splinter in his thumb, leukocytes and plasma proteins have been recruited from the circulation to the site. Following the 5 Rs of the inflammatory response, which step comes next?",
+   "o": [
+    "Recognition",
+    "Removal",
+    "Resolution",
+    "Regulation"
+   ],
+   "a": 1,
+   "e": "B is correct. The 5 Rs run Recognition, Recruitment, Removal, Regulation, Resolution. After recruitment, leukocytes and plasma proteins are activated and destroy and eliminate the offending agent.\nA: Recognition comes first, before recruitment.\nC: Resolution, the repair of damaged tissue, is last.\nD: Regulation, which controls and terminates the reaction, follows removal.\nHigh yield: Celsus: rubor, calor, dolor, tumor. Virchow added functio laesa.",
+   "l": [
+    "W5 9.10"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Mr. Obi, 61, has had poorly controlled hypertension for 20 years. Which of the following are listed complications of hypertension?\ni) Aortic dissection\nii) Multi-infarct dementia\niii) Renal failure\niv) Cardiac hypertrophy and heart failure",
+   "o": [
+    "i), ii) and iii) only",
+    "i) and iv) only",
+    "ii) and iii) only",
+    "iii) and iv) only",
+    "All of the above"
+   ],
+   "a": 4,
+   "e": "E is correct. Hypertension complications include atherosclerosis (MI), cardiac hypertrophy and heart failure, multi-infarct dementia, aortic dissection, cerebrovascular hemorrhage and renal failure. All four are listed.\nA: Statement iv is also a complication.\nB: Statements ii and iii are also complications.\nC: Statements i and iv are also complications.\nD: Statements i and ii are also complications.\nHigh yield: Your Week 5 quiz flipped this: liver cirrhosis is not a complication.",
+   "l": [
+    "W5 9.13",
+    "W5 9.14"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Two patients develop lymphatic blockage. Patient 1 has swelling of the right arm. Patient 2 has swelling of the left leg. Which lymphatic channel normally drains each region, in order?",
+   "o": [
+    "Thoracic duct, then right lymphatic duct",
+    "Thoracic duct for both of the regions",
+    "Right lymphatic duct for both regions",
+    "Right lymphatic duct, then thoracic duct"
+   ],
+   "a": 3,
+   "e": "D is correct. The right lymphatic duct drains the right head, neck, thorax and upper limb. The thoracic duct drains the other three quarters of the body, including the lower body.\nA: This reverses the two.\nB: The right upper limb drains to the right lymphatic duct.\nC: The lower body drains to the thoracic duct.\nHigh yield: Any blockage of lymphatic vessels causes swelling of that region (edema).",
+   "l": [
+    "W5 9.1"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "A coronary artery plaque removed at autopsy from a 66-year-old smoker shows lipid-filled foam cells in the intima. From which cells did these foam cells most likely arise?",
+   "o": [
+    "Endothelial cells that line the arterial lumen",
+    "Monocytes that migrated into the intima",
+    "Platelets adhering to the endothelium",
+    "T-cells recruited into the vessel wall"
+   ],
+   "a": 1,
+   "e": "B is correct. In atherosclerosis, monocytes adhere to the endothelium, migrate into the intima and transform into macrophages and foam cells.\nA: Endothelial dysfunction starts the process but endothelial cells do not become foam cells.\nC: Platelets adhere and release factors that recruit smooth muscle.\nD: T-cells are recruited later but do not become foam cells.\nHigh yield: First step: endothelial dysfunction, with raised permeability, leukocyte adhesion and thrombosis.",
+   "l": [
+    "W5 9.14",
+    "W5 9.8"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Jamal, 29, completes the DAST-10 at a periodic health encounter. Answering about the past 12 months, he scores 4. Which response matches his score?",
+   "o": [
+    "Feedback and advice",
+    "Intensive assessment and referral",
+    "Feedback and counselling",
+    "Encouragement and education"
+   ],
+   "a": 2,
+   "e": "C is correct. A DAST-10 of 3-5 is a moderate level of problems, managed with feedback and counselling.\nA: Feedback and advice fits 1-2, a low level.\nB: Intensive assessment and referral fits 6-8, a substantial level.\nD: Encouragement and education fits 0, no problems.\nHigh yield: DAST-10 is the Drug Abuse Screening Tool, as your Week 5 quiz noted.",
+   "l": [
+    "W5 3.2"
+   ]
+  },
+  {
+   "c": "Week 5",
+   "p": "Marie, 40, is brought in by police after an arrest at a political protest. Her family worries her activism signals a mental illness. She sleeps well, works full time and shows no dysfunction in thinking, mood or behaviour. How is her behaviour best classified?",
+   "o": [
+    "Not a mental disorder, with no individual dysfunction",
+    "A mental disorder, since she is in conflict with society",
+    "A mental disorder, since the behaviour is socially deviant",
+    "Not a disorder only because it lasted under 2 weeks"
+   ],
+   "a": 0,
+   "e": "A is correct. Socially deviant behaviour (political, religious, sexual) and conflicts between the individual and society are not mental disorders unless they result from a dysfunction in the individual.\nB: Conflict with society alone does not define a disorder.\nC: Social deviance alone does not define a disorder.\nD: Duration is not the reason here. The absence of dysfunction is.\nHigh yield: A disorder reflects dysfunction, judged by duration and interference with functioning.",
+   "l": [
+    "W5 3.1"
+   ]
+  },
+  {
+   "c": "Test performance",
+   "p": "The same blood test is used in two settings. Clinic 1 screens healthy adults where the disease is rare. Clinic 2 is a specialist clinic where most referred patients have symptoms of the disease. Which statement is correct?",
+   "o": [
+    "The PPV is the same in both clinics",
+    "The specificity is lower in Clinic 1",
+    "The PPV is higher in Clinic 2",
+    "The ROC curve shifts upward in Clinic 2",
+    "The sensitivity is higher in Clinic 2"
+   ],
+   "a": 2,
+   "e": "C is correct. Higher pretest probability gives a higher PPV, and predictive value changes with prevalence. Sensitivity and specificity are calculated within the diseased and healthy groups separately, so they do not change with prevalence.\nA: Predictive values change with prevalence.\nB: Specificity is TN / (TN + FP), measured only in people without the disease.\nD: The ROC curve plots sensitivity against 1 minus specificity, which do not change with prevalence.\nE: Sensitivity is TP / (TP + FN), measured only in people with the disease.\nHigh yield: This is the rule behind your mock exam miss: pretest probability does change PPV.",
+   "l": [
+    "W5 7.1"
+   ]
+  },
+  {
+   "c": "Test performance",
+   "p": "On a ROC curve, one cut-point of a new test sits at x = 0.10 and y = 0.90. What are the sensitivity and specificity at this cut-point?",
+   "o": [
+    "Sensitivity 90%, specificity 10%",
+    "PPV 90% with an NPV of 10%",
+    "Sensitivity 10%, specificity 10%",
+    "Sensitivity 90%, specificity 90%",
+    "Sensitivity 10%, specificity 90%"
+   ],
+   "a": 3,
+   "e": "D is correct. The x-axis is the false positive rate (1 minus specificity), so x = 0.10 means specificity 90%. The y-axis is the true positive rate (sensitivity), so y = 0.90 means sensitivity 90%.\nA: Specificity is 1 minus x, not x itself.\nB: ROC curves plot sensitivity and the false positive rate, not predictive values.\nC: This misreads both axes.\nE: Sensitivity is read from the y-axis, 0.90.\nHigh yield: More area under the curve means a more effective test.",
+   "l": [
+    "W5 7.1"
+   ]
+  },
+  {
+   "c": "Test performance",
+   "p": "A test with 80% sensitivity and 90% specificity is used in 1,000 people. The disease prevalence is 10%. What is the approximate negative predictive value?",
+   "o": [
+    "90%",
+    "98%",
+    "81%",
+    "80%",
+    "47%"
+   ],
+   "a": 1,
+   "e": "B is correct. 100 have the disease: TP 80, FN 20. 900 are healthy: TN 810, FP 90. NPV = TN / (TN + FN) = 810 / 830, about 98%.\nA: 90% is the specificity.\nC: 81% is TN out of all 1,000 people, not out of all negative tests.\nD: 80% is the sensitivity.\nE: 47% is the PPV, 80 / 170.\nHigh yield: Low prevalence keeps NPV high and drags PPV down.",
+   "l": [
+    "W5 7.1"
+   ]
+  },
+  {
+   "c": "Test performance",
+   "p": "A lab sets its decision threshold at the upper limit of the reference range. A healthy blood donor with no disease has a result above the threshold. How is this result classified?",
+   "o": [
+    "False positive",
+    "Precision error",
+    "True negative",
+    "False negative",
+    "True positive"
+   ],
+   "a": 0,
+   "e": "A is correct. With disease absent, a result below the threshold is a true negative and a result above it is a false positive.\nB: Precision is the spread of repeated results, not the classification of one result.\nC: A true negative falls below the threshold.\nD: A false negative is a result below the threshold in someone with disease.\nE: A true positive needs disease present.\nHigh yield: Increasing TN raises specificity. Increasing TP raises sensitivity.",
+   "l": [
+    "W5 7.1",
+    "W5 7.2.2"
+   ]
+  },
+  {
+   "c": "Health equity",
+   "p": "A public health report reviews income-related health gaps in Canada. Which of the following statements is FALSE?",
+   "o": [
+    "Social determinants hit marginalized groups harder in COVID-19",
+    "The cost of health disparity in Canada is $6.1 billion",
+    "The poorest fifth make fewer specialist visits",
+    "Income gaps in self-rated mental health have narrowed",
+    "Income gaps in COPD hospitalization have widened"
+   ],
+   "a": 3,
+   "e": "D is correct. Gaps by income in self-rated mental health and COPD hospitalization have widened over time, not narrowed.\nA: True. Multimorbidity, dense households and testing rates hit marginalized groups harder.\nB: True. The cost of disparity is $6.1 billion.\nC: True. The poorest fifth have fewer specialist visits, the fact your mock exam tested.\nE: True. COPD hospitalization gaps have widened.\nHigh yield: FALSE items: test each option against the notes and pick the one that fails.",
+   "l": [
+    "W5 4.1"
+   ]
+  },
+  {
+   "c": "Health equity",
+   "p": "A clinic runs two policies. Policy 1 offers the same flu clinic hours to all adults who have the same level of need. Policy 2 adds evening outreach and transit help only for patients with fewer resources. Which equity concept fits each policy, in order?",
+   "o": [
+    "Vertical equity for both of them",
+    "Horizontal equity for both of them",
+    "Vertical, then horizontal equity",
+    "Horizontal, then vertical equity"
+   ],
+   "a": 3,
+   "e": "D is correct. Horizontal equity is equal treatment of equals in relevant respects. Vertical equity is unequal treatment for those who are unequal in relevant respects.\nA: Policy 1 treats equal groups the same, which is horizontal.\nB: Policy 2 treats unequal groups differently, which is vertical.\nC: This reverses the two.\nHigh yield: The poorest fifth are less likely to use cancer screening and have more avoidable deaths.",
+   "l": [
+    "W5 4.1",
+    "W5 4.3"
+   ]
+  },
+  {
+   "c": "Somatic pathways",
+   "p": "Aisha, 26, steps on a tack while barefoot. Pain fibres from the skin of her sole carry the signal toward her spinal cord. Which sequence correctly traces the signal from the skin to its first synapse?",
+   "o": [
+    "Ramus, DRG, spinal nerve, dorsal root, ventral grey horn",
+    "Ramus, spinal nerve, ventral root, DRG, dorsal grey horn",
+    "Ramus, spinal nerve, DRG, dorsal root, dorsal grey horn",
+    "Spinal nerve, ramus, dorsal root, DRG, dorsal grey horn"
+   ],
+   "a": 2,
+   "e": "C is correct. The general somatic pathway runs from the general sensory neuron to the ramus, spinal nerve, DRG, dorsal root and dorsal grey horn, where it meets the secondary neuron to the brain.\nA: The DRG sits after the spinal nerve, and sensory fibres end in the dorsal, not ventral, grey horn.\nB: Sensory fibres enter through the dorsal root. The ventral root carries motor fibres out.\nD: The ramus comes before the spinal nerve, and the DRG comes before the dorsal root.\nHigh yield: Sensory = afferent, in through the dorsal root. Motor = efferent, out through the ventral root.",
+   "l": [
+    "W5 9.7"
+   ]
+  },
+  {
+   "c": "Somatic pathways",
+   "p": "A neurology tutor tests reflexes on a healthy volunteer and asks the group about reflex arc anatomy. Which statement is correct?",
+   "o": [
+    "The patellar reflex arc is polysynaptic via an interneuron",
+    "Reflex arc motor fibres leave the cord in the dorsal root",
+    "Reflex arc sensory fibres end in the ventral grey horn",
+    "The Achilles reflex arc has no interneuron in the cord"
+   ],
+   "a": 3,
+   "e": "D is correct. Most reflex arcs pass through an interneuron (polysynaptic). The patellar and Achilles reflex arcs have no interneuron (monosynaptic).\nA: The patellar arc is monosynaptic, like the Achilles arc.\nB: Motor fibres leave through the ventral root.\nC: Sensory fibres enter the dorsal grey horn. The general motor neuron sits in the ventral grey horn.\nHigh yield: Reflex arc: sensory neuron, DRG, dorsal root, dorsal grey horn, interneuron, ventral grey horn, motor neuron, ventral root.",
+   "l": [
+    "W5 9.7"
+   ]
+  },
+  {
+   "c": "Somatic pathways",
+   "p": "Marco, 31, burns his fingertip on a stove. Your Week 5 quiz established that the dorsal root ganglion holds the cell bodies of general sensory neurons. Where does the pain signal from his finger make its first synapse?",
+   "o": [
+    "Dorsal root ganglion",
+    "Dorsal grey horn of the spinal cord",
+    "Sympathetic chain ganglion",
+    "Ventral grey horn of the spinal cord"
+   ],
+   "a": 1,
+   "e": "B is correct. The general sensory neuron passes through the DRG without synapsing and enters the dorsal grey horn, where it synapses with the secondary neuron to the brain.\nA: The DRG holds cell bodies of unipolar sensory neurons and has no synapses.\nC: Sympathetic chain ganglia hold post-synaptic sympathetic cell bodies, not somatic sensory synapses.\nD: The ventral grey horn holds the LMN. Sensory fibres reach it only through an interneuron or the monosynaptic patellar and Achilles arcs.\nHigh yield: No synapses in the DRG. Synapses do occur in sympathetic chain ganglia.",
+   "l": [
+    "W5 9.6",
+    "W5 9.7"
+   ]
+  },
+  {
+   "c": "Somatic pathways",
+   "p": "Which statement about the organization of the nervous system is correct?",
+   "o": [
+    "Somatic motor fibres act on smooth muscle and cardiac muscle",
+    "Somatic fibres travel in all spinal nerves and 12 cranial nerves",
+    "The PNS includes 31 spinal nerve pairs, 8 of them cervical",
+    "The CNS includes the brain, spinal cord and 12 cranial nerves"
+   ],
+   "a": 2,
+   "e": "C is correct. The PNS has 12 cranial nerve pairs and 31 spinal nerve pairs: 8 cervical, 12 thoracic, 5 lumbar, 5 sacral and 1 coccygeal.\nA: Smooth muscle, cardiac muscle, viscera and glands receive visceral motor (autonomic) fibres. Somatic motor fibres go to skeletal muscle.\nB: The somatic system is conveyed by all spinal nerves and only 4 cranial nerves.\nD: Cranial nerves belong to the PNS. The CNS is the brain and spinal cord.\nHigh yield: Somatic sensory carries pain, proprioception, temperature, pressure and touch from the body wall.",
+   "l": [
+    "W5 9.6",
+    "W5 9.7"
+   ]
+  },
+  {
+   "c": "Autonomic pathways",
+   "p": "During a dissection lab, a student finds a spinal nerve with both a white ramus communicans and a grey ramus communicans joining the sympathetic chain. At which level was this spinal nerve most likely taken?",
+   "o": [
+    "T8",
+    "S3",
+    "C6",
+    "L5"
+   ],
+   "a": 0,
+   "e": "A is correct. Pre-synaptic sympathetic fibres enter the chain through the white ramus only at T1-L2/3. Post-synaptic fibres exit through the grey ramus to all spinal nerves. Only a nerve between T1 and L2/3 has both.\nB: S3 has a grey ramus only. Its parasympathetic fibres leave as pelvic splanchnics, not through a ramus to the chain.\nC: C6 has a grey ramus, since all spinal nerves do, but no white ramus.\nD: L5 lies below L2/3, so it has a grey ramus only.\nHigh yield: Sympathetic outflow is thoracolumbar. Parasympathetic outflow is craniosacral.",
+   "l": [
+    "W5 9.7"
+   ]
+  },
+  {
+   "c": "Autonomic pathways",
+   "p": "A pre-synaptic sympathetic neuron with its cell body at T7 sends a fibre that reduces peristalsis in the stomach. Where does this fibre synapse with its post-synaptic neuron?",
+   "o": [
+    "A ganglion outside the sympathetic chain",
+    "A chain ganglion at the T7 level",
+    "The intermediolateral grey horn at T7",
+    "The superior cervical ganglion"
+   ],
+   "a": 0,
+   "e": "A is correct. For abdominopelvic viscera, the pre-synaptic neuron (long) passes through the chain with no synapse, travels in an abdominopelvic splanchnic nerve (T5-L2/3) and synapses in a ganglion outside the sympathetic chain. The post-synaptic neuron is short.\nB: Synapse at the same-level chain ganglion is the trunk pathway, for body wall targets.\nC: The intermediolateral grey horn holds the pre-synaptic cell body, not the synapse.\nD: The superior cervical ganglion serves the head.\nHigh yield: Trunk: synapse in the chain at the same level. Head and limbs: ascend or descend in the chain. Abdominopelvic viscera: no synapse in the chain.",
+   "l": [
+    "W5 9.7"
+   ]
+  },
+  {
+   "c": "Autonomic pathways",
+   "p": "During exercise, Ben's heart rate rises from 70 to 150 bpm through sympathetic stimulation. Along which route do post-synaptic sympathetic fibres reach his heart?",
+   "o": [
+    "Vagus nerve fibres from the medulla",
+    "Cardiopulmonary splanchnic nerves from T1-T4",
+    "Abdominopelvic splanchnic nerves from T5-L2/3",
+    "Pelvic splanchnic nerves from S2-S4"
+   ],
+   "a": 1,
+   "e": "B is correct. Thoracic viscera receive sympathetic fibres from chain ganglia at the same or different levels through the cardiopulmonary splanchnic nerves (T1-4).\nA: The vagus is parasympathetic and lowers heart rate.\nC: Abdominopelvic splanchnics serve abdominal and pelvic viscera.\nD: Pelvic splanchnics are parasympathetic, from S2-4.\nHigh yield: SNS raises HR and force of contraction. PNS lowers both.",
+   "l": [
+    "W5 9.7",
+    "W5 9.2"
+   ]
+  },
+  {
+   "c": "Autonomic pathways",
+   "p": "A tumour at the apex of the lung damages the sympathetic chain near T1, cutting off pre-synaptic fibres that ascend the chain toward the head. In which ganglion do the post-synaptic neurons to the head normally have their cell bodies?",
+   "o": [
+    "Intermediolateral grey horn",
+    "Superior cervical ganglion",
+    "Stellate ganglion",
+    "Ciliary ganglion"
+   ],
+   "a": 1,
+   "e": "B is correct. For the head, pre-synaptic fibres enter the chain at T1 and ascend to synapse in the superior cervical ganglion.\nA: The intermediolateral grey horn holds pre-synaptic cell bodies, not post-synaptic ones.\nC: The stellate ganglion is the inferior cervical ganglion fused with the T1 ganglion. It is not the ganglion named for the head.\nD: The ciliary ganglion is parasympathetic and receives fibres from CN III.\nHigh yield: Head: superior cervical ganglion. Upper limb: cervical ganglion. Lower limb: L2-S3.",
+   "l": [
+    "W5 9.7"
+   ]
+  },
+  {
+   "c": "Autonomic pathways",
+   "p": "A student summarizes the autonomic supply of the forearm. Which of her statements is FALSE?",
+   "o": [
+    "Parasympathetic fibres do not innervate blood vessels",
+    "Pre-synaptic sympathetic cell bodies lie in the lateral horn",
+    "Post-synaptic sympathetic fibres join every spinal nerve",
+    "Parasympathetic fibres reach forearm skin in spinal nerves",
+    "Sympathetic fibres activate sweat secretion in the skin"
+   ],
+   "a": 3,
+   "e": "D is correct. Spinal nerves carry no parasympathetic component, and there is no parasympathetic input to the skin or extremities.\nA: True. The PNS does not innervate blood vessels. Vessels dilate when sympathetic tone is shut off.\nB: True. Pre-synaptic sympathetic cell bodies sit in the intermediolateral grey horn.\nC: True. Post-synaptic fibres exit through the grey ramus to all spinal nerves.\nE: True. The SNS activates sweat secretion.\nHigh yield: Sympathetic control of arterioles changes TPR in both directions by changing tonic activity.",
+   "l": [
+    "W5 9.7",
+    "W5 9.2"
+   ]
+  },
+  {
+   "c": "Visceral afferents",
+   "p": "Regarding visceral afferents and referred pain, which of the following statements are true?\ni) Visceral afferents return through the sympathetic chain and white ramus to the DRG\nii) The brain misreads visceral pain as body wall pain from the same spinal levels\niii) Referred visceral pain is sharp and well localized\niv) Pain from viscera below the pelvic pain line follows parasympathetics to S2-4",
+   "o": [
+    "i) and ii) only",
+    "ii) and iii) only",
+    "i), ii) and iii) only",
+    "i), ii) and iv) only",
+    "All of the above"
+   ],
+   "a": 3,
+   "e": "D is correct. Visceral afferents travel through splanchnic nerves, the sympathetic chain, the WRC, spinal nerve and DRG to the dorsal grey horn. The brain misinterprets this pain as body wall pain at those spinal levels. Below the pelvic pain line, pain follows parasympathetics to S2-4.\nA: Statement iv is also true.\nB: Statement iii is false. Referred pain is diffuse, non-specific and achy.\nC: Statement iii is false and statement iv is true.\nE: Statement iii is false.\nHigh yield: Above the pelvic pain line, follow sympathetics to T1-L3.",
+   "l": [
+    "W5 9.5"
+   ]
+  },
+  {
+   "c": "Visceral afferents",
+   "p": "Victor, 45, has a stone lodged in his left kidney. He reports a dull ache in his lower abdomen and proximal medial thigh, with no back or shoulder pain. To which spinal levels does his brain attribute this visceral pain?",
+   "o": [
+    "C3-C5",
+    "T1-T4",
+    "T12-L1",
+    "S2-S4"
+   ],
+   "a": 2,
+   "e": "C is correct. Visceral sensory fibres from the kidney come from the T12-L1 levels, so pain refers to the lower abdomen and proximal medial thigh, as in your Week 5 quiz.\nA: C3-C5 is the phrenic nerve level. Diaphragm irritation refers to the shoulder.\nB: T1-T4 carries sympathetic supply to thoracic viscera.\nD: S2-S4 serves viscera below the pelvic pain line.\nHigh yield: Referred pain maps visceral afferents onto the body wall supplied by the same spinal levels.",
+   "l": [
+    "W5 9.5"
+   ]
+  },
+  {
+   "c": "Cranial autonomics",
+   "p": "A tutor reviews the cranial part of the parasympathetic system that drives lacrimation and salivation. Which statement is correct?",
+   "o": [
+    "Pre-synaptic fibres arise from the nuclei of CN V",
+    "Post-synaptic fibres travel with CN V to their targets",
+    "Its ganglia lie far from targets, beside the spinal cord",
+    "Its pre-synaptic neurons are short and post-synaptic long"
+   ],
+   "a": 1,
+   "e": "B is correct. Pre-synaptic fibres from CN III, VII and IX reach the ciliary, pterygopalatine, otic and submandibular ganglia. Post-synaptic fibres then travel with CN V to the target.\nA: CN V carries the post-synaptic fibres. The pre-synaptic fibres come from CN III, VII and IX.\nC: Parasympathetic ganglia lie close to the target.\nD: Parasympathetic pre-synaptic neurons are long and post-synaptic short.\nHigh yield: Craniosacral outflow: CN III, VII, IX, vagus (from the medulla) and pelvic splanchnics (S2-4).",
+   "l": [
+    "W5 9.7"
+   ]
+  },
+  {
+   "c": "Cranial autonomics",
+   "p": "Which pairing correctly matches the division of the autonomic nervous system to each effect, in order: dilation of the pupils, then increased salivation?",
+   "o": [
+    "Parasympathetic for both of the effects",
+    "Sympathetic for both of the effects",
+    "Parasympathetic, then sympathetic",
+    "Sympathetic, then parasympathetic"
+   ],
+   "a": 3,
+   "e": "D is correct. Fight or flight (SNS) dilates the pupils. Rest and digest (PNS) drives lacrimation, salivation, urination, digestion and defecation.\nA: Pupil dilation is a fight or flight function.\nB: Salivation is a rest and digest function.\nC: This reverses the two.\nHigh yield: The vagus carries parasympathetic output to thoracic and abdominal viscera from the medulla.",
+   "l": [
+    "W5 9.7",
+    "W5 9.2"
+   ]
+  }
+ ],
+ "objectives": {
+  "W5 1.1": "Build an approach and diagnostic pathway for a screening well adult periodic health encounter including a mental health screen",
+  "W5 1.2": "Describe the key components of a comprehensive well adult screening history, including a mental health screen, and physical examination",
+  "W5 11.1": "Propose primary and secondary prevention interventions for patients with risk factors, with emphasis on lifestyle modification",
+  "W5 2.2": "Build an approach to evaluating patient risk factors for health conditions",
+  "W5 3.1": "Identify stressors and differentiate situational stress from a true anxiety disorder",
+  "W5 3.2": "Build an approach to evaluating patients for depression, anxiety and alcohol and substance use using published mental health screening templates",
+  "W5 4.1": "Understand the concepts of inequality and inequity, and the relationship between social determinants and lifetime health experiences",
+  "W5 4.3": "Recognize the role of health system in exacerbating or mitigating health inequities, and the role of health care policy to address these barriers",
+  "W5 6.4": "Outline the principles of a screening test",
+  "W5 6.5": "List the common screening tests for adult age groups (20-55 years)",
+  "W5 6.6": "Outline the principles of and background of Choosing Wisely",
+  "W5 6.7": "Apply Choosing Wisely principles to reduce inappropriate test utilization & unnecessary testing",
+  "W5 6.8": "Review what effects unnecessary testing and treatment may have on patients and health care",
+  "W5 6.9": "Discuss how one could approach Choosing Wisely in their institution",
+  "W5 7.1": "Define screening lab test performance parameters (e.g. accuracy, precision, predictive value, sensitivity, specificity)",
+  "W5 7.2.1": "Describe how reference intervals are determined taking into account age, gender and population-based parameters",
+  "W5 7.2.2": "Discuss what reference intervals are",
+  "W5 7.2.3": "Discuss limitations of reference intervals",
+  "W5 7.2.5": "Determine if reference intervals are appropriate",
+  "W5 7.2.6": "Discuss weaknesses in how reference intervals are determined and the implications for interpreting lab test results",
+  "W5 7.3": "Explain the impact of pre-analytical, analytical and post-analytical factors affecting the integrity of lab test results, including collection and transport and the proper pre- analytical process to reduce errors",
+  "W5 7.4": "Develop an approach to investigations using a template, including consideration of test error",
+  "W5 8.1": "Build a screening plan for an adult in the age groups (20-55 years)",
+  "W5 9.1": "Describe the integration between cardiovascular and all other body systems",
+  "W5 9.10": "Outline basic components of the inflammatory response and explain clinical manifestations of localized inflammation",
+  "W5 9.11": "Explain the difference between regeneration and repair",
+  "W5 9.12": "Contrast regeneration and repair",
+  "W5 9.13": "Outline urgent presentations of complications of risk factors",
+  "W5 9.14": "Explain common clinical findings associated with risk factors and their complications",
+  "W5 9.2": "Explain the basic mechanisms of neuronal and endocrine regulation of cardiovascular and renal systems",
+  "W5 9.3": "Explain the basic mechanisms of body fluid & blood pressure regulation",
+  "W5 9.4": "Describe how the cardiovascular system and renal system work to maintain homeostasis",
+  "W5 9.5": "Discuss the importance of understanding referred pain and outline the general pathway of visceral afferents",
+  "W5 9.6": "Compare the structure and function of central and peripheral nervous systems",
+  "W5 9.7": "Describe the general organization and pathways of the somatic and autonomic nervous system",
+  "W5 9.8": "Describe the different mechanisms of short- and long-term cellular responses to injury, potential end-organ effects and mechanisms of repair",
+  "W5 9.9": "Identify the appropriate adaptive response to cellular stress / injury"
+ }
+}

@@ -1,0 +1,963 @@
+{
+ "title": "Week 10 Question Bank",
+ "context": "Foundations of Medicine, Block 3, Week 10",
+ "questions": [
+  {
+   "c": "Hemostasis and platelets",
+   "p": "Omar, 58, starts clopidogrel after a coronary stent. His cardiologist explains that the drug blocks a receptor that responds to a signalling molecule the platelet stores and releases during activation.\n\nWhere is that molecule stored?",
+   "o": [
+    "The membrane system, which holds prostaglandin enzymes",
+    "The open canalicular system, which holds thromboxane A2",
+    "Dense (delta) granules, which hold ADP",
+    "Alpha granules, which hold fibrinogen and vWF"
+   ],
+   "a": 2,
+   "e": "Correct: C. Clopidogrel blocks the P2Y12 receptor. ADP binds P2Y12, and ADP sits in the dense (delta) granules of the organelle zone.\nA: The membrane system holds calcium and prostaglandin synthesis enzymes. Aspirin acts on this pathway, not clopidogrel.\nB: The open canalicular system transports substances in and out of the platelet. Thromboxane A2 comes from membrane phospholipids via cyclooxygenase.\nD: Alpha granules store adhesive proteins (fibrinogen, vWF, FV, FVIII). None of them bind P2Y12.\nTakeaway: Dense granules = ATP, ADP, calcium, serotonin. Alpha granules = adhesive proteins.",
+   "l": [
+    "W10 1.1",
+    "W10 1.4"
+   ]
+  },
+  {
+   "c": "Hemostasis and platelets",
+   "p": "Leila, 19, has lifelong nosebleeds and heavy periods. Platelet count and size are normal. Aggregometry shows her platelets adhere to collagen normally but fail to bind fibrinogen and clump with each other.\n\nWhich defect best explains this?",
+   "o": [
+    "Absent GPIIb/IIIa function, as in Glanzmann thrombasthenia",
+    "Missing alpha granules, as in gray platelet syndrome",
+    "Absent GPIb/IX function, as in Bernard Soulier syndrome",
+    "Defective procoagulant surface, as in Scott syndrome"
+   ],
+   "a": 0,
+   "e": "Correct: A. Aggregation needs fibrinogen bridging activated GPIIb/IIIa between platelets. Normal adhesion but failed aggregation points to a GPIIb/IIIa defect, the classic disorder of aggregation (Glanzmann).\nB: Gray platelet syndrome is a granule disorder. The stem isolates the defect to fibrinogen binding.\nC: GPIb/IX binds vWF for adhesion. Bernard Soulier is a disorder of adhesion, and her adhesion is normal.\nD: Scott syndrome affects platelet procoagulant activity (the phospholipid surface for factor assembly), not aggregation.\nTakeaway: Adhesion = vWF + GPIb/IX. Aggregation = fibrinogen + GPIIb/IIIa.",
+   "l": [
+    "W10 1.2",
+    "W10 1.3"
+   ]
+  },
+  {
+   "c": "Hemostasis and platelets",
+   "p": "Consider these statements about antiplatelet agents:\ni) Aspirin inhibits cyclooxygenase and lowers thromboxane A2\nii) Clopidogrel blocks the P2Y12 receptor pathway\niii) Abciximab blocks GPIb/IX and prevents platelet adhesion\niv) Abciximab is directed against GPIIb/IIIa and prevents aggregation\n\nWhich statements are correct?",
+   "o": [
+    "ii), iii) and iv) only",
+    "i), ii) and iii) only",
+    "i), ii) and iv) only",
+    "i) and ii) only",
+    "All of the above"
+   ],
+   "a": 2,
+   "e": "Correct: C. Aspirin hits cyclooxygenase (less TXA2). Clopidogrel hits P2Y12. Abciximab targets GPIIb/IIIa and blocks aggregation, so iii) is false.\nA: This includes iii). Abciximab targets GPIIb/IIIa, not GPIb/IX.\nB: This includes iii) and drops iv).\nD: This leaves out iv), which is true.\nE: iii) is false, so not all statements hold.\nTakeaway: Three drugs, three targets: COX (aspirin), P2Y12 (clopidogrel), GPIIb/IIIa (abciximab).",
+   "l": [
+    "W10 1.4"
+   ]
+  },
+  {
+   "c": "Hemostasis and platelets",
+   "p": "Grace, 32, needs hernia repair. She has heavy periods, a postpartum hemorrhage and bleeding after a dental extraction. ISTH BAT is 8. CBC, INR, aPTT and fibrinogen are normal. Platelet function testing shows an inherited platelet dysfunction.\n\nWhich preoperative measure fits her diagnosis?",
+   "o": [
+    "Factor VIII concentrate before surgery",
+    "DDAVP before surgery",
+    "Plasma transfusion before surgery",
+    "Vitamin K before surgery"
+   ],
+   "a": 1,
+   "e": "Correct: B. Normal screening coags with a high BAT pointed to a platelet function disorder. Platelet function disorder management lists DDAVP, tranexamic acid, platelet transfusion and rVIIa for life threatening bleeding. Her lecture case received DDAVP before surgery.\nA: Factor VIII concentrate treats hemophilia A. Her FVIII-dependent aPTT is normal.\nC: Plasma replaces coagulation factors in liver disease or DIC. Her factors are fine.\nD: Vitamin K corrects deficiency of factors II, VII, IX and X. Her INR is normal.\nTakeaway: Normal INR and PTT with real bleeding: think platelets, vWD with normal FVIII, FXIII, hyperfibrinolysis, vessels.",
+   "l": [
+    "W10 1.5"
+   ]
+  },
+  {
+   "c": "Hemostasis and platelets",
+   "p": "During the propagation phase of coagulation, large amounts of Factor Xa are produced.\n\nWhich complex converts Factor X to Xa in this phase?",
+   "o": [
+    "Factor Xa with Va, calcium and phospholipid",
+    "Factor IXa with Factor VIIIa (tenase)",
+    "Tissue factor with Factor VIIa",
+    "Thrombin with Factor XIIIa"
+   ],
+   "a": 1,
+   "e": "Correct: B. In propagation, IXa plus VIIIa forms the tenase complex, which converts more X to Xa.\nA: This is the prothrombinase complex. It converts prothrombin to thrombin, downstream of Xa.\nC: TF/VIIa activates only a small amount of IX and X in the initiation phase.\nD: Thrombin activates XIII to cross-link fibrin. It does not form a complex that activates X.\nTakeaway: Initiation = TF/VIIa (small burst). Propagation = tenase (IXa/VIIIa) then prothrombinase (Xa/Va).",
+   "l": [
+    "W10 2.1"
+   ]
+  },
+  {
+   "c": "Hemostasis and platelets",
+   "p": "Which pairing of a natural regulator of hemostasis with its target is correct?",
+   "o": [
+    "Protein C and Protein S: Factors V and VIII",
+    "Tissue factor pathway inhibitor: Factors V and VIII",
+    "Antithrombin: the TF/VIIa complex only",
+    "Plasminogen activator inhibitor-1: thrombin"
+   ],
+   "a": 0,
+   "e": "Correct: A. Protein C and S block amplification by targeting FV and FVIII.\nB: TFPI blocks initiation by targeting TF-VIIa and Xa.\nC: Antithrombin binds IX, X and XI (and thrombin), blocking thrombin already generated.\nD: PAI-1 inhibits t-PA and plasmin, a fibrinolysis regulator.\nTakeaway: TFPI = initiation. Protein C/S = V and VIII. Antithrombin = thrombin, IX, X, XI.",
+   "l": [
+    "W10 2.1",
+    "W10 2.2"
+   ]
+  },
+  {
+   "c": "Hemostasis and platelets",
+   "p": "Which statement about fibrinolysis (tertiary hemostasis) is correct?",
+   "o": [
+    "D-dimers form when thrombin cleaves soluble fibrin",
+    "TAFI inhibits plasmin formation and suppresses fibrinolysis",
+    "t-PA converts fibrinogen into fibrin monomers",
+    "PAI-1 activates t-PA to speed clot breakdown"
+   ],
+   "a": 1,
+   "e": "Correct: B. TAFI (thrombin activatable fibrinolysis inhibitor) inhibits formation of plasmin.\nA: D-dimers come from plasmin acting on cross-linked fibrin.\nC: Thrombin, not t-PA, converts fibrinogen to fibrin. t-PA converts plasminogen to plasmin.\nD: PAI-1 inhibits t-PA. It slows breakdown.\nTakeaway: t-PA makes plasmin. Plasmin makes D-dimers. TAFI, PAI-1 and antiplasmin apply the brakes.",
+   "l": [
+    "W10 2.2"
+   ]
+  },
+  {
+   "c": "Bleeding disorders",
+   "p": "A 6 day old term boy oozes from his umbilical stump. He received vitamin K at birth. Platelet count, PT, aPTT and fibrinogen are all normal.\n\nWhich diagnosis fits best?",
+   "o": [
+    "Hemophilia A",
+    "Vitamin K deficiency bleeding",
+    "Factor XIII deficiency",
+    "Factor VII deficiency"
+   ],
+   "a": 2,
+   "e": "Correct: C. FXIII cross-links fibrin after the clot forms, so PT and aPTT stay normal. Neonatal umbilical bleeding and ICH are classic FXIII presentations.\nA: Hemophilia A prolongs the aPTT.\nB: He received vitamin K, and deficiency prolongs the PT.\nD: FVII deficiency gives an isolated prolonged PT.\nTakeaway: Bleeding with normal INR and PTT: remember FXIII deficiency.",
+   "l": [
+    "W10 4.2.3",
+    "W10 11.2"
+   ]
+  },
+  {
+   "c": "Coagulation tests",
+   "p": "A lab technologist runs a PT and an aPTT on the same citrated plasma sample.\n\nWhich reagent component is present in the PT test but absent from the aPTT test?",
+   "o": [
+    "A contact activator",
+    "Phospholipid from a platelet substitute",
+    "Tissue factor (thromboplastin)",
+    "Calcium chloride to reverse citrate"
+   ],
+   "a": 2,
+   "e": "Correct: C. PT reagent contains thromboplastin (tissue factor), which drives the extrinsic pathway via FVII. The aPTT reagent has no tissue factor.\nA: The contact activator belongs to the aPTT, not the PT.\nB: Both reagents contain phospholipid.\nD: Both tests add calcium chloride to overcome citrate.\nTakeaway: PT = TF-driven (VII, then X, V, II, I). aPTT = contact-driven (XII, XI, IX, VIII, then common).",
+   "l": [
+    "W10 4.2.1",
+    "W10 4.2.2"
+   ]
+  },
+  {
+   "c": "Coagulation tests",
+   "p": "Ravi, 45, is booked for a knee replacement. He had a tonsillectomy and two dental extractions with no bleeding. aPTT is 72 s, PT is normal. A 50:50 mixing study corrects.\n\nWhat is the most likely explanation?",
+   "o": [
+    "Mild hemophilia A from Factor VIII deficiency",
+    "Factor VII deficiency affecting the extrinsic pathway",
+    "A lupus anticoagulant directed against phospholipid-bound proteins",
+    "Factor XII deficiency with no bleeding risk"
+   ],
+   "a": 3,
+   "e": "Correct: D. Correction on mixing means a factor deficiency. A long aPTT with a bleed-free surgical history points to a contact factor. Contact factors profoundly elevate the aPTT but do not cause bleeding.\nA: FVIII deficiency also corrects on mixing, but tonsillectomy and extractions without bleeding argue against it.\nB: FVII deficiency prolongs the PT, not the aPTT.\nC: An inhibitor such as a lupus anticoagulant does not correct on mixing.\nTakeaway: Mixing: corrects = deficiency, no correction = inhibitor.",
+   "l": [
+    "W10 4.2.3"
+   ]
+  },
+  {
+   "c": "Coagulation tests",
+   "p": "Margaret, 78, develops large spontaneous bruises over 3 weeks. She has no prior bleeding history. aPTT is prolonged, PT is normal, and the aPTT does not correct on a 50:50 mix. FVIII activity is low.\n\nWhich diagnosis fits best?",
+   "o": [
+    "Factor XI deficiency from an intrinsic pathway defect",
+    "Type 1 von Willebrand disease with low FVIII carrier",
+    "Congenital mild hemophilia A unmasked by aging",
+    "Acquired hemophilia A from an FVIII inhibitor"
+   ],
+   "a": 3,
+   "e": "Correct: D. New bleeding in an older adult, a long aPTT that fails to correct, and low FVIII point to an acquired inhibitor directed against FVIII.\nA: FXI deficiency is a deficiency, so the mix would correct.\nB: Type 1 vWD gives mucosal bleeding. A deficiency would correct on mixing.\nC: Congenital deficiency corrects on mixing and usually shows earlier.\nTakeaway: Adults presenting late: think acquired disorders (acquired hemophilia A, acquired vWD).",
+   "l": [
+    "W10 4.2.3",
+    "W10 4.1"
+   ]
+  },
+  {
+   "c": "Coagulation tests",
+   "p": "Mr. Chen, 70, has been in the ICU for 4 days, eating nothing and on broad spectrum antibiotics. INR is 1.9 and aPTT is normal.\n\nDeficiency of which factor best explains this pattern?",
+   "o": [
+    "Factor VII",
+    "Fibrinogen",
+    "Factor XI",
+    "Factor VIII"
+   ],
+   "a": 0,
+   "e": "Correct: A. Early vitamin K deficiency first lowers the vitamin K factor with the shortest half-life, FVII (3 to 8 h). FVII is the only extrinsic factor, so the PT/INR rises alone.\nB: PT and aPTT are not sensitive to mild to moderate fibrinogen loss, and severe loss prolongs both.\nC: FXI is intrinsic. Its loss prolongs the aPTT.\nD: FVIII is an intrinsic factor and is not vitamin K dependent. Low FVIII prolongs the aPTT.\nTakeaway: Isolated high INR = FVII: early vitamin K deficiency, early warfarin, liver disease.",
+   "l": [
+    "W10 4.2.3",
+    "W10 7.1"
+   ]
+  },
+  {
+   "c": "Coagulation tests",
+   "p": "Two patients have prolonged PT and aPTT.\nPatient 1: platelets normal, D-dimer normal, fibrinogen normal, FV normal, FVII low.\nPatient 2: platelets low, D-dimer high, fibrinogen low, all factors low.\n\nWhich diagnoses fit, in order?",
+   "o": [
+    "Vitamin K deficiency, then liver disease",
+    "Vitamin K deficiency, then DIC",
+    "DIC, then vitamin K deficiency",
+    "Liver disease, then DIC"
+   ],
+   "a": 1,
+   "e": "Correct: B. Patient 1 has a low vitamin K factor (FVII) with normal FV, which is not vitamin K dependent. Patient 2 shows consumption: low platelets, low fibrinogen, high D-dimer and all factors down.\nA: Liver disease does not raise D-dimer or give low platelets with global consumption, and FVIII rises in liver disease.\nC: This reverses the two patterns.\nD: Liver disease lowers FV and fibrinogen. Patient 1 has normal FV and fibrinogen.\nTakeaway: FV is the tiebreaker: normal in vitamin K deficiency, low in liver disease and DIC.",
+   "l": [
+    "W10 4.2.3"
+   ]
+  },
+  {
+   "c": "Coagulation tests",
+   "p": "An 80 year old man is found confused at home. His daughter says he takes a blood thinner but does not know which. TT is markedly prolonged. Fibrinogen activity is not low by antigen testing.\n\nWhich agent is he most likely taking?",
+   "o": [
+    "Dabigatran",
+    "Fondaparinux",
+    "Rivaroxaban",
+    "Warfarin"
+   ],
+   "a": 0,
+   "e": "Correct: A. Thrombin time measures conversion of fibrinogen by added thrombin. A thrombin inhibitor prolongs it. Dabigatran is a direct thrombin inhibitor.\nB: Fondaparinux acts through antithrombin on Xa only, measured by anti-Xa assay.\nC: Rivaroxaban inhibits Xa. It prolongs PT/aPTT, not TT.\nD: Warfarin lowers II, VII, IX, X and prolongs the INR. TT stays normal.\nTakeaway: Elevated TT causes: low or abnormal fibrinogen, heparin, DTIs.",
+   "l": [
+    "W10 4.2.3",
+    "W10 7.1"
+   ]
+  },
+  {
+   "c": "Coagulation tests",
+   "p": "Three people complete standardized bleeding tools.\nPatient 1: woman, 30, ISTH BAT 5\nPatient 2: man, 30, ISTH BAT 5\nPatient 3: child, 9, PBQ 3\n\nHow should each score be interpreted, in order?",
+   "o": [
+    "Normal, normal, negative",
+    "Normal, abnormal, positive",
+    "Abnormal, normal, negative",
+    "Abnormal, abnormal, positive"
+   ],
+   "a": 1,
+   "e": "Correct: B. ISTH BAT normal cut-offs are under 4 in adult males and under 6 in adult females. PBQ is positive above 2.\nA: The man's 5 is above his cut-off, and a PBQ of 3 is positive.\nC: This reverses the sex-specific cut-offs, and PBQ 3 is positive.\nD: The woman's 5 is under 6, so it is normal.\nTakeaway: A normal BAT has a high negative predictive value for a mild bleeding disorder.",
+   "l": [
+    "W10 4.1"
+   ]
+  },
+  {
+   "c": "Coagulation tests",
+   "p": "Sana, 24, has non-blanching red-purple spots on her shins, most 3 to 5 mm across, plus gum bleeding. She has no joint swelling.\n\nHow are these lesions classified, and which hemostatic phase do they suggest?",
+   "o": [
+    "Purpura, suggesting a primary hemostasis defect",
+    "Purpura, suggesting a secondary hemostasis defect",
+    "Ecchymoses, suggesting a primary hemostasis defect",
+    "Petechiae, suggesting a secondary hemostasis defect"
+   ],
+   "a": 0,
+   "e": "Correct: A. 3 to 5 mm lesions are purpura. Mucocutaneous lesions with gum bleeding point to the platelet plug (primary).\nB: Secondary defects cause deep bleeding: hematomas and hemarthroses.\nC: Ecchymoses are over 5 mm.\nD: Petechiae are under 2 mm, and mucosal bleeding is primary, not secondary.\nTakeaway: Petechiae < 2 mm, purpura 3 to 5 mm, ecchymoses > 5 mm. Wet purpura is a sinister sign.",
+   "l": [
+    "W10 4.1"
+   ]
+  },
+  {
+   "c": "Thrombocytopenia",
+   "p": "Jordan, 40, feels well and has no bleeding. A routine CBC shows platelets 35 x 10^9/L. The blood film shows platelet clumps, and the automated WBC is slightly high.\n\nWhat is the best next step?",
+   "o": [
+    "Repeat the CBC in a sodium citrate tube",
+    "Arrange a bone marrow aspirate and biopsy",
+    "Start prednisone for presumed ITP",
+    "Transfuse one dose of platelets"
+   ],
+   "a": 0,
+   "e": "Correct: A. Clumps on the film in a well patient suggest EDTA-dependent pseudothrombocytopenia. Clumps get counted as leukocytes. A non-EDTA tube gives the true count.\nB: Marrow evaluation is for decreased production, not an artifact.\nC: ITP is a diagnosis of exclusion. Confirm the count first.\nD: He has no bleeding and possibly a normal count.\nTakeaway: Step 1 of the approach is always: confirm the thrombocytopenia.",
+   "l": [
+    "W10 3.3"
+   ]
+  },
+  {
+   "c": "Thrombocytopenia",
+   "p": "A patient's platelet count is 32 x 10^9/L.\n\nHow is this severity graded, and what bleeding risk does it carry?",
+   "o": [
+    "Severe, with risk of spontaneous bleeding",
+    "Very severe, with risk of spontaneous bleeding",
+    "Severe, with risk of bleeding with trauma or surgery",
+    "Moderate, with risk of bleeding with trauma or surgery"
+   ],
+   "a": 2,
+   "e": "Correct: C. 10 to 49 is severe, with bleeding risk from trauma or procedures.\nA: Spontaneous bleeding risk belongs to counts under 10.\nB: Very severe is under 10.\nD: Moderate is 50 to 99.\nTakeaway: 100-150 mild, 50-99 moderate, 10-49 severe, under 10 very severe.",
+   "l": [
+    "W10 3.1",
+    "W10 3.2"
+   ]
+  },
+  {
+   "c": "Thrombocytopenia",
+   "p": "Ethan, 4, develops petechiae and nosebleeds 2 weeks after a cold. He looks well. Platelets are 8 x 10^9/L. Hemoglobin, WBC and differential are normal. No schistocytes are seen.\n\nWhich statement fits the most likely diagnosis?",
+   "o": [
+    "TTP, which needs urgent plasma exchange",
+    "Aplastic anemia from decreased marrow production",
+    "ITP, which in children usually resolves within 6 months",
+    "HUS, which needs supportive care and possible dialysis"
+   ],
+   "a": 2,
+   "e": "Correct: C. Isolated severe thrombocytopenia after a viral infection in a well child with normal other cell lines is classic ITP. Half of cases are children, and pediatric ITP resolves within 6 months.\nA: TTP patients are very sick, with schistocytes, hemolysis and neurologic signs.\nB: Aplastic anemia lowers other cell lines too.\nD: HUS shows schistocytes and acute kidney injury after a diarrheal illness.\nTakeaway: ITP: other cell lines normal, diagnosis of exclusion.",
+   "l": [
+    "W10 3.4"
+   ]
+  },
+  {
+   "c": "Thrombocytopenia",
+   "p": "Diane, 38, is confused with a headache. Platelets are 9 x 10^9/L, hemoglobin 82 g/L, schistocytes are present, and creatinine is mildly elevated. ADAMTS-13 activity is low.\n\nWhat is the key treatment?",
+   "o": [
+    "Plasma exchange",
+    "Platelet transfusion to above 50 x 10^9/L",
+    "Stop heparin and start argatroban",
+    "IVIg and a thrombopoietin mimetic"
+   ],
+   "a": 0,
+   "e": "Correct: A. Low ADAMTS-13 means TTP. Plasma exchange removes the antibody and ultra-large vWF multimers and replaces ADAMTS-13.\nB: Platelet transfusions are avoided in TTP because they fuel further thrombosis.\nC: This treats HIT. She has no heparin exposure.\nD: IVIg and TPO mimetics treat ITP.\nTakeaway: TTP: low ADAMTS-13, ultra-large vWF multimers, plasma exchange.",
+   "l": [
+    "W10 3.4",
+    "W10 3.5"
+   ]
+  },
+  {
+   "c": "Thrombocytopenia",
+   "p": "Mia, 3, had bloody diarrhea after a barbecue. Five days later she has low urine output. Platelets are 60 x 10^9/L, schistocytes are present, and creatinine is high.\n\nWhich management plan fits best?",
+   "o": [
+    "Urgent plasma exchange as first line",
+    "Steroids and IVIg to suppress immune-mediated platelet destruction",
+    "Start antibiotics to clear E. coli O157:H7 and limit toxin spread",
+    "Supportive care, no antibiotics or platelets, dialysis if needed"
+   ],
+   "a": 3,
+   "e": "Correct: D. Bloody diarrhea, schistocytes and acute kidney injury in a young child fit HUS from Shiga toxin. Care is supportive, with hemodialysis in some patients.\nA: Plasma exchange is the TTP treatment.\nB: Steroids and IVIg treat ITP.\nC: Certain antibiotics worsen HUS.\nTakeaway: HUS: Shiga toxin, glomerular endothelial damage, highest incidence 6 months to 4 years.",
+   "l": [
+    "W10 3.4",
+    "W10 3.5"
+   ]
+  },
+  {
+   "c": "Thrombocytopenia",
+   "p": "Frank, 66, is on day 7 after hip surgery and on subcutaneous UFH prophylaxis. Platelets fell from 250 to 90 x 10^9/L, and his left calf is now swollen with a confirmed DVT.\n\nWhat is the best next step?",
+   "o": [
+    "Stop heparin and start warfarin right away",
+    "Transfuse platelets first, then restart heparin at a lower dose",
+    "Stop all heparin and start fondaparinux or argatroban",
+    "Switch UFH to therapeutic LMWH"
+   ],
+   "a": 2,
+   "e": "Correct: C. A platelet fall 5 to 10 days into heparin, with new thrombosis, suggests HIT. Stop all heparin and start a non-heparin anticoagulant.\nA: Warfarin starts only once platelets normalize.\nB: Platelet transfusions are avoided in HIT.\nD: LMWH is still a heparin.\nTakeaway: HIT = thrombosis, not bleeding. Use the 4 T's.",
+   "l": [
+    "W10 3.4",
+    "W10 3.5"
+   ]
+  },
+  {
+   "c": "Thrombocytopenia",
+   "p": "Consider these statements about heparin-induced thrombocytopenia:\ni) It presents with thrombosis, not bleeding\nii) Onset is typically 5 to 10 days after heparin starts\niii) Platelet transfusion is standard treatment\niv) An anti-PF4 ELISA supports the diagnosis\n\nWhich are correct?",
+   "o": [
+    "i), iii) and iv) only",
+    "i) and ii) only",
+    "ii), iii) and iv) only",
+    "i), ii) and iv) only",
+    "All of the above"
+   ],
+   "a": 3,
+   "e": "Correct: D. HIT antibodies form against the heparin-PF4 complex and activate platelets, causing thrombosis. Onset is 5 to 10 days. Anti-PF4 ELISA and the serotonin assay support it.\nA: Includes iii) and drops ii).\nB: Leaves out iv), which is true.\nC: Includes iii). Platelet transfusions are avoided in HIT.\nE: iii) is false.\nTakeaway: HIT pathophysiology: antibody to heparin-PF4 activates platelets, causing consumption and thrombosis.",
+   "l": [
+    "W10 3.4"
+   ]
+  },
+  {
+   "c": "Thrombocytopenia",
+   "p": "Kofi, 50, has septic shock with oozing from IV sites. Platelets 40 x 10^9/L, INR 2.0, fibrinogen 0.8 g/L, D-dimer very high, hemoglobin 85 g/L.\n\nAlongside treating sepsis, which product addresses his fibrinogen?",
+   "o": [
+    "Packed red blood cells",
+    "No product, fibrinogen is only an inflammatory marker",
+    "Prothrombin complex concentrate",
+    "Cryoprecipitate"
+   ],
+   "a": 3,
+   "e": "Correct: D. This is DIC with bleeding. Cryoprecipitate is given if fibrinogen is under 1.0 g/L.\nA: RBCs are for hemoglobin under 70 to 80 g/L. His is 85.\nB: Fibrinogen rises with inflammation, but 0.8 g/L reflects consumption.\nC: PCC reverses warfarin or vitamin K deficiency and contains vitamin K factors, not fibrinogen.\nTakeaway: DIC bleeding: cryo if fibrinogen < 1.0, platelets if < 50, plasma if INR > 1.5.",
+   "l": [
+    "W10 3.5",
+    "W10 9.4"
+   ]
+  },
+  {
+   "c": "Thrombocytopenia",
+   "p": "Which of the following is NOT part of ITP management?",
+   "o": [
+    "Thrombopoietin mimetics such as romiplostim",
+    "Plasma exchange to replace ADAMTS-13",
+    "Glucocorticoids such as prednisone or dexamethasone",
+    "Rituximab"
+   ],
+   "a": 1,
+   "e": "Correct: B. Plasma exchange to replace ADAMTS-13 treats TTP.\nA: TPO mimetics (romiplostim, eltrombopag) are an ITP treatment.\nC: Glucocorticoids are an ITP treatment.\nD: Rituximab is an ITP treatment (and also used in TTP).\nTakeaway: ITP: steroids, IVIg, splenectomy, rituximab, TPO mimetics, immune suppression.",
+   "l": [
+    "W10 3.5"
+   ]
+  },
+  {
+   "c": "Thrombocytopenia",
+   "p": "Hector, 61, has massive splenomegaly (18 cm on ultrasound). Liver enzymes and liver synthetic function are normal. Platelets are 70 x 10^9/L with no bleeding. Film shows no schistocytes.\n\nWhat mechanism best explains his thrombocytopenia?",
+   "o": [
+    "Decreased thrombopoietin from liver disease",
+    "Consumption of platelets in widespread microthrombi",
+    "Sequestration in the enlarged spleen",
+    "Immune-mediated platelet destruction by splenic macrophages"
+   ],
+   "a": 2,
+   "e": "Correct: C. Splenomegaly increases spleen volume for platelets to pool. The result is moderate thrombocytopenia with rare bleeding.\nA: His liver function is normal.\nB: Microthrombi consumption produces schistocytes.\nD: Immune destruction (ITP) is a diagnosis of exclusion and does not need splenomegaly.\nTakeaway: Four mechanisms: decreased production, increased destruction, sequestration, artifact.",
+   "l": [
+    "W10 3.1",
+    "W10 3.3"
+   ]
+  },
+  {
+   "c": "Bleeding disorders",
+   "p": "Two patients present.\nPatient 1: recurrent nosebleeds, heavy periods, easy bruising.\nPatient 2: spontaneous swelling of the knee and a thigh hematoma.\n\nWhich category of defect does each pattern suggest, in order?",
+   "o": [
+    "Primary hemostasis, then secondary hemostasis",
+    "Hyperfibrinolysis, then primary hemostasis",
+    "Primary hemostasis for both",
+    "Secondary hemostasis, then primary hemostasis"
+   ],
+   "a": 0,
+   "e": "Correct: A. Mucocutaneous bleeding suggests platelets or vWF. Deep bleeding into joints and muscles suggests coagulation factor deficiency.\nB: Hyperfibrinolysis is not suggested, and joints point to factors.\nC: Joint and muscle bleeds point to coagulation factors.\nD: This reverses the patterns.\nTakeaway: Primary = mucocutaneous, often immediate. Secondary = deep, less immediate.",
+   "l": [
+    "W10 4.1",
+    "W10 5.3"
+   ]
+  },
+  {
+   "c": "Bleeding disorders",
+   "p": "Aisha, 16, has heavy periods and nosebleeds. Platelets are normal. VWD screen: vWF antigen 0.60, vWF activity 0.20, FVIII mildly low.\n\nWhich type is most likely, and how is significant bleeding treated?",
+   "o": [
+    "Type 3, treated with DDAVP and tranexamic acid",
+    "Type 1, treated with DDAVP to release stored vWF",
+    "Type 2, treated with plasma-derived VWF/FVIII concentrate",
+    "Type 2, treated with recombinant FVIIa"
+   ],
+   "a": 2,
+   "e": "Correct: C. Activity is 33% of antigen, under 70%, which means a qualitative defect: type 2. Types 2 and 3 get VWF/FVIII concentrate.\nA: Type 3 is near-absent vWF, and DDAVP is the type 1 option.\nB: Type 1 shows a proportional drop in antigen and activity.\nD: rFVIIa is listed for life-threatening bleeding in platelet function disorders and hemophilia, not as vWD therapy.\nTakeaway: Antigen = quantity. Activity = quality. FVIII = carrier function.",
+   "l": [
+    "W10 4.2.3",
+    "W10 11.1"
+   ]
+  },
+  {
+   "c": "Bleeding disorders",
+   "p": "Sofia, 7, has bleeding into her ankle joint and heavy nosebleeds. vWF antigen and activity are nearly undetectable. FVIII is low and the aPTT is prolonged.\n\nWhich diagnosis explains both the mucosal and joint bleeding?",
+   "o": [
+    "Bernard Soulier syndrome",
+    "Type 1 von Willebrand disease with severe bleeding",
+    "Symptomatic hemophilia A carrier state",
+    "Type 3 von Willebrand disease"
+   ],
+   "a": 3,
+   "e": "Correct: D. vWF carries and protects FVIII. Absent vWF (type 3) drops FVIII too, giving joint bleeds on top of mucosal bleeding.\nA: Bernard Soulier is an adhesion disorder of platelets with normal vWF and FVIII.\nB: Type 1 is a partial deficiency, without joint bleeding.\nC: A carrier would not have absent vWF.\nTakeaway: Joint bleeding in vWD is rare, mainly in type 3.",
+   "l": [
+    "W10 11.1",
+    "W10 1.3"
+   ]
+  },
+  {
+   "c": "Bleeding disorders",
+   "p": "Lucas, 2, has severe hemophilia A. No relative has a bleeding disorder.\n\nWhich statement is correct?",
+   "o": [
+    "About 30% of hemophilia cases arise from a de novo mutation",
+    "Female carriers never have bleeding symptoms",
+    "A negative family history rules out a congenital disorder",
+    "Hemophilia is autosomal recessive, so both parents are carriers"
+   ],
+   "a": 0,
+   "e": "Correct: A. Hemophilia is X-linked, and 30% have a de novo mutation, so an empty family history fits.\nB: Female carriers are sometimes symptomatic.\nC: Lack of family history does not rule out a congenital bleeding disorder.\nD: Hemophilia is X-linked, not autosomal recessive.\nTakeaway: Hemophilia A is 1 in 5000, hemophilia B 1 in 30,000.",
+   "l": [
+    "W10 11.3",
+    "W10 11.2"
+   ]
+  },
+  {
+   "c": "Bleeding disorders",
+   "p": "Consider these genetic bleeding disorders:\ni) Glanzmann thrombasthenia is a disorder of primary hemostasis\nii) Hemophilia B is a disorder of secondary hemostasis\niii) Type 3 vWD is a disorder of primary hemostasis that also lowers FVIII\niv) Bernard Soulier syndrome is a disorder of secondary hemostasis\n\nWhich are correct?",
+   "o": [
+    "i) and ii) only",
+    "ii), iii) and iv) only",
+    "i), ii) and iv) only",
+    "i), ii) and iii) only",
+    "All of the above"
+   ],
+   "a": 3,
+   "e": "Correct: D. Glanzmann and Bernard Soulier are platelet disorders (primary). Hemophilia B is FIX (secondary). vWD is primary, and type 3 also loses FVIII.\nA: Leaves out iii), which is true.\nB: Includes iv). Bernard Soulier is a platelet adhesion disorder.\nC: Includes iv) and drops iii).\nE: iv) is false.\nTakeaway: Platelets and vWF = primary. Coagulation factors = secondary.",
+   "l": [
+    "W10 11.1",
+    "W10 11.2"
+   ]
+  },
+  {
+   "c": "Bleeding disorders",
+   "p": "Noah, 10, has mild hemophilia B and needs a tooth extraction.\n\nWhich plan fits best?",
+   "o": [
+    "DDAVP plus tranexamic acid",
+    "Cryoprecipitate before extraction",
+    "FIX concentrate plus tranexamic acid",
+    "Platelet transfusion before extraction"
+   ],
+   "a": 2,
+   "e": "Correct: C. Hemophilia B is FIX deficiency, so he needs FIX replacement. Tranexamic acid helps mucosal (oral) bleeding.\nA: DDAVP raises FVIII, which helps mild hemophilia A, not B.\nB: Cryo contains FVIII, FXIII, vWF and fibrinogen, but no FIX.\nD: His platelets are normal.\nTakeaway: DDAVP works for mild hemophilia A and type 1 vWD.",
+   "l": [
+    "W10 5.4"
+   ]
+  },
+  {
+   "c": "Bleeding disorders",
+   "p": "Two boys with severe hemophilia (baseline level near 0%) have joint bleeds. Each needs a target factor level of 60%.\nBoy 1 has hemophilia A. Boy 2 has hemophilia B.\n\nUsing the rule in your notes (1 U/kg FVIII raises the level by 2%, 1 U/kg FIX raises it by 1%), what dose does each need, in order?",
+   "o": [
+    "30 U/kg rFVIII, then 30 U/kg rFIX",
+    "60 U/kg rFVIII, then 30 U/kg rFIX",
+    "120 U/kg rFVIII, then 60 U/kg rFIX",
+    "30 U/kg rFVIII, then 60 U/kg rFIX"
+   ],
+   "a": 3,
+   "e": "Correct: D. 60% divided by 2% per U/kg = 30 U/kg FVIII. 60% divided by 1% per U/kg = 60 U/kg FIX.\nA: FIX recovery is half that of FVIII, so FIX needs double.\nB: This swaps the recovery rates.\nC: This multiplies by 2 instead of dividing.\nTakeaway: Joint bleeds target over 50%.",
+   "l": [
+    "W10 5.4"
+   ]
+  },
+  {
+   "c": "Bleeding disorders",
+   "p": "Ali, 15, has severe hemophilia A and arrives in the ED after hitting his head in a hockey game. He is alert with a normal exam.\n\nWhat is the best first step?",
+   "o": [
+    "Give DDAVP and observe him in the ED for 6 hours",
+    "Give oral tranexamic acid alone and discharge him home",
+    "Get a CT head first and give factor only if it shows a bleed",
+    "Give factor now per his Factor First card, then investigate"
+   ],
+   "a": 3,
+   "e": "Correct: D. In a patient with a bleeding disorder and suspected serious bleeding or trauma, treat first and investigate later. The Factor First card gives his treatment plan and treatment centre.\nA: DDAVP is for mild hemophilia A. He is severe.\nB: Tranexamic acid helps mucosal bleeding, not head trauma.\nC: Delaying factor while waiting for imaging risks an intracranial bleed.\nTakeaway: Treat first, investigate later.",
+   "l": [
+    "W10 10.1",
+    "W10 10.2"
+   ]
+  },
+  {
+   "c": "Bleeding disorders",
+   "p": "Which precaution is NOT recommended for a child with hemophilia?",
+   "o": [
+    "Wear a helmet when riding a bicycle",
+    "Skip routine dental visits",
+    "Use prophylactic factor infusions at home",
+    "Avoid antiplatelet agents such as aspirin"
+   ],
+   "a": 1,
+   "e": "Correct: B. Routine dental care is recommended because it prevents the need for dental surgery.\nA: Protective gear is recommended.\nC: Home infusion prophylaxis is the norm in Canada for severe hemophilia.\nD: Avoiding aspirin is recommended.\nTakeaway: Primary prophylaxis prevents joint bleeds and has improved life expectancy.",
+   "l": [
+    "W10 10.1"
+   ]
+  },
+  {
+   "c": "Pediatric bleeding",
+   "p": "A 5 day old exclusively breastfed girl was born at home and received no vitamin K. She has extensive bruising. PT and aPTT are prolonged, platelets are normal.\n\nWhich diagnosis fits best?",
+   "o": [
+    "Early hemorrhagic disease of the newborn",
+    "Hemophilia A from a de novo mutation",
+    "Classic hemorrhagic disease of newborn",
+    "Late hemorrhagic disease of the newborn"
+   ],
+   "a": 2,
+   "e": "Correct: C. Classic HDN occurs on days 2 to 7, exclusively in breastfed infants. Missing vitamin K prophylaxis worsens low newborn vitamin K factor levels.\nA: Early HDN occurs on day 1 and links to maternal medications such as anti-epileptics.\nB: Hemophilia A prolongs only the aPTT.\nD: Late HDN occurs between 1 week and 6 months.\nTakeaway: Prevention: minimize risky medications in pregnancy and give vitamin K at birth.",
+   "l": [
+    "W10 5.1",
+    "W10 5.2"
+   ]
+  },
+  {
+   "c": "Pediatric bleeding",
+   "p": "A healthy 2 day old term boy is having a pre-circumcision screen. aPTT is 50 s (adult range 26 to 35 s). PT is normal. No bleeding history.\n\nWhat is the best interpretation?",
+   "o": [
+    "Vitamin K deficiency bleeding from missed prophylaxis",
+    "Hemophilia A, since FVIII is low at birth",
+    "Within the neonatal range from developmental hemostasis",
+    "A contact factor deficiency with no bleeding risk"
+   ],
+   "a": 2,
+   "e": "Correct: C. Liver immaturity gives lower factor levels and physiologically longer PT and aPTT. Neonatal aPTT runs up to 55 s.\nA: Vitamin K deficiency prolongs the PT first.\nB: Neonatal FVIII is high (about 180%), so a long neonatal aPTT does not imply FVIII deficiency.\nD: Nothing suggests a contact factor problem, and his value is normal for age.\nTakeaway: Use age-specific ranges. Hemostasis matures over the first 6 months.",
+   "l": [
+    "W10 5.2",
+    "W10 4.2.3"
+   ]
+  },
+  {
+   "c": "Pediatric bleeding",
+   "p": "Three children present to clinic.\nChild 1: 2 year old boy with a swollen knee after a minor fall and easy bruising.\nChild 2: 13 year old girl with heavy periods and iron deficiency anemia.\nChild 3: 4 year old with petechiae after a viral illness, platelets 6.\n\nWhich diagnoses are most likely, in order?",
+   "o": [
+    "von Willebrand disease, hemophilia, ITP",
+    "ITP, von Willebrand disease, hemophilia",
+    "Hemophilia, ITP, von Willebrand disease",
+    "Hemophilia, von Willebrand disease, ITP"
+   ],
+   "a": 3,
+   "e": "Correct: D. Hemarthrosis in a toddler boy suggests hemophilia. Menorrhagia with iron deficiency suggests vWD. Isolated severe thrombocytopenia after a virus suggests ITP.\nA: Joint bleeding points to factors, not vWF.\nB: This reverses the first and last cases.\nC: Menorrhagia is a vWF pattern, and petechiae with low platelets fits ITP.\nTakeaway: Petechiae = platelets. Joints = hemophilia. Epistaxis and menorrhagia = vWD.",
+   "l": [
+    "W10 5.1",
+    "W10 5.3"
+   ]
+  },
+  {
+   "c": "VTE",
+   "p": "Patricia, 64, has metastatic breast cancer on chemotherapy. Her entire left leg is swollen, the calf is 4 cm larger than the right, and she has pitting edema only on that side. Cellulitis is considered just as likely.\n\nWhat is her Wells DVT score, and what is the next step?",
+   "o": [
+    "2, DVT likely, D-dimer first",
+    "2, DVT likely, compression ultrasound",
+    "4, DVT likely, ascending venogram first",
+    "0, DVT unlikely, D-dimer first, then stop"
+   ],
+   "a": 1,
+   "e": "Correct: B. Cancer 1, entire leg 1, calf 3 cm or more 1, pitting edema 1, alternative diagnosis as likely minus 2: total 2. Above 1 is likely, which goes to compression ultrasound.\nA: Likely patients go to ultrasound. D-dimer first is for unlikely.\nC: This forgets the minus 2, and venogram is invasive gold standard, not first line.\nD: This misses the positive items.\nTakeaway: DVT likely > 1, unlikely ≤ 1.",
+   "l": [
+    "W10 6.3"
+   ]
+  },
+  {
+   "c": "VTE",
+   "p": "Tom, 52, has pleuritic chest pain. HR 110, he coughed up a streak of blood, and he had a DVT 2 years ago. No leg symptoms. Another diagnosis is considered more likely than PE.\n\nWhat is his Wells PE score, and what is the next step?",
+   "o": [
+    "4, PE likely, CT pulmonary angiogram",
+    "5.5, PE likely, CT pulmonary angiogram",
+    "4, PE unlikely, D-dimer",
+    "7, PE likely, V/Q scan"
+   ],
+   "a": 2,
+   "e": "Correct: C. HR > 100 1.5, hemoptysis 1, previous DVT 1.5: total 4. PE unlikely is 4 or less, so start with D-dimer.\nA: 4 is not above 4.\nB: This adds an extra 1.5.\nD: He scores no points for PE most likely or DVT signs.\nTakeaway: PE likely > 4. A negative D-dimer in an unlikely patient excludes PE.",
+   "l": [
+    "W10 6.3"
+   ]
+  },
+  {
+   "c": "VTE",
+   "p": "Nadia, 29, has suspected PE with a likely pretest probability and a positive D-dimer. She has severe renal failure.\n\nWhich imaging test fits her best?",
+   "o": [
+    "CT pulmonary angiogram",
+    "Pulmonary angiogram",
+    "V/Q scan",
+    "Repeat D-dimer"
+   ],
+   "a": 2,
+   "e": "Correct: C. V/Q scanning is used for younger women and patients with renal failure, avoiding contrast and breast radiation.\nA: CTPA needs a contrast bolus, a problem in renal failure.\nB: Pulmonary angiogram is the invasive gold standard, not first line.\nD: A positive D-dimer means nothing, and repeating it adds no information.\nTakeaway: V/Q: normal rules out PE. Low or intermediate probability does not.",
+   "l": [
+    "W10 6.3"
+   ]
+  },
+  {
+   "c": "VTE",
+   "p": "Ines, 58, has active pancreatic cancer and a new proximal DVT. She is hemodynamically stable.\n\nWhich treatment and minimum duration fit best?",
+   "o": [
+    "LMWH for 7 to 10 days",
+    "LMWH for a minimum of 6 months",
+    "Thrombolytic therapy, then 3 months of LMWH",
+    "Warfarin for 3 months"
+   ],
+   "a": 1,
+   "e": "Correct: B. LMWH is preferred in cancer patients. Known cancer needs at least 6 months, stopping only if cured.\nA: 7 to 10 days is a prophylaxis duration.\nC: Thrombolysis is for patients who might die in 24 to 48 hours.\nD: Warfarin fits renal failure, and 3 months is for a major transient risk factor.\nTakeaway: Duration: cancer ≥ 6 months, transient ≥ 3 months, idiopathic per sex and HERDOO2.",
+   "l": [
+    "W10 6.4"
+   ]
+  },
+  {
+   "c": "VTE",
+   "p": "Ruth, 55, finished 6 months of anticoagulation for an unprovoked DVT. BMI is 32, D-dimer on treatment is 300, and she has no signs of post-thrombotic syndrome.\n\nWhat does HERDOO2 recommend?",
+   "o": [
+    "Stop at 6 months, score 1",
+    "Stop at 3 months, as for a transient risk factor",
+    "Stop at 6 months, since women always stop",
+    "Continue anticoagulation, score 2"
+   ],
+   "a": 3,
+   "e": "Correct: D. BMI > 30 = 1, D-dimer > 250 = 1, age under 65 = 0, no PTS = 0. Score 2 or more means continue.\nA: She scores 2, not 1.\nB: Her clot is idiopathic, not provoked.\nC: Only half of women stop at 6 months, decided by HERDOO2.\nTakeaway: Idiopathic VTE: all men stay on. Women use HERDOO2.",
+   "l": [
+    "W10 6.4"
+   ]
+  },
+  {
+   "c": "VTE",
+   "p": "George, 81, had hip fracture surgery yesterday. He had a DVT 5 years ago.\n\nHow long should his thromboprophylaxis last at minimum?",
+   "o": [
+    "7 to 10 days",
+    "Until discharge only",
+    "Lifelong",
+    "4 to 6 weeks"
+   ],
+   "a": 3,
+   "e": "Correct: D. Hip fracture is the highest VTE risk. Prophylaxis runs at least 7 to 10 days, extended to 4 to 6 weeks with cancer or past VTE.\nA: 7 to 10 days applies without cancer or prior VTE.\nB: Prophylaxis continues while he is not ambulatory and beyond discharge.\nC: Prophylaxis is time limited.\nTakeaway: Virchow's triad: stasis, injury, hypercoagulability.",
+   "l": [
+    "W10 6.1",
+    "W10 6.2"
+   ]
+  },
+  {
+   "c": "VTE",
+   "p": "Which patient has the strongest indication for a thrombophilia screen?",
+   "o": [
+    "A 70 year old with PE after a long hospitalization",
+    "A 28 year old with unprovoked cerebral vein thrombosis",
+    "A 60 year old with DVT during chemotherapy",
+    "A 72 year old with DVT after knee arthroplasty"
+   ],
+   "a": 1,
+   "e": "Correct: B. Indications include idiopathic events, age under 55 and unusual location such as the brain. She meets all three.\nA: Hospitalization is a provoking factor, and he is over 55.\nC: Cancer explains the clot, and she is over 55.\nD: Arthroplasty is a strong provoking factor, and he is over 55.\nTakeaway: Thrombophilias: FV Leiden, prothrombin mutation, protein C, S, antithrombin deficiency, antiphospholipid antibodies.",
+   "l": [
+    "W10 6.1"
+   ]
+  },
+  {
+   "c": "Anticoagulants",
+   "p": "Which anticoagulant is indirect (needs antithrombin) and inhibits only Factor Xa?",
+   "o": [
+    "Rivaroxaban",
+    "Dabigatran",
+    "Unfractionated heparin",
+    "Fondaparinux"
+   ],
+   "a": 3,
+   "e": "Correct: D. Fondaparinux is a synthetic pentasaccharide that binds antithrombin and inhibits Xa.\nA: Rivaroxaban inhibits Xa directly without antithrombin.\nB: Dabigatran is a direct thrombin inhibitor.\nC: UFH needs antithrombin but inhibits IIa, Xa, IXa, XIa and XIIa.\nTakeaway: Thrombin inhibition needs at least 18 saccharides to bridge antithrombin and thrombin.",
+   "l": [
+    "W10 7.1"
+   ]
+  },
+  {
+   "c": "Anticoagulants",
+   "p": "Mr. Patel, 74, is in the ICU with acute renal failure and a new PE. He might need an urgent procedure in the next day.\n\nWhich anticoagulant fits best?",
+   "o": [
+    "Dabigatran by mouth",
+    "IV unfractionated heparin",
+    "Fondaparinux at weight-based dose",
+    "Therapeutic subcutaneous LMWH"
+   ],
+   "a": 1,
+   "e": "Correct: B. UFH is cleared by the RES in the liver, is safe in renal failure, has a 60 to 90 minute half-life and is fully reversed by protamine.\nA: Dabigatran is renally cleared and contraindicated in renal impairment.\nC: Fondaparinux is renally cleared with a 17 to 21 hour half-life.\nD: LMWH is renally cleared and accumulates in renal failure.\nTakeaway: Short half-life plus renal safety = UFH for unstable inpatients.",
+   "l": [
+    "W10 7.1",
+    "W10 8.3"
+   ]
+  },
+  {
+   "c": "Anticoagulants",
+   "p": "A pregnant patient on therapeutic LMWH needs her anticoagulant effect checked.\n\nWhich test fits best?",
+   "o": [
+    "aPTT twice daily",
+    "INR every 1 to 2 days",
+    "Anti-Xa assay",
+    "Thrombin time"
+   ],
+   "a": 2,
+   "e": "Correct: C. LMWH has a high anti-Xa to anti-IIa ratio, so it barely affects the aPTT. Monitor anti-Xa directly in pregnancy and renal failure.\nA: The aPTT monitors UFH, not LMWH.\nB: INR monitors warfarin.\nD: TT detects thrombin inhibition, which LMWH has little of.\nTakeaway: UFH = aPTT 2 to 4 times daily. LMWH = no routine monitoring, anti-Xa if needed.",
+   "l": [
+    "W10 7.1",
+    "W10 8.3"
+   ]
+  },
+  {
+   "c": "Anticoagulants",
+   "p": "Bleeding emergencies in two patients:\nPatient 1: on warfarin with an intracranial hemorrhage, INR 3.4.\nPatient 2: on dabigatran with a major GI bleed.\n\nWhich reversal plans fit, in order?",
+   "o": [
+    "Vitamin K IV plus PCC, then protamine sulphate",
+    "Protamine sulphate, then idarucizumab",
+    "Idarucizumab, then vitamin K IV plus PCC",
+    "Vitamin K IV plus PCC, then idarucizumab"
+   ],
+   "a": 3,
+   "e": "Correct: D. Warfarin emergency reversal = vitamin K plus PCC (vitamin K prevents rebound coagulopathy once PCC wears off). Dabigatran's antidote is idarucizumab, a monoclonal antibody.\nA: Protamine has no effect on dabigatran.\nB: Protamine reverses heparin, not warfarin.\nC: This reverses the two antidotes.\nTakeaway: Andexanet alfa targets Xa inhibitors. Protamine targets UFH (partial for LMWH).",
+   "l": [
+    "W10 7.3"
+   ]
+  },
+  {
+   "c": "Anticoagulants",
+   "p": "Elaine is on an IV UFH infusion at 1000 units per hour. She develops major bleeding. The infusion has run steadily for 6 hours.\n\nUsing the rule in your notes, what dose of protamine sulphate fits best?",
+   "o": [
+    "25 mg",
+    "10 mg",
+    "60 mg",
+    "100 mg"
+   ],
+   "a": 0,
+   "e": "Correct: A. Protamine is 1 mg per 100 units of UFH given in the last 2 to 2.5 hours. 1000 U/h x 2.5 h = 2500 U, so 25 mg.\nB: 10 mg covers only 1 hour of infusion.\nC: 60 mg counts all 6 hours. UFH from earlier has already cleared (half-life 60 to 90 minutes).\nD: 100 mg is the maximum single dose. Too much causes hypotension and a weak anticoagulant effect.\nTakeaway: Only recent heparin counts because of the short half-life.",
+   "l": [
+    "W10 7.3"
+   ]
+  },
+  {
+   "c": "Anticoagulants",
+   "p": "Why does warfarin need 5 to 7 days of overlap with UFH or LMWH when treatment starts?",
+   "o": [
+    "Its effect reflects lower thrombin, and Factor II has a long half-life",
+    "Heparin is needed to prevent warfarin-induced HIT",
+    "The liver must first convert it into a direct thrombin inhibitor",
+    "It blocks antithrombin, and antithrombin takes several days to clear"
+   ],
+   "a": 0,
+   "e": "Correct: A. Warfarin blocks synthesis of II, VII, IX, X, protein C and S. Existing factors decay at their own half-lives, and the full effect depends on falling thrombin (II, 60 to 72 h).\nB: HIT is caused by heparin, not warfarin.\nC: Warfarin inhibits vitamin K reductase (VKORC1). It does not become a thrombin inhibitor.\nD: Warfarin does not act on antithrombin. Heparins need antithrombin.\nTakeaway: FVII falls first (3 to 8 h), so the INR rises before full protection.",
+   "l": [
+    "W10 7.1"
+   ]
+  },
+  {
+   "c": "Anticoagulants",
+   "p": "Which of the following is NOT an adverse effect or limitation of unfractionated heparin?",
+   "o": [
+    "Unpredictable pharmacokinetics",
+    "Accumulation in renal failure",
+    "Heparin-induced thrombocytopenia",
+    "Osteoporosis"
+   ],
+   "a": 1,
+   "e": "Correct: B. UFH is degraded by the RES in the liver and is safe in renal failure. LMWH is the one that accumulates.\nA: UFH is heterogeneous with unpredictable pharmacokinetics.\nC: HIT is an adverse event of UFH, about 3 times more than with LMWH.\nD: Osteoporosis is an adverse event of UFH.\nTakeaway: LMWH vs UFH: less bleeding, less HIT, less osteoporosis, home treatment, but renal clearance.",
+   "l": [
+    "W10 7.2"
+   ]
+  },
+  {
+   "c": "Transfusion",
+   "p": "A 30 year old woman arrives after a car crash in hemorrhagic shock. Her blood group is unknown and she needs blood immediately.\n\nWhich red cells and plasma fit best?",
+   "o": [
+    "O negative red cells and O plasma",
+    "O negative red cells and AB plasma",
+    "O positive red cells and AB plasma",
+    "AB positive red cells and O plasma"
+   ],
+   "a": 1,
+   "e": "Correct: B. O negative is the universal red cell donor and is used for females under 45. AB plasma is the universal plasma donor.\nA: O plasma contains anti-A and anti-B antibodies.\nC: O positive is used for males or females over 45.\nD: AB positive is the universal recipient, not donor.\nTakeaway: Red cells: O is universal donor. Plasma: AB is universal donor.",
+   "l": [
+    "W10 9.1"
+   ]
+  },
+  {
+   "c": "Transfusion",
+   "p": "Which patient meets an indication for platelet transfusion?",
+   "o": [
+    "A patient with platelets 80 x 10^9/L going for neurosurgery",
+    "A patient with TTP, platelets 15 x 10^9/L and no bleeding",
+    "A patient with HIT and platelets 40 x 10^9/L",
+    "A stable outpatient with platelets 25 x 10^9/L and no bleeding"
+   ],
+   "a": 0,
+   "e": "Correct: A. Neurosurgery needs platelets above 100 x 10^9/L.\nB: TTP is a contraindication because it fuels further thrombosis.\nC: HIT is a contraindication.\nD: Prophylactic transfusion without bleeding or a procedure targets under 10.\nTakeaway: Platelet thresholds: under 10, under 50 for invasive surgery, under 100 for neurosurgery.",
+   "l": [
+    "W10 9.4",
+    "W10 3.5"
+   ]
+  },
+  {
+   "c": "Transfusion",
+   "p": "Which patient best meets an indication for red cell transfusion?",
+   "o": [
+    "Hb 85 g/L, age 70, coronary disease, chest pain",
+    "Hb 95 g/L in a 50 year old before elective surgery",
+    "Hb 72 g/L, age 40, refuses blood products",
+    "Hb 78 g/L, age 25, no symptoms or cardiac history"
+   ],
+   "a": 0,
+   "e": "Correct: A. Hb 70 to 90 g/L with risk of cardiac ischemia is an indication.\nB: 95 is above the listed thresholds.\nC: Patient refusal is a contraindication. Consider EPO, iron, B12 and folate.\nD: Without symptoms or cardiac risk, the threshold is under 70.\nTakeaway: 1 unit RBC raises Hb by about 10 g/L.",
+   "l": [
+    "W10 9.4"
+   ]
+  },
+  {
+   "c": "Transfusion",
+   "p": "Which blood product is correctly paired with its storage?",
+   "o": [
+    "Cryoprecipitate: room temperature, up to 5 years",
+    "Platelets: 20 to 24 °C with mixing, up to 7 days",
+    "Plasma: 4 °C in the blood bank fridge, up to 1 year",
+    "Red cells: room temperature, up to 42 days"
+   ],
+   "a": 1,
+   "e": "Correct: B. Platelets stay at room temperature with constant slow mixing to preserve function, up to 7 days.\nA: Cryo is frozen at -18 °C for up to 1 year.\nC: Plasma is frozen at -18 °C for up to 1 year.\nD: Red cells are refrigerated at 4 °C for up to 42 days.\nTakeaway: Fibrinogen concentrate and PCCs are lyophilized with virus inactivation.",
+   "l": [
+    "W10 9.6"
+   ]
+  },
+  {
+   "c": "Transfusion",
+   "p": "Halfway through a red cell transfusion, Mr. Ito becomes short of breath.\n\nWhich two non-infectious transfusion risks present with dyspnea?",
+   "o": [
+    "FNHTR and bacterial sepsis",
+    "TA-GvHD and post-transfusion purpura",
+    "Bradykinin hypotension and anaphylaxis",
+    "TRALI and TACO"
+   ],
+   "a": 3,
+   "e": "Correct: D. Dyspnea after transfusion points to transfusion-related acute lung injury or transfusion-associated circulatory overload.\nA: These present with fever.\nB: These cause cytopenias after transfusion.\nC: These present with hypotension or allergic features.\nTakeaway: Group transfusion reactions by symptom: fever, dyspnea, urticaria, hypotension, hemolysis, cytopenias.",
+   "l": [
+    "W10 9.5"
+   ]
+  },
+  {
+   "c": "Transfusion",
+   "p": "Which statement about consent for blood transfusion is correct?",
+   "o": [
+    "Consent is waived if need is urgent and no SDM is available",
+    "Consent covers the procedure and risks only, not alternatives",
+    "Consent is waived whenever the patient is over 80",
+    "Verbal consent without any documentation is sufficient"
+   ],
+   "a": 0,
+   "e": "Correct: A. Consent is written, explains procedure, risks, benefits and alternatives in a capable patient, and is documented. It is waived in urgent need without an SDM.\nB: Alternatives belong in the discussion.\nC: Age alone is not a reason to waive consent.\nD: Consent is written and documented.\nTakeaway: Transfusion steps: need, consent, then blood bank tests (group, screen, crossmatch).",
+   "l": [
+    "W10 9.3"
+   ]
+  },
+  {
+   "c": "Transfusion",
+   "p": "A trauma patient is receiving massive transfusion. Bleeding is still rapid.\n\nWhich statement best fits this phase?",
+   "o": [
+    "Avoid fibrinogen replacement until the bleeding has stopped",
+    "Use whole blood units to replace all components at once",
+    "Wait for INR, PTT and fibrinogen results before giving each product",
+    "Use a protocol-based set of products and consider early tranexamic acid"
+   ],
+   "a": 3,
+   "e": "Correct: D. In early rapid bleeding, a protocol-based approach gives a predetermined number of units for speed. Fibrinogen replacement and tranexamic acid are considered early.\nA: Fibrinogen replacement is considered early.\nB: Whole blood units are not available in Canada.\nC: Lab-guided replacement fits once bleeding slows.\nTakeaway: Hypothermia, acidosis and low calcium all worsen bleeding.",
+   "l": [
+    "W10 9.1",
+    "W10 9.2"
+   ]
+  }
+ ],
+ "objectives": {
+  "W10 1.1": "Describe the structure of platelets.",
+  "W10 1.2": "List the physiologic steps and key regulators of primary hemostasis.",
+  "W10 1.3": "List and describe the changes in the primary hemostatic system that may lead to hemorrhagic complications.",
+  "W10 1.4": "Describe the physiological targets of antiplatelet agents.",
+  "W10 1.5": "Summarize the management of patients with disorders of platelet functions",
+  "W10 10.1": "List precautions that patients with bleeding disorder have to take in daily activities.",
+  "W10 10.2": "List logistical challenges with treatment.",
+  "W10 11.1": "List possible genetic disorders of primary hemostasis.",
+  "W10 11.2": "List possible genetic disorders of secondary hemostasis.",
+  "W10 11.3": "Describe component of genetic counseling for patients with hemophilia.",
+  "W10 2.1": "List the physiologic steps and key regulators of secondary hemostasis.",
+  "W10 2.2": "List the physiologic steps and key regulators of tertiary hemostasis",
+  "W10 3.1": "Define thrombocytopenia and list the most common causes of thrombocytopenia.",
+  "W10 3.2": "Describe the clinical presentation of thrombocytopenia.",
+  "W10 3.3": "Formulate an initial laboratory workup of a patient presenting with thrombocytopenia",
+  "W10 3.4": "Compare and contrast: Immune Thrombocytopenic Purpura (ITP), Thrombotic Thrombocytopenia Purpura/Hemolytic Uremic Syndrome (TTP/HUS), Disseminated Intravascular Coagulopathy (DIC), Heparin Induced Thrombocytopenia (HIT).",
+  "W10 3.5": "Develop a management plan to treat thrombocytopenia.",
+  "W10 4.1": "List and interpret critical clinical findings, including results of an appropriate history and physical examination performed with a particular attention to differentiate between various disorders of hemostasis.",
+  "W10 4.2.1": "Define the laboratory tests: INR, aPTT and Fibrinogen.",
+  "W10 4.2.2": "List coagulation factors analyzed by the laboratory investigation of INR and aPTT.",
+  "W10 4.2.3": "Discuss the differential diagnoses in adults with isolated or combined abnormalities of INR, aPTT and Fibrinogen.",
+  "W10 5.1": "List the differential diagnoses for pediatric patient with bleeding tendency.",
+  "W10 5.2": "List the appropriate investigations and determine the most likely diagnosis in a pediatric patient with bleeding tendency.",
+  "W10 5.3": "Compare and contrast the symptoms and signs of the differential diagnoses for pediatric patient with bleeding tendency.",
+  "W10 5.4": "List therapeutic options, including blood components, required in the management of pediatric patients with bleeding disorders.",
+  "W10 6.1": "List clinical risk factors for venous thrombosis.",
+  "W10 6.2": "Describe ways to prevent venous thrombosis.",
+  "W10 6.3": "List and interpret the appropriate investigations indicated for diagnosis of deep vein thrombosis and pulmonary embolism.",
+  "W10 6.4": "Construct initial management plan once diagnosis of venous thrombosis is confirmed.",
+  "W10 7.1": "List and describe the mechanism of actions for the different anticoagulants available.",
+  "W10 7.2": "List possible common side effects and complications of anticoagulants.",
+  "W10 7.3": "Describe approach to managing bleeding complications including possible antidotes to various anticoagulant medications.",
+  "W10 8.3": "Recognize the special consideration including patient with renal impairment, pregnancy, post operative setting, in under- and over-weight populations",
+  "W10 9.1": "Describe blood group, antibody screen and crossmatch.",
+  "W10 9.2": "Choose and interpret appropriate coagulation tests.",
+  "W10 9.3": "Describe the elements of informed consent.",
+  "W10 9.4": "List the indications for red cell, platelet and plasma transfusions.",
+  "W10 9.5": "List the infectious and non-infectious risks of blood transfusions.",
+  "W10 9.6": "Describe the contents and storage of blood and blood products."
+ }
+}
