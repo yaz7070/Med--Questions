@@ -1,0 +1,17 @@
+# Med Notes
+
+Study hub for Schulich MD2030, built with [Quartz](https://quartz.jzhao.xyz).
+
+- Notes live in `content/` as Markdown.
+- Every push to `v5` rebuilds the site on Cloudflare Pages.
+- Rules for Claude live in `CLAUDE.md`.
+
+## Run locally
+
+```bash
+npm ci
+npx quartz plugin install
+npx quartz build --serve
+```
+
+Open http://localhost:8080.
