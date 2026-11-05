@@ -1,5 +1,5 @@
 ---
-title: "Block 4: Infection and Immunity"
+title: "Block 4 · Weeks 13–15"
 tags:
   - block-4
 ---

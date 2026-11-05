@@ -11,7 +11,6 @@ Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the
 - `content/fom/block-N/flowcharts/`: one wrapper page per flowchart, plus `index.md` table
 - `quartz/static/pages/slug.html`: raw quiz and flowchart HTML, embedded by wrapper pages via iframe to `/static/pages/slug.html`
 - `content/question-bank/index.md`: overview of every quiz across blocks
-- `content/lce/`: LCE clinical notes, de-identified only
 - `content/templates/week.md`: template for new week pages (not published)
 
 ## Rules

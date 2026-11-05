@@ -1,5 +1,5 @@
 ---
-title: "Block 2: Screening, Cancer, Aging, Prescribing"
+title: "Block 2 · Weeks 5–8"
 tags:
   - block-2
 ---

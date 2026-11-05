@@ -1,5 +1,5 @@
 ---
-title: "Block 1: Early Life and Foundations"
+title: "Block 1 · Weeks 1–4"
 tags:
   - block-1
 ---

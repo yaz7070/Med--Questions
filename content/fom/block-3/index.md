@@ -1,5 +1,5 @@
 ---
-title: "Block 3: Hematology"
+title: "Block 3 · Weeks 9–12"
 tags:
   - block-3
 ---

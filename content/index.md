@@ -3,7 +3,7 @@ title: Med Notes
 description: Yazdaan's study hub for Schulich MD2030.
 ---
 
-Your study hub for Schulich MD2030. Search with `Ctrl K` (or `⌘ K`). Open the graph on any page to see how topics connect.
+Your study hub for Schulich MD2030. Search with `Ctrl K` (or `⌘ K`).
 
 ## Foundations of Medicine
 
@@ -17,7 +17,6 @@ Your study hub for Schulich MD2030. Search with `Ctrl K` (or `⌘ K`). Open the 
 ## Practice
 
 - [[question-bank/index|Question bank]]: quizzes by week and block
-- [[lce/index|LCE]]: clinical skills and placement notes
 
 ## Add to this site
 
