@@ -6,7 +6,7 @@ configuration:
   enablePopovers: true
   analytics: null
   locale: en-US
-  baseUrl: med-notes.pages.dev
+  baseUrl: med-school.yazdaanahmad.workers.dev
   ignorePatterns:
     - private
     - templates
