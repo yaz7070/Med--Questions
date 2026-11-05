@@ -17,7 +17,8 @@ Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the
 
 - Site name: Differential. Teal accent (--secondary), styles in `quartz/styles/custom.scss`.
 - Home, block, folder and question bank pages use raw HTML lists: `<ul class="rows">` with `<a class="row">` items (strong title + span.desc). Home uses `.hero`, `.blocks`/`.block-row`, `.chip`. Buttons use `.btn` and `.btn.primary`.
-- `scripts/site_pages.py` regenerates these pages from the ITEMS list in `scripts/restructure.py`. Add new quizzes or flowcharts to ITEMS, then rerun it. Update paths in the scripts if run outside the original session.
+- `scripts/items.py` lists every quiz, practice test and flowchart. `python3 scripts/site_pages.py` regenerates all wrapper, folder, block and home pages from it.
+- Quiz pages share one template (the med-school-quiz-builder page). Each block has `question-bank/` (one bank per week, no duplicates across banks), `practice-tests/` (full block tests) and `flowcharts/`.
 
 ## Rules
 

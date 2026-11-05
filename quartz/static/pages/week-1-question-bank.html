@@ -1,0 +1,263 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Week 1 Question Bank</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single exam card column, header strip with score and tick map, results replace the card */
+:root{
+  --bg:#EEF0EA;--paper:#FFFFFF;--ink:#1F2A24;--muted:#5B6A61;--line:#D7DBD2;
+  --accent:#2F6F5E;--wash:#E4EDE9;
+  --ok:#2E7D4F;--okw:#E4F2E8;--bad:#A13D2C;--badw:#F6E7E3;--tick:#C9CFC4;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171C18;--paper:#1F251F;--ink:#EDEFE9;--muted:#9BA79C;--line:#333A32;
+  --accent:#6FBBA3;--wash:#24302A;--ok:#6FBB8B;--okw:#1F3226;--bad:#E28C79;--badw:#3A2420;--tick:#3E463D;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171C18;--paper:#1F251F;--ink:#EDEFE9;--muted:#9BA79C;--line:#333A32;
+  --accent:#6FBBA3;--wash:#24302A;--ok:#6FBB8B;--okw:#1F3226;--bad:#E28C79;--badw:#3A2420;--tick:#3E463D;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-direction:column;gap:12px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,5vw,34px);line-height:1.15;margin:0;text-wrap:balance}
+.stats{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.stats b{color:var(--ink);font-weight:500}
+.save{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.save.ok{color:var(--ok)}.save.bad{color:var(--bad)}
+.ticks{display:flex;flex-wrap:wrap;gap:4px}
+.tick{width:16px;height:16px;border:0;background:var(--tick);padding:0;cursor:pointer}
+.tick.ok{background:var(--ok)}.tick.bad{background:var(--bad)}
+.tick.cur{outline:2px solid var(--ink);outline-offset:1px}
+.tick:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card{background:var(--paper);border:1px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:16px}
+.chead{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tag{color:var(--accent);background:var(--wash);padding:2px 8px}
+.stem{font-family:var(--serif);font-size:18px;line-height:1.55;margin:0;white-space:pre-line}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;background:var(--paper);color:var(--ink);border:1px solid var(--line);padding:12px 14px;font:inherit;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--wash)}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.opt:disabled{cursor:default}
+.opt .k{font-family:var(--mono);font-weight:500;color:var(--muted);min-width:1.2em}
+.opt.right{border-color:var(--ok);background:var(--okw)}.opt.right .k{color:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:var(--badw)}.opt.wrong .k{color:var(--bad)}
+.fb{border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:8px}
+.verdict{font-weight:600}.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
+.fb p{margin:0}
+.obj{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.5;border-left:2px solid var(--line);padding-left:10px}
+.nav{display:flex;justify-content:space-between;gap:10px}
+.btn{font:inherit;font-weight:500;padding:10px 18px;border:1px solid var(--accent);background:var(--accent);color:var(--paper);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn:disabled{opacity:.4;cursor:default}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.big{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td,th{text-align:left;padding:6px 0;border-bottom:1px solid var(--line);font-size:14px}
+th{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+td:last-child,th:last-child{text-align:right}
+h2{font-family:var(--serif);font-size:20px;font-weight:600;margin:0}
+h3{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:6px 0 0;font-weight:500}
+.miss{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.miss code{font-family:var(--mono);color:var(--bad);margin-right:6px}
+.optrow{display:flex;gap:6px;align-items:stretch}
+.optrow .opt{flex:1;min-width:0}
+.strike{flex:0 0 auto;width:40px;border:1px solid var(--line);background:var(--paper);color:var(--muted);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.strike:hover{border-color:var(--accent);color:var(--accent)}
+.strike:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.strike[aria-pressed="true"]{background:var(--wash);color:var(--ink)}
+.optrow.struck .opt > span:last-child{text-decoration:line-through;color:var(--muted)}
+.optrow.struck .opt .k{color:var(--line)}
+.tries{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.tries .bad{color:var(--bad)}.tries .ok{color:var(--ok)}
+.hint{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.fbtools{display:flex;justify-content:flex-end}
+.tick.redo{box-shadow:inset 0 -3px 0 var(--accent)}
+@media (prefers-reduced-motion:no-preference){.fb{animation:in .18s ease-out}@keyframes in{from{opacity:.4;transform:translateY(3px)}to{opacity:1;transform:none}}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Foundations of Medicine · Block 1 · Week 1</div>
+    <h1>Week 1 Question Bank: 17 Questions</h1>
+    <div class="stats" id="stats"></div>
+    <div class="save" id="save" role="status">Progress saves in this browser.</div>
+    <div class="ticks" id="ticks" aria-label="Question map"></div>
+  </header>
+  <main id="main"></main>
+</div>
+
+<script>
+const QUESTIONS = [{"c": "Ethical reasoning", "p": "A nurse watches a colleague pocket a patient's gold ring. She feels disgust and is certain it is wrong before she has thought about why. Afterward she builds reasons to support her reaction. Which process describes her judgment?", "o": ["Casuistry", "Ethical deliberation", "Principlism", "Social intuitionism"], "a": 3, "e": "Correct: D. The verdict arrived first as a fast gut reaction, and reasons came afterward to defend it. That order is the signature of social intuitionism.\nA: Casuistry reasons by comparing the case with paradigm cases. It would be correct if she had asked how earlier thefts by staff were judged and reasoned by analogy.\nB: Deliberation runs in the opposite order. You gather facts, weigh reasons and values, then reach a conclusion. It would be correct if she had paused, listed who is affected and which values conflict, and only then decided.\nC: Principlism balances autonomy, beneficence, non-maleficence and justice. It would be correct if she had weighed those four against one another before deciding.\nClues: \"feels disgust and is certain it is wrong before she has thought about why\" points to Fast, automatic moral intuition drives the verdict. \"Afterward she builds reasons\" points to Post hoc justification is the core claim of social intuitionism.", "l": []}, {"c": "Ethical frameworks", "p": "An ethics committee reviews the case of a competent patient who refuses dialysis. Members name autonomy, beneficence, non-maleficence and justice. They treat the four as equally ranked and balance them for this case. Which framework are they using?", "o": ["Deontology", "Principlism", "Narrative ethics", "Casuistry", "Utilitarianism"], "a": 1, "e": "Correct: B. Principlism defines principles of equal rank and balances them case by case to structure the decision.\nA: Deontology decides by duties and rules, often stated as maxims, whatever the outcome. It would be correct if the committee asked which universal duty binds the physician.\nC: Narrative ethics centres on the patient's story and what the illness means to that person. It would be correct if the committee focused on the patient's life story and values in context.\nD: Casuistry compares the case with paradigm cases. It would be correct if the committee had pulled up earlier refusals of dialysis and reasoned by analogy.\nE: Utilitarianism judges an act by the total good it produces. It would be correct if the committee ranked the options only by which yields the most overall benefit.\nClues: \"autonomy, beneficence, non-maleficence and justice\" points to These are the four principles of principlism. \"equally ranked and balance them\" points to Principlism balances principles of equal rank. No fixed hierarchy exists.", "l": []}, {"c": "Ethical frameworks", "p": "A family asks a resident to withhold a terminal diagnosis from a patient. She recalls three earlier cases with similar features and works out how the present case is alike and different from each. Which approach is she using?", "o": ["Casuistry", "Utilitarianism", "Deontology", "Social intuitionism"], "a": 0, "e": "Correct: A. Casuistry reasons by analogy from paradigm cases and attends to the details that make cases alike or different.\nB: Utilitarianism counts harm and happiness for everyone affected. It would be correct if she had picked the option with the largest net benefit.\nC: Deontology starts from a duty such as truth-telling and applies it whatever the circumstances. It would be correct if she began from a rule and applied it without comparing cases.\nD: It would be correct if she had an instant gut reaction and then went looking for reasons.\nClues: \"recalls three earlier cases\" points to The starting point is prior cases. \"alike and different\" points to Reasoning by analogy is the method of casuistry.", "l": []}, {"c": "Ethical frameworks", "p": "During a surge, a hospital network writes a protocol to allocate ventilators so that the greatest number of lives is saved. Which framework most directly drives this protocol?", "o": ["Social intuitionism", "Deontology", "Communitarianism", "Casuistry", "Utilitarianism"], "a": 4, "e": "Correct: E. The goal is to maximize total benefit, here the number of lives saved. Actions are judged by outcomes summed across everyone.\nA: It would be correct if members followed gut reactions about who deserves a bed.\nB: Deontology fixes each patient's claim as a duty owed whatever the outcome. It would be correct if the protocol assigned ventilators by lottery or arrival order because equal treatment is a duty.\nC: Wrong here, and it is the closest competitor. It would be correct if the protocol rested on shared community values and the common good, for example priority for frontline workers because of the role they play in sustaining the community. The wording 'greatest number of lives' points to aggregate outcomes.\nD: It would be correct if the group compared this surge with earlier paradigm cases of scarcity and reasoned by analogy.\nClues: \"greatest number of lives\" points to Aggregate outcome maximization is the utilitarian criterion. \"allocate ventilators during a surge\" points to Scarcity sets the problem, but the criterion is total benefit.", "l": []}, {"c": "Physician-patient models", "p": "A 58-year-old man has newly diagnosed hypertension. He holds firm views: he wants to avoid daily pills if possible and wants the lowest side-effect risk. He asks you for every option with its risks and benefits and says he will decide alone. Which physician-patient model fits best?", "o": ["Interpretive", "Deliberative", "Informative", "Paternalistic"], "a": 2, "e": "Correct: C. The physician acts as an expert supplier of facts. The patient holds fixed values and makes the decision.\nA: The physician helps a patient work out values that are vague or in conflict. It would be correct if he were unsure what he wanted.\nB: The physician acts as a teacher or friend who argues that some values are better than others. It would be correct if you were persuading him toward accepting daily medication for long-term health.\nD: The physician would choose for the patient. It would be correct if he said, 'You decide, Doctor. I trust you.'\nClues: \"holds firm views\" points to Fixed values point away from interpretive and deliberative models. \"every option with its risks and benefits\" points to The physician's role is to provide facts. \"will decide alone\" points to Full patient control fits the informative model.", "l": []}, {"c": "Physician-patient models", "p": "A 44-year-old woman with early breast cancer tells you she is unable to decide between a treatment that keeps her hair and one with the lowest recurrence risk. She is unsure which matters more to her. You ask open questions to help her put her values into words and you do not press your own view. Which model are you using?", "o": ["Paternalistic", "Deliberative", "Informative", "Interpretive"], "a": 3, "e": "Correct: D. The physician acts as a counsellor who helps the patient clarify and state values that are present but unclear, then helps choose the intervention that fits them.\nA: It would be correct if you selected the treatment for her on the basis of your own judgment of her best interest.\nB: It would be correct if you argued, as a teacher, that avoiding recurrence deserves priority over hair loss and worked to persuade her.\nC: It would be correct if her values were settled and she wanted only the facts.\nClues: \"unsure which matters more to her\" points to Her values exist but need clarifying. \"help her put her values into words\" points to This is the interpretive physician's task. \"you do not press your own view\" points to This rules out deliberative and paternalistic models.", "l": []}, {"c": "Bias and equity", "p": "A physician sincerely believes every patient deserves equal care. Chart review over a month shows he spends less time with patients who speak with an accent and orders less pain medication for them. He is unaware of the pattern. Which term fits best?", "o": ["Cultural competence", "Cultural safety", "Implicit bias", "Explicit bias"], "a": 2, "e": "Correct: C. Unconscious attitudes shape his behaviour even though his stated beliefs are egalitarian.\nA: This is the ability to understand and interact effectively with people of other cultures. It would be correct if he had learned about his patients' backgrounds and adapted his communication.\nB: This describes care that patients experience as spiritually and socially safe. It would be correct if patients reported feeling respected and safe in his clinic.\nD: Explicit bias is conscious and endorsed. It would be correct if he stated that these patients deserve less care.\nClues: \"sincerely believes every patient deserves equal care\" points to No conscious prejudice, which rules out explicit bias. \"He is unaware of the pattern\" points to The attitude operates outside awareness. \"less time and less pain medication\" points to The bias changes real clinical behaviour.", "l": []}, {"c": "Bias and equity", "p": "A clinic asks Indigenous patients how safe and respected they feel in the space and changes its practices based on their answers. The patient, not the provider, decides whether care was culturally safe. Which concept does this reflect?", "o": ["Cultural safety", "Cultural competence", "Culture", "Cultural destructiveness"], "a": 0, "e": "Correct: A. Cultural safety is judged by the person receiving care. It attends to power imbalances and asks whether the environment felt socially and spiritually safe.\nB: This is the provider's knowledge and skill in interacting with people of other cultures. It would be correct if the clinic had trained staff on customs and communication styles.\nC: Culture means the knowledge, beliefs and values shared by members of a society. It would be correct if the question asked what a group has in common.\nD: This sits at the harmful end of the cultural competence continuum, where practices suppress or damage a culture. It would be correct if the clinic banned traditional healing or language.\nClues: \"how safe and respected they feel\" points to Subjective patient experience is the measure. \"The patient, not the provider, decides\" points to Cultural safety is defined by the recipient of care.", "l": []}, {"c": "History of medicine", "p": "A second-century Greek physician took Hippocratic clinical practice and placed it within a wider framework of anatomy and physiology. His ideas dominated Western medicine for more than a thousand years. Who was he?", "o": ["Robert Koch", "Galen", "William Osler", "Hippocrates"], "a": 1, "e": "Correct: B. Galen set clinical Hippocratic medicine inside a broader anatomical and physiological framework. He worked largely from animal dissection and did not describe the circulation of blood. Harvey did that much later.\nA: Koch worked in the nineteenth century and developed postulates linking specific microbes to specific diseases. It would be correct if the question asked about germ theory.\nC: Osler taught at the bedside in the late nineteenth and early twentieth centuries and urged equanimity. It would be correct if the question asked about modern bedside clinical education.\nD: Hippocrates lived centuries earlier and is linked to clinical observation, the ethical oath tradition and the humoral theory. It would be correct if the question asked about the founder of clinical observation.\nClues: \"second-century Greek physician\" points to Galen of Pergamum, who lived from about 129 to 216 CE. \"wider framework of anatomy and physiology\" points to Galen's signature contribution.", "l": []}, {"c": "History of medicine", "p": "In 1850, a physician blames a local cholera outbreak on foul air rising from a swamp. Which theory of disease does this reasoning reflect?", "o": ["Biomedical model", "Miasma theory", "Germ theory", "Humoral theory"], "a": 1, "e": "Correct: B. Miasma theory holds that noxious or bad air causes disease. It was widely held in the nineteenth century before germ theory replaced it.\nA: The biomedical model emphasizes biochemical and physiologic processes, with an identified causative agent, an objective diagnostic test and a specific treatment. It would be correct if he had set out to identify the pathogen and develop a test and treatment.\nC: Germ theory holds that micro-organisms cause specific diseases. It would be correct if he had pointed to a specific micro-organism, such as Vibrio cholerae in drinking water.\nD: The humoral theory attributes disease to imbalance among four humours: blood, phlegm, yellow bile and black bile. It would be correct if he had blamed an excess of phlegm or bile.\nClues: \"foul air rising from a swamp\" points to Bad air as the cause of disease is the miasma theory. \"1850\" points to This falls before germ theory became the dominant view.", "l": []}, {"c": "Clinical reasoning", "p": "A 19-year-old reports two days of sore throat and headache. You measure a temperature of 38.6 C and see swollen tonsils with exudate. How do you classify these findings?", "o": ["All four findings are signs, and the course is acute.", "The symptoms and signs are classified correctly, but the course is chronic.", "Sore throat and headache are symptoms, fever and exudate are signs, and the course is acute.", "Sore throat and headache are signs, fever and exudate are symptoms, and the course is acute."], "a": 2, "e": "Correct: C. The patient reports the first two, and you measure or see the last two. Two days is acute. Some findings, such as a rash, count as both a symptom when reported and a sign when you observe them.\nA: Symptoms are what the patient reports and signs are what you observe or measure. Sore throat and headache are reported, so they are symptoms. The statement would be correct if you had observed or measured all four yourself.\nB: Two days is acute. Chronic presentations usually build over months. The statement would be correct for the same findings persisting for months.\nD: This reverses the definitions. It would be correct only if the labels were swapped.\nClues: \"reports\" points to Patient-reported findings are symptoms. \"You measure ... and see\" points to Clinician-detected findings are signs. \"two days\" points to A short course is acute.", "l": []}, {"c": "Clinical reasoning", "p": "A 40-year-old woman has a mother with migraines. Her own migraines began after a week of severe sleep loss at a new job. She now sleeps poorly every night and skips meals, and her migraines occur weekly. Which factor is perpetuating?", "o": ["Her sex, since migraines are more common in women", "The week of severe sleep loss at the new job", "Her mother's history of migraines", "Ongoing poor sleep and skipped meals"], "a": 3, "e": "Correct: D. These continue after onset and keep the problem going, which defines a perpetuating factor.\nA: Sex is present before onset and raises susceptibility, so it is predisposing. It would be correct only if the question asked about predisposing factors.\nB: This is the precipitating factor. It triggered onset. It would be the answer to 'which factor is precipitating?'\nC: This is a predisposing factor. It creates susceptibility before onset. It would be the answer to 'which factor is predisposing?'\nClues: \"mother with migraines\" points to Predisposing. \"began after a week of severe sleep loss\" points to Precipitating trigger. \"now sleeps poorly every night and skips meals\" points to Ongoing behaviour that maintains the problem.", "l": []}, {"c": "Diagnostic stewardship", "p": "Which action does NOT align with Choosing Wisely principles?", "o": ["A resident orders an MRI because she expects the preceptor would want one, although the result would not change management.", "A patient with five days of low back pain and no red flags hears reassurance and advice to stay active. You order no imaging.", "A well 30-year-old with no symptoms asks for a large blood panel to be sure. You explain that results are unlikely to change care and decline.", "A hospital removes routine pre-operative laboratory tests for low-risk surgery when results do not change management."], "a": 0, "e": "Correct: A. Ordering in anticipation of a preceptor's preference breaks the rule that tests should change management. Choosing Wisely also favours the least invasive test first.\nB: Wrong answer because this aligns with the principles. Imaging without red flags rarely changes management. It would fail to align if you ordered an MRI with no red flags, or if you skipped imaging in a patient with new weakness or bladder dysfunction.\nC: Wrong answer because this aligns with the principles. Tests that will not change management add cost and false positives. It would fail to align if you ordered the panel to satisfy the request.\nD: Wrong answer because this aligns with the principles. It would fail to align if the hospital added routine tests that do not change management.\nClues: \"expects the preceptor would want one\" points to Ordering for someone else's preference is discouraged. \"although the result would not change management\" points to This violates the central rule.", "l": []}, {"c": "Diagnostic stewardship", "p": "Which statement about diagnostic imaging is false?", "o": ["MRI builds its image from the behaviour of hydrogen nuclei in a magnetic field, which gives strong soft-tissue contrast.", "Ultrasound uses sound waves, involves no ionizing radiation and shows real-time motion.", "CT uses ionizing X-rays and builds cross-sectional images from differences in tissue attenuation.", "On a plain radiograph, bone appears black because it lets X-rays pass most easily."], "a": 3, "e": "Correct: D. Correct, because this statement is false. Bone absorbs more X-rays than soft tissue, so it appears white. Air absorbs the least and appears black.\nA: This is true, so it is not the answer. It would be false if it said MRI forms its image from tissue density in the same way as an X-ray.\nB: This is true, so it is not the answer. It would be false if it said ultrasound exposes the patient to ionizing radiation.\nC: This is true, so it is not the answer. It would be false if it said CT uses no ionizing radiation.\nClues: \"false\" points to The stem asks for the incorrect statement, so true statements are the distractors. \"bone appears black\" points to Dense bone absorbs X-rays and appears white.", "l": []}, {"c": "Evidence", "p": "You want the strongest available evidence to guide a treatment decision. Which source ranks highest?", "o": ["Expert opinion", "A single randomized controlled trial", "A non-randomized controlled study", "A well-designed cohort study", "A systematic review with meta-analysis of randomized trials"], "a": 4, "e": "Correct: E. It pools many trials, reduces bias and adds statistical power. A meta-analysis ranks above a qualitative systematic review because it combines results quantitatively.\nA: This is the lowest tier. It relies on experience and reasoning without systematic data. It would be the best available source only when no studies exist.\nB: It is strong, but one trial has limited sample size and is open to chance findings. It would be the top source if no systematic review or meta-analysis exists on the question.\nC: Without randomization the groups differ in ways that bias the result. It would be the best available source if randomization is not feasible and no better design exists.\nD: Observational designs are prone to confounding. It would be the best available source when randomization is unethical or impractical, for example when studying the harms of smoking.\nClues: \"strongest available evidence\" points to Look for the top of the evidence hierarchy. \"randomized trials pooled\" points to A systematic review with meta-analysis sits at the top.", "l": []}, {"c": "Population health", "p": "A province bans sales of sugary drinks in schools and raises taxes on them. The aim is to keep obesity from emerging as a common risk factor among all children, most of whom have no risk factors yet. Which level of prevention is this?", "o": ["Primary prevention", "Secondary prevention", "Primordial prevention", "Tertiary prevention"], "a": 2, "e": "Correct: C. Primordial prevention targets the whole population and stops risk factors from emerging in the first place.\nA: Primary prevention reduces exposure to established risk factors to stop disease onset. It would be correct if the program counselled adults with obesity to prevent diabetes.\nB: Secondary prevention detects disease early, usually by screening. It would be correct if the program screened children for prediabetes.\nD: Tertiary prevention targets people with established, symptomatic disease to limit complications. It would be correct if the program offered diabetic foot care.\nClues: \"all children, most of whom have no risk factors yet\" points to The target is the whole population, upstream of risk factors. \"keep obesity from emerging as a common risk factor\" points to The goal is to prevent the risk factor, not the disease.", "l": []}, {"c": "Population health", "p": "In a population, life expectancy is the lowest of all stages. Malnutrition and infectious disease cause most deaths, and epidemics cause sharp swings in mortality. Which stage of the epidemiologic transition is this?", "o": ["Pestilence and famine", "Delayed degenerative diseases", "Degenerative and man-made diseases", "Receding pandemics"], "a": 0, "e": "Correct: A. This first stage has the lowest life expectancy, with malnutrition and infectious disease as major causes of death and epidemics driving mortality.\nB: Deaths shift to older ages and cardiovascular disease and cancer lead. It would be correct if people were dying later of those diseases.\nC: Chronic disease overtakes infection and cardiovascular disease causes the largest share of deaths. It would be correct if chronic disease had replaced infection as the leading cause.\nD: Improved nutrition and public health measures reduce infectious deaths and epidemics recede. It would be correct if mortality were falling steadily and epidemics were fading.\nClues: \"malnutrition and infectious disease cause most deaths\" points to This is the first stage of the transition. \"epidemics cause sharp swings in mortality\" points to Pestilence marks this stage.", "l": []}];
+const OBJECTIVES = {};
+const L = "ABCDE";
+const N = QUESTIONS.length;
+let cur = 0, showResults = false;
+let ans = new Array(N).fill(null);           // current pick per question
+let tries = QUESTIONS.map(()=>[]);           // every locked attempt: {pick, ok, at}
+let strikes = QUESTIONS.map(()=>[]);         // struck option indexes for the open attempt
+let history = [], db = null, uid = null, writing = false, dirty = false;
+const LS_KEY = "differential-week-1-question-bank";
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+function score(){ return ans.reduce((n,a,i)=>n+(a!==null&&a===QUESTIONS[i].a?1:0),0); }
+function answered(){ return ans.filter(a=>a!==null).length; }
+function firstTryScore(){ return tries.reduce((n,t)=>n+(t.length&&t[0].ok?1:0),0); }
+function firstTryCount(){ return tries.filter(t=>t.length).length; }
+
+function renderHeader(){
+  $("#stats").innerHTML = `<span>Item <b>${showResults?"–":cur+1}</b> of <b>${N}</b></span><span>Answered <b>${answered()}</b></span><span>Score <b>${score()} / ${answered()}</b></span>`;
+  $("#ticks").innerHTML = QUESTIONS.map((q,i)=>{
+    const st = ans[i]===null?"":(ans[i]===q.a?"ok":"bad");
+    const redo = tries[i].length>1 || (ans[i]===null && tries[i].length>0);
+    return `<button class="tick ${st} ${redo?"redo":""} ${(!showResults&&i===cur)?"cur":""}" data-i="${i}" aria-label="Question ${i+1}"></button>`;
+  }).join("");
+  document.querySelectorAll(".tick").forEach(b=>b.onclick=()=>{cur=+b.dataset.i;showResults=false;render();});
+}
+
+function triesLine(i, includeCurrent){
+  const t = includeCurrent ? tries[i] : tries[i];
+  if(!t.length) return "";
+  const parts = t.map((x,k)=>`<span class="${x.ok?"ok":"bad"}">${k+1}: ${L[x.pick]} ${x.ok?"correct":"wrong"}</span>`).join(" · ");
+  return `<div class="tries">Attempts ${parts}</div>`;
+}
+
+function renderQ(){
+  const q = QUESTIONS[cur], a = ans[cur], done = a!==null, st = strikes[cur];
+  const opts = q.o.map((o,i)=>{
+    let c = "";
+    if(done){ if(i===q.a) c="right"; else if(i===a) c="wrong"; }
+    const struck = !done && st.includes(i);
+    const strikeBtn = done ? "" : `<button class="strike" data-s="${i}" aria-pressed="${struck}" aria-label="${struck?"Restore":"Strike out"} option ${L[i]}" title="${struck?"Restore":"Strike out"} option">${struck?"↺":"✕"}</button>`;
+    return `<div class="optrow ${struck?"struck":""}"><button class="opt ${c}" data-i="${i}" ${done?"disabled":""}><span class="k">${L[i]}</span><span>${esc(o)}</span></button>${strikeBtn}</div>`;
+  }).join("");
+  let fb = "";
+  if(done){
+    const ok = a===q.a;
+    const lines = q.e.split("\n").map(t=>`<p>${esc(t)}</p>`).join("");
+    const objs = q.l.map(id=>`<div class="obj">Objective: ${esc(id)}. ${esc(OBJECTIVES[id]||"")}</div>`).join("");
+    fb = `<div class="fb" role="status"><div class="verdict ${ok?"ok":"bad"}">${ok?"Correct.":"Incorrect. The answer is "+L[q.a]+"."}</div>${lines}${objs}${triesLine(cur)}<div class="fbtools"><button class="btn ghost" id="redo">Reset and redo this question</button></div></div>`;
+  }
+  const pre = (!done && tries[cur].length) ? `<div class="hint">Redo. Your earlier attempts are saved.</div>${triesLine(cur)}` : (!done ? `<div class="hint">Tap ✕ to strike out an option. Right-click works too.</div>` : "");
+  const last = cur===N-1;
+  $("#main").innerHTML = `<article class="card">
+    <div class="chead"><span class="tag">${esc(q.c)}</span><span>Q${cur+1}</span></div>
+    <p class="stem">${esc(q.p)}</p>
+    ${pre}
+    <div class="opts">${opts}</div>${fb}
+    <div class="nav"><button class="btn ghost" id="prev" ${cur===0?"disabled":""}>Previous</button>
+    <button class="btn" id="next" ${done?"":"disabled"}>${last?"See results":"Next"}</button></div>
+  </article>`;
+  document.querySelectorAll(".opt").forEach(b=>{
+    b.onclick=()=>{ const p=+b.dataset.i; ans[cur]=p; tries[cur].push({pick:p, ok:p===q.a, at:new Date().toISOString()}); tries[cur]=tries[cur].slice(-10); strikes[cur]=[]; render(false); persist(); };
+    b.oncontextmenu=(e)=>{ if(done) return; e.preventDefault(); toggleStrike(+b.dataset.i); };
+  });
+  document.querySelectorAll(".strike").forEach(b=>b.onclick=()=>toggleStrike(+b.dataset.s));
+  const r=$("#redo"); if(r) r.onclick=()=>{ ans[cur]=null; strikes[cur]=[]; render(false); persist(); };
+  $("#prev").onclick=()=>{cur--;render();};
+  $("#next").onclick=()=>{ if(last){showResults=true;} else cur++; render(); };
+}
+
+function toggleStrike(i){
+  const s = strikes[cur], k = s.indexOf(i);
+  if(k<0) s.push(i); else s.splice(k,1);
+  render(false); persist();
+}
+
+function renderResults(){
+  const s = score(), pct = Math.round(100*s/N);
+  const cats = {};
+  QUESTIONS.forEach((q,i)=>{ cats[q.c]=cats[q.c]||[0,0]; cats[q.c][1]++; if(ans[i]===q.a) cats[q.c][0]++; });
+  const rows = Object.entries(cats).map(([c,[r,t]])=>`<tr><td>${esc(c)}</td><td>${r} / ${t}</td></tr>`).join("");
+  const missed = {};
+  QUESTIONS.forEach((q,i)=>{ const wrongFirst = tries[i].length && !tries[i][0].ok; if(ans[i]!==q.a || wrongFirst) q.l.forEach(id=>{ const w=id.split(" ")[0]; missed[w]=missed[w]||new Set(); missed[w].add(id); }); });
+  const weeks = Object.keys(missed).sort((x,y)=>parseInt(x.slice(1))-parseInt(y.slice(1)));
+  const missHtml = weeks.length ? weeks.map(w=>`<h3>Week ${w.slice(1)}</h3><ul class="miss">${[...missed[w]].map(id=>`<li><code>${esc(id)}</code>${esc(OBJECTIVES[id]||"")}</li>`).join("")}</ul>`).join("") : "<p>No missed objectives.</p>";
+  const redone = tries.filter(t=>t.length>1).length;
+  const un = N - answered();
+  $("#main").innerHTML = `<article class="card">
+    <div class="chead"><span class="tag">Results</span><span>${un?un+" unanswered":"Complete"}</span></div>
+    <div><div class="big">${s} / ${N}</div><div class="stats"><span><b>${pct}%</b> correct now</span><span>First try <b>${firstTryScore()} / ${firstTryCount()}</b></span><span>Redone <b>${redone}</b></span></div></div>
+    <table><thead><tr><th>Category</th><th>Score</th></tr></thead><tbody>${rows}</tbody></table>
+    <h2>Objectives to review</h2><p class="hint">Includes questions you missed on the first try, even if a redo got them right.</p>${missHtml}${history.length?`<h2>Past attempts</h2><table><thead><tr><th>Date</th><th>Score</th></tr></thead><tbody>${history.slice().reverse().map(h=>`<tr><td>${new Date(h.date).toLocaleDateString()}</td><td>${h.score} / ${h.total}</td></tr>`).join("")}</tbody></table>`:""}
+    <div class="nav"><button class="btn ghost" id="back">Back to questions</button><button class="btn" id="restart">Restart all</button></div>
+  </article>`;
+  $("#back").onclick=()=>{showResults=false;render();};
+  $("#restart").onclick=()=>{
+    if(answered() || tries.some(t=>t.length)){
+      history.push({date:new Date().toISOString(), score:score(), answered:answered(), total:N, firstTry:firstTryScore(),
+        missed:QUESTIONS.map((q,i)=>ans[i]!==null&&ans[i]!==q.a?"q"+(i+1):null).filter(Boolean)});
+      history=history.slice(-20);
+    }
+    ans.fill(null); tries=QUESTIONS.map(()=>[]); strikes=QUESTIONS.map(()=>[]); cur=0; showResults=false; render(); persist();
+  };
+}
+
+function setSave(text, cls){ const el=$("#save"); if(el){ el.textContent=text; el.className="save "+(cls||""); } }
+function bodyOf(){
+  const a = {};
+  QUESTIONS.forEach((q,i)=>{
+    if(ans[i]===null && !tries[i].length && !strikes[i].length) return;
+    a["q"+(i+1)] = {pick:ans[i], ok:ans[i]!==null && ans[i]===q.a, l:q.l, tries:tries[i], strikes:strikes[i]};
+  });
+  return {answers:a, history, total:N, answered:answered(), score:score(), firstTry:firstTryScore(), updatedAt:new Date().toISOString()};
+}
+function validPick(i,p){ return Number.isInteger(p) && p>=0 && p<QUESTIONS[i].o.length; }
+function applySaved(d){
+  if(!d || typeof d!=="object") return;
+  ans.fill(null); tries=QUESTIONS.map(()=>[]); strikes=QUESTIONS.map(()=>[]);
+  const a = d.answers || {};
+  for(const k in a){
+    const i = parseInt(k.slice(1),10)-1, row = a[k];
+    if(!(i>=0 && i<N) || !row || typeof row!=="object") continue;
+    if(validPick(i,row.pick)) ans[i]=row.pick;
+    if(Array.isArray(row.tries)) tries[i]=row.tries.filter(t=>t&&validPick(i,t.pick)).map(t=>({pick:t.pick, ok:t.pick===QUESTIONS[i].a, at:String(t.at||"")})).slice(-10);
+    else if(ans[i]!==null) tries[i]=[{pick:ans[i], ok:ans[i]===QUESTIONS[i].a, at:""}];
+    if(Array.isArray(row.strikes)) strikes[i]=row.strikes.filter(x=>validPick(i,x));
+  }
+  history = Array.isArray(d.history) ? d.history.slice(-20) : [];
+  const first = ans.findIndex(x=>x===null); cur = first<0 ? N-1 : first;
+}
+function lsLoad(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"null"); }catch(e){ return null; } }
+function lsSave(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(bodyOf())); }catch(e){} }
+async function persist(){
+  lsSave();
+  if(!db || !uid) return;
+  dirty = true; if(writing) return; writing = true;
+  while(dirty){
+    dirty = false;
+    setSave("Saving…");
+    try{ await db.doc("attempts/"+uid).set(bodyOf()); setSave("Progress saved to your account.","ok"); }
+    catch(e){
+      if(e && e.code==="invalid_argument"){ db=null; setSave("Progress saves in this browser only.","bad"); break; }
+      setSave("Could not save to your account. Progress saves in this browser.","bad");
+    }
+  }
+  writing = false;
+}
+async function connect(){
+  try{
+    if(!window.claude || !window.claude.use) return;
+    const [u, d] = await Promise.all([window.claude.use("user"), window.claude.use("db")]);
+    if(!u || !d) return;
+    const id = await u.id(); if(!id) return;
+    db = d; uid = id;
+    const snap = await db.doc("attempts/"+uid).get();
+    if(snap.exists){ applySaved(snap.data()); render(); setSave("Progress saved to your account.","ok"); }
+    else if(answered() || tries.some(t=>t.length)){ persist(); }
+    else setSave("Progress saves to your account.","ok");
+  }catch(e){ /* keep local-only mode */ }
+}
+
+function render(top=true){ renderHeader(); showResults?renderResults():renderQ(); if(top) window.scrollTo({top:0}); }
+applySaved(lsLoad());
+render();
+connect();
+</script>
+
+</body></html>

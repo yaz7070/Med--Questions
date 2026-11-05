@@ -1,0 +1,263 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Block 1 Practice Test 3</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single exam card column, header strip with score and tick map, results replace the card */
+:root{
+  --bg:#EEF0EA;--paper:#FFFFFF;--ink:#1F2A24;--muted:#5B6A61;--line:#D7DBD2;
+  --accent:#2F6F5E;--wash:#E4EDE9;
+  --ok:#2E7D4F;--okw:#E4F2E8;--bad:#A13D2C;--badw:#F6E7E3;--tick:#C9CFC4;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171C18;--paper:#1F251F;--ink:#EDEFE9;--muted:#9BA79C;--line:#333A32;
+  --accent:#6FBBA3;--wash:#24302A;--ok:#6FBB8B;--okw:#1F3226;--bad:#E28C79;--badw:#3A2420;--tick:#3E463D;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171C18;--paper:#1F251F;--ink:#EDEFE9;--muted:#9BA79C;--line:#333A32;
+  --accent:#6FBBA3;--wash:#24302A;--ok:#6FBB8B;--okw:#1F3226;--bad:#E28C79;--badw:#3A2420;--tick:#3E463D;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-direction:column;gap:12px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,5vw,34px);line-height:1.15;margin:0;text-wrap:balance}
+.stats{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.stats b{color:var(--ink);font-weight:500}
+.save{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.save.ok{color:var(--ok)}.save.bad{color:var(--bad)}
+.ticks{display:flex;flex-wrap:wrap;gap:4px}
+.tick{width:16px;height:16px;border:0;background:var(--tick);padding:0;cursor:pointer}
+.tick.ok{background:var(--ok)}.tick.bad{background:var(--bad)}
+.tick.cur{outline:2px solid var(--ink);outline-offset:1px}
+.tick:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card{background:var(--paper);border:1px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:16px}
+.chead{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tag{color:var(--accent);background:var(--wash);padding:2px 8px}
+.stem{font-family:var(--serif);font-size:18px;line-height:1.55;margin:0;white-space:pre-line}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;background:var(--paper);color:var(--ink);border:1px solid var(--line);padding:12px 14px;font:inherit;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--wash)}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.opt:disabled{cursor:default}
+.opt .k{font-family:var(--mono);font-weight:500;color:var(--muted);min-width:1.2em}
+.opt.right{border-color:var(--ok);background:var(--okw)}.opt.right .k{color:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:var(--badw)}.opt.wrong .k{color:var(--bad)}
+.fb{border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:8px}
+.verdict{font-weight:600}.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
+.fb p{margin:0}
+.obj{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.5;border-left:2px solid var(--line);padding-left:10px}
+.nav{display:flex;justify-content:space-between;gap:10px}
+.btn{font:inherit;font-weight:500;padding:10px 18px;border:1px solid var(--accent);background:var(--accent);color:var(--paper);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn:disabled{opacity:.4;cursor:default}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.big{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td,th{text-align:left;padding:6px 0;border-bottom:1px solid var(--line);font-size:14px}
+th{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+td:last-child,th:last-child{text-align:right}
+h2{font-family:var(--serif);font-size:20px;font-weight:600;margin:0}
+h3{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:6px 0 0;font-weight:500}
+.miss{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.miss code{font-family:var(--mono);color:var(--bad);margin-right:6px}
+.optrow{display:flex;gap:6px;align-items:stretch}
+.optrow .opt{flex:1;min-width:0}
+.strike{flex:0 0 auto;width:40px;border:1px solid var(--line);background:var(--paper);color:var(--muted);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.strike:hover{border-color:var(--accent);color:var(--accent)}
+.strike:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.strike[aria-pressed="true"]{background:var(--wash);color:var(--ink)}
+.optrow.struck .opt > span:last-child{text-decoration:line-through;color:var(--muted)}
+.optrow.struck .opt .k{color:var(--line)}
+.tries{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.tries .bad{color:var(--bad)}.tries .ok{color:var(--ok)}
+.hint{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.fbtools{display:flex;justify-content:flex-end}
+.tick.redo{box-shadow:inset 0 -3px 0 var(--accent)}
+@media (prefers-reduced-motion:no-preference){.fb{animation:in .18s ease-out}@keyframes in{from{opacity:.4;transform:translateY(3px)}to{opacity:1;transform:none}}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Foundations of Medicine · Block 1 · Weeks 1 to 4 · Practice test</div>
+    <h1>Block 1 Practice Test 3: 50 Questions</h1>
+    <div class="stats" id="stats"></div>
+    <div class="save" id="save" role="status">Progress saves in this browser.</div>
+    <div class="ticks" id="ticks" aria-label="Question map"></div>
+  </header>
+  <main id="main"></main>
+</div>
+
+<script>
+const QUESTIONS = [{"c": "Week 1", "p": "A clinician wants to know whether a new blood test can accurately identify patients with early kidney disease. Which type of clinical decision-making question is this?", "o": ["A diagnosis question", "A therapy question", "A prognosis question", "A harm question"], "a": 0, "e": "Correct: A. Questions about whether a test accurately identifies a condition are diagnosis questions, distinct from therapy (treatment effect), prognosis (future course), or harm (adverse effects) questions.", "l": []}, {"c": "Week 1", "p": "A resident orders an MRI purely because she suspects her attending prefers imaging in similar cases, not because it will change management. Which Choosing Wisely principle is being violated?", "o": ["Only order tests which will change patient management", "Do not order tests in anticipation of preceptor preference", "Consider the least invasive testing option first", "Do not order tests exclusively for the learning experience"], "a": 1, "e": "Correct: B. Choosing Wisely explicitly advises against ordering tests in anticipation of what a preceptor might prefer, which is exactly what is described here.", "l": []}, {"c": "Week 1", "p": "A teenager with several risk factors for substance use has never engaged in substance use himself, which his counselor attributes partly to his strong involvement in competitive sports. Which of the 4 Ps does this sports involvement represent?", "o": ["A predisposing factor", "A precipitating factor", "A protective factor", "A perpetuating factor"], "a": 2, "e": "Correct: C. A protective factor is a strength that reduces the severity or likelihood of a problem, as sports involvement does here, distinct from predisposing, precipitating, or perpetuating factors.", "l": []}, {"c": "Week 1", "p": "A clinic actively redesigns its intake process, hires interpreters, and adjusts scheduling based on specific feedback from immigrant communities it serves. Which stage of the cultural competence continuum does this best reflect?", "o": ["Cultural pre-competence", "Cultural blindness", "Cultural incapacity", "Cultural proficiency"], "a": 3, "e": "Correct: D. Cultural proficiency involves implementing concrete changes to improve services based on cultural needs, going beyond pre-competence (early commitment and assessment) toward active, sustained change.", "l": []}, {"c": "Week 2", "p": "A cancer cell secretes a growth factor that binds receptors on its own surface, stimulating its own proliferation. Which type of cell signalling does this describe?", "o": ["Autocrine signalling", "Paracrine signalling", "Endocrine signalling", "Synaptic signalling"], "a": 0, "e": "Correct: A. Autocrine signalling occurs when a cell signals to itself, as opposed to paracrine (nearby cells), endocrine (bloodstream to distant targets), or synaptic (nerve cell to nerve cell) signalling.", "l": []}, {"c": "Week 2", "p": "Glucose, a large polar molecule, crosses a cell membrane down its concentration gradient using a dedicated carrier protein, without any ATP expenditure. Which transport mechanism is this?", "o": ["Simple diffusion", "Facilitated diffusion", "Primary active transport", "Secondary active transport"], "a": 1, "e": "Correct: B. Facilitated diffusion uses carrier proteins to move larger polar molecules like glucose down their concentration gradient, without requiring ATP, distinguishing it from active transport mechanisms.", "l": []}, {"c": "Week 2", "p": "A drug with very high lipid solubility and small molecular size is compared to a similar drug with low lipid solubility and larger size, both crossing the same membrane area. Which statement is correct?", "o": ["The first drug will diffuse more slowly across the membrane", "Molecular size and lipid solubility do not affect diffusion rate", "The first drug will diffuse more rapidly across the membrane", "Both drugs will diffuse at an identical rate"], "a": 2, "e": "Correct: C. Higher lipid solubility and smaller molecular size both favor faster diffusion across a membrane, so the first drug will diffuse more rapidly than the second.", "l": []}, {"c": "Week 2", "p": "A single fertilized cell divides repeatedly and its daughter cells express different genes, forming distinct tissues such as muscle and nerve, despite an identical genome. Which concept best explains this process?", "o": ["Genomic imprinting", "Allelic heterogeneity", "Anticipation", "Cellular specialization"], "a": 3, "e": "Correct: D. Cellular specialization describes how cells with an identical genome become organized and customized into different tissue types through differential gene expression, distinct from imprinting, allelic heterogeneity, or anticipation.", "l": []}, {"c": "Week 3", "p": "A mother with a mitochondrial disorder has children who are all affected to varying degrees, while an affected father with the same disorder has no affected children. Which pattern of inheritance does this illustrate?", "o": ["Mitochondrial (maternal) inheritance", "Autosomal dominant inheritance", "X-linked recessive inheritance", "Autosomal recessive inheritance"], "a": 0, "e": "Correct: A. Mitochondrial DNA is inherited exclusively from the mother, so an affected mother passes the disorder to all her children in varying degrees, while an affected father transmits it to none of his children, a non-Mendelian pattern.", "l": []}, {"c": "Week 3", "p": "A pedigree shows an inherited condition appearing in every generation, affecting roughly half of each affected parent's children, with both sexes equally affected. Which inheritance pattern is most consistent with this pattern?", "o": ["Autosomal recessive inheritance", "Autosomal dominant inheritance", "X-linked recessive inheritance", "Mitochondrial inheritance"], "a": 1, "e": "Correct: B. Vertical transmission across every generation, roughly 50% of offspring affected, and equal involvement of both sexes describes classic autosomal dominant inheritance.", "l": []}, {"c": "Week 3", "p": "Two unaffected parents who are first cousins have a child affected with a rare metabolic condition, with no other family history. Which inheritance pattern is most consistent with this presentation?", "o": ["Autosomal dominant inheritance", "X-linked dominant inheritance", "Autosomal recessive inheritance", "Mitochondrial inheritance"], "a": 2, "e": "Correct: C. Unaffected carrier parents, consanguinity, and an isolated affected child with no other family history are classic features of autosomal recessive inheritance.", "l": []}, {"c": "Week 3", "p": "A condition affects males far more often than females, is never passed from an affected father to his sons, but can be transmitted through unaffected carrier mothers to their sons. Which inheritance pattern is this?", "o": ["Autosomal recessive inheritance", "Autosomal dominant inheritance", "Mitochondrial inheritance", "X-linked recessive inheritance"], "a": 3, "e": "Correct: D. Predominantly male-affected, no father-to-son transmission (since fathers pass a Y chromosome to sons), and transmission through carrier mothers are hallmark features of X-linked recessive inheritance.", "l": []}, {"c": "Week 3", "p": "While taking a prenatal family history, a physician specifically asks about prior pregnancy losses, known genetic conditions, and consanguinity between partners. Which statement best explains why these specific elements are prioritized?", "o": ["They help identify risk factors that could affect fetal development and guide screening", "They are required only for legal documentation purposes", "They have no bearing on prenatal risk assessment", "They are only relevant for the mother's own future health"], "a": 0, "e": "Correct: A. These specific family history elements are prioritized because they directly help identify risk factors that could affect fetal development, guiding which prenatal screening or genetic counselling options should be offered.", "l": []}, {"c": "Week 3", "p": "A 41-year-old pregnant woman with pre-existing type 2 diabetes is counselled that both her age and her diabetes independently increase risk to her pregnancy. Which statement is correct?", "o": ["Only maternal age affects pregnancy risk, not diabetes", "Both factors are recognized as risk factors that can affect fetal or maternal health outcomes", "Only diabetes affects pregnancy risk, not maternal age", "Neither factor meaningfully affects pregnancy outcomes"], "a": 1, "e": "Correct: B. Both advanced maternal age and pre-existing diabetes are independently recognized risk factors that can affect fetal and maternal health outcomes in pregnancy.", "l": []}, {"c": "Week 3", "p": "A newborn exam reveals a cleft lip and palate along with an unusually small head circumference. Which statement about this combination is most accurate?", "o": ["Cleft lip and palate alone always indicate a chromosomal abnormality", "This combination is a normal variant requiring no further work-up", "Small head circumference is expected in all newborns with cleft lip", "This combination is suggestive of an underlying congenital or genetic syndrome warranting further investigation"], "a": 3, "e": "Correct: D. Multiple congenital anomalies occurring together, such as cleft lip/palate plus microcephaly, are suggestive of an underlying syndrome and warrant further genetic and clinical investigation.", "l": []}, {"c": "Week 3", "p": "A 27-year-old pregnant woman with no personal or family history of genetic conditions asks what screening is routinely recommended for her low-risk pregnancy. Which response is most accurate?", "o": ["She requires immediate referral for genetic counselling regardless of her history", "No prenatal screening is recommended without a specific risk factor", "Routine first-trimester screening is generally sufficient without additional genetic counselling", "Diagnostic testing such as amniocentesis should be offered first-line"], "a": 2, "e": "Correct: C. For a genuinely low-risk pregnancy with no concerning history, routine first-trimester screening is generally sufficient, without the need for genetic counselling referral or first-line invasive diagnostic testing.", "l": []}, {"c": "Week 3", "p": "At a routine well-baby visit, a physician uses a standardized Canadian tool covering growth tracking, developmental milestones, immunizations, and anticipatory guidance in one integrated record. Which tool is this?", "o": ["The Rourke Baby Record", "The Nipissing District Developmental Screen", "The HEADSS interview", "The SNAP-IV rating scale"], "a": 0, "e": "Correct: A. The Rourke Baby Record is the standardized Canadian well-child visit tool that integrates growth tracking, developmental milestones, immunizations, and anticipatory guidance in one record.", "l": []}, {"c": "Week 3", "p": "A caregiver consistently and promptly responds to her infant's cues, provides comfort during distress, and engages warmly during play. Which outcome would this caregiving pattern most likely promote?", "o": ["Insecure-avoidant attachment in the infant", "Secure attachment in the infant", "Insecure-ambivalent attachment in the infant", "Disorganized attachment in the infant"], "a": 1, "e": "Correct: B. Consistent, responsive, and warm caregiving is the caregiving pattern most associated with fostering secure attachment in an infant.", "l": []}, {"c": "Week 3", "p": "A 24-month-old combines two words into simple phrases such as \"more juice\" and \"go car,\" though sentences are not yet grammatically complete. Which stage of language development does this reflect?", "o": ["Single-word stage, expected around 12 months", "Babbling stage, expected around 6 months", "Two-word phrase stage, expected around 24 months", "Complex sentence stage, expected around 4 years"], "a": 2, "e": "Correct: C. Combining two words into simple phrases without full grammatical structure is characteristic of the two-word phrase stage, expected around 24 months.", "l": []}, {"c": "Week 3", "p": "An infant's weight has consistently tracked along the 25th percentile from birth through 9 months, with no crossing of major percentile lines. How should this pattern be interpreted?", "o": ["This always indicates growth faltering requiring investigation", "This indicates the infant is overweight for age", "This pattern can only be assessed after 24 months of age", "This represents normal, expected growth for this infant"], "a": 3, "e": "Correct: D. Consistent tracking along a single percentile line, without crossing major percentile lines, represents normal expected growth, regardless of which specific percentile the child tracks along.", "l": []}, {"c": "Week 3", "p": "A family considering genetic testing for their child is counselled about both benefits, such as guiding management, and limitations, such as potential uncertain results and psychosocial impact. Which statement best reflects this counselling approach?", "o": ["Genetic testing carries both meaningful benefits and real limitations that should be discussed before testing", "Genetic testing has no meaningful limitations once benefits are considered", "Genetic testing should never be offered due to its limitations", "Genetic testing benefits apply only to adult patients"], "a": 0, "e": "Correct: A. Appropriate genetic counselling reviews both the benefits (guiding management, diagnosis) and limitations (uncertain results, psychosocial impact) of testing before proceeding.", "l": []}, {"c": "Week 3", "p": "A family has a known translocation confirmed by karyotype in one parent, and a rapid, targeted test is now needed to check specifically for that same rearrangement in the fetus. Which technique is most appropriate for this specific follow-up?", "o": ["Whole genome sequencing", "Targeted FISH testing for the known rearrangement", "A complete blood count", "A skeletal survey"], "a": 1, "e": "Correct: B. When a specific chromosomal rearrangement is already known in a family, targeted FISH testing is an efficient, rapid way to check specifically for that same rearrangement in a relative or fetus.", "l": []}, {"c": "Week 3", "p": "One patient has an extra complete copy of chromosome 21, while another patient has a normal chromosome number but a rearranged segment between two chromosomes. Which statement correctly classifies these two findings?", "o": ["The first is a structural anomaly, the second is a numerical anomaly", "Both are numerical anomalies", "The first is a numerical anomaly, the second is a structural anomaly", "Both are structural anomalies"], "a": 2, "e": "Correct: C. An extra complete chromosome is a numerical anomaly (change in chromosome count). A rearranged segment with a normal chromosome count is a structural anomaly (change in chromosome architecture).", "l": []}, {"c": "Week 3", "p": "A physician explains to parents that starting therapy for their child's developmental delay now, rather than waiting for a definitive diagnosis, takes advantage of a period when the brain is most able to form new connections. Which concept underlies this rationale?", "o": ["Intervention timing has no effect on developmental outcomes", "Brain plasticity only exists after adolescence", "Waiting for a definitive diagnosis always produces better outcomes", "Early brain plasticity supports better outcomes with earlier intervention"], "a": 3, "e": "Correct: D. Early childhood brain plasticity, the heightened capacity to form new neural connections, is the rationale for starting intervention as early as possible rather than waiting for a definitive diagnosis.", "l": []}, {"c": "Week 3", "p": "A proposed newborn screening test requires a large volume of blood draw that is difficult to obtain safely from newborns and causes significant discomfort. Which principle of population-based screening does this raise a concern about?", "o": ["The test must be suitable and acceptable to the population being screened", "The condition must be treatable if detected early", "The condition must be an important health problem", "The screening program must be cost-effective"], "a": 0, "e": "Correct: A. A key principle of population-based screening is that the test itself must be suitable and acceptable to the population being screened, a difficult, uncomfortable test raises concern about this specific criterion.", "l": []}, {"c": "Week 3", "p": "Research on early attachment suggests that infants with a secure attachment style tend to show which pattern in their later social development, compared to infants with insecure attachment styles?", "o": ["No measurable difference in later social functioning", "Generally better social and emotional functioning in later relationships", "Consistently worse social functioning regardless of later experiences", "Attachment style has no established link to later development"], "a": 1, "e": "Correct: B. Secure attachment in infancy is generally associated with better social and emotional functioning in later relationships, compared to insecure attachment patterns.", "l": []}, {"c": "Week 3", "p": "A parent gives her infant a very high-dose vitamin supplement beyond recommended amounts, and the infant develops symptoms of toxicity. Which DRI value defines the threshold above which this risk becomes more likely?", "o": ["The Estimated Average Requirement (EAR)", "The Recommended Dietary Allowance (RDA)", "The Tolerable Upper Intake Level (UL)", "The Adequate Intake (AI)"], "a": 2, "e": "Correct: C. The Tolerable Upper Intake Level (UL) defines the highest intake level unlikely to pose a risk of adverse effects, exceeding it increases the risk of toxicity, as described here.", "l": []}, {"c": "Week 3", "p": "After identifying multiple abnormal findings in a preschool child's assessment, a physician organizes preliminary investigations across hearing, vision, medical, genetic, and social domains. Which principle does this multidomain approach best reflect?", "o": ["Only medical investigations are ever needed for a developmental concern", "Hearing and vision testing are unnecessary in preschool children", "Social domain concerns never require formal investigation", "A comprehensive problem list requires investigations tailored to each identified domain of concern"], "a": 3, "e": "Correct: D. A comprehensive developmental assessment requires investigations tailored to each domain identified as a concern, rather than relying on medical investigation alone.", "l": []}, {"c": "Week 3", "p": "A student lists several inheritance patterns and is asked which one does NOT follow classic Mendelian rules of inheritance. Which pattern is the exception?", "o": ["Genomic imprinting", "Autosomal dominant inheritance", "Autosomal recessive inheritance", "X-linked recessive inheritance"], "a": 0, "e": "Correct: A. Genomic imprinting is a non-Mendelian pattern, since expression depends on parent of origin rather than following classic dominant/recessive segregation rules like autosomal dominant, autosomal recessive, or X-linked recessive inheritance.", "l": []}, {"c": "Week 4", "p": "One immune cell recognizes a generic bacterial cell wall component shared by many species, while another recognizes one specific unique protein sequence from a single prior infection. Which arm of immunity does each represent, respectively?", "o": ["Both represent innate immunity", "Innate immunity, then adaptive immunity", "Adaptive immunity, then innate immunity", "Both represent adaptive immunity"], "a": 1, "e": "Correct: B. Recognizing a generic, shared molecular pattern is characteristic of innate immunity (pattern recognition receptors). Recognizing one specific unique sequence from a prior infection is characteristic of adaptive immunity (antigen-specific memory).", "l": []}, {"c": "Week 4", "p": "A physician reviews a list of childhood illnesses and identifies which ones are preventable through routine vaccination in Canada. Which of the following is a vaccine-preventable disease on the routine schedule?", "o": ["The common cold", "Viral gastroenteritis from norovirus", "Pertussis (whooping cough)", "Seasonal allergic rhinitis"], "a": 2, "e": "Correct: C. Pertussis is a vaccine-preventable disease included on the routine Canadian immunization schedule, unlike the common cold, norovirus gastroenteritis, or allergic rhinitis, none of which are prevented by routine childhood vaccines.", "l": []}, {"c": "Week 4", "p": "A lymphocyte lacking antigen-specific receptors detects the absence of normal surface markers on a virally infected cell and kills it directly, without prior sensitization. Which innate immune cell does this describe?", "o": ["A B lymphocyte", "A cytotoxic T lymphocyte", "A plasma cell", "A natural killer (NK) cell"], "a": 3, "e": "Correct: D. Natural killer (NK) cells are innate lymphocytes that kill abnormal cells (such as those lacking normal surface markers) without needing prior antigen-specific sensitization, unlike B cells, cytotoxic T cells, or plasma cells, which are part of adaptive immunity.", "l": []}, {"c": "Week 4", "p": "A family's ability to access pediatric specialty care is limited both by the parents' health literacy and by a citywide shortage of pediatric specialists. Which statement correctly classifies these two barriers?", "o": ["Health literacy is an individual determinant, specialist shortage is a structural determinant", "Health literacy is a structural determinant, specialist shortage is an individual determinant", "Both are individual determinants", "Both are structural determinants"], "a": 0, "e": "Correct: A. Health literacy is a characteristic of the individual/family (an individual determinant), while a citywide shortage of specialists reflects the broader system (a structural determinant).", "l": []}, {"c": "Week 4", "p": "A physician caring for a low-income family with a child needing therapy services connects them with a subsidized community program and writes a letter supporting expedited access. Which principle of family-centered care does this best illustrate?", "o": ["Relying solely on medication as first-line management", "Incorporating advocacy and community resources into the management plan", "Deferring all non-medical needs to the family without support", "Limiting management plans strictly to physical examination findings"], "a": 1, "e": "Correct: B. Connecting a family with community resources and advocating on their behalf directly illustrates incorporating advocacy and community resources into a family-centered management plan.", "l": []}, {"c": "Week 4", "p": "A medical student recognizes that a family's complex social needs exceed what she can address alone and involves a supervising physician and a social worker. Which principle does this best reflect?", "o": ["Attempting to independently resolve all aspects of the case", "Avoiding involvement of other team members to maintain continuity", "Recognizing professional boundaries and seeking appropriate interdisciplinary support", "Deferring the entire case without any initial assessment"], "a": 2, "e": "Correct: C. Recognizing the limits of one's own scope and appropriately involving supervisors and interdisciplinary team members reflects sound professional boundaries and collaborative practice.", "l": []}, {"c": "Week 4", "p": "A physician caring for a newly arrived immigrant family takes extra time to understand their health beliefs, uses a professional interpreter, and avoids assuming the family shares the clinic's default cultural expectations. Which principle does this best reflect?", "o": ["Cultural assimilation of the family into clinic norms", "Cultural blindness in the delivery of care", "A strictly paternalistic model of care", "Culturally responsive care for diverse pediatric populations"], "a": 3, "e": "Correct: D. Actively understanding a family's health beliefs, using interpreters, and avoiding assumptions of shared cultural expectations reflects culturally responsive care for diverse pediatric populations.", "l": []}, {"c": "Week 4", "p": "Two children both display high energy and frequent fidgeting, but only one experiences significant difficulty completing schoolwork and maintaining friendships as a result. Which concept most directly explains why only one child would meet criteria for a diagnosis like ADHD?", "o": ["The total number of hours spent being physically active", "The child's overall intelligence quotient", "The specific time of day symptoms are most noticeable", "The presence of functional impairment caused by the symptoms"], "a": 3, "e": "Correct: D. A psychiatric diagnosis like ADHD requires functional impairment caused by the symptoms, not just the presence of high energy or fidgeting, the child with impaired schoolwork and friendships meets this threshold, the other does not.", "l": []}, {"c": "Week 4", "p": "A clinician distinguishes between a condition primarily affecting physical mobility, one primarily affecting cognitive functioning, and one primarily affecting sensory processing, while acknowledging these categories can overlap in a single child. What does this classification approach best illustrate?", "o": ["All disabilities must fall into exactly one single, non-overlapping category", "Disabilities can be categorized by the primary domain affected, though overlap between categories is common", "Disability categories are determined solely by a child's age", "Physical, cognitive, and sensory disabilities are always mutually exclusive by definition"], "a": 1, "e": "Correct: B. Disability terminology often organizes conditions by the primary domain affected (physical, cognitive, sensory), while recognizing that overlap between categories in a single child is common rather than exceptional.", "l": []}, {"c": "Week 4", "p": "A family of a child with a complex developmental disability is referred to a single site offering coordinated access to multiple pediatric rehabilitation services, such as physiotherapy, occupational therapy, and speech-language pathology, under one roof. Which model of care does this best describe?", "o": ["A single-provider walk-in clinic", "An emergency department", "A Children's Treatment Centre", "A public health unit"], "a": 2, "e": "Correct: C. A Children's Treatment Centre is a coordinated site offering multiple pediatric rehabilitation and developmental services together, distinct from a walk-in clinic, emergency department, or public health unit.", "l": []}, {"c": "Week 4", "p": "One framework for understanding disability focuses on impairment as a problem to be treated within the individual, while another framework emphasizes that societal barriers, not the impairment itself, are what primarily disable a person. Which pairing correctly names these two frameworks?", "o": ["The social model, then the medical model of disability", "Both describe the medical model of disability", "Both describe the social model of disability", "The medical model, then the social model of disability"], "a": 3, "e": "Correct: D. The medical model views disability as a problem within the individual requiring treatment. The social model instead views societal barriers as the primary disabling factor, distinct from the impairment itself.", "l": []}, {"c": "Week 4", "p": "A physician who forms a reasonable suspicion that a child may be experiencing abuse or neglect, based on findings during a routine visit, has which of the following obligations under standard child protection principles?", "o": ["A duty to report the suspicion to the appropriate child protection authority", "A duty to independently investigate before taking any action", "No obligation to act unless the family confirms the concern", "A duty to only document the finding without further action"], "a": 0, "e": "Correct: A. Physicians who form a reasonable suspicion of abuse or neglect have a duty to report that suspicion to the appropriate child protection authority, rather than investigating independently or waiting for confirmation.", "l": []}, {"c": "Week 4", "p": "When determining an adolescent's overall stage of development, a clinician considers pubertal physical changes, emotional and cognitive maturity, and the nature of the adolescent's peer and family relationships together. Which statement best reflects this approach?", "o": ["Only pubertal physical changes determine an adolescent's developmental stage", "Adolescent development should be assessed across biologic, psychologic, and social domains together", "Peer relationships are irrelevant to assessing adolescent development", "Cognitive maturity cannot be assessed until adulthood"], "a": 1, "e": "Correct: B. A comprehensive assessment of adolescent development integrates biologic (pubertal), psychologic (cognitive/emotional), and social (peer/family) domains together, rather than relying on any single domain alone.", "l": []}, {"c": "Week 4", "p": "A physician explains to a colleague that adolescents are more prone to high-risk behaviours partly because brain regions governing impulse control and long-term judgment mature later than those driving reward-seeking. Which concept does this best reflect?", "o": ["Adolescents have fully mature impulse control equal to adults", "High-risk behaviour in adolescence is unrelated to brain development", "A developmental mismatch between reward-seeking and impulse-control brain maturation", "Reward-seeking circuits mature later than impulse-control circuits"], "a": 2, "e": "Correct: C. Adolescent risk-taking is linked to a developmental mismatch: reward-seeking brain circuits mature earlier than the impulse-control and judgment circuits, not the reverse, creating a temporary imbalance.", "l": []}, {"c": "Week 4", "p": "A 7-year-old who has entered the concrete operational stage is better able to understand fairness and rule-based games compared to a 4-year-old still in the preoperational stage. Which statement best explains this behavioral difference?", "o": ["Preoperational thinking is more advanced than concrete operational thinking", "Rule understanding is unrelated to cognitive developmental stage", "Both stages support identical reasoning about rules and fairness", "Concrete operational thinking supports logical reasoning about rules that preoperational thinking cannot yet support"], "a": 3, "e": "Correct: D. Concrete operational thinking supports logical reasoning about rules and fairness in a way that preoperational thinking, which relies more on egocentric and semi-logical reasoning, does not yet support.", "l": []}, {"c": "Week 4", "p": "Research on school readiness has identified several factors that predict whether a child will be ready for the social and academic demands of school. Which of the following is one such recognized predictive factor?", "o": ["Early exposure to language-rich and stimulating environments", "The specific month of the child's birth within any calendar year", "The number of siblings in the household", "The family's preferred grocery store"], "a": 0, "e": "Correct: A. Early exposure to language-rich, stimulating environments is a recognized predictive factor for school readiness, unlike birth month, number of siblings, or unrelated family preferences.", "l": []}, {"c": "Week 4", "p": "A physician assessing a school-age child's behavioural concerns proposes hearing, vision, medical, and social investigations before finalizing a management plan. Why are hearing and vision specifically included in this work-up?", "o": ["Hearing and vision problems are unrelated to behaviour in school-age children", "Uncorrected sensory deficits can present as behavioural or learning difficulties", "These tests are required only for children suspected of having ADHD", "Hearing and vision are assessed only if all other investigations are normal"], "a": 1, "e": "Correct: B. Uncorrected hearing or vision deficits can present as behavioural or learning difficulties in school-age children, which is why they are routinely included in a behavioural work-up rather than reserved for a specific diagnosis.", "l": []}, {"c": "Week 4", "p": "After assessing a child's behaviour, a physician provides the family with general advice about expected developmental changes and strategies to support the child at home, before any formal referral is made. Which component of the management plan does this represent?", "o": ["A therapeutic referral", "A social support resource listing", "Anticipatory guidance", "A follow-up strategy"], "a": 2, "e": "Correct: C. Providing general advice about expected developmental changes and home strategies, ahead of any formal referral, is anticipatory guidance, distinct from a therapeutic referral, resource listing, or follow-up plan.", "l": []}, {"c": "Week 4", "p": "An immigrant family maintains their heritage language, traditions, and social ties almost exclusively, while deliberately avoiding engagement with the customs of their new country. Which acculturation strategy does this represent?", "o": ["Assimilation", "Integration", "Marginalization", "Separation"], "a": 3, "e": "Correct: D. Separation describes retaining the heritage culture while deliberately avoiding engagement with the receiving culture, the opposite pattern from assimilation (adopting the receiving culture only).", "l": []}, {"c": "Week 4", "p": "An adolescent immigrant feels disconnected from both his heritage culture and the culture of his new country, engaging meaningfully with neither. Which acculturation strategy does this represent?", "o": ["Marginalization", "Integration", "Assimilation", "Reactive ethnicity"], "a": 0, "e": "Correct: A. Marginalization describes disengagement from both the heritage culture and the receiving culture, distinct from integration (engaging with both) or the other acculturation strategies.", "l": []}, {"c": "Week 4", "p": "A newborn receives protective antibodies that crossed the placenta from his mother during pregnancy, providing short-term protection without his own immune system producing them. Which type of immunity does this represent?", "o": ["Active immunity", "Passive immunity", "Adaptive cell-mediated immunity", "Innate pattern-recognition immunity"], "a": 1, "e": "Correct: B. Passive immunity involves receiving pre-made antibodies (here, transplacentally from the mother) rather than the individual's own immune system producing them, providing immediate but temporary protection.", "l": []}];
+const OBJECTIVES = {};
+const L = "ABCDE";
+const N = QUESTIONS.length;
+let cur = 0, showResults = false;
+let ans = new Array(N).fill(null);           // current pick per question
+let tries = QUESTIONS.map(()=>[]);           // every locked attempt: {pick, ok, at}
+let strikes = QUESTIONS.map(()=>[]);         // struck option indexes for the open attempt
+let history = [], db = null, uid = null, writing = false, dirty = false;
+const LS_KEY = "differential-block-1-practice-test-3";
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+function score(){ return ans.reduce((n,a,i)=>n+(a!==null&&a===QUESTIONS[i].a?1:0),0); }
+function answered(){ return ans.filter(a=>a!==null).length; }
+function firstTryScore(){ return tries.reduce((n,t)=>n+(t.length&&t[0].ok?1:0),0); }
+function firstTryCount(){ return tries.filter(t=>t.length).length; }
+
+function renderHeader(){
+  $("#stats").innerHTML = `<span>Item <b>${showResults?"–":cur+1}</b> of <b>${N}</b></span><span>Answered <b>${answered()}</b></span><span>Score <b>${score()} / ${answered()}</b></span>`;
+  $("#ticks").innerHTML = QUESTIONS.map((q,i)=>{
+    const st = ans[i]===null?"":(ans[i]===q.a?"ok":"bad");
+    const redo = tries[i].length>1 || (ans[i]===null && tries[i].length>0);
+    return `<button class="tick ${st} ${redo?"redo":""} ${(!showResults&&i===cur)?"cur":""}" data-i="${i}" aria-label="Question ${i+1}"></button>`;
+  }).join("");
+  document.querySelectorAll(".tick").forEach(b=>b.onclick=()=>{cur=+b.dataset.i;showResults=false;render();});
+}
+
+function triesLine(i, includeCurrent){
+  const t = includeCurrent ? tries[i] : tries[i];
+  if(!t.length) return "";
+  const parts = t.map((x,k)=>`<span class="${x.ok?"ok":"bad"}">${k+1}: ${L[x.pick]} ${x.ok?"correct":"wrong"}</span>`).join(" · ");
+  return `<div class="tries">Attempts ${parts}</div>`;
+}
+
+function renderQ(){
+  const q = QUESTIONS[cur], a = ans[cur], done = a!==null, st = strikes[cur];
+  const opts = q.o.map((o,i)=>{
+    let c = "";
+    if(done){ if(i===q.a) c="right"; else if(i===a) c="wrong"; }
+    const struck = !done && st.includes(i);
+    const strikeBtn = done ? "" : `<button class="strike" data-s="${i}" aria-pressed="${struck}" aria-label="${struck?"Restore":"Strike out"} option ${L[i]}" title="${struck?"Restore":"Strike out"} option">${struck?"↺":"✕"}</button>`;
+    return `<div class="optrow ${struck?"struck":""}"><button class="opt ${c}" data-i="${i}" ${done?"disabled":""}><span class="k">${L[i]}</span><span>${esc(o)}</span></button>${strikeBtn}</div>`;
+  }).join("");
+  let fb = "";
+  if(done){
+    const ok = a===q.a;
+    const lines = q.e.split("\n").map(t=>`<p>${esc(t)}</p>`).join("");
+    const objs = q.l.map(id=>`<div class="obj">Objective: ${esc(id)}. ${esc(OBJECTIVES[id]||"")}</div>`).join("");
+    fb = `<div class="fb" role="status"><div class="verdict ${ok?"ok":"bad"}">${ok?"Correct.":"Incorrect. The answer is "+L[q.a]+"."}</div>${lines}${objs}${triesLine(cur)}<div class="fbtools"><button class="btn ghost" id="redo">Reset and redo this question</button></div></div>`;
+  }
+  const pre = (!done && tries[cur].length) ? `<div class="hint">Redo. Your earlier attempts are saved.</div>${triesLine(cur)}` : (!done ? `<div class="hint">Tap ✕ to strike out an option. Right-click works too.</div>` : "");
+  const last = cur===N-1;
+  $("#main").innerHTML = `<article class="card">
+    <div class="chead"><span class="tag">${esc(q.c)}</span><span>Q${cur+1}</span></div>
+    <p class="stem">${esc(q.p)}</p>
+    ${pre}
+    <div class="opts">${opts}</div>${fb}
+    <div class="nav"><button class="btn ghost" id="prev" ${cur===0?"disabled":""}>Previous</button>
+    <button class="btn" id="next" ${done?"":"disabled"}>${last?"See results":"Next"}</button></div>
+  </article>`;
+  document.querySelectorAll(".opt").forEach(b=>{
+    b.onclick=()=>{ const p=+b.dataset.i; ans[cur]=p; tries[cur].push({pick:p, ok:p===q.a, at:new Date().toISOString()}); tries[cur]=tries[cur].slice(-10); strikes[cur]=[]; render(false); persist(); };
+    b.oncontextmenu=(e)=>{ if(done) return; e.preventDefault(); toggleStrike(+b.dataset.i); };
+  });
+  document.querySelectorAll(".strike").forEach(b=>b.onclick=()=>toggleStrike(+b.dataset.s));
+  const r=$("#redo"); if(r) r.onclick=()=>{ ans[cur]=null; strikes[cur]=[]; render(false); persist(); };
+  $("#prev").onclick=()=>{cur--;render();};
+  $("#next").onclick=()=>{ if(last){showResults=true;} else cur++; render(); };
+}
+
+function toggleStrike(i){
+  const s = strikes[cur], k = s.indexOf(i);
+  if(k<0) s.push(i); else s.splice(k,1);
+  render(false); persist();
+}
+
+function renderResults(){
+  const s = score(), pct = Math.round(100*s/N);
+  const cats = {};
+  QUESTIONS.forEach((q,i)=>{ cats[q.c]=cats[q.c]||[0,0]; cats[q.c][1]++; if(ans[i]===q.a) cats[q.c][0]++; });
+  const rows = Object.entries(cats).map(([c,[r,t]])=>`<tr><td>${esc(c)}</td><td>${r} / ${t}</td></tr>`).join("");
+  const missed = {};
+  QUESTIONS.forEach((q,i)=>{ const wrongFirst = tries[i].length && !tries[i][0].ok; if(ans[i]!==q.a || wrongFirst) q.l.forEach(id=>{ const w=id.split(" ")[0]; missed[w]=missed[w]||new Set(); missed[w].add(id); }); });
+  const weeks = Object.keys(missed).sort((x,y)=>parseInt(x.slice(1))-parseInt(y.slice(1)));
+  const missHtml = weeks.length ? weeks.map(w=>`<h3>Week ${w.slice(1)}</h3><ul class="miss">${[...missed[w]].map(id=>`<li><code>${esc(id)}</code>${esc(OBJECTIVES[id]||"")}</li>`).join("")}</ul>`).join("") : "<p>No missed objectives.</p>";
+  const redone = tries.filter(t=>t.length>1).length;
+  const un = N - answered();
+  $("#main").innerHTML = `<article class="card">
+    <div class="chead"><span class="tag">Results</span><span>${un?un+" unanswered":"Complete"}</span></div>
+    <div><div class="big">${s} / ${N}</div><div class="stats"><span><b>${pct}%</b> correct now</span><span>First try <b>${firstTryScore()} / ${firstTryCount()}</b></span><span>Redone <b>${redone}</b></span></div></div>
+    <table><thead><tr><th>Category</th><th>Score</th></tr></thead><tbody>${rows}</tbody></table>
+    <h2>Objectives to review</h2><p class="hint">Includes questions you missed on the first try, even if a redo got them right.</p>${missHtml}${history.length?`<h2>Past attempts</h2><table><thead><tr><th>Date</th><th>Score</th></tr></thead><tbody>${history.slice().reverse().map(h=>`<tr><td>${new Date(h.date).toLocaleDateString()}</td><td>${h.score} / ${h.total}</td></tr>`).join("")}</tbody></table>`:""}
+    <div class="nav"><button class="btn ghost" id="back">Back to questions</button><button class="btn" id="restart">Restart all</button></div>
+  </article>`;
+  $("#back").onclick=()=>{showResults=false;render();};
+  $("#restart").onclick=()=>{
+    if(answered() || tries.some(t=>t.length)){
+      history.push({date:new Date().toISOString(), score:score(), answered:answered(), total:N, firstTry:firstTryScore(),
+        missed:QUESTIONS.map((q,i)=>ans[i]!==null&&ans[i]!==q.a?"q"+(i+1):null).filter(Boolean)});
+      history=history.slice(-20);
+    }
+    ans.fill(null); tries=QUESTIONS.map(()=>[]); strikes=QUESTIONS.map(()=>[]); cur=0; showResults=false; render(); persist();
+  };
+}
+
+function setSave(text, cls){ const el=$("#save"); if(el){ el.textContent=text; el.className="save "+(cls||""); } }
+function bodyOf(){
+  const a = {};
+  QUESTIONS.forEach((q,i)=>{
+    if(ans[i]===null && !tries[i].length && !strikes[i].length) return;
+    a["q"+(i+1)] = {pick:ans[i], ok:ans[i]!==null && ans[i]===q.a, l:q.l, tries:tries[i], strikes:strikes[i]};
+  });
+  return {answers:a, history, total:N, answered:answered(), score:score(), firstTry:firstTryScore(), updatedAt:new Date().toISOString()};
+}
+function validPick(i,p){ return Number.isInteger(p) && p>=0 && p<QUESTIONS[i].o.length; }
+function applySaved(d){
+  if(!d || typeof d!=="object") return;
+  ans.fill(null); tries=QUESTIONS.map(()=>[]); strikes=QUESTIONS.map(()=>[]);
+  const a = d.answers || {};
+  for(const k in a){
+    const i = parseInt(k.slice(1),10)-1, row = a[k];
+    if(!(i>=0 && i<N) || !row || typeof row!=="object") continue;
+    if(validPick(i,row.pick)) ans[i]=row.pick;
+    if(Array.isArray(row.tries)) tries[i]=row.tries.filter(t=>t&&validPick(i,t.pick)).map(t=>({pick:t.pick, ok:t.pick===QUESTIONS[i].a, at:String(t.at||"")})).slice(-10);
+    else if(ans[i]!==null) tries[i]=[{pick:ans[i], ok:ans[i]===QUESTIONS[i].a, at:""}];
+    if(Array.isArray(row.strikes)) strikes[i]=row.strikes.filter(x=>validPick(i,x));
+  }
+  history = Array.isArray(d.history) ? d.history.slice(-20) : [];
+  const first = ans.findIndex(x=>x===null); cur = first<0 ? N-1 : first;
+}
+function lsLoad(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"null"); }catch(e){ return null; } }
+function lsSave(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(bodyOf())); }catch(e){} }
+async function persist(){
+  lsSave();
+  if(!db || !uid) return;
+  dirty = true; if(writing) return; writing = true;
+  while(dirty){
+    dirty = false;
+    setSave("Saving…");
+    try{ await db.doc("attempts/"+uid).set(bodyOf()); setSave("Progress saved to your account.","ok"); }
+    catch(e){
+      if(e && e.code==="invalid_argument"){ db=null; setSave("Progress saves in this browser only.","bad"); break; }
+      setSave("Could not save to your account. Progress saves in this browser.","bad");
+    }
+  }
+  writing = false;
+}
+async function connect(){
+  try{
+    if(!window.claude || !window.claude.use) return;
+    const [u, d] = await Promise.all([window.claude.use("user"), window.claude.use("db")]);
+    if(!u || !d) return;
+    const id = await u.id(); if(!id) return;
+    db = d; uid = id;
+    const snap = await db.doc("attempts/"+uid).get();
+    if(snap.exists){ applySaved(snap.data()); render(); setSave("Progress saved to your account.","ok"); }
+    else if(answered() || tries.some(t=>t.length)){ persist(); }
+    else setSave("Progress saves to your account.","ok");
+  }catch(e){ /* keep local-only mode */ }
+}
+
+function render(top=true){ renderHeader(); showResults?renderResults():renderQ(); if(top) window.scrollTo({top:0}); }
+applySaved(lsLoad());
+render();
+connect();
+</script>
+
+</body></html>

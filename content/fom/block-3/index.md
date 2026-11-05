@@ -8,16 +8,12 @@ Anemia, bleeding, myeloid disorders, lymphadenopathy and lymphoid disorders.
 
 <h2 class="section-title">Question bank</h2>
 <ul class="rows">
-<li><a class="row" href="/fom/block-3/question-bank/bleeding-block-drill"><span><strong>Bleeding Block Drill</strong><span class="desc">Week 10 bleeding and coagulation.</span></span><span class="go" aria-hidden="true">›</span></a></li>
+<li><a class="row" href="/fom/block-3/question-bank/week-10-question-bank"><span><strong>Week 10 Question Bank</strong><span class="desc">59 questions. Bleeding disorders, Thrombocytopenia, Coagulation tests.</span></span><span class="go" aria-hidden="true">›</span></a></li>
 </ul>
 <h2 class="section-title">Flowcharts</h2>
 <ul class="rows">
 <li><a class="row" href="/fom/block-3/flowcharts/anemia-workup-map"><span><strong>Anemia Workup Map</strong><span class="desc">Full Week 9 workup from CBC to diagnosis.</span></span><span class="go" aria-hidden="true">›</span></a></li>
 <li><a class="row" href="/fom/block-3/flowcharts/hemostasis-workup-map"><span><strong>Hemostasis Workup Map</strong><span class="desc">Week 10: bleeding, platelets, VTE, anticoagulants, transfusion.</span></span><span class="go" aria-hidden="true">›</span></a></li>
-<li><a class="row" href="/fom/block-3/flowcharts/anemia-speedrun"><span><strong>Anemia Speedrun</strong><span class="desc">One-page quick version.</span></span><span class="go" aria-hidden="true">›</span></a></li>
-<li><a class="row" href="/fom/block-3/flowcharts/anemia-differential-flowchart"><span><strong>Anemia Differential Flowchart</strong><span class="desc">Differential by MCV.</span></span><span class="go" aria-hidden="true">›</span></a></li>
-<li><a class="row" href="/fom/block-3/flowcharts/microcytic-anemia-map"><span><strong>Microcytic Anemia Map</strong><span class="desc">Microcytic branch in detail.</span></span><span class="go" aria-hidden="true">›</span></a></li>
-<li><a class="row" href="https://claude.ai/artifact/DffUNGsPBXLhosvg7YgRRi" target="_blank" rel="noopener"><span><strong>Approach to Microcytic Anemia</strong><span class="desc">Written guide. Opens in Claude.</span></span><span class="go" aria-hidden="true">›</span></a></li>
 </ul>
 <h2 class="section-title" id="weeks">Weeks</h2>
 <ul class="rows">

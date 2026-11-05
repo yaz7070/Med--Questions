@@ -1,15 +1,18 @@
-"""Generate home, block, folder and wrapper pages for Differential."""
-import pathlib, re, html
+"""Regenerate home, block, folder and wrapper pages for Differential.
 
-SPD = pathlib.Path("/tmp/claude-0/-home-claude/e23cfabf-ba8c-5f49-b0f6-18fc202068a5/scratchpad")
-src = (SPD / "restructure.py").read_text()
-ns = {"pathlib": pathlib}
-exec(src[src.index("SP = "):src.index("STATIC =")], ns)
-ITEMS = ns["ITEMS"]
+Run from the repo root: python3 scripts/site_pages.py
+Reads ITEMS from scripts/items.py. Raw HTML lives in quartz/static/pages/<slug>.html.
+"""
+import html, pathlib, re, sys
 
-C = pathlib.Path("/home/claude/med-notes/content")
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+from items import ITEMS  # noqa: E402
+
+C = ROOT / "content"
 FOM = C / "fom"
 ART = "https://claude.ai/artifact/"
+e = html.escape
 
 BLOCKS = {
     1: ("Early life and foundations", "Weeks 1–4", "Tasks of a physician, the human body, early life, the well child and adolescent."),
@@ -18,7 +21,13 @@ BLOCKS = {
     4: ("Infection and immunity", "Weeks 13–15", "Fever, antibiotics, sepsis and immune dysfunction."),
 }
 NOTES_BLOCKS = {3, 4}
-e = html.escape
+FOLDER = {"quiz": "question-bank", "test": "practice-tests", "flow": "flowcharts"}
+HEAD = {"quiz": "Question Bank", "test": "Practice Tests", "flow": "Flowcharts"}
+LEAD = {
+    "quiz": "One bank per week. Each plays in the page and saves progress in your browser.",
+    "test": "Full-length mixed tests across the block. Sit them like the real exam.",
+    "flow": "Workup maps. Start at the top and follow the results down.",
+}
 
 
 def fm(title, extra=""):
@@ -35,9 +44,17 @@ def rows(items):
     return '<ul class="rows">\n' + "\n".join(items) + "\n</ul>\n"
 
 
+def week_key(slug):
+    m = re.search(r"week-(\d+)", slug)
+    return int(m.group(1)) if m else 0
+
+
 by = {}
-for b, slug, title, aid, _src, kind, blurb in ITEMS:
+for b, slug, title, aid, _unused, kind, blurb in ITEMS:
     by.setdefault((b, kind), []).append((slug, title, aid, blurb))
+for k in by:
+    if k[1] == "quiz":
+        by[k].sort(key=lambda x: week_key(x[0]))
 
 
 def weeks(b):
@@ -50,74 +67,82 @@ def weeks(b):
     return out
 
 
-# ---- wrapper pages for quizzes and flowcharts ----
-for b, slug, title, aid, _src, kind, blurb in ITEMS:
-    folder = FOM / f"block-{b}" / ("question-bank" if kind == "quiz" else "flowcharts")
+def href(b, kind, slug=""):
+    return f"/fom/block-{b}/{FOLDER[kind]}/{slug}"
+
+
+# wrapper pages
+for b, slug, title, aid, _unused, kind, blurb in ITEMS:
+    folder = FOM / f"block-{b}" / FOLDER[kind]
+    folder.mkdir(parents=True, exist_ok=True)
     btns = f'<a class="btn primary" href="/static/pages/{slug}.html" target="_blank" rel="noopener">Open full screen</a>'
     if aid:
-        label = "Open in Claude to save answers" if kind == "quiz" else "Open in Claude"
-        btns += f' <a class="btn" href="{ART}{aid}" target="_blank" rel="noopener">{label}</a>'
-    tag = "quiz" if kind == "quiz" else "flowchart"
+        btns += f' <a class="btn" href="{ART}{aid}" target="_blank" rel="noopener">Open in Claude</a>'
+    tag = {"quiz": "quiz", "test": "practice-test", "flow": "flowchart"}[kind]
     (folder / f"{slug}.md").write_text(
         fm(title, f"tags:\n  - block-{b}\n  - {tag}\ndescription: \"{blurb}\"\n")
         + f"{blurb}\n\n<div class=\"embed-actions\">{btns}</div>\n\n"
         + f'<iframe class="embed-page" src="/static/pages/{slug}.html" title="{e(title)}" loading="lazy"></iframe>\n'
     )
 
-# ---- folder index pages ----
+# folder index pages
 for (b, kind), items in by.items():
-    folder = FOM / f"block-{b}" / ("question-bank" if kind == "quiz" else "flowcharts")
-    head = "Question Bank" if kind == "quiz" else "Flowcharts"
-    lead = ("Practice sets for this block. Each one plays in the page." if kind == "quiz"
-            else "Workup maps. Start at the top and follow the results down.")
-    lst = [row(f"/fom/block-{b}/{folder.name}/{s}", t, d) for s, t, a, d in items]
-    if b == 3 and kind == "flow":
-        lst.append(row(ART + "DffUNGsPBXLhosvg7YgRRi", "Approach to Microcytic Anemia", "Written guide. Opens in Claude.", True))
-    (folder / "index.md").write_text(fm(head) + f"{lead}\n\n" + rows(lst))
+    folder = FOM / f"block-{b}" / FOLDER[kind]
+    (folder / "index.md").write_text(
+        fm(HEAD[kind]) + f"{LEAD[kind]}\n\n" + rows([row(href(b, kind, s), t, d) for s, t, a, d in items]))
 
-# ---- block pages ----
+# block pages
 for b, (name, wk, topics) in BLOCKS.items():
     d = FOM / f"block-{b}"
     body = f"{topics}\n\n"
-    q = by.get((b, "quiz"))
-    fl = by.get((b, "flow"))
-    if q:
-        body += f'<h2 class="section-title">Question bank</h2>\n' + rows(
-            [row(f"/fom/block-{b}/question-bank/{s}", t, dd) for s, t, a, dd in q])
-    if fl:
-        lst = [row(f"/fom/block-{b}/flowcharts/{s}", t, dd) for s, t, a, dd in fl]
-        if b == 3:
-            lst.append(row(ART + "DffUNGsPBXLhosvg7YgRRi", "Approach to Microcytic Anemia", "Written guide. Opens in Claude.", True))
-        body += f'<h2 class="section-title">Flowcharts</h2>\n' + rows(lst)
-    if not q and not fl:
-        body += '<p class="empty-note">No quizzes or flowcharts yet. Ask Claude to build a set for this block.</p>\n'
-    body += f'<h2 class="section-title" id="weeks">Weeks</h2>\n' + rows([row(h, t, dd) for h, t, dd in weeks(b)])
+    any_res = False
+    for kind, label in [("test", "Practice tests"), ("quiz", "Question bank"), ("flow", "Flowcharts")]:
+        items = by.get((b, kind))
+        if items:
+            any_res = True
+            body += f'<h2 class="section-title">{label}</h2>\n' + rows([row(href(b, kind, s), t, dd) for s, t, a, dd in items])
+    if not any_res:
+        body += '<p class="empty-note">No questions or flowcharts yet. Ask Claude to build a set for this block.</p>\n'
+    body += '<h2 class="section-title" id="weeks">Weeks</h2>\n' + rows([row(h, t, dd) for h, t, dd in weeks(b)])
     (d / "index.md").write_text(fm(f"Block {b} (Weeks {wk.split()[1]})", f"tags:\n  - block-{b}\n") + body)
 
-# ---- question bank overview ----
-qb = "Every practice set in one place, grouped by block.\n\n"
+# question bank overview
+qb = "Every practice set in one place. Practice tests mix the whole block. Weekly banks go deep on one week.\n\n"
 for b, (name, wk, _) in BLOCKS.items():
-    q = by.get((b, "quiz"))
+    t, q = by.get((b, "test"), []), by.get((b, "quiz"), [])
     qb += f'<h2 class="section-title">Block {b}: {e(name)}</h2>\n'
-    qb += rows([row(f"/fom/block-{b}/question-bank/{s}", t, dd) for s, t, a, dd in q]) if q else '<p class="empty-note">No sets yet.</p>\n'
+    if t or q:
+        qb += rows([row(href(b, "test", s), tt, dd) for s, tt, a, dd in t] + [row(href(b, "quiz", s), tt, dd) for s, tt, a, dd in q])
+    else:
+        qb += '<p class="empty-note">No sets yet.</p>\n'
+(C / "question-bank").mkdir(exist_ok=True)
 (C / "question-bank" / "index.md").write_text(fm("Question Bank") + qb)
 
-# ---- FoM index ----
+# FoM index
 (FOM / "index.md").write_text(fm("Foundations of Medicine") + rows(
     [row(f"/fom/block-{b}/", f"Block {b}: {n}", f"{w}. {t}") for b, (n, w, t) in BLOCKS.items()]))
 
-# ---- home ----
-def chip(href, n, label):
-    return f'<a class="chip" href="{href}"><b>{n}</b> {label}</a>'
+
+# home
+def chip(h, n, label):
+    return f'<a class="chip" href="{h}"><b>{n}</b> {label}</a>'
+
+
+def plural(n, one, many):
+    return one if n == 1 else many
+
 
 block_rows = []
+total_q = 0
 for b, (name, wk, topics) in BLOCKS.items():
     chips = []
-    q, fl = by.get((b, "quiz"), []), by.get((b, "flow"), [])
+    t, q, fl = by.get((b, "test"), []), by.get((b, "quiz"), []), by.get((b, "flow"), [])
+    if t:
+        chips.append(chip(href(b, "test"), len(t), plural(len(t), "practice test", "practice tests")))
     if q:
-        chips.append(chip(f"/fom/block-{b}/question-bank/", len(q), "quizzes" if len(q) > 1 else "quiz"))
+        chips.append(chip(href(b, "quiz"), len(q), plural(len(q), "weekly bank", "weekly banks")))
     if fl:
-        chips.append(chip(f"/fom/block-{b}/flowcharts/", len(fl), "flowcharts"))
+        chips.append(chip(href(b, "flow"), len(fl), plural(len(fl), "flowchart", "flowcharts")))
     if b in NOTES_BLOCKS:
         chips.append(chip(f"/fom/block-{b}/#weeks", len(weeks(b)), "weeks of notes"))
     if not chips:
@@ -127,16 +152,21 @@ for b, (name, wk, topics) in BLOCKS.items():
         f'<div class="block-main"><span class="weeks">{wk}</span><h3><a href="/fom/block-{b}/">{e(name)}</a></h3><p>{e(topics)}</p></div>'
         f'<div class="block-links">{"".join(chips)}</div></li>')
 
+for b, slug, title, aid, _u, kind, blurb in ITEMS:
+    m = re.match(r"(\d+) questions", blurb)
+    if m:
+        total_q += int(m.group(1))
+
 recent = [
-    ("/fom/block-3/flowcharts/hemostasis-workup-map", "Hemostasis Workup Map", "Bleeding, platelets, VTE, anticoagulants, transfusion."),
-    ("/fom/block-3/flowcharts/anemia-workup-map", "Anemia Workup Map", "From CBC to diagnosis, every branch."),
-    ("/fom/block-3/question-bank/bleeding-block-drill", "Bleeding Block Drill", "Week 10 practice set."),
-    ("/fom/block-2/question-bank/block-2-mock-exam", "Block 2 Mock Exam", "40 questions on the predicted blueprint."),
+    (href(3, "flow", "hemostasis-workup-map"), "Hemostasis Workup Map", "Bleeding, platelets, VTE, anticoagulants, transfusion."),
+    (href(3, "flow", "anemia-workup-map"), "Anemia Workup Map", "From CBC to diagnosis, every branch."),
+    (href(3, "quiz", "week-10-question-bank"), "Week 10 Question Bank", "Bleeding and coagulation."),
+    (href(2, "test", "block-2-practice-exam"), "Block 2 Practice Exam", "40 questions on the predicted blueprint."),
 ]
 
 home = fm("Differential", 'description: "Study hub for Schulich Foundations of Medicine."\n') + f'''<section class="hero">
 <h1>Differential</h1>
-<p>Practice questions, workup maps and notes for Schulich Foundations of Medicine. Built by a student, for the years after.</p>
+<p>{total_q} practice questions, workup maps and notes for Schulich Foundations of Medicine. Built by a student, for the years after.</p>
 <div class="hero-actions">
 <a class="btn primary" href="/question-bank/">Start practising</a>
 <a class="btn" href="/fom/block-3/flowcharts/">Browse flowcharts</a>
@@ -149,7 +179,7 @@ home = fm("Differential", 'description: "Study hub for Schulich Foundations of M
 
 <h2 class="section-title">Recently added</h2>
 {rows([row(h, t, d) for h, t, d in recent])}
-<p class="empty-note">Search anything from the sidebar, or press Ctrl K. Facts come from Nicole's Notes and course quizzes. Check details against your lecture slides.</p>
+<p class="empty-note">Search anything from the sidebar, or press Ctrl K. Questions come from Nicole's Notes and course quizzes. Check details against your lecture slides.</p>
 '''
 (C / "index.md").write_text(home)
-print("ok", {k: len(v) for k, v in by.items()})
+print("ok", {f"B{k[0]} {k[1]}": len(v) for k, v in sorted(by.items())}, "questions:", total_q)
