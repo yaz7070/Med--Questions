@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Weeks 1-4: Objectives-Aligned Practice Chart (Set 2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEF0EA; --paper:#FFFFFF; --ink:#1F2A24; --muted:#5B6A61; --line:#D7DBD2;
+    --accent:#2F6F5E; --accent-wash:#E4EDE9; --correct:#2E7D4F; --correct-wash:#E4F2E8;
+    --incorrect:#A13D2C; --incorrect-wash:#F6E7E3; --unanswered:#C9CFC4;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg:#171C18; --paper:#1F251F; --ink:#EDEFE9; --muted:#9BA79C; --line:#333A32;
+      --accent:#6FBBA3; --accent-wash:#25332C; --correct:#6FBB8B; --correct-wash:#20332A;
+      --incorrect:#E28C79; --incorrect-wash:#3A2621; --unanswered:#3A4139;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#171C18; --paper:#1F251F; --ink:#EDEFE9; --muted:#9BA79C; --line:#333A32;
+    --accent:#6FBBA3; --accent-wash:#25332C; --correct:#6FBB8B; --correct-wash:#20332A;
+    --incorrect:#E28C79; --incorrect-wash:#3A2621; --unanswered:#3A4139;
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    -webkit-font-smoothing:antialiased;
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  .wrap{ max-width:720px; margin:0 auto; padding:28px 20px 64px; }
+  .chart-header{ border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:18px; }
+  .chart-id{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.04em; color:var(--muted);
+    display:flex; justify-content:space-between; margin-bottom:8px; gap:8px; flex-wrap:wrap;
+  }
+  h1{ font-family:'Source Serif 4', serif; font-weight:600; font-size:24px; line-height:1.2; margin:0 0 4px; }
+  .subtitle{ color:var(--muted); font-size:14px; margin:0; }
+  .diff-note{
+    font-size:12px; color:var(--incorrect); font-weight:600; margin-top:8px;
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .status-row{
+    display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+  }
+  .status-row .score{ color:var(--accent); font-weight:600; }
+  .ticks{ display:grid; grid-template-columns:repeat(25, 1fr); gap:3px; margin-top:10px; }
+  .tick{ height:8px; background:var(--unanswered); border:none; padding:0; cursor:pointer; border-radius:1px; }
+  .tick.current{ outline:2px solid var(--ink); outline-offset:1px; }
+  .tick.correct{ background:var(--correct); }
+  .tick.incorrect{ background:var(--incorrect); }
+  .card{ background:var(--paper); border:1px solid var(--line); margin-top:22px; }
+  .card-top{
+    display:flex; justify-content:space-between; align-items:center; padding:12px 18px;
+    border-bottom:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted);
+  }
+  .category-tag{ color:var(--accent); font-weight:600; }
+  .prompt{ font-family:'Source Serif 4', serif; font-size:18px; line-height:1.55; padding:20px 18px 8px; }
+  .options{ padding:6px 18px 18px; display:flex; flex-direction:column; gap:8px; }
+  .option{
+    display:flex; align-items:flex-start; gap:12px; text-align:left; background:var(--paper);
+    border:1px solid var(--line); padding:11px 13px; font-family:'IBM Plex Sans', sans-serif;
+    font-size:15px; line-height:1.45; color:var(--ink); cursor:pointer;
+    transition:border-color .12s ease, background .12s ease;
+  }
+  .option:hover:not(:disabled){ border-color:var(--accent); background:var(--accent-wash); }
+  .option:disabled{ cursor:default; }
+  .option .letter{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:600; color:var(--muted);
+    border:1px solid var(--line); width:22px; height:22px; min-width:22px;
+    display:flex; align-items:center; justify-content:center; margin-top:1px;
+  }
+  .option.correct{ background:var(--correct-wash); border-color:var(--correct); }
+  .option.correct .letter{ border-color:var(--correct); color:var(--correct); }
+  .option.incorrect{ background:var(--incorrect-wash); border-color:var(--incorrect); }
+  .option.incorrect .letter{ border-color:var(--incorrect); color:var(--incorrect); }
+  .feedback{
+    margin:0 18px 18px; padding:14px 16px; border-left:3px solid var(--accent);
+    background:var(--accent-wash); font-size:14px; line-height:1.6; display:none;
+  }
+  .feedback.show{ display:block; }
+  .feedback.correct-fb{ border-color:var(--correct); background:var(--correct-wash); }
+  .feedback.incorrect-fb{ border-color:var(--incorrect); background:var(--incorrect-wash); }
+  .feedback .verdict{ font-weight:600; display:block; margin-bottom:4px; }
+  .feedback .verdict.correct-text{ color:var(--correct); }
+  .feedback .verdict.incorrect-text{ color:var(--incorrect); }
+  .nav-row{
+    display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-top:1px solid var(--line);
+  }
+  .btn{
+    font-family:'IBM Plex Sans', sans-serif; font-size:14px; font-weight:500; padding:9px 16px;
+    border:1px solid var(--ink); background:var(--paper); color:var(--ink); cursor:pointer;
+  }
+  .btn:disabled{ opacity:0.35; cursor:not-allowed; }
+  .btn.primary{ background:var(--ink); color:var(--paper); }
+  .btn.primary:disabled{ background:var(--unanswered); border-color:var(--unanswered); }
+  .summary{ background:var(--paper); border:1px solid var(--line); margin-top:22px; padding:28px 22px; display:none; }
+  .summary.show{ display:block; }
+  .summary h2{ font-family:'Source Serif 4', serif; font-size:24px; margin:0 0 4px; }
+  .summary .big-score{ font-family:'IBM Plex Mono', monospace; font-size:44px; font-weight:600; color:var(--accent); margin:14px 0 2px; }
+  .summary .big-score-label{ color:var(--muted); font-size:13px; margin-bottom:22px; }
+  .breakdown{ border-top:1px solid var(--line); padding-top:16px; margin-top:6px; }
+  .breakdown-row{ display:flex; justify-content:space-between; font-size:14px; padding:7px 0; border-bottom:1px solid var(--line); }
+  .breakdown-row:last-child{ border-bottom:none; }
+  .breakdown-row .cat{ color:var(--ink); }
+  .breakdown-row .frac{ font-family:'IBM Plex Mono', monospace; color:var(--muted); }
+  .restart-row{ margin-top:22px; }
+  footer{ text-align:center; color:var(--muted); font-size:12px; margin-top:26px; font-family:'IBM Plex Mono', monospace; }
+  @media (max-width:420px){
+    .ticks{ grid-template-columns:repeat(13,1fr); }
+    .prompt{ font-size:16px; }
+    h1{ font-size:20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="chart-header">
+    <div class="chart-id">
+      <span>FOUNDATIONS OF MEDICINE — CUMULATIVE PROGRESS TEST</span>
+      <span id="item-count">ITEM 1 / 50</span>
+    </div>
+    <h1>Weeks 1-4: Objectives-Aligned Review (Set 2)</h1>
+    <p class="subtitle">50 new vignette-based items, built directly from the Block 1 learning objectives (Appendices A-D) — WHO prescribing steps, enzyme kinetics, EBM trial design, pedigree symbols, immunology mechanisms, and more.</p>
+    <p class="diff-note">Difficulty: advanced, DSSG-style — every stem requires reasoning, not recall.</p>
+    <div class="status-row">
+      <span id="progress-label">0 of 50 answered</span>
+      <span class="score" id="score-label">Score: 0 / 0</span>
+    </div>
+    <div class="ticks" id="ticks"></div>
+  </div>
+
+  <div class="card" id="card">
+    <div class="card-top">
+      <span class="category-tag" id="cat-tag">CATEGORY</span>
+      <span id="q-number">Q1</span>
+    </div>
+    <div class="prompt" id="prompt">Loading…</div>
+    <div class="options" id="options"></div>
+    <div class="feedback" id="feedback">
+      <span class="verdict" id="verdict"></span>
+      <span id="explanation"></span>
+    </div>
+    <div class="nav-row">
+      <button class="btn" id="prev-btn">← Previous</button>
+      <button class="btn primary" id="next-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+  <div class="summary" id="summary">
+    <h2>Chart complete</h2>
+    <p class="subtitle">Here's how you did across all 50 items.</p>
+    <div class="big-score" id="final-score">0 / 50</div>
+    <div class="big-score-label" id="final-pct">0% correct</div>
+    <div class="breakdown" id="breakdown"></div>
+    <div class="restart-row">
+      <button class="btn primary" id="restart-btn">Restart chart</button>
+    </div>
+  </div>
+
+  <footer>50 items · Week 1: Tasks of a Physician · Week 2: Foundations of the Human Body · Week 3: Approach to Early Life · Week 4: Well Child &amp; Adolescent Care</footer>
+</div>
+
+<script>
+const QUESTIONS = [
+{c:"Week 1: Tasks of a Physician",p:"A physician diagnoses a patient with hypertension, decides the therapeutic objective is to lower blood pressure to reduce cardiovascular risk, then reviews the patient's other medications for interactions before selecting an antihypertensive. Which step of the WHO 6-step framework for rational prescribing does reviewing for interactions and comedications best represent?",o:["Treatment choice","Patient's problem","Therapeutic objective","Monitor treatment"],a:0,e:"Reviewing contraindications, interactions, and comedications before selecting a specific drug is the \"treatment choice\" step, distinct from defining the patient's problem or therapeutic objective earlier in the framework."},
+{c:"Week 1: Tasks of a Physician",p:"A student is asked to distinguish \"pharmacology\" from \"therapeutics.\" Which statement correctly differentiates the two?",o:["Pharmacology refers only to drug side effects, while therapeutics refers only to dosing","Pharmacology is the study of how drugs affect the body and are affected by it, while therapeutics is the practical application of that knowledge to treat disease","The two terms are interchangeable and have no meaningful distinction","Therapeutics refers only to non-pharmacological treatment approaches"],a:1,e:"Pharmacology is the broader science of drug action and disposition; therapeutics is the applied practice of using that knowledge (pharmacological and non-pharmacological) to treat patients."},
+{c:"Week 1: Tasks of a Physician",p:"After starting a new medication, a physician schedules a follow-up visit specifically to determine whether the drug is working, needs a dose adjustment, or should be discontinued. Which principle of rational prescribing does this best reflect?",o:["Give patient information","Start treatment","Monitor treatment","Treatment choice"],a:2,e:"Monitoring treatment, the final WHO step, involves following up to continue, adjust, or stop therapy based on response."},
+{c:"Week 1: Tasks of a Physician",p:"A 50-year-old man has a 20-pack-year smoking history and is also found to have hypertension on a routine visit. Which statement correctly classifies these two findings?",o:["Smoking is a risk condition; hypertension is a risk factor","Both are risk factors","Both are risk conditions","Smoking is a risk factor; hypertension is a risk condition"],a:3,e:"A risk factor is an individual characteristic or behaviour (like smoking) that increases the likelihood of a negative outcome. A risk condition is itself a chronic condition (like hypertension) that contributes to further risk."},
+{c:"Week 1: Tasks of a Physician",p:"A public health nutritionist notes that even though patients are individually counselled about healthy eating, food deserts in their neighbourhood limit access to fresh produce. Which approach would most directly address this structural barrier?",o:["A population-based strategy addressing the determinants of incidence at a community level","A high-risk individual clinical strategy targeting counselled patients","Tertiary prevention","A purely informative model of the physician-patient relationship"],a:0,e:"A population strategy targets the determinants of incidence at a community level (like food access), shifting the distribution of risk, rather than focusing only on high-risk individuals one at a time."},
+{c:"Week 1: Tasks of a Physician",p:"A resident feels deep unease after being required to continue aggressive treatment she personally believes is futile, even though there is no genuine disagreement among the care team about the correct course of action. Which term best describes her experience?",o:["An ethical dilemma, since two competing but equally valid options exist","Moral distress, since she knows the right action but feels constrained from acting on it","A procedural framework failure","Casuistry"],a:1,e:"Moral distress occurs when a person knows what they believe is the right action but feels unable to act on it due to institutional or other constraints, distinct from an ethical dilemma, where two comparably weighted options genuinely conflict."},
+{c:"Week 1: Tasks of a Physician",p:"A committee resolving an ethical conflict first gathers relevant clinical data and identifies the values at stake, then clarifies the specific goals and names the ethical conflict precisely, before evaluating why the problem exists. Which two steps of the practical ethical decision-making framework are being described, in order?",o:["Determination, then Implementation","Designation, then Recognition","Recognition, then Designation","Clarification, then Evaluation"],a:2,e:"Recognition (gathering data, identifying relevant values) comes first, followed by Designation (clarifying goals and naming the ethical conflict), before Evaluation, Clarification, Determination, and Implementation."},
+{c:"Week 1: Tasks of a Physician",p:"A 19th-century researcher isolates a bacterium suspected of causing a disease, develops a laboratory test to detect it, and later identifies a chemical agent capable of treating the resulting infection. Which historical framework does this three-part process best exemplify?",o:["Humoral theory","Hippocratic diagnostic method","Galenic anatomical framework","Germ theory"],a:3,e:"Germ theory's three-part process is: identify the micro-organism, develop a laboratory diagnostic test, and discover a chemotherapeutic agent — exactly the sequence described."},
+{c:"Week 1: Tasks of a Physician",p:"A historian describes a physician who took the clinically grounded practice inherited from his predecessor and set it within a broader framework of anatomy and physiology, greatly expanding the theoretical basis of medical practice. Which historical figure does this best describe?",o:["Galen","Hippocrates","William Osler","Not attributable to any of these figures"],a:0,e:"Galen took Hippocratic clinical medicine and set it within a wider anatomy and physiology framework, distinct from Hippocrates (who introduced the practitioner as diagnostician/therapist) and Osler (known for emphasizing the doctor-patient relationship)."},
+{c:"Week 1: Tasks of a Physician",p:"A clinic serving a large refugee population is reviewing WHO guidance on refugee and migrant health. Which of the following statements from that guidance is accurate?",o:["Refugees and migrants are, as a group, generally unhealthy on arrival due to their journey","Refugees and migrants have a lower risk of most cancers compared to the host population, but a higher rate of diabetes","The number of migrants globally is typically underestimated by the public","Children traveling with at least one parent face the same vulnerability as unaccompanied minors"],a:1,e:"WHO guidance notes refugees/migrants are generally healthy on arrival, that migrant numbers are often overestimated (not underestimated), that they have lower cancer risk (except cervical cancer) but higher diabetes rates, and that children without any parent or guardian are especially vulnerable."},
+{c:"Week 1: Tasks of a Physician",p:"A hospital's billing policy is challenged because it charges an extra fee for a medically necessary service already covered under provincial health insurance, on top of what the province pays. Which principle of the Canada Health Act does this violate?",o:["Portability","Universality","Accessibility","Comprehensiveness"],a:2,e:"The accessibility principle requires reasonable access to insured services without financial barriers such as extra-billing or user fees, which this billing policy violates."},
+{c:"Week 1: Tasks of a Physician",p:"An occupational therapist notes that an elderly patient can still bathe, dress, and feed herself independently, but has recently been unable to manage her own finances or prepare meals safely. Which statement correctly classifies these findings?",o:["Both sets of findings reflect ADL deficits","Both sets of findings reflect IADL deficits","The preserved skills are IADLs; the impaired skills are ADLs","The preserved skills are ADLs; the impaired skills are IADLs"],a:3,e:"Bathing, dressing, and feeding are activities of daily living (ADLs), which are preserved here. Managing finances and preparing meals are instrumental activities of daily living (IADLs), which are impaired."},
+{c:"Week 2: Foundations of the Human Body",p:"A biochemist compares two nucleic acid samples: one is double-stranded, relatively stable, and contains thymine with a methyl group; the other is single-stranded, degrades quickly, and contains uracil instead of thymine. Which molecules are being described, respectively?",o:["DNA, then RNA","RNA, then DNA","Both are DNA","Both are RNA"],a:0,e:"DNA is double-stranded, relatively stable, and uses thymine (with a methyl group); RNA is single-stranded, degrades quickly, and uses uracil instead of thymine."},
+{c:"Week 2: Foundations of the Human Body",p:"A drug binds to the active site of an enzyme, directly preventing substrate from binding. Increasing the substrate concentration can overcome this effect and restore maximal enzyme activity. Which type of enzyme inhibition does this describe?",o:["Noncompetitive inhibition","Competitive inhibition","Irreversible inhibition","Allosteric activation"],a:1,e:"Competitive inhibition involves a molecule competing with substrate for the active site; because it's a reversible competition, sufficiently high substrate concentration can outcompete the inhibitor and restore maximal activity."},
+{c:"Week 2: Foundations of the Human Body",p:"A different drug binds to a site on an enzyme distinct from the active site, reducing the enzyme's activity in a way that cannot be overcome by adding more substrate. Which type of inhibition does this describe?",o:["Competitive inhibition","Substrate saturation","Noncompetitive inhibition","Positive cooperativity"],a:2,e:"Noncompetitive inhibition involves binding at a site other than the active site; since the inhibitor doesn't compete directly with substrate, adding more substrate cannot overcome the inhibition."},
+{c:"Week 2: Foundations of the Human Body",p:"As blood glucose rises after a meal, insulin secretion increases, which promotes glucose uptake into cells and lowers blood glucose back toward baseline, subsequently reducing further insulin release. Which type of feedback control system is this?",o:["Positive feedback","Feedforward control only","An open-loop system with no feedback","Negative feedback"],a:3,e:"This is negative feedback: the response (falling glucose) counteracts and reduces the original stimulus (elevated insulin secretion), returning the system toward its set point."},
+{c:"Week 2: Foundations of the Human Body",p:"A red blood cell is placed in a solution with a lower effective osmolality (hypotonic) than the intracellular fluid. What is the expected result?",o:["The cell will swell and may lyse as water moves in","The cell will shrink as water moves out","The cell will remain unchanged in size","The cell membrane will become impermeable to water"],a:0,e:"In a hypotonic solution, water moves into the cell (toward the higher effective solute concentration inside), causing the cell to swell and potentially lyse."},
+{c:"Week 2: Foundations of the Human Body",p:"A different red blood cell is placed in a hypertonic solution relative to the intracellular fluid. What is the expected result?",o:["The cell will swell and may lyse","The cell will shrink as water moves out of the cell","No net water movement will occur","The cell will divide"],a:1,e:"In a hypertonic solution, water moves out of the cell toward the higher effective solute concentration outside, causing the cell to shrink (crenate)."},
+{c:"Week 2: Foundations of the Human Body",p:"Under polarized light microscopy, skeletal muscle shows alternating light and dark bands. The dark band, which does not change its overall length during contraction (though a central zone within it narrows), corresponds to the region containing myosin thick filaments. Which band is being described?",o:["I band","H zone","A band","Z line"],a:2,e:"The A band (anisotropic) contains the full length of the thick filaments and does not change length during contraction, even though the H zone within it narrows as filaments slide — distinct from the I band, which does shorten."},
+{c:"Week 2: Foundations of the Human Body",p:"A physiology student describes a specialized junction where an axon terminal releases neurotransmitter that diffuses across a narrow gap to bind receptors on an adjacent cell, converting an electrical signal into a chemical one and then back into an electrical signal. Which structure is being described?",o:["Gap junction","Desmosome","Tight junction","Synapse"],a:3,e:"This describes a synapse, where an electrical signal is converted to a chemical signal (neurotransmitter release) and back to an electrical signal on the postsynaptic side — distinct from a gap junction, which allows direct electrical/chemical continuity without a chemical intermediary step."},
+{c:"Week 2: Foundations of the Human Body",p:"A patient recovering from a peripheral nerve injury is told that although neurons themselves do not divide, some functional recovery is still possible. Which statement correctly describes the basis for this recovery?",o:["Axonal sprouts form and Schwann cells re-innervate the muscle, restoring some function","New neurons regenerate from local stem cells","Oligodendrocytes migrate to the peripheral nervous system to assist repair","Complete recovery of severed axons is universal and rapid"],a:0,e:"Peripheral nerve repair occurs through axonal sprouting, with Schwann cells (not oligodendrocytes, which are CNS-specific) re-innervating the target muscle — neurons themselves do not regenerate by division."},
+{c:"Week 2: Foundations of the Human Body",p:"A researcher studies a CNS support cell that transforms into a phagocytic, migratory cell in response to tissue damage, acting as part of the CNS's defence system. Which neuroglial cell is this?",o:["Astrocyte","Microglia","Ependymal cell","Schwann cell"],a:1,e:"Microglia transform into phagocytic, migratory cells in a damaged CNS as part of its defence system, distinct from astrocytes (blood-brain barrier maintenance) and ependymal cells (CSF propulsion)."},
+{c:"Week 2: Foundations of the Human Body",p:"A single nucleotide change in a gene results in a codon that specifies the same amino acid as before, with no change to the resulting protein. Which type of mutation does this describe?",o:["Missense mutation","Nonsense mutation","Silent mutation","Frameshift mutation"],a:2,e:"A silent mutation changes the DNA sequence without changing the resulting amino acid, due to the redundancy (degeneracy) of the genetic code."},
+{c:"Week 2: Foundations of the Human Body",p:"A different mutation involves the insertion of a single nucleotide, shifting the reading frame for every codon downstream of the insertion and typically producing a severely altered or truncated protein. Which type of mutation is this?",o:["Silent mutation","Missense mutation","Synonymous mutation","Frameshift mutation"],a:3,e:"A frameshift mutation results from insertions or deletions that are not multiples of three nucleotides, shifting the reading frame downstream and typically producing a severely altered protein."},
+{c:"Week 2: Foundations of the Human Body",p:"A fluoroquinolone antibiotic is prescribed for a urinary tract infection. Which statement correctly describes its mechanism at the level of bacterial DNA replication?",o:["It inhibits bacterial DNA gyrase/topoisomerase, preventing DNA unwinding and replication","It binds the bacterial 30S ribosomal subunit, blocking protein synthesis","It inhibits bacterial cell wall synthesis","It directly damages bacterial RNA"],a:0,e:"Fluoroquinolones inhibit bacterial DNA gyrase and topoisomerase IV, enzymes required for DNA unwinding and replication, distinct from antibiotics that target the ribosome or cell wall."},
+{c:"Week 2: Foundations of the Human Body",p:"A macrolide antibiotic is prescribed for a respiratory infection. Which statement correctly describes its mechanism?",o:["It inhibits bacterial DNA gyrase","It binds the bacterial 50S ribosomal subunit, blocking protein synthesis","It inhibits folic acid synthesis","It disrupts the bacterial cell membrane directly"],a:1,e:"Macrolides bind the bacterial 50S ribosomal subunit, blocking protein synthesis, distinct from fluoroquinolones (DNA gyrase) or sulfonamides (folic acid synthesis)."},
+{c:"Week 2: Foundations of the Human Body",p:"Researchers running a multi-center trial want to ensure that important prognostic variables, such as disease severity, are evenly distributed between treatment and control groups at each site. Which randomization method is specifically designed to achieve this balance across known subgroups?",o:["Simple randomization","Block randomization","Stratified randomization","No randomization is needed if allocation concealment is used"],a:2,e:"Stratified randomization divides participants into subgroups (strata) based on key prognostic variables before randomizing within each stratum, ensuring balance across those specific variables."},
+{c:"Week 2: Foundations of the Human Body",p:"A trial analyzes outcomes according to the treatment group patients were originally assigned to, regardless of whether they actually completed that treatment. Which type of analysis is this, and what is one advantage of this approach?",o:["Per-protocol analysis; it isolates the true biological effect of the treatment","Per-protocol analysis; it always overestimates treatment effect","Intention-to-treat analysis; it excludes all non-adherent patients","Intention-to-treat analysis; it preserves the benefits of randomization and better reflects real-world effectiveness"],a:3,e:"Intention-to-treat analysis keeps patients in their originally assigned group regardless of adherence, preserving the benefits of randomization (balanced confounders) and better reflecting real-world treatment effectiveness, as opposed to per-protocol analysis, which only includes those who completed treatment as assigned."},
+{c:"Week 2: Foundations of the Human Body",p:"A rigorously designed trial with excellent methodology produces highly credible results within the specific population studied, but that population was narrowly selected and may not represent patients seen in general practice. Which statement is correct?",o:["The trial has high internal validity but may have limited external validity","The trial has high external validity but limited internal validity","Both internal and external validity are necessarily high in this scenario","Internal and external validity always rise and fall together"],a:0,e:"Internal validity reflects correct study methodology (credible results within the study), while external validity reflects generalizability to a broader population — a trial can have one without the other, as described here."},
+{c:"Week 2: Foundations of the Human Body",p:"A researcher combines the results of ten smaller trials addressing the same clinical question into a single summary effect estimate. Which of the following is a recognized limitation of this approach?",o:["It always produces a less precise estimate than any single included trial","It can be affected by publication bias if studies with negative results were less likely to be published and therefore included","It cannot combine data from different study populations under any circumstances","It eliminates the need to assess the quality of individual included studies"],a:1,e:"Meta-analyses can be skewed by publication bias, since studies with negative or null results are historically less likely to be published and therefore less likely to be included, potentially inflating the apparent effect."},
+{c:"Week 3: Approach to Early Life",p:"A genetic counselor explains that two different mutations within the same gene can each independently cause the same inherited disorder. Which concept does this describe, and how does it differ from a related but distinct concept?",o:["Locus heterogeneity, describing different mutations in the same gene; distinct from allelic heterogeneity, involving different genes","Both terms describe mutations in different genes causing different phenotypes","Allelic heterogeneity, describing different mutations in the same gene causing the same phenotype; distinct from locus heterogeneity, where mutations in different genes cause the same phenotype","These terms are synonymous"],a:2,e:"Allelic heterogeneity describes different mutations (alleles) within the same gene producing the same phenotype. Locus heterogeneity describes mutations in entirely different genes producing a similar or identical phenotype."},
+{c:"Week 3: Approach to Early Life",p:"Two family members carry the identical pathogenic variant for the same autosomal dominant condition. One shows severe features of the disease, while the other shows only mild, barely noticeable features, though both are clinically affected. Which concept explains this variability, as opposed to one family member showing no features at all despite carrying the variant?",o:["Incomplete penetrance explains differing severity; variable expressivity explains a carrier with no features","Both scenarios describe anticipation","Both scenarios describe pleiotropy","Variable expressivity explains differing severity among affected individuals; incomplete penetrance would instead explain an individual carrying the variant but showing no features at all"],a:3,e:"Variable expressivity describes a range of severity among individuals who are all clinically affected. Incomplete penetrance instead describes a carrier of the pathogenic variant who shows no features of the condition at all."},
+{c:"Week 3: Approach to Early Life",p:"On a standard medical pedigree, a circle with a diagonal line through it appears for one individual, while a filled-in (shaded) square appears for another. Which statement correctly interprets these symbols?",o:["The circle with a diagonal line represents a deceased female; the filled square represents an affected male","The circle with a diagonal line represents an affected female; the filled square represents a deceased male","Both symbols represent unaffected individuals","The filled square represents a female; the circle represents a male"],a:0,e:"On standard pedigree notation, a diagonal line through a symbol indicates the individual is deceased, and a filled (shaded) symbol indicates the individual is affected. A circle denotes female and a square denotes male."},
+{c:"Week 3: Approach to Early Life",p:"A proposed newborn screening test detects a condition that is extremely rare, has no available treatment even if detected early, and for which early detection does not change the outcome. Applying standard principles of population-based screening, is this an appropriate candidate for a screening program?",o:["Yes, since any test with high accuracy should be included in screening programs","No, since a good screening program requires that a treatment or intervention exist that changes the outcome if the condition is detected early","Yes, but only because it is rare","No, only because rare conditions cannot be tested for"],a:1,e:"A core principle of population-based screening is that an effective treatment or intervention must exist and meaningfully change the outcome if the condition is detected early — without this, screening does not provide a net benefit."},
+{c:"Week 3: Approach to Early Life",p:"On examination of a healthy newborn, a physician specifically checks for symmetry of posture, movement, and reflexes. Why is this a key part of the newborn exam?",o:["Symmetry has no clinical significance in newborns","Symmetry is only relevant after 6 months of age","Asymmetry is an important physical finding that warrants further evaluation to determine the underlying cause","Asymmetric findings are always a normal variant in newborns"],a:2,e:"Symmetry is an important physical finding in the newborn exam; asymmetry warrants a careful examination to determine the underlying cause, rather than being assumed to be a normal variant."},
+{c:"Week 3: Approach to Early Life",p:"A geneticist compares two types of chromosomal translocations. In one, two acrocentric chromosomes fuse near their centromeres with loss of the short arms, reducing the total chromosome count. In the other, segments are exchanged between two non-homologous chromosomes without loss of genetic material, and the chromosome count remains unchanged. Which translocation types are being described, respectively?",o:["Reciprocal, then Robertsonian","Both describe Robertsonian translocations","Both describe reciprocal translocations","Robertsonian, then reciprocal"],a:3,e:"A Robertsonian translocation involves fusion of two acrocentric chromosomes with loss of the short arms and a reduced chromosome count (45). A reciprocal translocation exchanges segments between two non-homologous chromosomes without material loss, keeping the chromosome count at 46."},
+{c:"Week 3: Approach to Early Life",p:"A child undergoes genetic testing for a suspected syndrome, and the laboratory reports a variant of uncertain significance rather than a clearly pathogenic or clearly benign result. What is the most appropriate way to interpret this finding?",o:["The variant's clinical significance is not yet established, and it cannot be used alone to confirm or exclude a diagnosis at this time","The variant should be treated as definitively disease-causing","The variant should be treated as definitively benign","This type of result never occurs in genetic testing"],a:0,e:"A variant of uncertain significance means the evidence is insufficient to classify the finding as clearly pathogenic or clearly benign; it cannot, on its own, confirm or exclude a diagnosis and often requires further evaluation over time."},
+{c:"Week 3: Approach to Early Life",p:"A mother of a 14-month-old asks about appropriate feeding at this age, now that her toddler has transitioned off formula. Which statement is most consistent with recommended toddler feeding practices?",o:["Toddlers should continue exclusively on infant formula until age 3","Toddlers 12-24 months should be transitioned to homogenized (whole) cow's milk alongside a varied solid diet, with skim or low-fat milk not yet appropriate","Skim milk is preferred over whole milk at this age for cardiovascular health","Toddlers no longer require any milk product after 12 months"],a:1,e:"Toddlers 12-24 months are generally transitioned to whole (homogenized) cow's milk alongside a varied diet; lower-fat milk is not yet recommended, since toddlers still need the additional calories and fat for growth and brain development."},
+{c:"Week 3: Approach to Early Life",p:"A new mother is struggling with a painful latch and low milk supply. Her physician refers her to a specialist who can directly assess and support breastfeeding technique. Which member of the interdisciplinary team is most appropriate for this referral?",o:["A physiotherapist","A speech-language pathologist","A lactation consultant","A social worker"],a:2,e:"A lactation consultant specializes in assessing and supporting breastfeeding technique, latch, and supply issues, as part of the interdisciplinary supports available to breastfeeding mothers."},
+{c:"Week 3: Approach to Early Life",p:"A family, unable to afford commercial infant formula, considers making a homemade formula from evaporated milk and corn syrup for their 3-month-old. What is the most appropriate guidance?",o:["This is an acceptable substitute as long as it is prepared carefully","This is only a concern after 6 months of age","This is preferred over commercial formula for cost reasons","This is not recommended, since homemade formulas are typically nutritionally inadequate and unsafe for infants"],a:3,e:"Homemade infant formulas are generally nutritionally inadequate and unsafe, lacking the balanced composition of commercial formula; families facing affordability barriers should be connected with appropriate resources rather than using homemade substitutes."},
+{c:"Week 3: Approach to Early Life",p:"A mother reports her son coos and makes vowel-like sounds, has not yet started babbling, and shows interest in faces when spoken to. At approximately what age would this pattern be most expected?",o:["2 months","6 months","12 months","18 months"],a:0,e:"Cooing and vowel-like sounds, with interest in faces during speech, is expected around 2 months, before babbling typically begins."},
+{c:"Week 3: Approach to Early Life",p:"A different infant produces repetitive consonant-vowel sounds like \"bababa\" and \"dadada,\" without yet using these as meaningful words. At approximately what age would this be most expected?",o:["2 months","6 months","12 months","24 months"],a:1,e:"Repetitive consonant-vowel babbling is expected around 6 months, preceding the emergence of first meaningful words around 12 months."},
+{c:"Week 4: Well Child & Adolescent Care",p:"A patient asks how an mRNA vaccine differs from a traditional live attenuated vaccine. Which statement correctly describes the mRNA vaccine's mechanism?",o:["It contains a weakened but live form of the virus, similar to a live attenuated vaccine","It works by directly injecting pre-made antibodies against the pathogen","It delivers genetic instructions that host cells use to temporarily produce a viral protein, triggering an immune response, without introducing any live or replicating pathogen","It functions identically to a whole inactivated vaccine"],a:2,e:"mRNA vaccines deliver genetic instructions for host cells to transiently produce a viral antigen, triggering an immune response without ever introducing a live or replicating pathogen — mechanistically distinct from live attenuated, inactivated, or antibody-based approaches."},
+{c:"Week 4: Well Child & Adolescent Care",p:"A cytotoxic T cell recognizes a virally infected cell and releases perforin and granzyme to induce its death. Which arm of the immune system does this effector mechanism belong to?",o:["Innate immunity exclusively","Adaptive immunity, humoral only","Passive immunity","Adaptive immunity, cell-mediated"],a:3,e:"Cytotoxic T cells are antigen-specific lymphocytes that develop immunologic memory, placing this mechanism within adaptive, cell-mediated immunity — distinct from the humoral (antibody-based) arm of adaptive immunity."},
+{c:"Week 4: Well Child & Adolescent Care",p:"A macrophage engulfs and destroys a bacterium after complement proteins coat its surface, enhancing recognition by the phagocyte. Which term describes complement's role in this process?",o:["Opsonization","Neutralization","Agglutination","Antibody-dependent cellular cytotoxicity"],a:0,e:"Opsonization is the coating of a pathogen with molecules (such as complement or antibody) that enhance its recognition and engulfment by phagocytic cells."},
+{c:"Week 4: Well Child & Adolescent Care",p:"A physician sees a 5-year-old for a pre-kindergarten visit and specifically assesses attentional, emotional, and cognitive readiness domains, in addition to the physical exam. Which statement best describes the physician's role in this context?",o:["Physicians have no role in assessing school readiness, which is solely an educational responsibility","Physicians can help identify readiness concerns across multiple domains and guide families toward appropriate supports before school entry","Physicians should only assess physical readiness","School readiness assessment is only relevant after a child has already started school"],a:1,e:"Physicians play an active role in assessing school readiness across multiple domains and connecting families with appropriate supports, ideally before school entry rather than only afterward."},
+{c:"Week 4: Well Child & Adolescent Care",p:"A 12-year-old spends most free time in a same-sex peer group with little romantic interest, while a 17-year-old has shifted toward individual romantic relationships and a more consolidated sense of identity. Which statement correctly contrasts these two stages of adolescence?",o:["Both patterns are characteristic of early adolescence","Both patterns are characteristic of late adolescence","The 12-year-old is in early adolescence, characterized by same-sex peer group focus; the 17-year-old is in late adolescence, characterized by individual relationships and identity consolidation","Peer relationship patterns do not change across adolescence"],a:2,e:"Early adolescence is typically characterized by same-sex peer group affiliation with limited romantic interest, while late adolescence shows a shift toward individual romantic relationships and a more consolidated identity."},
+{c:"Week 4: Well Child & Adolescent Care",p:"A pediatrician explains to parents that in male puberty, one particular change is typically the first visible sign, occurring before the growth spurt and voice changes. Which change is this?",o:["Peak height velocity","Deepening of the voice","Facial hair growth","Testicular enlargement"],a:3,e:"Testicular enlargement is typically the first visible sign of male puberty, preceding the growth spurt, voice deepening, and facial hair growth."},
+{c:"Week 4: Well Child & Adolescent Care",p:"A child initially diagnosed with a nonspecific \"developmental delay\" as a toddler is later given a more specific diagnosis of a learning disability once he reaches school age and standardized testing becomes possible. What does this progression best illustrate?",o:["Diagnostic labels for disability can appropriately change and become more specific as a child grows and more information becomes available","The initial diagnosis was necessarily incorrect","A diagnosis, once given, should never be revised","Developmental delay and learning disability are always the same diagnosis"],a:0,e:"Diagnostic labels for disability can appropriately evolve and become more specific as a child develops and more assessment information (such as standardized testing at school age) becomes available."},
+{c:"Week 4: Well Child & Adolescent Care",p:"A child experiences several adverse childhood experiences, including household instability, but also has a consistently supportive relationship with a grandparent and strong community connections. Which concept best describes the role these supportive relationships may play?",o:["They have no bearing on outcomes once ACEs have occurred","They function as protective factors that may buffer or mitigate the negative impact of adverse childhood experiences","They are themselves classified as additional adverse childhood experiences","They eliminate the need for any further assessment or intervention"],a:1,e:"Supportive relationships and community connections can function as protective factors, buffering or mitigating the negative impact of adverse childhood experiences, even though they do not eliminate the need for ongoing assessment and support."}
+];
+
+const LETTERS = ["A","B","C","D","E"];
+let current = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+
+const ticksEl = document.getElementById('ticks');
+const promptEl = document.getElementById('prompt');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('feedback');
+const verdictEl = document.getElementById('verdict');
+const explanationEl = document.getElementById('explanation');
+const catTagEl = document.getElementById('cat-tag');
+const qNumberEl = document.getElementById('q-number');
+const itemCountEl = document.getElementById('item-count');
+const progressLabelEl = document.getElementById('progress-label');
+const scoreLabelEl = document.getElementById('score-label');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const cardEl = document.getElementById('card');
+const summaryEl = document.getElementById('summary');
+const restartBtn = document.getElementById('restart-btn');
+
+document.getElementById('item-count').textContent = 'ITEM 1 / ' + QUESTIONS.length;
+document.getElementById('progress-label').textContent = '0 of ' + QUESTIONS.length + ' answered';
+document.getElementById('summary').querySelector('.subtitle').textContent = "Here's how you did across all " + QUESTIONS.length + ' items.';
+document.getElementById('final-score').textContent = '0 / ' + QUESTIONS.length;
+
+function buildTicks(){
+  ticksEl.innerHTML = '';
+  QUESTIONS.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.className = 'tick';
+    b.setAttribute('aria-label', 'Go to question ' + (i+1));
+    b.addEventListener('click', () => { current = i; render(); });
+    ticksEl.appendChild(b);
+  });
+}
+
+function updateTicks(){
+  const ticks = ticksEl.children;
+  for(let i=0;i<QUESTIONS.length;i++){
+    const t = ticks[i];
+    t.classList.remove('current','correct','incorrect');
+    if(answers[i] !== null){
+      t.classList.add(answers[i] === QUESTIONS[i].a ? 'correct' : 'incorrect');
+    }
+    if(i === current) t.classList.add('current');
+  }
+}
+
+function scoreCount(){
+  let correct = 0, answered = 0;
+  answers.forEach((a,i) => { if(a !== null){ answered++; if(a === QUESTIONS[i].a) correct++; } });
+  return {correct, answered};
+}
+
+function updateStatus(){
+  const {correct, answered} = scoreCount();
+  progressLabelEl.textContent = answered + ' of ' + QUESTIONS.length + ' answered';
+  scoreLabelEl.textContent = 'Score: ' + correct + ' / ' + answered;
+  itemCountEl.textContent = 'ITEM ' + (current+1) + ' / ' + QUESTIONS.length;
+}
+
+function render(){
+  if(current >= QUESTIONS.length){
+    showSummary();
+    return;
+  }
+  cardEl.style.display = '';
+  summaryEl.classList.remove('show');
+
+  const q = QUESTIONS[current];
+  catTagEl.textContent = q.c.toUpperCase();
+  qNumberEl.textContent = 'Q' + (current+1);
+  promptEl.textContent = q.p;
+
+  optionsEl.innerHTML = '';
+  const chosen = answers[current];
+
+  q.o.forEach((text, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.innerHTML = '<span class="letter">' + LETTERS[i] + '</span><span>' + text + '</span>';
+    if(chosen !== null){
+      btn.disabled = true;
+      if(i === q.a) btn.classList.add('correct');
+      else if(i === chosen) btn.classList.add('incorrect');
+    }
+    btn.addEventListener('click', () => selectOption(i));
+    optionsEl.appendChild(btn);
+  });
+
+  if(chosen !== null){
+    const isCorrect = chosen === q.a;
+    feedbackEl.classList.add('show');
+    feedbackEl.classList.toggle('correct-fb', isCorrect);
+    feedbackEl.classList.toggle('incorrect-fb', !isCorrect);
+    verdictEl.textContent = isCorrect ? 'Correct.' : 'Incorrect — correct answer: ' + LETTERS[q.a] + '.';
+    verdictEl.className = 'verdict ' + (isCorrect ? 'correct-text' : 'incorrect-text');
+    explanationEl.textContent = q.e;
+    nextBtn.disabled = false;
+  } else {
+    feedbackEl.classList.remove('show');
+    nextBtn.disabled = true;
+  }
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === QUESTIONS.length - 1 ? 'See results →' : 'Next →';
+
+  updateTicks();
+  updateStatus();
+  window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+}
+
+function selectOption(i){
+  if(answers[current] !== null) return;
+  answers[current] = i;
+  render();
+}
+
+prevBtn.addEventListener('click', () => { if(current>0){ current--; render(); } });
+nextBtn.addEventListener('click', () => { current++; render(); });
+
+function showSummary(){
+  cardEl.style.display = 'none';
+  summaryEl.classList.add('show');
+  const {correct} = scoreCount();
+  document.getElementById('final-score').textContent = correct + ' / ' + QUESTIONS.length;
+  document.getElementById('final-pct').textContent = Math.round((correct/QUESTIONS.length)*100) + '% correct';
+
+  const cats = {};
+  QUESTIONS.forEach((q,i) => {
+    if(!cats[q.c]) cats[q.c] = {correct:0,total:0};
+    cats[q.c].total++;
+    if(answers[i] === q.a) cats[q.c].correct++;
+  });
+  const breakdownEl = document.getElementById('breakdown');
+  breakdownEl.innerHTML = '';
+  Object.keys(cats).forEach(cat => {
+    const row = document.createElement('div');
+    row.className = 'breakdown-row';
+    row.innerHTML = '<span class="cat">' + cat + '</span><span class="frac">' + cats[cat].correct + ' / ' + cats[cat].total + '</span>';
+    breakdownEl.appendChild(row);
+  });
+  itemCountEl.textContent = 'COMPLETE';
+  updateTicks();
+  updateStatus();
+}
+
+restartBtn.addEventListener('click', () => {
+  answers = new Array(QUESTIONS.length).fill(null);
+  current = 0;
+  render();
+});
+
+buildTicks();
+render();
+</script>
+</body>
+</html>

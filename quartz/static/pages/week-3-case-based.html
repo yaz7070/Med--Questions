@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Week 3: Approach to Early Life — Case-Based Practice Chart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEF0EA;
+    --paper:#FFFFFF;
+    --ink:#1F2A24;
+    --muted:#5B6A61;
+    --line:#D7DBD2;
+    --accent:#2F6F5E;
+    --accent-wash:#E4EDE9;
+    --correct:#2E7D4F;
+    --correct-wash:#E4F2E8;
+    --incorrect:#A13D2C;
+    --incorrect-wash:#F6E7E3;
+    --unanswered:#C9CFC4;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg:#171C18; --paper:#1F251F; --ink:#EDEFE9; --muted:#9BA79C; --line:#333A32;
+      --accent:#6FBBA3; --accent-wash:#25332C; --correct:#6FBB8B; --correct-wash:#20332A;
+      --incorrect:#E28C79; --incorrect-wash:#3A2621; --unanswered:#3A4139;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#171C18; --paper:#1F251F; --ink:#EDEFE9; --muted:#9BA79C; --line:#333A32;
+    --accent:#6FBBA3; --accent-wash:#25332C; --correct:#6FBB8B; --correct-wash:#20332A;
+    --incorrect:#E28C79; --incorrect-wash:#3A2621; --unanswered:#3A4139;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    -webkit-font-smoothing:antialiased;
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+
+  .wrap{ max-width:720px; margin:0 auto; padding:28px 20px 64px; }
+
+  .chart-header{ border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:18px; }
+  .chart-id{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.04em; color:var(--muted);
+    display:flex; justify-content:space-between; margin-bottom:8px; gap:8px; flex-wrap:wrap;
+  }
+  h1{ font-family:'Source Serif 4', serif; font-weight:600; font-size:25px; line-height:1.2; margin:0 0 4px; }
+  .subtitle{ color:var(--muted); font-size:14px; margin:0; }
+
+  .status-row{
+    display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+  }
+  .status-row .score{ color:var(--accent); font-weight:600; }
+
+  .ticks{ display:grid; grid-template-columns:repeat(24, 1fr); gap:3px; margin-top:10px; }
+  .tick{ height:8px; background:var(--unanswered); border:none; padding:0; cursor:pointer; border-radius:1px; }
+  .tick.current{ outline:2px solid var(--ink); outline-offset:1px; }
+  .tick.correct{ background:var(--correct); }
+  .tick.incorrect{ background:var(--incorrect); }
+
+  .card{ background:var(--paper); border:1px solid var(--line); margin-top:22px; }
+  .card-top{
+    display:flex; justify-content:space-between; align-items:center; padding:12px 18px;
+    border-bottom:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted);
+  }
+  .category-tag{ color:var(--accent); font-weight:600; }
+  .prompt{
+    font-family:'Source Serif 4', serif; font-size:18px; line-height:1.55; padding:20px 18px 8px;
+  }
+
+  .options{ padding:6px 18px 18px; display:flex; flex-direction:column; gap:8px; }
+  .option{
+    display:flex; align-items:flex-start; gap:12px; text-align:left; background:var(--paper);
+    border:1px solid var(--line); padding:11px 13px; font-family:'IBM Plex Sans', sans-serif;
+    font-size:15px; line-height:1.45; color:var(--ink); cursor:pointer;
+    transition:border-color .12s ease, background .12s ease;
+  }
+  .option:hover:not(:disabled){ border-color:var(--accent); background:var(--accent-wash); }
+  .option:disabled{ cursor:default; }
+  .option .letter{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:600; color:var(--muted);
+    border:1px solid var(--line); width:22px; height:22px; min-width:22px;
+    display:flex; align-items:center; justify-content:center; margin-top:1px;
+  }
+  .option.correct{ background:var(--correct-wash); border-color:var(--correct); }
+  .option.correct .letter{ border-color:var(--correct); color:var(--correct); }
+  .option.incorrect{ background:var(--incorrect-wash); border-color:var(--incorrect); }
+  .option.incorrect .letter{ border-color:var(--incorrect); color:var(--incorrect); }
+
+  .feedback{
+    margin:0 18px 18px; padding:14px 16px; border-left:3px solid var(--accent);
+    background:var(--accent-wash); font-size:14px; line-height:1.6; display:none;
+  }
+  .feedback.show{ display:block; }
+  .feedback.correct-fb{ border-color:var(--correct); background:var(--correct-wash); }
+  .feedback.incorrect-fb{ border-color:var(--incorrect); background:var(--incorrect-wash); }
+  .feedback .verdict{ font-weight:600; display:block; margin-bottom:4px; }
+  .feedback .verdict.correct-text{ color:var(--correct); }
+  .feedback .verdict.incorrect-text{ color:var(--incorrect); }
+
+  .nav-row{
+    display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-top:1px solid var(--line);
+  }
+  .btn{
+    font-family:'IBM Plex Sans', sans-serif; font-size:14px; font-weight:500; padding:9px 16px;
+    border:1px solid var(--ink); background:var(--paper); color:var(--ink); cursor:pointer;
+  }
+  .btn:disabled{ opacity:0.35; cursor:not-allowed; }
+  .btn.primary{ background:var(--ink); color:var(--paper); }
+  .btn.primary:disabled{ background:var(--unanswered); border-color:var(--unanswered); }
+
+  .summary{ background:var(--paper); border:1px solid var(--line); margin-top:22px; padding:28px 22px; display:none; }
+  .summary.show{ display:block; }
+  .summary h2{ font-family:'Source Serif 4', serif; font-size:24px; margin:0 0 4px; }
+  .summary .big-score{ font-family:'IBM Plex Mono', monospace; font-size:44px; font-weight:600; color:var(--accent); margin:14px 0 2px; }
+  .summary .big-score-label{ color:var(--muted); font-size:13px; margin-bottom:22px; }
+  .breakdown{ border-top:1px solid var(--line); padding-top:16px; margin-top:6px; }
+  .breakdown-row{ display:flex; justify-content:space-between; font-size:14px; padding:7px 0; border-bottom:1px solid var(--line); }
+  .breakdown-row:last-child{ border-bottom:none; }
+  .breakdown-row .cat{ color:var(--ink); }
+  .breakdown-row .frac{ font-family:'IBM Plex Mono', monospace; color:var(--muted); }
+  .restart-row{ margin-top:22px; }
+
+  footer{ text-align:center; color:var(--muted); font-size:12px; margin-top:26px; font-family:'IBM Plex Mono', monospace; }
+
+  @media (max-width:420px){
+    .ticks{ grid-template-columns:repeat(12,1fr); }
+    .prompt{ font-size:16px; }
+    h1{ font-size:21px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="chart-header">
+    <div class="chart-id">
+      <span>FOUNDATIONS OF MEDICINE — CASE-BASED PROGRESS TEST</span>
+      <span id="item-count">ITEM 1 / 48</span>
+    </div>
+    <h1>Week 3: Approach to Early Life</h1>
+    <p class="subtitle">Longer vignette-style items, matched to DSSG question difficulty. Click an answer to reveal feedback and rationale.</p>
+    <div class="status-row">
+      <span id="progress-label">0 of 48 answered</span>
+      <span class="score" id="score-label">Score: 0 / 0</span>
+    </div>
+    <div class="ticks" id="ticks"></div>
+  </div>
+
+  <div class="card" id="card">
+    <div class="card-top">
+      <span class="category-tag" id="cat-tag">CATEGORY</span>
+      <span id="q-number">Q1</span>
+    </div>
+    <div class="prompt" id="prompt">Loading…</div>
+    <div class="options" id="options"></div>
+    <div class="feedback" id="feedback">
+      <span class="verdict" id="verdict"></span>
+      <span id="explanation"></span>
+    </div>
+    <div class="nav-row">
+      <button class="btn" id="prev-btn">← Previous</button>
+      <button class="btn primary" id="next-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+  <div class="summary" id="summary">
+    <h2>Chart complete</h2>
+    <p class="subtitle">Here's how you did across all 48 items.</p>
+    <div class="big-score" id="final-score">0 / 48</div>
+    <div class="big-score-label" id="final-pct">0% correct</div>
+    <div class="breakdown" id="breakdown"></div>
+    <div class="restart-row">
+      <button class="btn primary" id="restart-btn">Restart chart</button>
+    </div>
+  </div>
+
+  <footer>48 items · Genetics &amp; Cytogenetics · Prenatal &amp; Newborn Screening · Development &amp; Red Flags · Attachment &amp; Theory · Nutrition &amp; Deficiencies · Growth &amp; Infant Feeding</footer>
+</div>
+
+<script>
+const QUESTIONS = [
+{c:"Genetics & Cytogenetics",p:"A couple's child is diagnosed with Down syndrome outside the expected maternal-age range. The child's karyotype shows 46,XY,der(14;21)(q10;q10),+21. The father's karyotype is normal, but the mother's karyotype shows 45,XX,t(14;21)(q10;q10). Which statement best explains this family's situation?",o:["The mother has trisomy 21 herself but is only mildly affected","The mother carries a balanced Robertsonian translocation, is phenotypically normal, but is at increased risk of transmitting an unbalanced form to her children","The child's trisomy 21 arose from standard meiotic nondisjunction, unrelated to the mother's karyotype","The mother's result means every future pregnancy will be affected with certainty"],a:1,e:"A balanced Robertsonian translocation carrier has normal total chromosome material rearranged, so they are typically unaffected, but they are at increased risk of producing gametes with unbalanced chromosome complements — as happened here, producing a child with translocation trisomy 21."},
+{c:"Genetics & Cytogenetics",p:"A 5-year-old boy has moderate intellectual disability and subtle dysmorphic features, but a standard karyotype performed in infancy was reported as normal. His parents ask why microarray testing is now being recommended instead of simply repeating the karyotype.",o:["Microarray can detect balanced translocations that karyotype misses","Microarray detects submicroscopic gains and losses of genetic material too small to see on a karyotype, such as a microdeletion or microduplication","Microarray is only a higher-resolution version of karyotype with no differences in what it can detect","Microarray testing removes the need for any further genetic counselling"],a:1,e:"Microarray is designed to detect gains/losses of genetic material (copy number changes) below the resolution of a standard karyotype, such as microdeletions and microduplications — but it cannot detect balanced rearrangements, since there is no net change in material."},
+{c:"Genetics & Cytogenetics",p:"Parents of a child recently diagnosed with 22q11.2 microdeletion syndrome ask why the laboratory also recommends FISH testing on both of them, even though neither parent has any features of the condition.",o:["To confirm the diagnosis a second time using a more expensive test","To determine whether the deletion arose de novo or was inherited from a parent who is an unaffected or mildly affected carrier, which changes the recurrence risk for future pregnancies","Because karyotype cannot technically be performed on parents","Parental FISH testing is done purely for research purposes and does not change counselling"],a:1,e:"Establishing whether a microdeletion is de novo or inherited is essential for accurate recurrence-risk counselling for future pregnancies, since an inherited deletion carries a much higher recurrence risk than a de novo one."},
+{c:"Genetics & Cytogenetics",p:"A newborn is found on microarray to have a deletion of 15q11-q13 inherited from the father, presenting with hypotonia and poor feeding. An unrelated infant with the same deletion inherited from the mother instead has seizures, a happy demeanor, and a stiff-legged gait. What best explains why the parent of origin changes the phenotype so dramatically?",o:["Anticipation","Genomic imprinting, where expression of the region depends on whether it came from the mother or the father","Pleiotropy","Locus heterogeneity"],a:1,e:"This describes Prader-Willi syndrome (paternal deletion) versus Angelman syndrome (maternal deletion) of the same 15q11-q13 region — a classic example of genomic imprinting, where the same deleted region produces very different phenotypes depending on parental origin."},
+{c:"Genetics & Cytogenetics",p:"A young man with a family history of a neurodegenerative disorder learns his grandfather developed symptoms in his 60s, his mother in her 40s, and he himself was just diagnosed in his 20s with more severe symptoms than either relative had at the same age. Which genetic phenomenon does this best illustrate?",o:["Pleiotropy","Incomplete penetrance","Anticipation","Mosaicism"],a:2,e:"Earlier onset and increased severity in successive generations is the definition of anticipation, classically seen in triplet-repeat expansion disorders such as Huntington disease."},
+{c:"Genetics & Cytogenetics",p:"A clinician explains to a family that their child's single gene mutation is responsible for several seemingly unrelated findings: skeletal overgrowth, lens dislocation in the eye, and aortic root dilation. Which concept explains how one mutation produces effects across so many organ systems?",o:["Locus heterogeneity","Pleiotropy","Variable expressivity alone","X-inactivation"],a:1,e:"Pleiotropy describes a single gene's pathogenic variant producing effects across multiple, seemingly unrelated organ systems — as in this connective tissue disorder affecting the skeleton, eyes, and aorta."},
+{c:"Genetics & Cytogenetics",p:"Marissa is 12 weeks pregnant and worried about her relative Gerry, who has Duchenne muscular dystrophy. Gerry is the son of Marissa's maternal aunt. Which statement about the genetic risk to Marissa's pregnancy is correct?",o:["There is no meaningful risk, because DMD is autosomal recessive","Marissa's mother could be a carrier of the X-linked DMD mutation, meaning Marissa herself has a chance of being a carrier and passing the mutation to a son","Marissa is only at risk if Gerry is her paternal cousin","The risk applies only to future daughters, not sons"],a:1,e:"DMD is X-linked. Since Gerry's mother (Marissa's maternal aunt) may be a carrier, Marissa's mother could also be a carrier through their shared maternal line, putting Marissa at risk of being a carrier who could pass the mutation to a son."},
+{c:"Genetics & Cytogenetics",p:"A 30-year-old woman is found on karyotype to have two cell lines: 45,X in some cells and 46,XX in others. Which term correctly describes this finding, and what might it mean clinically?",o:["Full monosomy X, with a classic severe Turner phenotype expected in every case","Mosaicism, which can produce a variably milder or atypical presentation of Turner syndrome depending on the proportion of affected cells","A balanced translocation, typically associated with no clinical features","Uniparental disomy, typically presenting with overgrowth"],a:1,e:"The presence of two different cell lines (45,X and 46,XX) defines mosaicism. Mosaic Turner syndrome can present with a milder or more variable phenotype than full monosomy X, depending on the tissue distribution of each cell line."},
+{c:"Genetics & Cytogenetics",p:"A newborn boy has hypospadias and undescended testes. Karyotype shows 47,XXY. His parents ask what to expect. Which statement is most accurate?",o:["This is Klinefelter syndrome; features such as tall stature, hypogonadism, and learning differences often are not obvious in the newborn period and emerge later","This is Turner syndrome and the child should be raised as female","This karyotype guarantees severe intellectual disability","This chromosomal abnormality is incompatible with survival past infancy"],a:0,e:"47,XXY is Klinefelter syndrome. Many of its features (tall stature, hypogonadism, gynecomastia, learning differences) become apparent later in childhood or adolescence rather than being obvious at birth."},
+{c:"Genetics & Cytogenetics",p:"A couple's infant died shortly after birth with multiple midline anomalies, cleft palate, and polydactyly. Genetic testing on the child confirmed trisomy of a specific autosome. Which chromosome was most likely involved?",o:["Chromosome 18","Chromosome 21","Chromosome 13","Chromosome 22"],a:2,e:"Midline defects, cleft palate, polydactyly, and severe developmental delay/early mortality describe Patau syndrome, trisomy 13."},
+{c:"Genetics & Cytogenetics",p:"All of the following are appropriate indications to refer a couple for genetic counselling before conception EXCEPT:",o:["The male partner carries a known balanced translocation","The couple has experienced 3 prior first-trimester miscarriages","The female partner's cousin, with no shared ancestry with her partner and no family history of note, had a single isolated febrile seizure as a toddler","The female partner's mother carries a known balanced translocation"],a:2,e:"An isolated febrile seizure in a distantly related family member with no other history is not a genetic red flag. Known balanced translocations in either partner or a parent, and recurrent miscarriage, are all recognized indications for referral."},
+{c:"Genetics & Cytogenetics",p:"A metabolic specialist explains that a teenage boy in status epilepticus has an extremely elevated ammonia level and a urea cycle disorder is suspected. The family asks why measuring the specific liver enzyme's activity directly, rather than doing DNA testing, is not a practical first step. Which of the following best answers this?",o:["Enzyme activity testing would require an invasive liver biopsy, whereas DNA/molecular testing can be done from a blood sample and also identifies the exact causative variant","Enzyme testing is more accurate than DNA testing and should always be done first","DNA testing cannot distinguish between different urea cycle disorders","There is no meaningful difference between the two approaches"],a:0,e:"Directly measuring the deficient enzyme's activity would require liver tissue, an invasive procedure. Molecular/DNA testing avoids this, can be done on a blood sample, and pinpoints the exact pathogenic variant."},
+{c:"Prenatal & Newborn Screening",p:"A 38-year-old woman at 12 weeks gestation has a nuchal translucency measurement of 3.8 mm, above the normal range, but her NIPT for common aneuploidies returns low-risk. Which statement best reflects how to interpret these two results together?",o:["Because NIPT is low-risk, the elevated NT can be safely ignored entirely","An elevated NT with a reassuring NIPT still warrants a detailed fetal anatomy and cardiac evaluation, since NT is also associated with structural anomalies like congenital heart defects, not only aneuploidy","The elevated NT means the NIPT result must be invalid and should be repeated","Elevated NT with a normal NIPT is diagnostic of a completely normal pregnancy"],a:1,e:"NT screens for more than aneuploidy — it is also associated with congenital heart defects and other structural anomalies. A reassuring NIPT (which screens for aneuploidy) does not eliminate the need to further evaluate an elevated NT with detailed anatomy/cardiac imaging."},
+{c:"Prenatal & Newborn Screening",p:"A 41-year-old pregnant woman with a prior pregnancy affected by trisomy 21 wants a result she can act on with certainty, and is willing to accept a small procedural risk to get it as early as possible. Which test is most appropriate to offer her at 13 weeks gestation?",o:["NIPT, since it is the most sensitive screening option","Serum-only first trimester screening","Chorionic villus sampling (CVS), because it is diagnostic and can be performed earlier than amniocentesis","Repeat ultrasound only, deferring any testing until 20 weeks"],a:2,e:"CVS is a diagnostic (not screening) test that can be performed as early as 11-13 weeks, making it the appropriate choice for a patient who wants a definitive answer early and is willing to accept the associated procedural risk."},
+{c:"Prenatal & Newborn Screening",p:"A baby's newborn screening result flags as positive for one of the disorders on the provincial panel. The parents are distressed and ask if their baby definitely has the disease. What is the most accurate response?",o:["Yes, the newborn screen is diagnostic and no further testing is required","A positive newborn screen is not diagnostic; the baby needs clinical assessment and confirmatory testing before a diagnosis can be made","No, false positives never occur with newborn screening","The baby should start treatment immediately without further testing, given how rare these conditions are"],a:1,e:"Screening tests, including newborn screening, are not diagnostic. A positive screen requires clinical assessment and definitive/confirmatory testing before a diagnosis is made."},
+{c:"Prenatal & Newborn Screening",p:"A couple undergoes preconception carrier screening and both are found to be carriers of the same autosomal recessive condition. Which recurrence risk should they be counselled about for each pregnancy?",o:["25% chance of an affected child, 50% chance of a carrier child, 25% chance of an unaffected, non-carrier child","50% chance of an affected child","No increased risk, since both parents are themselves unaffected","100% of children will be carriers"],a:0,e:"Two carrier parents of the same autosomal recessive condition have, for each pregnancy, a 25% chance of an affected child, 50% chance of a carrier child, and 25% chance of a child who is neither affected nor a carrier — the classic 1:2:1 ratio."},
+{c:"Prenatal & Newborn Screening",p:"A pregnant patient wants results as early as possible and asks her physician to compare the timing and risk trade-offs of CVS versus amniocentesis. What is the most accurate comparison?",o:["CVS is performed later than amniocentesis but has a lower miscarriage risk","CVS is performed earlier (around 11-13 weeks) than amniocentesis (15-20 weeks) but carries a somewhat higher procedural miscarriage risk","Amniocentesis and CVS are performed at the same gestational age with identical risks","CVS cannot provide karyotype information, only amniocentesis can"],a:1,e:"CVS is done earlier in gestation (11-13 weeks) than amniocentesis (15-20 weeks), which is valuable for patients wanting an earlier answer, but it carries a somewhat higher miscarriage risk (roughly 1/100 versus roughly 1/200 for amniocentesis)."},
+{c:"Prenatal & Newborn Screening",p:"Which of the following statements about non-invasive prenatal testing (NIPT) is correct?",o:["NIPT is a diagnostic test that eliminates the need for any further confirmation","NIPT analyzes cell-free fetal DNA in maternal blood and is a highly sensitive screening test, but a positive result still requires diagnostic confirmation with CVS or amniocentesis","NIPT can be performed reliably in the first days after a missed period","NIPT is only informative for structural anomalies, not for aneuploidy"],a:1,e:"NIPT is a highly sensitive screening test based on cell-free fetal DNA, but like any screening test it is not diagnostic — a positive result requires confirmation with an invasive diagnostic test."},
+{c:"Development & Red Flags",p:"A mother brings her 16-month-old to clinic. The child is not yet walking independently, says no words with meaning, and does not point to show interest in objects. The mother isn't worried, since her older child also \"walked a little late.\" What is the most appropriate response?",o:["Reassure her, since late walking alone is a common normal variant and no other findings matter here","Recognize that this combination of red flags spans multiple domains (gross motor, language, joint attention), meeting criteria for global developmental delay, and pursue assessment","Tell her to return only if the child is still not walking by 3 years of age","Order chromosomal microarray immediately without any clinical history or exam"],a:1,e:"Global developmental delay requires delay in 2 or more domains. This child has concerns in gross motor, expressive language, and joint attention/pointing — a pattern that warrants formal developmental assessment rather than reassurance based on a sibling's history."},
+{c:"Development & Red Flags",p:"At a 2-year well-child visit, a toddler jumps with both feet off the ground, uses two- to three-word phrases, and removes some of her own clothing. Her parents ask if this is appropriate for her age. Which of the following best supports a normal assessment?",o:["These are all age-appropriate 2-year milestones","Two-word phrases are markedly delayed for age 2","Jumping with both feet is not expected until age 4","Undressing independently is itself a red flag at this age"],a:0,e:"Jumping with both feet, 2-3 word phrases, and partial undressing are all consistent with typical 2-year development."},
+{c:"Development & Red Flags",p:"A physician distinguishes for a resident the concept of a \"critical period\" from general developmental variation, using the example of visual development after early, prolonged visual deprivation. Which statement best reflects the concept of a critical period?",o:["Skills learned during this window are easier to acquire but can be fully compensated for later if missed","If the necessary sensory input is not received during this specific developmental window, a permanent deficit results that cannot be fully reversed later","Critical periods apply only to language acquisition, not to sensory systems like vision","Missing a critical period has no lasting consequence as long as the child is otherwise healthy"],a:1,e:"A critical period, unlike a general sensitive period, is a window in which missing the necessary stimulus causes a permanent deficit — classically demonstrated with early, prolonged visual deprivation causing irreversible visual impairment."},
+{c:"Development & Red Flags",p:"Parents are told their 4-year-old, who cannot yet hop on one foot, stack 10 blocks, or draw a circle, needs further developmental assessment. They are confused, since the child speaks in full sentences and separates easily from them at daycare. Which statement best addresses their concern?",o:["Since language and social-emotional domains are age-appropriate, no further assessment is needed","Delay can be domain-specific; motor red flags at age 4 warrant assessment even when language and social skills are intact","The child cannot have a developmental problem if verbal skills are strong","These motor skills are not expected until age 6, so there is no concern"],a:1,e:"Developmental delay can be isolated to one domain. Motor red flags at age 4 (unable to hop, stack 10 blocks, or draw a circle) warrant evaluation on their own, regardless of normal language and social development."},
+{c:"Development & Red Flags",p:"A family physician uses one tool at every well-child visit to track development longitudinally, while a different tool is administered periodically and generates a formal positive/negative result that triggers follow-up if failed. Which pairing correctly matches the tool to its purpose?",o:["Rourke Baby Record = surveillance; Nipissing District Developmental Screen = formal screening","Nipissing District Developmental Screen = surveillance; Rourke Baby Record = formal screening","Both tools serve an identical function and are used interchangeably","Denver Developmental Screening Test = surveillance; Rourke Baby Record = formal screening"],a:0,e:"The Rourke Baby Record is used for ongoing surveillance at routine visits, while the Nipissing District Developmental Screen is a formal periodic screening tool with a defined positive/negative result."},
+{c:"Development & Red Flags",p:"A father completes the Nipissing District Developmental Screen for his 18-month-old and answers \"no\" to a single item asking whether his child points to a desired object. He asks whether one \"no\" answer really matters. What should he be told?",o:["A single \"no\" is not significant; at least 3 are required to trigger follow-up","A single \"no\" response constitutes a positive screen and warrants further follow-up","The screen only becomes meaningful once the child is 3 years old","Only \"no\" answers on gross motor items are counted"],a:1,e:"On the Nipissing/LookSee tool, even one \"no\" response is considered a positive screen requiring follow-up."},
+{c:"Development & Red Flags",p:"A 3-year-old still exhibits a persistent primitive reflex that would typically have disappeared in early infancy. How should this finding be interpreted?",o:["As a normal variant of muscle tone in toddlers","As a red flag for abnormal neurodevelopment warranting further work-up","As significant only if it occurs on one side of the body","As an expected finding until school age"],a:1,e:"Persistence of primitive reflexes well beyond the age at which they should have disappeared is a recognized red flag for abnormal neurodevelopment."},
+{c:"Development & Red Flags",p:"A pediatric resident is asked to differentiate \"pruning\" from \"sculpting\" during brain development. Which explanation is correct?",o:["Pruning strengthens frequently used neural pathways, while sculpting eliminates unused connections","Pruning eliminates unused neural connections, while sculpting enhances frequently used pathways","Pruning and sculpting are synonyms for the same process","Both terms refer exclusively to processes occurring only in adolescence"],a:1,e:"Pruning is the elimination of unused neural connections; sculpting is the enhancement of frequently used pathways. These complementary processes shape brain circuitry across early development."},
+{c:"Development & Red Flags",p:"A child has isolated fine motor delay at age 2 but is otherwise meeting all gross motor, language, cognitive, and social milestones. Which term most precisely describes this presentation, in contrast to global developmental delay?",o:["Global developmental delay","An isolated, domain-specific developmental delay, since only one domain is affected","Failure to thrive","Regression"],a:1,e:"Global developmental delay requires delay across 2 or more domains. A single affected domain, as here, is described as an isolated or domain-specific delay."},
+{c:"Development & Red Flags",p:"A concerned parent describes that their previously talkative 3-year-old has stopped using words he had clearly mastered months earlier and is becoming increasingly withdrawn. Which statement is correct regarding this history?",o:["Loss of previously acquired skills is expected toddler behavior and not a red flag","Loss of previously acquired skills (regression) is a red flag for abnormal development and always warrants prompt evaluation","This should only be investigated if the child is also not growing appropriately","Regression is only concerning if it involves gross motor skills, not language"],a:1,e:"Loss of previously acquired skills, or regression, is one of the clearest red flags for abnormal development and warrants prompt evaluation regardless of which domain is affected."},
+{c:"Attachment & Theory",p:"In a laboratory observation, an infant shows minimal distress when the mother leaves the room and does not seek her out or treat her differently from a stranger upon return, continuing to play with toys throughout. Which attachment classification best fits, and what does it typically reflect about the caregiving relationship?",o:["Secure attachment, reflecting consistently responsive caregiving","Insecure-avoidant attachment, often associated with a caregiving pattern that is dismissive of or unresponsive to the infant's distress","Insecure-ambivalent attachment, associated with inconsistent caregiving","Disorganized attachment, associated with frightening or frightened caregiving behavior"],a:1,e:"Minimal response to separation or reunion, with the caregiver treated like a stranger, is the hallmark of insecure-avoidant attachment, often linked to a dismissive or unresponsive caregiving style."},
+{c:"Attachment & Theory",p:"A toddler becomes intensely distressed when the caregiver leaves the room, is difficult to console upon reunion, and alternates between clinging to and angrily resisting the caregiver. Which attachment style is this, and with what caregiving pattern is it typically associated?",o:["Secure attachment, associated with predictable caregiving","Insecure-avoidant attachment, associated with dismissive caregiving","Insecure-ambivalent attachment, associated with inconsistent or unpredictable caregiving","Disorganized attachment, associated with maltreatment"],a:2,e:"Intense distress with difficulty being consoled, and ambivalent clinging/resisting behavior toward the caregiver, describes insecure-ambivalent attachment, typically associated with inconsistent caregiving."},
+{c:"Attachment & Theory",p:"A 2-year-old insists on choosing her own clothes and becomes defiant when her parents intervene, repeating \"me do it.\" According to Erikson, which psychosocial stage does this behavior best reflect, and what happens if caregivers are overly critical or controlling during this stage?",o:["Trust vs. mistrust; the child may develop general distrust of caregivers","Autonomy vs. shame and doubt; excessive criticism may lead to feelings of shame and self-doubt rather than a sense of independence","Initiative vs. guilt; the child may become fearful of taking initiative","Industry vs. inferiority; the child may develop a sense of inferiority"],a:1,e:"This is Erikson's autonomy vs. shame/doubt stage (roughly 18 months to 3 years). Overly critical or controlling caregiving during this stage can foster shame and self-doubt rather than healthy independence."},
+{c:"Attachment & Theory",p:"A 4-year-old insists that a tall, thin glass has \"more juice\" than a short, wide glass, even after watching the same amount of juice poured from one into the other. Which Piagetian concept explains this, and what stage is the child in?",o:["The child has not yet developed object permanence; sensorimotor stage","The child has not yet mastered conservation; preoperational stage","The child is demonstrating abstract reasoning; formal operational stage","The child is demonstrating logical operations on concrete objects; concrete operational stage"],a:1,e:"Failure to recognize that quantity is conserved despite a change in container shape is the classic conservation task failure of the preoperational stage (roughly ages 2-7)."},
+{c:"Attachment & Theory",p:"A behavioral psychologist rewards a child with praise each time the child completes homework independently, gradually increasing the amount of homework required before praise is given. Which learning theory and theorist best describes this technique?",o:["Classical conditioning, Pavlov","Operant conditioning, Skinner","Psychosocial theory, Erikson","Cognitive development theory, Piaget"],a:1,e:"Shaping behavior through reinforcement (praise) contingent on a desired action is operant conditioning, as described by Skinner."},
+{c:"Attachment & Theory",p:"A child raised in an unpredictable environment with inconsistent, sometimes frightening caregiver responses shows contradictory behavior on reunion with the caregiver, such as approaching while looking away, or freezing mid-motion. Which attachment classification is most consistent with this presentation, and which caregiving pattern is most associated with it?",o:["Secure attachment; consistently responsive caregiving","Insecure-avoidant attachment; consistently dismissive caregiving","Disorganized attachment; caregiving that is frightening or itself a source of fear for the child","Insecure-ambivalent attachment; inconsistent caregiving"],a:2,e:"Contradictory, freezing, or approach-avoidance behaviors on reunion are the hallmark of disorganized attachment, classically associated with caregiving that is itself frightening or unpredictable in a threatening way."},
+{c:"Nutrition & Deficiencies",p:"An infant weaned early from breastfeeding and placed on a diet consisting mostly of starchy cereal with very little protein develops generalized edema, a distended abdomen, and irritability, despite adequate total caloric intake. Which condition best fits, and what is the underlying mechanism?",o:["Marasmus, due to total caloric deficiency","Kwashiorkor, due to protein deficiency leading to low plasma oncotic pressure","Scurvy, due to vitamin C deficiency","Rickets, due to vitamin D deficiency"],a:1,e:"Adequate calories but inadequate protein, presenting with edema, describes kwashiorkor — low plasma protein reduces oncotic pressure, allowing fluid to shift into the interstitium."},
+{c:"Nutrition & Deficiencies",p:"A breastfed infant with no vitamin D supplementation presents at 8 months with delayed gross motor milestones and bowing of the legs. Which statement about this presentation is most accurate?",o:["Breast milk alone provides sufficient vitamin D, so supplementation is unnecessary for breastfed infants","Breast milk is naturally low in vitamin D, so all exclusively or partially breastfed infants require vitamin D supplementation to prevent rickets","Bowing of the legs at 8 months is a normal, expected finding unrelated to nutrition","This presentation is more consistent with iron deficiency than vitamin D deficiency"],a:1,e:"Breast milk is low in vitamin D. Without supplementation, breastfed infants are at risk for rickets, presenting with delayed motor milestones and long bone bowing."},
+{c:"Nutrition & Deficiencies",p:"A child presents with poor wound healing, hair loss, a rash around the mouth and extremities, and chronic diarrhea. Which micronutrient deficiency best explains this constellation of findings?",o:["Iron","Zinc","Vitamin B12","Vitamin A"],a:1,e:"Impaired growth, poor immune function, a periorificial/acral rash, and diarrhea are classic features of zinc deficiency."},
+{c:"Nutrition & Deficiencies",p:"A historical case describes a sailor with gum bleeding, poor wound healing, and corkscrew hairs after months of a diet devoid of fresh fruits and vegetables. This presentation reflects impaired synthesis of which substance, and which vitamin is deficient?",o:["Impaired collagen/hydroxyproline synthesis; vitamin C deficiency (scurvy)","Impaired myelin synthesis; vitamin B12 deficiency","Impaired clotting factor synthesis; vitamin K deficiency","Impaired purine synthesis; folate deficiency"],a:0,e:"Vitamin C is a required coenzyme for hydroxyproline and collagen synthesis. Its deficiency (scurvy) impairs wound healing and connective tissue integrity, producing gum bleeding and corkscrew hairs."},
+{c:"Nutrition & Deficiencies",p:"An infant develops microcytic anemia with pallor and fatigue after being exclusively breastfed with no iron-rich complementary foods introduced by 10 months of age. What is the most likely explanation?",o:["Breast milk contains adequate iron indefinitely, so this must be a different cause","Iron stores present at birth are typically depleted by around 6 months, so iron-rich complementary foods are needed after that point to prevent deficiency","Iron deficiency cannot occur in breastfed infants","This presentation suggests folate deficiency rather than iron deficiency"],a:1,e:"Term infants are born with iron stores that typically last about 6 months. Without iron-rich complementary foods introduced around that time, breastfed infants are at risk of iron deficiency anemia (microcytic)."},
+{c:"Nutrition & Deficiencies",p:"Which dietary reference intake describes the nutrient intake level thought to meet the needs of only 50% of a healthy population, and which is used as the basis for calculating the RDA?",o:["Recommended Dietary Allowance (RDA)","Estimated Average Requirement (EAR)","Adequate Intake (AI)","Tolerable Upper Intake Level (UL)"],a:1,e:"The EAR meets the needs of 50% of the population by definition; the RDA is then calculated as EAR + 2 standard deviations, covering about 97.5% of the population."},
+{c:"Nutrition & Deficiencies",p:"A dietitian explains to a family why a low-fat, high-carbohydrate diet may not provide enough calories for an infant recovering from growth faltering. Which statement is accurate?",o:["Fat provides roughly the same calories per gram as carbohydrate and protein","Fat provides substantially more calories per gram (about 9 kcal/g) than carbohydrate or protein (about 4 kcal/g each), so restricting fat can make it harder to meet caloric needs in a small volume","Protein is the most calorie-dense macronutrient","Alcohol has the lowest caloric density of any macronutrient"],a:1,e:"Fat is the most calorie-dense macronutrient at about 9 kcal/g, versus about 4 kcal/g for carbohydrate and protein. Restricting fat in a small-volume diet (as in infants) can make it difficult to meet total caloric needs."},
+{c:"Nutrition & Deficiencies",p:"A toddler with poor dietary variety and minimal intake of folate-rich foods develops fatigue and pallor. Blood work shows macrocytic red blood cells. Which process is most directly impaired by folate deficiency, explaining this anemia?",o:["Hemoglobin oxygen binding","Purine synthesis needed for DNA replication in developing red blood cells","Collagen cross-linking","Myelin sheath formation"],a:1,e:"Folate is a coenzyme required for purine synthesis, which is needed for DNA replication during red blood cell production. Deficiency impairs this process, producing megaloblastic (macrocytic) anemia."},
+{c:"Growth & Infant Feeding",p:"A 12-day-old term infant weighs about 200 g less than birth weight, having lost roughly 6% of birth weight in the first few days before beginning to regain. The mother is anxious this means breastfeeding has failed. What is the most appropriate response?",o:["This is outside the normal range and formula supplementation should start immediately","A weight loss of up to about 5-10% in the first few days, with return to birth weight by 10-14 days, is expected, and this infant's course is consistent with that pattern","All weight loss after birth is abnormal and requires investigation","Growth faltering should be diagnosed based on this single data point"],a:1,e:"A 5-10% weight loss in the first days of life, with regain of birth weight by 10-14 days, is a normal and expected pattern for term breastfed infants."},
+{c:"Growth & Infant Feeding",p:"A father asks when he can expect his son's birth weight to have roughly doubled, and separately, roughly tripled. Which pairing is correct?",o:["Doubled by 2 months; tripled by 6 months","Doubled by 4-5 months; tripled by about 1 year","Doubled by 1 year; tripled by 2 years","Doubled by 6 weeks; tripled by 4 months"],a:1,e:"Healthy infants typically double their birth weight by about 4-5 months and triple it by about 1 year of age."},
+{c:"Growth & Infant Feeding",p:"New parents ask whether they can put a small amount of honey on a pacifier to soothe their 5-month-old during teething. What is the most appropriate response and rationale?",o:["This is safe as long as the honey is pasteurized","Honey should be avoided until after 12 months of age due to the risk of infantile botulism from Clostridium botulinum spores","Honey is safe starting at 3 months of age","The main concern with early honey exposure is dental caries, not infection"],a:1,e:"Honey can contain Clostridium botulinum spores, which pose a risk of infantile botulism in infants younger than 12 months, regardless of pasteurization status."},
+{c:"Growth & Infant Feeding",p:"A family asks when they should introduce allergenic foods such as peanut products and egg to their infant, having heard conflicting advice from relatives about delaying these foods. What is the current recommendation?",o:["Delay allergenic foods until at least 12 months to reduce allergy risk","There is no recommended delay; allergenic foods should be introduced along with other complementary foods, generally around 6 months","Allergenic foods should never be introduced before age 2","Only one new allergenic food should be introduced per month, starting at 18 months"],a:1,e:"Current guidelines recommend no delay in introducing allergenic foods; they should be introduced along with other complementary foods around 6 months of age."},
+{c:"Growth & Infant Feeding",p:"An infant who had been tracking steadily at the 50th percentile for weight is now found to have crossed two major percentile lines downward at a follow-up visit, while length remains near the 50th percentile. Which term best describes this, and how does it differ from stunting?",o:["Growth faltering — a drop in weight-for-age percentiles; stunting instead refers to a chronic process that reduces linear growth (height/length)","Stunting — this term applies whenever weight changes, regardless of height","Wasting, defined purely by head circumference changes","This pattern is a normal variation requiring no further assessment"],a:0,e:"Growth faltering (replacing the older term \"failure to thrive\") describes a drop in weight percentiles crossing two major lines. Stunting is a distinct, chronic process that impairs linear growth (height/length), which is preserved in this case."},
+{c:"Growth & Infant Feeding",p:"A mother asks how long she should continue breastfeeding and when to introduce complementary solid foods. Which statement reflects current recommendations?",o:["Exclusive breastfeeding for the first 6 months, with continued breastfeeding alongside complementary foods recommended up to 2 years or beyond","Exclusive breastfeeding for only the first 3 months before solids must be introduced","Breastfeeding should stop entirely once solids are introduced at 6 months","Formula should replace breastfeeding by 4 months for adequate nutrition"],a:0,e:"Current recommendations support exclusive breastfeeding for the first 6 months of life, with continued breastfeeding alongside complementary foods recommended up to 2 years of age or beyond."}
+];
+
+const LETTERS = ["A","B","C","D","E"];
+let current = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+
+const ticksEl = document.getElementById('ticks');
+const promptEl = document.getElementById('prompt');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('feedback');
+const verdictEl = document.getElementById('verdict');
+const explanationEl = document.getElementById('explanation');
+const catTagEl = document.getElementById('cat-tag');
+const qNumberEl = document.getElementById('q-number');
+const itemCountEl = document.getElementById('item-count');
+const progressLabelEl = document.getElementById('progress-label');
+const scoreLabelEl = document.getElementById('score-label');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const cardEl = document.getElementById('card');
+const summaryEl = document.getElementById('summary');
+const restartBtn = document.getElementById('restart-btn');
+
+document.getElementById('item-count').textContent = 'ITEM 1 / ' + QUESTIONS.length;
+document.getElementById('progress-label').textContent = '0 of ' + QUESTIONS.length + ' answered';
+document.getElementById('summary').querySelector('.subtitle').textContent = "Here's how you did across all " + QUESTIONS.length + ' items.';
+document.getElementById('final-score').textContent = '0 / ' + QUESTIONS.length;
+
+function buildTicks(){
+  ticksEl.innerHTML = '';
+  QUESTIONS.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.className = 'tick';
+    b.setAttribute('aria-label', 'Go to question ' + (i+1));
+    b.addEventListener('click', () => { current = i; render(); });
+    ticksEl.appendChild(b);
+  });
+}
+
+function updateTicks(){
+  const ticks = ticksEl.children;
+  for(let i=0;i<QUESTIONS.length;i++){
+    const t = ticks[i];
+    t.classList.remove('current','correct','incorrect');
+    if(answers[i] !== null){
+      t.classList.add(answers[i] === QUESTIONS[i].a ? 'correct' : 'incorrect');
+    }
+    if(i === current) t.classList.add('current');
+  }
+}
+
+function scoreCount(){
+  let correct = 0, answered = 0;
+  answers.forEach((a,i) => { if(a !== null){ answered++; if(a === QUESTIONS[i].a) correct++; } });
+  return {correct, answered};
+}
+
+function updateStatus(){
+  const {correct, answered} = scoreCount();
+  progressLabelEl.textContent = answered + ' of ' + QUESTIONS.length + ' answered';
+  scoreLabelEl.textContent = 'Score: ' + correct + ' / ' + answered;
+  itemCountEl.textContent = 'ITEM ' + (current+1) + ' / ' + QUESTIONS.length;
+}
+
+function render(){
+  if(current >= QUESTIONS.length){
+    showSummary();
+    return;
+  }
+  cardEl.style.display = '';
+  summaryEl.classList.remove('show');
+
+  const q = QUESTIONS[current];
+  catTagEl.textContent = q.c.toUpperCase();
+  qNumberEl.textContent = 'Q' + (current+1);
+  promptEl.textContent = q.p;
+
+  optionsEl.innerHTML = '';
+  const chosen = answers[current];
+
+  q.o.forEach((text, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.innerHTML = '<span class="letter">' + LETTERS[i] + '</span><span>' + text + '</span>';
+    if(chosen !== null){
+      btn.disabled = true;
+      if(i === q.a) btn.classList.add('correct');
+      else if(i === chosen) btn.classList.add('incorrect');
+    }
+    btn.addEventListener('click', () => selectOption(i));
+    optionsEl.appendChild(btn);
+  });
+
+  if(chosen !== null){
+    const isCorrect = chosen === q.a;
+    feedbackEl.classList.add('show');
+    feedbackEl.classList.toggle('correct-fb', isCorrect);
+    feedbackEl.classList.toggle('incorrect-fb', !isCorrect);
+    verdictEl.textContent = isCorrect ? 'Correct.' : 'Incorrect — correct answer: ' + LETTERS[q.a] + '.';
+    verdictEl.className = 'verdict ' + (isCorrect ? 'correct-text' : 'incorrect-text');
+    explanationEl.textContent = q.e;
+    nextBtn.disabled = false;
+  } else {
+    feedbackEl.classList.remove('show');
+    nextBtn.disabled = true;
+  }
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === QUESTIONS.length - 1 ? 'See results →' : 'Next →';
+
+  updateTicks();
+  updateStatus();
+  window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+}
+
+function selectOption(i){
+  if(answers[current] !== null) return;
+  answers[current] = i;
+  render();
+}
+
+prevBtn.addEventListener('click', () => { if(current>0){ current--; render(); } });
+nextBtn.addEventListener('click', () => { current++; render(); });
+
+function showSummary(){
+  cardEl.style.display = 'none';
+  summaryEl.classList.add('show');
+  const {correct} = scoreCount();
+  document.getElementById('final-score').textContent = correct + ' / ' + QUESTIONS.length;
+  document.getElementById('final-pct').textContent = Math.round((correct/QUESTIONS.length)*100) + '% correct';
+
+  const cats = {};
+  QUESTIONS.forEach((q,i) => {
+    if(!cats[q.c]) cats[q.c] = {correct:0,total:0};
+    cats[q.c].total++;
+    if(answers[i] === q.a) cats[q.c].correct++;
+  });
+  const breakdownEl = document.getElementById('breakdown');
+  breakdownEl.innerHTML = '';
+  Object.keys(cats).forEach(cat => {
+    const row = document.createElement('div');
+    row.className = 'breakdown-row';
+    row.innerHTML = '<span class="cat">' + cat + '</span><span class="frac">' + cats[cat].correct + ' / ' + cats[cat].total + '</span>';
+    breakdownEl.appendChild(row);
+  });
+  itemCountEl.textContent = 'COMPLETE';
+  updateTicks();
+  updateStatus();
+}
+
+restartBtn.addEventListener('click', () => {
+  answers = new Array(QUESTIONS.length).fill(null);
+  current = 0;
+  render();
+});
+
+buildTicks();
+render();
+</script>
+</body>
+</html>

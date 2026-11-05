@@ -1,0 +1,304 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Microcytic Anemia Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one vertical decision tree, indented by branch level, with full lab-reasoning cards at each leaf, then reference tables. */
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --ink:#1a1e26; --muted:#5a6271; --line:#c3c9d4; --test:#e7eaf0;
+  --ida:#a8461f; --ida-bg:#fbeee7;
+  --aci:#2f5f93; --aci-bg:#e8f0f9;
+  --sid:#8f5c00; --sid-bg:#fbf1dc;
+  --thal:#713a86; --thal-bg:#f3eaf7;
+  --up:#b3261e; --up-bg:#fbe5e3; --dn:#1f5fa8; --dn-bg:#e2edf9; --nm:#4d5563; --nm-bg:#eceef2;
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12151b; --surface:#1a1e26; --ink:#e6e9ef; --muted:#9aa3b2; --line:#3a4150; --test:#252a35;
+  --ida:#ec8a63; --ida-bg:#2e1d16; --aci:#7fb0e6; --aci-bg:#17243a; --sid:#e3b04f; --sid-bg:#2c2412; --thal:#c99ae0; --thal-bg:#281d31;
+  --up:#f2948d; --up-bg:#3a1c1b; --dn:#86b7f0; --dn-bg:#172a42; --nm:#b5bcc8; --nm-bg:#2a2f3a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12151b; --surface:#1a1e26; --ink:#e6e9ef; --muted:#9aa3b2; --line:#3a4150; --test:#252a35;
+  --ida:#ec8a63; --ida-bg:#2e1d16; --aci:#7fb0e6; --aci-bg:#17243a; --sid:#e3b04f; --sid-bg:#2c2412; --thal:#c99ae0; --thal-bg:#281d31;
+  --up:#f2948d; --up-bg:#3a1c1b; --dn:#86b7f0; --dn-bg:#172a42; --nm:#b5bcc8; --nm-bg:#2a2f3a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 56px}
+.wrap{max-width:980px;margin:0 auto;display:grid;gap:28px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(30px,5vw,42px)}
+h2{font-size:24px}
+h3{font-size:21px}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.lede{color:var(--muted);max-width:65ch;margin-top:8px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;color:var(--muted);margin-top:14px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+.mono{font-family:var(--mono);font-size:.92em}
+
+/* nodes */
+.node{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:4px;min-width:0}
+.node.test{background:var(--test);border-color:transparent}
+.kind{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.node .t{font-weight:600;font-size:16px}
+.node .s{color:var(--muted);font-size:14px}
+.down{width:2px;height:22px;background:var(--line);margin-left:26px;position:relative}
+.down::after{content:"";position:absolute;left:-4px;bottom:-2px;border:5px solid transparent;border-top:6px solid var(--line);border-bottom:0}
+.micro{border:1.5px solid var(--ink)}
+.tails{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tails b{font-family:var(--mono);font-size:12px;font-weight:500;padding:2px 8px;border-radius:99px;background:var(--test)}
+
+/* tree */
+.branches{display:grid;gap:20px;margin-left:26px;padding-top:20px}
+.branch{position:relative;padding-left:26px;min-width:0;display:grid;gap:10px}
+.branch::before{content:"";position:absolute;left:0;top:-20px;bottom:0;border-left:2px solid var(--line)}
+.branch:last-child::before{bottom:auto;height:34px}
+.branch::after{content:"";position:absolute;left:0;top:13px;width:20px;border-top:2px solid var(--line)}
+.cond{justify-self:start;font-family:var(--mono);font-size:12.5px;font-weight:500;padding:4px 10px;border-radius:99px;background:var(--surface);border:1px solid var(--line)}
+
+/* diagnosis card */
+.dx{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:0}
+.dx header{padding:14px 18px;display:grid;gap:4px}
+.dx header p{font-size:14.5px;max-width:70ch}
+.dx.ida header{background:var(--ida-bg)} .dx.ida h3{color:var(--ida)}
+.dx.aci header{background:var(--aci-bg)} .dx.aci h3{color:var(--aci)}
+.dx.sid header{background:var(--sid-bg)} .dx.sid h3{color:var(--sid)}
+.dx.thal header{background:var(--thal-bg)} .dx.thal h3{color:var(--thal)}
+.labs{display:grid}
+.lab{display:grid;grid-template-columns:10.5rem 3.4rem 1fr;gap:4px 12px;padding:10px 18px;border-top:1px solid var(--line);align-items:start}
+.lab .m{font-weight:600;font-size:14px}
+.lab .w{font-size:14px;color:var(--ink)}
+.chip{font-family:var(--mono);font-size:13px;text-align:center;border-radius:6px;padding:1px 0}
+.up{color:var(--up);background:var(--up-bg)} .dn{color:var(--dn);background:var(--dn-bg)} .nm{color:var(--nm);background:var(--nm-bg)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 20px;padding:14px 18px;border-top:1px solid var(--line);background:color-mix(in srgb,var(--bg) 55%,var(--surface))}
+.facts div{min-width:0}
+.facts dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.facts dd{margin:2px 0 0;font-size:14px}
+dl{margin:0}
+
+/* reference */
+.ref{display:grid;gap:14px}
+.tablebox{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{text-align:left;padding:10px 14px;border-top:1px solid var(--line);vertical-align:top}
+thead th{border-top:0;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td.c{text-align:center;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:8px;min-width:0}
+.panel h3{font-size:18px}
+.panel p,.panel li{font-size:14px}
+.panel ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.foot{font-size:12.5px;color:var(--muted)}
+
+@media (max-width:620px){
+  .branches{margin-left:10px}
+  .branch{padding-left:18px}
+  .branch::after{width:14px}
+  .lab{grid-template-columns:1fr auto;padding:10px 14px}
+  .lab .w{grid-column:1 / -1}
+  .chip{padding:1px 8px}
+  .dx header,.facts{padding-left:14px;padding-right:14px}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Hematology · Week 9 · microcytic branch</div>
+    <h1>Microcytic Anemia Map</h1>
+    <p class="lede">Start at the CBC and follow the results down. Gray boxes are tests you order. Each colored card is a diagnosis, with every lab value and the reason it moves that way.</p>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--test)"></i>Test or decision</span>
+      <span><i class="sw" style="background:var(--ida)"></i>Iron deficiency</span>
+      <span><i class="sw" style="background:var(--aci)"></i>Chronic inflammation</span>
+      <span><i class="sw" style="background:var(--sid)"></i>Sideroblastic / lead</span>
+      <span><i class="sw" style="background:var(--thal)"></i>Thalassemia</span>
+      <span><b class="chip up">&nbsp;↑&nbsp;</b> high</span><span><b class="chip dn">&nbsp;↓&nbsp;</b> low</span><span><b class="chip nm">&nbsp;N&nbsp;</b> normal</span>
+    </div>
+  </header>
+
+  <section aria-label="Decision tree">
+    <div class="node test"><span class="kind">Order</span><span class="t">CBC, reticulocyte count, blood film</span><span class="s">Anemia confirmed: Hb below range (men 135–170, women 115–160 g/L)</span></div>
+    <div class="down"></div>
+    <div class="node micro">
+      <span class="kind">Decide · MCV &lt; 80 fL</span>
+      <span class="t">Microcytic anemia</span>
+      <span class="s">Precursor nuclei keep dividing on schedule while Hb synthesis lags. Each extra division before the cell fills with Hb leaves it smaller and paler. The shortage is either heme (iron, or building iron into heme) or globin.</span>
+      <div class="tails"><b>T · thalassemia</b><b>A · chronic inflammation</b><b>I · iron deficiency</b><b>L · lead</b><b>S · sideroblastic</b></div>
+    </div>
+    <div class="down"></div>
+    <div class="node test"><span class="kind">Order</span><span class="t">Serum ferritin</span><span class="s">Best single marker of iron stores. Low ferritin settles iron deficiency. A normal or high result sends you to full iron studies.</span></div>
+
+    <div class="branches">
+      <!-- IDA -->
+      <div class="branch">
+        <span class="cond">Ferritin ↓</span>
+        <article class="dx ida">
+          <header><span class="kind">Decreased heme · iron supply</span><h3>Iron deficiency anemia</h3>
+            <p>Iron runs out in order: stores empty first, then plasma iron falls, then the marrow stops making full cells. Every lab follows that sequence.</p></header>
+          <div class="labs">
+            <div class="lab"><span class="m">Ferritin</span><span class="chip dn">↓</span><span class="w">Ferritin is the storage shell for iron. Stores are spent first, so ferritin drops before anything else. Most specific test for IDA.</span></div>
+            <div class="lab"><span class="m">Serum iron</span><span class="chip dn">↓</span><span class="w">With stores empty, nothing refills the small plasma pool (about 4 mg) that carries iron to the marrow.</span></div>
+            <div class="lab"><span class="m">TIBC / transferrin</span><span class="chip up">↑</span><span class="w">The liver senses iron need and makes more transferrin to catch every free iron atom. More empty transferrin means more binding capacity.</span></div>
+            <div class="lab"><span class="m">Transferrin sat.</span><span class="chip dn">↓</span><span class="w">Saturation is serum iron ÷ TIBC. A low top over a high bottom gives the lowest saturation of any TAILS cause.</span></div>
+            <div class="lab"><span class="m">RDW</span><span class="chip up">↑</span><span class="w">Cells made after iron ran out are smaller than older cells made before. Two sizes in one sample widen the spread (anisocytosis).</span></div>
+            <div class="lab"><span class="m">RBC count</span><span class="chip dn">↓</span><span class="w">Without iron the marrow makes fewer cells, not only smaller ones. Mentzer index (MCV ÷ RBC) sits above 13.</span></div>
+            <div class="lab"><span class="m">sTfR, zinc protoporphyrin</span><span class="chip up">↑</span><span class="w">Starved precursors put out more transferrin receptors. Protoporphyrin has no iron to receive, so zinc slots in instead.</span></div>
+          </div>
+          <dl class="facts">
+            <div><dt>Film</dt><dd>Hypochromic, anisocytosis, poikilocytosis, elliptocytes (pencil cells). Target cells in severe cases.</dd></div>
+            <div><dt>Clues</dt><dd>Pica, koilonychia, glossitis, restless legs, esophageal webs. Heavy menses, GI bleed, celiac, vegan diet, pregnancy.</dd></div>
+            <div><dt>Next</dt><dd>Find the source. An older adult with no obvious loss needs a GI workup for colon cancer. Then oral or IV iron, transfusion if severe.</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <!-- Ferritin normal/high -->
+      <div class="branch">
+        <span class="cond">Ferritin N or ↑</span>
+        <div class="node test"><span class="kind">Order</span><span class="t">Iron studies, RBC count, blood film</span><span class="s">Serum iron, TIBC, transferrin saturation. Stores are present, so ask where the iron is going.</span></div>
+
+        <div class="branches">
+          <!-- ACI -->
+          <div class="branch">
+            <span class="cond">Fe ↓ · TIBC ↓</span>
+            <article class="dx aci">
+              <header><span class="kind">Decreased heme · iron locked away</span><h3>Anemia of chronic inflammation</h3>
+                <p>Cytokines (IL-6) drive the liver to release hepcidin. Hepcidin blocks ferroportin, the iron exit channel on gut cells and macrophages. Iron sits in stores while the marrow goes without (functional iron deficiency).</p></header>
+              <div class="labs">
+                <div class="lab"><span class="m">Ferritin</span><span class="chip up">N/↑</span><span class="w">Iron is trapped inside macrophages, so stores read full. Ferritin is also an acute-phase reactant and rises with inflammation itself.</span></div>
+                <div class="lab"><span class="m">Serum iron</span><span class="chip dn">↓</span><span class="w">Ferroportin is blocked, so iron never leaves stores or gut cells for the plasma. This withholds iron from microbes.</span></div>
+                <div class="lab"><span class="m">TIBC / transferrin</span><span class="chip dn">↓</span><span class="w">Transferrin is a negative acute-phase protein, so the liver makes less. Full-looking stores give no signal to raise it.</span></div>
+                <div class="lab"><span class="m">Transferrin sat.</span><span class="chip dn">↓/N</span><span class="w">Iron and TIBC both fall, so the ratio drops less than in IDA.</span></div>
+                <div class="lab"><span class="m">RDW</span><span class="chip nm">N</span><span class="w">Production is slow but even, so cell size stays uniform.</span></div>
+                <div class="lab"><span class="m">sTfR</span><span class="chip nm">N</span><span class="w">Precursors are less starved than in IDA. A normal sTfR separates ACI from IDA hidden by a high ferritin.</span></div>
+              </div>
+              <dl class="facts">
+                <div><dt>Film</dt><dd>Hypochromic. Starts normocytic and turns microcytic over time.</dd></div>
+                <div><dt>Clues</dt><dd>TB, osteomyelitis, endocarditis, lung abscess, HIV. RA, SLE, IBD. Lymphoma, carcinoma, myeloma. Alcoholic liver or heart disease.</dd></div>
+                <div><dt>Next</dt><dd>Treat the underlying disease. EPO in severe cases. Seldom needs transfusion.</dd></div>
+              </dl>
+            </article>
+          </div>
+
+          <!-- Sideroblastic -->
+          <div class="branch">
+            <span class="cond">Fe ↑ · saturation ↑</span>
+            <article class="dx sid">
+              <header><span class="kind">Decreased heme · iron not built in</span><h3>Sideroblastic anemia or lead</h3>
+                <p>Iron reaches the precursor and enters the mitochondria, but heme synthesis is broken. Iron never joins protoporphyrin and piles up in mitochondria ringed around the nucleus. B6 is the cofactor for ALA synthase. Lead blocks ALA dehydratase and ferrochelatase.</p></header>
+              <div class="labs">
+                <div class="lab"><span class="m">Ferritin</span><span class="chip up">↑</span><span class="w">Unused iron builds up in stores. Ineffective erythropoiesis also raises gut iron absorption, pushing toward overload.</span></div>
+                <div class="lab"><span class="m">Serum iron</span><span class="chip up">↑</span><span class="w">The marrow fails to use the iron it receives, so plasma iron stays high.</span></div>
+                <div class="lab"><span class="m">TIBC / transferrin</span><span class="chip nm">N/↓</span><span class="w">The body is iron replete or overloaded, so the liver has no drive to make more transferrin.</span></div>
+                <div class="lab"><span class="m">Transferrin sat.</span><span class="chip up">↑</span><span class="w">High iron over a normal or low TIBC.</span></div>
+                <div class="lab"><span class="m">RDW</span><span class="chip up">↑</span><span class="w">Dimorphic blood: normal cells from unaffected precursors mixed with small hypochromic ones.</span></div>
+              </div>
+              <dl class="facts">
+                <div><dt>Film</dt><dd>Basophilic stippling (RNA precipitates, lead blocks the enzyme that clears RNA). Pappenheimer bodies (iron granules).</dd></div>
+                <div><dt>Confirm</dt><dd>Bone marrow with iron stain: ringed sideroblasts. Blood lead level if exposure.</dd></div>
+                <div><dt>Clues</dt><dd>Alcohol, B6 deficiency, anti-TB drugs, alkylator chemo, MDS, X-linked family history, lead exposure.</dd></div>
+                <div><dt>Next</dt><dd>Remove the toxin, chelation for lead, pyridoxine in some cases, transfusion. Marrow transplant rarely.</dd></div>
+              </dl>
+            </article>
+          </div>
+
+          <!-- Thalassemia -->
+          <div class="branch">
+            <span class="cond">Iron N · RBC ↑ · Mentzer &lt; 13</span>
+            <article class="dx thal">
+              <header><span class="kind">Decreased globin</span><h3>Thalassemia (suspect)</h3>
+                <p>A quantitative α or β globin gene defect. Iron is fine. The cell runs short of globin chains to wrap around heme.</p></header>
+              <div class="labs">
+                <div class="lab"><span class="m">Ferritin, Fe, TIBC, sat.</span><span class="chip nm">N</span><span class="w">The defect sits in globin, so iron supply, transport and stores are untouched. In major forms, transfusion and extra absorption push iron up.</span></div>
+                <div class="lab"><span class="m">RBC count</span><span class="chip up">↑</span><span class="w">The marrow is healthy and EPO drives it hard, so it turns out many small cells. Hb falls only mildly despite a low MCV.</span></div>
+                <div class="lab"><span class="m">Mentzer index</span><span class="chip dn">&lt; 13</span><span class="w">Low MCV over a high RBC count gives a small ratio. IDA sits above 13 because both values fall.</span></div>
+                <div class="lab"><span class="m">RDW</span><span class="chip nm">N</span><span class="w">In trait, every cell is small from the start, so sizes stay uniform.</span></div>
+              </div>
+              <dl class="facts">
+                <div><dt>Film</dt><dd>Target cells (excess membrane for the Hb inside), basophilic stippling. Teardrops and hemolysis in severe forms.</dd></div>
+                <div><dt>Next</dt><dd>Hb electrophoresis or HPLC to split α from β.</dd></div>
+              </dl>
+            </article>
+
+            <div class="branches">
+              <div class="branch">
+                <span class="cond">HbA2 ↑ (± HbF ↑)</span>
+                <article class="dx thal">
+                  <header><span class="kind">Mediterranean ancestry</span><h3>β-thalassemia</h3>
+                    <p>Fewer β chains leave α chains without partners. Free α chains precipitate, kill precursors in the marrow and shorten red cell life.</p></header>
+                  <div class="labs">
+                    <div class="lab"><span class="m">HbA2 (α2δ2)</span><span class="chip up">↑</span><span class="w">The cell makes more δ chains to pair with spare α. Elevated HbA2 defines β-thal minor (heterozygous).</span></div>
+                    <div class="lab"><span class="m">HbF (α2γ2)</span><span class="chip up">↑</span><span class="w">γ chains fill in for missing β. Marked in β-thal major (homozygous), which shows from 3–6 months as HbF switch-off fails.</span></div>
+                  </div>
+                  <dl class="facts">
+                    <div><dt>Spectrum</dt><dd>Minor: mild anemia. Intermedia: bone disease, splenomegaly. Major: transfusion-dependent from childhood, bone deformities.</dd></div>
+                    <div><dt>Next</dt><dd>Transfuse by severity, chelate iron (deferoxamine), genetic counselling.</dd></div>
+                  </dl>
+                </article>
+              </div>
+              <div class="branch">
+                <span class="cond">HbA2 N</span>
+                <article class="dx thal">
+                  <header><span class="kind">Southeast Asian or African ancestry</span><h3>α-thalassemia</h3>
+                    <p>HbA, HbA2 and HbF all need α chains, so a short α supply has no backup chain to raise. That is why electrophoresis reads normal in trait.</p></header>
+                  <div class="labs">
+                    <div class="lab"><span class="m">HbA2</span><span class="chip nm">N</span><span class="w">No compensatory shift is possible, so the ratio of A to A2 stays normal.</span></div>
+                    <div class="lab"><span class="m">HbH (β4) / Bart's (γ4)</span><span class="chip up">↑</span><span class="w">Spare β chains pair with each other in adults (HbH). Spare γ chains do the same in the fetus (Bart's). Both hold O₂ poorly, and HbH precipitates to cause hemolysis.</span></div>
+                  </div>
+                  <dl class="facts">
+                    <div><dt>Spectrum</dt><dd>1 gene: silent carrier. 2: trait, mild anemia. 3: HbH disease, hemolysis, splenomegaly. 4: Hb Bart's, hydrops fetalis.</dd></div>
+                    <div><dt>Confirm</dt><dd>Gene sequencing, HbH inclusion body test.</dd></div>
+                  </dl>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ref" aria-label="Reference">
+    <h2>Iron studies side by side</h2>
+    <div class="tablebox">
+      <table>
+        <thead><tr><th>Cause</th><th>Ferritin</th><th>Serum Fe</th><th>TIBC</th><th>Sat.</th><th>RDW</th><th>The one-line reason</th></tr></thead>
+        <tbody>
+          <tr><td><b style="color:var(--ida)">Iron deficiency</b></td><td class="c">↓</td><td class="c">↓</td><td class="c">↑</td><td class="c">↓</td><td class="c">↑</td><td>No iron anywhere. The liver makes transferrin to hunt for more.</td></tr>
+          <tr><td><b style="color:var(--aci)">Chronic inflammation</b></td><td class="c">N/↑</td><td class="c">↓</td><td class="c">↓</td><td class="c">↓/N</td><td class="c">N</td><td>Hepcidin locks iron in stores. Transferrin falls as an acute-phase protein.</td></tr>
+          <tr><td><b style="color:var(--sid)">Sideroblastic / lead</b></td><td class="c">↑</td><td class="c">↑</td><td class="c">N/↓</td><td class="c">↑</td><td class="c">↑</td><td>Iron is delivered but never built into heme, so it backs up.</td></tr>
+          <tr><td><b style="color:var(--thal)">Thalassemia</b></td><td class="c">N</td><td class="c">N</td><td class="c">N</td><td class="c">N</td><td class="c">N</td><td>Globin is the problem. Iron handling is normal.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid2">
+      <div class="panel">
+        <h3>What each test measures</h3>
+        <ul>
+          <li><b>Hemoglobin</b>: iron in circulating cells, about 2500 mg. Overall measure of iron metabolism.</li>
+          <li><b>Serum iron / transferrin</b>: plasma iron, about 4 mg. Delivery to the marrow.</li>
+          <li><b>Ferritin</b>: body stores, about 1500 mg. Only a trace leaks into serum.</li>
+          <li><b>TIBC</b>: how much more iron transferrin will hold. Moves opposite to the body's iron need.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Traps</h3>
+        <ul>
+          <li>Ferritin rises with inflammation. A sick patient with ferritin in the normal range still has possible IDA, often mixed with ACI.</li>
+          <li>ACI starts normocytic. A microcytic picture means it has run a long course.</li>
+          <li>Normal iron studies plus normal electrophoresis in a microcytic patient points to α-thal trait, not a normal workup.</li>
+          <li>Basophilic stippling appears in lead, sideroblastic anemia and thalassemia. Use iron studies and ancestry to split them.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot">Lab patterns, causes and treatments from Nicole's Notes, Week 9. Mechanism explanations, sTfR and Mentzer details added from standard hematology physiology.</p>
+  </section>
+</div>
+
+</body></html>

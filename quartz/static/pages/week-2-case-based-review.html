@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Week 2 — Case-Based Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEF1EF;
+    --paper-card:#FAFBF9;
+    --vignette:#F2EEE3;
+    --ink:#16221E;
+    --ink-soft:#4B5A54;
+    --line:#CBD3CE;
+    --teal:#1F5C52;
+    --teal-deep:#123E37;
+    --gold:#A9823E;
+    --wrong:#A23B2E;
+    --right-bg:#E4EFE8;
+    --wrong-bg:#F5E6E1;
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#121815;
+      --paper-card:#1A211D;
+      --vignette:#211C13;
+      --ink:#E7EDE9;
+      --ink-soft:#9FAEA7;
+      --line:#2C3733;
+      --teal:#5FBBA6;
+      --teal-deep:#7FD1BE;
+      --gold:#D9B673;
+      --wrong:#E28576;
+      --right-bg:#1C2E26;
+      --wrong-bg:#2E211D;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#121815; --paper-card:#1A211D; --vignette:#211C13; --ink:#E7EDE9; --ink-soft:#9FAEA7;
+    --line:#2C3733; --teal:#5FBBA6; --teal-deep:#7FD1BE; --gold:#D9B673; --wrong:#E28576;
+    --right-bg:#1C2E26; --wrong-bg:#2E211D;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-padding-top: calc(96px + env(safe-area-inset-top, 0px));}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .masthead{
+    position:sticky; top:0; z-index:20;
+    background:var(--teal-deep); color:#F4F6F1;
+    padding: calc(14px + env(safe-area-inset-top,0px)) 20px 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+  }
+  .masthead-inner{
+    max-width:780px; margin:0 auto;
+    display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  .masthead h1{ font-family:'Source Serif 4', serif; font-weight:600; font-size:1.1rem; }
+  .masthead .sub{ font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color:#B9C9C2; margin-top:2px; }
+  .score-block{ display:flex; align-items:center; gap:14px; font-family:'IBM Plex Mono', monospace; font-size:0.85rem; }
+  .score-num{ font-size:1.25rem; color:#EFE4C8; }
+  .reset-btn{
+    background:transparent; border:1px solid rgba(244,246,241,0.4); color:#F4F6F1;
+    font-family:'IBM Plex Sans', sans-serif; font-size:0.78rem; padding:6px 12px; border-radius:3px; cursor:pointer;
+  }
+  .reset-btn:hover{ background: rgba(244,246,241,0.08); }
+  .reset-btn:focus-visible, a:focus-visible, .opt:focus-visible, .navlink:focus-visible{
+    outline:2px solid var(--gold); outline-offset:2px;
+  }
+  .progress-track{ max-width:780px; margin:12px auto 0; height:3px; background:rgba(244,246,241,0.15); border-radius:2px; overflow:hidden; }
+  .progress-fill{ height:100%; background:var(--gold); width:0%; transition:width 0.25s ease; }
+
+  main{ max-width:780px; margin:0 auto; padding:34px 20px 100px; }
+  .intro{ margin-bottom:30px; padding-bottom:22px; border-bottom:1px solid var(--line); }
+  .intro .kicker{ font-family:'IBM Plex Mono', monospace; font-size:0.7rem; letter-spacing:0.04em; color:var(--teal); margin-bottom:8px; }
+  .intro p{ color:var(--ink-soft); font-size:0.94rem; max-width:62ch; }
+
+  .caselist{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+  .navlink{
+    font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--teal);
+    border:1px solid var(--line); border-radius:3px; padding:4px 9px; text-decoration:none;
+  }
+  .navlink:hover{ border-color:var(--teal); }
+
+  .case{ margin-bottom:42px; scroll-margin-top: calc(110px + env(safe-area-inset-top,0px)); }
+  .case-head{ margin-bottom:14px; }
+  .case-eyebrow{ font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color:var(--gold); letter-spacing:0.03em; margin-bottom:4px; }
+  .case-title{ font-family:'Source Serif 4', serif; font-weight:600; font-size:1.4rem; color:var(--teal-deep); }
+  :root[data-theme="dark"] .case-title, @media (prefers-color-scheme:dark){ .case-title{ color: var(--teal); } }
+
+  .vignette{
+    background:var(--vignette);
+    border-left:3px solid var(--gold);
+    padding:14px 16px;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    border-radius:2px;
+    margin-bottom:20px;
+  }
+  .vignette b{ color:var(--ink); }
+
+  section.card{
+    background:var(--paper-card); border:1px solid var(--line); border-radius:4px;
+    padding:18px 20px 16px; margin-bottom:14px;
+    scroll-margin-top: calc(110px + env(safe-area-inset-top,0px));
+  }
+  .qhead{ display:flex; gap:12px; margin-bottom:12px; }
+  .qnum{ font-family:'IBM Plex Mono', monospace; font-size:0.95rem; color:var(--teal); min-width:22px; line-height:1.4; }
+  .qtext{ font-size:0.97rem; padding-top:1px; }
+
+  .opts{ list-style:none; display:flex; flex-direction:column; gap:7px; margin-left:34px; }
+  .opt{
+    display:flex; gap:10px; align-items:flex-start; text-align:left; width:100%;
+    background:transparent; border:1px solid var(--line); border-radius:3px; padding:8px 11px;
+    font-family:'IBM Plex Sans', sans-serif; font-size:0.9rem; color:var(--ink); cursor:pointer;
+    transition:border-color 0.15s ease, background 0.15s ease;
+  }
+  .opt:hover:not(:disabled){ border-color:var(--teal); }
+  .opt:disabled{ cursor:default; }
+  .opt .letter{ font-family:'IBM Plex Mono', monospace; color:var(--ink-soft); min-width:14px; }
+  .opt.correct{ background:var(--right-bg); border-color:var(--teal); }
+  .opt.correct .letter{ color:var(--teal); font-weight:600; }
+  .opt.incorrect{ background:var(--wrong-bg); border-color:var(--wrong); }
+  .opt.incorrect .letter{ color:var(--wrong); font-weight:600; }
+  .opt.dim{ opacity:0.55; }
+
+  .rationale{
+    margin-left:34px; margin-top:10px; padding:10px 13px;
+    border-left:3px solid var(--gold); font-size:0.86rem; color:var(--ink-soft); display:none;
+  }
+  .rationale.show{ display:block; }
+  .rationale b{ color:var(--ink); font-weight:600; }
+
+  footer{ max-width:780px; margin:0 auto; padding:10px 20px 50px; color:var(--ink-soft); font-size:0.78rem; font-family:'IBM Plex Mono', monospace; }
+
+  @media (max-width:520px){
+    .opts, .rationale{ margin-left:0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <h1>Foundations of Medicine — Week 2</h1>
+      <div class="sub">Case-based practice set · DSSG-style vignettes, MCQ format</div>
+    </div>
+    <div class="score-block">
+      <span><span class="score-num" id="scoreNum">0</span>/50 correct</span>
+      <button class="reset-btn" id="resetBtn">Reset</button>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+</header>
+
+<main>
+  <div class="intro">
+    <div class="kicker">SELF-STUDY · NOT AN OFFICIAL COURSE DOCUMENT</div>
+    <p>Six short clinical cases, each followed by discrete multiple-choice questions on the concept it illustrates. Click an option to check it — it locks in and shows the rationale.</p>
+    <div class="caselist" id="caselist"></div>
+  </div>
+  <div id="quiz"></div>
+</main>
+
+<footer>Built for review purposes only · not affiliated with Elentra ME or DSSG course materials</footer>
+
+<script>
+const CASES = [
+{
+  id:"case1", eyebrow:"Case 1", title:"The Outbreak Team",
+  vignette:"You're part of a public health unit investigating whether a workplace exposure raises cancer risk in a manufacturing town. Two different study teams propose two different designs, and a screening test is being validated for the follow-up survey.",
+  questions:[
+    {q:"Team A enrols disease-free workers, records their exposure level, and follows them forward 15 years. What design is this?",
+     opts:["Case-control","Prospective cohort","Retrospective cohort","Cross-sectional","Case series"], correct:1,
+     r:"Exposure is defined before outcomes occur and the group is followed forward in time — a prospective cohort."},
+    {q:"Team B instead compares smoking history in 200 cases and 200 controls, looking backward. What design is this?",
+     opts:["Randomized trial","Prospective cohort","Case-control","Cross-sectional","Ecological study"], correct:2,
+     r:"Selecting participants by outcome status and looking back at exposure defines a case-control study."},
+    {q:"Why does the follow-up trial use double-blinding?",
+     opts:["Increases statistical power","Reduces participant/assessor bias","Balances confounders between groups","Removes the need for a control group","Guarantees external validity"], correct:1,
+     r:"Blinding limits performance and detection bias. Randomization, not blinding, balances confounders."},
+    {q:"Exposed risk is 40/1000, unexposed risk is 10/1000. What's the relative risk?",
+     opts:["0.25","2.5","4","40","0.4"], correct:2,
+     r:"RR = 0.04 / 0.01 = 4."},
+    {q:"The new screening test correctly flags 95 of 100 people who truly have the disease. What does this describe?",
+     opts:["Specificity","Sensitivity","Positive predictive value","Prevalence","Negative predictive value"], correct:1,
+     r:"Sensitivity is the proportion of true positives correctly identified — true positives / (true positives + false negatives)."}
+  ]
+},
+{
+  id:"case2", eyebrow:"Case 2", title:"Trauma Bay",
+  vignette:"A 24-year-old man arrives after a motor vehicle collision. The trauma team is describing his injuries using standard terms and ordering imaging.",
+  questions:[
+    {q:"A CT is cut at the umbilicus in the transverse plane. What does this plane divide the body into?",
+     opts:["Anterior and posterior","Left and right","Superior and inferior","Medial and lateral","Proximal and distal"], correct:2,
+     r:"A transverse (axial) plane is horizontal, dividing the body into upper and lower portions."},
+    {q:"The resident documents findings relative to standard anatomical position. What is this position?",
+     opts:["Supine, palms down","Standing, palms facing posteriorly","Standing, feet together, palms facing anteriorly","Prone, arms at sides","Standing with arms crossed"], correct:2,
+     r:"Anatomical position: standing erect, facing forward, feet together, palms facing anteriorly. All directional terms are defined relative to it."},
+    {q:"His elbow injury is described relative to the wrist and shoulder. Which pairing is correct?",
+     opts:["Distal to wrist, proximal to shoulder","Proximal to wrist, distal to shoulder","Distal to both","Proximal to both","Medial to wrist, lateral to shoulder"], correct:1,
+     r:"Proximal/distal are relative to the trunk attachment point. The elbow is closer to the trunk than the wrist, farther than the shoulder."},
+    {q:"He rotates his forearm so his palm turns from facing forward to facing backward. What movement is this?",
+     opts:["Supination","Pronation","Flexion","Circumduction","Abduction"], correct:1,
+     r:"Pronation turns the palm posteriorly as the radius crosses over the ulna."},
+    {q:"He raises both arms away from the midline overhead. What movement is this?",
+     opts:["Adduction","Abduction","Extension","Rotation","Pronation"], correct:1,
+     r:"Abduction moves a limb away from the midline in the coronal plane."},
+    {q:"On his CT, bone is bright white, air is black, and soft tissue is shaded by density. What modality is this?",
+     opts:["Ultrasound","MRI","CT","PET","Fluoroscopy"], correct:2,
+     r:"CT images tissue by x-ray attenuation (density); bone is dense and appears white, air appears black."},
+    {q:"He has a cochlear implant. Why is this a concern before ordering an MRI?",
+     opts:["The dye used is nephrotoxic","The magnetic field can damage or displace the implant","It doubles his radiation exposure","It requires general anesthesia","It cannot be scheduled urgently"], correct:1,
+     r:"MRI's strong magnetic field can damage, move, or heat implanted metal devices such as cochlear implants and non-MRI-conditional pacemakers."},
+    {q:"The team wants to check for free abdominal fluid without radiation. What modality fits best?",
+     opts:["CT","Plain radiograph","Ultrasound","PET","Fluoroscopy"], correct:2,
+     r:"Ultrasound (as in a FAST exam) uses sound waves, not ionizing radiation, and is fast at bedside."},
+    {q:"On his chest X-ray, which structure appears darkest?",
+     opts:["Cortical bone","A metal fragment","Air in the lungs","Muscle","Fat"], correct:2,
+     r:"Radiolucent structures let more x-rays pass through and appear darker; air has the lowest density of the options."}
+  ]
+},
+{
+  id:"case3", eyebrow:"Case 3", title:"The Pathology Bench",
+  vignette:"You're rotating through pathology, reviewing a set of biopsy specimens sent from different patients across the hospital.",
+  questions:[
+    {q:"A biopsy shows one layer of flattened cells lining a gas-exchange surface. Where is this from?",
+     opts:["Alveoli","Stomach lining","Skin epidermis","Bladder lining","Trachea lining"], correct:0,
+     r:"Simple squamous epithelium minimizes diffusion distance, fitting the alveolar gas-exchange surface."},
+    {q:"A skin biopsy shows several layers, keratinized and flat at the surface. What epithelium is this?",
+     opts:["Simple columnar","Stratified squamous, keratinized","Pseudostratified columnar","Simple cuboidal","Transitional"], correct:1,
+     r:"The epidermis is stratified squamous, keratinized to form a tough protective barrier."},
+    {q:"A tracheal biopsy shows one layer of cells at varying heights, all touching the basement membrane, with cilia. What is this?",
+     opts:["Stratified columnar","Simple squamous","Pseudostratified ciliated columnar","Transitional epithelium","Simple cuboidal"], correct:2,
+     r:"Nuclei at different heights give a layered look, but every cell reaches the basement membrane — pseudostratified ciliated columnar, typical of the airway."},
+    {q:"A bladder biopsy (bladder empty) shows rounded cells expected to flatten on stretching. What epithelium is this?",
+     opts:["Simple squamous","Transitional epithelium","Pseudostratified columnar","Stratified squamous, non-keratinized","Simple columnar"], correct:1,
+     r:"Transitional epithelium lines organs that stretch, such as the bladder, changing shape from rounded to flattened."},
+    {q:"A sample of loose connective tissue is sent for review. What is its main function?",
+     opts:["High tensile strength in one direction","Cushioning and insulation only","Binding structures while allowing diffusion","Forming most of the skeleton","Producing antibodies"], correct:2,
+     r:"Loose areolar tissue binds structures together while its loose matrix allows diffusion of nutrients and waste."},
+    {q:"A tendon biopsy shows tightly packed parallel collagen bundles with few cells. What tissue is this?",
+     opts:["Dense irregular connective tissue","Hyaline cartilage","Dense regular connective tissue","Loose areolar tissue","Elastic cartilage"], correct:2,
+     r:"Parallel collagen bundles along the line of stress give dense regular connective tissue its tensile strength, typical of tendons."},
+    {q:"A joint surface biopsy shows smooth, resilient cartilage. What type is this?",
+     opts:["Fibrocartilage","Hyaline cartilage","Elastic cartilage","Dense regular connective tissue","Bone"], correct:1,
+     r:"Hyaline cartilage covers articular surfaces, providing a smooth, low-friction joint surface."},
+    {q:"A fat pad biopsy is reviewed. What is the primary function of this tissue?",
+     opts:["Contraction for movement","Energy storage and cushioning","Electrical conduction","Collagen production","Blood filtration"], correct:1,
+     r:"White adipose tissue stores triglycerides for energy and cushions and insulates surrounding structures."},
+    {q:"A bone biopsy shows mononuclear cells actively laying down new matrix. What are these cells?",
+     opts:["Osteoclasts","Monocyte-derived cells","Osteoblasts","Mature osteocytes","Adipocytes"], correct:2,
+     r:"Osteoblasts synthesize and secrete osteoid, the organic bone matrix, before it mineralizes."},
+    {q:"Cells embedded singly in lacunae, connected by canaliculi, are seen in this bone section. What are they?",
+     opts:["Osteoblasts","Osteoclasts","Osteocytes","Chondrocytes","Fibroblasts"], correct:2,
+     r:"Osteocytes are former osteoblasts trapped within the matrix they made, living in lacunae and linked by canaliculi."},
+    {q:"This patient's bone biopsy shows resorption outpacing formation, as in osteoporosis. What best explains this?",
+     opts:["Osteoblast activity exceeds osteoclast activity","Osteoclast activity exceeds osteoblast activity","Chondrocytes fail to proliferate","Fibroblasts stop making collagen","Osteoid over-mineralizes"], correct:1,
+     r:"Bone remodeling balances osteoblast formation and osteoclast resorption; osteoporosis reflects resorption outpacing formation."}
+  ]
+},
+{
+  id:"case4", eyebrow:"Case 4", title:"Neurology Consult",
+  vignette:"You're asked to see two patients on the same afternoon: one with a lacerated peripheral nerve, and one with a suspected muscle disorder being worked up on the same ward.",
+  questions:[
+    {q:"His hand laceration severed a peripheral nerve. What must happen for the nerve to regrow?",
+     opts:["Oligodendrocytes remyelinate the axon","Schwann cells proliferate and the axon regrows through the conduit","Astrocytes migrate into the wound","The neuron cell body divides","Microglia phagocytose the neuron"], correct:1,
+     r:"In the PNS, proliferating Schwann cells form a conduit that guides axon regrowth back to its target."},
+    {q:"If this injury had occurred in his spinal cord instead, why would recovery be far less likely?",
+     opts:["CNS neurons can't fire action potentials","Oligodendrocytes and the CNS environment inhibit regrowth","The CNS has no blood supply","CNS axons lack neurofilaments","Only PNS neurons can divide"], correct:1,
+     r:"CNS oligodendrocytes and the glial scar release factors that inhibit axon regrowth, unlike the permissive PNS environment."},
+    {q:"On nerve conduction testing, what drives the rising phase of his action potentials?",
+     opts:["K+ channels open, K+ exits","Na+ channels open, Na+ enters","Na+/K+ pump activity peaks","Cl- enters the cell","Ca++ releases from the SR"], correct:1,
+     r:"Depolarization results from voltage-gated Na+ channels opening and Na+ flowing into the cell."},
+    {q:"Right after firing, the axon can't fire again no matter the stimulus. What period is this?",
+     opts:["Absolute refractory period","Relative refractory period","Hyperpolarization only","Summation","Facilitation"], correct:0,
+     r:"During the absolute refractory period, inactivated Na+ channels can't reopen regardless of stimulus strength."},
+    {q:"At rest, his neuron's membrane potential sits closest to the equilibrium potential of which ion?",
+     opts:["Na+","Ca++","Cl-","K+","Mg++"], correct:3,
+     r:"K+ leak channels dominate resting permeability, so resting potential lies close to the K+ equilibrium potential."},
+    {q:"The second patient's biopsy shows muscle fibers joined by discs containing gap junctions. What tissue is this?",
+     opts:["Skeletal muscle","Cardiac muscle","Smooth muscle","Tendon","Nerve fiber"], correct:1,
+     r:"Intercalated discs with gap junctions electrically couple cardiac muscle cells for coordinated contraction."},
+    {q:"At his neuromuscular junction, acetylcholine binding to the end plate causes what?",
+     opts:["Direct sarcomere contraction","Opening of ligand-gated channels, an end plate potential","Ca++ release from T-tubules directly","Hyperpolarization of the fiber","Na+ channel inactivation"], correct:1,
+     r:"ACh binds nicotinic receptors, ligand-gated cation channels, depolarizing the end plate and generating an end plate potential."},
+    {q:"On his muscle biopsy during contraction, which sarcomere change is expected?",
+     opts:["The A band shortens","The I band and H zone narrow","The filaments themselves shorten","Z lines move farther apart","The M line disappears"], correct:1,
+     r:"Thin filaments slide over thick filaments; the filaments don't shorten, but the I band and H zone narrow as Z lines are pulled closer."},
+    {q:"Which protein does calcium bind to trigger this sliding?",
+     opts:["Tropomyosin","Troponin","Actin directly","Myosin light chain kinase only","Titin"], correct:1,
+     r:"Ca++ binds troponin, shifting tropomyosin off the myosin-binding sites on actin, allowing cross-bridge formation."},
+    {q:"His biopsy also shows spindle-shaped, single-nucleated, involuntary fibers. What tissue is this?",
+     opts:["Skeletal muscle","Cardiac muscle","Smooth muscle","Dense connective tissue","Nerve tissue"], correct:2,
+     r:"Smooth muscle cells are spindle-shaped, single-nucleated, non-striated, and under involuntary control."}
+  ]
+},
+{
+  id:"case5", eyebrow:"Case 5", title:"ICU Overnight",
+  vignette:"An elderly patient is admitted overnight with a fluid and electrolyte disturbance, and the team is discussing feedback control of her vital signs on rounds.",
+  questions:[
+    {q:"She rapidly drinks a large volume of pure water. What happens to ECF osmolality and ICF volume after equilibration?",
+     opts:["ECF osmolality up, ICF volume down","ECF osmolality down, ICF volume up","Both decrease","Both increase","Neither changes"], correct:1,
+     r:"Pure water dilutes the ECF, lowering its osmolality; water then shifts into cells, raising ICF volume."},
+    {q:"Her labs show plasma has a much higher protein concentration than her interstitial fluid. Why?",
+     opts:["Sodium is higher in plasma","Potassium is higher in plasma","Plasma proteins are too large to cross the capillary wall","Chloride is higher in plasma","Plasma has less water"], correct:2,
+     r:"Plasma and interstitial fluid share similar small-ion levels, but plasma proteins are largely retained in plasma because they can't cross the capillary wall."},
+    {q:"Her low albumin is causing peripheral edema. What's the main mechanism?",
+     opts:["Decreased capillary hydrostatic pressure","Decreased plasma oncotic pressure","Increased lymphatic drainage","Increased plasma osmolality pulling water from cells","Increased arterial pressure alone"], correct:1,
+     r:"Plasma proteins generate oncotic pressure that pulls fluid back into capillaries; low protein weakens this pull, causing fluid to remain in tissue."},
+    {q:"Her glucose is regulated by insulin release when it rises. In this loop, blood glucose itself is the:",
+     opts:["Effector","Sensor","Controlled variable","Integrating center","Stimulus, not part of the loop"], correct:2,
+     r:"The controlled variable is what's regulated. Sensors detect it, a center compares it to a set point, and effectors correct it."},
+    {q:"A separate patient in labor has escalating contractions as oxytocin release increases with cervical stretch. What kind of loop is this?",
+     opts:["Negative feedback","Positive feedback","No feedback, a simple reflex","Feedforward control","A change in set point"], correct:1,
+     r:"Positive feedback amplifies the original stimulus. Cervical stretch and oxytocin release escalate until delivery ends the cycle."},
+    {q:"Her fever is thought to reflect a raised hypothalamic set point. What would you expect before it's reached?",
+     opts:["Sweating and vasodilation","Shivering and vasoconstriction","No change in effector activity","Immediate drop to baseline","Suppression of the hypothalamus"], correct:1,
+     r:"A raised set point makes current temperature seem too low, triggering heat-generating and heat-conserving responses like shivering and vasoconstriction."}
+  ]
+},
+{
+  id:"case6", eyebrow:"Case 6", title:"The Genetics and Cell Biology Lab",
+  vignette:"You're spending an afternoon in a research lab that studies cell organelle function and is also characterizing a newly discovered virus.",
+  questions:[
+    {q:"A pancreatic cell secretes large amounts of digestive enzyme. Which organelle would be especially well-developed?",
+     opts:["Smooth ER","Rough ER","Peroxisomes","Lysosomes only","Cytoskeleton only"], correct:1,
+     r:"Rough ER, studded with ribosomes, is the main site of synthesis for proteins destined for secretion."},
+    {q:"Which organelle generates most of the cell's ATP through oxidative phosphorylation?",
+     opts:["Golgi apparatus","Lysosome","Mitochondrion","Nucleolus","Smooth ER"], correct:2,
+     r:"Mitochondria house the electron transport chain and ATP synthase on their inner membrane."},
+    {q:"A cell that digests worn-out organelles and engulfed material would be rich in which organelle?",
+     opts:["Peroxisomes","Lysosomes","Ribosomes","Golgi apparatus","Centrioles"], correct:1,
+     r:"Lysosomes contain hydrolytic enzymes for autophagy and phagocytic digestion."},
+    {q:"Ribosomal RNA is synthesized and ribosomal subunits are assembled at which nuclear structure?",
+     opts:["Nuclear envelope","Nucleolus","Chromatin","Nuclear pore complex","Nuclear lamina"], correct:1,
+     r:"The nucleolus is specialized for rRNA transcription and initial ribosomal subunit assembly."},
+    {q:"What is the basic building block of carbohydrates?",
+     opts:["Amino acids","Monosaccharides","Fatty acids","Nucleotides","Glycerol"], correct:1,
+     r:"Monosaccharides link together to form disaccharides and polysaccharides."},
+    {q:"Triglycerides are built from glycerol plus which other component?",
+     opts:["Three fatty acids","Two amino acids and a fatty acid","Three monosaccharides","A nucleotide and two fatty acids","Phosphate only"], correct:0,
+     r:"A triglyceride is glycerol esterified to three fatty acid chains — the main lipid energy-storage form."},
+    {q:"Which best describes DNA's structure?",
+     opts:["A single strand of ribonucleotides","A double helix of deoxyribonucleotides with complementary base pairing","A branched amino acid polymer","A single circular strand only in mitochondria","A folded sheet of sugar chains"], correct:1,
+     r:"DNA's two antiparallel strands wind into a double helix, held together by base pairing (A-T, G-C)."},
+    {q:"What is the correct order of the central dogma?",
+     opts:["Translation, then transcription","Transcription (DNA to mRNA), then translation (mRNA to protein)","DNA replicates directly into protein","Translation skips RNA entirely","Protein is transcribed into mRNA"], correct:1,
+     r:"DNA is transcribed into mRNA, which is then translated by ribosomes into protein."},
+    {q:"The lab's new virus stores genetic material with ribose sugar and uracil instead of thymine. What is this molecule?",
+     opts:["DNA","RNA","A protein","A polysaccharide","A phospholipid"], correct:1,
+     r:"Ribose and uracil (instead of deoxyribose and thymine) are defining features of RNA."}
+  ]
+}
+];
+
+let flatQuestions = [];
+CASES.forEach((c, ci) => { c.questions.forEach((q, qi) => flatQuestions.push({caseIndex:ci, qIndex:qi})); });
+let selected = {};
+const totalQ = flatQuestions.length;
+
+function render(){
+  const quiz = document.getElementById('quiz');
+  const caselist = document.getElementById('caselist');
+  quiz.innerHTML = '';
+  caselist.innerHTML = '';
+  const letters = ['A','B','C','D','E'];
+
+  CASES.forEach((c, ci) => {
+    const navlink = document.createElement('a');
+    navlink.href = '#' + c.id;
+    navlink.className = 'navlink';
+    navlink.textContent = c.eyebrow;
+    caselist.appendChild(navlink);
+
+    const caseDiv = document.createElement('div');
+    caseDiv.className = 'case';
+    caseDiv.id = c.id;
+
+    const head = document.createElement('div');
+    head.className = 'case-head';
+    head.innerHTML = '<div class="case-eyebrow">' + c.eyebrow + '</div><div class="case-title">' + c.title + '</div>';
+    caseDiv.appendChild(head);
+
+    const vig = document.createElement('div');
+    vig.className = 'vignette';
+    vig.innerHTML = c.vignette;
+    caseDiv.appendChild(vig);
+
+    c.questions.forEach((item, qi) => {
+      const section = document.createElement('section');
+      section.className = 'card';
+      section.id = c.id + '-q' + (qi+1);
+
+      const qhead = document.createElement('div');
+      qhead.className = 'qhead';
+      const num = document.createElement('div');
+      num.className = 'qnum';
+      num.textContent = (qi+1) + '.';
+      const qtext = document.createElement('div');
+      qtext.className = 'qtext';
+      qtext.textContent = item.q;
+      qhead.appendChild(num);
+      qhead.appendChild(qtext);
+      section.appendChild(qhead);
+
+      const list = document.createElement('div');
+      list.className = 'opts';
+      item.opts.forEach((optText, oi) => {
+        const btn = document.createElement('button');
+        btn.className = 'opt';
+        btn.type = 'button';
+        btn.innerHTML = '<span class="letter">' + letters[oi] + '</span><span>' + optText + '</span>';
+        btn.addEventListener('click', () => handleAnswer(ci, qi, oi));
+        list.appendChild(btn);
+      });
+      section.appendChild(list);
+
+      const rat = document.createElement('div');
+      rat.className = 'rationale';
+      rat.id = 'rat-' + ci + '-' + qi;
+      rat.innerHTML = '<b>Rationale.</b> ' + item.r;
+      section.appendChild(rat);
+
+      caseDiv.appendChild(section);
+    });
+
+    quiz.appendChild(caseDiv);
+  });
+}
+
+function handleAnswer(ci, qi, oi){
+  const key = ci + '-' + qi;
+  if(selected[key] !== undefined) return;
+  selected[key] = oi;
+  const section = document.getElementById(CASES[ci].id + '-q' + (qi+1));
+  const buttons = section.querySelectorAll('.opt');
+  const correctIdx = CASES[ci].questions[qi].correct;
+  buttons.forEach((btn, i) => {
+    btn.disabled = true;
+    if(i === correctIdx){ btn.classList.add('correct'); }
+    else if(i === oi){ btn.classList.add('incorrect'); }
+    else { btn.classList.add('dim'); }
+  });
+  document.getElementById('rat-' + ci + '-' + qi).classList.add('show');
+  updateScore();
+}
+
+function updateScore(){
+  let correctCount = 0, answered = 0;
+  Object.keys(selected).forEach(key => {
+    const [ci, qi] = key.split('-').map(Number);
+    answered++;
+    if(selected[key] === CASES[ci].questions[qi].correct) correctCount++;
+  });
+  document.getElementById('scoreNum').textContent = correctCount;
+  document.getElementById('progressFill').style.width = (answered / totalQ * 100) + '%';
+}
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  selected = {};
+  render();
+  updateScore();
+});
+
+render();
+</script>
+</body>
+</html>

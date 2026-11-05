@@ -1,0 +1,2475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Foundations of Medicine Week 2 practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<style>
+:root {
+  --paper: #EAF0F2;
+  --card: #F8FBFC;
+  --ink: #14262E;
+  --slate: #4C6069;
+  --line: #C5D3D9;
+  --teal: #0F6E73;
+  --teal-soft: #D5EAEA;
+  --ok: #1E7A4B;
+  --ok-soft: #DAEFE3;
+  --bad: #B0344C;
+  --bad-soft: #F7DDE2;
+  --mark: rgba(243, 217, 107, 0.85);
+  --serif: "Literata", Georgia, "Times New Roman", serif;
+  --sans: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F1B20;
+    --card: #16272E;
+    --ink: #E4EEF1;
+    --slate: #9DB2BA;
+    --line: #2C444E;
+    --teal: #5CC2C6;
+    --teal-soft: #1B3A3F;
+    --ok: #5FCB92;
+    --ok-soft: #173A2A;
+    --bad: #F08AA0;
+    --bad-soft: #40202A;
+    --mark: rgba(214, 181, 60, 0.4);
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F1B20;
+  --card: #16272E;
+  --ink: #E4EEF1;
+  --slate: #9DB2BA;
+  --line: #2C444E;
+  --teal: #5CC2C6;
+  --teal-soft: #1B3A3F;
+  --ok: #5FCB92;
+  --ok-soft: #173A2A;
+  --bad: #F08AA0;
+  --bad-soft: #40202A;
+  --mark: rgba(214, 181, 60, 0.4);
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+
+.app {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 2.5rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Rail */
+.rail {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+}
+.brand h1 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+}
+.brand p { margin: 0; color: var(--slate); font-size: 0.95rem; }
+.count { margin: 1.25rem 0 0.6rem; font-weight: 600; font-size: 0.95rem; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.4rem;
+}
+.num {
+  position: relative;
+  min-height: 44px;
+  border: 1.5px solid var(--line);
+  background: var(--card);
+  border-radius: 8px;
+  font-weight: 600;
+}
+.num.right { background: var(--ok-soft); border-color: var(--ok); color: var(--ok); }
+.num.wrong { background: var(--bad-soft); border-color: var(--bad); color: var(--bad); }
+.num.shown { border-style: dashed; border-color: var(--teal); color: var(--teal); }
+.num.right::after, .num.wrong::after {
+  position: absolute;
+  top: 1px;
+  right: 4px;
+  font-size: 0.65rem;
+}
+.num.right::after { content: "\2713"; }
+.num.wrong::after { content: "\2715"; }
+.num.cur { box-shadow: 0 0 0 3px var(--teal); }
+.links { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+.link {
+  min-height: 40px;
+  padding: 0 0.9rem;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  font-weight: 600;
+}
+.link.cur { border-color: var(--teal); background: var(--teal-soft); }
+.hint { margin: 1.25rem 0 0; color: var(--slate); font-size: 0.85rem; }
+
+/* Card */
+.card {
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  padding: 2rem 2.25rem;
+}
+main:focus { outline: none; }
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: var(--slate);
+  font-size: 0.92rem;
+  margin: 0 0 1rem;
+}
+.stem {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+  max-width: 68ch;
+}
+.opts { display: grid; gap: 0.6rem; }
+.opt {
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  align-items: start;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 52px;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  line-height: 1.45;
+}
+.opt:hover:not(:disabled) { border-color: var(--teal); }
+.opt[aria-checked="true"] { border-color: var(--teal); background: var(--teal-soft); }
+.opt:disabled { cursor: default; color: inherit; }
+.opt .k {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.multi .opt .k { border-radius: 6px; }
+.opt .tag { font-size: 0.85rem; font-weight: 600; white-space: nowrap; padding-top: 0.15rem; }
+.opt.is-correct { border-color: var(--ok); background: var(--ok-soft); }
+.opt.is-correct .tag, .opt.is-correct .k { color: var(--ok); }
+.opt.is-wrong { border-color: var(--bad); background: var(--bad-soft); }
+.opt.is-wrong .tag, .opt.is-wrong .k { color: var(--bad); }
+
+.actions, .nav { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.btn {
+  min-height: 46px;
+  padding: 0 1.25rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--teal);
+  background: transparent;
+  color: var(--teal);
+  font-weight: 700;
+}
+.btn.primary { background: var(--teal); color: var(--card); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.nav { justify-content: space-between; margin-top: 2rem; padding-top: 1.5rem; border-top: 1.5px solid var(--line); }
+
+.banner {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  border: 1.5px solid;
+}
+.banner strong { font-size: 1.1rem; }
+.banner p { margin: 0.2rem 0 0; }
+.banner.ok { background: var(--ok-soft); border-color: var(--ok); }
+.banner.bad { background: var(--bad-soft); border-color: var(--bad); }
+.banner.info { background: var(--teal-soft); border-color: var(--teal); }
+
+.detail h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin: 2rem 0 0.75rem;
+  font-weight: 600;
+}
+.detail ol { margin: 0; padding-left: 1.4rem; max-width: 68ch; }
+.detail ol li { margin-bottom: 0.4rem; }
+.clue { margin: 0 0 0.9rem; max-width: 68ch; }
+.clue mark {
+  background: linear-gradient(transparent 50%, var(--mark) 50%);
+  color: inherit;
+  padding: 0 0.15em;
+  font-weight: 600;
+}
+.clue span { display: block; color: var(--slate); margin-top: 0.15rem; }
+.why {
+  border-left: 4px solid var(--line);
+  padding: 0.1rem 0 0.1rem 1rem;
+  margin: 0 0 1.1rem;
+  max-width: 68ch;
+}
+.why.good { border-left-color: var(--ok); }
+.why.miss { border-left-color: var(--bad); }
+.why h4 { margin: 0 0 0.25rem; font-size: 1rem; }
+.why h4 em { font-style: normal; font-weight: 700; margin-left: 0.4rem; }
+.why.good h4 em { color: var(--ok); }
+.why.miss h4 em { color: var(--bad); }
+.why p { margin: 0; }
+.final {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  background: var(--teal-soft);
+  border: 1.5px solid var(--teal);
+}
+.final h3 { margin: 0 0 0.4rem; }
+.final p { margin: 0.15rem 0; }
+
+/* Score and key review */
+.rows { display: grid; gap: 0.5rem; margin-top: 1.25rem; }
+.row {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+}
+.row .st { font-weight: 600; font-size: 0.9rem; }
+.row .st.right { color: var(--ok); }
+.row .st.wrong { color: var(--bad); }
+.row .st.shown { color: var(--teal); }
+.row button { min-height: 40px; padding: 0 0.9rem; border-radius: 8px; border: 1.5px solid var(--teal); background: transparent; color: var(--teal); font-weight: 600; }
+.card h2 { font-family: var(--serif); font-size: 1.6rem; margin: 0 0 0.5rem; font-weight: 600; }
+.lead { max-width: 62ch; color: var(--slate); margin: 0 0 1rem; }
+.flag { margin: 0 0 1.4rem; max-width: 68ch; border-left: 4px solid var(--teal); padding-left: 1rem; }
+.flag h4 { margin: 0 0 0.3rem; font-size: 1.02rem; }
+.flag p { margin: 0; }
+
+@media (max-width: 860px) {
+  .app { display: block; padding: 0 0 3rem; }
+  .rail {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 5;
+    background: var(--paper);
+    border-bottom: 1.5px solid var(--line);
+    padding: 0.6rem 1rem 0.7rem;
+  }
+  .brand { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; }
+  .brand h1 { font-size: 1.1rem; }
+  .brand p { display: none; }
+  .count { margin: 0.2rem 0 0.4rem; font-size: 0.85rem; }
+  .grid { display: flex; overflow-x: auto; gap: 0.4rem; padding-bottom: 0.3rem; }
+  .num { flex: 0 0 44px; }
+  .links { margin-top: 0.4rem; }
+  .hint { display: none; }
+  main { padding: 1rem; }
+  .card { padding: 1.25rem 1.1rem; border-radius: 12px; }
+  .stem { font-size: 1.15rem; }
+  .opt { grid-template-columns: 2rem 1fr; }
+  .opt .tag { grid-column: 2; }
+  .nav .btn { flex: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="rail" id="rail" aria-label="Question navigation"></aside>
+  <main id="main" tabindex="-1"></main>
+</div>
+
+<script>
+const Q = [
+ {
+  "t": "Biomolecules",
+  "m": false,
+  "s": "Cells build four classes of organic macromolecules from smaller subunits. Which item below is a macromolecule and not one of those subunits?",
+  "o": [
+   [
+    "A",
+    "Amino acid",
+    false,
+    "Wrong. Amino acids are the subunits of proteins. It would be correct if the question asked for the building block of a protein."
+   ],
+   [
+    "B",
+    "Nucleotide",
+    false,
+    "Wrong. Nucleotides are the subunits of nucleic acids. It would be correct if the question asked for the building block of DNA or RNA."
+   ],
+   [
+    "C",
+    "Protein",
+    true,
+    "Correct. A protein is a polymer of amino acids. The four organic macromolecule classes are carbohydrates, proteins, lipids and nucleic acids."
+   ],
+   [
+    "D",
+    "Fatty acid",
+    false,
+    "Wrong. Fatty acids are small molecules that serve as components of many lipids. It would be correct if the question asked for a micromolecule that builds lipids."
+   ],
+   [
+    "E",
+    "Monosaccharide",
+    false,
+    "Wrong. Monosaccharides are the subunits of carbohydrates. It would be correct if the question asked for the building block of a polysaccharide."
+   ]
+  ],
+  "st": [
+   "Recall the four macromolecule classes: carbohydrates, proteins, lipids and nucleic acids.",
+   "Sort each option as a subunit or an assembled polymer.",
+   "Choose the polymer."
+  ],
+  "cl": [
+   [
+    "not one of those subunits",
+    "Look for the assembled class member, not its building block."
+   ],
+   [
+    "four classes of organic macromolecules",
+    "Carbohydrates, proteins, lipids and nucleic acids."
+   ]
+  ]
+ },
+ {
+  "t": "Biomolecules",
+  "m": true,
+  "s": "Which statements comparing DNA and RNA are true? Select all that apply.",
+  "o": [
+   [
+    "A",
+    "DNA contains uracil and RNA contains thymine.",
+    false,
+    "False. The bases are reversed. The statement would be true only if the two nucleic acids were swapped."
+   ],
+   [
+    "B",
+    "DNA is double stranded and relatively stable.",
+    true,
+    "True. The double-stranded structure gives DNA the stability needed for long-term storage of genetic information."
+   ],
+   [
+    "C",
+    "RNA contains uracil where DNA contains thymine.",
+    true,
+    "True. Uracil replaces thymine in RNA."
+   ],
+   [
+    "D",
+    "RNA is usually single stranded and is degraded quickly.",
+    true,
+    "True. Rapid turnover lets a cell adjust which proteins it makes."
+   ],
+   [
+    "E",
+    "DNA is translated directly into protein.",
+    false,
+    "False. Messenger RNA is translated into protein. The statement would be true only if it named mRNA."
+   ]
+  ],
+  "st": [
+   "Recall the base difference: DNA uses thymine and RNA uses uracil.",
+   "Recall structure and stability: DNA is double stranded and stable, RNA is single stranded and short lived.",
+   "Recall the flow of information: mRNA, not DNA, is translated."
+  ],
+  "cl": [
+   [
+    "translated directly",
+    "Translation reads mRNA, so a claim about DNA translation is a trap."
+   ],
+   [
+    "swapped",
+    "Reversed base assignments are false."
+   ]
+  ]
+ },
+ {
+  "t": "Biomolecules",
+  "m": false,
+  "s": "A reaction proceeds on its own but slowly. A cell adds an enzyme and the reaction speeds up. Which statement best explains what the enzyme does?",
+  "o": [
+   [
+    "A",
+    "It supplies the energy needed to reach the transition state.",
+    false,
+    "Wrong. Enzymes do not supply energy. This would describe coupling to ATP hydrolysis in a reaction that is not spontaneous."
+   ],
+   [
+    "B",
+    "It lowers the activation energy of the reaction.",
+    true,
+    "Correct. Enzymes lower the activation energy. They do not change the reactants, the end products or the direction of a spontaneous reaction."
+   ],
+   [
+    "C",
+    "It changes the end products so the reaction proceeds in a new direction.",
+    false,
+    "Wrong. Enzymes leave the reactants and end products unchanged. A change in products would mean a different reaction."
+   ],
+   [
+    "D",
+    "It is used up as the reaction proceeds.",
+    false,
+    "Wrong. Enzymes are reusable. Substrates are the molecules consumed."
+   ]
+  ],
+  "st": [
+   "Note that the reaction is spontaneous but slow.",
+   "Ask what limits the rate. The activation energy barrier does.",
+   "Choose the option that lowers the barrier and leaves reactants and products unchanged."
+  ],
+  "cl": [
+   [
+    "proceeds on its own but slowly",
+    "A spontaneous reaction with a high barrier. An enzyme lowers the barrier."
+   ],
+   [
+    "speeds up",
+    "Rate changes, but the products do not."
+   ]
+  ]
+ },
+ {
+  "t": "Histology basics",
+  "m": false,
+  "s": "In an H&E section, nuclei stain blue-purple and much of the cytoplasm stains pink. Which statement explains the staining?",
+  "o": [
+   [
+    "A",
+    "Hematoxylin is acidic and binds basic structures. Eosin is basic and binds acidic structures.",
+    false,
+    "Wrong. The dye charges are reversed. This would be correct only if nuclei were basic, which they are not."
+   ],
+   [
+    "B",
+    "Hematoxylin and eosin are both basic dyes that differ only in colour.",
+    false,
+    "Wrong. The two dyes have opposite charges, which is why they stain different structures."
+   ],
+   [
+    "C",
+    "Hematoxylin is basic and binds basic structures. Eosin is acidic and binds acidic structures.",
+    false,
+    "Wrong. Dyes bind structures of opposite charge, not like charge."
+   ],
+   [
+    "D",
+    "Hematoxylin is basic and binds acidic structures such as nucleic acids. Eosin is acidic and binds basic structures such as many cytoplasmic proteins.",
+    true,
+    "Correct. Each dye binds structures of the opposite charge. Nucleic acids are acidic, so they take up the basic dye hematoxylin and appear blue."
+   ]
+  ],
+  "st": [
+   "Note that nucleic acids are acidic.",
+   "A basic dye binds acidic structures, so hematoxylin stains nuclei blue.",
+   "Eosin is acidic and stains basic components pink."
+  ],
+  "cl": [
+   [
+    "nuclei stain blue-purple",
+    "Acidic nucleic acids bind the basic dye hematoxylin."
+   ],
+   [
+    "cytoplasm stains pink",
+    "Basic proteins bind the acidic dye eosin."
+   ]
+  ]
+ },
+ {
+  "t": "Cell biology",
+  "m": false,
+  "s": "Which cell specialization is NOT possible?",
+  "o": [
+   [
+    "A",
+    "A cell keeps permanently open pores in its surface so that small and large molecules pass freely.",
+    true,
+    "Correct, because this is not possible. Constantly open pores destroy the integrity of the cytoplasm and the cell dies. Cells use channels that selectively regulate passage instead."
+   ],
+   [
+    "B",
+    "A B cell expands its rough endoplasmic reticulum to make large amounts of antibody.",
+    false,
+    "This is possible, so it is not the answer. Cells that secrete large amounts of protein have extensive rough ER. It would be the answer only if it said such cells lose their ER."
+   ],
+   [
+    "C",
+    "An intestinal epithelial cell forms microvilli to increase its absorptive surface area.",
+    false,
+    "This is possible, so it is not the answer. Microvilli increase surface area for absorption."
+   ],
+   [
+    "D",
+    "A lens fibre cell loses its nucleus so light passes without disruption.",
+    false,
+    "This is possible, so it is not the answer. Lens fibre cells lose their nuclei."
+   ],
+   [
+    "E",
+    "Skeletal muscle cells fuse to form large multinucleated fibres.",
+    false,
+    "This is possible, so it is not the answer. Skeletal muscle fibres are multinucleated cells."
+   ]
+  ],
+  "st": [
+   "Read the stem. You are looking for the impossible specialization.",
+   "Test each option against known examples: B cells, enterocytes, lens fibre cells, muscle fibres.",
+   "Spot the option that removes selective control of the membrane."
+  ],
+  "cl": [
+   [
+    "NOT possible",
+    "The true statements are the distractors."
+   ],
+   [
+    "permanently open pores",
+    "A cell needs selective control of what crosses its membrane."
+   ]
+  ]
+ },
+ {
+  "t": "Evidence-based medicine",
+  "m": false,
+  "s": "Which statement best describes evidence-based medicine (EBM)?",
+  "o": [
+   [
+    "A",
+    "Clinicians use scientific evidence exclusively and set aside clinical judgment.",
+    false,
+    "Wrong. EBM does not exclude judgment. This would describe a rigid protocol approach."
+   ],
+   [
+    "B",
+    "Clinicians integrate the best available evidence with clinical expertise and patient values and preferences.",
+    true,
+    "Correct. EBM combines evidence, expertise and patient values. It also aims to reduce unwarranted variation in care."
+   ],
+   [
+    "C",
+    "Clinicians follow expert opinion first and use evidence only when experts disagree.",
+    false,
+    "Wrong. Expert opinion is the lowest tier of evidence. This would describe opinion-based practice."
+   ],
+   [
+    "D",
+    "Clinicians give every patient the same treatment regardless of preference.",
+    false,
+    "Wrong. EBM reduces unwarranted variation but still incorporates patient preferences."
+   ]
+  ],
+  "st": [
+   "Recall the three inputs to an EBM decision: best evidence, clinical expertise and patient values.",
+   "Reject statements that use one input alone.",
+   "Choose the integrated statement."
+  ],
+  "cl": [
+   [
+    "best available evidence",
+    "EBM uses the best evidence, not evidence exclusively."
+   ],
+   [
+    "patient values and preferences",
+    "Patient preferences are part of the decision."
+   ]
+  ]
+ },
+ {
+  "t": "Evidence-based medicine",
+  "m": false,
+  "s": "You search for randomized trials of mRNA vaccination in children, compared with placebo, that measure symptomatic infection. In the PICO framework, which letter matches 'placebo'?",
+  "o": [
+   [
+    "A",
+    "P",
+    false,
+    "Wrong. P is the population, here children. It would be correct if the question asked about 'children'."
+   ],
+   [
+    "B",
+    "I",
+    false,
+    "Wrong. I is the intervention, here mRNA vaccination. It would be correct if the question asked about 'mRNA vaccination'."
+   ],
+   [
+    "C",
+    "C",
+    true,
+    "Correct. C is the comparator or control, here placebo."
+   ],
+   [
+    "D",
+    "O",
+    false,
+    "Wrong. O is the outcome, here symptomatic infection. It would be correct if the question asked about 'symptomatic infection'."
+   ]
+  ],
+  "st": [
+   "Split the stem into parts: children, mRNA vaccination, placebo, symptomatic infection.",
+   "Assign each part: population, intervention, comparator, outcome.",
+   "Choose the letter for the comparator."
+  ],
+  "cl": [
+   [
+    "compared with placebo",
+    "The comparison group is the comparator."
+   ]
+  ]
+ },
+ {
+  "t": "Evidence-based medicine",
+  "m": false,
+  "s": "In 2026, investigators review company personnel files from 1990 to 2015 to score employees' asbestos exposure by work location and duration. They then use tumour registries to find who developed mesothelioma. They did not assign exposure. Which design is this?",
+  "o": [
+   [
+    "A",
+    "Retrospective cohort",
+    true,
+    "Correct. Exposure was not assigned, so the design is observational. Groups were defined by exposure, so it is a cohort. Records from the past were used, so it is retrospective."
+   ],
+   [
+    "B",
+    "Case-control",
+    false,
+    "Wrong. A case-control study starts with people who have the outcome and compares their past exposure with controls. It would be correct if the investigators had started with patients who had mesothelioma."
+   ],
+   [
+    "C",
+    "Prospective cohort",
+    false,
+    "Wrong. A prospective cohort enrols people now and follows them forward. It would be correct if the investigators had started in 2026 and waited for outcomes."
+   ],
+   [
+    "D",
+    "Cross-sectional",
+    false,
+    "Wrong. A cross-sectional study measures exposure and outcome at one point in time. It would be correct if a single survey measured both."
+   ],
+   [
+    "E",
+    "Randomized controlled trial",
+    false,
+    "Wrong. An RCT assigns exposure by randomization. It would be correct if the investigators had allocated exposure."
+   ]
+  ],
+  "st": [
+   "Ask whether exposure was assigned. It was not, so the study is observational.",
+   "Ask how groups were formed. By exposure, so it is a cohort.",
+   "Ask when the data were gathered. From past records, so it is retrospective."
+  ],
+  "cl": [
+   [
+    "did not assign exposure",
+    "Observational design."
+   ],
+   [
+    "score employees' exposure ... then find who developed",
+    "Exposure first, outcome second. This is a cohort."
+   ],
+   [
+    "personnel files from 1990 to 2015",
+    "Past records make it retrospective."
+   ]
+  ]
+ },
+ {
+  "t": "Evidence-based medicine",
+  "m": false,
+  "s": "Which statement about trial design is correct?",
+  "o": [
+   [
+    "A",
+    "Blinding reduces confounding by unknown factors. Randomization reduces bias in outcome assessment.",
+    false,
+    "Wrong. The roles are swapped. It would be correct if the two terms were exchanged."
+   ],
+   [
+    "B",
+    "Matching balances known and unknown confounders equally.",
+    false,
+    "Wrong. Matching addresses only confounders you know and measure."
+   ],
+   [
+    "C",
+    "A larger sample size removes confounding.",
+    false,
+    "Wrong. A larger sample improves precision but does not remove confounding."
+   ],
+   [
+    "D",
+    "Randomization reduces confounding by known and unknown factors. Blinding reduces bias in outcome assessment and reporting.",
+    true,
+    "Correct. Randomization is the technique that attempts to balance both known and unknown confounders across groups. Blinding limits knowledge of allocation, which reduces bias."
+   ]
+  ],
+  "st": [
+   "Separate confounding from bias.",
+   "Randomization handles confounding, including unknown confounders.",
+   "Blinding handles bias in how outcomes are assessed and reported.",
+   "Choose the option that assigns each tool correctly."
+  ],
+  "cl": [
+   [
+    "known and unknown",
+    "Only randomization balances unknown confounders."
+   ]
+  ]
+ },
+ {
+  "t": "Evidence-based medicine",
+  "m": false,
+  "s": "A large trial reports that a drug lowers systolic blood pressure by 1 mmHg with p = 0.03. The alpha level was 0.05. Which conclusion is best?",
+  "o": [
+   [
+    "A",
+    "There is a 3 percent probability that the null hypothesis is true.",
+    false,
+    "Wrong. A p-value is the probability of data at least as extreme as observed if the null hypothesis is true. It is not the probability that the null hypothesis is true."
+   ],
+   [
+    "B",
+    "The result is statistically significant, but that does not show the effect is clinically significant.",
+    true,
+    "Correct. A p-value below alpha means you reject the null hypothesis. A 1 mmHg change is unlikely to matter to patients, so statistical significance does not equal clinical significance."
+   ],
+   [
+    "C",
+    "The result should change practice because p is below 0.05.",
+    false,
+    "Wrong. Practice change depends on effect size, harms, cost and patient values. It would be correct only if the effect were also clinically meaningful."
+   ],
+   [
+    "D",
+    "You fail to reject the null hypothesis because p is below alpha.",
+    false,
+    "Wrong. A p-value below alpha leads to rejecting the null. Failing to reject applies when p is above alpha."
+   ]
+  ],
+  "st": [
+   "Compare p to alpha. 0.03 is below 0.05, so the result is statistically significant.",
+   "Ask whether 1 mmHg matters to a patient. The effect is tiny.",
+   "Keep statistical and clinical significance separate."
+  ],
+  "cl": [
+   [
+    "1 mmHg",
+    "A tiny effect size. Statistical significance does not guarantee clinical value."
+   ],
+   [
+    "p = 0.03, alpha 0.05",
+    "Below alpha means reject the null."
+   ]
+  ]
+ },
+ {
+  "t": "Epithelia",
+  "m": false,
+  "s": "Epithelial cells lining the gut must stop fluid from leaking between neighbouring cells. Cardiac muscle cells must pass electrical signals directly to their neighbours. Which pairing of junction types is correct?",
+  "o": [
+   [
+    "A",
+    "Gap junction, then tight junction",
+    false,
+    "Wrong. The functions are reversed. It would be correct if the barrier role belonged to gap junctions."
+   ],
+   [
+    "B",
+    "Desmosome, then adherens junction",
+    false,
+    "Wrong. Both give mechanical attachment. Desmosomes resist shear through intermediate filaments and adherens junctions link actin. It would be correct for a question about mechanical strength."
+   ],
+   [
+    "C",
+    "Tight junction, then gap junction",
+    true,
+    "Correct. Tight junctions seal the space between cells to form a barrier. Gap junctions connect cytoplasm and carry electrical signals for synchronized contraction."
+   ],
+   [
+    "D",
+    "Hemidesmosome, then tight junction",
+    false,
+    "Wrong. Hemidesmosomes anchor epithelial cells to the basement membrane, not to neighbouring cells."
+   ]
+  ],
+  "st": [
+   "Sort junctions by job: seal, attach, communicate.",
+   "Sealing a barrier between cells is the tight junction.",
+   "Passing electrical signals is the gap junction.",
+   "Choose the pairing in that order."
+  ],
+  "cl": [
+   [
+    "stop fluid from leaking between neighbouring cells",
+    "Barrier function belongs to tight junctions."
+   ],
+   [
+    "pass electrical signals directly",
+    "Communication belongs to gap junctions."
+   ]
+  ]
+ },
+ {
+  "t": "Epithelia",
+  "m": false,
+  "s": "Which statement about epithelial tissue is FALSE?",
+  "o": [
+   [
+    "A",
+    "Epithelium is avascular and receives nutrients by diffusion from underlying connective tissue.",
+    false,
+    "This is true, so it is not the answer. It would be false if it said epithelium has its own blood vessels."
+   ],
+   [
+    "B",
+    "Epithelial cells are polar, with distinct apical and basal surfaces.",
+    false,
+    "This is true, so it is not the answer. It would be false if it said the surfaces are identical."
+   ],
+   [
+    "C",
+    "Epithelium forms a selective barrier.",
+    false,
+    "This is true, so it is not the answer. It would be false if it said epithelium lets everything pass."
+   ],
+   [
+    "D",
+    "Epithelium lacks innervation.",
+    true,
+    "Correct, because this statement is false. Epithelial tissue is innervated."
+   ]
+  ],
+  "st": [
+   "Read the stem. You are looking for the false statement.",
+   "Recall epithelial features: avascular, polar, innervated, selective barrier.",
+   "Find the statement that denies innervation."
+  ],
+  "cl": [
+   [
+    "FALSE",
+    "True statements are the distractors."
+   ]
+  ]
+ },
+ {
+  "t": "Connective tissue",
+  "m": false,
+  "s": "Which statement about connective tissue is correct?",
+  "o": [
+   [
+    "A",
+    "All connective tissues are built from cells, fibres and non-fibre components in different proportions.",
+    true,
+    "Correct. Dense regular connective tissue is packed with fibres and has few cells. Other types have more cells or more ground substance."
+   ],
+   [
+    "B",
+    "Dense connective tissue is typically enriched in elastic fibres.",
+    false,
+    "Wrong. Dense connective tissue is typically enriched in collagen. Elastic fibres dominate specialized tissues such as the aorta and skin."
+   ],
+   [
+    "C",
+    "Marfan syndrome is typically rooted in collagen gene mutations.",
+    false,
+    "Wrong. Marfan syndrome is commonly rooted in fibrillin gene mutations. Ehlers-Danlos syndrome is the one linked to collagen genes."
+   ],
+   [
+    "D",
+    "Fibroblasts synthesize collagen but not elastin.",
+    false,
+    "Wrong. Fibroblasts synthesize and secrete both collagen and elastin."
+   ]
+  ],
+  "st": [
+   "Recall the three building blocks: cells, fibres, non-fibre components.",
+   "Check each disease and fibre claim: collagen versus elastin, fibrillin versus collagen.",
+   "Choose the statement that holds for all types."
+  ],
+  "cl": [
+   [
+    "all connective tissues",
+    "A universal statement must hold for every type, and only the three-component statement does."
+   ],
+   [
+    "Marfan",
+    "Fibrillin, not collagen."
+   ]
+  ]
+ },
+ {
+  "t": "Connective tissue",
+  "m": true,
+  "s": "Which pairings of connective tissue and feature are correct? Select all that apply.",
+  "o": [
+   [
+    "A",
+    "Loose connective tissue: densely packed collagen with few cells.",
+    false,
+    "False. Loose connective tissue has poorly organized fibres and lies under epithelia, carrying vessels and nerves. The description given fits dense connective tissue."
+   ],
+   [
+    "B",
+    "White adipose tissue: multilocular adipocytes with abundant mitochondria.",
+    false,
+    "False. White fat has unilocular adipocytes with a peripheral nucleus. The description given fits brown fat."
+   ],
+   [
+    "C",
+    "Brown adipose tissue: thermoregulation in newborns.",
+    true,
+    "True. Brown fat is rich in mitochondria and produces heat."
+   ],
+   [
+    "D",
+    "Dense regular connective tissue: tendons and ligaments, with high resistance to stress.",
+    true,
+    "True. Parallel collagen bundles resist stress along one direction."
+   ],
+   [
+    "E",
+    "Dense irregular connective tissue: reticular dermis and organ capsules.",
+    true,
+    "True. Interwoven collagen bundles give toughness in several directions."
+   ],
+   [
+    "F",
+    "Reticular connective tissue: bone marrow, lymph nodes and spleen.",
+    true,
+    "True. It forms the supporting mesh of haematopoietic and lymphoid tissues."
+   ]
+  ],
+  "st": [
+   "Judge each pairing on its own.",
+   "Match fibre organization to function: parallel for one-direction stress, interwoven for multi-direction stress.",
+   "Check adipose features: white is unilocular and stores energy, brown is multilocular and makes heat."
+  ],
+  "cl": [
+   [
+    "unilocular versus multilocular",
+    "White fat has one large droplet. Brown fat has many small droplets."
+   ],
+   [
+    "under epithelia",
+    "Location that points to loose connective tissue."
+   ]
+  ]
+ },
+ {
+  "t": "Cartilage",
+  "m": false,
+  "s": "Which pairing of cartilage type and location is correct?",
+  "o": [
+   [
+    "A",
+    "Hyaline cartilage: intervertebral discs and menisci",
+    false,
+    "Wrong. Discs and menisci contain fibrocartilage. Hyaline would be correct for growth plates and ribs."
+   ],
+   [
+    "B",
+    "Fibrocartilage: growth plates and ribs",
+    false,
+    "Wrong. Growth plates and ribs contain hyaline cartilage. Fibrocartilage would be correct for discs and menisci."
+   ],
+   [
+    "C",
+    "Elastic cartilage: epiglottis, larynx and external ear",
+    true,
+    "Correct. Elastic cartilage is enriched in the same type of elastic fibre found in the aorta."
+   ],
+   [
+    "D",
+    "Hyaline cartilage: epiglottis",
+    false,
+    "Wrong. The epiglottis contains elastic cartilage. Hyaline would be correct for the respiratory tract cartilages such as the trachea."
+   ]
+  ],
+  "st": [
+   "Recall the three types: hyaline, elastic and fibrocartilage.",
+   "Link each to typical locations.",
+   "Choose the correct location for elastic cartilage."
+  ],
+  "cl": [
+   [
+    "epiglottis, larynx and external ear",
+    "Flexible structures rich in elastic fibres."
+   ]
+  ]
+ },
+ {
+  "t": "Cartilage",
+  "m": true,
+  "s": "Which statements help explain why damaged articular cartilage in the knee heals poorly? Select all that apply.",
+  "o": [
+   [
+    "A",
+    "Cartilage has a rich vascular supply that delays repair.",
+    false,
+    "False. Cartilage is avascular. The statement would be true only for a richly vascular tissue such as bone."
+   ],
+   [
+    "B",
+    "All cartilage regenerates well after injury.",
+    false,
+    "False. Articular cartilage has poor healing potential."
+   ],
+   [
+    "C",
+    "Cartilage is avascular and depends on diffusion for nutrients.",
+    true,
+    "True. With no blood vessels, healing cells and nutrients arrive slowly."
+   ],
+   [
+    "D",
+    "Articular cartilage lacks a perichondrium, which normally supplies chondroblasts for new cartilage.",
+    true,
+    "True. The perichondrium is rich in chondroblasts that deposit new cartilage. Its absence limits repair and contributes to osteoarthritis."
+   ],
+   [
+    "E",
+    "Chondrocytes sit in canaliculi that restrict their movement.",
+    false,
+    "False. Chondrocytes sit in lacunae. Canaliculi are channels in bone."
+   ]
+  ],
+  "st": [
+   "Recall two key features: no blood supply and no perichondrium at articular surfaces.",
+   "Reject statements that misplace chondrocytes or claim a vascular supply.",
+   "Keep the two features that limit repair."
+  ],
+  "cl": [
+   [
+    "heals poorly",
+    "Look for features that limit cell and nutrient supply."
+   ],
+   [
+    "perichondrium",
+    "Its chondroblasts supply new cartilage where it exists."
+   ]
+  ]
+ },
+ {
+  "t": "Bone",
+  "m": false,
+  "s": "Which pairing correctly identifies the cell that secretes osteoid and the cell that resorbs mineralized bone?",
+  "o": [
+   [
+    "A",
+    "Osteocyte secretes osteoid. Osteoblast resorbs bone.",
+    false,
+    "Wrong. Osteocytes are mature cells embedded in bone that maintain the matrix. Osteoblasts make osteoid."
+   ],
+   [
+    "B",
+    "Osteoblast secretes osteoid. Osteoclast resorbs bone.",
+    true,
+    "Correct. Osteoblasts secrete osteoid. Osteoclasts are multinucleated cells derived from monocytes that resorb bone."
+   ],
+   [
+    "C",
+    "Osteoprogenitor secretes osteoid. Osteocyte resorbs bone.",
+    false,
+    "Wrong. Osteoprogenitors are stem cells that give rise to osteoblasts. Osteocytes do not resorb bone."
+   ],
+   [
+    "D",
+    "Osteoclast secretes osteoid. Osteoblast resorbs bone.",
+    false,
+    "Wrong. The roles are reversed. It would be correct if the cell names were swapped."
+   ]
+  ],
+  "st": [
+   "Recall that bone building and bone removal use opposite cells.",
+   "Osteoblasts build by secreting osteoid.",
+   "Osteoclasts are multinucleated and resorb mineralized bone."
+  ],
+  "cl": [
+   [
+    "secretes osteoid",
+    "Osteoblast."
+   ],
+   [
+    "resorbs mineralized bone",
+    "Multinucleated osteoclast derived from monocytes."
+   ]
+  ]
+ },
+ {
+  "t": "Muscle",
+  "m": true,
+  "s": "Which statements about the three muscle types are true? Select all that apply.",
+  "o": [
+   [
+    "A",
+    "Cardiac muscle is rich in mitochondria.",
+    true,
+    "True. Mitochondria supply the ATP needed for continuous contraction."
+   ],
+   [
+    "B",
+    "Cardiac muscle contraction does not need calcium because its terminal cisternae are small.",
+    false,
+    "False. Cardiac muscle still needs calcium and uses the same sliding filament model."
+   ],
+   [
+    "C",
+    "Gap junctions in cardiac muscle mainly hold cells together.",
+    false,
+    "False. Gap junctions carry electrical signals for synchronized contraction. Other junctions hold cells together."
+   ],
+   [
+    "D",
+    "All three types require actin and myosin for contraction.",
+    true,
+    "True. The arrangement in smooth muscle differs, but both filaments are still required."
+   ],
+   [
+    "E",
+    "Cardiac muscle is voluntary.",
+    false,
+    "False. Cardiac muscle is involuntary. Only skeletal muscle is voluntary."
+   ],
+   [
+    "F",
+    "Only skeletal muscle cells are multinucleated.",
+    true,
+    "True. A skeletal muscle fibre is a multinucleated cell formed by fusion."
+   ]
+  ],
+  "st": [
+   "Judge each statement on its own.",
+   "Recall shared features: actin and myosin, calcium, sliding filaments.",
+   "Recall differences: voluntary versus involuntary, nuclei, mitochondria, junction roles."
+  ],
+  "cl": [
+   [
+    "All three",
+    "Universal statements need to hold for skeletal, cardiac and smooth muscle."
+   ],
+   [
+    "mainly hold cells together",
+    "Gap junctions communicate. They are not structural."
+   ]
+  ]
+ },
+ {
+  "t": "Muscle",
+  "m": false,
+  "s": "During contraction of a skeletal muscle fibre, which sarcomere component does NOT shorten?",
+  "o": [
+   [
+    "A",
+    "A-band",
+    true,
+    "Correct. The A-band is the length of the thick filaments, which does not change."
+   ],
+   [
+    "B",
+    "I-band",
+    false,
+    "Wrong. The I-band, which contains only thin filaments, shortens as thin filaments slide inward. It would be correct if the question asked what shortens."
+   ],
+   [
+    "C",
+    "H-zone",
+    false,
+    "Wrong. The H-zone, the central region with only thick filaments, shortens as thin filaments approach. It would be correct if the question asked what shortens."
+   ],
+   [
+    "D",
+    "Distance between adjacent Z-lines",
+    false,
+    "Wrong. This distance is the sarcomere, and it shortens during contraction."
+   ]
+  ],
+  "st": [
+   "Recall the sliding filament model. Filaments slide and do not shorten.",
+   "Regions with only thin filaments (I-band) or only thick filaments (H-zone) shrink as overlap grows.",
+   "The A-band spans the thick filament length, so it stays the same."
+  ],
+  "cl": [
+   [
+    "does NOT shorten",
+    "Only the thick filament span stays constant."
+   ]
+  ]
+ },
+ {
+  "t": "Muscle",
+  "m": false,
+  "s": "After acetylcholine binds nicotinic receptors on the motor end plate, which sequence of events leads to muscle contraction?",
+  "o": [
+   [
+    "A",
+    "Calcium release from the sarcoplasmic reticulum, then end plate potential, then T-tubule depolarization, then calcium binding to troponin, then myosin attachment to actin",
+    false,
+    "Wrong. Calcium release does not come first because the end plate potential and T-tubule signal trigger it."
+   ],
+   [
+    "B",
+    "End plate potential, then calcium binding to troponin, then calcium release from the sarcoplasmic reticulum, then T-tubule depolarization, then myosin attachment to actin",
+    false,
+    "Wrong. Calcium must be released before it binds troponin."
+   ],
+   [
+    "C",
+    "End plate potential, then T-tubule depolarization, then myosin attachment to actin, then calcium release, then calcium binding to troponin",
+    false,
+    "Wrong. Myosin attaches only after calcium binds troponin and exposes the binding sites."
+   ],
+   [
+    "D",
+    "End plate potential, then muscle action potential spreads along the sarcolemma and down T-tubules, then calcium release from the sarcoplasmic reticulum, then calcium binding to troponin, then myosin attachment to actin",
+    true,
+    "Correct. This follows the signal path from the end plate to the contractile proteins."
+   ]
+  ],
+  "st": [
+   "Start with the end plate potential.",
+   "It triggers a muscle action potential that spreads down T-tubules.",
+   "T-tubule depolarization opens calcium channels in the sarcoplasmic reticulum.",
+   "Calcium binds troponin, exposing binding sites, and myosin attaches to actin."
+  ],
+  "cl": [
+   [
+    "After acetylcholine binds",
+    "The sequence begins at the end plate."
+   ],
+   [
+    "contraction",
+    "Cross-bridge formation comes last."
+   ]
+  ]
+ },
+ {
+  "t": "Muscle",
+  "m": false,
+  "s": "Which statement about skeletal muscle contraction and relaxation is correct?",
+  "o": [
+   [
+    "A",
+    "Calcium binds tropomyosin, which makes troponin roll off actin.",
+    false,
+    "Wrong. The proteins are swapped. Calcium binds troponin."
+   ],
+   [
+    "B",
+    "Relaxation occurs when calcium diffuses passively back into the sarcoplasmic reticulum.",
+    false,
+    "Wrong. Calcium returns by an active pump, the calcium ATPase, which uses ATP."
+   ],
+   [
+    "C",
+    "Calcium binds troponin, which moves tropomyosin off the myosin-binding sites on actin.",
+    true,
+    "Correct. Troponin is the calcium sensor. Its shift moves tropomyosin and exposes the binding sites."
+   ],
+   [
+    "D",
+    "Contraction occurs because thin and thick filaments shorten.",
+    false,
+    "Wrong. Filaments slide past one another. Their length does not change."
+   ],
+   [
+    "E",
+    "Calcium is released from T-tubules during contraction.",
+    false,
+    "Wrong. Calcium is released from the sarcoplasmic reticulum. T-tubules carry the depolarization."
+   ]
+  ],
+  "st": [
+   "Identify the calcium sensor: troponin.",
+   "Troponin moves tropomyosin and exposes myosin-binding sites.",
+   "Relaxation needs active calcium reuptake into the sarcoplasmic reticulum.",
+   "Contraction is by sliding filaments."
+  ],
+  "cl": [
+   [
+    "moves tropomyosin",
+    "Troponin shifts tropomyosin, not the reverse."
+   ],
+   [
+    "passively",
+    "Reuptake is active and needs ATP."
+   ]
+  ]
+ },
+ {
+  "t": "Nervous tissue",
+  "m": false,
+  "s": "Which statement about glial cells and myelination is correct?",
+  "o": [
+   [
+    "A",
+    "Schwann cells myelinate axons in both the CNS and the PNS.",
+    false,
+    "Wrong. Schwann cells myelinate PNS axons only. This would be correct for oligodendrocytes and the CNS."
+   ],
+   [
+    "B",
+    "One oligodendrocyte myelinates segments of several axons in the CNS.",
+    true,
+    "Correct. Oligodendrocytes myelinate CNS axons and each cell serves several axons."
+   ],
+   [
+    "C",
+    "One Schwann cell myelinates segments of several axons.",
+    false,
+    "Wrong. A Schwann cell myelinates one segment of a single axon."
+   ],
+   [
+    "D",
+    "Astrocytes form the ciliated lining of the ventricles and spinal canal.",
+    false,
+    "Wrong. Ependymal cells form that ciliated lining. Astrocytes form a scaffold, bridge axons and blood vessels and support the blood brain barrier."
+   ],
+   [
+    "E",
+    "Microglia are the myelinating cells of the CNS.",
+    false,
+    "Wrong. Microglia are phagocytic cells that activate after CNS injury."
+   ]
+  ],
+  "st": [
+   "Split by location: CNS versus PNS.",
+   "CNS myelination uses oligodendrocytes, and one cell serves several axons.",
+   "PNS myelination uses Schwann cells, and one cell serves one axon segment.",
+   "Match the other glia to their functions."
+  ],
+  "cl": [
+   [
+    "several axons",
+    "A hallmark of oligodendrocytes."
+   ],
+   [
+    "ciliated lining",
+    "Ependymal cells."
+   ]
+  ]
+ },
+ {
+  "t": "Nervous tissue",
+  "m": false,
+  "s": "Which statement about neuronal structure and transport is correct?",
+  "o": [
+   [
+    "A",
+    "Nissl bodies are stacks of mitochondria.",
+    false,
+    "Wrong. Mitochondria are separate organelles. This would describe a mitochondrial cluster."
+   ],
+   [
+    "B",
+    "Synaptic vesicles travel to the terminal bouton along intermediate filaments.",
+    false,
+    "Wrong. Vesicles travel along microtubules using motor proteins."
+   ],
+   [
+    "C",
+    "Schmidt-Lantermann clefts are the gaps where the action potential is regenerated.",
+    false,
+    "Wrong. Those gaps are the nodes of Ranvier. Schmidt-Lantermann clefts are cytoplasmic channels in the myelin sheath that contain gap junctions."
+   ],
+   [
+    "D",
+    "Nissl bodies are stacks of rough endoplasmic reticulum in neuronal cell bodies.",
+    true,
+    "Correct. Nissl bodies reflect the heavy protein synthesis in neurons."
+   ]
+  ],
+  "st": [
+   "Recall Nissl bodies: rough ER with ribosomes.",
+   "Recall vesicle transport: microtubules and motor proteins.",
+   "Separate nodes of Ranvier from Schmidt-Lantermann clefts."
+  ],
+  "cl": [
+   [
+    "Nissl bodies",
+    "Rough endoplasmic reticulum."
+   ],
+   [
+    "travel ... along",
+    "Motor proteins use microtubules."
+   ]
+  ]
+ },
+ {
+  "t": "Nervous tissue",
+  "m": false,
+  "s": "A patient with multiple sclerosis has slowed conduction in affected central pathways. Which explanation is best?",
+  "o": [
+   [
+    "A",
+    "Loss of myelin removes saltatory conduction and lets current leak across the axon membrane.",
+    true,
+    "Correct. Myelin raises membrane resistance and lets the signal jump between nodes. Without it, conduction slows and weakens."
+   ],
+   [
+    "B",
+    "Loss of myelin increases membrane resistance.",
+    false,
+    "Wrong. Myelin increases membrane resistance, so losing it decreases resistance."
+   ],
+   [
+    "C",
+    "Loss of myelin prevents the release of neurotransmitter at the terminal.",
+    false,
+    "Wrong. Myelin does not control neurotransmitter release."
+   ],
+   [
+    "D",
+    "The immune system attacks Schwann cells in peripheral nerves.",
+    false,
+    "Wrong. In multiple sclerosis the immune system attacks oligodendrocytes, so central axons are affected."
+   ]
+  ],
+  "st": [
+   "Identify the target: oligodendrocytes, so CNS myelin is lost.",
+   "Recall what myelin does: raises membrane resistance and enables saltatory conduction.",
+   "Predict the effect of losing it: slower, weaker conduction."
+  ],
+  "cl": [
+   [
+    "multiple sclerosis",
+    "Oligodendrocytes and CNS myelin."
+   ],
+   [
+    "slowed conduction",
+    "Loss of saltatory conduction."
+   ]
+  ]
+ },
+ {
+  "t": "Nervous system",
+  "m": false,
+  "s": "Classify these four signals in order: pain from the skin, a stomach ache, an efferent signal to gluteus maximus, and an efferent signal to a gland. Which option is correct?",
+  "o": [
+   [
+    "A",
+    "Visceral sensory, somatosensory, autonomic motor, somatic motor",
+    false,
+    "Wrong. The categories are swapped. It would fit if the pain came from an organ and the motor targets were reversed."
+   ],
+   [
+    "B",
+    "Somatosensory, visceral sensory, somatic motor, autonomic motor",
+    true,
+    "Correct. Skin pain is somatosensory. A stomach ache comes from an organ, so it is visceral sensory. Skeletal muscle is served by somatic motor neurons. Glands are served by autonomic motor neurons."
+   ],
+   [
+    "C",
+    "Somatosensory, somatosensory, somatic motor, somatic motor",
+    false,
+    "Wrong. Organ sensation and gland control use the visceral and autonomic categories."
+   ],
+   [
+    "D",
+    "Somatic motor, autonomic motor, somatosensory, visceral sensory",
+    false,
+    "Wrong. Sensory and motor categories are mixed up."
+   ]
+  ],
+  "st": [
+   "Split sensory from motor.",
+   "Sensory from the body wall is somatosensory. Sensory from organs is visceral.",
+   "Motor to skeletal muscle is somatic. Motor to glands, smooth muscle and cardiac muscle is autonomic."
+  ],
+  "cl": [
+   [
+    "stomach ache",
+    "Organ sensation is visceral sensory."
+   ],
+   [
+    "gland",
+    "Autonomic motor output."
+   ]
+  ]
+ },
+ {
+  "t": "Homeostasis",
+  "m": true,
+  "s": "Which are examples of positive feedback in the body? Select all that apply.",
+  "o": [
+   [
+    "A",
+    "Blood glucose regulation",
+    false,
+    "False. This is negative feedback that returns glucose toward its set point."
+   ],
+   [
+    "B",
+    "Osmoregulation",
+    false,
+    "False. This is negative feedback that returns osmolarity toward its set point."
+   ],
+   [
+    "C",
+    "Uterine contractions during childbirth",
+    true,
+    "True. Contractions stimulate further oxytocin release, which drives stronger contractions. Delivery stops the loop."
+   ],
+   [
+    "D",
+    "Blood clotting",
+    true,
+    "True. Each activated clotting step amplifies the next until a clot forms."
+   ],
+   [
+    "E",
+    "Body temperature regulation",
+    false,
+    "False. This is negative feedback. It would be positive only if a rise in temperature drove a further rise."
+   ]
+  ],
+  "st": [
+   "Recall that positive feedback reinforces the stimulus and moves the variable away from its set point.",
+   "It needs an outside event to stop the response.",
+   "Pick the examples that amplify and then end with an event, such as delivery or clot formation."
+  ],
+  "cl": [
+   [
+    "positive feedback",
+    "Reinforces the stimulus and is not homeostatic."
+   ]
+  ]
+ },
+ {
+  "t": "Homeostasis",
+  "m": false,
+  "s": "An 80 kg adult has total body water equal to 60 percent of body weight. Using the standard fractions, which set of volumes is correct?",
+  "o": [
+   [
+    "A",
+    "ICF 16 L, ECF 32 L, plasma 8 L",
+    false,
+    "Wrong. The ICF and ECF fractions are swapped. It would be correct if ECF held two thirds of body water."
+   ],
+   [
+    "B",
+    "ICF 32 L, ECF 16 L, plasma 12 L",
+    false,
+    "Wrong. Twelve litres is the interstitial fluid, three quarters of ECF. Plasma is one quarter."
+   ],
+   [
+    "C",
+    "ICF 32 L, ECF 16 L, plasma 4 L",
+    true,
+    "Correct. Total body water is 48 L. ICF is two thirds, so 32 L. ECF is one third, so 16 L. Plasma is one quarter of ECF, so 4 L."
+   ],
+   [
+    "D",
+    "ICF 48 L, ECF 16 L, plasma 4 L",
+    false,
+    "Wrong. This treats all body water as ICF. Total body water of 48 L is split into ICF and ECF."
+   ]
+  ],
+  "st": [
+   "Calculate total body water: 60 percent of 80 kg is 48 L.",
+   "ICF is two thirds: 32 L. ECF is one third: 16 L.",
+   "Plasma is one quarter of ECF: 4 L. Interstitial fluid is three quarters: 12 L."
+  ],
+  "cl": [
+   [
+    "60 percent of body weight",
+    "Start from total body water."
+   ],
+   [
+    "standard fractions",
+    "Two thirds ICF, one third ECF, one quarter of ECF as plasma."
+   ]
+  ]
+ },
+ {
+  "t": "Homeostasis",
+  "m": false,
+  "s": "A person drinks 2 L of distilled water. After osmotic equilibrium but before the kidneys respond, what happens to the fluid compartments?",
+  "o": [
+   [
+    "A",
+    "ECF and ICF volumes both increase and the osmolality of both decreases.",
+    true,
+    "Correct. Distilled water is hypotonic to body fluids. Total body water rises and osmolality falls. Water then moves into cells until both compartments match."
+   ],
+   [
+    "B",
+    "ECF volume increases, ICF volume decreases and osmolality of both increases.",
+    false,
+    "Wrong. This is the response to salt loading, such as eating salty chips without water."
+   ],
+   [
+    "C",
+    "ECF volume increases with no change in osmolality and ICF is unchanged.",
+    false,
+    "Wrong. This is the response to drinking an isotonic solution."
+   ],
+   [
+    "D",
+    "ECF and ICF volumes both decrease and osmolality of both increases.",
+    false,
+    "Wrong. This is the response to dehydration."
+   ]
+  ],
+  "st": [
+   "Classify the fluid. Distilled water is hypotonic.",
+   "Water added without solute raises volume and lowers osmolality in the ECF.",
+   "Water then enters cells until osmolality equalizes, so both compartments swell and both are more dilute."
+  ],
+  "cl": [
+   [
+    "distilled water",
+    "Hypotonic, with no solute."
+   ],
+   [
+    "before the kidneys respond",
+    "Ask for the equilibrium response only."
+   ]
+  ]
+ },
+ {
+  "t": "Membrane transport",
+  "m": false,
+  "s": "The renal SGLT transporter moves sodium and glucose into a cell in the same direction. Which classification is correct?",
+  "o": [
+   [
+    "A",
+    "Primary active transport, because it binds ATP directly",
+    false,
+    "Wrong. Primary active transporters such as the Na-K ATPase use ATP directly. SGLT does not."
+   ],
+   [
+    "B",
+    "Facilitated diffusion, because glucose moves down its gradient with no energy",
+    false,
+    "Wrong. Sodium moves with its gradient, and glucose is pulled in against its gradient by coupling. Facilitated diffusion has no coupling to an ion gradient."
+   ],
+   [
+    "C",
+    "Antiport carrier, because two solutes cross together",
+    false,
+    "Wrong. Antiporters move solutes in opposite directions. SGLT moves both in the same direction, so it is a symporter."
+   ],
+   [
+    "D",
+    "Secondary active transport, powered by the sodium gradient that the Na-K ATPase maintains",
+    true,
+    "Correct. SGLT is a symporter that does not use ATP directly. It depends on the sodium gradient built by the primary active Na-K ATPase."
+   ]
+  ],
+  "st": [
+   "Check the direction: both solutes move the same way, so it is a symporter.",
+   "Check the energy source: no direct ATP use, so it is not primary active.",
+   "Check the gradient: a solute moves against its gradient by coupling to sodium, so it is secondary active."
+  ],
+  "cl": [
+   [
+    "same direction",
+    "Symport, not antiport."
+   ],
+   [
+    "sodium and glucose",
+    "Sodium gradient drives glucose uptake."
+   ]
+  ]
+ },
+ {
+  "t": "Cell signaling",
+  "m": false,
+  "s": "Somatostatin from D cells acts on neighbouring G cells. Gastrin from G cells travels through the blood to act on cells elsewhere in the stomach. Histamine acts on nearby cells. Which classification is correct, in that order?",
+  "o": [
+   [
+    "A",
+    "Autocrine, paracrine, endocrine",
+    false,
+    "Wrong. Autocrine signals target the cell that released them. Somatostatin acts on a neighbouring cell."
+   ],
+   [
+    "B",
+    "Endocrine, autocrine, paracrine",
+    false,
+    "Wrong. Somatostatin acts locally, not through the blood."
+   ],
+   [
+    "C",
+    "Paracrine, endocrine, paracrine",
+    true,
+    "Correct. Local action on nearby targets is paracrine. Gastrin uses the circulation to reach distant targets, so it is endocrine."
+   ],
+   [
+    "D",
+    "Paracrine, paracrine, paracrine",
+    false,
+    "Wrong. Gastrin travels through the circulation, which makes it endocrine."
+   ]
+  ],
+  "st": [
+   "Ask where each signal goes.",
+   "Same cell means autocrine. Nearby cell means paracrine. Distant cell via blood means endocrine.",
+   "Assign each signal."
+  ],
+  "cl": [
+   [
+    "neighbouring G cells",
+    "Local target, paracrine."
+   ],
+   [
+    "through the blood",
+    "Long distance, endocrine."
+   ]
+  ]
+ },
+ {
+  "t": "Genetics",
+  "m": false,
+  "s": "A father is diagnosed with Huntington disease at age 42 and his son at age 31. In a different family, a mutated collagen alpha chain disrupts the orderly coiling of the normal chains. Which two phenomena do these describe, in order?",
+  "o": [
+   [
+    "A",
+    "Anticipation, then loss of function",
+    false,
+    "Wrong. Loss of function means the mutant allele makes no working product. Here the mutant chain interferes with normal chains."
+   ],
+   [
+    "B",
+    "Anticipation, then dominant negative effect",
+    true,
+    "Correct. Earlier onset in each generation is anticipation. A mutant chain that disrupts the function of normal chains is a dominant negative effect."
+   ],
+   [
+    "C",
+    "Incomplete penetrance, then dominant negative effect",
+    false,
+    "Wrong. Incomplete penetrance means some carriers never develop disease. Both patients here have the disease, with earlier onset in the son."
+   ],
+   [
+    "D",
+    "Reduced expressivity, then gain of function",
+    false,
+    "Wrong. Neither example describes milder symptoms, and the collagen case describes interference, not a new function."
+   ]
+  ],
+  "st": [
+   "Read the first case: onset age drops across generations. That is anticipation.",
+   "Read the second case: the mutant chain disrupts normal chains. That is a dominant negative effect.",
+   "Choose the matching pair."
+  ],
+  "cl": [
+   [
+    "42 ... son at age 31",
+    "Earlier onset in the next generation."
+   ],
+   [
+    "disrupts the orderly coiling of the normal chains",
+    "The mutant product interferes with the normal product."
+   ]
+  ]
+ },
+ {
+  "t": "Membrane potential",
+  "m": false,
+  "s": "Which statement about ion movement and membrane potential is correct?",
+  "o": [
+   [
+    "A",
+    "K+ exit depolarizes the membrane and Na+ entry hyperpolarizes it.",
+    false,
+    "Wrong. The effects are reversed. K+ leaving removes positive charge."
+   ],
+   [
+    "B",
+    "Cl- entry depolarizes the membrane and Ca2+ entry hyperpolarizes it.",
+    false,
+    "Wrong. Cl- entry adds negative charge and Ca2+ entry adds positive charge."
+   ],
+   [
+    "C",
+    "The resting membrane potential reflects only potassium movement, so it equals the K+ equilibrium potential.",
+    false,
+    "Wrong. The resting potential of about -70 mV also reflects other ions. The K+ equilibrium potential is closer to -90 mV."
+   ],
+   [
+    "D",
+    "Na+ entry and Ca2+ entry depolarize the membrane. K+ exit and Cl- entry hyperpolarize it.",
+    true,
+    "Correct. Positive charge entering depolarizes. Positive charge leaving or negative charge entering hyperpolarizes."
+   ]
+  ],
+  "st": [
+   "For each ion, ask whether positive or negative charge moves in or out.",
+   "Positive charge in or negative charge out depolarizes.",
+   "Positive charge out or negative charge in hyperpolarizes."
+  ],
+  "cl": [
+   [
+    "ion movement and membrane potential",
+    "Track charge direction."
+   ],
+   [
+    "only potassium",
+    "The resting potential reflects several ions."
+   ]
+  ]
+ },
+ {
+  "t": "Membrane potential",
+  "m": false,
+  "s": "Which sequence correctly describes an action potential?",
+  "o": [
+   [
+    "A",
+    "Threshold reached, then voltage-gated Na+ channels open (depolarization), then Na+ channels inactivate as K+ channels open (repolarization), then K+ exit overshoots (hyperpolarization).",
+    true,
+    "Correct. Sodium entry drives the rising phase. Sodium inactivation with potassium exit drives the falling phase. Slow closure of potassium channels produces the undershoot."
+   ],
+   [
+    "B",
+    "Threshold reached, then K+ channels open first, then Na+ channels open, then hyperpolarization.",
+    false,
+    "Wrong. Sodium channels open first and drive depolarization. Potassium channels open more slowly."
+   ],
+   [
+    "C",
+    "Threshold reached, then depolarization, then hyperpolarization, then repolarization.",
+    false,
+    "Wrong. Repolarization comes before the undershoot."
+   ],
+   [
+    "D",
+    "The Na-K ATPase opens to cause the rising phase.",
+    false,
+    "Wrong. The pump restores gradients over time. It does not cause the spike."
+   ]
+  ],
+  "st": [
+   "Start at threshold.",
+   "Sodium channels open and the membrane depolarizes.",
+   "Sodium channels inactivate and potassium channels open, so the membrane repolarizes.",
+   "Potassium channels close slowly, so a brief hyperpolarization follows."
+  ],
+  "cl": [
+   [
+    "sequence",
+    "Order matters: depolarization, repolarization, hyperpolarization."
+   ],
+   [
+    "Na-K ATPase",
+    "The pump maintains gradients and is not the cause of the spike."
+   ]
+  ]
+ },
+ {
+  "t": "Membrane potential",
+  "m": false,
+  "s": "A patient has a plasma potassium concentration of 7 mM (reference range 3.8 to 5.0 mM). Which change in neuronal excitability best fits?",
+  "o": [
+   [
+    "A",
+    "The membrane hyperpolarizes, so a stronger stimulus is needed.",
+    false,
+    "Wrong. This fits hypokalemia, where the K+ gradient for exit is larger."
+   ],
+   [
+    "B",
+    "The resting potential moves closer to threshold, so a stimulus that is normally subthreshold might trigger an action potential.",
+    true,
+    "Correct. A higher extracellular K+ level reduces the gradient for K+ exit, so positive charge builds inside and the membrane depolarizes toward threshold. Hyperkalemia is life threatening because it disturbs cardiac excitability."
+   ],
+   [
+    "C",
+    "Excitability is unchanged because action potentials depend only on sodium.",
+    false,
+    "Wrong. Extracellular K+ shapes the resting potential and so affects excitability."
+   ],
+   [
+    "D",
+    "The neuron fires for every stimulus and never stops.",
+    false,
+    "Wrong. Refractory periods still limit firing, and the shift moves the membrane closer to threshold without removing threshold."
+   ]
+  ],
+  "st": [
+   "Compare 7 mM with the reference range. It is high.",
+   "Higher extracellular K+ reduces the gradient for K+ exit.",
+   "Less K+ exit means the resting potential is less negative and closer to threshold."
+  ],
+  "cl": [
+   [
+    "7 mM",
+    "Above the upper limit of 5.0 mM, so hyperkalemia."
+   ],
+   [
+    "neuronal excitability",
+    "Think about the resting potential."
+   ]
+  ]
+ },
+ {
+  "t": "Neuromuscular junction",
+  "m": false,
+  "s": "In Lambert-Eaton myasthenic syndrome, antibodies attack voltage-gated calcium channels on the motor nerve terminal. Which is the most direct consequence at the neuromuscular junction?",
+  "o": [
+   [
+    "A",
+    "The motor neuron fails to generate an action potential.",
+    false,
+    "Wrong. The affected channels sit at the terminal, downstream of action potential generation."
+   ],
+   [
+    "B",
+    "End plate potentials become larger.",
+    false,
+    "Wrong. Less acetylcholine gives smaller end plate potentials."
+   ],
+   [
+    "C",
+    "Less acetylcholine is released.",
+    true,
+    "Correct. Calcium entry triggers vesicle fusion. Fewer channels mean fewer vesicles fuse, so less acetylcholine is released and end plate potentials are smaller."
+   ],
+   [
+    "D",
+    "Nicotinic receptors on the end plate are blocked.",
+    false,
+    "Wrong. The receptors are postsynaptic. The defect is presynaptic."
+   ]
+  ],
+  "st": [
+   "Locate the defect: calcium channels on the presynaptic terminal.",
+   "Recall calcium's role: it triggers vesicle fusion and acetylcholine release.",
+   "Predict the result: less acetylcholine and smaller end plate potentials."
+  ],
+  "cl": [
+   [
+    "calcium channels on the motor nerve terminal",
+    "Presynaptic defect."
+   ],
+   [
+    "most direct consequence",
+    "Pick the first event affected."
+   ]
+  ]
+ },
+ {
+  "t": "Organ systems",
+  "m": false,
+  "s": "Excess interstitial fluid leaks from capillaries. Which system returns it to the circulation, and what is the fluid called once it enters that system's vessels?",
+  "o": [
+   [
+    "A",
+    "Lymphatic system, lymph",
+    true,
+    "Correct. Lymphatic vessels collect the surplus interstitial fluid and return it to the blood. Inside those vessels it is called lymph."
+   ],
+   [
+    "B",
+    "Cardiovascular system, plasma",
+    false,
+    "Wrong. Plasma is the fluid part of blood. Capillaries leak fluid but do not return the excess."
+   ],
+   [
+    "C",
+    "Urinary system, filtrate",
+    false,
+    "Wrong. The urinary system filters blood and forms urine. It does not drain interstitial fluid."
+   ],
+   [
+    "D",
+    "Endocrine system, interstitial fluid",
+    false,
+    "Wrong. The endocrine system regulates body function through hormones."
+   ]
+  ],
+  "st": [
+   "Identify the problem: fluid left the capillaries and stays in tissue.",
+   "Recall which system collects excess tissue fluid: the lymphatic system.",
+   "Recall the name: fluid inside lymphatic vessels is lymph."
+  ],
+  "cl": [
+   [
+    "Excess interstitial fluid",
+    "Lymphatic drainage."
+   ],
+   [
+    "once it enters",
+    "The fluid takes a new name inside lymphatic vessels."
+   ]
+  ]
+ },
+ {
+  "t": "Anatomical language",
+  "m": false,
+  "s": "In anatomical position, which statement is correct?",
+  "o": [
+   [
+    "A",
+    "The heart is inferior to the diaphragm.",
+    false,
+    "Wrong. The heart is superior to the diaphragm."
+   ],
+   [
+    "B",
+    "The elbow is distal to the wrist.",
+    false,
+    "Wrong. The elbow is proximal to the wrist. Distal means farther from the point of attachment."
+   ],
+   [
+    "C",
+    "The muscles are superficial to the skin.",
+    false,
+    "Wrong. Muscles are deep to the skin. Superficial means closer to the surface."
+   ],
+   [
+    "D",
+    "The thumb is lateral to the index finger.",
+    true,
+    "Correct. With palms facing forward, the thumb lies on the lateral side of the hand."
+   ],
+   [
+    "E",
+    "The pelvis is superior to the skull.",
+    false,
+    "Wrong. The pelvis is inferior to the skull."
+   ]
+  ],
+  "st": [
+   "Picture anatomical position: upright, palms forward, toes forward, feet together.",
+   "Test each relationship using superior or inferior, proximal or distal, superficial or deep, medial or lateral.",
+   "Choose the statement that holds."
+  ],
+  "cl": [
+   [
+    "anatomical position",
+    "Palms forward, so the thumb is on the lateral side."
+   ]
+  ]
+ },
+ {
+  "t": "Anatomical language",
+  "m": false,
+  "s": "Three planes divide the body. One passes from front to back and divides the body into left and right. One divides it into anterior and posterior. One divides it into superior and inferior. Which set names them in order?",
+  "o": [
+   [
+    "A",
+    "Coronal, sagittal, transverse",
+    false,
+    "Wrong. The first two are swapped."
+   ],
+   [
+    "B",
+    "Sagittal, coronal, transverse (axial)",
+    true,
+    "Correct. A sagittal plane gives left and right portions. A coronal plane gives front and back. A transverse plane gives upper and lower."
+   ],
+   [
+    "C",
+    "Transverse, coronal, sagittal",
+    false,
+    "Wrong. The first and last are swapped."
+   ],
+   [
+    "D",
+    "Sagittal, transverse, coronal",
+    false,
+    "Wrong. The last two are swapped."
+   ]
+  ],
+  "st": [
+   "Match left and right to the sagittal plane.",
+   "Match front and back (dorsal and ventral) to the coronal plane.",
+   "Match upper and lower to the transverse or axial plane."
+  ],
+  "cl": [
+   [
+    "left and right",
+    "Sagittal."
+   ],
+   [
+    "anterior and posterior",
+    "Coronal."
+   ],
+   [
+    "superior and inferior",
+    "Transverse or axial."
+   ]
+  ]
+ },
+ {
+  "t": "Anatomical language",
+  "m": false,
+  "s": "Which set correctly names the position of a person doing push-ups, the elbow movement used to scratch the head, and the foot movement of pointing the toes down?",
+  "o": [
+   [
+    "A",
+    "Supine, extension, dorsiflexion",
+    false,
+    "Wrong. Supine means lying on the back. Extension straightens a joint and dorsiflexion pulls the toes up."
+   ],
+   [
+    "B",
+    "Prone, extension, plantarflexion",
+    false,
+    "Wrong. Reaching the head needs elbow flexion, not extension."
+   ],
+   [
+    "C",
+    "Prone, flexion, plantarflexion",
+    true,
+    "Correct. Face down is prone. Bending the elbow to bring the hand to the head is flexion. Pointing the toes down is plantarflexion."
+   ],
+   [
+    "D",
+    "Supine, flexion, plantarflexion",
+    false,
+    "Wrong. A person doing push-ups faces down, so the position is prone."
+   ]
+  ],
+  "st": [
+   "Push-ups are done face down, so the position is prone.",
+   "Bringing the hand toward the head decreases the elbow angle, so it is flexion.",
+   "Pointing the toes down is plantarflexion."
+  ],
+  "cl": [
+   [
+    "push-ups",
+    "Face down is prone."
+   ],
+   [
+    "scratch the head",
+    "Decreasing the elbow angle is flexion."
+   ]
+  ]
+ },
+ {
+  "t": "Medical imaging",
+  "m": true,
+  "s": "Which statements about medical imaging are true? Select all that apply.",
+  "o": [
+   [
+    "A",
+    "Air appears dark on radiographs and CT.",
+    true,
+    "True. Air absorbs little X-ray energy, so it appears black."
+   ],
+   [
+    "B",
+    "Air appears bright on ultrasound.",
+    true,
+    "True. Air reflects sound waves strongly, so it appears bright."
+   ],
+   [
+    "C",
+    "Axial CT and MR images are viewed as if you stand at the patient's head and look toward the feet.",
+    false,
+    "False. Axial images are viewed as if you stand at the patient's feet and look toward the head."
+   ],
+   [
+    "D",
+    "MRI does not use ionizing radiation.",
+    true,
+    "True. MRI uses a magnetic field and radio waves."
+   ],
+   [
+    "E",
+    "CT exposes a patient to more ionizing radiation than a plain radiograph.",
+    true,
+    "True. This is one reason CT is not recommended in pregnancy without strong need."
+   ],
+   [
+    "F",
+    "A single radiograph is usually enough to evaluate three-dimensional anatomy.",
+    false,
+    "False. A minimum of two views at right angles is needed."
+   ]
+  ],
+  "st": [
+   "Judge each statement on its own.",
+   "Recall the physics: X-ray and CT use ionizing radiation, MRI uses magnets and radio waves, ultrasound uses sound.",
+   "Recall the conventions: two views for radiographs, and axial images viewed from the feet."
+  ],
+  "cl": [
+   [
+    "single radiograph",
+    "Two views are needed for three-dimensional structures."
+   ],
+   [
+    "stand at the patient's head",
+    "The convention is the reverse."
+   ]
+  ]
+ }
+];
+
+const KEY = [
+  ["Module Question 60, graded versus action potentials", "The key lists the graded potential (A) as I and II, and the action potential (B) as III, IV and V. The labels are swapped. All-or-none behaviour and a refractory period belong to action potentials. Amplitude that depends on stimulus strength, no threshold and the ability to sum belong to graded potentials."],
+  ["New Question 13, Nissl bodies", "The key says B, groups of Golgi bodies. Nissl bodies are stacks of rough endoplasmic reticulum with ribosomes, which is option C."],
+  ["New Question 4, p-values", "The key selects A, which says a p-value below 0.05 means the chance that chance alone explains the difference is under 5 percent. That is a common misreading. A p-value is the probability of data at least as extreme as those observed if the null hypothesis is true. Treat option A as the best of a weak set and not as a definition."],
+  ["New Question 1, sucrose", "The key says sucrose is not a micromolecule because it is not a monosaccharide. Sucrose is a small disaccharide of about 342 daltons, so a size-based definition counts it as a micromolecule. The key relies on the course's short list of subunits. Confirm your course's definition."],
+  ["Module Question 67, plane of the foot", "The key says A, coronal, but the explanation describes the axial plane. One of the two is wrong. Check the answer against the image."],
+  ["Module Questions 82, 85 and 87, explanations", "The keys are right, but the explanations do not match. Question 82 asks about the plane dividing dorsal from ventral, and its explanation describes a sagittal plane. Question 85 asks about a left and right plane, and its explanation describes a transverse plane. Question 87 asks for contralateral, and its explanation defines ipsilateral."],
+  ["Module Question 72, typo", "Option A reads Protonated. The intended term is pronated."],
+  ["Meds2024 Question 10, troponin and tropomyosin", "The key says C, calcium-bound troponin allows actin and tropomyosin to dissociate. Tropomyosin shifts along actin and stays attached, so the wording is loose. It is still the best option offered."]
+];
+
+const state = { view: "quiz", i: 0, a: Q.map(() => ({ sel: [], checked: false, shown: false })) };
+const rail = document.getElementById("rail");
+const main = document.getElementById("main");
+const LABEL = { open: "not answered", right: "correct", wrong: "incorrect", shown: "answer shown" };
+
+function el(tag, props) {
+  const n = document.createElement(tag);
+  if (props) {
+    for (const k in props) {
+      const v = props[k];
+      if (v === null || v === undefined || v === false) continue;
+      if (k === "class") n.className = v;
+      else if (k === "text") n.textContent = v;
+      else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+      else n.setAttribute(k, v === true ? "" : v);
+    }
+  }
+  for (let i = 2; i < arguments.length; i++) {
+    const kids = [].concat(arguments[i]);
+    kids.forEach(function (c) {
+      if (c === null || c === undefined || c === false) return;
+      n.append(c.nodeType ? c : document.createTextNode(c));
+    });
+  }
+  return n;
+}
+
+function correctKeys(q) { return q.o.filter(function (x) { return x[2]; }).map(function (x) { return x[0]; }); }
+function sameSet(a, b) { return a.length === b.length && a.every(function (x) { return b.indexOf(x) !== -1; }); }
+function status(i) {
+  const a = state.a[i];
+  if (a.checked) return sameSet(a.sel, correctKeys(Q[i])) ? "right" : "wrong";
+  if (a.shown) return "shown";
+  return "open";
+}
+
+function go(i) {
+  state.view = "quiz";
+  state.i = i;
+  render();
+  window.scrollTo(0, 0);
+  main.focus({ preventScroll: true });
+}
+function showView(v) {
+  state.view = v;
+  render();
+  window.scrollTo(0, 0);
+  main.focus({ preventScroll: true });
+}
+
+function renderRail() {
+  rail.innerHTML = "";
+  const checked = state.a.filter(function (x) { return x.checked; }).length;
+  rail.append(
+    el("div", { class: "brand" },
+      el("h1", { text: "Week 2 practice" }),
+      el("p", { text: "Foundations of Medicine, Block 1" })),
+    el("p", { class: "count", text: checked + " of " + Q.length + " checked" }),
+    el("div", { class: "grid" }, Q.map(function (q, i) {
+      const s = status(i);
+      const cur = state.view === "quiz" && state.i === i;
+      return el("button", {
+        class: "num " + s + (cur ? " cur" : ""),
+        type: "button",
+        "aria-label": "Question " + (i + 1) + ", " + LABEL[s],
+        "aria-current": cur ? "true" : null,
+        onclick: function () { go(i); },
+        text: String(i + 1)
+      });
+    })),
+    el("div", { class: "links" },
+      el("button", { class: "link" + (state.view === "score" ? " cur" : ""), type: "button", onclick: function () { showView("score"); }, text: "Score" }),
+      el("button", { class: "link" + (state.view === "key" ? " cur" : ""), type: "button", onclick: function () { showView("key"); }, text: "Key review" })),
+    el("p", { class: "hint", text: "Keys A to F pick an option. Arrow keys move between questions." })
+  );
+}
+
+function renderQuestion() {
+  const q = Q[state.i];
+  const a = state.a[state.i];
+  const done = a.checked || a.shown;
+  const ck = correctKeys(q);
+  const card = el("article", { class: "card" });
+
+  card.append(el("div", { class: "meta" },
+    el("span", { text: "Question " + (state.i + 1) + " of " + Q.length + ", " + q.t }),
+    el("span", { text: q.m ? "Select all that apply" : "Select one" })));
+  card.append(el("h2", { class: "stem", text: q.s }));
+
+  const opts = el("div", { class: "opts" + (q.m ? " multi" : ""), role: q.m ? "group" : "radiogroup", "aria-label": "Answer options" });
+  q.o.forEach(function (o) {
+    const on = a.sel.indexOf(o[0]) !== -1;
+    let cls = "opt";
+    let tag = "";
+    if (done) {
+      if (o[2]) {
+        cls += " is-correct";
+        tag = on ? "Your choice, correct" : (a.checked ? "Correct answer" : "Correct answer");
+        if (!on && a.checked && q.m) tag = "Missed";
+      } else if (on) {
+        cls += " is-wrong";
+        tag = "Your choice, wrong";
+      }
+    }
+    opts.append(el("button", {
+      class: cls,
+      type: "button",
+      role: q.m ? "checkbox" : "radio",
+      "aria-checked": on ? "true" : "false",
+      disabled: done ? true : null,
+      onclick: function () { pick(o[0]); }
+    }, el("span", { class: "k", text: o[0] }), el("span", { class: "tx", text: o[1] }), tag ? el("span", { class: "tag", text: tag }) : null));
+  });
+  card.append(opts);
+
+  if (!done) {
+    card.append(el("div", { class: "actions" },
+      el("button", { class: "btn primary", type: "button", disabled: a.sel.length ? null : true, onclick: check, text: "Check answer" }),
+      el("button", { class: "btn", type: "button", onclick: showAnswer, text: "Show answer" })));
+  } else {
+    const ok = a.checked && sameSet(a.sel, ck);
+    let bClass = "banner info", head = "Answer shown", body = "Correct: " + ck.join(", ") + ".";
+    if (a.checked) {
+      bClass = ok ? "banner ok" : "banner bad";
+      head = ok ? "Correct" : "Not quite";
+      body = "Correct answer: " + ck.join(", ") + ". You chose " + a.sel.join(", ") + ".";
+    }
+    card.append(el("div", { class: bClass, role: "status" }, el("strong", { text: head }), el("p", { text: body })));
+
+    const d = el("div", { class: "detail" });
+    d.append(el("h3", { text: "Step by step" }), el("ol", null, q.st.map(function (s) { return el("li", { text: s }); })));
+    d.append(el("h3", { text: "High-yield clues" }), ...q.cl.map(function (c) {
+      return el("p", { class: "clue" }, el("mark", { text: c[0] }), el("span", { text: "Indicates: " + c[1] }));
+    }));
+    d.append(el("h3", { text: "Why each option is right or wrong" }), ...q.o.map(function (o) {
+      return el("div", { class: "why " + (o[2] ? "good" : "miss") },
+        el("h4", null, o[0] + ". " + o[1], el("em", { text: o[2] ? "Correct" : "Incorrect" })),
+        el("p", { text: o[3] }));
+    }));
+    d.append(el("div", { class: "final" },
+      el("h3", { text: "Final answer" }),
+      q.o.filter(function (o) { return o[2]; }).map(function (o) { return el("p", { text: o[0] + ". " + o[1] }); })));
+    card.append(d);
+  }
+
+  card.append(el("div", { class: "nav" },
+    el("button", { class: "btn", type: "button", disabled: state.i === 0 ? true : null, onclick: function () { go(state.i - 1); }, text: "Previous" }),
+    el("button", { class: "btn primary", type: "button", onclick: function () { if (state.i < Q.length - 1) go(state.i + 1); else showView("score"); }, text: state.i < Q.length - 1 ? "Next question" : "See score" })));
+
+  main.append(card);
+}
+
+function pick(k) {
+  const q = Q[state.i], a = state.a[state.i];
+  if (a.checked || a.shown) return;
+  if (q.m) {
+    const at = a.sel.indexOf(k);
+    if (at === -1) a.sel.push(k); else a.sel.splice(at, 1);
+    a.sel.sort();
+  } else {
+    a.sel = [k];
+  }
+  render();
+}
+function check() {
+  const a = state.a[state.i];
+  if (!a.sel.length) return;
+  a.checked = true;
+  render();
+}
+function showAnswer() {
+  state.a[state.i].shown = true;
+  render();
+}
+
+function renderScore() {
+  const right = Q.filter(function (q, i) { return status(i) === "right"; }).length;
+  const checked = state.a.filter(function (x) { return x.checked; }).length;
+  const shown = state.a.filter(function (x) { return x.shown && !x.checked; }).length;
+  const open = Q.length - checked - shown;
+  const card = el("article", { class: "card" });
+  card.append(el("h2", { text: "Score" }));
+  card.append(el("p", { class: "lead", text: "You answered " + right + " of " + checked + " checked questions correctly. " + shown + " had the answer shown and " + open + " remain open. Multiple-choice questions with several answers need every correct option and no wrong ones." }));
+  card.append(el("div", { class: "rows" }, Q.map(function (q, i) {
+    const s = status(i);
+    return el("div", { class: "row" },
+      el("span", { text: String(i + 1) }),
+      el("span", null, q.t, " ", el("span", { class: "st " + s, text: "(" + LABEL[s] + ")" })),
+      el("button", { type: "button", onclick: function () { go(i); }, text: "Open" }));
+  })));
+  card.append(el("div", { class: "actions" }, el("button", { class: "btn", type: "button", onclick: restart, text: "Restart all questions" })));
+  main.append(card);
+}
+
+function restart() {
+  state.a = Q.map(function () { return { sel: [], checked: false, shown: false }; });
+  go(0);
+}
+
+function renderKey() {
+  const card = el("article", { class: "card" });
+  card.append(el("h2", { text: "Notes on the original answer key" }));
+  card.append(el("p", { class: "lead", text: "I reviewed every Week 2 answer while writing these questions. Most keys hold up. These eight items deserve a second look before you rely on them." }));
+  KEY.forEach(function (k) {
+    card.append(el("div", { class: "flag" }, el("h4", { text: k[0] }), el("p", { text: k[1] })));
+  });
+  main.append(card);
+}
+
+function render() {
+  main.innerHTML = "";
+  renderRail();
+  if (state.view === "quiz") renderQuestion();
+  else if (state.view === "score") renderScore();
+  else renderKey();
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.metaKey || e.ctrlKey || e.altKey || state.view !== "quiz") return;
+  if (e.key === "ArrowRight" && state.i < Q.length - 1) { go(state.i + 1); return; }
+  if (e.key === "ArrowLeft" && state.i > 0) { go(state.i - 1); return; }
+  const k = e.key.toUpperCase();
+  if (k.length === 1 && Q[state.i].o.some(function (o) { return o[0] === k; })) pick(k);
+});
+
+render();
+</script>
+</body>
+</html>

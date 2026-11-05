@@ -1,0 +1,498 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Anemia Workup Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: centered trunk (CBC -> MCV) forking into three branch columns, then a full-width hemolysis panel and reference tables. Colors borrow from a Wright-stained blood film. */
+:root{
+  --bg:#F6F5F9; --surface:#FFFFFF; --ink:#1E1A28; --muted:#625C70; --line:#C9C2D6;
+  --test:#ECE9F2; --test-ink:#2A2437;
+  --micro:#A4471F; --micro-bg:#FBEDE5;
+  --normo:#2F5E9A; --normo-bg:#E7EEF8;
+  --macro:#6B42A8; --macro-bg:#F0EAF8;
+  --hemo:#B02651; --hemo-bg:#FBE7EE;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Source Sans 3','Segoe UI',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14121A; --surface:#1C1924; --ink:#ECE8F3; --muted:#A49DB2; --line:#4A4458;
+  --test:#262231; --test-ink:#E6E1EE;
+  --micro:#F0A27E; --micro-bg:#2D1C15; --normo:#93B6E8; --normo-bg:#162130;
+  --macro:#C2A6EE; --macro-bg:#221A30; --hemo:#F28DAC; --hemo-bg:#2D1520; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14121A; --surface:#1C1924; --ink:#ECE8F3; --muted:#A49DB2; --line:#4A4458;
+  --test:#262231; --test-ink:#E6E1EE;
+  --micro:#F0A27E; --micro-bg:#2D1C15; --normo:#93B6E8; --normo-bg:#162130;
+  --macro:#C2A6EE; --macro-bg:#221A30; --hemo:#F28DAC; --hemo-bg:#2D1520; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+.wrap{max-width:1320px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+header{display:flex;flex-direction:column;gap:8px;max-width:760px}
+header h1{font-size:clamp(30px,4.4vw,46px);font-weight:700;letter-spacing:-.01em}
+header p{margin:0;color:var(--muted);font-size:16px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.legend span{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:3px 10px 3px 6px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;counter-reset:s}
+.steps div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:14px;min-width:0}
+.steps b{display:block;font-family:var(--display);font-size:15px;margin-bottom:2px}
+.steps b::before{counter-increment:s;content:counter(s);font-family:var(--mono);font-size:12px;color:var(--muted);margin-right:8px}
+.trunk{display:flex;flex-direction:column;align-items:center}
+.trunk .test{max-width:440px;width:100%;text-align:center}
+.vline{width:1.5px;height:22px;background:var(--line)}
+.fork{position:relative;height:22px}
+.fork::before{content:"";position:absolute;top:0;left:16.66%;right:16.66%;border-top:1.5px solid var(--line)}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+.col{min-width:0;display:flex;flex-direction:column;gap:12px}
+.col.micro{--c:var(--micro);--cbg:var(--micro-bg)}
+.col.normo{--c:var(--normo);--cbg:var(--normo-bg)}
+.col.macro{--c:var(--macro);--cbg:var(--macro-bg)}
+.hemo{--c:var(--hemo);--cbg:var(--hemo-bg)}
+.head{position:relative;background:var(--cbg);border:1.5px solid var(--c);border-radius:10px;padding:12px 14px}
+.cols .head::before{content:"";position:absolute;left:50%;top:-24px;height:22px;border-left:1.5px solid var(--line)}
+.mcv{font-family:var(--mono);font-size:13px;color:var(--c)}
+.head h2{font-size:24px;color:var(--c);font-weight:700;margin:2px 0 4px}
+.head p{margin:0;font-size:14px}
+.head .mn{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:6px}
+.test{background:var(--test);color:var(--test-ink);border:1px solid var(--line);border-radius:6px;padding:8px 12px}
+.test b{display:block;font-weight:600;font-size:15px}
+.test span{display:block;font-size:13px;color:var(--muted)}
+.test .tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.if{display:inline-block;font-family:var(--mono);font-size:12px;line-height:18px;color:var(--c,var(--ink));background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin-bottom:6px;max-width:100%}
+.dx{background:var(--cbg);border:1px solid var(--c);border-radius:8px;padding:10px 12px}
+.dx h4{font-size:16px;font-weight:700;color:var(--c);margin-bottom:6px}
+.dx dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;margin:0;font-size:13.5px}
+.dx dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.dx dd{margin:0}
+.jump{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14px;color:var(--hemo);text-decoration:none;border:1.5px dashed var(--hemo);border-radius:6px;padding:7px 12px;background:var(--hemo-bg)}
+.jump:hover,.jump:focus-visible{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--c,var(--ink));outline-offset:2px}
+.note{font-size:13px;color:var(--muted);margin-top:6px}
+ul.tree,ul.tree ul{list-style:none;margin:0;padding:0}
+ul.tree ul{margin-left:14px}
+ul.tree li{position:relative;padding:10px 0 0 22px}
+ul.tree li::before{content:"";position:absolute;left:0;top:0;bottom:0;border-left:1.5px solid var(--line)}
+ul.tree li:last-child::before{bottom:auto;height:22px}
+ul.tree li::after{content:"";position:absolute;left:0;top:22px;width:18px;border-top:1.5px solid var(--line)}
+ul.tree>li{padding:0}
+ul.tree>li::before,ul.tree>li::after{display:none}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+#hemolysis{scroll-margin-top:16px}
+.hemo-top{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;align-items:start}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chips span{font-family:var(--mono);font-size:12.5px;padding:3px 9px;border-radius:999px;background:var(--hemo-bg);color:var(--hemo);border:1px solid var(--hemo)}
+.dat{display:flex;flex-direction:column;align-items:center;margin-top:16px}
+.dat .test{max-width:420px;width:100%;text-align:center}
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;position:relative;padding-top:22px}
+.split::before{content:"";position:absolute;top:0;left:25%;right:25%;border-top:1.5px solid var(--line)}
+.split>div{position:relative;min-width:0}
+.split>div::before{content:"";position:absolute;left:50%;top:-22px;height:22px;border-left:1.5px solid var(--line)}
+.branch-head{font-family:var(--display);font-weight:700;font-size:18px;color:var(--hemo);background:var(--hemo-bg);border:1.5px solid var(--hemo);border-radius:8px;padding:8px 12px;text-align:center}
+.branch-head small{display:block;font-family:var(--body);font-weight:400;font-size:13px;color:var(--ink)}
+.refs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.refs h3{font-size:19px;margin-bottom:10px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.c{text-align:center;font-family:var(--mono)}
+.wide{grid-column:1/-1}
+.up{color:var(--hemo)}.down{color:var(--normo)}
+footer{font-size:13px;color:var(--muted)}
+@media (max-width:980px){.cols{grid-template-columns:minmax(0,1fr)}.fork{display:none}.cols .head::before{display:none}.trunk .vline:last-of-type{display:none}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.hemo-top{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:720px){.split,.refs{grid-template-columns:minmax(0,1fr)}.split::before,.split>div::before{display:none}.split{padding-top:6px}}
+@media (max-width:440px){.steps{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Hematology · anemia workup</div>
+  <h1>Anemia Workup Map</h1>
+  <p>Start at the top with the CBC and follow the results down. Gray boxes are tests you order. Colored boxes are diagnoses. The small pill above each box is the result that sends you down that path.</p>
+  <div class="legend">
+    <span><i style="background:var(--test);border:1px solid var(--line)"></i>Test or decision</span>
+    <span><i style="background:var(--micro)"></i>Microcytic</span>
+    <span><i style="background:var(--normo)"></i>Normocytic</span>
+    <span><i style="background:var(--macro)"></i>Macrocytic</span>
+    <span><i style="background:var(--hemo)"></i>Hemolytic</span>
+  </div>
+</header>
+
+<section class="steps" aria-label="How to use this on a case">
+  <div><b>Confirm and size it</b>Low Hb on CBC. Read the MCV to pick a branch.</div>
+  <div><b>Check the retic count</b>Is the marrow responding (high) or failing (low)?</div>
+  <div><b>Follow the branch</b>Each test narrows the list. Match the case clues.</div>
+  <div><b>Confirm the cause</b>Use the specific test, then find and treat the source.</div>
+</section>
+
+<section class="trunk" aria-label="Starting point">
+  <div class="test"><div class="tag">Order</div><b>CBC, reticulocyte count, blood film</b><span>Anemia confirmed: Hb below the reference range</span></div>
+  <div class="vline"></div>
+  <div class="test"><div class="tag">Decide</div><b>Read the MCV</b><span>Sorts the anemia by cell size</span></div>
+  <div class="vline"></div>
+</section>
+
+<div>
+<div class="fork" aria-hidden="true"></div>
+<div class="cols">
+
+<!-- MICROCYTIC -->
+<section class="col micro" aria-label="Microcytic branch">
+  <div class="head">
+    <div class="mcv">MCV &lt; 80 fL</div>
+    <h2>Microcytic</h2>
+    <p>Not enough hemoglobin is made, so the precursor keeps dividing and the cell ends up small and pale. Either heme or globin is short.</p>
+    <div class="mn">TAILS: thalassemia · anemia of chronic inflammation · iron deficiency · lead · sideroblastic</div>
+  </div>
+  <ul class="tree"><li>
+    <div class="test"><div class="tag">Order</div><b>Serum ferritin</b><span>Best single marker of iron stores</span></div>
+    <ul>
+      <li><span class="if">Ferritin low</span>
+        <div class="dx"><h4>Iron deficiency anemia</h4><dl>
+          <dt>Labs</dt><dd>↓ ferritin, ↓ Fe, ↑ TIBC, ↓ saturation, ↑ RDW</dd>
+          <dt>Film</dt><dd>Hypochromic, anisocytosis, poikilocytosis</dd>
+          <dt>Clues</dt><dd>Pica, koilonychia, glossitis, heavy menses, GI bleeding, celiac, vegan diet, pregnancy</dd>
+          <dt>Next</dt><dd>Find the source (older adult with no obvious cause needs a GI workup), then oral or IV iron</dd>
+        </dl></div>
+      </li>
+      <li><span class="if">Ferritin normal or high</span>
+        <div class="test"><div class="tag">Order</div><b>Iron studies, RBC count, film</b><span>Serum Fe, TIBC, transferrin saturation</span></div>
+        <ul>
+          <li><span class="if">↓ Fe, ↓ TIBC</span>
+            <div class="dx"><h4>Anemia of chronic inflammation</h4><dl>
+              <dt>Why</dt><dd>Hepcidin blocks ferroportin, so iron is locked in stores (functional iron deficiency)</dd>
+              <dt>Clues</dt><dd>Chronic infection (TB, osteomyelitis), RA, SLE, IBD, cancer, CKD</dd>
+              <dt>Next</dt><dd>Treat the underlying disease; EPO if severe</dd>
+            </dl></div>
+          </li>
+          <li><span class="if">↑ Fe, ↑ saturation</span>
+            <div class="dx"><h4>Sideroblastic anemia or lead</h4><dl>
+              <dt>Why</dt><dd>Iron is present but can't be built into heme; it collects in mitochondria</dd>
+              <dt>Film</dt><dd>Basophilic stippling, Pappenheimer bodies</dd>
+              <dt>Confirm</dt><dd>Marrow: ringed sideroblasts. Blood lead level if exposure</dd>
+              <dt>Clues</dt><dd>Alcohol, B6 deficiency, anti-TB drugs, MDS, X-linked family history</dd>
+              <dt>Next</dt><dd>Remove the toxin, pyridoxine, chelation for lead</dd>
+            </dl></div>
+          </li>
+          <li><span class="if">Normal iron, ↑ RBC count</span>
+            <div class="test"><div class="tag">Order</div><b>Hb electrophoresis or HPLC</b><span>Mentzer index (MCV ÷ RBC) under 13 suggests thalassemia</span></div>
+            <ul>
+              <li><span class="if">↑ HbA2 (± ↑ HbF)</span>
+                <div class="dx"><h4>β-thalassemia</h4><dl>
+                  <dt>Who</dt><dd>Mediterranean ancestry</dd>
+                  <dt>Spectrum</dt><dd>Minor: ↑ HbA2, mild. Major: ↑ HbF, transfusion-dependent from childhood</dd>
+                  <dt>Film</dt><dd>Target cells, basophilic stippling</dd>
+                  <dt>Next</dt><dd>Transfuse by severity, chelate iron (deferoxamine), genetic counselling</dd>
+                </dl></div>
+              </li>
+              <li><span class="if">Normal HbA2</span>
+                <div class="dx"><h4>α-thalassemia</h4><dl>
+                  <dt>Who</dt><dd>Southeast Asian or African ancestry</dd>
+                  <dt>Spectrum</dt><dd>Silent carrier → trait → HbH disease → Hb Bart's (hydrops fetalis)</dd>
+                  <dt>Confirm</dt><dd>Gene sequencing, HbH inclusion body test</dd>
+                </dl></div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li></ul>
+</section>
+
+<!-- NORMOCYTIC -->
+<section class="col normo" aria-label="Normocytic branch">
+  <div class="head">
+    <div class="mcv">MCV 80–100 fL</div>
+    <h2>Normocytic</h2>
+    <p>Cells are normal-sized. Ask whether the marrow is failing to make enough, or making plenty and losing them.</p>
+    <div class="mn">ABCD: acute blood loss · bone marrow failure · chronic disease · destruction</div>
+  </div>
+  <ul class="tree"><li>
+    <div class="test"><div class="tag">Decide</div><b>Reticulocyte count</b><span>Use the corrected count. Is the marrow responding?</span></div>
+    <ul>
+      <li><span class="if">High: increased turnover</span>
+        <div class="test"><div class="tag">Order</div><b>Hemolysis labs</b><span>LDH, indirect bilirubin, haptoglobin</span></div>
+        <ul>
+          <li><span class="if">Normal</span>
+            <div class="dx"><h4>Blood loss</h4><dl>
+              <dt>Clues</dt><dd>Melena, hematemesis, heavy menses, trauma, tachycardia, hypotension</dd>
+              <dt>Trap</dt><dd>Hb can look normal right after an acute bleed; retics rise after 3 to 5 days</dd>
+              <dt>Next</dt><dd>Find and stop the source; transfuse if needed</dd>
+            </dl></div>
+          </li>
+          <li><span class="if">↑ LDH, ↑ bili, ↓ haptoglobin</span>
+            <a class="jump" href="#hemolysis">Go to hemolytic anemia ↓</a>
+          </li>
+        </ul>
+      </li>
+      <li><span class="if">Low or normal: decreased production</span>
+        <div class="test"><div class="tag">Order</div><b>Look beyond the red cells</b><span>WBC, platelets, creatinine, inflammatory markers</span></div>
+        <ul>
+          <li><span class="if">Known chronic disease, other lines OK</span>
+            <div class="dx"><h4>Chronic disease or CKD</h4><dl>
+              <dt>Why</dt><dd>Inflammation raises hepcidin (ACI). Damaged kidneys make less EPO (CKD)</dd>
+              <dt>Note</dt><dd>ACI starts normocytic and can turn microcytic over time</dd>
+              <dt>Next</dt><dd>Treat the cause; EPO for CKD</dd>
+            </dl></div>
+          </li>
+          <li><span class="if">Other cytopenias or no explanation</span>
+            <div class="test"><div class="tag">Order</div><b>Blood film and bone marrow biopsy</b><span>Spleen not enlarged in marrow failure</span></div>
+            <ul>
+              <li><span class="if">Only RBCs low</span>
+                <div class="dx"><h4>Pure red cell aplasia</h4><dl>
+                  <dt>Labs</dt><dd>Severe reticulocytopenia, normochromic cells</dd>
+                  <dt>Causes</dt><dd>Diamond-Blackfan (congenital), autoimmune, MDS, marrow toxins</dd>
+                </dl></div>
+              </li>
+              <li><span class="if">Pancytopenia, empty marrow</span>
+                <div class="dx"><h4>Aplastic anemia</h4><dl>
+                  <dt>Marrow</dt><dd>Hypocellular, replaced by fat</dd>
+                  <dt>Causes</dt><dd>Idiopathic (most), marrow toxins, inherited: Fanconi (short stature, thumb anomalies), dyskeratosis congenita</dd>
+                  <dt>Next</dt><dd>Support (blood products, antibiotics), ATG + cyclosporine, marrow transplant</dd>
+                </dl></div>
+              </li>
+              <li><span class="if">Teardrops, leukoerythroblastic</span>
+                <div class="dx"><h4>Myelophthisis</h4><dl>
+                  <dt>Why</dt><dd>Marrow is crowded out by fibrosis, blood cancer or metastatic solid cancer</dd>
+                  <dt>Film</dt><dd>Teardrop cells, immature WBCs and nucleated RBCs in blood</dd>
+                </dl></div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li></ul>
+</section>
+
+<!-- MACROCYTIC -->
+<section class="col macro" aria-label="Macrocytic branch">
+  <div class="head">
+    <div class="mcv">MCV &gt; 100 fL</div>
+    <h2>Macrocytic</h2>
+    <p>Either DNA synthesis fails so the cell grows without dividing, or the membrane carries extra lipid.</p>
+    <div class="mn">ABCDEF: alcohol/liver · B12 · compensatory retics · drugs/dysplasia · endocrine · folate/fetus</div>
+  </div>
+  <ul class="tree"><li>
+    <div class="test"><div class="tag">Look</div><b>Peripheral blood film</b><span>Check the neutrophils and the RBC shape</span></div>
+    <ul>
+      <li><span class="if">Hypersegmented PMNs, oval macrocytes</span>
+        <div class="test"><div class="tag">Order</div><b>Megaloblastic: B12, folate, MMA, homocysteine</b><span>Marrow shows nuclear-cytoplasmic asynchrony</span></div>
+        <p class="note">Both can mimic hemolysis (↑ LDH, ↑ bili, ↓ haptoglobin) because precursors die in the marrow, but retics stay low.</p>
+        <ul>
+          <li><span class="if">↑ MMA + ↑ homocysteine</span>
+            <div class="dx"><h4>B12 deficiency</h4><dl>
+              <dt>Causes</dt><dd>Pernicious anemia, gastrectomy, ileal resection or Crohn's, vegan diet, fish tapeworm</dd>
+              <dt>Clues</dt><dd>Neuro signs: lost proprioception and vibration, neuropathy, cognitive change</dd>
+              <dt>Stores</dt><dd>3 to 4 years</dd>
+              <dt>Next</dt><dd>Anti-intrinsic factor antibodies; B12 replacement</dd>
+            </dl></div>
+          </li>
+          <li><span class="if">↑ homocysteine only</span>
+            <div class="dx"><h4>Folate deficiency</h4><dl>
+              <dt>Causes</dt><dd>Poor diet, alcohol, pregnancy, hemolysis, jejunal disease, anticonvulsants, sulfasalazine</dd>
+              <dt>Clues</dt><dd>No neuro signs. Glossitis, social history</dd>
+              <dt>Stores</dt><dd>3 to 6 months</dd>
+              <dt>Next</dt><dd>Folate, but only once B12 deficiency is excluded</dd>
+            </dl></div>
+          </li>
+        </ul>
+      </li>
+      <li><span class="if">Round macrocytes, normal PMNs</span>
+        <div class="test"><div class="tag">Decide</div><b>Non-megaloblastic: retic count</b><span>Young cells are bigger than mature ones</span></div>
+        <ul>
+          <li><span class="if">High</span>
+            <div class="dx"><h4>Reticulocytosis</h4><dl>
+              <dt>Why</dt><dd>Marrow is pouring out large young cells after bleeding or hemolysis</dd>
+            </dl>
+            <p class="note"><a class="jump" href="#hemolysis">Work up hemolysis ↓</a></p></div>
+          </li>
+          <li><span class="if">Normal or low</span>
+            <div class="test"><div class="tag">Order</div><b>LFTs, TSH, alcohol and drug history</b><span>Review the film for clumping</span></div>
+            <ul>
+              <li><span class="if">Heavy drinking or abnormal LFTs</span>
+                <div class="dx"><h4>Liver disease or alcohol</h4><dl>
+                  <dt>Why</dt><dd>Abnormal cholesterol metabolism adds membrane</dd>
+                  <dt>Next</dt><dd>Alcohol cessation, replace deficiencies, treat liver disease</dd>
+                </dl></div>
+              </li>
+              <li><span class="if">TSH high</span>
+                <div class="dx"><h4>Hypothyroidism</h4><dl>
+                  <dt>Clues</dt><dd>Cold intolerance, weight gain, constipation, hair loss, bradycardia</dd>
+                  <dt>Next</dt><dd>Thyroid hormone replacement</dd>
+                </dl></div>
+              </li>
+              <li><span class="if">Culprit drug or other cytopenias</span>
+                <div class="dx"><h4>Drugs or dysplasia</h4><dl>
+                  <dt>Clues</dt><dd>Methotrexate, hydroxyurea, zidovudine. MDS in an older adult with cytopenias</dd>
+                  <dt>Next</dt><dd>Review medications; marrow biopsy if MDS suspected</dd>
+                </dl></div>
+              </li>
+              <li><span class="if">Clumps or rouleaux on film</span>
+                <div class="dx"><h4>Pseudo-macrocytosis</h4><dl>
+                  <dt>Why</dt><dd>Clumped cells are counted as one big cell</dd>
+                  <dt>Causes</dt><dd>Cold agglutinins, multiple myeloma (rouleaux)</dd>
+                </dl></div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li></ul>
+</section>
+</div>
+</div>
+
+<!-- HEMOLYTIC -->
+<section id="hemolysis" class="panel hemo" aria-label="Hemolytic anemia">
+  <div class="hemo-top">
+    <div class="head">
+      <div class="mcv">Any MCV · usually normocytic</div>
+      <h2>Hemolytic anemia</h2>
+      <p>Red cells are destroyed early. The marrow is healthy and compensates, so the retic count is high. Heme becomes bilirubin and haptoglobin is used up mopping free Hb.</p>
+    </div>
+    <div>
+      <div class="eyebrow">Confirm hemolysis</div>
+      <div class="chips"><span>↑ reticulocytes</span><span>↑ LDH</span><span>↑ indirect bilirubin</span><span>↓ haptoglobin</span></div>
+      <p class="note">Intravascular hemolysis adds hemoglobinuria and hemosiderinuria (dark urine). Extravascular hemolysis happens in the spleen and liver and causes splenomegaly.</p>
+    </div>
+  </div>
+
+  <div class="dat">
+    <div class="test"><div class="tag">Order</div><b>Direct antiglobulin test (DAT, Coombs)</b><span>Is antibody or complement stuck to the red cells?</span></div>
+  </div>
+  <div class="split">
+    <div>
+      <div class="branch-head">DAT positive<small>Immune destruction</small></div>
+      <ul class="tree"><li><ul style="margin-left:6px">
+        <li><span class="if">IgG, reacts at 37 °C</span>
+          <div class="dx"><h4>Warm AIHA (70%)</h4><dl>
+            <dt>Film</dt><dd>Spherocytes, polychromasia</dd>
+            <dt>Causes</dt><dd>Idiopathic, SLE, CLL or lymphoma, drugs</dd>
+            <dt>Next</dt><dd>Steroids, immunosuppression, splenectomy, folate</dd>
+          </dl></div>
+        </li>
+        <li><span class="if">C3 only (IgM), reacts in the cold</span>
+          <div class="dx"><h4>Cold AIHA (30%)</h4><dl>
+            <dt>Film</dt><dd>Agglutination, spherocytes</dd>
+            <dt>Causes</dt><dd>Mycoplasma, mononucleosis, lymphoma, hepatitis</dd>
+            <dt>Clues</dt><dd>Symptoms worse in cold fingers, toes, ears</dd>
+            <dt>Next</dt><dd>Avoid cold, treat cause, folate</dd>
+          </dl></div>
+        </li>
+        <li><span class="if">Recent transfusion or pregnancy</span>
+          <div class="dx"><h4>Alloimmune hemolysis</h4><dl>
+            <dt>Causes</dt><dd>Transfusion reaction; hemolytic disease of the fetus and newborn</dd>
+          </dl></div>
+        </li>
+      </ul></li></ul>
+    </div>
+    <div>
+      <div class="branch-head">DAT negative<small>Look at cell shape on the film</small></div>
+      <ul class="tree"><li><ul style="margin-left:6px">
+        <li><span class="if">Spherocytes</span>
+          <div class="dx"><h4>Hereditary spherocytosis</h4><dl>
+            <dt>Why</dt><dd>Autosomal dominant defect in spectrin, ankyrin, band 3 or protein 4.2</dd>
+            <dt>Clues</dt><dd>Family history, splenomegaly, jaundice, pigment gallstones</dd>
+            <dt>Confirm</dt><dd>Flow cytometry for band 3 (EMA binding)</dd>
+            <dt>Next</dt><dd>Folate, vaccines, penicillin prophylaxis, splenectomy if severe</dd>
+          </dl></div>
+        </li>
+        <li><span class="if">Bite cells, Heinz bodies</span>
+          <div class="dx"><h4>G6PD deficiency</h4><dl>
+            <dt>Why</dt><dd>X-linked. No glutathione defence, so oxidants denature Hb</dd>
+            <dt>Clues</dt><dd>Episode after fava beans, infection, sulfonamides, antimalarials, ASA</dd>
+            <dt>Next</dt><dd>Avoid triggers. Enzyme assay can read falsely normal during a crisis</dd>
+          </dl></div>
+        </li>
+        <li><span class="if">Schistocytes</span>
+          <div class="dx"><h4>Microangiopathic or mechanical</h4><dl>
+            <dt>Causes</dt><dd>TTP, HUS, DIC, malignant hypertension, pre-eclampsia; mechanical heart valves</dd>
+            <dt>Next</dt><dd>Platelets, coagulation tests, creatinine. Suspected TTP is an emergency</dd>
+          </dl></div>
+        </li>
+        <li><span class="if">Sickle cells</span>
+          <div class="dx"><h4>Sickle cell disease</h4><dl>
+            <dt>Why</dt><dd>Autosomal recessive. HbS: glutamate → valine in the β chain</dd>
+            <dt>Clues</dt><dd>Vaso-occlusive crises: dactylitis, acute chest syndrome, stroke</dd>
+            <dt>Confirm</dt><dd>Hb electrophoresis or HPLC; newborn screening</dd>
+            <dt>Next</dt><dd>Hydroxyurea, folate, penicillin to age 5, vaccines</dd>
+          </dl></div>
+        </li>
+        <li><span class="if">No telltale shape</span>
+          <div class="dx"><h4>Other causes</h4><dl>
+            <dt>PNH</dt><dd>Acquired PIGA mutation, intravascular, dark morning urine. Flow cytometry</dd>
+            <dt>Infection</dt><dd>Malaria (blood smear), clostridial sepsis</dd>
+            <dt>Physical</dt><dd>Burns, repetitive trauma (marathon running)</dd>
+          </dl></div>
+        </li>
+      </ul></li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCE -->
+<section class="refs" aria-label="Quick reference">
+  <div class="panel">
+    <h3>Iron studies at a glance</h3>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Ferritin</th><th>Fe</th><th>TIBC</th><th>Sat.</th></tr></thead>
+      <tbody>
+        <tr><td>Iron deficiency</td><td class="c down">↓</td><td class="c down">↓</td><td class="c up">↑</td><td class="c down">↓</td></tr>
+        <tr><td>Chronic inflammation</td><td class="c">N / ↑</td><td class="c down">↓</td><td class="c down">↓</td><td class="c">↓ / N</td></tr>
+        <tr><td>Sideroblastic</td><td class="c up">↑</td><td class="c up">↑</td><td class="c">N / ↓</td><td class="c up">↑</td></tr>
+        <tr><td>Thalassemia</td><td class="c">N</td><td class="c">N</td><td class="c">N</td><td class="c">N</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">TIBC moves opposite to the body's iron need. Ferritin is an acute-phase reactant, so inflammation can hide iron deficiency.</p>
+  </div>
+  <div class="panel">
+    <h3>Blood film clues</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>You see</th><th>Think</th></tr></thead>
+      <tbody>
+        <tr><td>Hypersegmented neutrophils</td><td>B12 or folate deficiency</td></tr>
+        <tr><td>Target cells</td><td>Thalassemia, liver disease</td></tr>
+        <tr><td>Basophilic stippling</td><td>Lead, thalassemia, sideroblastic</td></tr>
+        <tr><td>Teardrop cells</td><td>Myelophthisis, marrow fibrosis</td></tr>
+        <tr><td>Spherocytes</td><td>Hereditary spherocytosis, warm AIHA</td></tr>
+        <tr><td>Bite cells, Heinz bodies</td><td>G6PD deficiency</td></tr>
+        <tr><td>Schistocytes</td><td>TTP, HUS, DIC, mechanical valve</td></tr>
+        <tr><td>Agglutination</td><td>Cold AIHA</td></tr>
+        <tr><td>Rouleaux</td><td>Multiple myeloma</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="panel wide">
+    <h3>Case stems to recognize</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Case clue</th><th>Most likely</th></tr></thead>
+      <tbody>
+        <tr><td>Young woman, heavy periods, fatigue, spoon nails, craves ice</td><td>Iron deficiency</td></tr>
+        <tr><td>Older man with new iron deficiency and no obvious bleeding</td><td>GI blood loss (rule out colon cancer)</td></tr>
+        <tr><td>RA patient, low Fe, low TIBC, high ferritin</td><td>Anemia of chronic inflammation</td></tr>
+        <tr><td>Very low MCV, high RBC count, normal ferritin, Mediterranean or Asian ancestry</td><td>Thalassemia trait</td></tr>
+        <tr><td>Pancytopenia, no splenomegaly, fatty marrow</td><td>Aplastic anemia</td></tr>
+        <tr><td>Post-gastrectomy or vegan, numb feet, poor balance, MCV 115</td><td>B12 deficiency</td></tr>
+        <tr><td>Heavy drinker, MCV 105, normal neutrophils</td><td>Alcohol or liver disease</td></tr>
+        <tr><td>Male, dark urine and jaundice after fava beans or a sulfa drug</td><td>G6PD deficiency</td></tr>
+        <tr><td>Teen with family history, splenomegaly, gallstones, DAT negative spherocytes</td><td>Hereditary spherocytosis</td></tr>
+        <tr><td>Mycoplasma pneumonia, then anemia and blue fingers in the cold</td><td>Cold AIHA</td></tr>
+        <tr><td>Fever, low platelets, confusion, kidney injury, schistocytes</td><td>TTP</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<footer>Built from your course tables on microcytic, normocytic, macrocytic and hemolytic anemia. Check cut-offs and treatment details against your lecture notes.</footer>
+</div>
+
+</body></html>

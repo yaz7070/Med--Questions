@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Week 4: Well Child & Adolescent Care — Advanced Practice Chart (Set 2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEF0EA; --paper:#FFFFFF; --ink:#1F2A24; --muted:#5B6A61; --line:#D7DBD2;
+    --accent:#2F6F5E; --accent-wash:#E4EDE9; --correct:#2E7D4F; --correct-wash:#E4F2E8;
+    --incorrect:#A13D2C; --incorrect-wash:#F6E7E3; --unanswered:#C9CFC4;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg:#171C18; --paper:#1F251F; --ink:#EDEFE9; --muted:#9BA79C; --line:#333A32;
+      --accent:#6FBBA3; --accent-wash:#25332C; --correct:#6FBB8B; --correct-wash:#20332A;
+      --incorrect:#E28C79; --incorrect-wash:#3A2621; --unanswered:#3A4139;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#171C18; --paper:#1F251F; --ink:#EDEFE9; --muted:#9BA79C; --line:#333A32;
+    --accent:#6FBBA3; --accent-wash:#25332C; --correct:#6FBB8B; --correct-wash:#20332A;
+    --incorrect:#E28C79; --incorrect-wash:#3A2621; --unanswered:#3A4139;
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    -webkit-font-smoothing:antialiased;
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  .wrap{ max-width:720px; margin:0 auto; padding:28px 20px 64px; }
+  .chart-header{ border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:18px; }
+  .chart-id{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.04em; color:var(--muted);
+    display:flex; justify-content:space-between; margin-bottom:8px; gap:8px; flex-wrap:wrap;
+  }
+  h1{ font-family:'Source Serif 4', serif; font-weight:600; font-size:24px; line-height:1.2; margin:0 0 4px; }
+  .subtitle{ color:var(--muted); font-size:14px; margin:0; }
+  .diff-note{
+    font-size:12px; color:var(--incorrect); font-weight:600; margin-top:8px;
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .status-row{
+    display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+  }
+  .status-row .score{ color:var(--accent); font-weight:600; }
+  .ticks{ display:grid; grid-template-columns:repeat(16, 1fr); gap:3px; margin-top:10px; }
+  .tick{ height:8px; background:var(--unanswered); border:none; padding:0; cursor:pointer; border-radius:1px; }
+  .tick.current{ outline:2px solid var(--ink); outline-offset:1px; }
+  .tick.correct{ background:var(--correct); }
+  .tick.incorrect{ background:var(--incorrect); }
+  .card{ background:var(--paper); border:1px solid var(--line); margin-top:22px; }
+  .card-top{
+    display:flex; justify-content:space-between; align-items:center; padding:12px 18px;
+    border-bottom:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted);
+  }
+  .category-tag{ color:var(--accent); font-weight:600; }
+  .prompt{ font-family:'Source Serif 4', serif; font-size:18px; line-height:1.55; padding:20px 18px 8px; white-space:pre-line; }
+  .options{ padding:6px 18px 18px; display:flex; flex-direction:column; gap:8px; }
+  .option{
+    display:flex; align-items:flex-start; gap:12px; text-align:left; background:var(--paper);
+    border:1px solid var(--line); padding:11px 13px; font-family:'IBM Plex Sans', sans-serif;
+    font-size:15px; line-height:1.45; color:var(--ink); cursor:pointer;
+    transition:border-color .12s ease, background .12s ease;
+  }
+  .option:hover:not(:disabled){ border-color:var(--accent); background:var(--accent-wash); }
+  .option:disabled{ cursor:default; }
+  .option .letter{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:600; color:var(--muted);
+    border:1px solid var(--line); width:22px; height:22px; min-width:22px;
+    display:flex; align-items:center; justify-content:center; margin-top:1px;
+  }
+  .option.correct{ background:var(--correct-wash); border-color:var(--correct); }
+  .option.correct .letter{ border-color:var(--correct); color:var(--correct); }
+  .option.incorrect{ background:var(--incorrect-wash); border-color:var(--incorrect); }
+  .option.incorrect .letter{ border-color:var(--incorrect); color:var(--incorrect); }
+  .feedback{
+    margin:0 18px 18px; padding:14px 16px; border-left:3px solid var(--accent);
+    background:var(--accent-wash); font-size:14px; line-height:1.6; display:none;
+  }
+  .feedback.show{ display:block; }
+  .feedback.correct-fb{ border-color:var(--correct); background:var(--correct-wash); }
+  .feedback.incorrect-fb{ border-color:var(--incorrect); background:var(--incorrect-wash); }
+  .feedback .verdict{ font-weight:600; display:block; margin-bottom:4px; }
+  .feedback .verdict.correct-text{ color:var(--correct); }
+  .feedback .verdict.incorrect-text{ color:var(--incorrect); }
+  .nav-row{
+    display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-top:1px solid var(--line);
+  }
+  .btn{
+    font-family:'IBM Plex Sans', sans-serif; font-size:14px; font-weight:500; padding:9px 16px;
+    border:1px solid var(--ink); background:var(--paper); color:var(--ink); cursor:pointer;
+  }
+  .btn:disabled{ opacity:0.35; cursor:not-allowed; }
+  .btn.primary{ background:var(--ink); color:var(--paper); }
+  .btn.primary:disabled{ background:var(--unanswered); border-color:var(--unanswered); }
+  .summary{ background:var(--paper); border:1px solid var(--line); margin-top:22px; padding:28px 22px; display:none; }
+  .summary.show{ display:block; }
+  .summary h2{ font-family:'Source Serif 4', serif; font-size:24px; margin:0 0 4px; }
+  .summary .big-score{ font-family:'IBM Plex Mono', monospace; font-size:44px; font-weight:600; color:var(--accent); margin:14px 0 2px; }
+  .summary .big-score-label{ color:var(--muted); font-size:13px; margin-bottom:22px; }
+  .breakdown{ border-top:1px solid var(--line); padding-top:16px; margin-top:6px; }
+  .breakdown-row{ display:flex; justify-content:space-between; font-size:14px; padding:7px 0; border-bottom:1px solid var(--line); }
+  .breakdown-row:last-child{ border-bottom:none; }
+  .breakdown-row .cat{ color:var(--ink); }
+  .breakdown-row .frac{ font-family:'IBM Plex Mono', monospace; color:var(--muted); }
+  .restart-row{ margin-top:22px; }
+  footer{ text-align:center; color:var(--muted); font-size:12px; margin-top:26px; font-family:'IBM Plex Mono', monospace; }
+  @media (max-width:420px){
+    .ticks{ grid-template-columns:repeat(8,1fr); }
+    .prompt{ font-size:16px; }
+    h1{ font-size:20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="chart-header">
+    <div class="chart-id">
+      <span>FOUNDATIONS OF MEDICINE — ADVANCED PROGRESS TEST</span>
+      <span id="item-count">ITEM 1 / 31</span>
+    </div>
+    <h1>Week 4: Well Child &amp; Adolescent Care — Set 2</h1>
+    <p class="subtitle">Regenerated: terse, closely-matched answer options — swapped numbers, reversed pairings, near-miss syndromes — so no option gives itself away by how it's phrased.</p>
+    <p class="diff-note">Difficulty: hard — read every option fully before choosing.</p>
+    <div class="status-row">
+      <span id="progress-label">0 of 31 answered</span>
+      <span class="score" id="score-label">Score: 0 / 0</span>
+    </div>
+    <div class="ticks" id="ticks"></div>
+  </div>
+
+  <div class="card" id="card">
+    <div class="card-top">
+      <span class="category-tag" id="cat-tag">CATEGORY</span>
+      <span id="q-number">Q1</span>
+    </div>
+    <div class="prompt" id="prompt">Loading…</div>
+    <div class="options" id="options"></div>
+    <div class="feedback" id="feedback">
+      <span class="verdict" id="verdict"></span>
+      <span id="explanation"></span>
+    </div>
+    <div class="nav-row">
+      <button class="btn" id="prev-btn">← Previous</button>
+      <button class="btn primary" id="next-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+  <div class="summary" id="summary">
+    <h2>Chart complete</h2>
+    <p class="subtitle">Here's how you did across all 31 items.</p>
+    <div class="big-score" id="final-score">0 / 31</div>
+    <div class="big-score-label" id="final-pct">0% correct</div>
+    <div class="breakdown" id="breakdown"></div>
+    <div class="restart-row">
+      <button class="btn primary" id="restart-btn">Restart chart</button>
+    </div>
+  </div>
+
+  <footer>31 items · Immunology &amp; Vaccines · Childhood Behaviour · ADHD · Adolescent Health &amp; Communication · Social Determinants of Health · Genetic &amp; Neuromuscular Conditions</footer>
+</div>
+
+<script>
+const QUESTIONS = [
+{c:"Immunology & Vaccines",p:"A vaccine trial under controlled research conditions shows 95% protection against illness. Two years later, population-level surveillance shows 80% protection in real-world use. Which term applies to each measurement, in order?",o:["Efficacy; effectiveness","Effectiveness; efficacy","Safety; efficacy","Immunogenicity; herd immunity"],a:0,e:"Efficacy is measured under controlled study conditions; effectiveness is measured under real-world conditions, and is typically somewhat lower."},
+{c:"Immunology & Vaccines",p:"Which of the following vaccines is NOT part of Canada's routine immunization schedule?",o:["Rotavirus","Meningococcal C conjugate","Pneumococcal 23-valent polysaccharide","Hepatitis B"],a:2,e:"The 23-valent pneumococcal polysaccharide vaccine is not part of the routine Canadian schedule, unlike pneumococcal conjugate vaccine. Rotavirus, MenC conjugate, and Hepatitis B are all routine."},
+{c:"Immunology & Vaccines",p:"A 4-year-old with a T-cell immunodeficiency is due for her MMR and Hepatitis B vaccines. Which pairing of vaccine classification and appropriateness for this patient is correct?",o:["MMR (live attenuated) — contraindicated; Hepatitis B (subunit) — appropriate","MMR (subunit) — appropriate; Hepatitis B (live attenuated) — contraindicated","Both vaccines (inactivated whole-cell) — appropriate","Both vaccines (live attenuated) — appropriate, since neither can replicate"],a:0,e:"MMR is a live attenuated vaccine and is contraindicated in T-cell immunodeficiency due to the risk of vaccine-strain disease. Hepatitis B is a subunit (protein-based) vaccine and is safe in this population."},
+{c:"Immunology & Vaccines",p:"Two household contacts of a confirmed measles case are assessed within 24 hours of exposure: a 4-month-old infant, and an unvaccinated, immunocompetent 8-month-old. Which post-exposure management is correct for each, respectively?",o:["Immunoglobulin (the 4-month-old); vaccine within 72h (the 8-month-old)","Vaccine within 72h for both infants","Immunoglobulin for both infants","Vaccine within 72h (the 4-month-old); immunoglobulin (the 8-month-old)"],a:0,e:"Immunoglobulin is used for infants under 6 months, too young for vaccine-based PEP. Vaccine within 72 hours is appropriate for immunocompetent contacts over 6 months of age."},
+{c:"Immunology & Vaccines",p:"A pregnant woman without varicella immunity, and a non-pregnant immunocompetent adult without varicella immunity, are both exposed to chickenpox at the same time. Which post-exposure management is correct for each, respectively?",o:["Immunoglobulin within 96h (the pregnant woman); vaccine within 3-5 days (the non-pregnant adult)","Vaccine within 3-5 days for both","Immunoglobulin within 96h for both","Vaccine within 3-5 days (the pregnant woman); immunoglobulin within 96h (the non-pregnant adult)"],a:0,e:"Live varicella vaccine is contraindicated in pregnancy, so immunoglobulin within 96 hours is used instead. A non-pregnant, immunocompetent adult should receive the vaccine within 3-5 days."},
+{c:"Immunology & Vaccines",p:"Conjugate vaccines (e.g., Hib, pneumococcal conjugate) were developed to overcome which specific limitation of plain polysaccharide vaccines in young children?",o:["Poor T-cell-dependent response, producing weak and short-lived immunity","Excessive reactogenicity requiring a reduced dose","Inability to be stored without refrigeration","Risk of causing vaccine-strain disease"],a:0,e:"Plain polysaccharide antigens are T-cell-independent and poorly immunogenic in young children. Conjugating the polysaccharide to a protein carrier recruits T-cell help, producing a stronger and more durable response."},
+{c:"Childhood Behaviour",p:"Which pairing correctly matches the age range most classically associated with an infant first biting during excitement, versus the age range most associated with first clearly displaying anger?",o:["Biting: 8-12 months; anger display: 6 months","Biting: 6 months; anger display: 8-12 months","Biting: 12-18 months; anger display: 3 months","Biting: 3 months; anger display: 12-18 months"],a:0,e:"Infants typically display anger around 6 months and bite in excitement between 8 and 12 months — anger recognition even earlier, around 3 months."},
+{c:"Childhood Behaviour",p:"Which feature would most strongly reclassify an otherwise typical toddler tantrum as atypical?",o:["Duration under 5 minutes","Occasional breath-holding during the episode","Duration over 15 minutes","Occurrence at both home and daycare"],a:2,e:"Tantrums lasting more than about 15 minutes are a recognized red flag for an atypical tantrum. Brief duration, occasional breath-holding, and occurring in more than one setting are all within the typical range."},
+{c:"Childhood Behaviour",p:"Regarding the typical function of childhood aggression, which statement correctly contrasts behaviour before versus after age 6?",o:["Before 6: typically used to obtain something; after 6: more typically used to retaliate","Before 6: typically used to retaliate; after 6: more typically used to obtain something","The typical function of aggression does not change with age","Aggression used to obtain something only appears after age 6"],a:0,e:"The expected developmental pattern is that aggression to obtain something is more typical under age 6, shifting toward aggression to retaliate over age 6."},
+{c:"Childhood Behaviour",p:"Which statement about recommended daily physical activity and the variability of activity level in young children is correct?",o:["60 minutes/day is recommended; activity level is highly variable among healthy children","30 minutes/day is recommended; high activity level always indicates ADHD","60 minutes/day is recommended; low variability is expected among healthy children","There is no recommended activity level for children under age 5"],a:0,e:"About 60 minutes per day is the general activity recommendation, and activity level is recognized as highly variable among healthy children."},
+{c:"Childhood Behaviour",p:"A 13-month-old wakes twice nightly and is soothed with a bottle each time. Which management step is specifically recommended around this age?",o:["Eliminate the bottle around 12 months, alongside sleep hygiene and limit setting","Continue the bottle indefinitely to avoid distress","Refer for polysomnography at this age","Eliminate the bottle only after 24 months"],a:0,e:"Recommended management of night waking includes sleep hygiene, appropriate limit setting, and eliminating the bottle around 12 months of age."},
+{c:"ADHD",p:"A child has 5 inattentive symptoms and 4 hyperactive-impulsive symptoms, persisting 8 months, present across 2 settings, with clear functional impairment. Does this meet the symptom-count threshold for ADHD?",o:["No — neither domain individually reaches the required 6-symptom threshold","Yes — the combined total of 9 symptoms across both domains is sufficient","Yes — cross-setting impairment alone is sufficient regardless of symptom count","No — the 8-month duration is insufficient regardless of symptom count"],a:0,e:"Diagnostic criteria require 6 or more symptoms within at least one domain individually — 5 and 4 in the two domains, without either reaching 6, technically falls short of threshold."},
+{c:"ADHD",p:"Which onset pattern is LEAST consistent with a primary ADHD diagnosis?",o:["Several symptoms present before age 12, across 2 or more settings","Symptoms present since preschool, worsening as academic demands increase","Clearly new-onset inattention at age 14 with no prior history, coinciding with an acute stressor","Symptoms present at both home and school since early elementary school"],a:2,e:"ADHD criteria require several symptoms present before age 12. A clean history until age 14, coinciding with a clear situational stressor, is atypical for a primary ADHD diagnosis."},
+{c:"ADHD",p:"A child meets full ADHD symptom criteria, but the inattentive symptoms occur exclusively during an active major depressive episode and resolve as the depression resolves. What is the most accurate conclusion?",o:["ADHD criteria are not met, since the symptoms are better explained by another mental disorder","ADHD is confirmed, since the symptom checklist is satisfied regardless of context","Both ADHD and depression must be diagnosed simultaneously in every such case","This pattern is diagnostic of bipolar disorder rather than either condition"],a:0,e:"ADHD criteria exclude symptoms that occur exclusively during, and are better explained by, another mental disorder such as a mood disorder."},
+{c:"ADHD",p:"Which tool is specifically a symptom rating scale used in ADHD assessment, as opposed to a psychosocial interview framework or a substance-use screen?",o:["SNAP-IV","HEADSS","CAGE","CRAFFT"],a:0,e:"SNAP-IV is a rating scale used to quantify ADHD symptoms, often completed by both parents and teachers, distinct from HEADSS (psychosocial interview) and CAGE/CRAFFT (substance use screens)."},
+{c:"ADHD",p:"What proportion of children with ADHD are estimated to respond to stimulant medication?",o:["~90%","~50%","~25%","~10%"],a:0,e:"Roughly 90% of children with ADHD respond to stimulant medications, which is why stimulants are first-line pharmacotherapy."},
+{c:"Adolescent Health & Communication",p:"Which of the following is one of the specific elements of the structured \"7 Ps\" adolescent sexual health framework?",o:["Partners","Prognosis","Provider continuity","Prescription history"],a:0,e:"The 7 Ps are partners, practices, protection from STIs, past history of STIs, pregnancy, permission, and personal identity."},
+{c:"Adolescent Health & Communication",p:"Which pairing correctly matches each screening tool to its primary intended population?",o:["CAGE — adults; CRAFFT — adolescents","CRAFFT — adults; CAGE — adolescents","CAGE — adolescents only; CRAFFT unused in clinical practice","Both tools are validated identically for all ages"],a:0,e:"CAGE is the classic adult alcohol screening tool; CRAFFT was developed specifically for adolescent substance use screening."},
+{c:"Adolescent Health & Communication",p:"When delivering a diagnosis of a significant developmental disability to a family, which combination of practices is recommended?",o:["Familiar provider, both parents present, timely delivery, adequate follow-up time","Unfamiliar provider for objectivity, single parent present, delivered by phone","Familiar provider, single parent present, delayed until fully confirmed","Unfamiliar provider, both parents present, delivered as quickly as possible with no follow-up scheduled"],a:0,e:"Recommended practice includes a provider familiar to the family, both parents present, timely delivery, and adequate time at follow-up visits to review the information again."},
+{c:"Adolescent Health & Communication",p:"Which sequence correctly reflects the recommended steps for giving news of a disability?",o:["Introduce self → sit down → warning phrase → get to the point → allow silence","Get to the point immediately → introduce self afterward → avoid silence","Warning phrase → delay the diagnosis until the next visit → introduce self","Sit down → get to the point → avoid warning phrases → fill all silence"],a:0,e:"The recommended sequence is: introduce self, sit down if agreeable, give a warning phrase, get to the point quickly, then allow time and remain comfortable with silence."},
+{c:"Adolescent Health & Communication",p:"Which of the following best reflects the full recommended scope of a routine adolescent well-visit, beyond the physical exam alone?",o:["Growth, patient concerns, sexual health, and physical/social/mental/emotional health, within an appropriately confidential relationship","Physical exam and immunization status only","Growth and vision/hearing screening only","Mental health screening only, deferring physical assessment to a separate visit"],a:0,e:"The goals of a well-adolescent assessment span growth, patient concerns, sexual health, physical/social/mental/emotional health including risk-taking behaviours, and a confidential therapeutic relationship."},
+{c:"Social Determinants of Health",p:"Which pairing correctly matches each scenario to its social determinant of health domain?\nScenario 1: differential opportunity based on sex, including pay gaps and childcare responsibilities.\nScenario 2: differential treatment based on race, including marginalization.",o:["Gender; race and racism","Culture; employment and working conditions","Education and literacy; biology and genetic endowment","Physical environments; access to health services"],a:0,e:"Scenario 1 describes the gender domain; scenario 2 describes the race and racism domain — two distinct social determinants of health."},
+{c:"Social Determinants of Health",p:"Toxic stress altering brain development and fostering negative coping strategies across the lifespan is best categorized under which social determinant of health domain?",o:["Childhood experiences (adverse childhood experiences, ACEs)","Physical environments","Employment and working conditions","Access to health services"],a:0,e:"Childhood experiences, including toxic stress and ACEs, are explicitly linked to altered brain development and negative coping skills persisting across the lifespan."},
+{c:"Social Determinants of Health",p:"Which model of life-course adversity is best illustrated by early poverty increasing the likelihood of subsequent unstable housing, which in turn increases the likelihood of later poor educational access?",o:["Pathways model","Latency model","Accumulation model","Acculturation model"],a:0,e:"The pathways model describes a compounding sequence where one adverse exposure increases the probability of encountering the next, distinct from latency (a delayed single effect) or accumulation (multiple independent exposures adding up)."},
+{c:"Social Determinants of Health",p:"A national policy change to redistribute wealth and reduce structural income inequality represents which level of intervention?",o:["Upstream","Midstream","Downstream","Individual-level clinical intervention"],a:0,e:"Upstream interventions target macro policy and the fundamental structures distributing wealth, power, and opportunity — the \"causes of the causes\" of health disparities."},
+{c:"Genetic & Neuromuscular Conditions",p:"Which feature most specifically distinguishes Lambert-Eaton myasthenic syndrome from myasthenia gravis?",o:["Weakness that transiently improves with repeated muscle use","Weakness that worsens with sustained activity and improves with rest","Ptosis and diplopia as the presenting features","Autoantibodies targeting the postsynaptic acetylcholine receptor"],a:0,e:"Lambert-Eaton myasthenic syndrome involves presynaptic voltage-gated calcium channel autoantibodies, classically causing weakness that transiently improves with repeated use — the opposite pattern from myasthenia gravis, which worsens with sustained activity."},
+{c:"Genetic & Neuromuscular Conditions",p:"Which combination of findings is most specific for osteogenesis imperfecta, as opposed to Ehlers-Danlos syndrome?",o:["Blue-grey sclera, hearing loss, dentinogenesis imperfecta","Joint hypermobility, hyperelastic skin","Aortic root dilation, lens dislocation","Café-au-lait macules, Lisch nodules"],a:0,e:"Blue-grey sclera, hearing loss, and dentinogenesis imperfecta are classic for osteogenesis imperfecta (type I collagen defect), distinct from Ehlers-Danlos (joint/skin hyperlaxity), Marfan (aortic/lens findings), or NF1 (café-au-lait, Lisch nodules)."},
+{c:"Genetic & Neuromuscular Conditions",p:"A hereditary peripheral neuropathy caused by a connexin 32 mutation, presenting with distal weakness, atrophy, and foot deformities, describes which condition?",o:["Charcot-Marie-Tooth disease","Duchenne muscular dystrophy","Myasthenia gravis","Guillain-Barré syndrome"],a:0,e:"Charcot-Marie-Tooth disease is a hereditary peripheral neuropathy associated with connexin 32 mutations, causing progressive distal weakness, atrophy, and foot deformities."},
+{c:"Genetic & Neuromuscular Conditions",p:"Which trigger is most classically associated with acute decompensation in a urea cycle disorder?",o:["Intercurrent illness or fasting","Cold water exposure","Prolonged standing","Minor blunt trauma"],a:0,e:"Urea cycle disorders classically decompensate with illness, fasting, or increased protein catabolism, which increase ammonia production beyond the impaired cycle's capacity."},
+{c:"Genetic & Neuromuscular Conditions",p:"Which additional feature would most specifically point toward thiamine metabolism dysfunction syndrome 2, rather than a nonspecific cause of infantile seizures?",o:["External ophthalmoplegia and dysphagia during episodic encephalopathy","Salty-tasting skin and recurrent pneumonia","Blue-grey sclera and multiple fractures","Webbed neck and short stature"],a:0,e:"Thiamine metabolism dysfunction syndrome 2 presents with episodic encephalopathy, external ophthalmoplegia, dysphagia, and coma — a distinctive pattern beyond generic seizures, and is treated with thiamine and biotin."},
+{c:"Genetic & Neuromuscular Conditions",p:"Which pairing of karyotype to expected long-term body habitus is correct?",o:["47,XXY — tall stature; 45,X — short stature","47,XXY — short stature; 45,X — tall stature","Both karyotypes are associated with tall stature","Both karyotypes are associated with short stature"],a:0,e:"Klinefelter syndrome (47,XXY) is associated with tall stature; Turner syndrome (45,X) is associated with short stature — an important contrast between the two chromosomal conditions."}
+];
+
+const LETTERS = ["A","B","C","D","E"];
+let current = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+
+const ticksEl = document.getElementById('ticks');
+const promptEl = document.getElementById('prompt');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('feedback');
+const verdictEl = document.getElementById('verdict');
+const explanationEl = document.getElementById('explanation');
+const catTagEl = document.getElementById('cat-tag');
+const qNumberEl = document.getElementById('q-number');
+const itemCountEl = document.getElementById('item-count');
+const progressLabelEl = document.getElementById('progress-label');
+const scoreLabelEl = document.getElementById('score-label');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const cardEl = document.getElementById('card');
+const summaryEl = document.getElementById('summary');
+const restartBtn = document.getElementById('restart-btn');
+
+document.getElementById('item-count').textContent = 'ITEM 1 / ' + QUESTIONS.length;
+document.getElementById('progress-label').textContent = '0 of ' + QUESTIONS.length + ' answered';
+document.getElementById('summary').querySelector('.subtitle').textContent = "Here's how you did across all " + QUESTIONS.length + ' items.';
+document.getElementById('final-score').textContent = '0 / ' + QUESTIONS.length;
+
+function buildTicks(){
+  ticksEl.innerHTML = '';
+  QUESTIONS.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.className = 'tick';
+    b.setAttribute('aria-label', 'Go to question ' + (i+1));
+    b.addEventListener('click', () => { current = i; render(); });
+    ticksEl.appendChild(b);
+  });
+}
+
+function updateTicks(){
+  const ticks = ticksEl.children;
+  for(let i=0;i<QUESTIONS.length;i++){
+    const t = ticks[i];
+    t.classList.remove('current','correct','incorrect');
+    if(answers[i] !== null){
+      t.classList.add(answers[i] === QUESTIONS[i].a ? 'correct' : 'incorrect');
+    }
+    if(i === current) t.classList.add('current');
+  }
+}
+
+function scoreCount(){
+  let correct = 0, answered = 0;
+  answers.forEach((a,i) => { if(a !== null){ answered++; if(a === QUESTIONS[i].a) correct++; } });
+  return {correct, answered};
+}
+
+function updateStatus(){
+  const {correct, answered} = scoreCount();
+  progressLabelEl.textContent = answered + ' of ' + QUESTIONS.length + ' answered';
+  scoreLabelEl.textContent = 'Score: ' + correct + ' / ' + answered;
+  itemCountEl.textContent = 'ITEM ' + (current+1) + ' / ' + QUESTIONS.length;
+}
+
+function render(){
+  if(current >= QUESTIONS.length){
+    showSummary();
+    return;
+  }
+  cardEl.style.display = '';
+  summaryEl.classList.remove('show');
+
+  const q = QUESTIONS[current];
+  catTagEl.textContent = q.c.toUpperCase();
+  qNumberEl.textContent = 'Q' + (current+1);
+  promptEl.textContent = q.p;
+
+  optionsEl.innerHTML = '';
+  const chosen = answers[current];
+
+  q.o.forEach((text, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.innerHTML = '<span class="letter">' + LETTERS[i] + '</span><span>' + text + '</span>';
+    if(chosen !== null){
+      btn.disabled = true;
+      if(i === q.a) btn.classList.add('correct');
+      else if(i === chosen) btn.classList.add('incorrect');
+    }
+    btn.addEventListener('click', () => selectOption(i));
+    optionsEl.appendChild(btn);
+  });
+
+  if(chosen !== null){
+    const isCorrect = chosen === q.a;
+    feedbackEl.classList.add('show');
+    feedbackEl.classList.toggle('correct-fb', isCorrect);
+    feedbackEl.classList.toggle('incorrect-fb', !isCorrect);
+    verdictEl.textContent = isCorrect ? 'Correct.' : 'Incorrect — correct answer: ' + LETTERS[q.a] + '.';
+    verdictEl.className = 'verdict ' + (isCorrect ? 'correct-text' : 'incorrect-text');
+    explanationEl.textContent = q.e;
+    nextBtn.disabled = false;
+  } else {
+    feedbackEl.classList.remove('show');
+    nextBtn.disabled = true;
+  }
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === QUESTIONS.length - 1 ? 'See results →' : 'Next →';
+
+  updateTicks();
+  updateStatus();
+  window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+}
+
+function selectOption(i){
+  if(answers[current] !== null) return;
+  answers[current] = i;
+  render();
+}
+
+prevBtn.addEventListener('click', () => { if(current>0){ current--; render(); } });
+nextBtn.addEventListener('click', () => { current++; render(); });
+
+function showSummary(){
+  cardEl.style.display = 'none';
+  summaryEl.classList.add('show');
+  const {correct} = scoreCount();
+  document.getElementById('final-score').textContent = correct + ' / ' + QUESTIONS.length;
+  document.getElementById('final-pct').textContent = Math.round((correct/QUESTIONS.length)*100) + '% correct';
+
+  const cats = {};
+  QUESTIONS.forEach((q,i) => {
+    if(!cats[q.c]) cats[q.c] = {correct:0,total:0};
+    cats[q.c].total++;
+    if(answers[i] === q.a) cats[q.c].correct++;
+  });
+  const breakdownEl = document.getElementById('breakdown');
+  breakdownEl.innerHTML = '';
+  Object.keys(cats).forEach(cat => {
+    const row = document.createElement('div');
+    row.className = 'breakdown-row';
+    row.innerHTML = '<span class="cat">' + cat + '</span><span class="frac">' + cats[cat].correct + ' / ' + cats[cat].total + '</span>';
+    breakdownEl.appendChild(row);
+  });
+  itemCountEl.textContent = 'COMPLETE';
+  updateTicks();
+  updateStatus();
+}
+
+restartBtn.addEventListener('click', () => {
+  answers = new Array(QUESTIONS.length).fill(null);
+  current = 0;
+  render();
+});
+
+buildTicks();
+render();
+</script>
+</body>
+</html>

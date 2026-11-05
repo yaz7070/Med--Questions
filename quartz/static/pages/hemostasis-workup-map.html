@@ -1,0 +1,733 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hemostasis Workup Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: five stacked flowcharts (bleeding, platelets, VTE, anticoagulants, transfusion) with a sticky jump bar. Each chart = trunk of tests forking into colored diagnosis branches, then a compact reference panel. Same visual language as the Anemia Workup Map. */
+:root{
+  --bg:#F6F5F9; --surface:#FFFFFF; --ink:#1E1A28; --muted:#625C70; --line:#C9C2D6;
+  --test:#ECE9F2; --test-ink:#2A2437;
+  --bleed:#A4471F; --bleed-bg:#FBEDE5;
+  --plt:#8A5A00; --plt-bg:#FBF1DC;
+  --vte:#2F5E9A; --vte-bg:#E7EEF8;
+  --ac:#6B42A8; --ac-bg:#F0EAF8;
+  --tx:#B02651; --tx-bg:#FBE7EE;
+  --warn:#9E1C1C; --warn-bg:#FCE9E9;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Source Sans 3','Segoe UI',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14121A; --surface:#1C1924; --ink:#ECE8F3; --muted:#A49DB2; --line:#4A4458;
+  --test:#262231; --test-ink:#E6E1EE;
+  --bleed:#F0A27E; --bleed-bg:#2D1C15; --plt:#E8BF6A; --plt-bg:#2A2110;
+  --vte:#93B6E8; --vte-bg:#162130; --ac:#C2A6EE; --ac-bg:#221A30;
+  --tx:#F28DAC; --tx-bg:#2D1520; --warn:#F59A9A; --warn-bg:#331818; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14121A; --surface:#1C1924; --ink:#ECE8F3; --muted:#A49DB2; --line:#4A4458;
+  --test:#262231; --test-ink:#E6E1EE;
+  --bleed:#F0A27E; --bleed-bg:#2D1C15; --plt:#E8BF6A; --plt-bg:#2A2110;
+  --vte:#93B6E8; --vte-bg:#162130; --ac:#C2A6EE; --ac-bg:#221A30;
+  --tx:#F28DAC; --tx-bg:#2D1520; --warn:#F59A9A; --warn-bg:#331818; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1320px;margin:0 auto;display:flex;flex-direction:column;gap:30px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+header{display:flex;flex-direction:column;gap:8px;max-width:780px}
+header h1{font-size:clamp(30px,4.4vw,46px);font-weight:700;letter-spacing:-.01em}
+header p{margin:0;color:var(--muted);font-size:16px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:8px;display:flex;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--line)}
+nav a{font-size:14px;font-weight:600;text-decoration:none;color:var(--c);background:var(--cbg);border:1px solid var(--c);border-radius:999px;padding:4px 12px}
+nav a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--c,var(--ink));outline-offset:2px}
+.k-bleed{--c:var(--bleed);--cbg:var(--bleed-bg)}
+.k-plt{--c:var(--plt);--cbg:var(--plt-bg)}
+.k-vte{--c:var(--vte);--cbg:var(--vte-bg)}
+.k-ac{--c:var(--ac);--cbg:var(--ac-bg)}
+.k-tx{--c:var(--tx);--cbg:var(--tx-bg)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.legend span{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:3px 10px 3px 6px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+section.chart{scroll-margin-top:64px;display:flex;flex-direction:column;gap:14px;border-top:3px solid var(--c);padding-top:18px}
+.chart-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.chart-head .num{font-family:var(--mono);font-size:13px;color:var(--c)}
+.chart-head h2{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--c)}
+.chart-head p{margin:0;color:var(--muted);flex-basis:100%;max-width:820px}
+.trunk{display:flex;flex-direction:column;align-items:center}
+.trunk .test{max-width:520px;width:100%;text-align:center}
+.vline{width:1.5px;height:20px;background:var(--line)}
+.fork{position:relative;height:22px}
+.fork::before{content:"";position:absolute;top:0;border-top:1.5px solid var(--line);left:var(--fl,16.66%);right:var(--fr,var(--fl,16.66%))}
+.cols.nolink>.col>.head::before{display:none}
+.cols{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:18px;align-items:start}
+.cols.n2{--n:2}.fork.n2{--fl:25%}
+.cols.w121{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2fr)}
+.col{min-width:0;display:flex;flex-direction:column;gap:10px}
+.head{position:relative;background:var(--cbg);border:1.5px solid var(--c);border-radius:10px;padding:10px 14px}
+.cols>.col>.head::before{content:"";position:absolute;left:50%;top:-24px;height:22px;border-left:1.5px solid var(--line)}
+.head h3{font-size:19px;color:var(--c);font-weight:700}
+.head p{margin:2px 0 0;font-size:14px}
+.test{background:var(--test);color:var(--test-ink);border:1px solid var(--line);border-radius:6px;padding:8px 12px}
+.test b{display:block;font-weight:600;font-size:15px}
+.test span{display:block;font-size:13px;color:var(--muted)}
+.tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.if{display:inline-block;font-family:var(--mono);font-size:12px;line-height:18px;color:var(--c,var(--ink));background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin-bottom:6px;max-width:100%}
+.dx{background:var(--cbg);border:1px solid var(--c);border-radius:8px;padding:10px 12px}
+.dx h4{font-size:16px;font-weight:700;color:var(--c);margin-bottom:6px}
+.dx dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;margin:0;font-size:13.5px}
+.dx dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.dx dd{margin:0}
+.alert{display:block;margin-top:8px;font-size:13px;font-weight:600;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn);border-radius:6px;padding:5px 9px}
+.jump{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14px;color:var(--c);text-decoration:none;border:1.5px dashed var(--c);border-radius:6px;padding:7px 12px;background:var(--cbg)}
+.jump:hover{text-decoration:underline}
+.note{font-size:13px;color:var(--muted);margin:6px 0 0}
+ul.tree,ul.tree ul{list-style:none;margin:0;padding:0}
+ul.tree ul{margin-left:14px}
+ul.tree li{position:relative;padding:10px 0 0 22px}
+ul.tree li::before{content:"";position:absolute;left:0;top:0;bottom:0;border-left:1.5px solid var(--line)}
+ul.tree li:last-child::before{bottom:auto;height:22px}
+ul.tree li::after{content:"";position:absolute;left:0;top:22px;width:18px;border-top:1.5px solid var(--line)}
+ul.tree>li{padding:0}
+ul.tree>li::before,ul.tree>li::after{display:none}
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.split>div{min-width:0}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
+.panel h3{font-size:18px;margin-bottom:8px}
+.refs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.refs .wide{grid-column:1/-1}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-family:var(--mono);font-size:12.5px;padding:3px 9px;border-radius:999px;background:var(--cbg);color:var(--c);border:1px solid var(--c)}
+.steps{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:10px;counter-reset:s}
+.steps div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:14px;min-width:0}
+.steps b{display:block;font-family:var(--display);font-size:15px;margin-bottom:2px}
+.steps b::before{counter-increment:s;content:counter(s);font-family:var(--mono);font-size:12px;color:var(--c);margin-right:8px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.n{text-align:right;font-family:var(--mono);white-space:nowrap}
+tr.total td{font-weight:600;border-bottom:none}
+footer{font-size:13px;color:var(--muted)}
+@media (max-width:980px){
+  .cols,.cols.w121{grid-template-columns:minmax(0,1fr)}
+  .fork{display:none}.cols>.col>.head::before{display:none}
+  .trunk>.vline:last-child{display:none}
+  .steps{--n:2}
+}
+@media (max-width:720px){.split,.refs{grid-template-columns:minmax(0,1fr)}.steps{--n:1}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Hematology · week 10 · hemostasis and thrombosis</div>
+  <h1>Hemostasis Workup Map</h1>
+  <p>Five flowcharts for the week 10 material. Start at the top of each and follow the results down. Gray boxes are tests or decisions. Colored boxes are diagnoses or treatments. The pill above each box is the finding that sends you that way.</p>
+  <div class="legend">
+    <span><i style="background:var(--test);border:1px solid var(--line)"></i>Test or decision</span>
+    <span><i style="background:var(--warn)"></i>Red flag or trap</span>
+  </div>
+</header>
+
+<nav aria-label="Charts">
+  <a class="k-bleed" href="#bleeding">1 · Bleeding patient</a>
+  <a class="k-plt" href="#platelets">2 · Thrombocytopenia</a>
+  <a class="k-vte" href="#vte">3 · DVT and PE</a>
+  <a class="k-ac" href="#anticoag">4 · Anticoagulants</a>
+  <a class="k-tx" href="#transfusion">5 · Transfusion</a>
+</nav>
+
+<!-- ============ 1. BLEEDING ============ -->
+<section id="bleeding" class="chart k-bleed" aria-label="Bleeding patient">
+  <div class="chart-head"><span class="num">Chart 1</span><h2>The bleeding patient</h2>
+    <p>Three tests sort almost every bleeding disorder: platelet count, PT/INR and aPTT. Platelet problems cause surface bleeding (skin, gums, nose, heavy periods). Factor problems cause deep bleeding (joints, muscles).</p></div>
+
+  <div class="trunk">
+    <div class="test"><div class="tag">History</div><b>Bleeding history (BAT score), family history, medications</b><span>Ask about ASA, clopidogrel, NSAIDs and anticoagulants. Check for CKD.</span></div>
+    <div class="vline"></div>
+    <div class="test"><div class="tag">Order</div><b>CBC with film, PT/INR, aPTT, fibrinogen</b><span>Neonates normally have longer PT and aPTT, so use age-specific ranges</span></div>
+    <div class="vline"></div>
+  </div>
+  <div>
+    <div class="fork" aria-hidden="true"></div>
+    <div class="cols">
+      <div class="col">
+        <div class="head"><h3>Platelets low</h3><p>Platelet count problem</p></div>
+        <div class="dx"><h4>Thrombocytopenia</h4><dl>
+          <dt>Next</dt><dd>Work through chart 2</dd>
+          <dt>Watch</dt><dd>vWD type 2B can also lower the platelet count</dd>
+          <dt>If PT, aPTT also long and fibrinogen low</dt><dd>Think DIC</dd>
+        </dl><p class="note"><a class="jump k-plt" href="#platelets">Go to thrombocytopenia ↓</a></p></div>
+      </div>
+
+      <div class="col">
+        <div class="head"><h3>aPTT long, PT normal</h3><p>Intrinsic pathway: factor VIII, IX or vWF</p></div>
+        <ul class="tree"><li>
+          <div class="test"><div class="tag">Order</div><b>Factor VIII and IX activity, vWD screen</b><span>vWF antigen, vWF activity, factor VIII</span></div>
+          <ul>
+            <li><span class="if">↓ FVIII, vWF normal</span>
+              <div class="dx"><h4>Hemophilia A</h4><dl>
+                <dt>Genetics</dt><dd>X-linked; mostly males, females carriers; 30% new mutations</dd>
+                <dt>Bleeds</dt><dd>Joints (hemarthrosis), muscles, soft tissue, CNS, after surgery</dd>
+                <dt>Treat</dt><dd>Factor VIII replacement. DDAVP for mild disease</dd>
+              </dl></div></li>
+            <li><span class="if">↓ FIX</span>
+              <div class="dx"><h4>Hemophilia B</h4><dl>
+                <dt>Genetics</dt><dd>X-linked, same pattern as A</dd>
+                <dt>Treat</dt><dd>Factor IX replacement. DDAVP does not help</dd>
+              </dl></div></li>
+            <li><span class="if">↓ vWF (± ↓ FVIII)</span>
+              <div class="dx"><h4>von Willebrand disease</h4><dl>
+                <dt>Why</dt><dd>vWF carries and protects FVIII, so low vWF can lower FVIII and lengthen the aPTT</dd>
+                <dt>Next</dt><dd>Subtype it (see the right-hand branch)</dd>
+              </dl></div></li>
+          </ul>
+        </li></ul>
+      </div>
+
+      <div class="col">
+        <div class="head"><h3>Everything normal</h3><p>But the history is convincing (BAT positive)</p></div>
+        <ul class="tree"><li>
+          <div class="test"><div class="tag">Order</div><b>vWD screen</b><span>Most common inherited bleeding disorder, and the aPTT is often normal</span></div>
+          <ul>
+            <li><span class="if">vWF antigen and activity low together</span>
+              <div class="dx"><h4>vWD type 1</h4><dl>
+                <dt>What</dt><dd>Partial quantitative deficiency. Most common form</dd>
+                <dt>Treat</dt><dd>DDAVP (releases stored vWF)</dd>
+              </dl></div></li>
+            <li><span class="if">Activity &lt; 70% of antigen</span>
+              <div class="dx"><h4>vWD type 2 (2A, 2B, 2M, 2N)</h4><dl>
+                <dt>What</dt><dd>Qualitative: vWF is present but works poorly</dd>
+                <dt>Treat</dt><dd>Plasma-derived vWF/FVIII concentrate</dd>
+              </dl></div></li>
+            <li><span class="if">vWF absent</span>
+              <div class="dx"><h4>vWD type 3</h4><dl>
+                <dt>What</dt><dd>Rare, severe. Very low FVIII, so joint and muscle bleeds like hemophilia</dd>
+                <dt>Treat</dt><dd>vWF/FVIII concentrate</dd>
+              </dl></div></li>
+            <li><span class="if">vWD screen normal</span>
+              <div class="dx"><h4>Platelet function disorder</h4><dl>
+                <dt>First</dt><dd>Exclude antiplatelet drugs and CKD (uremia)</dd>
+                <dt>Next</dt><dd>Hematology for platelet function testing</dd>
+                <dt>Types</dt><dd>Adhesion: Bernard-Soulier. Aggregation: Glanzmann. Granules: gray platelet. Pro-coagulant: Scott. Number + function: MYH9</dd>
+                <dt>Treat</dt><dd>DDAVP, TXA, platelet transfusion, rFVIIa if life-threatening</dd>
+              </dl></div></li>
+          </ul>
+        </li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="refs">
+    <div class="panel wide">
+      <h3>Hemophilia vs vWD vs platelet function disorder</h3>
+      <div class="tbl"><table>
+        <thead><tr><th></th><th>Hemophilia A / B</th><th>von Willebrand disease</th><th>Platelet function disorder</th></tr></thead>
+        <tbody>
+          <tr><td>Inheritance</td><td>X-linked (males)</td><td>Autosomal (both sexes)</td><td>Autosomal or acquired</td></tr>
+          <tr><td>Bleeding pattern</td><td>Deep: joints, muscles, CNS</td><td>Mucosal: menorrhagia, epistaxis, GI, postpartum</td><td>Mucosal, easy bruising</td></tr>
+          <tr><td>Platelets</td><td>Normal</td><td>Normal (low in 2B)</td><td>Normal or low, may look abnormal</td></tr>
+          <tr><td>PT/INR</td><td>Normal</td><td>Normal</td><td>Normal</td></tr>
+          <tr><td>aPTT</td><td>Prolonged</td><td>Normal or prolonged</td><td>Normal</td></tr>
+          <tr><td>Key test</td><td>FVIII or FIX activity</td><td>vWF antigen, activity, FVIII</td><td>Platelet function testing</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="panel">
+      <h3>Hemophilia severity</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>Severity</th><th>Bleeds with</th></tr></thead>
+        <tbody>
+          <tr><td>Mild</td><td>Major trauma or surgery</td></tr>
+          <tr><td>Moderate</td><td>Occasional spontaneous bleeds; severe bleeds after trauma</td></tr>
+          <tr><td>Severe</td><td>Spontaneous joint and muscle bleeds; severe bleeds after minor trauma</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">Dosing rule: 1 U/kg of FVIII raises the level about 2%. 1 U/kg of FIX raises it about 1%. With inhibitors, use recombinant FVIIa or FEIBA.</p>
+    </div>
+    <div class="panel">
+      <h3>Managing any bleeding disorder</h3>
+      <div class="tbl"><table><tbody>
+        <tr><td>Serious bleed or trauma</td><td>Treat first, investigate later</td></tr>
+        <tr><td>Always</td><td>Factor First card, consult hematology or the hemophilia centre</td></tr>
+        <tr><td>Mucosal bleeding</td><td>Tranexamic acid (Cyklokapron)</td></tr>
+        <tr><td>DDAVP works for</td><td>Mild hemophilia A, vWD type 1, some platelet disorders</td></tr>
+        <tr><td>Joint or muscle bleed</td><td>RICE plus factor replacement</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. THROMBOCYTOPENIA ============ -->
+<section id="platelets" class="chart k-plt" aria-label="Thrombocytopenia">
+  <div class="chart-head"><span class="num">Chart 2</span><h2>Thrombocytopenia</h2>
+    <p>Platelets under 150 × 10⁹/L. First prove it is real, grade it, then ask why: the marrow isn't making them, the spleen is holding them, or something is destroying them.</p></div>
+
+  <div class="trunk">
+    <div class="test"><div class="tag">Check</div><b>Clumps on the film? Repeat in a citrate (blue top) tube</b><span>EDTA (lavender top) can make platelets clump and be miscounted</span></div>
+    <div class="vline"></div>
+    <div class="test"><div class="tag">Grade</div><b>Severity</b><span>100–150 mild · 50–99 moderate · 10–49 severe (bleeds with trauma or surgery) · &lt; 10 very severe (spontaneous bleeding)</span></div>
+    <div class="vline"></div>
+    <div class="test"><div class="tag">Order</div><b>CBC + differential, film, PT/INR, aPTT, fibrinogen, LFTs, B12/folate, abdominal ultrasound</b><span>Look at the other cell lines, the spleen and the film</span></div>
+    <div class="vline"></div>
+  </div>
+  <div>
+    <div class="fork" aria-hidden="true" style="--fl:12.5%;--fr:25%"></div>
+    <div class="cols w121">
+      <div class="col">
+        <div class="head"><h3>Decreased production</h3><p>Other lines often low too</p></div>
+        <div class="dx"><h4>Marrow problem</h4><dl>
+          <dt>Causes</dt><dd>Aplastic anemia, MDS, marrow infiltration or fibrosis, B12/folate deficiency, liver disease (↓ thrombopoietin), drugs, viruses, toxins, alcohol</dd>
+          <dt>Next</dt><dd>Consider bone marrow aspirate and biopsy</dd>
+          <dt>Treat</dt><dd>Treat the cause, stop offending agents, supportive transfusion</dd>
+        </dl></div>
+        <div class="dx" style="margin-top:4px"><h4>Dilutional</h4><dl>
+          <dt>When</dt><dd>Massive transfusion or fluids</dd>
+        </dl></div>
+      </div>
+      <div class="col">
+        <div class="head"><h3>Sequestration</h3><p>Big spleen</p></div>
+        <div class="dx"><h4>Hypersplenism</h4><dl>
+          <dt>Clue</dt><dd>Spleen over 11–13 cm on exam or imaging; often liver disease with portal hypertension</dd>
+          <dt>Picture</dt><dd>Moderate thrombocytopenia, bleeding is rare</dd>
+          <dt>Treat</dt><dd>Treat the underlying cause</dd>
+        </dl></div>
+      </div>
+      <div class="col">
+        <div class="head"><h3>Increased destruction</h3><p>Marrow working, platelets consumed</p></div>
+        <ul class="tree"><li>
+          <div class="test"><div class="tag">Look</div><b>Schistocytes on the film?</b><span>Fragmented RBCs mean a thrombotic microangiopathy (MAHA)</span></div>
+          <div class="split" style="margin-top:4px">
+            <div>
+              <ul class="tree"><li>
+                <span class="if">Yes: MAHA</span>
+                <div class="test"><div class="tag">Order</div><b>ADAMTS-13, creatinine, INR, fibrinogen, D-dimer</b></div>
+                <ul>
+                  <li><span class="if">Low ADAMTS-13</span>
+                    <div class="dx"><h4>TTP</h4><dl>
+                      <dt>Why</dt><dd>No ADAMTS-13 to cut ultra-large vWF multimers, so platelets clump in small vessels</dd>
+                      <dt>Clues</dt><dd>Very sick, platelets &lt; 10, neuro signs (confusion, seizures), hemolytic anemia</dd>
+                      <dt>Treat</dt><dd>Urgent plasma exchange, steroids, rituximab</dd>
+                    </dl><span class="alert">Emergency. Avoid platelet transfusion</span></div></li>
+                  <li><span class="if">AKI after diarrhea, normal ADAMTS-13</span>
+                    <div class="dx"><h4>HUS</h4><dl>
+                      <dt>Why</dt><dd>Shiga toxin (E. coli O157:H7) damages glomerular endothelium</dd>
+                      <dt>Who</dt><dd>Mostly children 6 months to 4 years</dd>
+                      <dt>Treat</dt><dd>Supportive, IV fluids, dialysis if needed. Avoid antibiotics</dd>
+                    </dl><span class="alert">Avoid platelet transfusion</span></div></li>
+                  <li><span class="if">↑ INR, fibrinogen &lt; 1, ↑ D-dimer</span>
+                    <div class="dx"><h4>DIC</h4><dl>
+                      <dt>Why</dt><dd>Runaway clotting uses up platelets and factors, so the patient clots and bleeds</dd>
+                      <dt>Triggers</dt><dd>Sepsis, cancer (especially APL), trauma, obstetric (abruption, amniotic embolism)</dd>
+                      <dt>Score</dt><dd>ISTH: underlying condition + platelets, D-dimer, fibrinogen, INR</dd>
+                      <dt>Treat</dt><dd>Treat the cause. If bleeding: cryo if fibrinogen &lt; 1.0, platelets if &lt; 50, plasma if INR &gt; 1.5, RBCs if Hb &lt; 70–80</dd>
+                    </dl></div></li>
+                  <li><span class="if">Pregnant, hypertension, ↑ LFTs</span>
+                    <div class="dx"><h4>Preeclampsia or HELLP</h4><dl><dt>Treat</dt><dd>Obstetric management, delivery</dd></dl></div></li>
+                </ul>
+              </li></ul>
+            </div>
+            <div>
+              <ul class="tree"><li>
+                <span class="if">No schistocytes</span>
+                <div class="test"><div class="tag">Ask</div><b>Heparin in the last 5–10 days?</b></div>
+                <ul>
+                  <li><span class="if">Yes, with new clot</span>
+                    <div class="dx"><h4>HIT</h4><dl>
+                      <dt>Why</dt><dd>Antibodies to the heparin–PF4 complex activate platelets: clotting, not bleeding</dd>
+                      <dt>Test</dt><dd>4 T's score → anti-PF4 ELISA → functional serotonin release assay</dd>
+                      <dt>Treat</dt><dd>Stop all heparin. Start a non-heparin anticoagulant (argatroban, fondaparinux, danaparoid). Warfarin only once platelets recover. Anticoagulate ≥ 3 months if thrombosis</dd>
+                    </dl><span class="alert">Avoid platelet transfusion</span></div></li>
+                  <li><span class="if">No, isolated low platelets</span>
+                    <div class="test"><div class="tag">Exclude</div><b>Drugs, infection, pregnancy, lupus, CLL/lymphoma</b><span>HIV, HCV, DAT, immunoglobulins as needed</span></div>
+                    <ul><li><span class="if">Nothing else found</span>
+                      <div class="dx"><h4>ITP</h4><dl>
+                        <dt>Why</dt><dd>Antibodies coat platelets, the spleen eats them; antibodies also hit megakaryocytes</dd>
+                        <dt>Clues</dt><dd>Well patient, other lines normal, mucocutaneous purpura</dd>
+                        <dt>Who</dt><dd>Children after a virus (resolves within 6 months). Adults: insidious, relapsing, F:M 2:1</dd>
+                        <dt>Course</dt><dd>Newly diagnosed → persistent (3–12 months) → chronic (≥ 12 months)</dd>
+                        <dt>Treat</dt><dd>Steroids, IVIG. Then TPO mimetics (romiplostim, eltrombopag), rituximab, splenectomy</dd>
+                      </dl><p class="note">Diagnosis of exclusion.</p></div></li></ul>
+                  </li>
+                </ul>
+              </li></ul>
+            </div>
+          </div>
+        </li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="refs">
+    <div class="panel wide">
+      <h3>The five destruction causes side by side</h3>
+      <div class="tbl"><table>
+        <thead><tr><th></th><th>ITP</th><th>TTP</th><th>HUS</th><th>DIC</th><th>HIT</th></tr></thead>
+        <tbody>
+          <tr><td>Onset</td><td>1–2 days</td><td>Acute</td><td>Acute, after diarrhea</td><td>Acute or chronic</td><td>5–10 days into heparin</td></tr>
+          <tr><td>Platelets</td><td>Very low (&lt; 10 possible)</td><td>Very low (&lt; 10)</td><td>Moderate</td><td>Low (&lt; 100)</td><td>Moderate–severe</td></tr>
+          <tr><td>Main problem</td><td>Bleeding</td><td>Clots + hemolysis</td><td>Clots in kidney</td><td>Clots and bleeding</td><td>Clots, no bleeding</td></tr>
+          <tr><td>Schistocytes</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+          <tr><td>PT/INR, fibrinogen</td><td>Normal</td><td>Normal</td><td>Normal</td><td>↑ INR, ↓ fibrinogen</td><td>Normal</td></tr>
+          <tr><td>Key test</td><td>Exclusion</td><td>Low ADAMTS-13</td><td>Normal ADAMTS-13, AKI</td><td>ISTH score</td><td>4 T's, anti-PF4, SRA</td></tr>
+          <tr><td>Platelet transfusion</td><td>Only for serious bleeding</td><td>Avoid</td><td>Avoid</td><td>If bleeding and &lt; 50</td><td>Avoid</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. VTE ============ -->
+<section id="vte" class="chart k-vte" aria-label="DVT and PE">
+  <div class="chart-head"><span class="num">Chart 3</span><h2>Suspected DVT or PE</h2>
+    <p>Score the pretest probability first. A low score plus a negative D-dimer rules out clot. A positive D-dimer proves nothing, so it only sends you to imaging. Virchow's triad: stasis, endothelial injury, hypercoagulability.</p></div>
+
+  <div class="cols n2 nolink" style="--n:2">
+    <div class="col">
+      <div class="head"><h3>Suspected DVT</h3><p>Painful, swollen, red, warm leg</p></div>
+      <ul class="tree"><li>
+        <div class="test"><div class="tag">Score</div><b>Wells criteria for DVT</b><span>Rule out cellulitis, Baker's cyst, lymphedema, compression</span></div>
+        <ul>
+          <li><span class="if">≤ 1: DVT unlikely</span>
+            <div class="test"><div class="tag">Order</div><b>D-dimer</b></div>
+            <ul>
+              <li><span class="if">Negative</span><div class="dx"><h4>DVT excluded</h4></div></li>
+              <li><span class="if">Positive</span><div class="test"><b>Compression ultrasound</b></div></li>
+            </ul></li>
+          <li><span class="if">&gt; 1: DVT likely</span>
+            <div class="test"><div class="tag">Order</div><b>Compression ultrasound</b><span>Venogram is the gold standard but invasive</span></div>
+            <ul>
+              <li><span class="if">Positive</span><div class="dx"><h4>DVT confirmed</h4><dl><dt>Next</dt><dd>Treat (below)</dd></dl></div></li>
+              <li><span class="if">Negative, still suspicious</span><div class="test"><b>Repeat ultrasound in 1 week</b><span>Calf clots can extend and become visible</span></div></li>
+            </ul></li>
+        </ul>
+      </li></ul>
+    </div>
+    <div class="col">
+      <div class="head"><h3>Suspected PE</h3><p>Pleuritic chest pain, dyspnea, tachycardia, hemoptysis, syncope</p></div>
+      <ul class="tree"><li>
+        <div class="test"><div class="tag">Score</div><b>Wells criteria for PE</b><span>CXR and ECG to look for pneumonia, pneumothorax, MI</span></div>
+        <ul>
+          <li><span class="if">≤ 4: PE unlikely</span>
+            <div class="test"><div class="tag">Order</div><b>D-dimer</b></div>
+            <ul>
+              <li><span class="if">Negative</span><div class="dx"><h4>PE excluded</h4></div></li>
+              <li><span class="if">Positive</span><div class="test"><b>Image (CTPA)</b></div></li>
+            </ul></li>
+          <li><span class="if">&gt; 4: PE likely</span>
+            <div class="test"><div class="tag">Order</div><b>CT pulmonary angiogram</b><span>Negative CTPA excludes PE</span></div>
+            <ul>
+              <li><span class="if">Renal failure, pregnancy, young woman</span><div class="test"><b>V/Q scan instead</b><span>Avoids contrast and breast radiation</span></div></li>
+              <li><span class="if">Leg symptoms</span><div class="test"><b>Bilateral compression ultrasound</b><span>A DVT is enough to start treatment</span></div></li>
+              <li><span class="if">Positive</span><div class="dx"><h4>PE confirmed</h4><dl><dt>Next</dt><dd>Treat (below)</dd></dl></div></li>
+            </ul></li>
+        </ul>
+      </li></ul>
+    </div>
+  </div>
+
+  <div class="trunk" style="margin-top:6px">
+    <div class="test"><div class="tag">Confirmed VTE</div><b>Where do they go?</b><span>Admit for hemodynamic instability or oxygen need. Otherwise outpatient: elevate, stay active, compression stockings, NSAID for pain</span></div>
+    <div class="vline"></div>
+    <div class="test"><div class="tag">Decide</div><b>Which anticoagulant?</b><span>Thrombolysis only if they may die in the next 24–48 h (high bleeding risk)</span></div>
+    <div class="vline"></div>
+  </div>
+  <div>
+    <div class="fork" aria-hidden="true" style="--fl:12.5%"></div>
+    <div class="cols" style="--n:4">
+      <div class="col"><div class="head"><h3>Cancer</h3></div><div class="dx"><h4>LMWH</h4><dl><dt>Also</dt><dd>Newer guidelines allow apixaban, rivaroxaban, edoxaban</dd></dl></div></div>
+      <div class="col"><div class="head"><h3>Pregnant</h3></div><div class="dx"><h4>LMWH</h4><dl><dt>Avoid</dt><dd>Warfarin (teratogen) and DOACs</dd></dl></div></div>
+      <div class="col"><div class="head"><h3>Renal failure</h3></div><div class="dx"><h4>Warfarin</h4><dl><dt>Why</dt><dd>LMWH and DOACs are renally cleared</dd></dl></div></div>
+      <div class="col"><div class="head"><h3>Everyone else</h3></div><div class="dx"><h4>DOAC</h4><dl><dt>Drugs</dt><dd>Rivaroxaban, apixaban, edoxaban</dd></dl></div></div>
+    </div>
+  </div>
+  <div class="trunk" style="margin-top:14px">
+    <div class="test"><div class="tag">Decide</div><b>How long? Depends on what caused the clot</b></div>
+    <div class="vline"></div>
+  </div>
+  <div>
+    <div class="fork" aria-hidden="true"></div>
+    <div class="cols">
+      <div class="col"><div class="head"><h3>Major transient risk factor</h3><p>Surgery, trauma, immobilization</p></div><div class="dx"><h4>3 months</h4></div></div>
+      <div class="col"><div class="head"><h3>Active cancer</h3></div><div class="dx"><h4>At least 6 months</h4><dl><dt>Stop</dt><dd>Once the cancer is cured</dd></dl></div></div>
+      <div class="col"><div class="head"><h3>Unprovoked (50%)</h3></div><div class="dx"><h4>Men: indefinite</h4><dl><dt>Women</dt><dd>HERDOO2 at 6 months: 0–1 points stop, ≥ 2 continue</dd></dl></div></div>
+    </div>
+  </div>
+
+  <div class="refs">
+    <div class="panel">
+      <h3>Wells score: DVT</h3>
+      <div class="tbl"><table><tbody>
+        <tr><td>Active cancer</td><td class="n">+1</td></tr>
+        <tr><td>Paralysis, paresis or recent leg cast</td><td class="n">+1</td></tr>
+        <tr><td>Bedridden &gt; 3 days or major surgery within 4 weeks</td><td class="n">+1</td></tr>
+        <tr><td>Tenderness along deep veins</td><td class="n">+1</td></tr>
+        <tr><td>Entire leg swollen</td><td class="n">+1</td></tr>
+        <tr><td>Calf swelling &gt; 3 cm vs other side</td><td class="n">+1</td></tr>
+        <tr><td>Pitting edema in the symptomatic leg</td><td class="n">+1</td></tr>
+        <tr><td>Collateral superficial veins</td><td class="n">+1</td></tr>
+        <tr><td>Previous DVT</td><td class="n">+1</td></tr>
+        <tr><td>Alternative diagnosis at least as likely</td><td class="n">−2</td></tr>
+        <tr class="total"><td>DVT likely</td><td class="n">&gt; 1</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="panel">
+      <h3>Wells score: PE</h3>
+      <div class="tbl"><table><tbody>
+        <tr><td>Clinical signs of DVT</td><td class="n">+3</td></tr>
+        <tr><td>PE is the most likely diagnosis</td><td class="n">+3</td></tr>
+        <tr><td>Heart rate &gt; 100</td><td class="n">+1.5</td></tr>
+        <tr><td>Surgery or bedridden ≥ 3 days in past 4 weeks</td><td class="n">+1.5</td></tr>
+        <tr><td>Previous DVT or PE</td><td class="n">+1.5</td></tr>
+        <tr><td>Hemoptysis</td><td class="n">+1</td></tr>
+        <tr><td>Active cancer</td><td class="n">+1</td></tr>
+        <tr class="total"><td>PE likely</td><td class="n">&gt; 4</td></tr>
+      </tbody></table></div>
+      <p class="note">HERDOO2: Hyperpigmentation, Edema or Redness of either leg · D-dimer ≥ 250 · Obesity (BMI ≥ 30) · Older (≥ 65). One point each.</p>
+    </div>
+    <div class="panel wide">
+      <h3>Thrombophilia: when to screen and what you find</h3>
+      <div class="chips" style="margin-bottom:10px"><span>Unprovoked DVT/PE</span><span>Young (&lt; 55)</span><span>Recurrent clots</span><span>Strong family history</span><span>Unusual site: brain, mesentery, arm</span></div>
+      <div class="tbl"><table>
+        <thead><tr><th>Cause</th><th>Inheritance</th><th>In the general population</th><th>Relative VTE risk</th></tr></thead>
+        <tbody>
+          <tr><td>Factor V Leiden (most common)</td><td>Autosomal dominant</td><td>5% of Caucasians</td><td>3–5× heterozygous, 80× homozygous</td></tr>
+          <tr><td>Prothrombin gene mutation</td><td>Autosomal dominant</td><td>1–2%</td><td>3–5× heterozygous, 80× homozygous</td></tr>
+          <tr><td>Protein C deficiency</td><td>Autosomal dominant</td><td>1 in 400</td><td>30–40×</td></tr>
+          <tr><td>Protein S deficiency</td><td>Autosomal dominant</td><td>1 in 400</td><td>30–40×</td></tr>
+          <tr><td>Antithrombin deficiency</td><td>Autosomal dominant</td><td>1 in 1000</td><td>40–50×</td></tr>
+          <tr><td>Antiphospholipid antibody (acquired)</td><td>Acquired</td><td>1–2%</td><td>80×</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">Highest-risk settings: hip fracture and joint replacement. Prophylaxis continues until the patient is walking: at least 7–10 days after surgery, or 4–6 weeks with cancer or a past VTE.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. ANTICOAGULANTS ============ -->
+<section id="anticoag" class="chart k-ac" aria-label="Anticoagulants">
+  <div class="chart-head"><span class="num">Chart 4</span><h2>Anticoagulants</h2>
+    <p>Sort every drug by one question: does it need antithrombin to work? Then remember three things for each: how you monitor it, how it is cleared, and how you reverse it.</p></div>
+
+  <div class="trunk">
+    <div class="test"><div class="tag">Ask</div><b>How does the drug work?</b></div>
+    <div class="vline"></div>
+  </div>
+  <div>
+    <div class="fork" aria-hidden="true"></div>
+    <div class="cols">
+      <div class="col">
+        <div class="head"><h3>Indirect: needs antithrombin</h3><p>Heparins boost antithrombin</p></div>
+        <ul class="tree"><li><ul style="margin-left:0">
+          <li><span class="if">Inhibits IIa = Xa · IV/SC in hospital</span>
+            <div class="dx"><h4>Unfractionated heparin</h4><dl>
+              <dt>Monitor</dt><dd>aPTT (1.5–2.5× baseline) or anti-Xa</dd>
+              <dt>Half-life</dt><dd>60–90 min</dd>
+              <dt>Cleared</dt><dd>Liver (RES). Safe in renal failure</dd>
+              <dt>Stop</dt><dd>4 h before procedure</dd>
+              <dt>Reverse</dt><dd>Protamine (1 mg per 100 U given in the last 2–2.5 h)</dd>
+              <dt>Use</dt><dd>Renal failure, ACS, ECMO, bypass, dialysis</dd>
+              <dt>Risks</dt><dd>HIT, bleeding, osteoporosis</dd>
+            </dl></div></li>
+          <li><span class="if">Xa &gt; IIa · SC at home</span>
+            <div class="dx"><h4>LMWH</h4><dl>
+              <dt>Drugs</dt><dd>Dalteparin, tinzaparin, enoxaparin, nadroparin</dd>
+              <dt>Monitor</dt><dd>Usually none; anti-Xa if needed (not aPTT)</dd>
+              <dt>Half-life</dt><dd>3–6 h</dd>
+              <dt>Cleared</dt><dd>Kidney, builds up in renal failure</dd>
+              <dt>Stop</dt><dd>12–24 h before procedure</dd>
+              <dt>Reverse</dt><dd>Protamine (partial), andexanet</dd>
+              <dt>Use</dt><dd>VTE, cancer-associated clot, pregnancy</dd>
+            </dl></div></li>
+          <li><span class="if">Xa only · SC, weight-based</span>
+            <div class="dx"><h4>Fondaparinux</h4><dl>
+              <dt>Monitor</dt><dd>Usually none; anti-Xa</dd>
+              <dt>Half-life</dt><dd>17–21 h</dd>
+              <dt>Cleared</dt><dd>Kidney. Avoid in severe renal failure</dd>
+              <dt>Stop</dt><dd>24 h (prophylactic) or 1–2 days (therapeutic)</dd>
+              <dt>Reverse</dt><dd>Protamine has no effect; rFVIIa, andexanet</dd>
+              <dt>Use</dt><dd>DVT, PE, HIT</dd>
+            </dl></div></li>
+        </ul></li></ul>
+      </div>
+
+      <div class="col">
+        <div class="head"><h3>Vitamin K antagonist</h3><p>Stops the liver activating factors</p></div>
+        <div class="dx"><h4>Warfarin</h4><dl>
+          <dt>How</dt><dd>Blocks VKORC1, so factors II, VII, IX, X and proteins C and S aren't activated. The effect mostly reflects low thrombin</dd>
+          <dt>Route</dt><dd>Oral</dd>
+          <dt>Monitor</dt><dd>PT/INR every 1–2 days at first, then every 4–6 weeks. Target 2.0–3.0</dd>
+          <dt>Half-life</dt><dd>36–42 h</dd>
+          <dt>Stop</dt><dd>5 days before major procedure</dd>
+          <dt>Reverse</dt><dd>Vitamin K + prothrombin complex concentrate (PCC)</dd>
+          <dt>Use</dt><dd>Mechanical heart valves, valve disease, arterial clots, AF, VTE in renal failure</dd>
+          <dt>Avoid</dt><dd>Pregnancy, unreliable patients with no INR monitoring, liver disease</dd>
+        </dl>
+        <p class="note">Many drug and food interactions. Proteins C and S fall first, so the patient is briefly hypercoagulable when warfarin starts; overlap with heparin.</p></div>
+      </div>
+
+      <div class="col">
+        <div class="head"><h3>Direct: no antithrombin needed</h3><p>Bind the factor itself</p></div>
+        <ul class="tree"><li><ul style="margin-left:0">
+          <li><span class="if">Direct Xa inhibitors · oral</span>
+            <div class="dx"><h4>Rivaroxaban, apixaban, edoxaban</h4><dl>
+              <dt>Monitor</dt><dd>None needed</dd>
+              <dt>Half-life</dt><dd>7–14 h</dd>
+              <dt>Cleared</dt><dd>Kidney, prolonged in renal failure</dd>
+              <dt>Reverse</dt><dd>Andexanet alfa; PCC in emergency bleeding</dd>
+              <dt>Use</dt><dd>VTE prevention and treatment, AF</dd>
+            </dl></div></li>
+          <li><span class="if">Direct thrombin (IIa) inhibitor · oral</span>
+            <div class="dx"><h4>Dabigatran</h4><dl>
+              <dt>Half-life</dt><dd>12–18 h, kidney cleared</dd>
+              <dt>Reverse</dt><dd>Idarucizumab (monoclonal antibody)</dd>
+            </dl></div></li>
+          <li><span class="if">Direct thrombin inhibitors · IV</span>
+            <div class="dx"><h4>Bivalirudin, argatroban</h4><dl>
+              <dt>Monitor</dt><dd>aPTT</dd>
+              <dt>Half-life</dt><dd>25–45 min</dd>
+              <dt>Cleared</dt><dd>Bivalirudin mostly enzymes; argatroban liver</dd>
+              <dt>Use</dt><dd>ACS, PCI, HIT</dd>
+            </dl></div></li>
+        </ul></li></ul>
+        <p class="note">DOAC interactions: P-glycoprotein and strong CYP3A4 inhibitors or inducers change drug levels.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="refs">
+    <div class="panel">
+      <h3>Pick the drug for the patient</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>Patient</th><th>Choose</th></tr></thead>
+        <tbody>
+          <tr><td>Renal failure, in hospital</td><td>UFH</td></tr>
+          <tr><td>Renal failure, long term</td><td>Warfarin</td></tr>
+          <tr><td>Mechanical heart valve</td><td>Warfarin</td></tr>
+          <tr><td>Pregnancy</td><td>LMWH</td></tr>
+          <tr><td>Cancer-associated clot</td><td>LMWH (or a DOAC)</td></tr>
+          <tr><td>HIT</td><td>Argatroban, fondaparinux, danaparoid</td></tr>
+          <tr><td>ACS or PCI</td><td>UFH or bivalirudin</td></tr>
+          <tr><td>Uncomplicated VTE or AF</td><td>DOAC</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="panel">
+      <h3>Emergency reversal</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>Drug</th><th>Antidote</th></tr></thead>
+        <tbody>
+          <tr><td>UFH</td><td>Protamine (full)</td></tr>
+          <tr><td>LMWH</td><td>Protamine (anti-IIa effect only), andexanet</td></tr>
+          <tr><td>Fondaparinux</td><td>Protamine does nothing; rFVIIa</td></tr>
+          <tr><td>Warfarin</td><td>Vitamin K + PCC</td></tr>
+          <tr><td>Xa inhibitors</td><td>Andexanet alfa, PCC</td></tr>
+          <tr><td>Dabigatran</td><td>Idarucizumab</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">Monitoring in one line: UFH → aPTT. Warfarin → INR. LMWH and fondaparinux → anti-Xa if needed. DOACs → nothing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. TRANSFUSION ============ -->
+<section id="transfusion" class="chart k-tx" aria-label="Blood transfusion">
+  <div class="chart-head"><span class="num">Chart 5</span><h2>Blood transfusion</h2>
+    <p>Match the product to the problem: low hemoglobin, low platelets, or a clotting factor problem. Then know what to do when a reaction starts.</p></div>
+
+  <div class="steps" style="--n:3">
+    <div><b>Is it needed?</b>Use the thresholds below and look for alternatives.</div>
+    <div><b>Get consent</b>Written: procedure, risks, benefits, alternatives. May be waived if urgent and no SDM is available.</div>
+    <div><b>Blood bank tests</b>Blood group, antibody screen, crossmatch.</div>
+  </div>
+
+  <div class="trunk" style="margin-top:6px">
+    <div class="test"><div class="tag">Ask</div><b>What is the problem?</b></div>
+    <div class="vline"></div>
+  </div>
+  <div>
+    <div class="fork" aria-hidden="true"></div>
+    <div class="cols">
+      <div class="col">
+        <div class="head"><h3>Low hemoglobin</h3></div>
+        <ul class="tree"><li><ul style="margin-left:0">
+          <li><span class="if">Hb &lt; 70, or 70–90 with cardiac ischemia, symptoms, massive bleed</span>
+            <div class="dx"><h4>Red blood cells</h4><dl>
+              <dt>Dose</dt><dd>1 unit (300 mL) raises Hb about 10 g/L</dd>
+              <dt>Storage</dt><dd>4 °C, up to 42 days</dd>
+              <dt>Alternatives</dt><dd>EPO, iron, B12, folate if the patient refuses blood</dd>
+            </dl></div></li>
+        </ul></li></ul>
+      </div>
+      <div class="col">
+        <div class="head"><h3>Low platelets</h3></div>
+        <ul class="tree"><li>
+          <div class="test"><div class="tag">Check</div><b>Is it TTP, HUS or HIT?</b></div>
+          <ul>
+            <li><span class="if">Yes</span><div class="dx"><h4>Don't transfuse platelets</h4><dl><dt>Why</dt><dd>Feeds more thrombosis</dd></dl></div></li>
+            <li><span class="if">ITP</span><div class="dx"><h4>Only for emergency bleeding</h4><dl><dt>Instead</dt><dd>Steroids, IVIG, thrombopoietin agents</dd></dl></div></li>
+            <li><span class="if">Below threshold</span>
+              <div class="dx"><h4>Platelets</h4><dl>
+                <dt>&lt; 10</dt><dd>Prophylaxis</dd>
+                <dt>&lt; 50</dt><dd>Invasive surgery or bleeding</dd>
+                <dt>&lt; 100</dt><dd>Neurosurgery</dd>
+                <dt>Storage</dt><dd>20–24 °C with constant mixing, 7 days (highest bacterial risk)</dd>
+              </dl></div></li>
+          </ul>
+        </li></ul>
+      </div>
+      <div class="col">
+        <div class="head"><h3>Clotting factor problem</h3></div>
+        <ul class="tree"><li><ul style="margin-left:0">
+          <li><span class="if">Bleeding with INR ≥ 1.8</span>
+            <div class="dx"><h4>Plasma</h4><dl>
+              <dt>Has</dt><dd>All coagulation factors</dd>
+              <dt>Use</dt><dd>Liver disease, DIC, massive transfusion, plasma exchange in TTP</dd>
+              <dt>Storage</dt><dd>−18 °C, 1 year, thaw 20 min</dd>
+            </dl></div></li>
+          <li><span class="if">Low fibrinogen</span>
+            <div class="dx"><h4>Cryoprecipitate or fibrinogen concentrate</h4><dl>
+              <dt>Cryo has</dt><dd>Fibrinogen, FVIII, FXIII, vWF. 10 units ≈ 4 g fibrinogen</dd>
+              <dt>Use</dt><dd>DIC with fibrinogen &lt; 1.0, congenital fibrinogen deficiency</dd>
+            </dl></div></li>
+          <li><span class="if">On warfarin or vitamin K deficient</span>
+            <div class="dx"><h4>PCC + vitamin K</h4><dl>
+              <dt>PCC has</dt><dd>Vitamin K–dependent factors</dd>
+              <dt>Use</dt><dd>Urgent warfarin reversal, emergency procedure</dd>
+            </dl><span class="alert">Give vitamin K 2–10 mg IV too, or the INR rebounds when PCC wears off</span></div></li>
+        </ul></li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="refs">
+    <div class="panel wide">
+      <h3>Reaction during or after transfusion: think by symptom</h3>
+      <p class="note" style="margin:0 0 8px">First: stop the transfusion, keep the IV open, recheck patient ID and the product, notify the blood bank.</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Symptom</th><th>Possible causes</th><th>Clue</th></tr></thead>
+        <tbody>
+          <tr><td>Fever</td><td>Febrile non-hemolytic reaction, bacterial sepsis, acute hemolytic reaction</td><td>Sepsis most likely with platelets (room temperature storage)</td></tr>
+          <tr><td>Dyspnea</td><td>TRALI, TACO</td><td>TACO: volume overload, hypertension, responds to diuretics. TRALI: non-cardiogenic edema within 6 h, often hypotension</td></tr>
+          <tr><td>Urticaria</td><td>Minor allergic reaction, anaphylaxis</td><td>Anaphylaxis: wheeze, hypotension</td></tr>
+          <tr><td>Hypotension</td><td>Bradykinin-mediated hypotension, anaphylaxis, hemolysis, sepsis</td><td></td></tr>
+          <tr><td>Hemolysis</td><td>Acute hemolytic reaction (ABO mismatch), delayed hemolytic reaction</td><td>Delayed: days later, from red cell alloantibodies</td></tr>
+          <tr><td>Low counts later</td><td>TA-GvHD, post-transfusion purpura, alloimmune thrombocytopenia or neutropenia</td><td></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="panel wide">
+      <h3>Infectious risks screened for</h3>
+      <div class="chips"><span>HIV 1 and 2</span><span>Hepatitis B</span><span>Hepatitis C</span><span>HTLV I and II</span><span>West Nile virus</span><span>Syphilis</span><span>Bacterial contamination</span><span>Chagas (at-risk donors)</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>Built from Nicole's notes, week 10 (pages 85–89). Check thresholds and drug details against your lecture slides.</footer>
+</div>
+
+</body></html>

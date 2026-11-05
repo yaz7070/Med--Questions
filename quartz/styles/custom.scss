@@ -1,3 +1,17 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// Embedded quizzes and flowcharts
+.embed-page {
+  width: 100%;
+  height: 85vh;
+  min-height: 600px;
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  background: var(--light);
+}
+.embed-open {
+  font-weight: 600;
+}

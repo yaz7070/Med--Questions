@@ -1,0 +1,127 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Anemia Speedrun</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik:wght@400;500;700&display=swap">
+<style>
+/* Layout: one vertical spine (Hb -> MCV) that splits into three lanes, each lane = one test then outcome rows. Hemolysis box closes the page. */
+:root{
+  --bg:#f7f4fb; --card:#ffffff; --ink:#1e1530; --muted:#6b5f80; --line:#d9d0e6;
+  --tiny:#0e8fa8; --mid:#4c9a1a; --big:#c27a00; --hot:#d6246e;
+  --display:"Bungee","Arial Black",Impact,sans-serif;
+  --body:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#17121f; --card:#221a2e; --ink:#f4effa; --muted:#b4a8c6; --line:#3a2f4a;
+  --tiny:#4fd3ec; --mid:#9be05a; --big:#ffc24d; --hot:#ff5c9d; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#17121f; --card:#221a2e; --ink:#f4effa; --muted:#b4a8c6; --line:#3a2f4a;
+  --tiny:#4fd3ec; --mid:#9be05a; --big:#ffc24d; --hot:#ff5c9d; color-scheme:dark }
+
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.4;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 56px}
+.wrap{max-width:1040px;margin:0 auto;display:grid;gap:0;justify-items:center}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,6vw,3.2rem);line-height:1;margin:0 0 6px;text-align:center}
+.sub{color:var(--muted);margin:0 0 28px;text-align:center}
+
+.node{background:var(--card);border:2px solid var(--ink);border-radius:12px;padding:14px 20px;text-align:center;max-width:460px;width:100%}
+.node .t{font-family:var(--display);font-size:1.15rem;line-height:1.1}
+.node .s{color:var(--muted);font-size:.92rem;margin-top:4px}
+.v{width:2px;height:28px;background:var(--ink)}
+.v.arrow{position:relative}
+.v.arrow::after{content:"";position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);border:6px solid transparent;border-top:8px solid var(--ink);border-bottom:0}
+
+/* split bar */
+.split{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:relative}
+.split::before{content:"";position:absolute;top:0;left:16.66%;right:16.66%;height:2px;background:var(--ink)}
+.split span{justify-self:center;width:2px;height:24px;background:var(--ink)}
+
+.lanes{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.lane{display:grid;gap:10px;align-content:start;min-width:0}
+.head{border-radius:12px;padding:12px 14px;text-align:center;color:var(--bg);background:var(--c)}
+.head .t{font-family:var(--display);font-size:1.25rem;line-height:1.05}
+.head .s{font-weight:700;font-size:.9rem;opacity:.9}
+.test{border:2px dashed var(--c);border-radius:10px;padding:8px 12px;text-align:center;font-weight:700;background:var(--card)}
+.test small{display:block;font-weight:400;color:var(--muted)}
+.out{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:8px;padding:9px 12px;display:grid;gap:2px}
+.out .if{font-size:.88rem;color:var(--muted)}
+.out .dx{font-weight:700}
+.tiny{--c:var(--tiny)} .mid{--c:var(--mid)} .big{--c:var(--big)} .hot{--c:var(--hot)}
+
+.mobile-split{display:none}
+@media (max-width:820px){
+  .split{display:none}
+  .lanes{grid-template-columns:1fr;gap:28px}
+  .mobile-split{display:block}
+}
+
+.hemo{width:100%;margin-top:36px;display:grid;gap:12px}
+.hemo .head{max-width:460px;justify-self:center;width:100%}
+.hemo-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:640px){.hemo-row{grid-template-columns:1fr}}
+.col{display:grid;gap:8px;align-content:start;min-width:0}
+.foot{color:var(--muted);font-size:.82rem;text-align:center;margin-top:28px}
+</style>
+
+<div class="wrap">
+  <h1>Anemia Speedrun</h1>
+  <p class="sub">Follow the arrows. One test per step.</p>
+
+  <div class="node"><div class="t">Is Hb low?</div><div class="s">Under 135 g/L men · under 115 g/L women</div></div>
+  <div class="v arrow"></div>
+  <div class="node"><div class="t">Check the MCV</div><div class="s">How big are the red cells?</div></div>
+  <div class="v"></div>
+  <div class="split"><span></span><span></span><span></span></div>
+
+  <section class="lanes">
+    <div class="lane tiny">
+      <div class="head"><div class="t">Tiny 🤏</div><div class="s">MCV under 80</div></div>
+      <div class="test">Ferritin</div>
+      <div class="out"><div class="if">Low</div><div class="dx">Iron deficiency</div></div>
+      <div class="out"><div class="if">High or normal + chronic illness</div><div class="dx">Chronic inflammation</div></div>
+      <div class="out"><div class="if">Normal + family history</div><div class="dx">Thalassemia</div></div>
+      <div class="out"><div class="if">Lead, alcohol, TB drugs</div><div class="dx">Sideroblastic</div></div>
+    </div>
+
+    <div class="lane mid">
+      <div class="head"><div class="t">Mid 😐</div><div class="s">MCV 80 to 100</div></div>
+      <div class="test">Retic count</div>
+      <div class="out"><div class="if">High + LDH ↑ bili ↑ hapto ↓</div><div class="dx">Hemolysis ↓</div></div>
+      <div class="out"><div class="if">High + labs normal</div><div class="dx">Bleeding</div></div>
+      <div class="out"><div class="if">Low + chronic disease or CKD</div><div class="dx">Chronic inflammation</div></div>
+      <div class="out"><div class="if">Low + other counts down</div><div class="dx">Marrow problem</div></div>
+    </div>
+
+    <div class="lane big">
+      <div class="head"><div class="t">Chonky 🍔</div><div class="s">MCV over 100</div></div>
+      <div class="test">Blood film<small>look at the neutrophils</small></div>
+      <div class="out"><div class="if">Hypersegmented + MMA ↑</div><div class="dx">B12 deficiency</div></div>
+      <div class="out"><div class="if">Hypersegmented + MMA normal</div><div class="dx">Folate deficiency</div></div>
+      <div class="out"><div class="if">Normal + alcohol or target cells</div><div class="dx">Alcohol / liver</div></div>
+      <div class="out"><div class="if">Normal + cold, tired, slow</div><div class="dx">Hypothyroid</div></div>
+    </div>
+  </section>
+
+  <section class="hemo hot">
+    <div class="head"><div class="t">Hemolysis 💥</div><div class="s">Next test: DAT (Coombs)</div></div>
+    <div class="hemo-row">
+      <div class="col">
+        <div class="test">DAT positive</div>
+        <div class="out"><div class="if">IgG</div><div class="dx">Warm AIHA</div></div>
+        <div class="out"><div class="if">C3</div><div class="dx">Cold agglutinin</div></div>
+      </div>
+      <div class="col">
+        <div class="test">DAT negative<small>read the film</small></div>
+        <div class="out"><div class="if">Spherocytes</div><div class="dx">Hereditary spherocytosis</div></div>
+        <div class="out"><div class="if">Bite cells</div><div class="dx">G6PD deficiency</div></div>
+        <div class="out"><div class="if">Schistocytes</div><div class="dx">DIC / TTP / HUS / valve</div></div>
+        <div class="out"><div class="if">Sickle cells</div><div class="dx">Sickle cell disease</div></div>
+      </div>
+    </div>
+  </section>
+
+  <p class="foot">From Dr. Lam's anemia lectures and Nicole's Notes, Week 9.</p>
+</div>
+
+</body></html>

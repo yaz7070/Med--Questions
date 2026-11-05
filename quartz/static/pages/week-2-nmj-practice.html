@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Week 2: Foundations of the Human Body — NMJ Practice Chart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEF0EA; --paper:#FFFFFF; --ink:#1F2A24; --muted:#5B6A61; --line:#D7DBD2;
+    --accent:#2F6F5E; --accent-wash:#E4EDE9; --correct:#2E7D4F; --correct-wash:#E4F2E8;
+    --incorrect:#A13D2C; --incorrect-wash:#F6E7E3; --unanswered:#C9CFC4;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg:#171C18; --paper:#1F251F; --ink:#EDEFE9; --muted:#9BA79C; --line:#333A32;
+      --accent:#6FBBA3; --accent-wash:#25332C; --correct:#6FBB8B; --correct-wash:#20332A;
+      --incorrect:#E28C79; --incorrect-wash:#3A2621; --unanswered:#3A4139;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#171C18; --paper:#1F251F; --ink:#EDEFE9; --muted:#9BA79C; --line:#333A32;
+    --accent:#6FBBA3; --accent-wash:#25332C; --correct:#6FBB8B; --correct-wash:#20332A;
+    --incorrect:#E28C79; --incorrect-wash:#3A2621; --unanswered:#3A4139;
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    -webkit-font-smoothing:antialiased;
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  .wrap{ max-width:720px; margin:0 auto; padding:28px 20px 64px; }
+  .chart-header{ border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:18px; }
+  .chart-id{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.04em; color:var(--muted);
+    display:flex; justify-content:space-between; margin-bottom:8px; gap:8px; flex-wrap:wrap;
+  }
+  h1{ font-family:'Source Serif 4', serif; font-weight:600; font-size:24px; line-height:1.2; margin:0 0 4px; }
+  .subtitle{ color:var(--muted); font-size:14px; margin:0; }
+  .diff-note{
+    font-size:12px; color:var(--accent); font-weight:600; margin-top:8px;
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .status-row{
+    display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+  }
+  .status-row .score{ color:var(--accent); font-weight:600; }
+  .ticks{ display:grid; grid-template-columns:repeat(18, 1fr); gap:3px; margin-top:10px; }
+  .tick{ height:8px; background:var(--unanswered); border:none; padding:0; cursor:pointer; border-radius:1px; }
+  .tick.current{ outline:2px solid var(--ink); outline-offset:1px; }
+  .tick.correct{ background:var(--correct); }
+  .tick.incorrect{ background:var(--incorrect); }
+  .card{ background:var(--paper); border:1px solid var(--line); margin-top:22px; }
+  .card-top{
+    display:flex; justify-content:space-between; align-items:center; padding:12px 18px;
+    border-bottom:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted);
+  }
+  .category-tag{ color:var(--accent); font-weight:600; }
+  .prompt{ font-family:'Source Serif 4', serif; font-size:18px; line-height:1.55; padding:20px 18px 8px; }
+  .options{ padding:6px 18px 18px; display:flex; flex-direction:column; gap:8px; }
+  .option{
+    display:flex; align-items:flex-start; gap:12px; text-align:left; background:var(--paper);
+    border:1px solid var(--line); padding:11px 13px; font-family:'IBM Plex Sans', sans-serif;
+    font-size:15px; line-height:1.45; color:var(--ink); cursor:pointer;
+    transition:border-color .12s ease, background .12s ease;
+  }
+  .option:hover:not(:disabled){ border-color:var(--accent); background:var(--accent-wash); }
+  .option:disabled{ cursor:default; }
+  .option .letter{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:600; color:var(--muted);
+    border:1px solid var(--line); width:22px; height:22px; min-width:22px;
+    display:flex; align-items:center; justify-content:center; margin-top:1px;
+  }
+  .option.correct{ background:var(--correct-wash); border-color:var(--correct); }
+  .option.correct .letter{ border-color:var(--correct); color:var(--correct); }
+  .option.incorrect{ background:var(--incorrect-wash); border-color:var(--incorrect); }
+  .option.incorrect .letter{ border-color:var(--incorrect); color:var(--incorrect); }
+  .feedback{
+    margin:0 18px 18px; padding:14px 16px; border-left:3px solid var(--accent);
+    background:var(--accent-wash); font-size:14px; line-height:1.6; display:none;
+  }
+  .feedback.show{ display:block; }
+  .feedback.correct-fb{ border-color:var(--correct); background:var(--correct-wash); }
+  .feedback.incorrect-fb{ border-color:var(--incorrect); background:var(--incorrect-wash); }
+  .feedback .verdict{ font-weight:600; display:block; margin-bottom:4px; }
+  .feedback .verdict.correct-text{ color:var(--correct); }
+  .feedback .verdict.incorrect-text{ color:var(--incorrect); }
+  .nav-row{
+    display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-top:1px solid var(--line);
+  }
+  .btn{
+    font-family:'IBM Plex Sans', sans-serif; font-size:14px; font-weight:500; padding:9px 16px;
+    border:1px solid var(--ink); background:var(--paper); color:var(--ink); cursor:pointer;
+  }
+  .btn:disabled{ opacity:0.35; cursor:not-allowed; }
+  .btn.primary{ background:var(--ink); color:var(--paper); }
+  .btn.primary:disabled{ background:var(--unanswered); border-color:var(--unanswered); }
+  .summary{ background:var(--paper); border:1px solid var(--line); margin-top:22px; padding:28px 22px; display:none; }
+  .summary.show{ display:block; }
+  .summary h2{ font-family:'Source Serif 4', serif; font-size:24px; margin:0 0 4px; }
+  .summary .big-score{ font-family:'IBM Plex Mono', monospace; font-size:44px; font-weight:600; color:var(--accent); margin:14px 0 2px; }
+  .summary .big-score-label{ color:var(--muted); font-size:13px; margin-bottom:22px; }
+  .breakdown{ border-top:1px solid var(--line); padding-top:16px; margin-top:6px; }
+  .breakdown-row{ display:flex; justify-content:space-between; font-size:14px; padding:7px 0; border-bottom:1px solid var(--line); }
+  .breakdown-row:last-child{ border-bottom:none; }
+  .breakdown-row .cat{ color:var(--ink); }
+  .breakdown-row .frac{ font-family:'IBM Plex Mono', monospace; color:var(--muted); }
+  .restart-row{ margin-top:22px; }
+  footer{ text-align:center; color:var(--muted); font-size:12px; margin-top:26px; font-family:'IBM Plex Mono', monospace; }
+  @media (max-width:420px){
+    .ticks{ grid-template-columns:repeat(9,1fr); }
+    .prompt{ font-size:16px; }
+    h1{ font-size:20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="chart-header">
+    <div class="chart-id">
+      <span>FOUNDATIONS OF MEDICINE — PROGRESS TEST</span>
+      <span id="item-count">ITEM 1 / 18</span>
+    </div>
+    <h1>Week 2: The Neuromuscular Junction</h1>
+    <p class="subtitle">Mechanism-based vignettes on NMJ physiology, toxins, and pharmacology — matched to the style of the botulinum toxin sample question.</p>
+    <p class="diff-note">Format: 5-option, single best mechanism per stem.</p>
+    <div class="status-row">
+      <span id="progress-label">0 of 18 answered</span>
+      <span class="score" id="score-label">Score: 0 / 0</span>
+    </div>
+    <div class="ticks" id="ticks"></div>
+  </div>
+
+  <div class="card" id="card">
+    <div class="card-top">
+      <span class="category-tag" id="cat-tag">CATEGORY</span>
+      <span id="q-number">Q1</span>
+    </div>
+    <div class="prompt" id="prompt">Loading…</div>
+    <div class="options" id="options"></div>
+    <div class="feedback" id="feedback">
+      <span class="verdict" id="verdict"></span>
+      <span id="explanation"></span>
+    </div>
+    <div class="nav-row">
+      <button class="btn" id="prev-btn">← Previous</button>
+      <button class="btn primary" id="next-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+  <div class="summary" id="summary">
+    <h2>Chart complete</h2>
+    <p class="subtitle">Here's how you did across all 18 items.</p>
+    <div class="big-score" id="final-score">0 / 18</div>
+    <div class="big-score-label" id="final-pct">0% correct</div>
+    <div class="breakdown" id="breakdown"></div>
+    <div class="restart-row">
+      <button class="btn primary" id="restart-btn">Restart chart</button>
+    </div>
+  </div>
+
+  <footer>18 items · NMJ Pharmacology &amp; Toxins · Autoimmune NMJ Disorders · Electrodiagnostics · Excitation-Contraction Coupling · Membrane &amp; Synaptic Electrophysiology</footer>
+</div>
+
+<script>
+const QUESTIONS = [
+{c:"NMJ Pharmacology & Toxins",p:"Raj, a 52-year-old farmer, is brought to the emergency department after a pesticide spill with salivation, lacrimation, urination, diarrhea, and muscle fasciculations that progress toward weakness. Laboratory testing confirms organophosphate exposure. Which of the following statements best describes the physiological basis of his neuromuscular findings?",o:["Blockage of voltage-gated calcium channels in the axon terminal","Competitive antagonism at the postsynaptic nicotinic receptor","Irreversible inhibition of the acetylcholinesterase enzyme, causing excess acetylcholine to accumulate at the synaptic cleft","Blockage of acetylcholine release by the motor neuron","Enhanced activity of the transporter that recycles choline back into the axon terminal"],a:2,e:"Organophosphates irreversibly inhibit acetylcholinesterase, preventing acetylcholine breakdown. Excess acetylcholine at the synapse causes initial overstimulation (fasciculations) followed by depolarizing blockade and weakness."},
+{c:"NMJ Pharmacology & Toxins",p:"During general anesthesia, a patient is given rocuronium, a non-depolarizing neuromuscular blocking agent, to facilitate intubation. Within minutes he develops flaccid paralysis with no preceding fasciculations. Which of the following statements best describes the physiological basis of this drug's action?",o:["Competitive antagonism at the postsynaptic nicotinic receptor, preventing acetylcholine from binding and opening the channel","Irreversible inhibition of the acetylcholinesterase enzyme","Persistent depolarization of the postsynaptic membrane","Blockage of presynaptic voltage-gated calcium channels","Enhanced activity of the calcium pump in the sarcoplasmic reticulum"],a:0,e:"Non-depolarizing blockers like rocuronium are competitive antagonists at the postsynaptic nicotinic receptor, occupying the acetylcholine binding site without activating the channel — producing paralysis with no preceding fasciculations, unlike a depolarizing agent."},
+{c:"NMJ Pharmacology & Toxins",p:"Succinylcholine is administered for rapid-sequence intubation. Visible muscle fasciculations are noted in the first minute, followed by flaccid paralysis. Which of the following statements best describes the physiological basis of this sequence?",o:["Sustained agonist binding at the nicotinic receptor causing persistent depolarization and subsequent receptor inactivation","Competitive antagonism preventing acetylcholine from binding the nicotinic receptor","Inhibition of the acetylcholinesterase enzyme at the synaptic cleft","Blockage of voltage-gated sodium channels on the sarcolemma","Blockage of calcium release from the sarcoplasmic reticulum"],a:0,e:"Succinylcholine is a depolarizing blocker: it acts as an agonist at the nicotinic receptor, initially causing fasciculations from sustained depolarization, then paralysis as the receptor becomes unresponsive to further stimulation."},
+{c:"NMJ Pharmacology & Toxins",p:"Priya, a 34-year-old gardener, is bitten by a black widow spider and develops severe, generalized muscle rigidity and painful cramping, in contrast to the flaccid paralysis seen with botulinum toxin. Which of the following statements best describes the physiological basis of this presentation?",o:["Massive, uncontrolled release of acetylcholine from presynaptic vesicles","Complete blockage of acetylcholine release from the motor neuron","Competitive antagonism at the postsynaptic nicotinic receptor","Inhibition of the acetylcholinesterase enzyme","Blockage of presynaptic voltage-gated calcium channels"],a:0,e:"Black widow spider venom (alpha-latrotoxin) triggers massive, uncontrolled release of acetylcholine from presynaptic vesicles, producing sustained muscle contraction and cramping — essentially the opposite mechanism to botulinum toxin."},
+{c:"NMJ Pharmacology & Toxins",p:"A patient with known myasthenia gravis is started on an aminoglycoside antibiotic for a urinary tract infection and develops worsening generalized weakness within days. Which of the following statements best describes the physiological basis of this deterioration?",o:["Impaired presynaptic calcium channel function, further reducing acetylcholine release at an already compromised synapse","Irreversible inhibition of the acetylcholinesterase enzyme","Competitive antagonism at the postsynaptic nicotinic receptor","Increased postsynaptic nicotinic receptor density","Blockage of voltage-gated sodium channels on the axon"],a:0,e:"Aminoglycosides impair presynaptic calcium channel function, reducing acetylcholine release. In a patient with myasthenia gravis, who already has reduced postsynaptic receptor numbers, this added presynaptic effect can precipitate clinically significant worsening."},
+{c:"NMJ Pharmacology & Toxins",p:"A patient being treated with intravenous magnesium sulfate for eclampsia develops progressively diminished deep tendon reflexes and mild muscle weakness. Which of the following statements best describes the physiological basis of this finding?",o:["Competition with calcium at the presynaptic terminal, reducing calcium influx and acetylcholine release","Inhibition of the acetylcholinesterase enzyme","Enhanced postsynaptic receptor sensitivity to acetylcholine","Blockage of the sodium-potassium ATPase pump","Enhanced calcium release from the sarcoplasmic reticulum"],a:0,e:"Elevated magnesium competes with calcium at the presynaptic terminal, reducing calcium influx through voltage-gated calcium channels and thereby reducing acetylcholine release — the basis of magnesium toxicity's neuromuscular effects."},
+{c:"NMJ Pharmacology & Toxins",p:"Toxicology identifies a compound that selectively cleaves SNARE proteins required for synaptic vesicle docking and fusion at the presynaptic terminal, preventing vesicle release despite normal calcium influx. Which of the following toxins does this best describe?",o:["Botulinum toxin","Tetanus toxin","Organophosphate","Curare","Black widow spider venom"],a:0,e:"Botulinum toxin cleaves SNARE proteins needed for synaptic vesicle fusion, blocking acetylcholine release despite normal presynaptic calcium influx — distinct from tetanus toxin, which acts centrally to block inhibitory neurotransmitter release in the spinal cord, producing spastic rather than flaccid paralysis."},
+{c:"Autoimmune NMJ Disorders",p:"Wei, a 45-year-old woman, presents with ptosis and diplopia that worsen through the day and improve with rest. Antibody testing confirms myasthenia gravis. Which of the following statements best describes the physiological basis of her weakness?",o:["Autoantibodies reducing the number of functional postsynaptic nicotinic acetylcholine receptors","Autoantibodies blocking presynaptic voltage-gated calcium channels","Autoantibodies inhibiting the acetylcholinesterase enzyme","Autoantibodies blocking voltage-gated sodium channels on the axon","Autoantibodies enhancing choline reuptake into the presynaptic terminal"],a:0,e:"Myasthenia gravis is caused by autoantibodies against the postsynaptic nicotinic acetylcholine receptor, reducing the number of functional receptors and impairing neuromuscular transmission, especially with sustained use."},
+{c:"Autoimmune NMJ Disorders",p:"Daniel, a 61-year-old man with a new diagnosis of small cell lung cancer, reports proximal muscle weakness that, unusually, improves transiently with repeated effort. Which of the following statements best describes the physiological basis of this paraneoplastic presentation?",o:["Autoantibodies against presynaptic voltage-gated calcium channels, reducing acetylcholine release","Autoantibodies against postsynaptic nicotinic acetylcholine receptors","Autoantibodies inhibiting the acetylcholinesterase enzyme","Autoantibodies enhancing postsynaptic receptor density","Autoantibodies blocking the sarcoplasmic reticulum calcium pump"],a:0,e:"Lambert-Eaton myasthenic syndrome involves autoantibodies against presynaptic voltage-gated calcium channels, reducing acetylcholine release. Repeated stimulation transiently increases residual calcium influx, producing the characteristic transient improvement in strength with use."},
+{c:"Electrodiagnostics",p:"Repetitive nerve stimulation testing in a patient with fluctuating ptosis and fatigable weakness shows a progressive decrement in the compound muscle action potential amplitude with repeated high-frequency stimulation. Which condition is most consistent with this finding?",o:["Myasthenia gravis","Lambert-Eaton myasthenic syndrome","Botulinum toxin poisoning","Duchenne muscular dystrophy","Guillain-Barré syndrome"],a:0,e:"A decremental response on repetitive nerve stimulation reflects progressive loss of functional postsynaptic receptors being recruited with each stimulus, classic for myasthenia gravis."},
+{c:"Electrodiagnostics",p:"Repetitive nerve stimulation testing in a patient with proximal weakness and a new cancer diagnosis shows a marked incremental (facilitating) response in compound muscle action potential amplitude with high-frequency stimulation. Which condition is most consistent with this finding?",o:["Lambert-Eaton myasthenic syndrome","Myasthenia gravis","Botulinum toxin poisoning","Organophosphate poisoning","Guillain-Barré syndrome"],a:0,e:"An incremental (facilitating) response reflects transient improvement in presynaptic calcium accumulation with repeated stimulation, classic for Lambert-Eaton myasthenic syndrome, where the baseline defect is reduced presynaptic calcium channel function."},
+{c:"Electrodiagnostics",p:"A patient with proximal muscle weakness undergoes electrodiagnostic testing. Nerve conduction velocity is normal, but compound muscle action potential amplitude is reduced. Which of the following best characterizes this pattern?",o:["A myopathic process, since the abnormality lies within the muscle rather than nerve conduction","A demyelinating neuropathy","A pure axonal neuropathy","A presynaptic neuromuscular junction disorder exclusively","Normal muscle and nerve function"],a:0,e:"Myopathy classically shows normal nerve conduction but reduced compound muscle action potential amplitude, since the defect is intrinsic to the muscle fiber rather than the nerve. Neuropathy, especially demyelinating disease, is expected to show abnormal nerve conduction."},
+{c:"Excitation-Contraction Coupling",p:"A patient develops muscle rigidity, hyperthermia, and tachycardia shortly after induction of general anesthesia with a volatile anesthetic. Malignant hyperthermia is suspected and dantrolene is administered. Which of the following statements best describes dantrolene's mechanism at the level of excitation-contraction coupling?",o:["Blockade of ryanodine receptor-mediated calcium release from the sarcoplasmic reticulum","Blockade of presynaptic voltage-gated calcium channels at the motor nerve terminal","Inhibition of the acetylcholinesterase enzyme","Competitive blockade of the postsynaptic nicotinic receptor","Enhanced calcium reuptake by the sarcoplasmic reticulum calcium ATPase"],a:0,e:"Dantrolene blocks the ryanodine receptor on the sarcoplasmic reticulum, preventing the excessive calcium release that drives malignant hyperthermia's sustained muscle contraction and heat generation."},
+{c:"Excitation-Contraction Coupling",p:"A physiology student is asked to describe what happens once calcium enters the sarcoplasm following excitation-contraction coupling. Which of the following statements best describes this step?",o:["Calcium binds troponin C, causing a conformational change that moves tropomyosin off the myosin-binding sites on actin","Calcium binds directly to myosin, triggering the power stroke without troponin involvement","Calcium is required for acetylcholine synthesis in the motor nerve terminal","Calcium directly opens voltage-gated sodium channels on the sarcolemma","Calcium inhibits the acetylcholinesterase enzyme at the synaptic cleft"],a:0,e:"Calcium binds troponin C, causing tropomyosin to shift and expose the myosin-binding sites on actin, allowing cross-bridge formation and the power stroke."},
+{c:"Membrane & Synaptic Electrophysiology",p:"A patient receives a subcutaneous injection of lidocaine before a minor procedure and reports loss of sensation at the injection site within minutes. Which of the following statements best describes lidocaine's mechanism at the level of the peripheral nerve?",o:["Reversible blockade of voltage-gated sodium channels, preventing initiation and propagation of the action potential","Blockade of voltage-gated potassium channels, preventing repolarization","Blockade of voltage-gated calcium channels at the presynaptic terminal","Inhibition of the sodium-potassium ATPase pump","Blockade of postsynaptic nicotinic receptors"],a:0,e:"Local anesthetics like lidocaine reversibly block voltage-gated sodium channels, preventing the depolarization needed to initiate and propagate an action potential along the nerve fiber."},
+{c:"Membrane & Synaptic Electrophysiology",p:"Which of the following statements correctly describes the relationship between presynaptic calcium concentration and acetylcholine release at the neuromuscular junction?",o:["A larger influx of presynaptic calcium results in the release of more acetylcholine","Acetylcholine release is independent of presynaptic calcium concentration","Calcium influx inhibits acetylcholine release","Calcium is required only for acetylcholine synthesis, not its release","Sodium influx, rather than calcium, triggers acetylcholine vesicle release"],a:0,e:"Calcium influx through voltage-gated calcium channels at the presynaptic terminal directly triggers vesicle fusion and acetylcholine release — the greater the calcium influx, the more acetylcholine is released."},
+{c:"Membrane & Synaptic Electrophysiology",p:"A researcher selectively blocks all leak potassium channels in an isolated neuron and measures the resting membrane potential before and after. Which of the following statements best describes the expected effect?",o:["The resting membrane potential becomes less negative (depolarized)","The resting membrane potential becomes more negative (hyperpolarized)","There is no change to the resting membrane potential","The cell becomes permanently unable to generate an action potential under any condition","The resting membrane potential comes to depend entirely on chloride conductance"],a:0,e:"Leak potassium channels allow continuous K+ efflux, which is a major contributor to the negative resting membrane potential. Blocking them removes this outward current, shifting the membrane potential toward depolarization."},
+{c:"Membrane & Synaptic Electrophysiology",p:"A physiology student is asked to distinguish the absolute refractory period from the relative refractory period following an action potential. Which of the following statements is correct?",o:["During the absolute refractory period, no stimulus can trigger a new action potential because voltage-gated sodium channels are inactivated; during the relative refractory period, a stronger-than-normal stimulus is required as some sodium channels have recovered","During the absolute refractory period, a stronger-than-normal stimulus can still trigger an action potential","The relative refractory period occurs before the absolute refractory period in the sequence following an action potential","Both refractory periods result from inactivation of voltage-gated potassium channels","Neither refractory period involves a change in voltage-gated sodium channel state"],a:0,e:"During the absolute refractory period, voltage-gated sodium channels are inactivated and no stimulus can trigger another action potential. As some channels recover during the relative refractory period, a stronger-than-normal stimulus is needed to trigger a new action potential."}
+];
+
+const LETTERS = ["A","B","C","D","E"];
+let current = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+
+const ticksEl = document.getElementById('ticks');
+const promptEl = document.getElementById('prompt');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('feedback');
+const verdictEl = document.getElementById('verdict');
+const explanationEl = document.getElementById('explanation');
+const catTagEl = document.getElementById('cat-tag');
+const qNumberEl = document.getElementById('q-number');
+const itemCountEl = document.getElementById('item-count');
+const progressLabelEl = document.getElementById('progress-label');
+const scoreLabelEl = document.getElementById('score-label');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const cardEl = document.getElementById('card');
+const summaryEl = document.getElementById('summary');
+const restartBtn = document.getElementById('restart-btn');
+
+document.getElementById('item-count').textContent = 'ITEM 1 / ' + QUESTIONS.length;
+document.getElementById('progress-label').textContent = '0 of ' + QUESTIONS.length + ' answered';
+document.getElementById('summary').querySelector('.subtitle').textContent = "Here's how you did across all " + QUESTIONS.length + ' items.';
+document.getElementById('final-score').textContent = '0 / ' + QUESTIONS.length;
+
+function buildTicks(){
+  ticksEl.innerHTML = '';
+  QUESTIONS.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.className = 'tick';
+    b.setAttribute('aria-label', 'Go to question ' + (i+1));
+    b.addEventListener('click', () => { current = i; render(); });
+    ticksEl.appendChild(b);
+  });
+}
+
+function updateTicks(){
+  const ticks = ticksEl.children;
+  for(let i=0;i<QUESTIONS.length;i++){
+    const t = ticks[i];
+    t.classList.remove('current','correct','incorrect');
+    if(answers[i] !== null){
+      t.classList.add(answers[i] === QUESTIONS[i].a ? 'correct' : 'incorrect');
+    }
+    if(i === current) t.classList.add('current');
+  }
+}
+
+function scoreCount(){
+  let correct = 0, answered = 0;
+  answers.forEach((a,i) => { if(a !== null){ answered++; if(a === QUESTIONS[i].a) correct++; } });
+  return {correct, answered};
+}
+
+function updateStatus(){
+  const {correct, answered} = scoreCount();
+  progressLabelEl.textContent = answered + ' of ' + QUESTIONS.length + ' answered';
+  scoreLabelEl.textContent = 'Score: ' + correct + ' / ' + answered;
+  itemCountEl.textContent = 'ITEM ' + (current+1) + ' / ' + QUESTIONS.length;
+}
+
+function render(){
+  if(current >= QUESTIONS.length){
+    showSummary();
+    return;
+  }
+  cardEl.style.display = '';
+  summaryEl.classList.remove('show');
+
+  const q = QUESTIONS[current];
+  catTagEl.textContent = q.c.toUpperCase();
+  qNumberEl.textContent = 'Q' + (current+1);
+  promptEl.textContent = q.p;
+
+  optionsEl.innerHTML = '';
+  const chosen = answers[current];
+
+  q.o.forEach((text, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.innerHTML = '<span class="letter">' + LETTERS[i] + '</span><span>' + text + '</span>';
+    if(chosen !== null){
+      btn.disabled = true;
+      if(i === q.a) btn.classList.add('correct');
+      else if(i === chosen) btn.classList.add('incorrect');
+    }
+    btn.addEventListener('click', () => selectOption(i));
+    optionsEl.appendChild(btn);
+  });
+
+  if(chosen !== null){
+    const isCorrect = chosen === q.a;
+    feedbackEl.classList.add('show');
+    feedbackEl.classList.toggle('correct-fb', isCorrect);
+    feedbackEl.classList.toggle('incorrect-fb', !isCorrect);
+    verdictEl.textContent = isCorrect ? 'Correct.' : 'Incorrect — correct answer: ' + LETTERS[q.a] + '.';
+    verdictEl.className = 'verdict ' + (isCorrect ? 'correct-text' : 'incorrect-text');
+    explanationEl.textContent = q.e;
+    nextBtn.disabled = false;
+  } else {
+    feedbackEl.classList.remove('show');
+    nextBtn.disabled = true;
+  }
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === QUESTIONS.length - 1 ? 'See results →' : 'Next →';
+
+  updateTicks();
+  updateStatus();
+  window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+}
+
+function selectOption(i){
+  if(answers[current] !== null) return;
+  answers[current] = i;
+  render();
+}
+
+prevBtn.addEventListener('click', () => { if(current>0){ current--; render(); } });
+nextBtn.addEventListener('click', () => { current++; render(); });
+
+function showSummary(){
+  cardEl.style.display = 'none';
+  summaryEl.classList.add('show');
+  const {correct} = scoreCount();
+  document.getElementById('final-score').textContent = correct + ' / ' + QUESTIONS.length;
+  document.getElementById('final-pct').textContent = Math.round((correct/QUESTIONS.length)*100) + '% correct';
+
+  const cats = {};
+  QUESTIONS.forEach((q,i) => {
+    if(!cats[q.c]) cats[q.c] = {correct:0,total:0};
+    cats[q.c].total++;
+    if(answers[i] === q.a) cats[q.c].correct++;
+  });
+  const breakdownEl = document.getElementById('breakdown');
+  breakdownEl.innerHTML = '';
+  Object.keys(cats).forEach(cat => {
+    const row = document.createElement('div');
+    row.className = 'breakdown-row';
+    row.innerHTML = '<span class="cat">' + cat + '</span><span class="frac">' + cats[cat].correct + ' / ' + cats[cat].total + '</span>';
+    breakdownEl.appendChild(row);
+  });
+  itemCountEl.textContent = 'COMPLETE';
+  updateTicks();
+  updateStatus();
+}
+
+restartBtn.addEventListener('click', () => {
+  answers = new Array(QUESTIONS.length).fill(null);
+  current = 0;
+  render();
+});
+
+buildTicks();
+render();
+</script>
+</body>
+</html>
