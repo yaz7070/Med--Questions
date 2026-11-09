@@ -3,7 +3,7 @@
 Study hub for Schulich MD2030, built with [Quartz](https://quartz.jzhao.xyz).
 
 - Notes live in `content/` as Markdown.
-- Every push to `v5` rebuilds the site on Cloudflare Workers.
+- Every push to `v5` rebuilds the site on Netlify (config in netlify.toml).
 - Rules for Claude live in `CLAUDE.md`.
 
 ## Run locally

@@ -1,6 +1,6 @@
 # Differential: rules for Claude
 
-Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the site on Cloudflare Workers.
+Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the site on Netlify (config in netlify.toml).
 
 ## Structure
 
