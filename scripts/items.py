@@ -82,6 +82,15 @@ ITEMS = [
   "59 questions. Bleeding disorders, Thrombocytopenia, Coagulation tests."
  ],
  [
+  3,
+  "week-11-question-bank",
+  "Week 11 Question Bank",
+  None,
+  None,
+  "quiz",
+  "50 questions. Leukemias, myeloproliferative neoplasms, emergencies, chemotherapy, trial design."
+ ],
+ [
   1,
   "block-1-practice-test-1",
   "Block 1 Practice Test 1",
