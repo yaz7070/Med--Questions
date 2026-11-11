@@ -23,7 +23,7 @@ BLOCKS = {
     3: ("Hematology", "Weeks 9–12", "Anemia, bleeding, myeloid disorders, lymphadenopathy and lymphoid disorders."),
     4: ("Infection and immunity", "Weeks 13–15", "Fever, antibiotics, sepsis and immune dysfunction."),
 }
-NOTES_BLOCKS = {3, 4}
+NOTES_BLOCKS: set = set()  # no blocks carry weekly notes pages
 FOLDER = {"quiz": "question-bank", "test": "practice-tests", "flow": "flowcharts"}
 HEAD = {"quiz": "Question Bank", "test": "Practice Tests", "flow": "Flowcharts"}
 LEAD = {
@@ -105,7 +105,7 @@ for b, (name, wk, topics) in BLOCKS.items():
             any_res = True
             body += f'<h2 class="section-title">{label}</h2>\n' + rows([row(href(b, kind, s), t, dd) for s, t, a, dd in items])
     if not any_res:
-        body += '<p class="empty-note">No questions or flowcharts yet. Ask Claude to build a set for this block.</p>\n'
+        body += '<p class="empty-note">Questions and flowcharts for this block are coming soon.</p>\n'
     wk_rows = weeks(b)
     if wk_rows:
         body += '<h2 class="section-title" id="weeks">Weekly notes</h2>\n' + rows([row(h, t, dd) for h, t, dd in wk_rows])

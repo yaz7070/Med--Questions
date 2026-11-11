@@ -5,7 +5,6 @@ Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the
 ## Structure
 
 - `content/index.md`: home page
-- `content/fom/block-N/week-NN-slug.md`: one page per FoM week, Nicole's Notes as the base
 - `content/fom/block-N/index.md`: block index, list every week page
 - `content/fom/block-N/question-bank/`: one wrapper page per quiz, plus `index.md` table
 - `content/fom/block-N/flowcharts/`: one wrapper page per flowchart, plus `index.md` table
@@ -30,7 +29,7 @@ Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the
 2. Put the student's own summaries in the "High-yield" callout at the top of each week.
 3. New page: copy `templates/week.md`, add frontmatter tags `block-N` and `week-N`, then link it from the block index.
 4. New quiz or flowchart: save the HTML to `quartz/static/pages/`, add a wrapper page in the block's `question-bank/` or `flowcharts/` folder (copy an existing one), add a row to that folder's index, and for quizzes to `content/question-bank/index.md`.
-5. Blocks 1 and 2 have no weekly notes pages. Do not add them unless asked.
+5. No block has weekly notes pages. Do not add them unless asked.
 6. No patient identifiers anywhere.
 7. Run `npx quartz build` before pushing. Fix any errors first.
 8. One commit per change, with a plain message ("Add Week 9 high-yield summary").
