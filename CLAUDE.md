@@ -1,6 +1,6 @@
 # Differential: rules for Claude
 
-Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the site on Netlify (config in netlify.toml).
+Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the site on GitHub Pages via `.github/workflows/deploy.yml` (live at https://yaz7070.github.io/Med-School/).
 
 ## Structure
 
@@ -21,6 +21,8 @@ Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the
 - Quiz pages share one template: `scripts/quiz/template.html`. Question data lives in `scripts/quiz/data/<slug>.json` ({title, context, questions, objectives}). Run `python3 scripts/quiz/build.py` to write every quiz to `quartz/static/pages/`. Never hand-edit the built quiz HTML. Change the template or the data, then rebuild. Each block has `question-bank/` (one bank per week, no duplicates across banks), `practice-tests/` (full block tests) and `flowcharts/`.
 
 - Layout: custom page frame `quartz/components/frames/DifferentialFrame.tsx` (no sidebars, top bar with title, nav, search and theme toggle, footer with credits and disclaimer). Set via `template: differential` in `quartz.config.yaml`. Edit credits or the disclaimer in that file.
+
+- Site address lives in `scripts/site.json` (`base_url`, `base_path`, top nav links). GitHub Pages serves the site under `/Med-School`, so nav links and Progress page links carry that prefix. Content links stay root-relative (`/fom/...`); Quartz rewrites them. To host at a domain root (custom domain, Netlify), set `base_path` to "" and `base_url` to the domain, then run `python3 scripts/site_pages.py`.
 
 ## Rules
 

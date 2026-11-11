@@ -10,6 +10,9 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from items import ITEMS  # noqa: E402
 
 C = ROOT / "content"
+import json as _sj
+SITE = _sj.loads((ROOT / "scripts" / "site.json").read_text())
+BASE = SITE.get("base_path", "").rstrip("/")  # "" when the site sits at a domain root
 FOM = C / "fom"
 ART = "https://claude.ai/artifact/"
 e = html.escape
@@ -128,7 +131,7 @@ for b, slug, title, aid, _u, kind, blurb in ITEMS:
     f = QDATA / f"{slug}.json"
     if kind in ("quiz", "test") and f.exists():
         n = len(_json.loads(f.read_text())["questions"])
-        plist.append({"b": b, "slug": slug, "title": title, "n": n, "href": href(b, kind, slug), "kind": kind})
+        plist.append({"b": b, "slug": slug, "title": title, "n": n, "href": BASE + href(b, kind, slug), "kind": kind})
 plist.sort(key=lambda x: (x["b"], x["kind"] != "test", week_key(x["slug"]), x["slug"]))
 total_all = sum(x["n"] for x in plist)
 (C / "progress").mkdir(exist_ok=True)
@@ -254,4 +257,15 @@ home = fm("Differential", 'description: "Study hub for Schulich Foundations of M
 <p class="empty-note">Search anything from the bar at the top, or press Ctrl K.</p>
 '''
 (C / "index.md").write_text(home)
+# Quartz rewrites root-relative links inside page content to relative paths, so content needs no prefix.
+# Only the nav links (plugin config) and the Progress page's script data carry BASE.
+
+# keep quartz.config.yaml in sync: site address and top navigation links
+cfg = ROOT / "quartz.config.yaml"
+y = cfg.read_text()
+y = re.sub(r"(\n  baseUrl: ).*", lambda m: m.group(1) + SITE["base_url"], y, count=1)
+nav = "".join(f"        {name}: {BASE}{path}\n" for name, path in SITE["nav"])
+y = re.sub(r'(- source: "@quartz-community/footer"\n    enabled: true\n    options:\n      links:\n)(?:        .*\n)+', lambda m: m.group(1) + nav, y, count=1)
+cfg.write_text(y)
+
 print("ok", {f"B{k[0]} {k[1]}": len(v) for k, v in sorted(by.items())}, "questions:", total_q)

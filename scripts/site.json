@@ -1,0 +1,14 @@
+{
+  "base_url": "yaz7070.github.io/Med-School",
+  "base_path": "/Med-School",
+  "nav": [
+    ["Home", "/"],
+    ["Block 1", "/fom/block-1/"],
+    ["Block 2", "/fom/block-2/"],
+    ["Block 3", "/fom/block-3/"],
+    ["Block 4", "/fom/block-4/"],
+    ["Question Bank", "/question-bank/"],
+    ["Progress", "/progress/"],
+    ["Flowcharts", "/fom/block-3/flowcharts/"]
+  ]
+}
