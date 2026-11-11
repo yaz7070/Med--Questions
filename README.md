@@ -1,4 +1,4 @@
-# Differential
+# Nexus
 
 Study hub for Schulich MD2030, built with [Quartz](https://quartz.jzhao.xyz).
 

@@ -1,4 +1,4 @@
-"""Regenerate home, block, folder and wrapper pages for Differential.
+"""Regenerate home, block, folder and wrapper pages for Nexus.
 
 Run from the repo root: python3 scripts/site_pages.py
 Reads ITEMS from scripts/items.py. Raw HTML lives in quartz/static/pages/<slug>.html.
@@ -239,8 +239,8 @@ recent = [
     (href(2, "test", "block-2-practice-exam"), "Block 2 Practice Exam", "40 questions on the predicted blueprint."),
 ]
 
-home = fm("Differential", 'description: "Study hub for Schulich Foundations of Medicine."\n') + f'''<section class="hero">
-<h1>Differential</h1>
+home = fm("Nexus", 'description: "Study hub for Schulich Foundations of Medicine."\n') + f'''<section class="hero">
+<h1>Nexus</h1>
 <p>{total_q} practice questions, workup maps and notes for Schulich Foundations of Medicine. Built by a student, for the years after.</p>
 <div class="hero-actions">
 <a class="btn primary" href="/question-bank/">Start practising</a>

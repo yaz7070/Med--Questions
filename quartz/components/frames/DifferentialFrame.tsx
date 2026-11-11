@@ -4,7 +4,7 @@ import HeaderConstructor from "../Header"
 const Header = HeaderConstructor()
 
 /**
- * Differential site frame: no sidebars, a top bar for navigation, search and
+ * Nexus site frame: no sidebars, a top bar for navigation, search and
  * theme toggle, full-width content, and a site footer with credits and a
  * disclaimer.
  */
@@ -38,7 +38,7 @@ export const DifferentialFrame: PageFrame = {
           ))}
           <footer class="site-footer">
             <p class="credit">
-              Differential was built by <strong>Yazdaan Ahmad</strong>, Schulich School of Medicine
+              Nexus was built by <strong>Yazdaan Ahmad</strong>, Schulich School of Medicine
               &amp; Dentistry, MD Class of 2030. © {year}
             </p>
             <p class="disclaimer">
