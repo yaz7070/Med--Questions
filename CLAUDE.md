@@ -22,7 +22,7 @@ Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the
 
 - Layout: custom page frame `quartz/components/frames/DifferentialFrame.tsx` (no sidebars, top bar with title, nav, search and theme toggle, footer with credits and disclaimer). Set via `template: differential` in `quartz.config.yaml`. Edit credits or the disclaimer in that file.
 
-- Site address lives in `scripts/site.json` (`base_url`, `base_path`, top nav links). GitHub Pages serves the site under `/Med-School`, so nav links and Progress page links carry that prefix. Content links stay root-relative (`/fom/...`); Quartz rewrites them. To host at a domain root (custom domain, Netlify), set `base_path` to "" and `base_url` to the domain, then run `python3 scripts/site_pages.py`.
+- Top nav links are defined in `NAV` inside `DifferentialFrame.tsx` and rendered relative to each page, so the site works under `/Med-School/` or any domain. Content links stay root-relative (`/fom/...`) and Quartz rewrites them. Progress page links are `../`-relative. `scripts/site.json` only sets `base_url` for metadata.
 
 ## Rules
 

@@ -5,7 +5,6 @@ description: "Study hub for Schulich Foundations of Medicine."
 
 <section class="hero">
 <h1>Nexus</h1>
-<p>779 practice questions, workup maps and notes for Schulich Foundations of Medicine. Built by a student, for the years after.</p>
 <div class="hero-actions">
 <a class="btn primary" href="/question-bank/">Start practising</a>
 <a class="btn" href="/fom/block-3/flowcharts/">Browse flowcharts</a>

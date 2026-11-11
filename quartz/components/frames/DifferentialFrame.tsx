@@ -1,7 +1,21 @@
 import { PageFrame, PageFrameProps } from "./types"
 import HeaderConstructor from "../Header"
+import { pathToRoot } from "../../util/path"
 
 const Header = HeaderConstructor()
+
+// Top navigation. Paths are relative to the site root, so links work at any
+// address (yaz7070.github.io/Med-School/, a custom domain, or localhost).
+const NAV: [string, string][] = [
+  ["Home", ""],
+  ["Block 1", "fom/block-1/"],
+  ["Block 2", "fom/block-2/"],
+  ["Block 3", "fom/block-3/"],
+  ["Block 4", "fom/block-4/"],
+  ["Question Bank", "question-bank/"],
+  ["Progress", "progress/"],
+  ["Flowcharts", "fom/block-3/flowcharts/"],
+]
 
 /**
  * Nexus site frame: no sidebars, a top bar for navigation, search and
@@ -12,12 +26,24 @@ export const DifferentialFrame: PageFrame = {
   name: "differential",
   render({ componentData, header, beforeBody, pageBody: Content, afterBody, footer }: PageFrameProps) {
     const year = new Date().getFullYear()
+    const root = pathToRoot(componentData.fileData.slug!)
+    const [First, ...rest] = header
     return (
       <>
         <div class="center full-width differential">
           <div class="page-header">
             <Header {...componentData}>
-              {header.map((HeaderComponent) => (
+              {First && <First {...componentData} />}
+              <nav class="site-nav" aria-label="Main">
+                <ul>
+                  {NAV.map(([label, path]) => (
+                    <li>
+                      <a href={`${root}/${path}`}>{label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              {rest.map((HeaderComponent) => (
                 <HeaderComponent {...componentData} />
               ))}
             </Header>

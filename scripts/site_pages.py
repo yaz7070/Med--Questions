@@ -131,7 +131,7 @@ for b, slug, title, aid, _u, kind, blurb in ITEMS:
     f = QDATA / f"{slug}.json"
     if kind in ("quiz", "test") and f.exists():
         n = len(_json.loads(f.read_text())["questions"])
-        plist.append({"b": b, "slug": slug, "title": title, "n": n, "href": BASE + href(b, kind, slug), "kind": kind})
+        plist.append({"b": b, "slug": slug, "title": title, "n": n, "href": ".." + href(b, kind, slug), "kind": kind})
 plist.sort(key=lambda x: (x["b"], x["kind"] != "test", week_key(x["slug"]), x["slug"]))
 total_all = sum(x["n"] for x in plist)
 (C / "progress").mkdir(exist_ok=True)
@@ -241,7 +241,6 @@ recent = [
 
 home = fm("Nexus", 'description: "Study hub for Schulich Foundations of Medicine."\n') + f'''<section class="hero">
 <h1>Nexus</h1>
-<p>{total_q} practice questions, workup maps and notes for Schulich Foundations of Medicine. Built by a student, for the years after.</p>
 <div class="hero-actions">
 <a class="btn primary" href="/question-bank/">Start practising</a>
 <a class="btn" href="/fom/block-3/flowcharts/">Browse flowcharts</a>
@@ -260,12 +259,10 @@ home = fm("Nexus", 'description: "Study hub for Schulich Foundations of Medicine
 # Quartz rewrites root-relative links inside page content to relative paths, so content needs no prefix.
 # Only the nav links (plugin config) and the Progress page's script data carry BASE.
 
-# keep quartz.config.yaml in sync: site address and top navigation links
+# keep the site address in quartz.config.yaml in sync (used for metadata only)
 cfg = ROOT / "quartz.config.yaml"
 y = cfg.read_text()
 y = re.sub(r"(\n  baseUrl: ).*", lambda m: m.group(1) + SITE["base_url"], y, count=1)
-nav = "".join(f"        {name}: {BASE}{path}\n" for name, path in SITE["nav"])
-y = re.sub(r'(- source: "@quartz-community/footer"\n    enabled: true\n    options:\n      links:\n)(?:        .*\n)+', lambda m: m.group(1) + nav, y, count=1)
 cfg.write_text(y)
 
 print("ok", {f"B{k[0]} {k[1]}": len(v) for k, v in sorted(by.items())}, "questions:", total_q)
