@@ -261,8 +261,6 @@ home = fm("Nexus", 'description: "Study hub for Schulich Foundations of Medicine
 {chr(10).join(block_rows)}
 </ul>
 
-<h2 class="section-title">Recently added</h2>
-{rows([row(h, t, d) for h, t, d in recent])}
 <p class="empty-note">Search anything from the bar at the top, or press Ctrl K.</p>
 '''
 (C / "index.md").write_text(home)

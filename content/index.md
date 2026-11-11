@@ -19,12 +19,4 @@ description: "Study hub for Schulich Foundations of Medicine."
 <li class="block-row"><span class="block-num" aria-hidden="true">4</span><div class="block-main"><span class="weeks">Weeks 13–15</span><h3><a href="/fom/block-4/">Infection and immunity</a></h3><p>Fever, antibiotics, sepsis and immune dysfunction.</p></div><div class="block-links"><span class="chip empty">Coming soon</span></div></li>
 </ul>
 
-<h2 class="section-title">Recently added</h2>
-<ul class="rows">
-<li><a class="row" href="/fom/block-2/flowcharts/cancer-workup-map"><span><strong>Cancer Workup Map</strong><span class="desc">Breast mass, screening, pathology, treatment, hereditary cancer.</span></span><span class="go" aria-hidden="true">›</span></a></li>
-<li><a class="row" href="/fom/block-3/flowcharts/myeloid-disorders-map"><span><strong>Myeloid Disorders Map</strong><span class="desc">High and low counts, MPNs, leukemias, emergencies.</span></span><span class="go" aria-hidden="true">›</span></a></li>
-<li><a class="row" href="/fom/block-3/flowcharts/hemostasis-workup-map"><span><strong>Hemostasis Workup Map</strong><span class="desc">Bleeding, platelets, VTE, anticoagulants, transfusion.</span></span><span class="go" aria-hidden="true">›</span></a></li>
-<li><a class="row" href="/fom/block-3/flowcharts/anemia-workup-map"><span><strong>Anemia Workup Map</strong><span class="desc">From CBC to diagnosis, every branch.</span></span><span class="go" aria-hidden="true">›</span></a></li>
-</ul>
-
 <p class="empty-note">Search anything from the bar at the top, or press Ctrl K.</p>
