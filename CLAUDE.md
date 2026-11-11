@@ -1,6 +1,6 @@
 # Nexus: rules for Claude
 
-Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the site on GitHub Pages via `.github/workflows/deploy.yml` (live at https://yaz7070.github.io/Med-School/).
+Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the site on GitHub Pages via `.github/workflows/deploy.yml` (live at https://yaz7070.github.io/Med--Questions/).
 
 ## Structure
 
@@ -22,7 +22,7 @@ Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the
 
 - Layout: custom page frame `quartz/components/frames/DifferentialFrame.tsx` (no sidebars, top bar with title, nav, search and theme toggle, footer with credits and disclaimer). Set via `template: differential` in `quartz.config.yaml`. Edit credits or the disclaimer in that file.
 
-- Top nav links are defined in `NAV` inside `DifferentialFrame.tsx` and rendered relative to each page, so the site works under `/Med-School/` or any domain. Content links stay root-relative (`/fom/...`) and Quartz rewrites them. Progress page links are `../`-relative. `scripts/site.json` only sets `base_url` for metadata.
+- Top nav links are defined in `NAV` inside `DifferentialFrame.tsx` and rendered relative to each page, so the site works under `/Med--Questions/` or any domain. Content links stay root-relative (`/fom/...`) and Quartz rewrites them. Progress page links are `../`-relative. `scripts/site.json` only sets `base_url` for metadata.
 
 ## Rules
 

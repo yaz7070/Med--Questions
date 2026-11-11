@@ -6,7 +6,7 @@ configuration:
   enablePopovers: true
   analytics: null
   locale: en-US
-  baseUrl: yaz7070.github.io/Med-School
+  baseUrl: yaz7070.github.io/Med--Questions
   ignorePatterns:
     - private
     - templates
