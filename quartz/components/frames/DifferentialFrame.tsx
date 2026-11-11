@@ -80,7 +80,7 @@ export const DifferentialFrame: PageFrame = {
           ))}
           <footer class="site-footer">
             <p class="credit">
-              Nexus was built by <strong>Yazdaan Ahmad</strong>, Schulich School of Medicine
+              Nexus was built by <strong>Yazdaan Ahmad</strong> and <strong>Mohammad Essa</strong>, Schulich School of Medicine
               &amp; Dentistry, MD Class of 2030. © {year}
             </p>
             <p class="disclaimer">

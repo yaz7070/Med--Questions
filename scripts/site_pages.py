@@ -241,6 +241,7 @@ recent = [
 
 home = fm("Nexus", 'description: "Study hub for Schulich Foundations of Medicine."\n') + f'''<section class="hero">
 <h1>Nexus</h1>
+<p>New questions, generated with Claude for the class of 2030</p>
 <div class="hero-actions">
 <a class="btn primary" href="/question-bank/">Start practising</a>
 <a class="btn" href="/fom/block-3/flowcharts/">Browse flowcharts</a>
