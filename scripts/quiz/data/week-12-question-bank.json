@@ -1,0 +1,803 @@
+{
+ "title": "Week 12 Question Bank",
+ "context": "Foundations of Medicine, Block 3, Week 12",
+ "questions": [
+  {
+   "c": "Lymphadenopathy",
+   "p": "George, 64, smokes and has lost weight. You feel a firm node just above his left clavicle. Which regions drain to this node group?",
+   "o": [
+    "Breast, upper limb and the chest wall",
+    "Oral cavity, teeth and the upper airway",
+    "Scalp and the skin of the face",
+    "GI tract, GU tract and lungs"
+   ],
+   "a": 3,
+   "e": "Correct: D. A node above the clavicle is supraclavicular. It drains the GI tract, GU tract and lungs, so abdominal and thoracic cancers are on the differential.\nA: Breast, upper limb and chest wall drain to the axillary nodes.\nB: The oral cavity drains to the submandibular nodes.\nC: Scalp and skin drain to the preauricular and posterior cervical nodes.\nTakeaway: Supraclavicular nodes are a red flag for malignancy.",
+   "l": [
+    "W12 2.2"
+   ]
+  },
+  {
+   "c": "Lymphadenopathy",
+   "p": "Jade, 22, has a tender lump in her armpit. Two weeks ago a kitten scratched her upper arm. She feels well otherwise. Which node group and cause fit best?",
+   "o": [
+    "Supraclavicular node from a thoracic tumour",
+    "Preauricular node from a mycobacterial infection",
+    "Axillary node from cat-scratch disease",
+    "Epitrochlear node from a skin malignancy"
+   ],
+   "a": 2,
+   "e": "Correct: C. The armpit holds the axillary nodes, which drain the upper limb. Cat-scratch disease is a listed axillary cause.\nA: Supraclavicular nodes lie above the clavicle.\nB: Preauricular nodes drain the scalp and skin of the head.\nD: Epitrochlear nodes sit near the elbow and drain the ulnar forearm and hand.\nTakeaway: Match the node to its drainage area before building the differential.",
+   "l": [
+    "W12 2.1"
+   ]
+  },
+  {
+   "c": "Lymphadenopathy",
+   "p": "Which findings in an adult with lymphadenopathy raise concern for malignancy?\ni) Fever for more than 1 week with night sweats\nii) A tender 1 cm neck node with a sore throat\niii) A supraclavicular node\niv) Weight loss of more than 10% of body weight",
+   "o": [
+    "ii), iii) and iv) only",
+    "i), iii) and iv) only",
+    "i) and iv) only",
+    "All of the above"
+   ],
+   "a": 1,
+   "e": "Correct: B. Fever over 1 week, night sweats, weight loss over 10% and supraclavicular nodes are listed features concerning for malignancy.\nA: A tender small node with throat symptoms is not a red flag. Absence of ENT symptoms is the concerning feature.\nC: This leaves out the supraclavicular node, a listed red flag.\nD: Statement ii) is not a concerning feature.\nTakeaway: Red flags: B symptoms, supraclavicular, generalized, fixed or matted, abnormal CXR or CBC.",
+   "l": [
+    "W12 2.3"
+   ]
+  },
+  {
+   "c": "Lymphadenopathy",
+   "p": "Which child most needs further workup for possible malignancy?",
+   "o": [
+    "A newborn with a 1.5 cm non-tender neck node",
+    "A 5-year-old with tender neck nodes and a sore throat",
+    "A 4-year-old with small neck nodes and an ear infection",
+    "A 7-year-old whose 2.5 cm node shrank on antibiotics"
+   ],
+   "a": 0,
+   "e": "Correct: A. Non-tender nodes over 1 cm with onset in the neonatal period are a listed concerning feature.\nB: Tender nodes with throat symptoms suggest an infection, and ENT symptoms are reassuring.\nC: Small nodes with an ear infection fit a reactive cause.\nD: Nodes of 2 cm or more are concerning when they grow or fail to resolve after 2 weeks of antibiotics. This one shrank.\nTakeaway: In children, benign causes are more likely the younger the child, except in the neonatal period.",
+   "l": [
+    "W12 3.3",
+    "W12 3.2"
+   ]
+  },
+  {
+   "c": "Lymphadenopathy",
+   "p": "Which statement about lymphadenopathy in children is correct?",
+   "o": [
+    "Palpable nodes are rare between ages 4 and 8",
+    "Lymphoid tissue mass peaks in early childhood",
+    "Benign causes are more likely the younger the child",
+    "Having ear, nose and throat symptoms makes malignancy more likely"
+   ],
+   "a": 2,
+   "e": "Correct: C. Lymphadenopathy is common in children, and benign causes are more likely at a younger age.\nA: Lymphadenopathy is found in about 90% of children aged 4 to 8.\nB: Lymphoid tissue mass peaks in adolescence.\nD: The absence of ENT symptoms is the concerning feature.\nTakeaway: Peak lymphoid mass is in adolescence. Nodes are very common in young children.",
+   "l": [
+    "W12 3.1"
+   ]
+  },
+  {
+   "c": "Lymphadenopathy",
+   "p": "Hana, 45, has enlarged nodes in her neck and in her right axilla. How is her lymphadenopathy best classified?",
+   "o": [
+    "Generalized",
+    "Reactive",
+    "Localized",
+    "Isolated"
+   ],
+   "a": 0,
+   "e": "Correct: A. Two separate anatomic areas are involved. More than one area is generalized, which raises concern for malignancy or another systemic condition.\nB: Reactive is a cause, not a description of extent.\nC: Localized means one anatomic area.\nD: Isolated means a single node.\nTakeaway: Isolated is one node, localized is one area, generalized is more than one area.",
+   "l": [
+    "W12 2.2"
+   ]
+  },
+  {
+   "c": "Lymphadenopathy",
+   "p": "Paul, 25, started phenytoin for seizures three weeks ago. He now has small nodes in several areas. He has no fever, rash, joint pain or weight loss, and his CBC is normal. Which cause is most likely?",
+   "o": [
+    "Kikuchi disease",
+    "A reaction to phenytoin",
+    "Castleman's disease",
+    "Addison's disease"
+   ],
+   "a": 1,
+   "e": "Correct: B. New generalized nodes soon after starting phenytoin, with no other features, fit a medication cause. Phenytoin is first on the listed drug causes.\nA: Kikuchi disease is an autoimmune cause, and he has no autoimmune features.\nC: Castleman's disease is grouped with the neoplastic causes, and the drug timing is the stronger clue.\nD: Addison's disease is a metabolic cause, and nothing here suggests it.\nTakeaway: Always take a medication history in lymphadenopathy.",
+   "l": [
+    "W12 2.1"
+   ]
+  },
+  {
+   "c": "Lymphoma workup",
+   "p": "Isabel, 58, has newly diagnosed diffuse large B-cell lymphoma and will start CHOP-R. Which test checks whether she can tolerate the chemotherapy?",
+   "o": [
+    "Lumbar puncture for CSF cytology",
+    "PET scan of the chest and abdomen",
+    "Bone scan of the whole skeleton",
+    "Cardiac wall motion study"
+   ],
+   "a": 3,
+   "e": "Correct: D. Cardiac wall motion is listed for assessing chemotherapy tolerance.\nA: Lumbar puncture looks for lymphoma in the CSF.\nB: PET measures glucose uptake and metabolism by tumour tissue.\nC: A bone scan looks for lymphoma in bone.\nTakeaway: Workup covers disease extent and fitness for treatment.",
+   "l": [
+    "W12 5.2"
+   ]
+  },
+  {
+   "c": "Biopsy and lab tests",
+   "p": "Marcus, 52, has a 3 cm node and suspected lymphoma. Which feature of an excisional biopsy makes it the most informative option?",
+   "o": [
+    "It suits severely sick patients who cannot go to the OR",
+    "It is the least invasive option and gives the fastest results",
+    "It needs no surgeon and costs the least of the three options",
+    "It shows the nodal architecture and gives no false negatives"
+   ],
+   "a": 3,
+   "e": "Correct: D. Excisional biopsy is always representative, has no false negatives and shows the architecture. It also gives enough tissue for every study.\nA: Excisional biopsy cannot be done on severely sick compromised patients.\nB: Least invasive and fastest describe FNA.\nC: No surgeon and lowest cost describe FNA.\nTakeaway: Excisional biopsy is the most complete sample but needs a surgeon.",
+   "l": [
+    "W12 4.4"
+   ]
+  },
+  {
+   "c": "Biopsy and lab tests",
+   "p": "A fine needle aspirate of an enlarged neck node shows many small lymphocytes. Which limitation of FNA matters most here?",
+   "o": [
+    "It loses the architecture, so lymphoma cannot be sub-classified",
+    "It must be done by a surgeon in an operating room",
+    "It carries the highest infection risk of all the sampling options available",
+    "It is the most expensive of the three sampling methods"
+   ],
+   "a": 0,
+   "e": "Correct: A. FNA gives no nodal architecture, so it cannot sub-classify lymphoma. It also cannot separate benign from malignant low grade LPD.\nB: FNA needs no surgeon and no OR.\nC: FNA has a lower risk of infection and complications.\nD: FNA is the least expensive option.\nTakeaway: FNA is easy and cheap but cannot show architecture.",
+   "l": [
+    "W12 1.6"
+   ]
+  },
+  {
+   "c": "Biopsy and lab tests",
+   "p": "Which statement about core needle biopsy of a lymph node is correct?",
+   "o": [
+    "It always yields enough tissue for cytogenetics and molecular work",
+    "Results are best with 16-18 gauge needles plus flow cytometry",
+    "It is always representative and has no false negative results",
+    "It is usually performed by a surgeon in the operating room"
+   ],
+   "a": 1,
+   "e": "Correct: B. Core biopsy works best with 16 to 18 gauge needles and a flow cytometry study.\nA: A limited core sample may be insufficient for cytogenetics and molecular studies.\nC: Always representative with no false negatives describes excisional biopsy.\nD: Core biopsy is mostly performed by radiologists.\nTakeaway: Core biopsy is the middle option between FNA and excision.",
+   "l": [
+    "W12 4.5"
+   ]
+  },
+  {
+   "c": "Biopsy and lab tests",
+   "p": "Walter, 61, has an enlarging node. Flow cytometry on the biopsy shows a monoclonal B-cell population. Which diagnosis does this support?",
+   "o": [
+    "Reactive lymphadenopathy from a viral infection",
+    "Nodular lymphocyte predominant Hodgkin lymphoma",
+    "Non-Hodgkin lymphoma",
+    "Classical Hodgkin lymphoma"
+   ],
+   "a": 2,
+   "e": "Correct: C. A monoclonal pattern on flow cytometry is a feature of non-Hodgkin lymphoma.\nA: A reactive node gives a polyclonal population.\nB: This subtype shows no light chain restriction.\nD: Hodgkin lymphoma shows no monoclonal pattern on flow cytometry.\nTakeaway: Monoclonal means one clone. Polyclonal means a reactive mix.",
+   "l": [
+    "W12 4.1"
+   ]
+  },
+  {
+   "c": "Biopsy and lab tests",
+   "p": "A pathologist suspects a peripheral T-cell lymphoma. Which panel of immunohistochemistry markers identifies T cells?",
+   "o": [
+    "CD3, CD5 and CD7",
+    "CD15 and CD30",
+    "CD20 and CD45",
+    "CD19, CD20 and CD79a"
+   ],
+   "a": 0,
+   "e": "Correct: A. Clusters of differentiation identify cell types. T cells carry CD3, CD5 and CD7.\nB: CD15 and CD30 mark the Reed-Sternberg cells of classical Hodgkin lymphoma.\nC: CD20 and CD45 are positive in nodular lymphocyte predominant Hodgkin lymphoma.\nD: CD19, CD20 and CD79a mark B cells.\nTakeaway: B cells CD19, CD20, CD79a. T cells CD3, CD5, CD7.",
+   "l": [
+    "W12 1.5"
+   ]
+  },
+  {
+   "c": "Hodgkin lymphoma",
+   "p": "A node biopsy shows a nodular architecture with large cells that have a popcorn appearance. The cells stain positive for CD20 and CD45 and negative for CD15 and CD30. Which subtype fits best?",
+   "o": [
+    "Mixed cellularity Hodgkin lymphoma",
+    "Nodular lymphocyte predominant HL",
+    "Nodular sclerosis Hodgkin lymphoma",
+    "Lymphocyte depleted Hodgkin lymphoma"
+   ],
+   "a": 1,
+   "e": "Correct: B. Popcorn LP cells that are CD20 and CD45 positive and CD15 and CD30 negative define nodular lymphocyte predominant HL.\nA: Mixed cellularity has RS cells positive for CD15 and CD30.\nC: Nodular sclerosis has RS cells positive for CD15 and CD30, with lacunar cells and collagen bands.\nD: Lymphocyte depleted has numerous bizarre RS cells positive for CD15 and CD30.\nTakeaway: NLPHL flips the classical stain pattern.",
+   "l": [
+    "W12 4.2"
+   ]
+  },
+  {
+   "c": "Hodgkin lymphoma",
+   "p": "Chloe, 23, has a mediastinal mass. Biopsy shows RS cells, lacunar cells and collagen bands in a nodular pattern. Which prognosis fits her most likely subtype?",
+   "o": [
+    "Always high stage with B symptoms and the worst prognosis",
+    "Mostly higher stage with a worse prognosis than nodular sclerosis",
+    "Mostly stage I-II with a very good to excellent prognosis",
+    "Indolent and excellent, but with a high recurrence rate"
+   ],
+   "a": 2,
+   "e": "Correct: C. Lacunar cells, collagen bands and a mediastinal mass fit nodular sclerosis HL, the most common subtype. It is mostly stage I to II with a very good to excellent prognosis.\nA: Always high stage with the worst prognosis is lymphocyte depleted HL.\nB: Mostly higher stage and worse than nodular sclerosis is mixed cellularity HL.\nD: Indolent with high recurrence is nodular lymphocyte predominant HL.\nTakeaway: Nodular sclerosis: young adult, mediastinal mass, lacunar cells, good prognosis.",
+   "l": [
+    "W12 5.4",
+    "W12 4.2"
+   ]
+  },
+  {
+   "c": "Hodgkin lymphoma",
+   "p": "Ali, 48, has HIV and new peripheral lymphadenopathy. Biopsy shows many RS cells in a background of eosinophils, lymphocytes and plasma cells, with no lacunar cells. The RS cells are EBV positive. Which subtype is most likely?",
+   "o": [
+    "Lymphocyte rich Hodgkin lymphoma",
+    "Nodular lymphocyte predominant Hodgkin lymphoma",
+    "Nodular sclerosis Hodgkin lymphoma",
+    "Mixed cellularity Hodgkin lymphoma"
+   ],
+   "a": 3,
+   "e": "Correct: D. Mixed cellularity HL is most frequent in HIV patients and is EBV associated in 75% of cases. It involves peripheral nodes with RS cells in a mixed background.\nA: Lymphocyte rich has very few RS cells among numerous benign lymphocytes.\nB: NLPHL has popcorn cells and no EBV association.\nC: Nodular sclerosis has lacunar cells and often a mediastinal mass.\nTakeaway: HIV and EBV are risk factor clues for mixed cellularity HL.",
+   "l": [
+    "W12 4.7"
+   ]
+  },
+  {
+   "c": "Hodgkin lymphoma",
+   "p": "Which statement comparing Hodgkin with non-Hodgkin lymphoma is FALSE?",
+   "o": [
+    "All Hodgkin lymphoma is treated with the aim of cure",
+    "Hodgkin lymphoma often spreads in a non-contiguous pattern",
+    "Hodgkin lymphoma is usually nodal, and extranodal disease is rare",
+    "Hodgkin lymphoma shows RS cells in an inflammatory background"
+   ],
+   "a": 1,
+   "e": "Correct: B. Hodgkin lymphoma spreads contiguously, from neck to supraclavicular, thorax and abdomen. Non-Hodgkin lymphoma can spread non-contiguously. So this statement is false.\nA: True. All HL patients must be treated with the aim to cure.\nC: True. HL is nodal, and extranodal disease is rare.\nD: True. RS cells in an inflammatory background are the HL hallmark.\nTakeaway: HL: contiguous, nodal, RS cells, curable. NHL: varied spread, monoclonal.",
+   "l": [
+    "W12 4.8"
+   ]
+  },
+  {
+   "c": "Hodgkin lymphoma",
+   "p": "Patient A is a 22-year-old man with nodes that have spread from his neck to his mediastinum in order. Patient B is a 70-year-old woman with a lymphoma in her stomach and scattered nodes. Which type of lymphoma best fits each patient, in order?",
+   "o": [
+    "Both non-Hodgkin",
+    "A non-Hodgkin, B Hodgkin",
+    "A Hodgkin, B non-Hodgkin",
+    "Both Hodgkin"
+   ],
+   "a": 2,
+   "e": "Correct: C. Hodgkin lymphoma affects younger patients, mostly males, and spreads contiguously through nodes. Non-Hodgkin lymphoma affects older patients and can be extranodal and non-contiguous.\nA: Patient A is young with contiguous nodal spread, which fits HL.\nB: This reverses the age and spread patterns.\nD: Patient B has extranodal disease in an older adult, which fits NHL.\nTakeaway: Young, nodal and contiguous points to HL. Older and extranodal points to NHL.",
+   "l": [
+    "W12 5.1"
+   ]
+  },
+  {
+   "c": "Staging",
+   "p": "Leo, 30, has enlarged nodes in his left neck and left axilla. CT shows no disease below the diaphragm. He has drenching night sweats and has lost 12% of his weight. What is his Ann Arbor stage?",
+   "o": [
+    "Stage IIB",
+    "Stage IIIB",
+    "Stage IIA",
+    "Stage IVB"
+   ],
+   "a": 0,
+   "e": "Correct: A. Two node regions on the same side of the diaphragm is stage II. B symptoms add the B suffix.\nB: Stage III needs nodes on both sides of the diaphragm.\nC: A means B symptoms are absent, and he has them.\nD: Stage IV needs diffuse extralymphatic organ involvement.\nTakeaway: Count regions, check the diaphragm, then add A or B.",
+   "l": [
+    "W12 5.3"
+   ]
+  },
+  {
+   "c": "Staging",
+   "p": "Mei, 66, has a single enlarged neck node. A bone marrow biopsy shows lymphoma. She has no fever, night sweats or weight loss. What is her Ann Arbor stage?",
+   "o": [
+    "Stage IA",
+    "Stage IVB",
+    "Stage IIA",
+    "Stage IVA"
+   ],
+   "a": 3,
+   "e": "Correct: D. Bone marrow involvement counts as diffuse extralymphatic involvement, which is stage IV. No B symptoms gives the A suffix.\nA: Stage I is a single region, but marrow disease moves her to stage IV.\nB: B needs B symptoms, which she does not have.\nC: Stage II needs two or more regions on one side of the diaphragm.\nTakeaway: Marrow involvement means stage IV.",
+   "l": [
+    "W12 5.3"
+   ]
+  },
+  {
+   "c": "Staging",
+   "p": "A pathology report calls a lymphoma aggressive. Imaging shows involved nodes on both sides of the diaphragm. Which interpretation is correct?",
+   "o": [
+    "Aggressive describes the stage. Both sides of the diaphragm describes its grade",
+    "Aggressive describes clinical behaviour. Both sides of the diaphragm is stage III",
+    "Aggressive means stage IV. Both sides of the diaphragm confirms bone marrow disease",
+    "Aggressive describes clinical behaviour. Both sides of the diaphragm is stage II"
+   ],
+   "a": 1,
+   "e": "Correct: B. Indolent, aggressive and very aggressive describe clinical behaviour. Ann Arbor staging describes spread, and nodes on both sides of the diaphragm is stage III.\nA: This swaps behaviour and stage.\nC: Stage IV means diffuse extralymphatic involvement, and behaviour is not a stage.\nD: Stage II stays on one side of the diaphragm.\nTakeaway: Behaviour describes the tumour. Stage describes where it is.",
+   "l": [
+    "W12 4.3",
+    "W12 5.3"
+   ]
+  },
+  {
+   "c": "Non-Hodgkin lymphoma",
+   "p": "Jacob, 12, has a fast-growing abdominal mass. Biopsy shows a starry-sky pattern. Which genetic change is most likely?",
+   "o": [
+    "t(2;5) with an ALK1 mutation",
+    "t(11;14) with cyclin D1 overexpression",
+    "t(8;14) with c-Myc activation",
+    "t(14;18) with Bcl-2 activation"
+   ],
+   "a": 2,
+   "e": "Correct: C. A starry-sky pattern is the mark of Burkitt lymphoma, which carries t(8;14) and c-Myc activation.\nA: t(2;5) with ALK1 is anaplastic large cell lymphoma.\nB: t(11;14) with cyclin D1 is mantle cell lymphoma.\nD: t(14;18) with Bcl-2 is follicular lymphoma.\nTakeaway: Starry sky means Burkitt means t(8;14).",
+   "l": [
+    "W12 4.6"
+   ]
+  },
+  {
+   "c": "Non-Hodgkin lymphoma",
+   "p": "Which translocation and lymphoma pairs are correct?\ni) t(14;18) and follicular lymphoma\nii) t(11;18) and MALT lymphoma\niii) t(2;5) and Burkitt lymphoma\niv) t(11;14) and mantle cell lymphoma",
+   "o": [
+    "i), ii) and iv) only",
+    "ii), iii) and iv) only",
+    "i) and iv) only",
+    "All of the above"
+   ],
+   "a": 0,
+   "e": "Correct: A. Follicular is t(14;18), MALT is t(11;18) and mantle cell is t(11;14). These three pairs are correct.\nB: t(2;5) is anaplastic large cell lymphoma, not Burkitt.\nC: This leaves out the correct MALT pairing.\nD: Statement iii) is wrong. Burkitt is t(8;14).\nTakeaway: Know all five translocations in the notes table.",
+   "l": [
+    "W12 4.6"
+   ]
+  },
+  {
+   "c": "Non-Hodgkin lymphoma",
+   "p": "Nora, 65, has a painless, rapidly enlarging neck mass and night sweats. Biopsy shows loss of normal node structure and large cells with visible nucleoli and high mitotic activity. Staging shows stage II disease. Which treatment fits best?",
+   "o": [
+    "Six cycles of CHOP-R",
+    "ABVD × 2 followed by AVD × 4",
+    "Watch and wait until symptoms develop",
+    "Three cycles of CHOP-R"
+   ],
+   "a": 3,
+   "e": "Correct: D. A rapidly enlarging mass with large cells and high mitotic activity fits DLBCL. Stage I to II DLBCL gets 3 cycles of CHOP-R.\nA: Six cycles are for stage III to IV.\nB: ABVD and AVD are Hodgkin lymphoma regimens.\nC: DLBCL is rapidly fatal if untreated, so watching is wrong.\nTakeaway: DLBCL: aggressive but responds well to treatment.",
+   "l": [
+    "W12 5.5",
+    "W12 4.2"
+   ]
+  },
+  {
+   "c": "Non-Hodgkin lymphoma",
+   "p": "Arthur, 63, has painless nodes in his neck, axilla and groin. He feels well and his counts are normal. Biopsy shows a follicular pattern, and staging shows stage III disease. Which management is most appropriate?",
+   "o": [
+    "ABVD followed by involved-field radiation",
+    "Watch and wait until symptoms develop",
+    "Six cycles of CHOP-R started at once",
+    "Radiation alone with the aim of cure"
+   ],
+   "a": 1,
+   "e": "Correct: B. Asymptomatic advanced follicular lymphoma is usually incurable. Watch and wait is the common initial strategy because treating at once does not improve outcomes.\nA: ABVD is a Hodgkin lymphoma regimen.\nC: CHOP-R is the regimen for DLBCL.\nD: Radiation can cure stage I follicular lymphoma, not stage III.\nTakeaway: Indolent and incurable means treat symptoms, not scans.",
+   "l": [
+    "W12 5.5"
+   ]
+  },
+  {
+   "c": "Non-Hodgkin lymphoma",
+   "p": "Edith, 74, has a high lymphocyte count found on routine bloodwork. Her film shows smudge cells. She feels well, and her disease is low risk. Which plan is most appropriate?",
+   "o": [
+    "Observe without starting treatment",
+    "Start ibrutinib now",
+    "Start chlorambucil now",
+    "Start an anti-CD20 monoclonal antibody now"
+   ],
+   "a": 0,
+   "e": "Correct: A. Smudge cells point to CLL. Low risk, asymptomatic CLL is not treated.\nB: Ibrutinib is used once treatment is needed.\nC: Chlorambucil is a CLL chemotherapy for when treatment is needed.\nD: Anti-CD20 antibodies are used once treatment is needed.\nTakeaway: About 15% of CLL patients have autoantibodies against red cells.",
+   "l": [
+    "W12 4.6"
+   ]
+  },
+  {
+   "c": "Non-Hodgkin lymphoma",
+   "p": "Which statement about prognosis in non-Hodgkin lymphoma is correct?",
+   "o": [
+    "DLBCL is indolent and is usually incurable with treatment",
+    "Follicular lymphoma is risk scored with the standard IPI and nothing else",
+    "CLL caught early has a median survival of only 1 to 2 years",
+    "DLBCL of germinal centre type does better than activated B-cell type"
+   ],
+   "a": 3,
+   "e": "Correct: D. DLBCL has a better prognosis if it is of germinal centre B-cell type rather than activated B-cell type.\nA: DLBCL is aggressive but responds well to treatment.\nB: Follicular lymphoma uses the FLIPI.\nC: Median survival in CLL is 10 to 15 years if caught early.\nTakeaway: IPI for DLBCL, FLIPI for follicular.",
+   "l": [
+    "W12 5.4"
+   ]
+  },
+  {
+   "c": "Hodgkin lymphoma",
+   "p": "Sara, 26, has stage IIA classical Hodgkin lymphoma without bulky disease. Which treatment plan fits best?",
+   "o": [
+    "Watch and wait until symptoms develop",
+    "A full course of ABVD × 2 then AVD × 4, without any radiation",
+    "A short course of chemotherapy then involved-field radiation",
+    "Radiation alone with no chemotherapy"
+   ],
+   "a": 2,
+   "e": "Correct: C. Stage I to II HL is treated with a short course of chemotherapy followed by involved field radiation therapy.\nA: All HL patients must be treated with the aim to cure.\nB: A full course is for stage III to IV or bulky disease.\nD: Early stage HL gets chemotherapy before radiation.\nTakeaway: Bulky disease is often treated like advanced stage.",
+   "l": [
+    "W12 5.5"
+   ]
+  },
+  {
+   "c": "Plasma cell disorders",
+   "p": "Why is daratumumab, and not rituximab, used as an antibody therapy in multiple myeloma?",
+   "o": [
+    "Rituximab targets CD38, which plasma cells do not carry",
+    "Plasma cells lack CD38, so only a CD20 antibody works",
+    "Plasma cells lack CD20, and daratumumab targets CD38",
+    "Daratumumab targets the CD20 that plasma cells carry"
+   ],
+   "a": 2,
+   "e": "Correct: C. Plasma cells do not express CD20, the target of rituximab. Daratumumab targets CD38 and is listed for myeloma.\nA: Rituximab targets CD20.\nB: Plasma cells do not express CD20, so a CD20 antibody would miss them.\nD: Daratumumab targets CD38, and plasma cells do not carry CD20.\nTakeaway: Rituximab is for B-cell lymphomas. Daratumumab is for myeloma.",
+   "l": [
+    "W12 7.1"
+   ]
+  },
+  {
+   "c": "Plasma cell disorders",
+   "p": "Which tests belong in the essential workup for suspected multiple myeloma?\ni) Peripheral blood smear for rouleaux\nii) Blood and 24-hour urine protein electrophoresis\niii) Serum free light chain assay\niv) FISH for t(9;22)",
+   "o": [
+    "ii) and iii) only",
+    "i), ii) and iii) only",
+    "i), iii) and iv) only",
+    "All of the above"
+   ],
+   "a": 1,
+   "e": "Correct: B. Smear for rouleaux, protein electrophoresis of blood and urine, and the serum free light chain assay are all listed myeloma investigations.\nA: This leaves out the smear, which shows rouleaux.\nC: t(9;22) is not a myeloma FISH target. FISH looks for t(4;14), t(14;16) and del(17p).\nD: Statement iv) is wrong for myeloma.\nTakeaway: Myeloma FISH: t(4;14), t(14;16), del(17p).",
+   "l": [
+    "W12 8.4"
+   ]
+  },
+  {
+   "c": "Plasma cell disorders",
+   "p": "Harold, 68, has an M protein found during a workup for fatigue. His marrow has 12% plasma cells. Calcium, creatinine and Hb are normal, and a skeletal survey shows no lesions. Which diagnosis fits best?",
+   "o": [
+    "Smoldering myeloma",
+    "Plasma cell leukemia",
+    "Monoclonal gammopathy of undetermined significance",
+    "Overt multiple myeloma"
+   ],
+   "a": 0,
+   "e": "Correct: A. Marrow plasma cells of 10% or more without CRAB organ damage define smoldering myeloma.\nB: Plasma cell leukemia has plasma cells in the blood and is an emergency.\nC: MGUS has under 10% marrow plasma cells.\nD: Overt myeloma needs organ damage, and he has none.\nTakeaway: MGUS under 10%, no CRAB. Smoldering 10% or more, no CRAB. Myeloma has CRAB.",
+   "l": [
+    "W12 7.2"
+   ]
+  },
+  {
+   "c": "Plasma cell disorders",
+   "p": "Ruth, 72, has MGUS. Which follow-up plan and risk of progression to myeloma match the notes?",
+   "o": [
+    "Start therapy now. Risk of myeloma is 0.5-2%",
+    "Follow up every 3-6 months. Risk of myeloma is 5-25%",
+    "Give high dose chemotherapy as an emergency",
+    "Monitor 1-2 times a year. Risk of myeloma is 0.5-2%"
+   ],
+   "a": 3,
+   "e": "Correct: D. MGUS is monitored once or twice a year and carries a 0.5 to 2% risk of myeloma.\nA: MGUS is asymptomatic and is monitored, not treated.\nB: Follow-up every 3 to 6 months with a 5 to 25% risk is smoldering myeloma.\nC: High dose combination chemotherapy is for plasma cell leukemia.\nTakeaway: MGUS is watched. Smoldering is watched more closely. Myeloma is treated.",
+   "l": [
+    "W12 7.3",
+    "W12 7.4"
+   ]
+  },
+  {
+   "c": "Plasma cell disorders",
+   "p": "Doris, 70, has a serum M protein. Calcium is 2.60 mmol/L, creatinine is 150 µmol/L with a CrCl of 55 mL/min, and Hb is 115 g/L (her baseline is 128). A skeletal survey is normal. Which CRAB feature does she meet?",
+   "o": [
+    "Hypercalcemia and renal insufficiency",
+    "Hypercalcemia and anemia",
+    "Hypercalcemia only",
+    "Renal insufficiency and anemia"
+   ],
+   "a": 2,
+   "e": "Correct: C. Calcium above 2.52 mmol/L meets hypercalcemia. Creatinine is below 175 and CrCl is above 40, so renal criteria are not met. Hb is above 100 and has dropped by only 13 g, so anemia is not met.\nA: Renal insufficiency needs creatinine over 175 or CrCl under 40.\nB: Anemia needs Hb under 100 or a drop of 20 g from baseline.\nD: Neither the renal nor the anemia threshold is met.\nTakeaway: CRAB cutoffs: Ca over 2.52, creatinine over 175, Hb under 100, lytic lesions.",
+   "l": [
+    "W12 8.2"
+   ]
+  },
+  {
+   "c": "Plasma cell disorders",
+   "p": "Which explanations of myeloma symptoms match the notes?\ni) Bone pain from an imbalance between osteoclasts and osteoblasts\nii) Infections from neutropenia and a weakened immune system\niii) Hypercalcemia from calcium released by damaged bones\niv) Fatigue caused only by high calcium",
+   "o": [
+    "i) and iii) only",
+    "i), ii) and iii) only",
+    "ii), iii) and iv) only",
+    "All of the above"
+   ],
+   "a": 1,
+   "e": "Correct: B. Bone pain, infections and hypercalcemia are explained as listed in the notes.\nA: This leaves out infections, which come from neutropenia and weak immunity.\nC: Fatigue has several causes, so iv) is wrong.\nD: Statement iv) is wrong. Fatigue comes from anemia, psychological factors, drugs and infections.\nTakeaway: CRAB features each have a mechanism you should be able to explain.",
+   "l": [
+    "W12 8.3"
+   ]
+  },
+  {
+   "c": "Plasma cell disorders",
+   "p": "Gordon, 59, has a monoclonal protein, numb feet, an enlarged liver and spleen, low testosterone and darkened skin. Which plasma cell disorder fits best?",
+   "o": [
+    "Plasma cell leukemia",
+    "AL amyloidosis",
+    "Solitary plasmacytoma",
+    "POEMS syndrome"
+   ],
+   "a": 3,
+   "e": "Correct: D. Polyneuropathy, organomegaly, endocrinopathy, M protein and skin changes make POEMS syndrome.\nA: Plasma cell leukemia shows plasma cells in the blood.\nB: AL amyloidosis comes from insoluble M proteins depositing in organs such as the heart and kidneys.\nC: A solitary plasmacytoma is a single solid myeloma tumour.\nTakeaway: POEMS is the acronym. Each letter is a feature.",
+   "l": [
+    "W12 8.1"
+   ]
+  },
+  {
+   "c": "Plasma cell disorders",
+   "p": "Frank, 71, has newly diagnosed multiple myeloma. Albumin is 38 g/L, beta-2 microglobulin is 6.1 and LDH is high. Which ISS group and survival fit him?",
+   "o": [
+    "ISS 3, with a median survival of about 43 months",
+    "Durie-Salmon stage III, the current standard system",
+    "ISS 2, with a median survival of about 83 months",
+    "ISS 1, with over 80% survival at 72 months"
+   ],
+   "a": 0,
+   "e": "Correct: A. A beta-2 microglobulin of 5.5 or more with a high LDH places him in ISS 3, with a median survival of 43 months.\nB: The Durie-Salmon system is no longer used.\nC: ISS 2 is for patients who fit neither 1 nor 3.\nD: ISS 1 needs beta-2 microglobulin under 3.5 and a normal LDH.\nTakeaway: ISS uses albumin and beta-2 microglobulin.",
+   "l": [
+    "W12 8.5"
+   ]
+  },
+  {
+   "c": "Plasma cell disorders",
+   "p": "Lionel, 66, has myeloma. Over two days he has developed back pain, weak legs and trouble passing urine. Which management is most urgent?",
+   "o": [
+    "Hemodialysis for renal dysfunction",
+    "IV hydration with an intravenous bisphosphonate infusion",
+    "Urgent surgery or radiation for cord compression",
+    "A planned outpatient vertebroplasty"
+   ],
+   "a": 2,
+   "e": "Correct: C. New leg weakness and urinary symptoms with back pain suggest cord compression. It is a medical emergency treated with urgent surgery and or radiation.\nA: Hemodialysis is for renal dysfunction.\nB: Hydration and bisphosphonates treat hypercalcemia.\nD: Vertebroplasty is for bone pain and fractures, not cord compression.\nTakeaway: Myeloma emergencies: cord compression, renal dysfunction, plasma cell leukemia.",
+   "l": [
+    "W12 8.6"
+   ]
+  },
+  {
+   "c": "Plasma cell disorders",
+   "p": "Agnes, 74, has myeloma and is thirsty, nauseated and confused. Her calcium is 3.1 mmol/L. Which treatment is most appropriate?",
+   "o": [
+    "Urgent radiation therapy to the thoracic spine",
+    "IV hydration and a bisphosphonate",
+    "SC G-CSF injections",
+    "Packed red cell transfusion"
+   ],
+   "a": 1,
+   "e": "Correct: B. Thirst, nausea and confusion with a high calcium is myeloma hypercalcemia. It is treated with IV hydration, bisphosphonates such as pamidronate or zoledronate, and anti-myeloma therapy.\nA: Spinal radiation is for cord compression.\nC: G-CSF treats neutropenia.\nD: Transfusion treats anemia.\nTakeaway: Each myeloma complication has its own supportive therapy.",
+   "l": [
+    "W12 8.6"
+   ]
+  },
+  {
+   "c": "Mediastinal mass",
+   "p": "Daniel, 24, has a mediastinal mass that has caused symptoms over a few days. He also has a scrotal mass. His AFP is high. Which diagnosis fits best?",
+   "o": [
+    "Seminoma (differentiated testicular cancer)",
+    "Thymoma",
+    "Lymphoblastic lymphoma",
+    "Non-seminomatous germ cell tumour"
+   ],
+   "a": 3,
+   "e": "Correct: D. Rapid onset, a scrotal mass and a high AFP point to a non-seminomatous germ cell tumour. AFP is raised in 60 to 80% of them.\nA: Seminoma has an intermediate onset over months, and AFP is not listed for it.\nB: Thymoma has a prolonged onset over years and is usually over age 40.\nC: Lymphoblastic lymphoma can be rapid but does not explain the scrotal mass or AFP.\nTakeaway: Scrotal mass plus mediastinal mass means think germ cell tumour.",
+   "l": [
+    "W12 6.3"
+   ]
+  },
+  {
+   "c": "Mediastinal mass",
+   "p": "Carol, 55, has drooping eyelids and fatigue that worsens through the day. CT shows an anterior mediastinal mass that seems to have grown slowly over years. Anti-AChR antibodies are positive. Which next step is most appropriate?",
+   "o": [
+    "Surgical resection without a biopsy first",
+    "Percutaneous image-guided biopsy with flow cytometry",
+    "Ultrasound of the scrotum and testes",
+    "PET/CT to stage a possible lymphoma"
+   ],
+   "a": 0,
+   "e": "Correct: A. Anti-AChR with an anterior mass over 40 fits thymoma with myasthenia gravis. Biopsy is foregone for thymoma, which goes to resection.\nB: Biopsy and flow cytometry are for suspected lymphoma.\nC: Scrotal ultrasound looks for a germ cell tumour.\nD: PET/CT is used for lymphoma.\nTakeaway: Skip biopsy for a simple cyst, aneurysm or thymoma.",
+   "l": [
+    "W12 6.5",
+    "W12 6.2"
+   ]
+  },
+  {
+   "c": "Mediastinal mass",
+   "p": "Imaging shows a mass in the posterior mediastinum beside the spine. Which category of lesion is most likely?",
+   "o": [
+    "Thymoma",
+    "Teratoma",
+    "Neurogenic tumour",
+    "Bronchogenic or pericardial cyst"
+   ],
+   "a": 2,
+   "e": "Correct: C. The posterior paravertebral compartment holds the sympathetic trunk and nerves. Its differential is neurogenic tumours, meningoceles and spine lesions.\nA: Thymoma is an anterior compartment lesion.\nB: Teratoma is an anterior compartment lesion.\nD: Bronchogenic cysts are middle compartment lesions.\nTakeaway: Anterior 5Ts, middle nodes and cysts, posterior nerves.",
+   "l": [
+    "W12 6.1"
+   ]
+  },
+  {
+   "c": "Mediastinal mass",
+   "p": "Victor, 28, has a large anterior mediastinal mass. He has facial and neck swelling, swollen veins across his chest and shortness of breath. Raising his arms makes his face flush. Which complication is this?",
+   "o": [
+    "Recurrent laryngeal nerve palsy",
+    "Horner syndrome",
+    "Cardiac tamponade",
+    "Superior vena cava syndrome"
+   ],
+   "a": 3,
+   "e": "Correct: D. Face, neck and chest edema with collateral veins, dyspnea and a Pemberton sign describe superior vena cava syndrome.\nA: Recurrent laryngeal nerve compression causes hoarseness.\nB: Horner syndrome gives miosis, ptosis and anhidrosis.\nC: Tamponade physiology presents with hypotension.\nTakeaway: SVC syndrome is a palliative indication for radiation.",
+   "l": [
+    "W12 6.4"
+   ]
+  },
+  {
+   "c": "Mediastinal mass",
+   "p": "Which are recognized complications of a large mediastinal mass?\ni) Hoarseness from recurrent laryngeal nerve compression\nii) Ptosis, miosis and anhidrosis from sympathetic chain involvement\niii) Hypotension from compression of the heart\niv) Mydriasis with eyelid retraction from sympathetic chain compression",
+   "o": [
+    "i) and iii) only",
+    "i), ii) and iii) only",
+    "ii), iii) and iv) only",
+    "All of the above"
+   ],
+   "a": 1,
+   "e": "Correct: B. Hoarseness, Horner syndrome and hypotension from tamponade physiology are all listed effects of a mediastinal mass.\nA: This leaves out Horner syndrome.\nC: Horner syndrome gives miosis and ptosis, not mydriasis and eyelid retraction.\nD: Statement iv) reverses the Horner findings.\nTakeaway: Horner syndrome is not specific to a mediastinal mass. A Pancoast tumour can cause it.",
+   "l": [
+    "W12 6.4"
+   ]
+  },
+  {
+   "c": "Mediastinal mass",
+   "p": "A trauma patient has a supine AP chest x-ray. The mediastinum measures 7 cm wide. Using the notes, how should this be read?",
+   "o": [
+    "Not widened, since the supine AP cutoff is 8 cm",
+    "Not widened, since every film uses a 10 cm cutoff",
+    "Widened, since the supine AP cutoff is 6 cm",
+    "Widened, since any width over 6 cm counts"
+   ],
+   "a": 0,
+   "e": "Correct: A. A widened mediastinum is over 6 cm on an upright PA film or over 8 cm on a supine AP film. At 7 cm on a supine AP film, it is not widened.\nB: No 10 cm cutoff is used.\nC: This swaps the PA and AP cutoffs.\nD: The 6 cm cutoff applies to upright PA films.\nTakeaway: 6 cm upright PA, 8 cm supine AP.",
+   "l": [
+    "W12 6.3"
+   ]
+  },
+  {
+   "c": "Mediastinal mass",
+   "p": "Patient A has a mediastinal mass with symptoms that came on over a few days. Patient B has a mediastinal mass found by chance after years with no symptoms. Which diagnosis fits each patient, in order?",
+   "o": [
+    "A teratoma, B lymphoblastic lymphoma",
+    "A thymoma, B Hodgkin lymphoma",
+    "A lymphoblastic lymphoma, B teratoma",
+    "A seminoma, B lymphoblastic lymphoma"
+   ],
+   "a": 2,
+   "e": "Correct: C. Rapid onset over days suggests lymphoblastic lymphoma or a non-seminomatous germ cell tumour. A prolonged or silent course over years suggests thymoma or teratoma.\nA: This reverses the onset patterns.\nB: Thymoma is slow over years, and Hodgkin lymphoma has an onset over months.\nD: Seminoma has an intermediate onset over months, and lymphoblastic lymphoma is rapid.\nTakeaway: Days: lymphoblastic or NSGCT. Months: lymphoma, seminoma. Years: thymoma, teratoma.",
+   "l": [
+    "W12 6.2"
+   ]
+  },
+  {
+   "c": "Radiation",
+   "p": "Why is radiation therapy given as many small daily fractions over several weeks?",
+   "o": [
+    "Cancer cells repair radiation damage faster than normal cells",
+    "Normal tissue repairs damage between fractions better than cancer",
+    "Slow-growing tumours respond fastest when doses are kept small",
+    "Splitting the dose waits until cells leave the sensitive G2-M phase"
+   ],
+   "a": 1,
+   "e": "Correct: B. Fractionation takes advantage of the different repair abilities of normal and malignant tissue. Cancer cells do not repair as well as normal cells.\nA: This reverses the repair difference.\nC: Fast-growing tumours are more radiosensitive and respond more quickly.\nD: Cells are most susceptible in G2-M, not least.\nTakeaway: Fractionation exploits the four Rs.",
+   "l": [
+    "W12 12.1"
+   ]
+  },
+  {
+   "c": "Radiation",
+   "p": "Between radiation fractions, hypoxic tumour cells regain oxygen and become more sensitive to the next dose. Which of the four Rs of radiobiology is this?",
+   "o": [
+    "Reoxygenation",
+    "Redistribution",
+    "Repopulation",
+    "Repair"
+   ],
+   "a": 0,
+   "e": "Correct: A. Reoxygenation of hypoxic cells makes them more sensitive to radiation.\nB: Redistribution moves cells into radiosensitive phases of the cell cycle.\nC: Repopulation is regrowth of cells between fractions.\nD: Repair is the fixing of sublethal damage between fractions.\nTakeaway: Repair, repopulation, redistribution, reoxygenation.",
+   "l": [
+    "W12 12.1"
+   ]
+  },
+  {
+   "c": "Radiation",
+   "p": "Which statement about radiation therapy for lymphoma is FALSE?",
+   "o": [
+    "It only treats tumour cells inside the radiation field",
+    "External beam treatment itself is painless",
+    "It carries a slight risk of a second cancer years later",
+    "It damages only cancer cells and spares normal cells"
+   ],
+   "a": 3,
+   "e": "Correct: D. Radiation damages the DNA of both normal and cancer cells. So the claim that it spares normal cells is false.\nA: True. Radiation only works on tumour cells in the field.\nB: True. External beam radiation is painless.\nC: True. There is a slight risk of secondary cancer many years later.\nTakeaway: Every tissue has a dose limit. Spinal cord, bowel, kidney and lungs often limit treatment.",
+   "l": [
+    "W12 12.2"
+   ]
+  },
+  {
+   "c": "Radiation",
+   "p": "Sam, 24, finished mediastinal radiation for Hodgkin lymphoma 8 weeks ago. He now has fever, a dry cough and shortness of breath. Which diagnosis and treatment fit best?",
+   "o": [
+    "Hypothyroidism, treated with thyroid replacement",
+    "Radiation pericarditis, treated with hydration",
+    "Radiation pneumonitis, treated with steroids",
+    "L'Hermitte's sign, treated with thyroid hormone"
+   ],
+   "a": 2,
+   "e": "Correct: C. Fever, cough and dyspnea 6 to 12 weeks after mediastinal radiation fit radiation pneumonitis, which is treated with steroids.\nA: Hypothyroidism is a late effect and does not cause fever and cough.\nB: Pericarditis is inflammation of the sac around the heart and does not explain this course.\nD: L'Hermitte's sign is paresthesia in the limbs on neck flexion.\nTakeaway: Pneumonitis comes 6 to 12 weeks after chest radiation.",
+   "l": [
+    "W12 12.3"
+   ]
+  },
+  {
+   "c": "Radiation",
+   "p": "Which of these effects of radiation is classed as a late effect rather than a subacute one?",
+   "o": [
+    "L'Hermitte's sign",
+    "Myelosuppression",
+    "Radiation pneumonitis",
+    "Hypothyroidism"
+   ],
+   "a": 3,
+   "e": "Correct: D. Hypothyroidism is listed as a late effect, and thyroid replacement is recommended.\nA: L'Hermitte's sign is a subacute effect from transient demyelination.\nB: Myelosuppression is subacute, after high volume pelvic marrow radiation.\nC: Radiation pneumonitis is subacute, within 6 to 12 weeks.\nTakeaway: Late effects: hypothyroidism, zoster, infertility, secondary cancers.",
+   "l": [
+    "W12 12.3"
+   ]
+  }
+ ],
+ "objectives": {
+  "W12 1.5": "Understand the utility of immunohistochemical stains and flow cytometric study.",
+  "W12 1.6": "Distinguish between different modes of investigating enlarged lymph nodes and splenomegaly.",
+  "W12 12.1": "Describe principles of radiation in treatment of hematological malignancies.",
+  "W12 12.2": "Explain the advantages and disadvantages of radiation.",
+  "W12 12.3": "Explain the short-term and long-term side effects of radiation",
+  "W12 2.1": "List the differential diagnoses of lymphadenopathy in adult.",
+  "W12 2.2": "List and interpret critical clinical findings, including an appropriate history and physical examination in a patient with lymphadenopathy.",
+  "W12 2.3": "List and interpret initial investigations, including laboratory and radiological studies, and determine whether there is an indication for a biopsy.",
+  "W12 3.1": "List the differential diagnoses of lymphadenopathy in pediatrics.",
+  "W12 3.2": "List and interpret critical clinical findings, including an appropriate history and physical examination in a patient with lymphadenopathy.",
+  "W12 3.3": "List and interpret initial investigations, including laboratory and radiological studies, determine whether there is an indication for a biopsy.",
+  "W12 4.1": "Differentiate between \"monoclonal\" and \"polyclonal\" populations in confirming the diagnosis of non‐Hodgkin lymphoma.",
+  "W12 4.2": "Correlate the histology and clinical behaviour of different types of non‐ Hodgkin lymphoma.",
+  "W12 4.3": "Differentiate between grade and stage of disease.",
+  "W12 4.4": "Compare and contrast the three procedures used to get a sample of a lymph node for pathology diagnosis.",
+  "W12 4.5": "Discuss advantages and disadvantages of various lab tests for lymphoma diagnosis.",
+  "W12 4.6": "Distinguish between the major subtypes of non-Hodgkin's lymphomas.",
+  "W12 4.7": "Discuss the risk factors for Hodgkin and non‐Hodgkin lymphomas.",
+  "W12 4.8": "Summarize the major differences between Hodgkin and non-Hodgkin lymphomas.",
+  "W12 5.1": "Distinguish the clinical presentations of Hodgkin and non-Hodgkin lymphoma.",
+  "W12 5.2": "Describe the clinical work-up of patients with lymphoma.",
+  "W12 5.3": "Describe the Ann Arbor staging system",
+  "W12 5.4": "List the prognostic factors in patients with lymphoma.",
+  "W12 5.5": "Outline the basic principles of treatment of various lymphomas",
+  "W12 6.1": "List the differential diagnoses for mediastinal mass.",
+  "W12 6.2": "List and interpret critical clinical findings, including an appropriate history and physical examination in a patient with mediastinal mass.",
+  "W12 6.3": "List and interpret relevant investigations, including laboratory and radiological studies, indication for a biopsy.",
+  "W12 6.4": "Explain the possible complications from a large mediastinal mass.",
+  "W12 6.5": "Construct an effective initial management plan.",
+  "W12 7.1": "Understand the role of plasma cells and know how to interpret serum protein electrophoresis.",
+  "W12 7.2": "Review the criteria and differences between monoclonal gammopathy of unknown significance, smoldering myeloma and multiple myeloma.",
+  "W12 7.3": "Discuss the appropriate workup for monoclonal gammopathy.",
+  "W12 7.4": "Understand the prognosis of common disorders associated with monoclonal gammopathy.",
+  "W12 8.1": "Define multiple myeloma and the other plasma cell dyscrasias.",
+  "W12 8.2": "Describe the clinical features of multiple myeloma.",
+  "W12 8.3": "Explain the mechanisms for the disease manifestations.",
+  "W12 8.4": "Outline the essential investigations for multiple myeloma.",
+  "W12 8.5": "Discuss prognostic factors and prognosis of multiple myeloma in general terms.",
+  "W12 8.6": "Identify and provide initial management of complications"
+ }
+}

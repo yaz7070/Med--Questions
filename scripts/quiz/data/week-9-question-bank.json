@@ -1,0 +1,811 @@
+{
+ "title": "Week 9 Question Bank",
+ "context": "Foundations of Medicine, Block 3, Week 9",
+ "questions": [
+  {
+   "c": "Microcytic",
+   "p": "Maria, 34, has heavy periods and fatigue. Hb is 98 g/L and MCV is 72 fL. The film shows hypochromic red cells. Which result best separates her likely diagnosis from anemia of chronic inflammation?",
+   "o": [
+    "An MCV below the 80 fL microcytic cutoff",
+    "Hypochromic red cells on the blood film",
+    "Low ferritin with a high transferrin",
+    "Low serum iron with low transferrin saturation"
+   ],
+   "a": 2,
+   "e": "Correct: C. Heavy periods point to iron deficiency. In iron deficiency ferritin is low and transferrin is high. In anemia of chronic inflammation ferritin is high and transferrin is low.\nA: Both are microcytic causes in TAILS, so a low MCV does not separate them.\nB: Both conditions are hypochromic on the film.\nD: Low serum iron and low transferrin saturation occur in both conditions, so they do not separate them.\nTakeaway: Ferritin and transferrin move in opposite directions in iron deficiency and chronic inflammation.",
+   "l": [
+    "W9 1.4"
+   ]
+  },
+  {
+   "c": "Microcytic",
+   "p": "Joseph, 58, has long-standing rheumatoid arthritis. Hb is 108 g/L with a mildly low MCV. Ferritin is high, serum iron is low and he has no blood loss. Which mechanism best explains his anemia?",
+   "o": [
+    "Hepcidin overproduction blocks ferroportin from releasing stored iron",
+    "A quantitative defect in the synthesis of alpha or beta globin chains",
+    "Iron deposits in mitochondria as a ring around the precursor nucleus",
+    "Low dietary intake slowly depletes the body's iron stores"
+   ],
+   "a": 0,
+   "e": "Correct: A. Chronic inflammation with high ferritin and low serum iron fits anemia of chronic inflammation. Hepcidin inhibits ferroportin, so iron stays trapped in stores. This is a functional iron deficiency.\nB: Globin chain defects cause thalassemia, which has normal iron studies.\nC: Mitochondrial iron rings define sideroblastic anemia.\nD: Low intake causes true iron deficiency with a low ferritin.\nTakeaway: Anemia of chronic inflammation is a functional iron deficiency driven by hepcidin.",
+   "l": [
+    "W9 1.1"
+   ]
+  },
+  {
+   "c": "Microcytic",
+   "p": "Which of these patients belong to a high-risk group for iron deficiency?\ni) A strict vegan\nii) A woman with celiac disease\niii) A man who runs marathons\niv) A woman with untreated hypothyroidism",
+   "o": [
+    "i) and ii) only",
+    "i), ii) and iii) only",
+    "ii), iii) and iv) only",
+    "All of the above"
+   ],
+   "a": 1,
+   "e": "Correct: B. Vegan diet lowers intake, celiac disease lowers absorption and marathon running increases loss. All three are listed causes of iron deficiency.\nA: This leaves out marathon running, a listed source of iron loss.\nC: This drops the vegan diet and adds hypothyroidism, which is a cause of macrocytic anemia.\nD: Hypothyroidism is a macrocytic cause in ABCDEF, not an iron deficiency risk.\nTakeaway: Think intake, absorption, demand and loss when screening for iron deficiency risk.",
+   "l": [
+    "W9 1.2"
+   ]
+  },
+  {
+   "c": "Microcytic",
+   "p": "Leah, 19, craves ice and has restless legs at night. Her nails are thin and spoon shaped. Hb is 96 g/L and MCV is 70 fL. Which other finding fits her most likely diagnosis?",
+   "o": [
+    "Splenomegaly with jaundice and short stature",
+    "Bone deformities from an overproductive marrow",
+    "Onset of the anemia in early childhood",
+    "Difficulty swallowing from esophageal webs"
+   ],
+   "a": 3,
+   "e": "Correct: D. Pica, restless legs and koilonychia point to iron deficiency anemia. Esophageal webs causing difficulty swallowing are listed with it.\nA: Splenomegaly, jaundice and short stature are thalassemia features.\nB: Bone deformities from an overproductive marrow are a thalassemia feature.\nC: Onset in early childhood suggests thalassemia.\nTakeaway: Pica, koilonychia, restless legs and esophageal webs are the iron deficiency set.",
+   "l": [
+    "W9 1.3"
+   ]
+  },
+  {
+   "c": "Hemoglobinopathy",
+   "p": "Nikos, 27, of Greek descent, has a Hb of 124 g/L and MCV of 64 fL found on a routine CBC. Ferritin is normal. Hemoglobin electrophoresis shows an elevated HbA2. Which diagnosis fits best?",
+   "o": [
+    "Iron deficiency with iron depletion",
+    "Alpha thalassemia trait",
+    "Beta thalassemia major",
+    "Beta thalassemia minor"
+   ],
+   "a": 3,
+   "e": "Correct: D. A mild microcytic anemia with normal ferritin and a high HbA2 in a Mediterranean adult fits heterozygous beta thalassemia minor.\nA: Iron deficiency has a low ferritin, and iron depletion is deficiency without anemia.\nB: Alpha thalassemia has a normal HbA2.\nC: Beta thalassemia major is homozygous, presents in early childhood and shows elevated HbF.\nTakeaway: Beta thalassemia raises HbA2. Alpha thalassemia leaves it normal.",
+   "l": [
+    "W9 2.2"
+   ]
+  },
+  {
+   "c": "Hemoglobinopathy",
+   "p": "Linh, 30, born in Vietnam, has a mild microcytic anemia. Ferritin is normal and HbA2 on electrophoresis is normal. Which test best confirms the likely diagnosis?",
+   "o": [
+    "Serum methylmalonic acid and homocysteine",
+    "Marrow aspiration looking for ring sideroblasts",
+    "Hemoglobin gene sequencing",
+    "Flow cytometry for band 3 protein"
+   ],
+   "a": 2,
+   "e": "Correct: C. Microcytosis with normal iron and a normal HbA2 in a patient from Southeast Asia suggests alpha thalassemia. Hemoglobin gene sequencing is listed to confirm it.\nA: These tests separate B12 from folate deficiency in macrocytic anemia.\nB: Ring sideroblasts on marrow point to sideroblastic anemia.\nD: Flow cytometry for band 3 protein confirms hereditary spherocytosis.\nTakeaway: Normal HbA2 does not exclude thalassemia. It points to the alpha type.",
+   "l": [
+    "W9 2.2",
+    "W9 1.4"
+   ]
+  },
+  {
+   "c": "Hemoglobinopathy",
+   "p": "Elena, 9, has beta thalassemia major and receives regular transfusions. Her ferritin is now 1400 μg/L. Which addition to her plan is most appropriate?",
+   "o": [
+    "Pyridoxine to support heme synthesis",
+    "Iron chelation with desferoxamine",
+    "Oral ferrous sulfate to rebuild stores",
+    "Erythropoietin to reduce the transfusions"
+   ],
+   "a": 1,
+   "e": "Correct: B. Repeated transfusion causes iron overload. A ferritin above 1000 is the chelation threshold, and desferoxamine is the listed chelator in thalassemia.\nA: Pyridoxine is occasionally useful in sideroblastic anemia.\nC: Her stores are already overloaded, so more iron would cause harm.\nD: EPO is not listed for thalassemia. Its indications include renal failure and MDS.\nTakeaway: Transfused thalassemia needs chelation once ferritin passes 1000.",
+   "l": [
+    "W9 2.3",
+    "W9 1.5"
+   ]
+  },
+  {
+   "c": "Microcytic",
+   "p": "Dev, 61, drinks heavily and started anti-TB drugs two months ago. He has a hypochromic microcytic anemia. Marrow shows iron forming a ring around the nucleus of red cell precursors. Which statement about this condition is correct?",
+   "o": [
+    "Iron is present in normal amounts but cannot be built into hemoglobin",
+    "Ferritin is low because the body's iron stores have been fully depleted",
+    "HbA2 is raised on hemoglobin electrophoresis",
+    "Hepcidin overproduction traps iron inside storage cells"
+   ],
+   "a": 0,
+   "e": "Correct: A. Ring iron in precursors after alcohol and anti-TB drugs fits sideroblastic anemia. Iron is present in normal amounts but cannot be incorporated into hemoglobin.\nB: Depleted stores with a low ferritin describe iron deficiency.\nC: A raised HbA2 marks beta thalassemia.\nD: Hepcidin trapping describes anemia of chronic inflammation.\nTakeaway: Sideroblastic anemia is a heme defect with normal iron that cannot be used.",
+   "l": [
+    "W9 1.1"
+   ]
+  },
+  {
+   "c": "Microcytic",
+   "p": "Frank, 62, is found to have a Hb of 105 g/L, MCV of 74 fL and a low ferritin on routine bloodwork. He eats a mixed diet and reports no bleeding. Besides replacing iron, what is the most important next step?",
+   "o": [
+    "Start erythropoietin injections to raise his hemoglobin",
+    "Transfuse to bring his hemoglobin back to normal",
+    "Look for a GI source of blood loss such as colon cancer",
+    "Order hemoglobin electrophoresis first to exclude a thalassemia"
+   ],
+   "a": 2,
+   "e": "Correct: C. Iron deficiency in an older man with a normal diet means occult loss until proven otherwise. Management includes finding the underlying cause, and colon cancer is a listed GI source.\nA: EPO is reserved for listed indications such as renal failure, not simple iron deficiency.\nB: He is stable, and transfusion does not find the cause.\nD: A low ferritin already explains the microcytosis, so thalassemia is not the next concern.\nTakeaway: Iron deficiency management has two parts. Replace iron and find the cause.",
+   "l": [
+    "W9 1.5"
+   ]
+  },
+  {
+   "c": "Normocytic",
+   "p": "Omar, 40, has a Hb of 92 g/L and MCV of 88 fL. His reticulocyte count is high. Which group of causes best fits this result?",
+   "o": [
+    "Pure red cell aplasia with an absent erythroid line",
+    "Bone marrow failure such as aplastic anemia",
+    "Marrow replacement by fibrosis or a cancer",
+    "Increased turnover from destruction or blood loss"
+   ],
+   "a": 3,
+   "e": "Correct: D. A high reticulocyte count means the marrow is responding. That places the anemia in the increased turnover group, which is hemolysis or blood loss.\nA: Pure red cell aplasia shows severe reticulocytopenia.\nB: Aplastic anemia is a production problem with a normal or low reticulocyte count.\nC: Myelophthisis is a production problem with a low reticulocyte count.\nTakeaway: Retics high means loss or destruction. Retics low means a production problem.",
+   "l": [
+    "W9 3.2"
+   ]
+  },
+  {
+   "c": "Normocytic",
+   "p": "Grace, 24, has pancytopenia. She has no splenomegaly. Marrow biopsy shows a hypocellular marrow made mostly of fat cells. Which management option fits her most likely diagnosis?",
+   "o": [
+    "Immunosuppression with antithymocyte globulin",
+    "Iron chelation with desferoxamine",
+    "Oral penicillin and vaccination before splenectomy",
+    "Hydroxyurea with folate supplementation"
+   ],
+   "a": 0,
+   "e": "Correct: A. Pancytopenia with a hypocellular fatty marrow and no splenomegaly fits aplastic anemia. Listed treatment is immunosuppression (antithymocyte globulin, cyclosporine, steroids) or transplant if eligible.\nB: Chelation treats iron overload, as in transfused thalassemia.\nC: Penicillin, vaccination and splenectomy are used in hereditary spherocytosis.\nD: Hydroxyurea and folate are used in sickle cell disease.\nTakeaway: Aplastic anemia: empty fatty marrow, treat with immunosuppression or transplant.",
+   "l": [
+    "W9 3.5",
+    "W9 3.4"
+   ]
+  },
+  {
+   "c": "Normocytic",
+   "p": "Ruth, 66, had breast cancer treated five years ago. She now has a normocytic anemia with a low reticulocyte count. Her film shows teardrop cells and a leukoerythroblastic picture. Which diagnosis fits best?",
+   "o": [
+    "Pure red cell aplasia from a marrow toxin",
+    "Myelophthisis from marrow infiltration",
+    "Aplastic anemia with a hypocellular marrow",
+    "Hereditary elliptocytosis with elongated cells"
+   ],
+   "a": 1,
+   "e": "Correct: B. Teardrop cells and a leukoerythroblastic picture mean the marrow is being replaced. Metastatic solid cancer is a listed cause of myelophthisis.\nA: Pure red cell aplasia shows severe reticulocytopenia alone, without a leukoerythroblastic film.\nC: Aplastic anemia shows pancytopenia and a fatty marrow, not teardrop cells.\nD: Elliptocytes are elongated cells, not teardrops.\nTakeaway: Teardrop cells mean marrow infiltration or myelofibrosis.",
+   "l": [
+    "W9 3.1",
+    "W9 3.4"
+   ]
+  },
+  {
+   "c": "Normocytic",
+   "p": "Sami, 6, has pancytopenia. He is short for his age and has a triphalangeal thumb, patches of skin pigmentation and a congenital heart defect. Which hereditary marrow failure syndrome fits best?",
+   "o": [
+    "Fanconi anemia",
+    "Sickle cell disease",
+    "Dyskeratosis congenita",
+    "Diamond Blackfan anemia"
+   ],
+   "a": 0,
+   "e": "Correct: A. Short stature, triphalangeal thumb, skin pigmentation and heart defects are the listed features of Fanconi anemia, a hereditary cause of aplastic anemia.\nB: Sickle cell disease is a hemolytic beta chain disorder, not marrow failure.\nC: Dyskeratosis congenita shows oral leukoplakia, nail dystrophy and lacy pigmentation on the neck and back.\nD: Diamond Blackfan anemia is a cause of pure red cell aplasia, not pancytopenia.\nTakeaway: Thumb and heart defects with short stature point to Fanconi anemia.",
+   "l": [
+    "W9 3.3"
+   ]
+  },
+  {
+   "c": "Hemoglobinopathy",
+   "p": "Amara, 2, was diagnosed with sickle cell disease on newborn screening. She is well today. Which plan best matches the notes for her ongoing care?",
+   "o": [
+    "Splenectomy followed by vaccination",
+    "Oral iron and a repeat CBC in three months",
+    "Desferoxamine chelation from the time of diagnosis",
+    "Penicillin prophylaxis until age 5 and folate"
+   ],
+   "a": 3,
+   "e": "Correct: D. Listed sickle cell care includes folate supplementation, hydroxyurea and penicillin prophylaxis up to age 5.\nA: Splenectomy is listed for severe spherocytosis and G6PD deficiency, not sickle cell disease.\nB: Sickle cell disease is hemolytic, not iron deficient.\nC: Chelation is for iron overload, not a routine step at diagnosis.\nTakeaway: Sickle cell in a young child: penicillin to age 5, folate and hydroxyurea.",
+   "l": [
+    "W9 2.3"
+   ]
+  },
+  {
+   "c": "Hemoglobinopathy",
+   "p": "Kwame, 16, has sickle cell disease. He arrives with severe pain in his back and legs. Vitals are stable and there is no sign of infection. Which is the best initial management?",
+   "o": [
+    "An IV iron infusion to support red cell production",
+    "Steroids and keeping him away from the cold",
+    "Oxygen, IV fluids and opiates or NSAIDs",
+    "Urgent splenectomy to stop the red cell destruction"
+   ],
+   "a": 2,
+   "e": "Correct: C. This is a veno-occlusive crisis. The listed approach is oxygen, IV fluids, opiates or NSAIDs, and treating any underlying cause.\nA: Iron does not treat a crisis and he is not iron deficient.\nB: Steroids and avoiding the cold belong to autoimmune hemolytic anemia.\nD: Splenectomy is not part of crisis care in the notes.\nTakeaway: VOC care: oxygen, fluids, analgesia, treat the trigger.",
+   "l": [
+    "W9 2.3",
+    "W9 2.1"
+   ]
+  },
+  {
+   "c": "Hemoglobinopathy",
+   "p": "Which statement about sickle cell disease is correct?",
+   "o": [
+    "The disease is inherited in an X-linked recessive pattern",
+    "Glutamate is replaced by valine at the 6th amino acid of beta globin",
+    "Polymerization occurs when the hemoglobin is fully oxygenated in the lungs",
+    "Glutamate is replaced by lysine at the 6th amino acid of beta globin"
+   ],
+   "a": 1,
+   "e": "Correct: B. HbS comes from a glutamate to valine change at the 6th amino acid of the beta chain.\nA: Sickle cell disease is autosomal recessive. G6PD deficiency is X-linked.\nC: Polymerization happens when hemoglobin is deoxygenated.\nD: Glutamate to lysine describes HbC.\nTakeaway: HbS is Glu to Val. HbC is Glu to Lys.",
+   "l": [
+    "W9 2.1",
+    "W9 9.2"
+   ]
+  },
+  {
+   "c": "Macrocytic",
+   "p": "Patient A, 55, has alcohol-related liver disease. His film shows large round red cells and normal neutrophils. Patient B, 30, is a strict vegan. Her film shows oval macrocytes and hypersegmented neutrophils. How is each anemia best classified, in order?",
+   "o": [
+    "A non-megaloblastic, B megaloblastic",
+    "A megaloblastic, B non-megaloblastic",
+    "Both megaloblastic",
+    "Both non-megaloblastic"
+   ],
+   "a": 0,
+   "e": "Correct: A. Large round red cells with normal neutrophils are non-megaloblastic, as in liver disease. Oval macrocytes with hypersegmented neutrophils are megaloblastic, as in B12 deficiency from a vegan diet.\nB: This reverses the two film patterns.\nC: Patient A has normal neutrophils and round cells, which is not megaloblastic.\nD: Patient B has hypersegmented neutrophils, the megaloblastic sign.\nTakeaway: Hypersegmented neutrophils and oval macrocytes mean a DNA synthesis failure.",
+   "l": [
+    "W9 4.2"
+   ]
+  },
+  {
+   "c": "Macrocytic",
+   "p": "Peter, 70, had an ileal resection for Crohn's disease years ago and takes no supplements. He has a macrocytic anemia and numb feet. Which lab pattern best fits his most likely deficiency?",
+   "o": [
+    "High haptoglobin with low LDH and low bilirubin",
+    "High methylmalonic acid and high homocysteine",
+    "Normal homocysteine with a high methylmalonic acid",
+    "High homocysteine with a normal methylmalonic acid"
+   ],
+   "a": 1,
+   "e": "Correct: B. Ileal resection blocks B12 absorption. B12 deficiency raises both methylmalonic acid and homocysteine.\nA: Megaloblastic anemia shows low haptoglobin with high LDH and bilirubin.\nC: B12 deficiency raises both markers, not methylmalonic acid alone.\nD: Homocysteine alone is high in folate deficiency.\nTakeaway: MMA plus homocysteine means B12. Homocysteine only means folate.",
+   "l": [
+    "W9 4.4",
+    "W9 7.5"
+   ]
+  },
+  {
+   "c": "Macrocytic",
+   "p": "Two patients stopped all intake of one vitamin four months ago. Patient A had a total gastrectomy and takes no B12. Patient B is a heavy drinker who eats almost nothing and takes no folate. Who is more likely to be deficient now?",
+   "o": [
+    "Patient A, since B12 stores last only months",
+    "Both, since each vitamin store lasts about four months",
+    "Neither, since both stores last several years",
+    "Patient B, since folate stores last only months"
+   ],
+   "a": 3,
+   "e": "Correct: D. Folate stores last about 3 to 6 months, so four months without folate can cause deficiency. B12 stores last 3 to 4 years, so Patient A is not yet deficient.\nA: B12 stores last years, not months.\nB: Only folate stores run out on this timescale.\nC: Folate stores last months, not years.\nTakeaway: Folate runs out in months. B12 lasts years.",
+   "l": [
+    "W9 4.1"
+   ]
+  },
+  {
+   "c": "Macrocytic",
+   "p": "Helen, 63, has vitiligo and a macrocytic anemia with low serum B12. She eats meat and dairy daily and has had no bowel surgery. Which mechanism most likely explains her deficiency?",
+   "o": [
+    "A past jejunal resection that blocks folate absorption",
+    "A fish tapeworm competing for dietary B12",
+    "Lack of intrinsic factor from the gastric mucosa",
+    "Increased demand from active hemolysis"
+   ],
+   "a": 2,
+   "e": "Correct: C. A meat eater with no surgery and an autoimmune history fits pernicious anemia. A lack of intrinsic factor in the gastric mucosa impairs B12 uptake.\nA: Jejunal resection causes folate malabsorption, and she has had no surgery.\nB: Fish tapeworm is a listed intestinal cause, but nothing in her history suggests it.\nD: Hemolysis increases folate demand, not B12 loss.\nTakeaway: Pernicious anemia is the gastric cause of B12 deficiency.",
+   "l": [
+    "W9 4.1"
+   ]
+  },
+  {
+   "c": "Macrocytic",
+   "p": "Which findings point to B12 deficiency rather than another cause of macrocytic anemia?\ni) Loss of proprioception\nii) Optic atrophy\niii) Cold intolerance and weight gain\niv) Anosmia and loss of taste",
+   "o": [
+    "i), ii) and iv) only",
+    "i) and ii) only",
+    "ii), iii) and iv) only",
+    "All of the above"
+   ],
+   "a": 0,
+   "e": "Correct: A. Loss of proprioception, optic atrophy, anosmia and loss of taste are listed neurological features of B12 deficiency.\nB: This misses anosmia and loss of taste, which are B12 features.\nC: Cold intolerance and weight gain point to hypothyroidism.\nD: Cold intolerance and weight gain belong to hypothyroidism, not B12 deficiency.\nTakeaway: Neurological signs set B12 deficiency apart from other macrocytic causes.",
+   "l": [
+    "W9 4.3"
+   ]
+  },
+  {
+   "c": "Macrocytic",
+   "p": "Albert, 74, has back pain and a raised total protein. His MCV is reported as 106 fL, but his film shows red cells stacked in chains like coins. What best explains the high MCV?",
+   "o": [
+    "Compensatory reticulocytosis after blood loss",
+    "Clumped cells counted as single large cells",
+    "Abnormal cholesterol metabolism in the cell membrane",
+    "Failure of DNA synthesis at the G2 checkpoint"
+   ],
+   "a": 1,
+   "e": "Correct: B. Rouleaux in myeloma make red cells clump. The Coulter counter picks up clumps as single large cells, giving pseudo-macrocytosis.\nA: Reticulocytosis follows blood loss or hemolysis, and nothing here suggests either.\nC: Membrane cholesterol changes explain liver disease, not a stacked film.\nD: DNA synthesis failure is the megaloblastic mechanism, which needs oval macrocytes and hypersegmented neutrophils.\nTakeaway: Rouleaux or cold agglutinins can fake a high MCV.",
+   "l": [
+    "W9 4.4"
+   ]
+  },
+  {
+   "c": "Iron and vitamins",
+   "p": "Peter, 70, has confirmed B12 deficiency after an ileal resection. Which initial treatment matches the notes?",
+   "o": [
+    "Folic acid 0.4 mg daily, the same as in pregnancy",
+    "IV iron to correct poor gut absorption",
+    "Oral folate 1 to 5 mg daily on its own",
+    "IM cobalamin 100 mcg daily for 1 to 2 weeks"
+   ],
+   "a": 3,
+   "e": "Correct: D. Listed B12 treatment is IM cobalamin 100 mcg daily for 1 to 2 weeks, with oral B12 1 mg as the other option.\nA: 0.4 mg folic acid is the pregnancy dose, not B12 treatment.\nB: IV iron treats iron deficiency, not B12 deficiency.\nC: Folate alone does not replace B12.\nTakeaway: Post-resection patients should stay on B12 supplementation.",
+   "l": [
+    "W9 7.6",
+    "W9 4.5"
+   ]
+  },
+  {
+   "c": "Iron and vitamins",
+   "p": "Sofia, 29, is healthy and planning a pregnancy. Her CBC is normal. Which supplement and dose match the notes?",
+   "o": [
+    "Oral B12 1 mg daily",
+    "Oral folate 1 to 5 mg daily",
+    "Folic acid 0.4 mg daily",
+    "IM cobalamin 100 mcg daily"
+   ],
+   "a": 2,
+   "e": "Correct: C. Pregnant women should take folic acid, and the listed pregnancy dose is 0.4 mg.\nA: B12 is not the listed pregnancy supplement.\nB: 1 to 5 mg is the dose for treating folate deficiency.\nD: IM cobalamin treats B12 deficiency.\nTakeaway: Prevention dose 0.4 mg. Treatment dose 1 to 5 mg.",
+   "l": [
+    "W9 8.3"
+   ]
+  },
+  {
+   "c": "Iron and vitamins",
+   "p": "Mia, 17, is vegetarian and has iron deficiency anemia. She will start oral iron. Which counselling point is correct?",
+   "o": [
+    "About half of the iron she eats will be absorbed each day",
+    "Taking iron with an antacid will improve its absorption",
+    "Taking iron with vitamin C increases its absorption",
+    "Iron from vegetables is better absorbed than iron from meat"
+   ],
+   "a": 2,
+   "e": "Correct: C. Acidity increases iron absorption, and vitamin C is the listed example.\nA: Only about 10% of dietary iron is absorbed.\nB: Acidity helps absorption, so reducing acid would work against it.\nD: Heme iron from meat has more bioavailability than plant iron.\nTakeaway: Heme iron and an acid environment improve iron uptake.",
+   "l": [
+    "W9 8.1",
+    "W9 8.4"
+   ]
+  },
+  {
+   "c": "Iron and vitamins",
+   "p": "Nadia, 41, starts oral ferrous sulfate for iron deficiency anemia. Which timeline of response matches the notes?",
+   "o": [
+    "Hb rising by 1 week, reticulocytes by 2 to 4 weeks, stores full by 3 months",
+    "Hb rising by 3 months, reticulocytes by 6 months, stores never fully restored",
+    "Reticulocytes by 1 week, anemia corrected by 2 to 4 weeks, stores full by 6 weeks",
+    "Reticulocytes by 1 week, Hb rising by 2 to 4 weeks, anemia corrected by 3 months"
+   ],
+   "a": 3,
+   "e": "Correct: D. The listed order is reticulocytes at 1 week, Hb rising at 2 to 4 weeks, anemia corrected by 3 months and stores replenished by 3 to 6 months.\nA: Reticulocytes rise before the Hb, not after.\nB: Reticulocytes respond within a week, and stores do refill by 3 to 6 months.\nC: The anemia takes about 3 months to correct, and stores take 3 to 6 months.\nTakeaway: Retics first, then Hb, then stores.",
+   "l": [
+    "W9 7.2"
+   ]
+  },
+  {
+   "c": "Iron and vitamins",
+   "p": "Tom, 45, has celiac disease and iron deficiency anemia. After three months of oral iron his Hb and ferritin have not changed. He takes it as prescribed. Which change is most appropriate?",
+   "o": [
+    "Switch to IV iron",
+    "Begin iron chelation therapy",
+    "Start erythropoietin injections",
+    "Double the oral ferrous gluconate dose"
+   ],
+   "a": 0,
+   "e": "Correct: A. IV iron is listed for inadequate absorption or rapid blood loss. Celiac disease limits gut absorption.\nB: Chelation removes iron and is for overload.\nC: EPO is not listed for iron deficiency.\nD: More oral iron does not fix an absorption problem.\nTakeaway: Oral iron failing despite adherence suggests poor absorption. Think IV iron.",
+   "l": [
+    "W9 7.1"
+   ]
+  },
+  {
+   "c": "Iron and vitamins",
+   "p": "Erythropoietin is an accepted treatment for anemia in each of these patients EXCEPT:",
+   "o": [
+    "A patient with MDS who needs frequent transfusions",
+    "A woman with iron deficiency from heavy periods",
+    "A patient with AIDS taking antiviral therapy",
+    "A man with chronic renal failure on dialysis"
+   ],
+   "a": 1,
+   "e": "Correct: B. Iron deficiency from blood loss is treated with iron and by finding the cause. It is not a listed EPO indication.\nA: EPO is listed in MDS to reduce transfusions.\nC: Anemia in AIDS on antivirals is a listed indication.\nD: Chronic renal failure is a listed EPO indication.\nTakeaway: EPO indications: renal failure, AIDS on antivirals, chemotherapy, pre-op, MDS.",
+   "l": [
+    "W9 7.4"
+   ]
+  },
+  {
+   "c": "MDS",
+   "p": "Which statement best defines myelodysplastic syndromes?",
+   "o": [
+    "An inherited marrow failure syndrome that most often presents in early childhood",
+    "A non-immune hemolytic disorder caused by a somatic PIGA mutation",
+    "A reactive marrow response to chronic infection or inflammation",
+    "Clonal stem cell malignancies with ineffective hematopoiesis and a risk of AML"
+   ],
+   "a": 3,
+   "e": "Correct: D. MDS are clonal hematopoietic stem cell malignancies with ineffective hematopoiesis, peripheral cytopenias and a risk of transformation to AML.\nA: MDS is mostly a disease of the elderly, with a median age of 65 to 70.\nB: The PIGA mutation defines paroxysmal nocturnal hemoglobinuria.\nC: MDS is clonal, not reactive.\nTakeaway: MDS: clonal, ineffective, cytopenias, AML risk.",
+   "l": [
+    "W9 10.1"
+   ]
+  },
+  {
+   "c": "MDS",
+   "p": "Walter, 74, is tired. His CBC shows a Hb of 94 g/L with an MCV of 104 fL, and a marrow confirms MDS. Which statement about MDS at diagnosis is correct?",
+   "o": [
+    "Anemia is present in about 80% of patients",
+    "Neutropenia is present in about 80% of patients",
+    "The anemia is usually microcytic and hypochromic",
+    "Thrombocytopenia is the most common cytopenia"
+   ],
+   "a": 0,
+   "e": "Correct: A. Anemia is the most common finding at diagnosis, seen in about 80%. It is usually normocytic or macrocytic.\nB: Neutropenia is seen in about 40%.\nC: MDS anemia is usually normocytic or macrocytic.\nD: Thrombocytopenia is seen in about 30%.\nTakeaway: MDS at diagnosis: anemia 80%, neutropenia 40%, thrombocytopenia 30%.",
+   "l": [
+    "W9 10.2"
+   ]
+  },
+  {
+   "c": "MDS",
+   "p": "The International Prognostic Scoring System (IPSS) for MDS is based on which features?",
+   "o": [
+    "Ferritin level, monthly transfusion need and peripheral blood counts",
+    "Age, LDH and spleen size",
+    "Marrow blasts, chromosomal abnormalities and cell lines involved",
+    "Albumin and beta-2 microglobulin"
+   ],
+   "a": 2,
+   "e": "Correct: C. The IPSS score uses the number of blasts in the marrow, chromosomal abnormalities and the number of cell lines involved.\nA: Ferritin is checked for iron overload, not used in the IPSS.\nB: These are not the IPSS inputs in the notes.\nD: Albumin and beta-2 microglobulin make up the ISS for multiple myeloma.\nTakeaway: IPSS: blasts, cytogenetics, number of cytopenias.",
+   "l": [
+    "W9 10.4"
+   ]
+  },
+  {
+   "c": "MDS",
+   "p": "Rose, 78, has a macrocytic anemia with a raised platelet count. Marrow confirms MDS, and cytogenetics show del(5q). Which treatment is most appropriate?",
+   "o": [
+    "Hydroxyurea",
+    "Lenalidomide",
+    "Azacitidine or decitabine",
+    "Imatinib"
+   ],
+   "a": 1,
+   "e": "Correct: B. MDS with del(5q) gives a macrocytic anemia with thrombocytosis and is treated with lenalidomide (Revlimid).\nA: Hydroxyurea is listed for sickle cell disease.\nC: These hypomethylating agents are for higher-risk MDS.\nD: Imatinib is a tyrosine kinase inhibitor for CML and GIST.\nTakeaway: del(5q) MDS means lenalidomide.",
+   "l": [
+    "W9 10.5"
+   ]
+  },
+  {
+   "c": "MDS",
+   "p": "Victor, 66, is fit and has higher-risk MDS on IPSS. What is the main aim of treatment and the drug class that fits it?",
+   "o": [
+    "Cure all subtypes, using lenalidomide",
+    "Delay any treatment until AML develops",
+    "Improve quality of life, using EPO and G-CSF only",
+    "Slow progression, using hypomethylating agents"
+   ],
+   "a": 3,
+   "e": "Correct: D. Higher-risk management aims to alter the course and slow progression with hypomethylating agents such as azacitidine or decitabine, high-dose chemotherapy or stem cell transplant.\nA: Lenalidomide is for the del(5q) subtype.\nB: Higher-risk disease is treated, not observed.\nC: Quality of life with growth factors is the lower-risk approach.\nTakeaway: Lower risk: support. Higher risk: change the course.",
+   "l": [
+    "W9 10.5"
+   ]
+  },
+  {
+   "c": "MDS",
+   "p": "Ines, 80, has lower-risk MDS and needs regular transfusions. Her Hb today is 82 g/L and her ferritin is 1250 μg/L. Which step is most appropriate now?",
+   "o": [
+    "Manage her iron overload with chelation",
+    "Start decitabine to slow her disease",
+    "Transfuse now to keep her Hb above 90 g/L",
+    "Add oral iron to support red cell production"
+   ],
+   "a": 0,
+   "e": "Correct: A. Lower-risk MDS care includes managing iron overload, and a ferritin above 1000 meets the chelation threshold. Her Hb is above the transfusion threshold of 70.\nB: Hypomethylating agents are for higher-risk MDS.\nC: The transfusion threshold in MDS is below 70 g/L.\nD: She is iron overloaded, so iron would add harm.\nTakeaway: Transfused MDS patients need ferritin checks for iron overload.",
+   "l": [
+    "W9 10.5",
+    "W9 7.4"
+   ]
+  },
+  {
+   "c": "Hemolytic",
+   "p": "Marco, 25, of Mediterranean descent, becomes jaundiced two days after eating fava beans. His film shows bite cells and Heinz bodies. Which mechanism explains the hemolysis?",
+   "o": [
+    "Defects in spectrin or ankyrin weaken the membrane",
+    "Oxidants are not inactivated by glutathione",
+    "A somatic PIGA mutation leaves cells exposed",
+    "IgG antibodies bind his red cells at 37°C"
+   ],
+   "a": 1,
+   "e": "Correct: B. Bite cells and Heinz bodies after fava beans fit G6PD deficiency. Oxidants that glutathione would normally inactivate denature hemoglobin.\nA: Membrane protein defects cause hereditary spherocytosis with spherocytes.\nC: PIGA mutation causes PNH, which is not triggered by food.\nD: IgG at 37°C is warm autoimmune hemolytic anemia.\nTakeaway: G6PD triggers: infections, antimalarials, sulfonamides, ASA, fava beans.",
+   "l": [
+    "W9 6.1",
+    "W9 6.4"
+   ]
+  },
+  {
+   "c": "Hemolytic",
+   "p": "Lily, 12, has jaundice, splenomegaly and pigment gallstones. Her mother had a splenectomy. The film shows spherocytes and the DAT is negative. Which test best confirms the diagnosis?",
+   "o": [
+    "A direct antiglobulin test for C3",
+    "Hemoglobin electrophoresis by HPLC",
+    "Flow cytometry for band 3 protein",
+    "A neonatal enzyme screen for oxidant injury"
+   ],
+   "a": 2,
+   "e": "Correct: C. Spherocytes with a negative DAT and an affected parent fit autosomal dominant hereditary spherocytosis. Flow cytometry for band 3 protein confirms it.\nA: The DAT is already negative, and C3 positivity marks cold AIHA.\nB: Electrophoresis is for hemoglobinopathies such as thalassemia and sickle cell disease.\nD: Neonatal screening is listed for G6PD deficiency, which shows bite cells.\nTakeaway: Spherocytes plus a negative DAT point to hereditary spherocytosis.",
+   "l": [
+    "W9 6.3"
+   ]
+  },
+  {
+   "c": "Hemolytic",
+   "p": "Patient A, 71, has CLL and a hemolytic anemia with spherocytes. His DAT is positive for IgG. Patient B, 22, has Mycoplasma pneumonia, and her film shows red cell agglutination with a DAT positive for C3. Which antibody binding pattern fits each patient, in order?",
+   "o": [
+    "A: IgG binding at 4-30°C. B: IgM binding at 37°C",
+    "A: IgG binding at 37°C. B: IgM binding at 4-30°C",
+    "A: IgM binding at 37°C. B: IgG binding at 4-30°C",
+    "A: IgM binding at 4-30°C. B: IgG binding at 37°C"
+   ],
+   "a": 1,
+   "e": "Correct: B. Patient A has warm AIHA, linked to lymphoproliferative disease, with IgG binding at 37°C. Patient B has cold AIHA after Mycoplasma, with complement-fixing IgM binding at 4 to 30°C.\nA: IgG binds at 37°C, and IgM binds in the cold.\nC: This keeps the temperatures but swaps the antibody types.\nD: This reverses warm and cold AIHA.\nTakeaway: Warm is IgG at body heat. Cold is IgM with C3.",
+   "l": [
+    "W9 6.3",
+    "W9 6.1"
+   ]
+  },
+  {
+   "c": "Hemolytic",
+   "p": "Beatrice, 68, has cold autoimmune hemolytic anemia linked to an underlying lymphoproliferative disorder. Which plan best matches the notes?",
+   "o": [
+    "Treat the underlying cause and avoid the cold",
+    "Avoid oxidant drugs such as sulfonamides",
+    "Give penicillin and vaccinate for encapsulated bacteria",
+    "Start steroids and plan a splenectomy"
+   ],
+   "a": 0,
+   "e": "Correct: A. Listed cold AIHA management is treating the underlying cause, folate supplementation and avoiding the cold.\nB: Avoiding oxidant drugs is for G6PD deficiency.\nC: Penicillin and vaccination are listed for hereditary spherocytosis.\nD: Steroids and splenectomy are listed for warm AIHA.\nTakeaway: Cold AIHA: treat the cause, folate, stay warm.",
+   "l": [
+    "W9 3.5"
+   ]
+  },
+  {
+   "c": "Hemolytic",
+   "p": "Which set of results best supports ongoing hemolysis?",
+   "o": [
+    "High LDH, low reticulocytes and high haptoglobin",
+    "Low LDH, high indirect bilirubin and high haptoglobin",
+    "High LDH, high indirect bilirubin and low haptoglobin",
+    "Low indirect bilirubin, high haptoglobin and high ferritin"
+   ],
+   "a": 2,
+   "e": "Correct: C. Red cell destruction raises indirect bilirubin, LDH and reticulocytes and lowers haptoglobin.\nA: Reticulocytes rise and haptoglobin falls in hemolysis.\nB: LDH rises and haptoglobin falls in hemolysis.\nD: Indirect bilirubin rises and haptoglobin falls in hemolysis.\nTakeaway: Hemolysis labs: LDH up, bilirubin up, retics up, haptoglobin down.",
+   "l": [
+    "W9 6.2"
+   ]
+  },
+  {
+   "c": "Hemolytic",
+   "p": "Which statement about acquired hemolytic anemia is FALSE?",
+   "o": [
+    "Repeated physical trauma such as marathon running can cause hemolysis",
+    "Mechanical heart valves can cause hemolysis with schistocytes",
+    "Malaria merozoites escape by lysing the red cell",
+    "Paroxysmal nocturnal hemoglobinuria is an immune-mediated hemolysis"
+   ],
+   "a": 3,
+   "e": "Correct: D. PNH is an acquired clonal disorder from a somatic PIGA mutation and is not immune mediated. So this statement is false.\nA: True. Marathon running and bongo drumming are listed traumatic causes.\nB: True. High shear stress from mechanical valves gives intravascular hemolysis with schistocytes.\nC: True. Merozoites lyse the red cell to escape.\nTakeaway: PNH is clonal and non-immune. Valves and trauma are mechanical.",
+   "l": [
+    "W9 6.1"
+   ]
+  },
+  {
+   "c": "Blood film",
+   "p": "Ahmed, 35, has a low Hb and a low platelet count. His white count is normal. The film shows red cell fragments of variable shapes and sizes. Which condition fits this picture?",
+   "o": [
+    "Pure red cell aplasia",
+    "Glucose-6-phosphate dehydrogenase deficiency",
+    "Hereditary spherocytosis",
+    "Thrombotic thrombocytopenic purpura"
+   ],
+   "a": 3,
+   "e": "Correct: D. Low red cells and platelets point to MAHA or TMA. Schistocytes form as red cells break on microthrombi, and TTP is a listed cause.\nA: Pure red cell aplasia affects only red cells and shows no fragments.\nB: G6PD deficiency shows bite cells and Heinz bodies.\nC: Hereditary spherocytosis shows spherocytes and does not lower platelets.\nTakeaway: Schistocytes plus low platelets means think MAHA (DIC, TTP, HUS).",
+   "l": [
+    "W9 9.3"
+   ]
+  },
+  {
+   "c": "Blood film",
+   "p": "Target cells on a blood film are associated with each of these conditions EXCEPT:",
+   "o": [
+    "Hereditary spherocytosis",
+    "Hyposplenism",
+    "Liver disease from alcohol",
+    "Thalassemia"
+   ],
+   "a": 0,
+   "e": "Correct: A. Target cells come from extra membrane relative to cell volume. Hereditary spherocytosis does the opposite. The membrane is lost and cells become spheres.\nB: Hyposplenism is a listed cause of target cells.\nC: Liver disease and alcohol are listed causes of target cells.\nD: Thalassemia is a listed cause of target cells.\nTakeaway: Target cells: liver disease, hyposplenism, thalassemia, rarely severe iron deficiency.",
+   "l": [
+    "W9 9.3"
+   ]
+  },
+  {
+   "c": "Blood film",
+   "p": "Frances, 70, has myeloma. Her film shows red cells stacked like a pile of coins. What causes this appearance?",
+   "o": [
+    "Excess membrane bulges into the centre of each cell",
+    "Microthrombi break the red cells into fragments",
+    "Excess proteins neutralize the charges that keep red cells apart",
+    "IgM tetramers bridge several red cells together into large clusters"
+   ],
+   "a": 2,
+   "e": "Correct: C. This is rouleaux. Red cells normally repel each other by negative charges. Paraproteins in myeloma neutralize these charges so cells stack.\nA: Excess central membrane forms target cells.\nB: Microthrombi form schistocytes.\nD: IgM tetramers cause agglutination, seen in cold AIHA.\nTakeaway: Rouleaux means excess protein. Agglutination means IgM.",
+   "l": [
+    "W9 9.2"
+   ]
+  },
+  {
+   "c": "Blood film",
+   "p": "Which pairing of red cell inclusion and its content is correct?",
+   "o": [
+    "Heinz bodies: precipitated RNA granules",
+    "Pappenheimer bodies: granules of iron",
+    "Howell-Jolly bodies: denatured hemoglobin",
+    "Basophilic stippling: remnants of DNA"
+   ],
+   "a": 1,
+   "e": "Correct: B. Pappenheimer bodies are siderotic granules of iron.\nA: Heinz bodies are denatured and precipitated hemoglobin.\nC: Howell-Jolly bodies are DNA remnants at the cell edge.\nD: Basophilic stippling is made of RNA precipitates.\nTakeaway: Howell-Jolly DNA, Heinz hemoglobin, Pappenheimer iron, stippling RNA.",
+   "l": [
+    "W9 9.2"
+   ]
+  },
+  {
+   "c": "CBC",
+   "p": "Which statement about interpreting CBC reference ranges is correct?",
+   "o": [
+    "A value inside the range rules out a clinically significant change",
+    "Men and women share one hemoglobin reference range",
+    "Up to 5% of healthy people have values outside the range",
+    "A value outside the range always reflects a disease"
+   ],
+   "a": 2,
+   "e": "Correct: C. Up to 5% of the healthy population may have values outside the normal range.\nA: A patient can have a significant change from baseline while staying inside the range.\nB: Anemia is defined by age and sex, with separate ranges for men and women.\nD: Healthy people can fall outside the range.\nTakeaway: Compare against the patient's own baseline, not only the range.",
+   "l": [
+    "W9 9.1"
+   ]
+  },
+  {
+   "c": "CBC",
+   "p": "Two adults have routine bloodwork. A woman has a Hb of 118 g/L. A man has a Hb of 130 g/L. Using the reference ranges in the notes, who is anemic?",
+   "o": [
+    "Neither of them",
+    "Only the man",
+    "Only the woman",
+    "Both of them"
+   ],
+   "a": 1,
+   "e": "Correct: B. The range for men is 135 to 170 g/L, so 130 is low. The range for women is 115 to 160 g/L, so 118 is normal.\nA: The man is below the male lower limit of 135 g/L.\nC: 118 is inside the female range of 115 to 160 g/L.\nD: The woman is within her range.\nTakeaway: Men 135 to 170 g/L. Women 115 to 160 g/L.",
+   "l": [
+    "W9 9.1"
+   ]
+  },
+  {
+   "c": "Quality improvement",
+   "p": "A ward team wants to reduce delays in giving transfusions. They have named the problem and set a SMART goal. Which step should come next?",
+   "o": [
+    "Understand the problem with a root cause analysis",
+    "Try small tests of change on the ward",
+    "Create a measurement plan with outcome and process measures",
+    "Generate and select possible solutions"
+   ],
+   "a": 0,
+   "e": "Correct: A. After identifying the problem and setting a goal, the next step is to understand the problem with a root cause analysis. It is the most forgotten step.\nB: Small tests of change come after measurement is planned.\nC: The measurement plan comes after solutions are chosen.\nD: Solutions come after the root cause analysis.\nTakeaway: Problem, goal, root cause, solutions, measures, test, study, sustain.",
+   "l": [
+    "W9 13.2"
+   ]
+  },
+  {
+   "c": "Quality improvement",
+   "p": "A clinic tracks the weekly percentage of anemic patients who have a ferritin ordered. They want to show how this number changes over the coming year. Which tool fits best?",
+   "o": [
+    "Process map",
+    "Ishikawa (fishbone) diagram",
+    "Hierarchy of effectiveness",
+    "Run chart"
+   ],
+   "a": 3,
+   "e": "Correct: D. A run chart displays observed data in a time sequence.\nA: A process map lays out the inputs, actions and outputs of a process for root cause analysis.\nB: A fishbone diagram captures all the possible root causes of an outcome.\nC: The hierarchy of effectiveness ranks strategies for changing behaviour.\nTakeaway: Data over time means a run chart.",
+   "l": [
+    "W9 13.3"
+   ]
+  },
+  {
+   "c": "Quality improvement",
+   "p": "A hospital project aims to cut unneeded repeat B12 tests. The team also tracks how many true B12 deficiencies are missed after the change. What type of measure is the second one?",
+   "o": [
+    "Process measure",
+    "Balancing measure",
+    "Root cause measure",
+    "Outcome measure"
+   ],
+   "a": 1,
+   "e": "Correct: B. Balancing measures track unintended consequences. Missed diagnoses are a possible harm of cutting tests.\nA: Process measures track the means intended to reach the outcome.\nC: Root cause analysis is a separate step, not part of the family of measures.\nD: The outcome measure is the main result of interest, the number of repeat tests.\nTakeaway: Family of measures: outcome, process, balancing.",
+   "l": [
+    "W9 13.1",
+    "W9 13.3"
+   ]
+  },
+  {
+   "c": "Quality improvement",
+   "p": "Which statement correctly contrasts quality improvement with conventional research?",
+   "o": [
+    "QI treats outliers as a source of hypotheses",
+    "QI tests one fixed intervention over the project",
+    "QI excludes context so results can be generalized",
+    "QI gathers maximum data at a few discrete points"
+   ],
+   "a": 0,
+   "e": "Correct: A. In quality improvement, outliers are a source of hypotheses. In research they are eliminated.\nB: QI uses many sequential interventions. Research uses one fixed one.\nC: In QI context is important and examined to find root causes.\nD: QI uses just enough data, in small amounts over time.\nTakeaway: Research creates new knowledge. QI applies existing knowledge to reach a target.",
+   "l": [
+    "W9 13.1"
+   ]
+  }
+ ],
+ "objectives": {
+  "W9 1.1": "Explain the pathophysiology of the major causes of microcytic anemia.",
+  "W9 1.2": "List the high-risk groups for developing iron deficiency.",
+  "W9 1.3": "Compare and contrast the symptoms and signs of iron deficiency anemia and other diseases associated with microcytic anemia.",
+  "W9 1.4": "Using laboratory investigations differentiate iron deficiency anemia and other diseases associated with microcytic anemia.",
+  "W9 1.5": "Explain the rationale for the management options of the 3 most common types of microcytic anemia.",
+  "W9 10.1": "Define myelodysplastic syndromes (MDS).",
+  "W9 10.2": "List the signs and symptoms associated with myelodysplastic syndromes (MDS).",
+  "W9 10.4": "List laboratory investigations used to diagnose myelodysplastic syndromes (MDS).",
+  "W9 10.5": "List possible treatment options for myelodysplastic syndromes (MDS).",
+  "W9 13.1": "Describe the key quality improvement concepts.",
+  "W9 13.2": "Describe the foundational methods of quality improvement.",
+  "W9 13.3": "List practical tools available to improve patient care, processes and outcomes.",
+  "W9 2.1": "List and interpret critical clinical findings of a patient with hemoglobinopathy.",
+  "W9 2.2": "Appropriately order and interpret critical investigations in patients with hemoglobinopathy.",
+  "W9 2.3": "Construct an effective initial management plan for patients with hemoglobinopathy.",
+  "W9 3.1": "Explain the pathophysiology of the major causes of normocytic anemia.",
+  "W9 3.2": "Explain the significance of the reticulocyte count as it relates to anemia",
+  "W9 3.3": "Compare and contrast the symptoms and signs of diseases associated with normocytic anemia.",
+  "W9 3.4": "Differentiate diseases associated with normocytic anemia by selecting appropriate tests and interpreting results of investigations.",
+  "W9 3.5": "Explain the rationale for the management options of the most common types of normocytic anemia.",
+  "W9 4.1": "Explain the pathophysiology of the major causes of macrocytic anemia.",
+  "W9 4.2": "Differentiate between megaloblastic and non-megaloblastic anemias.",
+  "W9 4.3": "Compare and contrast the symptoms and signs of diseases associated with macrocytic anemia.",
+  "W9 4.4": "Differentiate diseases associated with macrocytic anemia by selecting appropriate tests and interpreting results of investigations.",
+  "W9 4.5": "Explain the rationale for the management options of the most common types of macrocytic anemia.",
+  "W9 6.1": "Explain the pathophysiology of the major causes of hemolytic anemia.",
+  "W9 6.2": "List laboratory tests used to evaluate RBCs breakdown/ destruction.",
+  "W9 6.3": "Differentiate diseases associated with hemolytic anemia by selecting appropriate tests and interpreting results of investigations.",
+  "W9 6.4": "Compare and contrast peripheral blood smear findings in different subtypes of hemolytic anemias.",
+  "W9 7.1": "List treatment options for iron deficiency anemia.",
+  "W9 7.2": "List changes seen in peripheral blood and bone marrow after receiving iron treatment.",
+  "W9 7.4": "List indications for erythropoietin (EPO) therapy and the side effects that are related to treatment.",
+  "W9 7.5": "Describe laboratory changes related to vitamin B12 and folate deficiencies.",
+  "W9 7.6": "Describe the management of vitamin B12 and folate deficiencies.",
+  "W9 8.1": "List dietary suggestions for patients with iron deficiency anemia.",
+  "W9 8.3": "Describe the management of folate deficiencies.",
+  "W9 8.4": "Given an anemic patient with nutritional deficiency, construct an effective initial management plan, including counselling and education patient.",
+  "W9 9.1": "List and interpret CBC and the red blood cell indices.",
+  "W9 9.2": "Recognize different red cell morphology on blood film.",
+  "W9 9.3": "List the most common conditions associated with each red cell morphology."
+ }
+}

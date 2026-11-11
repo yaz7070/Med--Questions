@@ -1,0 +1,320 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Week 12 Question Bank</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Nexus quiz page. Matches the site: teal accent, Bricolage Grotesque for display, Source Sans 3 for reading. */
+:root{
+  --bg:#f6f9f8;--paper:#ffffff;--ink:#0f2624;--muted:#3d5452;--faint:#7f9895;--line:#d9e5e3;
+  --accent:#0e7c7b;--deep:#0a5f5e;--soft:#e7f1f0;
+  --ok:#1d7a46;--okw:#e7f4ec;--bad:#b42318;--badw:#fcecea;--tick:#dde8e6;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1716;--paper:#142120;--ink:#ecf4f3;--muted:#c7d8d5;--faint:#7f9895;--line:#24413e;
+  --accent:#4fc1b8;--deep:#82d8d0;--soft:#18302e;
+  --ok:#5ccf8f;--okw:#13301f;--bad:#f2877c;--badw:#3a1c1a;--tick:#22403c;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1716;--paper:#142120;--ink:#ecf4f3;--muted:#c7d8d5;--faint:#7f9895;--line:#24413e;
+  --accent:#4fc1b8;--deep:#82d8d0;--soft:#18302e;
+  --ok:#5ccf8f;--okw:#13301f;--bad:#f2877c;--badw:#3a1c1a;--tick:#22403c;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:820px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:20px}
+
+/* Header */
+header{display:flex;flex-direction:column;gap:10px}
+.context{margin:0;color:var(--faint);font-size:14px;font-weight:600}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,40px);line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.stats{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+.stats b{color:var(--ink);font-weight:700}
+.bar{height:6px;border-radius:999px;background:var(--tick);overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:var(--accent);border-radius:999px;transition:width .25s ease}
+.map summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:14px;width:max-content;list-style:none;padding:2px 0}
+.map summary::-webkit-details-marker{display:none}
+.map summary::before{content:"▸";display:inline-block;margin-right:6px;transition:transform .15s ease}
+.map[open] summary::before{transform:rotate(90deg)}
+.map summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.ticks{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.tick{width:14px;height:14px;border:0;border-radius:4px;background:var(--tick);padding:0;cursor:pointer}
+.tick:hover{background:var(--faint)}
+.tick.ok{background:var(--ok)}.tick.bad{background:var(--bad)}
+.tick.cur{outline:2px solid var(--accent);outline-offset:2px}
+.tick.redo{box-shadow:inset 0 -3px 0 var(--accent)}
+.tick:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.save{font-size:13px;color:var(--faint)}
+.save.ok{color:var(--ok)}.save.bad{color:var(--bad)}
+
+/* Question card */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:18px}
+.chead{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tag{font-size:13px;font-weight:700;color:var(--accent);background:var(--soft);padding:4px 11px;border-radius:999px}
+.qn{font-family:var(--display);font-weight:700;font-size:15px;color:var(--faint);font-variant-numeric:tabular-nums}
+.stem{font-size:18.5px;line-height:1.6;margin:0;white-space:pre-line;max-width:70ch}
+.hint{font-size:13px;color:var(--faint)}
+.tries{font-size:13px;color:var(--muted)}
+.tries .bad{color:var(--bad);font-weight:600}.tries .ok{color:var(--ok);font-weight:600}
+
+/* Options */
+.opts{display:flex;flex-direction:column;gap:10px}
+.optrow{display:flex;gap:8px;align-items:stretch}
+.optrow .opt{flex:1;min-width:0}
+.opt{display:flex;gap:14px;align-items:center;text-align:left;width:100%;background:var(--paper);color:var(--ink);border:1.5px solid var(--line);border-radius:var(--r);padding:12px 16px;font:inherit;font-size:16.5px;line-height:1.45;cursor:pointer;transition:border-color .12s ease,background .12s ease}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--soft)}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opt:disabled{cursor:default}
+.opt .k{flex:none;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--soft);color:var(--accent);font-family:var(--display);font-weight:700;font-size:14px}
+.opt.right{border-color:var(--ok);background:var(--okw)}
+.opt.right .k{background:var(--ok);color:var(--paper)}
+.opt.wrong{border-color:var(--bad);background:var(--badw)}
+.opt.wrong .k{background:var(--bad);color:var(--paper)}
+.strike{flex:none;width:44px;border:1.5px solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--faint);font-size:14px;cursor:pointer;display:grid;place-items:center}
+.strike:hover{border-color:var(--accent);color:var(--accent)}
+.strike:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.strike[aria-pressed="true"]{background:var(--soft);color:var(--ink)}
+.optrow.struck .opt > span:last-child{text-decoration:line-through;color:var(--faint)}
+.optrow.struck .opt .k{opacity:.45}
+
+/* Feedback */
+.fb{background:var(--bg);border-radius:var(--r);padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.verdict{font-family:var(--display);font-weight:700;font-size:18px;display:flex;align-items:center;gap:8px}
+.verdict::before{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;font-size:13px;color:var(--paper)}
+.verdict.ok{color:var(--ok)}.verdict.ok::before{content:"✓";background:var(--ok)}
+.verdict.bad{color:var(--bad)}.verdict.bad::before{content:"✕";background:var(--bad)}
+.fb p{margin:0;max-width:72ch}
+.fb .why,.fb .alt{display:flex;gap:10px;align-items:baseline}
+.fb .why{font-weight:600}
+.lk{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--muted);font-family:var(--display);font-weight:700;font-size:12px;transform:translateY(-1px)}
+.lk.ok{background:var(--ok);color:var(--paper)}
+.fb .alt{color:var(--muted)}
+.fb .take{border-left:3px solid var(--accent);padding:2px 0 2px 12px;color:var(--ink)}
+.fb .take b{color:var(--accent)}
+.obj{font-size:13.5px;color:var(--faint);line-height:1.5}
+.obj b{color:var(--muted)}
+.fbtools{display:flex;justify-content:flex-end}
+
+/* Buttons */
+.nav{display:flex;justify-content:space-between;gap:10px}
+.btn{font-family:var(--display);font-weight:700;font-size:15px;padding:10px 20px;border:1.5px solid var(--accent);border-radius:999px;background:var(--accent);color:var(--paper);cursor:pointer}
+.btn:hover:not(:disabled){background:var(--deep);border-color:var(--deep)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.ghost:hover:not(:disabled){background:var(--soft);color:var(--accent);border-color:var(--accent)}
+.btn:disabled{opacity:.35;cursor:default}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* Results */
+.big{font-family:var(--display);font-size:clamp(48px,9vw,72px);font-weight:700;line-height:1;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td,th{text-align:left;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;vertical-align:middle}
+th{font-size:13px;font-weight:700;color:var(--faint)}
+td:last-child,th:last-child{text-align:right;white-space:nowrap;padding-left:12px}
+.meter{display:block;height:5px;border-radius:999px;background:var(--tick);margin-top:6px;max-width:320px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--accent);border-radius:999px}
+h2{font-family:var(--display);font-size:21px;font-weight:700;margin:6px 0 0}
+h3{font-size:14px;font-weight:700;color:var(--faint);margin:6px 0 0}
+.miss{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.miss code{font-family:var(--display);font-weight:700;font-size:13px;color:var(--bad);background:var(--badw);padding:1px 7px;border-radius:999px;margin-right:8px}
+
+@media (max-width:560px){.card{padding:18px;border-radius:14px}.stem{font-size:17.5px}.opt{padding:11px 12px;gap:10px}.strike{width:40px}}
+@media (prefers-reduced-motion:no-preference){.fb{animation:in .2s ease-out}@keyframes in{from{opacity:.3;transform:translateY(4px)}to{opacity:1;transform:none}}}
+@media (prefers-reduced-motion:reduce){.bar span,.opt,.map summary::before{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="context">Foundations of Medicine, Block 3, Week 12</p>
+    <h1>Week 12 Question Bank</h1>
+    <div class="stats" id="stats"></div>
+    <div class="bar" aria-hidden="true"><span id="barfill"></span></div>
+    <details class="map" id="map"><summary>Question map</summary><div class="ticks" id="ticks" aria-label="Question map"></div></details>
+    <div class="save" id="save" role="status">Progress saves in this browser.</div>
+  </header>
+  <main id="main"></main>
+</div>
+
+<script>
+const QUESTIONS = [{"c": "Lymphadenopathy", "p": "George, 64, smokes and has lost weight. You feel a firm node just above his left clavicle. Which regions drain to this node group?", "o": ["Breast, upper limb and the chest wall", "Oral cavity, teeth and the upper airway", "Scalp and the skin of the face", "GI tract, GU tract and lungs"], "a": 3, "e": "Correct: D. A node above the clavicle is supraclavicular. It drains the GI tract, GU tract and lungs, so abdominal and thoracic cancers are on the differential.\nA: Breast, upper limb and chest wall drain to the axillary nodes.\nB: The oral cavity drains to the submandibular nodes.\nC: Scalp and skin drain to the preauricular and posterior cervical nodes.\nTakeaway: Supraclavicular nodes are a red flag for malignancy.", "l": ["W12 2.2"]}, {"c": "Lymphadenopathy", "p": "Jade, 22, has a tender lump in her armpit. Two weeks ago a kitten scratched her upper arm. She feels well otherwise. Which node group and cause fit best?", "o": ["Supraclavicular node from a thoracic tumour", "Preauricular node from a mycobacterial infection", "Axillary node from cat-scratch disease", "Epitrochlear node from a skin malignancy"], "a": 2, "e": "Correct: C. The armpit holds the axillary nodes, which drain the upper limb. Cat-scratch disease is a listed axillary cause.\nA: Supraclavicular nodes lie above the clavicle.\nB: Preauricular nodes drain the scalp and skin of the head.\nD: Epitrochlear nodes sit near the elbow and drain the ulnar forearm and hand.\nTakeaway: Match the node to its drainage area before building the differential.", "l": ["W12 2.1"]}, {"c": "Lymphadenopathy", "p": "Which findings in an adult with lymphadenopathy raise concern for malignancy?\ni) Fever for more than 1 week with night sweats\nii) A tender 1 cm neck node with a sore throat\niii) A supraclavicular node\niv) Weight loss of more than 10% of body weight", "o": ["ii), iii) and iv) only", "i), iii) and iv) only", "i) and iv) only", "All of the above"], "a": 1, "e": "Correct: B. Fever over 1 week, night sweats, weight loss over 10% and supraclavicular nodes are listed features concerning for malignancy.\nA: A tender small node with throat symptoms is not a red flag. Absence of ENT symptoms is the concerning feature.\nC: This leaves out the supraclavicular node, a listed red flag.\nD: Statement ii) is not a concerning feature.\nTakeaway: Red flags: B symptoms, supraclavicular, generalized, fixed or matted, abnormal CXR or CBC.", "l": ["W12 2.3"]}, {"c": "Lymphadenopathy", "p": "Which child most needs further workup for possible malignancy?", "o": ["A newborn with a 1.5 cm non-tender neck node", "A 5-year-old with tender neck nodes and a sore throat", "A 4-year-old with small neck nodes and an ear infection", "A 7-year-old whose 2.5 cm node shrank on antibiotics"], "a": 0, "e": "Correct: A. Non-tender nodes over 1 cm with onset in the neonatal period are a listed concerning feature.\nB: Tender nodes with throat symptoms suggest an infection, and ENT symptoms are reassuring.\nC: Small nodes with an ear infection fit a reactive cause.\nD: Nodes of 2 cm or more are concerning when they grow or fail to resolve after 2 weeks of antibiotics. This one shrank.\nTakeaway: In children, benign causes are more likely the younger the child, except in the neonatal period.", "l": ["W12 3.3", "W12 3.2"]}, {"c": "Lymphadenopathy", "p": "Which statement about lymphadenopathy in children is correct?", "o": ["Palpable nodes are rare between ages 4 and 8", "Lymphoid tissue mass peaks in early childhood", "Benign causes are more likely the younger the child", "Having ear, nose and throat symptoms makes malignancy more likely"], "a": 2, "e": "Correct: C. Lymphadenopathy is common in children, and benign causes are more likely at a younger age.\nA: Lymphadenopathy is found in about 90% of children aged 4 to 8.\nB: Lymphoid tissue mass peaks in adolescence.\nD: The absence of ENT symptoms is the concerning feature.\nTakeaway: Peak lymphoid mass is in adolescence. Nodes are very common in young children.", "l": ["W12 3.1"]}, {"c": "Lymphadenopathy", "p": "Hana, 45, has enlarged nodes in her neck and in her right axilla. How is her lymphadenopathy best classified?", "o": ["Generalized", "Reactive", "Localized", "Isolated"], "a": 0, "e": "Correct: A. Two separate anatomic areas are involved. More than one area is generalized, which raises concern for malignancy or another systemic condition.\nB: Reactive is a cause, not a description of extent.\nC: Localized means one anatomic area.\nD: Isolated means a single node.\nTakeaway: Isolated is one node, localized is one area, generalized is more than one area.", "l": ["W12 2.2"]}, {"c": "Lymphadenopathy", "p": "Paul, 25, started phenytoin for seizures three weeks ago. He now has small nodes in several areas. He has no fever, rash, joint pain or weight loss, and his CBC is normal. Which cause is most likely?", "o": ["Kikuchi disease", "A reaction to phenytoin", "Castleman's disease", "Addison's disease"], "a": 1, "e": "Correct: B. New generalized nodes soon after starting phenytoin, with no other features, fit a medication cause. Phenytoin is first on the listed drug causes.\nA: Kikuchi disease is an autoimmune cause, and he has no autoimmune features.\nC: Castleman's disease is grouped with the neoplastic causes, and the drug timing is the stronger clue.\nD: Addison's disease is a metabolic cause, and nothing here suggests it.\nTakeaway: Always take a medication history in lymphadenopathy.", "l": ["W12 2.1"]}, {"c": "Lymphoma workup", "p": "Isabel, 58, has newly diagnosed diffuse large B-cell lymphoma and will start CHOP-R. Which test checks whether she can tolerate the chemotherapy?", "o": ["Lumbar puncture for CSF cytology", "PET scan of the chest and abdomen", "Bone scan of the whole skeleton", "Cardiac wall motion study"], "a": 3, "e": "Correct: D. Cardiac wall motion is listed for assessing chemotherapy tolerance.\nA: Lumbar puncture looks for lymphoma in the CSF.\nB: PET measures glucose uptake and metabolism by tumour tissue.\nC: A bone scan looks for lymphoma in bone.\nTakeaway: Workup covers disease extent and fitness for treatment.", "l": ["W12 5.2"]}, {"c": "Biopsy and lab tests", "p": "Marcus, 52, has a 3 cm node and suspected lymphoma. Which feature of an excisional biopsy makes it the most informative option?", "o": ["It suits severely sick patients who cannot go to the OR", "It is the least invasive option and gives the fastest results", "It needs no surgeon and costs the least of the three options", "It shows the nodal architecture and gives no false negatives"], "a": 3, "e": "Correct: D. Excisional biopsy is always representative, has no false negatives and shows the architecture. It also gives enough tissue for every study.\nA: Excisional biopsy cannot be done on severely sick compromised patients.\nB: Least invasive and fastest describe FNA.\nC: No surgeon and lowest cost describe FNA.\nTakeaway: Excisional biopsy is the most complete sample but needs a surgeon.", "l": ["W12 4.4"]}, {"c": "Biopsy and lab tests", "p": "A fine needle aspirate of an enlarged neck node shows many small lymphocytes. Which limitation of FNA matters most here?", "o": ["It loses the architecture, so lymphoma cannot be sub-classified", "It must be done by a surgeon in an operating room", "It carries the highest infection risk of all the sampling options available", "It is the most expensive of the three sampling methods"], "a": 0, "e": "Correct: A. FNA gives no nodal architecture, so it cannot sub-classify lymphoma. It also cannot separate benign from malignant low grade LPD.\nB: FNA needs no surgeon and no OR.\nC: FNA has a lower risk of infection and complications.\nD: FNA is the least expensive option.\nTakeaway: FNA is easy and cheap but cannot show architecture.", "l": ["W12 1.6"]}, {"c": "Biopsy and lab tests", "p": "Which statement about core needle biopsy of a lymph node is correct?", "o": ["It always yields enough tissue for cytogenetics and molecular work", "Results are best with 16-18 gauge needles plus flow cytometry", "It is always representative and has no false negative results", "It is usually performed by a surgeon in the operating room"], "a": 1, "e": "Correct: B. Core biopsy works best with 16 to 18 gauge needles and a flow cytometry study.\nA: A limited core sample may be insufficient for cytogenetics and molecular studies.\nC: Always representative with no false negatives describes excisional biopsy.\nD: Core biopsy is mostly performed by radiologists.\nTakeaway: Core biopsy is the middle option between FNA and excision.", "l": ["W12 4.5"]}, {"c": "Biopsy and lab tests", "p": "Walter, 61, has an enlarging node. Flow cytometry on the biopsy shows a monoclonal B-cell population. Which diagnosis does this support?", "o": ["Reactive lymphadenopathy from a viral infection", "Nodular lymphocyte predominant Hodgkin lymphoma", "Non-Hodgkin lymphoma", "Classical Hodgkin lymphoma"], "a": 2, "e": "Correct: C. A monoclonal pattern on flow cytometry is a feature of non-Hodgkin lymphoma.\nA: A reactive node gives a polyclonal population.\nB: This subtype shows no light chain restriction.\nD: Hodgkin lymphoma shows no monoclonal pattern on flow cytometry.\nTakeaway: Monoclonal means one clone. Polyclonal means a reactive mix.", "l": ["W12 4.1"]}, {"c": "Biopsy and lab tests", "p": "A pathologist suspects a peripheral T-cell lymphoma. Which panel of immunohistochemistry markers identifies T cells?", "o": ["CD3, CD5 and CD7", "CD15 and CD30", "CD20 and CD45", "CD19, CD20 and CD79a"], "a": 0, "e": "Correct: A. Clusters of differentiation identify cell types. T cells carry CD3, CD5 and CD7.\nB: CD15 and CD30 mark the Reed-Sternberg cells of classical Hodgkin lymphoma.\nC: CD20 and CD45 are positive in nodular lymphocyte predominant Hodgkin lymphoma.\nD: CD19, CD20 and CD79a mark B cells.\nTakeaway: B cells CD19, CD20, CD79a. T cells CD3, CD5, CD7.", "l": ["W12 1.5"]}, {"c": "Hodgkin lymphoma", "p": "A node biopsy shows a nodular architecture with large cells that have a popcorn appearance. The cells stain positive for CD20 and CD45 and negative for CD15 and CD30. Which subtype fits best?", "o": ["Mixed cellularity Hodgkin lymphoma", "Nodular lymphocyte predominant HL", "Nodular sclerosis Hodgkin lymphoma", "Lymphocyte depleted Hodgkin lymphoma"], "a": 1, "e": "Correct: B. Popcorn LP cells that are CD20 and CD45 positive and CD15 and CD30 negative define nodular lymphocyte predominant HL.\nA: Mixed cellularity has RS cells positive for CD15 and CD30.\nC: Nodular sclerosis has RS cells positive for CD15 and CD30, with lacunar cells and collagen bands.\nD: Lymphocyte depleted has numerous bizarre RS cells positive for CD15 and CD30.\nTakeaway: NLPHL flips the classical stain pattern.", "l": ["W12 4.2"]}, {"c": "Hodgkin lymphoma", "p": "Chloe, 23, has a mediastinal mass. Biopsy shows RS cells, lacunar cells and collagen bands in a nodular pattern. Which prognosis fits her most likely subtype?", "o": ["Always high stage with B symptoms and the worst prognosis", "Mostly higher stage with a worse prognosis than nodular sclerosis", "Mostly stage I-II with a very good to excellent prognosis", "Indolent and excellent, but with a high recurrence rate"], "a": 2, "e": "Correct: C. Lacunar cells, collagen bands and a mediastinal mass fit nodular sclerosis HL, the most common subtype. It is mostly stage I to II with a very good to excellent prognosis.\nA: Always high stage with the worst prognosis is lymphocyte depleted HL.\nB: Mostly higher stage and worse than nodular sclerosis is mixed cellularity HL.\nD: Indolent with high recurrence is nodular lymphocyte predominant HL.\nTakeaway: Nodular sclerosis: young adult, mediastinal mass, lacunar cells, good prognosis.", "l": ["W12 5.4", "W12 4.2"]}, {"c": "Hodgkin lymphoma", "p": "Ali, 48, has HIV and new peripheral lymphadenopathy. Biopsy shows many RS cells in a background of eosinophils, lymphocytes and plasma cells, with no lacunar cells. The RS cells are EBV positive. Which subtype is most likely?", "o": ["Lymphocyte rich Hodgkin lymphoma", "Nodular lymphocyte predominant Hodgkin lymphoma", "Nodular sclerosis Hodgkin lymphoma", "Mixed cellularity Hodgkin lymphoma"], "a": 3, "e": "Correct: D. Mixed cellularity HL is most frequent in HIV patients and is EBV associated in 75% of cases. It involves peripheral nodes with RS cells in a mixed background.\nA: Lymphocyte rich has very few RS cells among numerous benign lymphocytes.\nB: NLPHL has popcorn cells and no EBV association.\nC: Nodular sclerosis has lacunar cells and often a mediastinal mass.\nTakeaway: HIV and EBV are risk factor clues for mixed cellularity HL.", "l": ["W12 4.7"]}, {"c": "Hodgkin lymphoma", "p": "Which statement comparing Hodgkin with non-Hodgkin lymphoma is FALSE?", "o": ["All Hodgkin lymphoma is treated with the aim of cure", "Hodgkin lymphoma often spreads in a non-contiguous pattern", "Hodgkin lymphoma is usually nodal, and extranodal disease is rare", "Hodgkin lymphoma shows RS cells in an inflammatory background"], "a": 1, "e": "Correct: B. Hodgkin lymphoma spreads contiguously, from neck to supraclavicular, thorax and abdomen. Non-Hodgkin lymphoma can spread non-contiguously. So this statement is false.\nA: True. All HL patients must be treated with the aim to cure.\nC: True. HL is nodal, and extranodal disease is rare.\nD: True. RS cells in an inflammatory background are the HL hallmark.\nTakeaway: HL: contiguous, nodal, RS cells, curable. NHL: varied spread, monoclonal.", "l": ["W12 4.8"]}, {"c": "Hodgkin lymphoma", "p": "Patient A is a 22-year-old man with nodes that have spread from his neck to his mediastinum in order. Patient B is a 70-year-old woman with a lymphoma in her stomach and scattered nodes. Which type of lymphoma best fits each patient, in order?", "o": ["Both non-Hodgkin", "A non-Hodgkin, B Hodgkin", "A Hodgkin, B non-Hodgkin", "Both Hodgkin"], "a": 2, "e": "Correct: C. Hodgkin lymphoma affects younger patients, mostly males, and spreads contiguously through nodes. Non-Hodgkin lymphoma affects older patients and can be extranodal and non-contiguous.\nA: Patient A is young with contiguous nodal spread, which fits HL.\nB: This reverses the age and spread patterns.\nD: Patient B has extranodal disease in an older adult, which fits NHL.\nTakeaway: Young, nodal and contiguous points to HL. Older and extranodal points to NHL.", "l": ["W12 5.1"]}, {"c": "Staging", "p": "Leo, 30, has enlarged nodes in his left neck and left axilla. CT shows no disease below the diaphragm. He has drenching night sweats and has lost 12% of his weight. What is his Ann Arbor stage?", "o": ["Stage IIB", "Stage IIIB", "Stage IIA", "Stage IVB"], "a": 0, "e": "Correct: A. Two node regions on the same side of the diaphragm is stage II. B symptoms add the B suffix.\nB: Stage III needs nodes on both sides of the diaphragm.\nC: A means B symptoms are absent, and he has them.\nD: Stage IV needs diffuse extralymphatic organ involvement.\nTakeaway: Count regions, check the diaphragm, then add A or B.", "l": ["W12 5.3"]}, {"c": "Staging", "p": "Mei, 66, has a single enlarged neck node. A bone marrow biopsy shows lymphoma. She has no fever, night sweats or weight loss. What is her Ann Arbor stage?", "o": ["Stage IA", "Stage IVB", "Stage IIA", "Stage IVA"], "a": 3, "e": "Correct: D. Bone marrow involvement counts as diffuse extralymphatic involvement, which is stage IV. No B symptoms gives the A suffix.\nA: Stage I is a single region, but marrow disease moves her to stage IV.\nB: B needs B symptoms, which she does not have.\nC: Stage II needs two or more regions on one side of the diaphragm.\nTakeaway: Marrow involvement means stage IV.", "l": ["W12 5.3"]}, {"c": "Staging", "p": "A pathology report calls a lymphoma aggressive. Imaging shows involved nodes on both sides of the diaphragm. Which interpretation is correct?", "o": ["Aggressive describes the stage. Both sides of the diaphragm describes its grade", "Aggressive describes clinical behaviour. Both sides of the diaphragm is stage III", "Aggressive means stage IV. Both sides of the diaphragm confirms bone marrow disease", "Aggressive describes clinical behaviour. Both sides of the diaphragm is stage II"], "a": 1, "e": "Correct: B. Indolent, aggressive and very aggressive describe clinical behaviour. Ann Arbor staging describes spread, and nodes on both sides of the diaphragm is stage III.\nA: This swaps behaviour and stage.\nC: Stage IV means diffuse extralymphatic involvement, and behaviour is not a stage.\nD: Stage II stays on one side of the diaphragm.\nTakeaway: Behaviour describes the tumour. Stage describes where it is.", "l": ["W12 4.3", "W12 5.3"]}, {"c": "Non-Hodgkin lymphoma", "p": "Jacob, 12, has a fast-growing abdominal mass. Biopsy shows a starry-sky pattern. Which genetic change is most likely?", "o": ["t(2;5) with an ALK1 mutation", "t(11;14) with cyclin D1 overexpression", "t(8;14) with c-Myc activation", "t(14;18) with Bcl-2 activation"], "a": 2, "e": "Correct: C. A starry-sky pattern is the mark of Burkitt lymphoma, which carries t(8;14) and c-Myc activation.\nA: t(2;5) with ALK1 is anaplastic large cell lymphoma.\nB: t(11;14) with cyclin D1 is mantle cell lymphoma.\nD: t(14;18) with Bcl-2 is follicular lymphoma.\nTakeaway: Starry sky means Burkitt means t(8;14).", "l": ["W12 4.6"]}, {"c": "Non-Hodgkin lymphoma", "p": "Which translocation and lymphoma pairs are correct?\ni) t(14;18) and follicular lymphoma\nii) t(11;18) and MALT lymphoma\niii) t(2;5) and Burkitt lymphoma\niv) t(11;14) and mantle cell lymphoma", "o": ["i), ii) and iv) only", "ii), iii) and iv) only", "i) and iv) only", "All of the above"], "a": 0, "e": "Correct: A. Follicular is t(14;18), MALT is t(11;18) and mantle cell is t(11;14). These three pairs are correct.\nB: t(2;5) is anaplastic large cell lymphoma, not Burkitt.\nC: This leaves out the correct MALT pairing.\nD: Statement iii) is wrong. Burkitt is t(8;14).\nTakeaway: Know all five translocations in the notes table.", "l": ["W12 4.6"]}, {"c": "Non-Hodgkin lymphoma", "p": "Nora, 65, has a painless, rapidly enlarging neck mass and night sweats. Biopsy shows loss of normal node structure and large cells with visible nucleoli and high mitotic activity. Staging shows stage II disease. Which treatment fits best?", "o": ["Six cycles of CHOP-R", "ABVD × 2 followed by AVD × 4", "Watch and wait until symptoms develop", "Three cycles of CHOP-R"], "a": 3, "e": "Correct: D. A rapidly enlarging mass with large cells and high mitotic activity fits DLBCL. Stage I to II DLBCL gets 3 cycles of CHOP-R.\nA: Six cycles are for stage III to IV.\nB: ABVD and AVD are Hodgkin lymphoma regimens.\nC: DLBCL is rapidly fatal if untreated, so watching is wrong.\nTakeaway: DLBCL: aggressive but responds well to treatment.", "l": ["W12 5.5", "W12 4.2"]}, {"c": "Non-Hodgkin lymphoma", "p": "Arthur, 63, has painless nodes in his neck, axilla and groin. He feels well and his counts are normal. Biopsy shows a follicular pattern, and staging shows stage III disease. Which management is most appropriate?", "o": ["ABVD followed by involved-field radiation", "Watch and wait until symptoms develop", "Six cycles of CHOP-R started at once", "Radiation alone with the aim of cure"], "a": 1, "e": "Correct: B. Asymptomatic advanced follicular lymphoma is usually incurable. Watch and wait is the common initial strategy because treating at once does not improve outcomes.\nA: ABVD is a Hodgkin lymphoma regimen.\nC: CHOP-R is the regimen for DLBCL.\nD: Radiation can cure stage I follicular lymphoma, not stage III.\nTakeaway: Indolent and incurable means treat symptoms, not scans.", "l": ["W12 5.5"]}, {"c": "Non-Hodgkin lymphoma", "p": "Edith, 74, has a high lymphocyte count found on routine bloodwork. Her film shows smudge cells. She feels well, and her disease is low risk. Which plan is most appropriate?", "o": ["Observe without starting treatment", "Start ibrutinib now", "Start chlorambucil now", "Start an anti-CD20 monoclonal antibody now"], "a": 0, "e": "Correct: A. Smudge cells point to CLL. Low risk, asymptomatic CLL is not treated.\nB: Ibrutinib is used once treatment is needed.\nC: Chlorambucil is a CLL chemotherapy for when treatment is needed.\nD: Anti-CD20 antibodies are used once treatment is needed.\nTakeaway: About 15% of CLL patients have autoantibodies against red cells.", "l": ["W12 4.6"]}, {"c": "Non-Hodgkin lymphoma", "p": "Which statement about prognosis in non-Hodgkin lymphoma is correct?", "o": ["DLBCL is indolent and is usually incurable with treatment", "Follicular lymphoma is risk scored with the standard IPI and nothing else", "CLL caught early has a median survival of only 1 to 2 years", "DLBCL of germinal centre type does better than activated B-cell type"], "a": 3, "e": "Correct: D. DLBCL has a better prognosis if it is of germinal centre B-cell type rather than activated B-cell type.\nA: DLBCL is aggressive but responds well to treatment.\nB: Follicular lymphoma uses the FLIPI.\nC: Median survival in CLL is 10 to 15 years if caught early.\nTakeaway: IPI for DLBCL, FLIPI for follicular.", "l": ["W12 5.4"]}, {"c": "Hodgkin lymphoma", "p": "Sara, 26, has stage IIA classical Hodgkin lymphoma without bulky disease. Which treatment plan fits best?", "o": ["Watch and wait until symptoms develop", "A full course of ABVD × 2 then AVD × 4, without any radiation", "A short course of chemotherapy then involved-field radiation", "Radiation alone with no chemotherapy"], "a": 2, "e": "Correct: C. Stage I to II HL is treated with a short course of chemotherapy followed by involved field radiation therapy.\nA: All HL patients must be treated with the aim to cure.\nB: A full course is for stage III to IV or bulky disease.\nD: Early stage HL gets chemotherapy before radiation.\nTakeaway: Bulky disease is often treated like advanced stage.", "l": ["W12 5.5"]}, {"c": "Plasma cell disorders", "p": "Why is daratumumab, and not rituximab, used as an antibody therapy in multiple myeloma?", "o": ["Rituximab targets CD38, which plasma cells do not carry", "Plasma cells lack CD38, so only a CD20 antibody works", "Plasma cells lack CD20, and daratumumab targets CD38", "Daratumumab targets the CD20 that plasma cells carry"], "a": 2, "e": "Correct: C. Plasma cells do not express CD20, the target of rituximab. Daratumumab targets CD38 and is listed for myeloma.\nA: Rituximab targets CD20.\nB: Plasma cells do not express CD20, so a CD20 antibody would miss them.\nD: Daratumumab targets CD38, and plasma cells do not carry CD20.\nTakeaway: Rituximab is for B-cell lymphomas. Daratumumab is for myeloma.", "l": ["W12 7.1"]}, {"c": "Plasma cell disorders", "p": "Which tests belong in the essential workup for suspected multiple myeloma?\ni) Peripheral blood smear for rouleaux\nii) Blood and 24-hour urine protein electrophoresis\niii) Serum free light chain assay\niv) FISH for t(9;22)", "o": ["ii) and iii) only", "i), ii) and iii) only", "i), iii) and iv) only", "All of the above"], "a": 1, "e": "Correct: B. Smear for rouleaux, protein electrophoresis of blood and urine, and the serum free light chain assay are all listed myeloma investigations.\nA: This leaves out the smear, which shows rouleaux.\nC: t(9;22) is not a myeloma FISH target. FISH looks for t(4;14), t(14;16) and del(17p).\nD: Statement iv) is wrong for myeloma.\nTakeaway: Myeloma FISH: t(4;14), t(14;16), del(17p).", "l": ["W12 8.4"]}, {"c": "Plasma cell disorders", "p": "Harold, 68, has an M protein found during a workup for fatigue. His marrow has 12% plasma cells. Calcium, creatinine and Hb are normal, and a skeletal survey shows no lesions. Which diagnosis fits best?", "o": ["Smoldering myeloma", "Plasma cell leukemia", "Monoclonal gammopathy of undetermined significance", "Overt multiple myeloma"], "a": 0, "e": "Correct: A. Marrow plasma cells of 10% or more without CRAB organ damage define smoldering myeloma.\nB: Plasma cell leukemia has plasma cells in the blood and is an emergency.\nC: MGUS has under 10% marrow plasma cells.\nD: Overt myeloma needs organ damage, and he has none.\nTakeaway: MGUS under 10%, no CRAB. Smoldering 10% or more, no CRAB. Myeloma has CRAB.", "l": ["W12 7.2"]}, {"c": "Plasma cell disorders", "p": "Ruth, 72, has MGUS. Which follow-up plan and risk of progression to myeloma match the notes?", "o": ["Start therapy now. Risk of myeloma is 0.5-2%", "Follow up every 3-6 months. Risk of myeloma is 5-25%", "Give high dose chemotherapy as an emergency", "Monitor 1-2 times a year. Risk of myeloma is 0.5-2%"], "a": 3, "e": "Correct: D. MGUS is monitored once or twice a year and carries a 0.5 to 2% risk of myeloma.\nA: MGUS is asymptomatic and is monitored, not treated.\nB: Follow-up every 3 to 6 months with a 5 to 25% risk is smoldering myeloma.\nC: High dose combination chemotherapy is for plasma cell leukemia.\nTakeaway: MGUS is watched. Smoldering is watched more closely. Myeloma is treated.", "l": ["W12 7.3", "W12 7.4"]}, {"c": "Plasma cell disorders", "p": "Doris, 70, has a serum M protein. Calcium is 2.60 mmol/L, creatinine is 150 µmol/L with a CrCl of 55 mL/min, and Hb is 115 g/L (her baseline is 128). A skeletal survey is normal. Which CRAB feature does she meet?", "o": ["Hypercalcemia and renal insufficiency", "Hypercalcemia and anemia", "Hypercalcemia only", "Renal insufficiency and anemia"], "a": 2, "e": "Correct: C. Calcium above 2.52 mmol/L meets hypercalcemia. Creatinine is below 175 and CrCl is above 40, so renal criteria are not met. Hb is above 100 and has dropped by only 13 g, so anemia is not met.\nA: Renal insufficiency needs creatinine over 175 or CrCl under 40.\nB: Anemia needs Hb under 100 or a drop of 20 g from baseline.\nD: Neither the renal nor the anemia threshold is met.\nTakeaway: CRAB cutoffs: Ca over 2.52, creatinine over 175, Hb under 100, lytic lesions.", "l": ["W12 8.2"]}, {"c": "Plasma cell disorders", "p": "Which explanations of myeloma symptoms match the notes?\ni) Bone pain from an imbalance between osteoclasts and osteoblasts\nii) Infections from neutropenia and a weakened immune system\niii) Hypercalcemia from calcium released by damaged bones\niv) Fatigue caused only by high calcium", "o": ["i) and iii) only", "i), ii) and iii) only", "ii), iii) and iv) only", "All of the above"], "a": 1, "e": "Correct: B. Bone pain, infections and hypercalcemia are explained as listed in the notes.\nA: This leaves out infections, which come from neutropenia and weak immunity.\nC: Fatigue has several causes, so iv) is wrong.\nD: Statement iv) is wrong. Fatigue comes from anemia, psychological factors, drugs and infections.\nTakeaway: CRAB features each have a mechanism you should be able to explain.", "l": ["W12 8.3"]}, {"c": "Plasma cell disorders", "p": "Gordon, 59, has a monoclonal protein, numb feet, an enlarged liver and spleen, low testosterone and darkened skin. Which plasma cell disorder fits best?", "o": ["Plasma cell leukemia", "AL amyloidosis", "Solitary plasmacytoma", "POEMS syndrome"], "a": 3, "e": "Correct: D. Polyneuropathy, organomegaly, endocrinopathy, M protein and skin changes make POEMS syndrome.\nA: Plasma cell leukemia shows plasma cells in the blood.\nB: AL amyloidosis comes from insoluble M proteins depositing in organs such as the heart and kidneys.\nC: A solitary plasmacytoma is a single solid myeloma tumour.\nTakeaway: POEMS is the acronym. Each letter is a feature.", "l": ["W12 8.1"]}, {"c": "Plasma cell disorders", "p": "Frank, 71, has newly diagnosed multiple myeloma. Albumin is 38 g/L, beta-2 microglobulin is 6.1 and LDH is high. Which ISS group and survival fit him?", "o": ["ISS 3, with a median survival of about 43 months", "Durie-Salmon stage III, the current standard system", "ISS 2, with a median survival of about 83 months", "ISS 1, with over 80% survival at 72 months"], "a": 0, "e": "Correct: A. A beta-2 microglobulin of 5.5 or more with a high LDH places him in ISS 3, with a median survival of 43 months.\nB: The Durie-Salmon system is no longer used.\nC: ISS 2 is for patients who fit neither 1 nor 3.\nD: ISS 1 needs beta-2 microglobulin under 3.5 and a normal LDH.\nTakeaway: ISS uses albumin and beta-2 microglobulin.", "l": ["W12 8.5"]}, {"c": "Plasma cell disorders", "p": "Lionel, 66, has myeloma. Over two days he has developed back pain, weak legs and trouble passing urine. Which management is most urgent?", "o": ["Hemodialysis for renal dysfunction", "IV hydration with an intravenous bisphosphonate infusion", "Urgent surgery or radiation for cord compression", "A planned outpatient vertebroplasty"], "a": 2, "e": "Correct: C. New leg weakness and urinary symptoms with back pain suggest cord compression. It is a medical emergency treated with urgent surgery and or radiation.\nA: Hemodialysis is for renal dysfunction.\nB: Hydration and bisphosphonates treat hypercalcemia.\nD: Vertebroplasty is for bone pain and fractures, not cord compression.\nTakeaway: Myeloma emergencies: cord compression, renal dysfunction, plasma cell leukemia.", "l": ["W12 8.6"]}, {"c": "Plasma cell disorders", "p": "Agnes, 74, has myeloma and is thirsty, nauseated and confused. Her calcium is 3.1 mmol/L. Which treatment is most appropriate?", "o": ["Urgent radiation therapy to the thoracic spine", "IV hydration and a bisphosphonate", "SC G-CSF injections", "Packed red cell transfusion"], "a": 1, "e": "Correct: B. Thirst, nausea and confusion with a high calcium is myeloma hypercalcemia. It is treated with IV hydration, bisphosphonates such as pamidronate or zoledronate, and anti-myeloma therapy.\nA: Spinal radiation is for cord compression.\nC: G-CSF treats neutropenia.\nD: Transfusion treats anemia.\nTakeaway: Each myeloma complication has its own supportive therapy.", "l": ["W12 8.6"]}, {"c": "Mediastinal mass", "p": "Daniel, 24, has a mediastinal mass that has caused symptoms over a few days. He also has a scrotal mass. His AFP is high. Which diagnosis fits best?", "o": ["Seminoma (differentiated testicular cancer)", "Thymoma", "Lymphoblastic lymphoma", "Non-seminomatous germ cell tumour"], "a": 3, "e": "Correct: D. Rapid onset, a scrotal mass and a high AFP point to a non-seminomatous germ cell tumour. AFP is raised in 60 to 80% of them.\nA: Seminoma has an intermediate onset over months, and AFP is not listed for it.\nB: Thymoma has a prolonged onset over years and is usually over age 40.\nC: Lymphoblastic lymphoma can be rapid but does not explain the scrotal mass or AFP.\nTakeaway: Scrotal mass plus mediastinal mass means think germ cell tumour.", "l": ["W12 6.3"]}, {"c": "Mediastinal mass", "p": "Carol, 55, has drooping eyelids and fatigue that worsens through the day. CT shows an anterior mediastinal mass that seems to have grown slowly over years. Anti-AChR antibodies are positive. Which next step is most appropriate?", "o": ["Surgical resection without a biopsy first", "Percutaneous image-guided biopsy with flow cytometry", "Ultrasound of the scrotum and testes", "PET/CT to stage a possible lymphoma"], "a": 0, "e": "Correct: A. Anti-AChR with an anterior mass over 40 fits thymoma with myasthenia gravis. Biopsy is foregone for thymoma, which goes to resection.\nB: Biopsy and flow cytometry are for suspected lymphoma.\nC: Scrotal ultrasound looks for a germ cell tumour.\nD: PET/CT is used for lymphoma.\nTakeaway: Skip biopsy for a simple cyst, aneurysm or thymoma.", "l": ["W12 6.5", "W12 6.2"]}, {"c": "Mediastinal mass", "p": "Imaging shows a mass in the posterior mediastinum beside the spine. Which category of lesion is most likely?", "o": ["Thymoma", "Teratoma", "Neurogenic tumour", "Bronchogenic or pericardial cyst"], "a": 2, "e": "Correct: C. The posterior paravertebral compartment holds the sympathetic trunk and nerves. Its differential is neurogenic tumours, meningoceles and spine lesions.\nA: Thymoma is an anterior compartment lesion.\nB: Teratoma is an anterior compartment lesion.\nD: Bronchogenic cysts are middle compartment lesions.\nTakeaway: Anterior 5Ts, middle nodes and cysts, posterior nerves.", "l": ["W12 6.1"]}, {"c": "Mediastinal mass", "p": "Victor, 28, has a large anterior mediastinal mass. He has facial and neck swelling, swollen veins across his chest and shortness of breath. Raising his arms makes his face flush. Which complication is this?", "o": ["Recurrent laryngeal nerve palsy", "Horner syndrome", "Cardiac tamponade", "Superior vena cava syndrome"], "a": 3, "e": "Correct: D. Face, neck and chest edema with collateral veins, dyspnea and a Pemberton sign describe superior vena cava syndrome.\nA: Recurrent laryngeal nerve compression causes hoarseness.\nB: Horner syndrome gives miosis, ptosis and anhidrosis.\nC: Tamponade physiology presents with hypotension.\nTakeaway: SVC syndrome is a palliative indication for radiation.", "l": ["W12 6.4"]}, {"c": "Mediastinal mass", "p": "Which are recognized complications of a large mediastinal mass?\ni) Hoarseness from recurrent laryngeal nerve compression\nii) Ptosis, miosis and anhidrosis from sympathetic chain involvement\niii) Hypotension from compression of the heart\niv) Mydriasis with eyelid retraction from sympathetic chain compression", "o": ["i) and iii) only", "i), ii) and iii) only", "ii), iii) and iv) only", "All of the above"], "a": 1, "e": "Correct: B. Hoarseness, Horner syndrome and hypotension from tamponade physiology are all listed effects of a mediastinal mass.\nA: This leaves out Horner syndrome.\nC: Horner syndrome gives miosis and ptosis, not mydriasis and eyelid retraction.\nD: Statement iv) reverses the Horner findings.\nTakeaway: Horner syndrome is not specific to a mediastinal mass. A Pancoast tumour can cause it.", "l": ["W12 6.4"]}, {"c": "Mediastinal mass", "p": "A trauma patient has a supine AP chest x-ray. The mediastinum measures 7 cm wide. Using the notes, how should this be read?", "o": ["Not widened, since the supine AP cutoff is 8 cm", "Not widened, since every film uses a 10 cm cutoff", "Widened, since the supine AP cutoff is 6 cm", "Widened, since any width over 6 cm counts"], "a": 0, "e": "Correct: A. A widened mediastinum is over 6 cm on an upright PA film or over 8 cm on a supine AP film. At 7 cm on a supine AP film, it is not widened.\nB: No 10 cm cutoff is used.\nC: This swaps the PA and AP cutoffs.\nD: The 6 cm cutoff applies to upright PA films.\nTakeaway: 6 cm upright PA, 8 cm supine AP.", "l": ["W12 6.3"]}, {"c": "Mediastinal mass", "p": "Patient A has a mediastinal mass with symptoms that came on over a few days. Patient B has a mediastinal mass found by chance after years with no symptoms. Which diagnosis fits each patient, in order?", "o": ["A teratoma, B lymphoblastic lymphoma", "A thymoma, B Hodgkin lymphoma", "A lymphoblastic lymphoma, B teratoma", "A seminoma, B lymphoblastic lymphoma"], "a": 2, "e": "Correct: C. Rapid onset over days suggests lymphoblastic lymphoma or a non-seminomatous germ cell tumour. A prolonged or silent course over years suggests thymoma or teratoma.\nA: This reverses the onset patterns.\nB: Thymoma is slow over years, and Hodgkin lymphoma has an onset over months.\nD: Seminoma has an intermediate onset over months, and lymphoblastic lymphoma is rapid.\nTakeaway: Days: lymphoblastic or NSGCT. Months: lymphoma, seminoma. Years: thymoma, teratoma.", "l": ["W12 6.2"]}, {"c": "Radiation", "p": "Why is radiation therapy given as many small daily fractions over several weeks?", "o": ["Cancer cells repair radiation damage faster than normal cells", "Normal tissue repairs damage between fractions better than cancer", "Slow-growing tumours respond fastest when doses are kept small", "Splitting the dose waits until cells leave the sensitive G2-M phase"], "a": 1, "e": "Correct: B. Fractionation takes advantage of the different repair abilities of normal and malignant tissue. Cancer cells do not repair as well as normal cells.\nA: This reverses the repair difference.\nC: Fast-growing tumours are more radiosensitive and respond more quickly.\nD: Cells are most susceptible in G2-M, not least.\nTakeaway: Fractionation exploits the four Rs.", "l": ["W12 12.1"]}, {"c": "Radiation", "p": "Between radiation fractions, hypoxic tumour cells regain oxygen and become more sensitive to the next dose. Which of the four Rs of radiobiology is this?", "o": ["Reoxygenation", "Redistribution", "Repopulation", "Repair"], "a": 0, "e": "Correct: A. Reoxygenation of hypoxic cells makes them more sensitive to radiation.\nB: Redistribution moves cells into radiosensitive phases of the cell cycle.\nC: Repopulation is regrowth of cells between fractions.\nD: Repair is the fixing of sublethal damage between fractions.\nTakeaway: Repair, repopulation, redistribution, reoxygenation.", "l": ["W12 12.1"]}, {"c": "Radiation", "p": "Which statement about radiation therapy for lymphoma is FALSE?", "o": ["It only treats tumour cells inside the radiation field", "External beam treatment itself is painless", "It carries a slight risk of a second cancer years later", "It damages only cancer cells and spares normal cells"], "a": 3, "e": "Correct: D. Radiation damages the DNA of both normal and cancer cells. So the claim that it spares normal cells is false.\nA: True. Radiation only works on tumour cells in the field.\nB: True. External beam radiation is painless.\nC: True. There is a slight risk of secondary cancer many years later.\nTakeaway: Every tissue has a dose limit. Spinal cord, bowel, kidney and lungs often limit treatment.", "l": ["W12 12.2"]}, {"c": "Radiation", "p": "Sam, 24, finished mediastinal radiation for Hodgkin lymphoma 8 weeks ago. He now has fever, a dry cough and shortness of breath. Which diagnosis and treatment fit best?", "o": ["Hypothyroidism, treated with thyroid replacement", "Radiation pericarditis, treated with hydration", "Radiation pneumonitis, treated with steroids", "L'Hermitte's sign, treated with thyroid hormone"], "a": 2, "e": "Correct: C. Fever, cough and dyspnea 6 to 12 weeks after mediastinal radiation fit radiation pneumonitis, which is treated with steroids.\nA: Hypothyroidism is a late effect and does not cause fever and cough.\nB: Pericarditis is inflammation of the sac around the heart and does not explain this course.\nD: L'Hermitte's sign is paresthesia in the limbs on neck flexion.\nTakeaway: Pneumonitis comes 6 to 12 weeks after chest radiation.", "l": ["W12 12.3"]}, {"c": "Radiation", "p": "Which of these effects of radiation is classed as a late effect rather than a subacute one?", "o": ["L'Hermitte's sign", "Myelosuppression", "Radiation pneumonitis", "Hypothyroidism"], "a": 3, "e": "Correct: D. Hypothyroidism is listed as a late effect, and thyroid replacement is recommended.\nA: L'Hermitte's sign is a subacute effect from transient demyelination.\nB: Myelosuppression is subacute, after high volume pelvic marrow radiation.\nC: Radiation pneumonitis is subacute, within 6 to 12 weeks.\nTakeaway: Late effects: hypothyroidism, zoster, infertility, secondary cancers.", "l": ["W12 12.3"]}];
+const OBJECTIVES = {"W12 1.5": "Understand the utility of immunohistochemical stains and flow cytometric study.", "W12 1.6": "Distinguish between different modes of investigating enlarged lymph nodes and splenomegaly.", "W12 12.1": "Describe principles of radiation in treatment of hematological malignancies.", "W12 12.2": "Explain the advantages and disadvantages of radiation.", "W12 12.3": "Explain the short-term and long-term side effects of radiation", "W12 2.1": "List the differential diagnoses of lymphadenopathy in adult.", "W12 2.2": "List and interpret critical clinical findings, including an appropriate history and physical examination in a patient with lymphadenopathy.", "W12 2.3": "List and interpret initial investigations, including laboratory and radiological studies, and determine whether there is an indication for a biopsy.", "W12 3.1": "List the differential diagnoses of lymphadenopathy in pediatrics.", "W12 3.2": "List and interpret critical clinical findings, including an appropriate history and physical examination in a patient with lymphadenopathy.", "W12 3.3": "List and interpret initial investigations, including laboratory and radiological studies, determine whether there is an indication for a biopsy.", "W12 4.1": "Differentiate between \"monoclonal\" and \"polyclonal\" populations in confirming the diagnosis of non‐Hodgkin lymphoma.", "W12 4.2": "Correlate the histology and clinical behaviour of different types of non‐ Hodgkin lymphoma.", "W12 4.3": "Differentiate between grade and stage of disease.", "W12 4.4": "Compare and contrast the three procedures used to get a sample of a lymph node for pathology diagnosis.", "W12 4.5": "Discuss advantages and disadvantages of various lab tests for lymphoma diagnosis.", "W12 4.6": "Distinguish between the major subtypes of non-Hodgkin's lymphomas.", "W12 4.7": "Discuss the risk factors for Hodgkin and non‐Hodgkin lymphomas.", "W12 4.8": "Summarize the major differences between Hodgkin and non-Hodgkin lymphomas.", "W12 5.1": "Distinguish the clinical presentations of Hodgkin and non-Hodgkin lymphoma.", "W12 5.2": "Describe the clinical work-up of patients with lymphoma.", "W12 5.3": "Describe the Ann Arbor staging system", "W12 5.4": "List the prognostic factors in patients with lymphoma.", "W12 5.5": "Outline the basic principles of treatment of various lymphomas", "W12 6.1": "List the differential diagnoses for mediastinal mass.", "W12 6.2": "List and interpret critical clinical findings, including an appropriate history and physical examination in a patient with mediastinal mass.", "W12 6.3": "List and interpret relevant investigations, including laboratory and radiological studies, indication for a biopsy.", "W12 6.4": "Explain the possible complications from a large mediastinal mass.", "W12 6.5": "Construct an effective initial management plan.", "W12 7.1": "Understand the role of plasma cells and know how to interpret serum protein electrophoresis.", "W12 7.2": "Review the criteria and differences between monoclonal gammopathy of unknown significance, smoldering myeloma and multiple myeloma.", "W12 7.3": "Discuss the appropriate workup for monoclonal gammopathy.", "W12 7.4": "Understand the prognosis of common disorders associated with monoclonal gammopathy.", "W12 8.1": "Define multiple myeloma and the other plasma cell dyscrasias.", "W12 8.2": "Describe the clinical features of multiple myeloma.", "W12 8.3": "Explain the mechanisms for the disease manifestations.", "W12 8.4": "Outline the essential investigations for multiple myeloma.", "W12 8.5": "Discuss prognostic factors and prognosis of multiple myeloma in general terms.", "W12 8.6": "Identify and provide initial management of complications"};
+const L = "ABCDE";
+const N = QUESTIONS.length;
+let cur = 0, showResults = false;
+let ans = new Array(N).fill(null);           // current pick per question
+let tries = QUESTIONS.map(()=>[]);           // every locked attempt: {pick, ok, at}
+let strikes = QUESTIONS.map(()=>[]);         // struck option indexes for the open attempt
+let history = [], db = null, uid = null, writing = false, dirty = false;
+const MAP=document.getElementById("map"); if(MAP && QUESTIONS.length<=60) MAP.open=true;
+const LS_KEY = "differential-week-12-question-bank";
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+function score(){ return ans.reduce((n,a,i)=>n+(a!==null&&a===QUESTIONS[i].a?1:0),0); }
+function answered(){ return ans.filter(a=>a!==null).length; }
+function firstTryScore(){ return tries.reduce((n,t)=>n+(t.length&&t[0].ok?1:0),0); }
+function firstTryCount(){ return tries.filter(t=>t.length).length; }
+
+function renderHeader(){
+  const bf=$("#barfill"); if(bf) bf.style.width=(100*answered()/N)+"%";
+  $("#stats").innerHTML = `<span>Question <b>${showResults?"–":cur+1}</b> of <b>${N}</b></span><span>Answered <b>${answered()}</b></span><span>Score <b>${score()} / ${answered()}</b></span>`;
+  $("#ticks").innerHTML = QUESTIONS.map((q,i)=>{
+    const st = ans[i]===null?"":(ans[i]===q.a?"ok":"bad");
+    const redo = tries[i].length>1 || (ans[i]===null && tries[i].length>0);
+    return `<button class="tick ${st} ${redo?"redo":""} ${(!showResults&&i===cur)?"cur":""}" data-i="${i}" aria-label="Question ${i+1}"></button>`;
+  }).join("");
+  document.querySelectorAll(".tick").forEach(b=>b.onclick=()=>{cur=+b.dataset.i;showResults=false;render();});
+}
+
+function triesLine(i, includeCurrent){
+  const t = includeCurrent ? tries[i] : tries[i];
+  if(!t.length) return "";
+  const parts = t.map((x,k)=>`<span class="${x.ok?"ok":"bad"}">${k+1}: ${L[x.pick]} ${x.ok?"correct":"wrong"}</span>`).join(" · ");
+  return `<div class="tries">Attempts ${parts}</div>`;
+}
+
+function fmtLine(t){
+  let m;
+  if((m=t.match(/^Correct:\s*([A-E])\.?\s*(.*)$/)) || (m=t.match(/^([A-E]) is correct\.?\s*(.*)$/)))
+    return `<p class="why"><span class="lk ok">${m[1]}</span><span>${esc(m[2])}</span></p>`;
+  if((m=t.match(/^([A-E]):\s*(.*)$/)))
+    return `<p class="alt"><span class="lk">${m[1]}</span><span>${esc(m[2])}</span></p>`;
+  if((m=t.match(/^(Takeaway|High yield|High-yield|Key point|Clues):\s*(.*)$/i)))
+    return `<p class="take"><b>${esc(m[1])}.</b> ${esc(m[2])}</p>`;
+  return `<p>${esc(t)}</p>`;
+}
+
+function renderQ(){
+  const q = QUESTIONS[cur], a = ans[cur], done = a!==null, st = strikes[cur];
+  const opts = q.o.map((o,i)=>{
+    let c = "";
+    if(done){ if(i===q.a) c="right"; else if(i===a) c="wrong"; }
+    const struck = !done && st.includes(i);
+    const strikeBtn = done ? "" : `<button class="strike" data-s="${i}" aria-pressed="${struck}" aria-label="${struck?"Restore":"Strike out"} option ${L[i]}" title="${struck?"Restore":"Strike out"} option">${struck?"↺":"✕"}</button>`;
+    return `<div class="optrow ${struck?"struck":""}"><button class="opt ${c}" data-i="${i}" ${done?"disabled":""}><span class="k">${L[i]}</span><span>${esc(o)}</span></button>${strikeBtn}</div>`;
+  }).join("");
+  let fb = "";
+  if(done){
+    const ok = a===q.a;
+    const lines = q.e.split("\n").map(fmtLine).join("");
+    const objs = q.l.map(id=>`<div class="obj"><b>Objective ${esc(id)}</b> ${esc(OBJECTIVES[id]||"")}</div>`).join("");
+    fb = `<div class="fb" role="status"><div class="verdict ${ok?"ok":"bad"}">${ok?"Correct.":"Incorrect. The answer is "+L[q.a]+"."}</div>${lines}${objs}${triesLine(cur)}<div class="fbtools"><button class="btn ghost" id="redo">Reset and redo this question</button></div></div>`;
+  }
+  const pre = (!done && tries[cur].length) ? `<div class="hint">Redo. Your earlier attempts are saved.</div>${triesLine(cur)}` : (!done ? `<div class="hint">Tap ✕ to strike out an option. Right-click works too.</div>` : "");
+  const last = cur===N-1;
+  $("#main").innerHTML = `<article class="card">
+    <div class="chead"><span class="tag">${esc(q.c)}</span><span class="qn">${cur+1} of ${N}</span></div>
+    <p class="stem">${esc(q.p)}</p>
+    ${pre}
+    <div class="opts">${opts}</div>${fb}
+    <div class="nav"><button class="btn ghost" id="prev" ${cur===0?"disabled":""}>Previous</button>
+    <button class="btn" id="next" ${done?"":"disabled"}>${last?"See results":"Next"}</button></div>
+  </article>`;
+  document.querySelectorAll(".opt").forEach(b=>{
+    b.onclick=()=>{ const p=+b.dataset.i; ans[cur]=p; tries[cur].push({pick:p, ok:p===q.a, at:new Date().toISOString()}); tries[cur]=tries[cur].slice(-10); strikes[cur]=[]; render(false); persist(); };
+    b.oncontextmenu=(e)=>{ if(done) return; e.preventDefault(); toggleStrike(+b.dataset.i); };
+  });
+  document.querySelectorAll(".strike").forEach(b=>b.onclick=()=>toggleStrike(+b.dataset.s));
+  const r=$("#redo"); if(r) r.onclick=()=>{ ans[cur]=null; strikes[cur]=[]; render(false); persist(); };
+  $("#prev").onclick=()=>{cur--;render();};
+  $("#next").onclick=()=>{ if(last){showResults=true;} else cur++; render(); };
+}
+
+function toggleStrike(i){
+  const s = strikes[cur], k = s.indexOf(i);
+  if(k<0) s.push(i); else s.splice(k,1);
+  render(false); persist();
+}
+
+function renderResults(){
+  const s = score(), pct = Math.round(100*s/N);
+  const cats = {};
+  QUESTIONS.forEach((q,i)=>{ cats[q.c]=cats[q.c]||[0,0]; cats[q.c][1]++; if(ans[i]===q.a) cats[q.c][0]++; });
+  const rows = Object.entries(cats).map(([c,[r,t]])=>`<tr><td>${esc(c)}<span class="meter"><i style="width:${Math.round(100*r/t)}%"></i></span></td><td>${r} / ${t}</td></tr>`).join("");
+  const missed = {};
+  QUESTIONS.forEach((q,i)=>{ const wrongFirst = tries[i].length && !tries[i][0].ok; if(ans[i]!==q.a || wrongFirst) q.l.forEach(id=>{ const w=id.split(" ")[0]; missed[w]=missed[w]||new Set(); missed[w].add(id); }); });
+  const weeks = Object.keys(missed).sort((x,y)=>parseInt(x.slice(1))-parseInt(y.slice(1)));
+  const missHtml = weeks.length ? weeks.map(w=>`<h3>Week ${w.slice(1)}</h3><ul class="miss">${[...missed[w]].map(id=>`<li><code>${esc(id)}</code>${esc(OBJECTIVES[id]||"")}</li>`).join("")}</ul>`).join("") : "<p>No missed objectives.</p>";
+  const redone = tries.filter(t=>t.length>1).length;
+  const un = N - answered();
+  $("#main").innerHTML = `<article class="card">
+    <div class="chead"><span class="tag">Results</span><span>${un?un+" unanswered":"Complete"}</span></div>
+    <div><div class="big">${s} / ${N}</div><div class="stats"><span><b>${pct}%</b> correct now</span><span>First try <b>${firstTryScore()} / ${firstTryCount()}</b></span><span>Redone <b>${redone}</b></span></div></div>
+    <table><thead><tr><th>Topic</th><th>Score</th></tr></thead><tbody>${rows}</tbody></table>
+    <h2>Objectives to review</h2><p class="hint">Includes questions you missed on the first try, even if a redo got them right.</p>${missHtml}${history.length?`<h2>Past attempts</h2><table><thead><tr><th>Date</th><th>Score</th></tr></thead><tbody>${history.slice().reverse().map(h=>`<tr><td>${new Date(h.date).toLocaleDateString()}</td><td>${h.score} / ${h.total}</td></tr>`).join("")}</tbody></table>`:""}
+    <div class="nav"><button class="btn ghost" id="back">Back to questions</button><button class="btn" id="restart">Restart all</button></div>
+  </article>`;
+  $("#back").onclick=()=>{showResults=false;render();};
+  $("#restart").onclick=()=>{
+    if(answered() || tries.some(t=>t.length)){
+      history.push({date:new Date().toISOString(), score:score(), answered:answered(), total:N, firstTry:firstTryScore(),
+        missed:QUESTIONS.map((q,i)=>ans[i]!==null&&ans[i]!==q.a?"q"+(i+1):null).filter(Boolean)});
+      history=history.slice(-20);
+    }
+    ans.fill(null); tries=QUESTIONS.map(()=>[]); strikes=QUESTIONS.map(()=>[]); cur=0; showResults=false; render(); persist();
+  };
+}
+
+function setSave(text, cls){ const el=$("#save"); if(el){ el.textContent=text; el.className="save "+(cls||""); } }
+function bodyOf(){
+  const a = {};
+  QUESTIONS.forEach((q,i)=>{
+    if(ans[i]===null && !tries[i].length && !strikes[i].length) return;
+    a["q"+(i+1)] = {pick:ans[i], ok:ans[i]!==null && ans[i]===q.a, l:q.l, tries:tries[i], strikes:strikes[i]};
+  });
+  return {answers:a, history, total:N, answered:answered(), score:score(), firstTry:firstTryScore(), updatedAt:new Date().toISOString()};
+}
+function validPick(i,p){ return Number.isInteger(p) && p>=0 && p<QUESTIONS[i].o.length; }
+function applySaved(d){
+  if(!d || typeof d!=="object") return;
+  ans.fill(null); tries=QUESTIONS.map(()=>[]); strikes=QUESTIONS.map(()=>[]);
+  const a = d.answers || {};
+  for(const k in a){
+    const i = parseInt(k.slice(1),10)-1, row = a[k];
+    if(!(i>=0 && i<N) || !row || typeof row!=="object") continue;
+    if(validPick(i,row.pick)) ans[i]=row.pick;
+    if(Array.isArray(row.tries)) tries[i]=row.tries.filter(t=>t&&validPick(i,t.pick)).map(t=>({pick:t.pick, ok:t.pick===QUESTIONS[i].a, at:String(t.at||"")})).slice(-10);
+    else if(ans[i]!==null) tries[i]=[{pick:ans[i], ok:ans[i]===QUESTIONS[i].a, at:""}];
+    if(Array.isArray(row.strikes)) strikes[i]=row.strikes.filter(x=>validPick(i,x));
+  }
+  history = Array.isArray(d.history) ? d.history.slice(-20) : [];
+  const first = ans.findIndex(x=>x===null); cur = first<0 ? N-1 : first;
+}
+function lsLoad(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"null"); }catch(e){ return null; } }
+function lsSave(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(bodyOf())); }catch(e){} }
+async function persist(){
+  lsSave();
+  if(!db || !uid) return;
+  dirty = true; if(writing) return; writing = true;
+  while(dirty){
+    dirty = false;
+    setSave("Saving…");
+    try{ await db.doc("attempts/"+uid).set(bodyOf()); setSave("Progress saved to your account.","ok"); }
+    catch(e){
+      if(e && e.code==="invalid_argument"){ db=null; setSave("Progress saves in this browser only.","bad"); break; }
+      setSave("Could not save to your account. Progress saves in this browser.","bad");
+    }
+  }
+  writing = false;
+}
+async function connect(){
+  try{
+    if(!window.claude || !window.claude.use) return;
+    const [u, d] = await Promise.all([window.claude.use("user"), window.claude.use("db")]);
+    if(!u || !d) return;
+    const id = await u.id(); if(!id) return;
+    db = d; uid = id;
+    const snap = await db.doc("attempts/"+uid).get();
+    if(snap.exists){ applySaved(snap.data()); render(); setSave("Progress saved to your account.","ok"); }
+    else if(answered() || tries.some(t=>t.length)){ persist(); }
+    else setSave("Progress saves to your account.","ok");
+  }catch(e){ /* keep local-only mode */ }
+}
+
+function render(top=true){ renderHeader(); showResults?renderResults():renderQ(); if(top) window.scrollTo({top:0}); }
+applySaved(lsLoad());
+render();
+connect();
+</script>
+
+</body></html>

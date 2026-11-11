@@ -74,6 +74,15 @@ ITEMS = [
  ],
  [
   3,
+  "week-9-question-bank",
+  "Week 9 Question Bank",
+  None,
+  None,
+  "quiz",
+  "50 questions. Microcytic, normocytic, macrocytic and hemolytic anemia, MDS, quality improvement."
+ ],
+ [
+  3,
   "week-10-question-bank",
   "Week 10 Question Bank",
   None,
@@ -89,6 +98,15 @@ ITEMS = [
   None,
   "quiz",
   "50 questions. Leukemias, myeloproliferative neoplasms, emergencies, chemotherapy, trial design."
+ ],
+ [
+  3,
+  "week-12-question-bank",
+  "Week 12 Question Bank",
+  None,
+  None,
+  "quiz",
+  "50 questions. Lymphadenopathy, lymphoma, myeloma, mediastinal mass, radiation therapy."
  ],
  [
   1,
