@@ -22,9 +22,9 @@
    "p": "Harold, 74, has lymphocytosis on a routine CBC. He has no fever, weight loss or night sweats. The film shows many smudge cells. Which flow cytometry result fits the most likely diagnosis?",
    "o": [
     "JAK2V617F in red cell precursors",
-    "HLA-DR negative myeloblasts on flow cytometry",
+    "CD5, CD19, dim CD20 and CD23 positive",
     "PML/RARα fusion in the myeloblasts",
-    "HLA-DR negative myeloblasts on flow"
+    "HLA-DR negative myeloblasts on flow cytometry"
    ],
    "a": 1,
    "e": "Correct: B. An older adult with asymptomatic lymphocytosis and smudge cells has CLL. Its flow pattern is CD5, CD19, dim CD20, CD23 with clonal light chain restriction.\nA: JAK2V617F drives polycythemia vera, a red cell cancer.\nC: PML/RARα is the APL fusion gene, found by FISH or NGS.\nD: HLA-DR negative myeloblasts suggest APL.\nTakeaway: CLL: smudge cells on film, CD5 and CD23 on flow.",
