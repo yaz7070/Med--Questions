@@ -233,10 +233,10 @@ for b, slug, title, aid, _u, kind, blurb in ITEMS:
         total_q += int(m.group(1))
 
 recent = [
+    (href(3, "flow", "myeloid-disorders-map"), "Myeloid Disorders Map", "High and low counts, MPNs, leukemias, emergencies."),
     (href(3, "flow", "hemostasis-workup-map"), "Hemostasis Workup Map", "Bleeding, platelets, VTE, anticoagulants, transfusion."),
     (href(3, "flow", "anemia-workup-map"), "Anemia Workup Map", "From CBC to diagnosis, every branch."),
     (href(3, "quiz", "week-10-question-bank"), "Week 10 Question Bank", "Bleeding and coagulation."),
-    (href(2, "test", "block-2-practice-exam"), "Block 2 Practice Exam", "40 questions on the predicted blueprint."),
 ]
 
 home = fm("Nexus", 'description: "Study hub for Schulich Foundations of Medicine."\n') + f'''<section class="hero">

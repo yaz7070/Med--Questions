@@ -7,15 +7,24 @@ const Header = HeaderConstructor()
 // Top navigation. Paths are relative to the site root, so links work at any
 // address (yaz7070.github.io/Med-School/, a custom domain, or localhost).
 const NAV: [string, string][] = [
-  ["Home", ""],
   ["Block 1", "fom/block-1/"],
   ["Block 2", "fom/block-2/"],
   ["Block 3", "fom/block-3/"],
   ["Block 4", "fom/block-4/"],
   ["Question Bank", "question-bank/"],
-  ["Progress", "progress/"],
   ["Flowcharts", "fom/block-3/flowcharts/"],
+  ["Progress", "progress/"],
 ]
+
+// The tab for the section you are in gets highlighted. Flowcharts wins over Block 3 on flowchart pages.
+function activeTab(slug: string): string | undefined {
+  const s = slug.replace(/index$/, "")
+  let best: string | undefined
+  for (const [, path] of NAV) {
+    if (s.startsWith(path) && (!best || path.length > best.length)) best = path
+  }
+  return best
+}
 
 /**
  * Nexus site frame: no sidebars, a top bar for navigation, search and
@@ -28,6 +37,7 @@ export const DifferentialFrame: PageFrame = {
     const year = new Date().getFullYear()
     const root = pathToRoot(componentData.fileData.slug!)
     const [First, ...rest] = header
+    const current = activeTab(componentData.fileData.slug ?? "")
     return (
       <>
         <div class="center full-width differential">
@@ -38,7 +48,13 @@ export const DifferentialFrame: PageFrame = {
                 <ul>
                   {NAV.map(([label, path]) => (
                     <li>
-                      <a href={`${root}/${path}`}>{label}</a>
+                      <a
+                        href={`${root}/${path}`}
+                        class={path === current ? "active" : undefined}
+                        aria-current={path === current ? "page" : undefined}
+                      >
+                        {label}
+                      </a>
                     </li>
                   ))}
                 </ul>

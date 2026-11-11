@@ -134,5 +134,14 @@ ITEMS = [
   None,
   "flow",
   "Week 10: bleeding, platelets, VTE, anticoagulants, transfusion."
+ ],
+ [
+  3,
+  "myeloid-disorders-map",
+  "Myeloid Disorders Map",
+  None,
+  None,
+  "flow",
+  "Week 11: high and low counts, MPNs, leukemias and emergencies."
  ]
 ]
