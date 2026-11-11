@@ -193,6 +193,15 @@ total_all = sum(x["n"] for x in plist)
 </script>
 """)
 
+# all flowcharts, grouped by block
+fc = "Workup maps for every block. Start at the top of a chart and follow the findings down.\n\n"
+for b, (name, wk, _) in BLOCKS.items():
+    items = by.get((b, "flow"))
+    if items:
+        fc += f'<h2 class="section-title">Block {b}: {e(name)}</h2>\n' + rows([row(href(b, "flow", s_), t, dd) for s_, t, a, dd in items])
+(C / "flowcharts").mkdir(exist_ok=True)
+(C / "flowcharts" / "index.md").write_text(fm("Flowcharts") + fc)
+
 # FoM index
 (FOM / "index.md").write_text(fm("Foundations of Medicine") + rows(
     [row(f"/fom/block-{b}/", f"Block {b}: {n}", f"{w}. {t}") for b, (n, w, t) in BLOCKS.items()]))
@@ -233,10 +242,10 @@ for b, slug, title, aid, _u, kind, blurb in ITEMS:
         total_q += int(m.group(1))
 
 recent = [
+    (href(2, "flow", "cancer-workup-map"), "Cancer Workup Map", "Breast mass, screening, pathology, treatment, hereditary cancer."),
     (href(3, "flow", "myeloid-disorders-map"), "Myeloid Disorders Map", "High and low counts, MPNs, leukemias, emergencies."),
     (href(3, "flow", "hemostasis-workup-map"), "Hemostasis Workup Map", "Bleeding, platelets, VTE, anticoagulants, transfusion."),
     (href(3, "flow", "anemia-workup-map"), "Anemia Workup Map", "From CBC to diagnosis, every branch."),
-    (href(3, "quiz", "week-10-question-bank"), "Week 10 Question Bank", "Bleeding and coagulation."),
 ]
 
 home = fm("Nexus", 'description: "Study hub for Schulich Foundations of Medicine."\n') + f'''<section class="hero">
@@ -244,7 +253,7 @@ home = fm("Nexus", 'description: "Study hub for Schulich Foundations of Medicine
 <p>New questions, generated with Claude for the class of 2030</p>
 <div class="hero-actions">
 <a class="btn primary" href="/question-bank/">Start practising</a>
-<a class="btn" href="/fom/block-3/flowcharts/">Browse flowcharts</a>
+<a class="btn" href="/flowcharts/">Browse flowcharts</a>
 </div>
 </section>
 

@@ -143,5 +143,14 @@ ITEMS = [
   None,
   "flow",
   "Week 11: high and low counts, MPNs, leukemias and emergencies."
+ ],
+ [
+  2,
+  "cancer-workup-map",
+  "Cancer Workup Map",
+  None,
+  None,
+  "flow",
+  "Week 6: breast mass, screening, pathology report, treatment, hereditary cancer, carcinogenesis."
  ]
 ]

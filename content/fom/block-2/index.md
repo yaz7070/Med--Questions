@@ -17,3 +17,7 @@ Adult screening, cancer, aging, therapeutics and prescribing.
 <li><a class="row" href="/fom/block-2/question-bank/week-7-question-bank"><span><strong>Week 7 Question Bank</strong><span class="desc">53 questions. Week 7, Localization, Lobes and grey matter.</span></span><span class="go" aria-hidden="true">›</span></a></li>
 <li><a class="row" href="/fom/block-2/question-bank/week-8-question-bank"><span><strong>Week 8 Question Bank</strong><span class="desc">39 questions. Week 8, Enzyme induction and inhibition, Drug interactions.</span></span><span class="go" aria-hidden="true">›</span></a></li>
 </ul>
+<h2 class="section-title">Flowcharts</h2>
+<ul class="rows">
+<li><a class="row" href="/fom/block-2/flowcharts/cancer-workup-map"><span><strong>Cancer Workup Map</strong><span class="desc">Week 6: breast mass, screening, pathology report, treatment, hereditary cancer, carcinogenesis.</span></span><span class="go" aria-hidden="true">›</span></a></li>
+</ul>

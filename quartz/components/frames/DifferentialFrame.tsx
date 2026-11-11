@@ -12,13 +12,16 @@ const NAV: [string, string][] = [
   ["Block 3", "fom/block-3/"],
   ["Block 4", "fom/block-4/"],
   ["Question Bank", "question-bank/"],
-  ["Flowcharts", "fom/block-3/flowcharts/"],
+  ["Flowcharts", "flowcharts/"],
   ["Progress", "progress/"],
 ]
 
-// The tab for the section you are in gets highlighted. Flowcharts wins over Block 3 on flowchart pages.
+// The tab for the section you are in gets highlighted. Quiz and flowchart pages light up their own tab.
 function activeTab(slug: string): string | undefined {
   const s = slug.replace(/index$/, "")
+  if (s.includes("/flowcharts/") || s.startsWith("flowcharts/")) return "flowcharts/"
+  if (s.includes("/question-bank/") || s.includes("/practice-tests/") || s.startsWith("question-bank/"))
+    return "question-bank/"
   let best: string | undefined
   for (const [, path] of NAV) {
     if (s.startsWith(path) && (!best || path.length > best.length)) best = path
