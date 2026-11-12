@@ -6,7 +6,7 @@ Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the
 
 The site has three kinds of page and nothing else:
 
-- `content/index.md`: home. Overall progress, a Continue link, and one row per block.
+- `content/index.md`: home. Overall progress, a Continue link, one row per block, and a strip of flowchart tiles.
 - `content/fom/block-N/index.md`: block page. Lists that block's weekly banks, practice tests and flowcharts, with progress on every row.
 - `content/fom/block-N/{question-bank,practice-tests,flowcharts}/<slug>.md`: wrapper page. One slim line (block link, title, full screen link), then an iframe of `/static/pages/<slug>.html`.
 

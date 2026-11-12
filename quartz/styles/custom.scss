@@ -219,7 +219,7 @@ header .site-nav {
 
 // ---------- Links and tables in ordinary pages ----------
 
-a.internal:not(.block):not(.set):not(.resume) {
+a.internal:not(.block):not(.set):not(.resume):not(.flowtile) {
   background: transparent;
   color: var(--secondary);
   font-weight: 600;
@@ -511,4 +511,62 @@ body[data-slug*="/flowcharts/"] {
     margin: 0 -1rem;
     height: calc(100vh - 8.5rem);
   }
+}
+
+// ---------- Home: flowchart strip ----------
+
+.section-lede {
+  margin: -0.3rem 0 0.8rem;
+  color: var(--darkgray);
+  font-size: 0.95rem;
+}
+
+.flowtiles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.75rem;
+  & li {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+}
+
+.center a.flowtile,
+a.flowtile {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.85rem 1rem 0.95rem;
+  background: color-mix(in srgb, var(--bc) 9%, var(--paper)) !important;
+  border: 1px solid color-mix(in srgb, var(--bc) 30%, var(--lightgray));
+  border-top: 4px solid var(--bc);
+  border-radius: 8px;
+  color: var(--dark) !important;
+  text-decoration: none !important;
+  font-weight: 400;
+  &:hover {
+    background: color-mix(in srgb, var(--bc) 16%, var(--paper)) !important;
+  }
+  &:focus-visible {
+    outline: 2px solid var(--bc);
+    outline-offset: 2px;
+  }
+  & strong {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+}
+.flow-block {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--bc);
+}
+.flow-desc {
+  font-size: 0.9rem;
+  color: var(--darkgray);
 }

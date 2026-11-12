@@ -229,6 +229,19 @@ for b, (name, wk, about) in BLOCKS.items():
         f'<span class="block-main"><strong>{e(name)}</strong><span>{wk}{". " + ", ".join(has) if has else ""}</span></span>{pg}</a></li>')
 
 total_q = sum(x["n"] for x in QUIZZES)
+
+# Flowcharts get their own strip on the home page, one tile per chart in its block colour.
+flow_tiles = []
+for b in BLOCKS:
+    for slug, title, blurb in by.get((b, "flow"), []):
+        flow_tiles.append(
+            f'<li><a class="flowtile" data-b="{b}" href="{href(b, "flow", slug)}"><span class="flow-block">Block {b}</span>'
+            f'<strong>{e(title)}</strong><span class="flow-desc">{e(topics("flow", blurb))}</span></a></li>')
+flow_html = ""
+if flow_tiles:
+    flow_html = ('<h2 class="section-title">Flowcharts</h2>\n'
+                 '<p class="section-lede">One-page workup maps. Start at the top and follow the findings down to the diagnosis.</p>\n'
+                 '<ul class="flowtiles">\n' + "\n".join(flow_tiles) + "\n</ul>\n")
 home = fm("Nexus", 'description: "Practice questions and flowcharts for Schulich Foundations of Medicine."\n') + f'''<section class="home-top">
 <h1>Nexus</h1>
 <p class="lede">New questions, generated with Claude for the class of 2030</p>
@@ -239,6 +252,7 @@ home = fm("Nexus", 'description: "Practice questions and flowcharts for Schulich
 {chr(10).join(rows)}
 </ul>
 
+{flow_html}
 {prog_js()}'''
 (C / "index.md").write_text(home)
 
