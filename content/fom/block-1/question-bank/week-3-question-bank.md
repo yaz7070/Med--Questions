@@ -6,8 +6,6 @@ tags:
 description: "98 questions. Genetics & Prenatal, Development & Milestones, Attachment & Theory."
 ---
 
-98 questions. Genetics & Prenatal, Development & Milestones, Attachment & Theory.
+<p class="embed-bar"><a href="/fom/block-1/">Block 1</a><span class="sep" aria-hidden="true">/</span><span class="here">Week 3 Question Bank</span><a class="full" href="/static/pages/week-3-question-bank.html" target="_blank" rel="noopener">Open full screen</a></p>
 
-<div class="embed-actions"><a class="btn primary" href="/static/pages/week-3-question-bank.html" target="_blank" rel="noopener">Open full screen</a></div>
-
-<iframe class="embed-page" src="/static/pages/week-3-question-bank.html" title="Week 3 Question Bank" loading="lazy"></iframe>
+<iframe class="embed-page" src="/static/pages/week-3-question-bank.html" title="Week 3 Question Bank"></iframe>

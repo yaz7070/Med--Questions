@@ -16,29 +16,29 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Bricolage Grotesque
-      body: Source Sans 3
+      header: Atkinson Hyperlegible Next
+      body: Atkinson Hyperlegible Next
       code: JetBrains Mono
     colors:
       lightMode:
-        light: "#f6f9f8"
-        lightgray: "#d9e5e3"
-        gray: "#9bb0ad"
-        darkgray: "#3d5452"
-        dark: "#0f2624"
-        secondary: "#0e7c7b"
-        tertiary: "#0a5f5e"
-        highlight: rgba(14, 124, 123, 0.09)
+        light: "#f5f6f8"
+        lightgray: "#e0e3e8"
+        gray: "#8a919c"
+        darkgray: "#4d5560"
+        dark: "#15181d"
+        secondary: "#0b7a75"
+        tertiary: "#075d59"
+        highlight: rgba(21, 24, 29, 0.05)
         textHighlight: "#ffe08a99"
       darkMode:
-        light: "#0e1716"
-        lightgray: "#24413e"
-        gray: "#5f7a77"
-        darkgray: "#c7d8d5"
-        dark: "#ecf4f3"
-        secondary: "#4fc1b8"
-        tertiary: "#82d8d0"
-        highlight: rgba(79, 193, 184, 0.12)
+        light: "#14161a"
+        lightgray: "#2d323b"
+        gray: "#6f7783"
+        darkgray: "#b3bac5"
+        dark: "#eceef2"
+        secondary: "#45c2b8"
+        tertiary: "#7fd9d1"
+        highlight: rgba(236, 238, 242, 0.06)
         textHighlight: "#b3940088"
 plugins:
   - source: "@quartz-community/created-modified-date"
@@ -156,7 +156,7 @@ plugins:
   - source: "@quartz-community/folder-page"
     enabled: true
   - source: "@quartz-community/tag-page"
-    enabled: true
+    enabled: false
   - source: "@quartz-community/explorer"
     enabled: false
   - source: "@quartz-community/graph"
@@ -202,7 +202,7 @@ plugins:
   - source: "@quartz-community/reader-mode"
     enabled: false
   - source: "@quartz-community/breadcrumbs"
-    enabled: true
+    enabled: false
     layout:
       position: beforeBody
       priority: 5

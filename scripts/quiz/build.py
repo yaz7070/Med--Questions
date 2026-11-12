@@ -10,6 +10,9 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 QDIR = ROOT / "scripts" / "quiz"
 OUT = ROOT / "quartz" / "static" / "pages"
 TEMPLATE = (QDIR / "template.html").read_text()
+sys.path.insert(0, str(ROOT / "scripts"))
+from items import ITEMS  # noqa: E402
+BLOCK = {it[1]: it[0] for it in ITEMS}  # slug -> block number, sets the quiz colour
 
 
 def js(v):
@@ -27,6 +30,7 @@ def build(path):
             .replace("__TITLE__", html.escape(d["title"]))
             .replace("__CONTEXT__", html.escape(d["context"]))
             .replace("__KEY__", "differential-" + path.stem)
+            .replace("__BLOCK__", str(BLOCK.get(path.stem, 1)))
             .replace("__QUESTIONS__", js(qs))
             .replace("__OBJECTIVES__", js(d.get("objectives", {}))))
     (OUT / f"{path.stem}.html").write_text(page)

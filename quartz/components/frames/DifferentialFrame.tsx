@@ -4,29 +4,18 @@ import { pathToRoot } from "../../util/path"
 
 const Header = HeaderConstructor()
 
-// Top navigation. Paths are relative to the site root, so links work at any
-// address (yaz7070.github.io/Med-School/, a custom domain, or localhost).
-const NAV: [string, string][] = [
-  ["Block 1", "fom/block-1/"],
-  ["Block 2", "fom/block-2/"],
-  ["Block 3", "fom/block-3/"],
-  ["Block 4", "fom/block-4/"],
-  ["Question Bank", "question-bank/"],
-  ["Flowcharts", "flowcharts/"],
-  ["Progress", "progress/"],
+// Top navigation: one link per block. Paths are relative to the site root,
+// so links work at any address (GitHub Pages subpath, a custom domain, or localhost).
+const NAV: [string, string, number][] = [
+  ["Block 1", "fom/block-1/", 1],
+  ["Block 2", "fom/block-2/", 2],
+  ["Block 3", "fom/block-3/", 3],
+  ["Block 4", "fom/block-4/", 4],
 ]
 
-// The tab for the section you are in gets highlighted. Quiz and flowchart pages light up their own tab.
+// The block you are in is highlighted, including on its quiz and flowchart pages.
 function activeTab(slug: string): string | undefined {
-  const s = slug.replace(/index$/, "")
-  if (s.includes("/flowcharts/") || s.startsWith("flowcharts/")) return "flowcharts/"
-  if (s.includes("/question-bank/") || s.includes("/practice-tests/") || s.startsWith("question-bank/"))
-    return "question-bank/"
-  let best: string | undefined
-  for (const [, path] of NAV) {
-    if (s.startsWith(path) && (!best || path.length > best.length)) best = path
-  }
-  return best
+  return NAV.find(([, path]) => slug.startsWith(path))?.[1]
 }
 
 /**
@@ -49,10 +38,11 @@ export const DifferentialFrame: PageFrame = {
               {First && <First {...componentData} />}
               <nav class="site-nav" aria-label="Main">
                 <ul>
-                  {NAV.map(([label, path]) => (
+                  {NAV.map(([label, path, b]) => (
                     <li>
                       <a
                         href={`${root}/${path}`}
+                        data-b={b}
                         class={path === current ? "active" : undefined}
                         aria-current={path === current ? "page" : undefined}
                       >
@@ -83,7 +73,7 @@ export const DifferentialFrame: PageFrame = {
           ))}
           <footer class="site-footer">
             <p class="credit">
-              Nexus was built by <strong>Yazdaan Ahmad</strong> and <strong>Mohammad Essa</strong>, Schulich School of Medicine
+              Built by <strong>Yazdaan Ahmad</strong> and <strong>Mohammad Essa</strong>, Schulich School of Medicine
               &amp; Dentistry, MD Class of 2030. © {year}
             </p>
             <p class="disclaimer">

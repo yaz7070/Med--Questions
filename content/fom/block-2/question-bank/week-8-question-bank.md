@@ -6,8 +6,6 @@ tags:
 description: "39 questions. Week 8, Enzyme induction and inhibition, Drug interactions."
 ---
 
-39 questions. Week 8, Enzyme induction and inhibition, Drug interactions.
+<p class="embed-bar"><a href="/fom/block-2/">Block 2</a><span class="sep" aria-hidden="true">/</span><span class="here">Week 8 Question Bank</span><a class="full" href="/static/pages/week-8-question-bank.html" target="_blank" rel="noopener">Open full screen</a></p>
 
-<div class="embed-actions"><a class="btn primary" href="/static/pages/week-8-question-bank.html" target="_blank" rel="noopener">Open full screen</a></div>
-
-<iframe class="embed-page" src="/static/pages/week-8-question-bank.html" title="Week 8 Question Bank" loading="lazy"></iframe>
+<iframe class="embed-page" src="/static/pages/week-8-question-bank.html" title="Week 8 Question Bank"></iframe>
