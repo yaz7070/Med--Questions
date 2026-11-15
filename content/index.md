@@ -12,7 +12,7 @@ description: "Practice questions and flowcharts for Schulich Foundations of Medi
 <ul class="blocks">
 <li><a class="block" data-b="1" href="/fom/block-1/"><span class="block-tag">Block 1</span><span class="block-main"><strong>Early life and foundations</strong><span>Weeks 1 to 4. 4 weekly banks, 3 practice tests</span></span><span class="block-pg"><span data-sum="1"></span><span class="pg-bar" aria-hidden="true"><i data-sum-bar="1"></i></span></span></a></li>
 <li><a class="block" data-b="2" href="/fom/block-2/"><span class="block-tag">Block 2</span><span class="block-main"><strong>Screening, cancer, aging and prescribing</strong><span>Weeks 5 to 8. 4 weekly banks, 1 practice test, 1 flowchart</span></span><span class="block-pg"><span data-sum="2"></span><span class="pg-bar" aria-hidden="true"><i data-sum-bar="2"></i></span></span></a></li>
-<li><a class="block" data-b="3" href="/fom/block-3/"><span class="block-tag">Block 3</span><span class="block-main"><strong>Hematology</strong><span>Weeks 9 to 12. 4 weekly banks, 3 flowcharts</span></span><span class="block-pg"><span data-sum="3"></span><span class="pg-bar" aria-hidden="true"><i data-sum-bar="3"></i></span></span></a></li>
+<li><a class="block" data-b="3" href="/fom/block-3/"><span class="block-tag">Block 3</span><span class="block-main"><strong>Hematology</strong><span>Weeks 9 to 12. 4 weekly banks, 4 flowcharts</span></span><span class="block-pg"><span data-sum="3"></span><span class="pg-bar" aria-hidden="true"><i data-sum-bar="3"></i></span></span></a></li>
 <li><a class="block" data-b="4" href="/fom/block-4/"><span class="block-tag">Block 4</span><span class="block-main"><strong>Infection and immunity</strong><span>Weeks 13 to 15</span></span><span class="block-pg"><span>Coming soon</span></span></a></li>
 </ul>
 
@@ -22,6 +22,7 @@ description: "Practice questions and flowcharts for Schulich Foundations of Medi
 <li><a class="flowtile" data-b="2" href="/fom/block-2/flowcharts/cancer-workup-map"><span class="flow-block">Block 2</span><strong>Cancer Workup Map</strong><span class="flow-desc">Week 6: breast mass, screening, pathology report, treatment, hereditary cancer, carcinogenesis.</span></a></li>
 <li><a class="flowtile" data-b="3" href="/fom/block-3/flowcharts/anemia-workup-map"><span class="flow-block">Block 3</span><strong>Anemia Workup Map</strong><span class="flow-desc">Full Week 9 workup from CBC to diagnosis.</span></a></li>
 <li><a class="flowtile" data-b="3" href="/fom/block-3/flowcharts/hemostasis-workup-map"><span class="flow-block">Block 3</span><strong>Hemostasis Workup Map</strong><span class="flow-desc">Week 10: bleeding, platelets, VTE, anticoagulants, transfusion.</span></a></li>
+<li><a class="flowtile" data-b="3" href="/fom/block-3/flowcharts/lymphoid-disorders-map"><span class="flow-block">Block 3</span><strong>Lymphoid Disorders Map</strong><span class="flow-desc">Week 12: enlarged nodes, lymphoma, plasma cell disorders, mediastinal mass.</span></a></li>
 <li><a class="flowtile" data-b="3" href="/fom/block-3/flowcharts/myeloid-disorders-map"><span class="flow-block">Block 3</span><strong>Myeloid Disorders Map</strong><span class="flow-desc">Week 11: high and low counts, MPNs, leukemias and emergencies.</span></a></li>
 </ul>
 

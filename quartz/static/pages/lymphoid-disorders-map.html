@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lymphoid Disorders Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<style>
+/* Week 12 map. Four stacked flowcharts with a sticky jump bar. Same parts as the other
+   Block 3 maps: gray boxes are tests or decisions, coloured boxes are diagnoses, and the
+   pill above a box is the finding that sends you there. Every diagnosis box opens with
+   one line (.what) saying what the disease is. */
+:root{
+  --bg:#f5f6f8; --surface:#ffffff; --ink:#15181d; --muted:#4d5560; --line:#cfd4dc;
+  --test:#e9ecf1;
+  --node:#1f5fa8; --node-bg:#e8f0fa;
+  --lym:#6b3fa8; --lym-bg:#f1eafa;
+  --pc:#8a5a00; --pc-bg:#fbf1dc;
+  --med:#0b6f6a; --med-bg:#e3f3f1;
+  --warn:#b42318; --warn-bg:#fcecea;
+  --font:"Atkinson Hyperlegible Next","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+:root[data-theme="dark"]{
+  --bg:#14161a; --surface:#1b1e24; --ink:#eceef2; --muted:#b3bac5; --line:#3a404b;
+  --test:#262a32;
+  --node:#93b9ec; --node-bg:#16212f;
+  --lym:#c5a9f0; --lym-bg:#221a30;
+  --pc:#e8bf6a; --pc-bg:#2a2110;
+  --med:#6fd0c7; --med-bg:#12292a;
+  --warn:#f2877c; --warn-bg:#3a1c1a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.45;
+  padding:24px max(16px,env(safe-area-inset-right,0px)) 48px max(16px,env(safe-area-inset-left,0px))}
+.wrap{max-width:1320px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1,h2,h3,h4,p{margin:0}
+header h1{font-size:clamp(26px,3.6vw,36px);letter-spacing:-.015em;line-height:1.15}
+header p{color:var(--muted);margin-top:6px;max-width:70ch}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0;display:flex;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--line)}
+nav a{font-size:14px;font-weight:700;text-decoration:none;color:var(--c);background:var(--cbg);border:1px solid var(--c);border-radius:6px;padding:4px 11px}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--c,var(--ink));outline-offset:2px}
+.k-node{--c:var(--node);--cbg:var(--node-bg)}
+.k-lym{--c:var(--lym);--cbg:var(--lym-bg)}
+.k-pc{--c:var(--pc);--cbg:var(--pc-bg)}
+.k-med{--c:var(--med);--cbg:var(--med-bg)}
+
+section.chart{scroll-margin-top:60px;display:flex;flex-direction:column;gap:14px;border-top:3px solid var(--c);padding-top:16px}
+.chart-head h2{font-size:clamp(22px,2.8vw,28px);color:var(--c);line-height:1.2}
+.chart-head p{color:var(--muted);margin-top:4px;max-width:80ch}
+
+.trunk{display:flex;flex-direction:column;align-items:center}
+.trunk .test{max-width:600px;width:100%;text-align:center}
+.vline{width:1.5px;height:18px;background:var(--line)}
+.fork{position:relative;height:22px}
+.fork::before{content:"";position:absolute;top:0;border-top:1.5px solid var(--line);left:var(--fl,25%);right:var(--fl,25%)}
+.cols{display:grid;grid-template-columns:repeat(var(--n,2),minmax(0,1fr));gap:16px;align-items:start}
+.col{min-width:0;display:flex;flex-direction:column;gap:10px}
+.head{position:relative;background:var(--cbg);border:1.5px solid var(--c);border-radius:8px;padding:10px 14px}
+.cols>.col>.head::before{content:"";position:absolute;left:50%;top:-24px;height:22px;border-left:1.5px solid var(--line)}
+.head h3{font-size:18px;color:var(--c)}
+.head p{font-size:14px;margin-top:2px}
+
+.test{background:var(--test);border:1px solid var(--line);border-radius:6px;padding:8px 12px}
+.test b{display:block;font-size:15px}
+.test span{display:block;font-size:13.5px;color:var(--muted)}
+.if{display:inline-block;font-size:13px;font-weight:600;line-height:18px;color:var(--c,var(--ink));background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin-bottom:6px;max-width:100%}
+
+.dx{background:var(--cbg);border:1px solid var(--c);border-radius:8px;padding:10px 12px}
+.dx h4{font-size:16px;color:var(--c)}
+.dx .what{font-size:14px;margin:3px 0 7px}
+.dx dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 10px;margin:0;font-size:13.5px}
+.dx dt{font-weight:700;color:var(--muted)}
+.dx dd{margin:0}
+.dx + .dx{margin-top:8px}
+.alert{display:block;margin-top:8px;font-size:13.5px;font-weight:600;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn);border-radius:6px;padding:5px 9px}
+.jump{display:inline-block;margin-top:8px;font-weight:700;font-size:14px;color:var(--c);text-decoration:none;border:1.5px dashed var(--c);border-radius:6px;padding:5px 11px;background:var(--cbg)}
+
+ul.tree,ul.tree ul{list-style:none;margin:0;padding:0}
+ul.tree ul{margin-left:14px}
+ul.tree li{position:relative;padding:10px 0 0 22px}
+ul.tree li::before{content:"";position:absolute;left:0;top:0;bottom:0;border-left:1.5px solid var(--line)}
+ul.tree li:last-child::before{bottom:auto;height:22px}
+ul.tree li::after{content:"";position:absolute;left:0;top:22px;width:18px;border-top:1.5px solid var(--line)}
+ul.tree>li{padding:0}
+ul.tree>li::before,ul.tree>li::after{display:none}
+
+.refs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.refs .wide{grid-column:1/-1}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;min-width:0}
+.panel h3{font-size:16px;margin-bottom:6px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-size:13px;color:var(--muted)}
+td:first-child{font-weight:700;white-space:nowrap}
+footer{font-size:13px;color:var(--muted)}
+sup{font-size:.75em;line-height:0}
+@media (max-width:980px){
+  .cols{grid-template-columns:minmax(0,1fr)}
+  .fork,.cols>.col>.head::before,.trunk>.vline:last-child{display:none}
+  td:first-child{white-space:normal}
+}
+@media (max-width:720px){.refs{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head><body>
+<script>
+/* Follow the site's light or dark toggle. */
+(function(){
+  const r=document.documentElement;
+  function theme(){ let t=null; try{ t=localStorage.getItem("theme"); }catch(e){}
+    r.dataset.theme = t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); }
+  theme(); addEventListener("storage",theme);
+})();
+</script>
+<div class="wrap">
+<header>
+  <h1>Lymphoid Disorders Map</h1>
+  <p>Week 12 in four charts. Gray boxes are tests or decisions. Coloured boxes are diagnoses, and each one starts with a line saying what the disease is.</p>
+</header>
+
+<nav aria-label="Charts">
+  <a class="k-node" href="#node">Enlarged lymph node</a>
+  <a class="k-lym" href="#lymphoma">Lymphoma</a>
+  <a class="k-pc" href="#plasma">Plasma cell disorders</a>
+  <a class="k-med" href="#mediastinum">Mediastinal mass</a>
+</nav>
+
+<!-- ============ 1. ENLARGED LYMPH NODE ============ -->
+<section id="node" class="chart k-node" aria-label="Enlarged lymph node">
+  <div class="chart-head"><h2>Enlarged lymph node</h2>
+    <p>In primary care, over 98% of enlarged nodes are non-malignant. Your job is to find the few that need a biopsy.</p></div>
+
+  <div class="trunk">
+    <div class="test"><b>History and exam</b><span>Timing, constitutional symptoms, exposures, medications. Node location, size, tender or not, mobile or fixed</span></div>
+    <div class="vline"></div>
+    <div class="test"><b>Any feature concerning for malignancy?</b></div>
+    <div class="vline"></div>
+  </div>
+  <div>
+    <div class="fork" aria-hidden="true"></div>
+    <div class="cols">
+      <div class="col">
+        <div class="head"><h3>No concerning features</h3><p>Tender node, ear, nose or throat symptoms, young child</p></div>
+        <div class="dx"><h4>Benign reactive lymphadenopathy</h4>
+          <p class="what">Nodes swell while their lymphocytes fight a nearby infection or inflammation.</p>
+          <dl>
+            <dt>Infectious</dt><dd>Staph, strep, mycobacteria, syphilis, HIV, EBV, CMV, hepatitis, fungal, toxoplasmosis, Lyme, bartonella</dd>
+            <dt>Autoimmune</dt><dd>Sarcoidosis, SLE, RA, dermatomyositis, Kikuchi, Kawasaki</dd>
+            <dt>Drugs</dt><dd>Phenytoin, carbamazepine, sulfonamides, allopurinol, penicillin, cephalosporins</dd>
+            <dt>Other</dt><dd>Hyperthyroidism, Addison's disease, serum sickness</dd>
+            <dt>Next</dt><dd>Treat the cause and recheck</dd>
+          </dl>
+          <span class="alert">Node 2 cm or more that grows, or does not resolve after 2 weeks of antibiotics: move to the other branch.</span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="head"><h3>Concerning features</h3><p>Any one of these</p></div>
+        <div class="dx" style="--c:var(--warn);--cbg:var(--warn-bg)"><h4>Red flags</h4>
+          <dl>
+            <dt>Systemic</dt><dd>Fever over 1 week, night sweats, fatigue, weight loss over 10%</dd>
+            <dt>Site</dt><dd>Supraclavicular node, or generalized (more than 1 area)</dd>
+            <dt>Feel</dt><dd>Fixed, non-tender or matted nodes with no other symptoms</dd>
+            <dt>Child</dt><dd>Non-tender node over 1 cm starting in the neonatal period</dd>
+            <dt>Tests</dt><dd>Mediastinal mass or hilar nodes on CXR, lymphoblasts or cytopenias on CBC, ESR or CRP that stays high</dd>
+          </dl>
+        </div>
+        <ul class="tree"><li>
+          <div class="test"><b>Bloodwork and imaging</b><span>CBC and differential, LDH, calcium, albumin, liver and kidney function, HBV, HCV, HIV. CXR, ultrasound or CT</span></div>
+          <ul><li>
+            <div class="test"><b>Biopsy (node over 1 cm)</b><span>Excisional is best: shows the architecture, no false negatives. Core needle (16 to 18 gauge) with flow cytometry is the usual alternative. FNA has no architecture, so it cannot sub-classify lymphoma</span></div>
+            <ul>
+              <li><span class="if">Malignant lymphocytes</span><br><a class="jump k-lym" href="#lymphoma">Go to Lymphoma</a></li>
+              <li><span class="if">Other malignant cells</span>
+                <div class="dx"><h4>Metastatic solid tumour</h4><p class="what" style="margin-bottom:0">Cancer from another organ that has spread to the node. Look in the area the node drains. <sup>†</sup></p></div></li>
+            </ul>
+          </li></ul>
+        </li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="refs">
+    <div class="panel wide">
+      <h3>What each node group drains</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>Node</th><th>Drains</th><th>Think of</th></tr></thead>
+        <tbody>
+          <tr><td>Supraclavicular</td><td>GI tract, GU tract, lungs</td><td>Abdominal or thoracic cancer, thyroid or laryngeal disease</td></tr>
+          <tr><td>Infraclavicular</td><td></td><td>Non-Hodgkin lymphoma</td></tr>
+          <tr><td>Axillary</td><td>Breast, upper limb, thoracic wall</td><td>Skin infection, cat-scratch disease, breast adenocarcinoma, lymphoma</td></tr>
+          <tr><td>Submandibular, anterior cervical</td><td>Oral cavity, larynx, tongue, oropharynx</td><td>Mononucleosis, upper respiratory infection, dental disease, head and neck squamous cell carcinoma</td></tr>
+          <tr><td>Preauricular, posterior cervical</td><td>Scalp, skin of neck</td><td>Scalp infection, mycobacteria, skin cancer, lymphoma</td></tr>
+          <tr><td>Epitrochlear</td><td>Ulnar forearm, hand</td><td>Skin infection, lymphoma, skin cancer</td></tr>
+          <tr><td>Inguinal</td><td>Lower abdomen, external genitalia, anal canal, lower limb</td><td>Benign reactive nodes, STIs, skin infection, lymphoma. Often palpable in healthy adults</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. LYMPHOMA ============ -->
+<section id="lymphoma" class="chart k-lym" aria-label="Lymphoma">
+  <div class="chart-head"><h2>Lymphoma</h2>
+    <p>Lymphoma is a cancer of lymphocytes that builds up in lymph nodes and lymphoid tissue. It causes lymphadenopathy, extranodal disease and constitutional symptoms.</p></div>
+
+  <div class="trunk">
+    <div class="test"><b>Node biopsy with immunohistochemistry and flow cytometry</b><span>B cells: CD19, CD20, CD79a. T cells: CD3, CD5, CD7</span></div>
+    <div class="vline"></div>
+    <div class="test"><b>Are there Reed-Sternberg cells?</b></div>
+    <div class="vline"></div>
+  </div>
+  <div>
+    <div class="fork" aria-hidden="true"></div>
+    <div class="cols">
+      <!-- HODGKIN -->
+      <div class="col">
+        <div class="head"><h3>Yes: Hodgkin lymphoma (15%)</h3>
+          <p>Reed-Sternberg cells in an inflammatory background. Younger patients, men more than women. Nodal, spreads to the next node group in order. No monoclonal pattern on flow.</p></div>
+        <ul class="tree"><li>
+          <div class="test"><b>Stain the malignant cells</b></div>
+          <ul>
+            <li><span class="if">CD15 and CD30 positive, CD20 and CD45 negative: classical (95%)</span>
+              <div class="dx"><h4>Nodular sclerosis</h4>
+                <p class="what">The most common Hodgkin lymphoma (70%), seen in younger adults.</p>
+                <dl><dt>Clues</dt><dd>Mediastinal mass, lacunar cells, nodules with collagen bands</dd>
+                <dt>Outlook</dt><dd>Mostly stage I to II. Very good to excellent</dd></dl></div>
+              <div class="dx"><h4>Mixed cellularity</h4>
+                <p class="what">Classical Hodgkin of older adults (20%), tied to HIV and EBV.</p>
+                <dl><dt>Clues</dt><dd>Most frequent type in HIV, EBV in 75%, peripheral nodes</dd>
+                <dt>Outlook</dt><dd>Mostly higher stage with B symptoms. Worse than nodular sclerosis</dd></dl></div>
+              <div class="dx"><h4>Lymphocyte rich</h4>
+                <p class="what">A rare type (under 5%) with very few Reed-Sternberg cells among many benign lymphocytes.</p>
+                <dl><dt>Outlook</dt><dd>Excellent</dd></dl></div>
+              <div class="dx"><h4>Lymphocyte depleted</h4>
+                <p class="what">The rarest type (1%): numerous bizarre Reed-Sternberg cells and almost no benign lymphocytes.</p>
+                <dl><dt>Outlook</dt><dd>Always high stage with B symptoms. Worst prognosis</dd></dl></div>
+            </li>
+            <li><span class="if">CD20 and CD45 positive, CD15 and CD30 negative</span>
+              <div class="dx"><h4>Nodular lymphocyte predominant</h4>
+                <p class="what">A separate, slow Hodgkin lymphoma (5%) built from "popcorn" LP cells.</p>
+                <dl><dt>Clues</dt><dd>No EBV link, mediastinal mass rare, no light chain restriction</dd>
+                <dt>Outlook</dt><dd>Mostly early stage, no B symptoms. Excellent, but recurs often</dd></dl></div>
+            </li>
+          </ul>
+        </li></ul>
+        <div class="test"><b>Treat every patient, aiming for cure</b><span>Stage I to II: short course of chemotherapy, then involved-field radiation. Stage III to IV or bulky disease: ABVD × 2 then AVD × 4, plus radiation if a PET-positive mass remains</span></div>
+      </div>
+
+      <!-- NON-HODGKIN -->
+      <div class="col">
+        <div class="head"><h3>No: non-Hodgkin lymphoma (85%)</h3>
+          <p>Malignant B, T or NK cells, with over 50 subtypes. Older patients. Nodal or extranodal, and spread can skip regions. Monoclonal pattern on flow.</p></div>
+        <ul class="tree"><li>
+          <div class="test"><b>How does it behave, and what does the biopsy show?</b></div>
+          <ul>
+            <li><span class="if">Painless, rapidly enlarging mass with B symptoms</span>
+              <div class="dx"><h4>Diffuse large B-cell lymphoma (DLBCL)</h4>
+                <p class="what">The most common NHL (50%): aggressive and rapidly fatal untreated, but it responds well to treatment.</p>
+                <dl><dt>Biopsy</dt><dd>Normal node structure lost, large nuclei with visible nucleoli, high mitotic activity</dd>
+                <dt>Treat</dt><dd>CHOP-R. 3 cycles for stage I to II, 6 cycles for stage III to IV</dd>
+                <dt>Outlook</dt><dd>Scored with the IPI. Germinal centre type does better than activated B-cell type</dd></dl></div></li>
+            <li><span class="if">Slow, often no symptoms, follicular pattern</span>
+              <div class="dx"><h4>Follicular lymphoma</h4>
+                <p class="what">The second most common NHL (30 to 40%): an indolent B-cell lymphoma that relapses and remits and is mostly incurable.</p>
+                <dl><dt>Gene</dt><dd>t(14;18), Bcl-2 activation</dd>
+                <dt>Stage</dt><dd>Usually III or IV at diagnosis</dd>
+                <dt>Treat</dt><dd>Watch and wait until symptoms develop. Stage I: radiation, potentially curable. Stage II to IV: 6 cycles of BR, then 2 years of rituximab</dd>
+                <dt>Outlook</dt><dd>Scored with the FLIPI</dd></dl></div></li>
+            <li><span class="if">High lymphocyte count, smudge cells on the film</span>
+              <div class="dx"><h4>CLL / small lymphocytic lymphoma</h4>
+                <p class="what">An indolent, incurable B-cell cancer of older adults that sits in nodes, marrow, spleen and usually the blood.</p>
+                <dl><dt>Clues</dt><dd>Lymphadenopathy, splenomegaly. About 15% have autoantibodies against red cells</dd>
+                <dt>Treat</dt><dd>Do not treat low-risk or asymptomatic disease. Later: chlorambucil, fludarabine, anti-CD20 antibody, ibrutinib</dd>
+                <dt>Outlook</dt><dd>Median survival 10 to 15 years if caught early</dd></dl></div></li>
+            <li><span class="if">A signature translocation</span>
+              <div class="dx"><h4>Burkitt lymphoma</h4>
+                <p class="what" style="margin-bottom:0">B-cell lymphoma with a starry-sky pattern. t(8;14), c-Myc activation.</p></div>
+              <div class="dx"><h4>Mantle cell lymphoma</h4>
+                <p class="what" style="margin-bottom:0">B-cell lymphoma that overexpresses cyclin D1. t(11;14).</p></div>
+              <div class="dx"><h4>MALT lymphoma</h4>
+                <p class="what" style="margin-bottom:0">Lymphoma of mucosa-associated lymphoid tissue. t(11;18), MALT1 activation.</p></div>
+              <div class="dx"><h4>Anaplastic large cell lymphoma</h4>
+                <p class="what" style="margin-bottom:0">T-cell lymphoma with an ALK1 mutation. t(2;5).</p></div></li>
+          </ul>
+        </li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="refs">
+    <div class="panel wide">
+      <h3>Ann Arbor stage</h3>
+      <div class="tbl"><table>
+        <tbody>
+          <tr><td>I</td><td>One lymph node region, or one extralymphatic site (IE)</td></tr>
+          <tr><td>II</td><td>Two or more regions on the same side of the diaphragm</td></tr>
+          <tr><td>III</td><td>Regions on both sides of the diaphragm</td></tr>
+          <tr><td>IV</td><td>Diffuse involvement of extralymphatic organs, including bone marrow</td></tr>
+          <tr><td>A or B</td><td>A: no B symptoms. B: B symptoms present (fever, night sweats, weight loss)</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. PLASMA CELL DISORDERS ============ -->
+<section id="plasma" class="chart k-pc" aria-label="Plasma cell disorders">
+  <div class="chart-head"><h2>Plasma cell disorders</h2>
+    <p>Plasma cells are mature B cells that make antibodies. In these disorders one clone makes a single non-functional antibody, the M protein.</p></div>
+
+  <div class="trunk">
+    <div class="test"><b>Suspect it</b><span>Fatigue, infections, bone pain (spine most often), hypercalcemia, impaired kidney function</span></div>
+    <div class="vline"></div>
+    <div class="test"><b>Find the M protein</b><span>Protein electrophoresis of blood and 24-hour urine, serum free light chains. Blood film shows rouleaux</span></div>
+    <div class="vline"></div>
+    <div class="test"><b>Bone marrow plasma cells and CRAB organ damage</b></div>
+    <div class="vline"></div>
+  </div>
+  <div>
+    <div class="fork" style="--fl:12.5%" aria-hidden="true"></div>
+    <div class="cols" style="--n:4">
+      <div class="col">
+        <div class="head"><h3>Under 10%, no CRAB</h3></div>
+        <div class="dx"><h4>MGUS</h4>
+          <p class="what">Monoclonal gammopathy of undetermined significance: an M protein with no symptoms and no organ damage.</p>
+          <dl><dt>Do</dt><dd>Monitor 1 to 2 times a year</dd>
+          <dt>Risk</dt><dd>0.5 to 2% become myeloma</dd></dl></div>
+      </div>
+      <div class="col">
+        <div class="head"><h3>10% or more, no CRAB</h3></div>
+        <div class="dx"><h4>Smoldering myeloma</h4>
+          <p class="what">Myeloma-level marrow disease that has not yet caused symptoms or organ damage.</p>
+          <dl><dt>Do</dt><dd>Close follow-up every 3 to 6 months</dd>
+          <dt>Risk</dt><dd>5 to 25% become myeloma</dd></dl></div>
+      </div>
+      <div class="col">
+        <div class="head"><h3>10% or more, with CRAB</h3></div>
+        <div class="dx"><h4>Multiple myeloma</h4>
+          <p class="what">Plasma cell cancer: non-functional M protein builds up and damages bone, kidney and marrow.</p>
+          <dl><dt>Do</dt><dd>Start therapy</dd>
+          <dt>FISH</dt><dd>t(4;14), t(14;16), del(17p)</dd>
+          <dt>ISS</dt><dd>Uses albumin and β2-microglobulin. Median survival: ISS 2 is 83 months, ISS 3 is 43 months</dd></dl></div>
+      </div>
+      <div class="col">
+        <div class="head"><h3>Plasma cells in blood (20%)</h3></div>
+        <div class="dx"><h4>Plasma cell leukemia</h4>
+          <p class="what">Myeloma whose plasma cells circulate in the blood.</p>
+          <dl><dt>Do</dt><dd>High-dose combination chemotherapy</dd></dl>
+          <span class="alert">Medical emergency</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="refs">
+    <div class="panel">
+      <h3>CRAB</h3>
+      <div class="tbl"><table><tbody>
+        <tr><td>Calcium</td><td>Over 2.52 mmol/L</td></tr>
+        <tr><td>Renal</td><td>Creatinine over 175 µmol/L, or CrCl under 40 mL/min</td></tr>
+        <tr><td>Anemia</td><td>Hb under 100 g/L, or 20 g/L below baseline</td></tr>
+        <tr><td>Bone</td><td>Lytic lesions or fractures. Skeletal survey is the standard of care</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="panel">
+      <h3>Related disorders</h3>
+      <div class="tbl"><table><tbody>
+        <tr><td>Plasmacytoma</td><td>A solid myeloma tumour. Solitary has a good prognosis. Multiple means end-stage disease</td></tr>
+        <tr><td>AL amyloidosis</td><td>M proteins become insoluble and deposit in organs such as the heart and kidneys</td></tr>
+        <tr><td>POEMS</td><td>Polyneuropathy, organomegaly, endocrinopathy, M protein and skin changes</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="panel wide">
+      <h3>Myeloma complications</h3>
+      <div class="tbl"><table><tbody>
+        <tr><td>Cord compression</td><td>Medical emergency. Urgent surgery, radiation or both</td></tr>
+        <tr><td>Renal dysfunction</td><td>Medical emergency. Anti-myeloma therapy, hemodialysis</td></tr>
+        <tr><td>Hypercalcemia</td><td>Thirst, nausea, confusion. IV hydration and a bisphosphonate (pamidronate, zoledronate)</td></tr>
+        <tr><td>Bone pain, fractures</td><td>Orthopedic surgery, vertebroplasty, kyphoplasty</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. MEDIASTINAL MASS ============ -->
+<section id="mediastinum" class="chart k-med" aria-label="Mediastinal mass">
+  <div class="chart-head"><h2>Mediastinal mass</h2>
+    <p>The mediastinum is the space between the lungs. The compartment the mass sits in, and how fast it appeared, give you the short list.</p></div>
+
+  <div class="trunk">
+    <div class="test"><b>Chest x-ray shows a widened mediastinum</b><span>Over 6 cm on an upright PA film, or over 8 cm on a supine AP film</span></div>
+    <div class="vline"></div>
+    <div class="test"><b>Chest CT with IV contrast: which compartment?</b></div>
+    <div class="vline"></div>
+  </div>
+  <div>
+    <div class="fork" style="--fl:16.66%" aria-hidden="true"></div>
+    <div class="cols" style="--n:3">
+      <div class="col">
+        <div class="head"><h3>Anterior</h3><p>Sternum to pericardium. The 5 Ts</p></div>
+        <div class="dx"><h4>Thymoma</h4>
+          <p class="what">A tumour of the thymus in adults over 40 that grows silently over years.</p>
+          <dl><dt>Clues</dt><dd>Myasthenia gravis, anti-AChR antibodies</dd>
+          <dt>Next</dt><dd>Resect. No biopsy needed</dd></dl></div>
+        <div class="dx"><h4>"Terrible" lymphoma</h4>
+          <p class="what">Lymphoma in the mediastinal nodes. Onset over months, or days if lymphoblastic.</p>
+          <dl><dt>Clues</dt><dd>B symptoms, other nodes, splenomegaly, high LDH</dd>
+          <dt>Next</dt><dd>Biopsy with flow cytometry, PET/CT</dd></dl>
+          <a class="jump k-lym" href="#lymphoma">Go to Lymphoma</a></div>
+        <div class="dx"><h4>Teratoma and germ cell tumours</h4>
+          <p class="what">Tumours of germ cells, seen in children and men. <sup>†</sup></p>
+          <dl><dt>Teratoma</dt><dd>Silent or slow over years</dd>
+          <dt>Seminoma</dt><dd>Differentiated testicular cancer. Onset over months. β-hCG high in 10%</dd>
+          <dt>Non-seminoma</dt><dd>Undifferentiated testicular cancer. Onset over days. AFP high in 60 to 80%, β-hCG in 30 to 50%, LDH high</dd>
+          <dt>Next</dt><dd>Feel for a scrotal mass, scrotal ultrasound, CT for lung metastases</dd></dl></div>
+        <div class="dx"><h4>Thyroid</h4>
+          <p class="what">Ectopic thyroid tissue or a goiter that extends behind the sternum.</p>
+          <dl><dt>Next</dt><dd>Technetium scan</dd></dl></div>
+        <div class="dx"><h4>Thoracic aorta</h4>
+          <p class="what">An aneurysm or dissection that widens the mediastinum.</p>
+          <dl><dt>Clues</dt><dd>Check blood pressure in both arms</dd>
+          <dt>Next</dt><dd>No biopsy</dd></dl></div>
+      </div>
+      <div class="col">
+        <div class="head"><h3>Middle</h3><p>Heart, great vessels, nodes, phrenic and recurrent laryngeal nerves</p></div>
+        <div class="dx"><h4>Lymphadenopathy</h4>
+          <p class="what">Enlarged mediastinal nodes from lymphoma, sarcoid or metastatic lung cancer.</p>
+          <dl><dt>Next</dt><dd>Biopsy with flow cytometry</dd></dl></div>
+        <div class="dx"><h4>Benign cyst</h4>
+          <p class="what">A fluid-filled bronchogenic, pericardial or enteric cyst. <sup>†</sup></p>
+          <dl><dt>Next</dt><dd>No biopsy for a simple cyst</dd></dl></div>
+        <div class="dx"><h4>Esophageal tumour or vascular mass</h4>
+          <p class="what" style="margin-bottom:0">A growth of the esophagus, or an enlarged vessel. <sup>†</sup></p></div>
+      </div>
+      <div class="col">
+        <div class="head"><h3>Posterior</h3><p>Beside the spine: sympathetic trunk, vagus and splanchnic nerves, esophagus, aorta</p></div>
+        <div class="dx"><h4>Neurogenic tumour</h4>
+          <p class="what" style="margin-bottom:0">A tumour of the nerves that run beside the spine. The classic posterior mass. <sup>†</sup></p></div>
+        <div class="dx"><h4>Meningocele or thoracic spine lesion</h4>
+          <p class="what" style="margin-bottom:0">A mass that arises from the spine or its coverings. <sup>†</sup></p></div>
+        <div class="test"><b>How a biopsy is taken</b><span>Percutaneous needle with imaging (least invasive), endobronchial with ultrasound, or surgical</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="refs">
+    <div class="panel wide">
+      <h3>Signs that the mass is pressing on something</h3>
+      <div class="tbl"><table><tbody>
+        <tr><td>Superior vena cava syndrome</td><td>Swelling of the face, neck and chest, collateral veins on the chest, dyspnea, cough, Pemberton sign</td></tr>
+        <tr><td>Horner syndrome</td><td>Miosis, ptosis and anhidrosis from the sympathetic chain. Also seen with a Pancoast tumour</td></tr>
+        <tr><td>Hoarseness</td><td>Recurrent laryngeal nerve compression</td></tr>
+        <tr><td>Hypotension</td><td>Cardiac compression with tamponade physiology</td></tr>
+        <tr><td>Airway and esophagus</td><td>Cough, stridor, hemoptysis, dysphagia</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+</section>
+<footer>† Plain-language line added for clarity. It is not in Nicole's Notes. Everything else follows the Week 12 notes.</footer>
+</div>
+</body></html>

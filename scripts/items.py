@@ -172,6 +172,15 @@ ITEMS = [
   "Week 11: high and low counts, MPNs, leukemias and emergencies."
  ],
  [
+  3,
+  "lymphoid-disorders-map",
+  "Lymphoid Disorders Map",
+  None,
+  None,
+  "flow",
+  "Week 12: enlarged nodes, lymphoma, plasma cell disorders, mediastinal mass."
+ ],
+ [
   2,
   "cancer-workup-map",
   "Cancer Workup Map",
