@@ -22,8 +22,8 @@ description: "Practice questions and flowcharts for Schulich Foundations of Medi
 <li><a class="flowtile" data-b="2" href="/fom/block-2/flowcharts/cancer-workup-map"><span class="flow-block">Block 2</span><strong>Cancer Workup Map</strong><span class="flow-desc">Week 6: breast mass, screening, pathology report, treatment, hereditary cancer, carcinogenesis.</span></a></li>
 <li><a class="flowtile" data-b="3" href="/fom/block-3/flowcharts/anemia-workup-map"><span class="flow-block">Block 3</span><strong>Anemia Workup Map</strong><span class="flow-desc">Full Week 9 workup from CBC to diagnosis.</span></a></li>
 <li><a class="flowtile" data-b="3" href="/fom/block-3/flowcharts/hemostasis-workup-map"><span class="flow-block">Block 3</span><strong>Hemostasis Workup Map</strong><span class="flow-desc">Week 10: bleeding, platelets, VTE, anticoagulants, transfusion.</span></a></li>
-<li><a class="flowtile" data-b="3" href="/fom/block-3/flowcharts/lymphoid-disorders-map"><span class="flow-block">Block 3</span><strong>Lymphoid Disorders Map</strong><span class="flow-desc">Week 12: enlarged nodes, lymphoma, plasma cell disorders, mediastinal mass.</span></a></li>
 <li><a class="flowtile" data-b="3" href="/fom/block-3/flowcharts/myeloid-disorders-map"><span class="flow-block">Block 3</span><strong>Myeloid Disorders Map</strong><span class="flow-desc">Week 11: high and low counts, MPNs, leukemias and emergencies.</span></a></li>
+<li><a class="flowtile" data-b="3" href="/fom/block-3/flowcharts/lymphoid-disorders-map"><span class="flow-block">Block 3</span><strong>Lymphoid Disorders Map</strong><span class="flow-desc">Week 12: enlarged nodes, lymphoma, plasma cell disorders, mediastinal mass.</span></a></li>
 </ul>
 
 <script>

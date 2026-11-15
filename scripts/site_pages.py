@@ -67,8 +67,14 @@ def topics(kind, blurb):
 by = {}
 for b, slug, title, aid, _unused, kind, blurb in ITEMS:
     by.setdefault((b, kind), []).append((slug, title, blurb))
+def item_week(x):
+    """Week number from the slug (quizzes) or from the blurb (flowcharts: "Week 12: ...")."""
+    m = re.search(r"[Ww]eek (\d+)", x[2])
+    return week_key(x[0]) or (int(m.group(1)) if m else 0)
+
+
 for k in by:
-    by[k].sort(key=lambda x: (week_key(x[0]), x[0]))
+    by[k].sort(key=lambda x: (item_week(x), x[0]))
 
 # Every scored set, for the progress script.
 QUIZZES = []

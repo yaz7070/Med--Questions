@@ -21,8 +21,8 @@ description: "Weeks 9 to 12. Anemia, bleeding, myeloid disorders, lymphadenopath
 <ul class="sets">
 <li><a class="set flow" href="/fom/block-3/flowcharts/anemia-workup-map"><span class="set-name">Anemia Workup Map</span><span class="set-desc">Full Week 9 workup from CBC to diagnosis.</span><span class="set-go">Open</span></a></li>
 <li><a class="set flow" href="/fom/block-3/flowcharts/hemostasis-workup-map"><span class="set-name">Hemostasis Workup Map</span><span class="set-desc">Week 10: bleeding, platelets, VTE, anticoagulants, transfusion.</span><span class="set-go">Open</span></a></li>
-<li><a class="set flow" href="/fom/block-3/flowcharts/lymphoid-disorders-map"><span class="set-name">Lymphoid Disorders Map</span><span class="set-desc">Week 12: enlarged nodes, lymphoma, plasma cell disorders, mediastinal mass.</span><span class="set-go">Open</span></a></li>
 <li><a class="set flow" href="/fom/block-3/flowcharts/myeloid-disorders-map"><span class="set-name">Myeloid Disorders Map</span><span class="set-desc">Week 11: high and low counts, MPNs, leukemias and emergencies.</span><span class="set-go">Open</span></a></li>
+<li><a class="set flow" href="/fom/block-3/flowcharts/lymphoid-disorders-map"><span class="set-name">Lymphoid Disorders Map</span><span class="set-desc">Week 12: enlarged nodes, lymphoma, plasma cell disorders, mediastinal mass.</span><span class="set-go">Open</span></a></li>
 </ul>
 
 <script>
