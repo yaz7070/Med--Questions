@@ -2,7 +2,7 @@
 
 Run from the repo root: python3 scripts/quiz/build.py
 Data file shape: {"title", "context", "questions": [{c, p, o, a, e, l}], "objectives": {id: text}}
-Output: quartz/static/pages/<slug>.html
+Output: quartz/static/pages/<slug>.html, plus anki.html copied from scripts/quiz/anki.html
 """
 import html, json, pathlib, sys
 
@@ -13,6 +13,8 @@ TEMPLATE = (QDIR / "template.html").read_text()
 sys.path.insert(0, str(ROOT / "scripts"))
 from items import ITEMS  # noqa: E402
 BLOCK = {it[1]: it[0] for it in ITEMS}  # slug -> block number, sets the quiz colour
+FOLDER = {"quiz": "question-bank", "test": "practice-tests"}
+HREF = {it[1]: f"fom/block-{it[0]}/{FOLDER[it[5]]}/{it[1]}" for it in ITEMS if it[5] in FOLDER}  # wrapper page, root-relative
 
 
 def js(v):
@@ -31,6 +33,7 @@ def build(path):
             .replace("__CONTEXT__", html.escape(d["context"]))
             .replace("__KEY__", "differential-" + path.stem)
             .replace("__BLOCK__", str(BLOCK.get(path.stem, 1)))
+            .replace("__SET__", js({"slug": path.stem, "title": d["title"], "b": BLOCK.get(path.stem, 1), "href": HREF.get(path.stem, "")}))
             .replace("__QUESTIONS__", js(qs))
             .replace("__OBJECTIVES__", js(d.get("objectives", {}))))
     (OUT / f"{path.stem}.html").write_text(page)
@@ -41,3 +44,6 @@ if __name__ == "__main__":
     files = [QDIR / "data" / f"{a}.json" for a in sys.argv[1:]] or sorted((QDIR / "data").glob("*.json"))
     for f in files:
         print(f.stem, build(f))
+    # The Anki tab is a hand-written page that sits beside the quizzes.
+    (OUT / "anki.html").write_text((QDIR / "anki.html").read_text())
+    print("anki")

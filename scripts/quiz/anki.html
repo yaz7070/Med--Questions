@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<style>
+/* Nexus Anki page. Source: scripts/quiz/anki.html (build.py copies it to quartz/static/pages/).
+   Reads the shared list "differential-anki" that every quiz writes to with Save to Anki.
+   Same tokens as the quiz template. Each card takes its block colour. */
+:root{
+  --bg:#f5f6f8;--paper:#ffffff;--ink:#15181d;--muted:#4d5560;--faint:#7b828d;--line:#e0e3e8;--soft:#eef0f3;
+  --ok:#1d7a46;--okw:#e7f4ec;--bad:#b42318;--badw:#fcecea;
+  --b1:#0b7a75;--b2:#4f46c8;--b3:#a3246b;--b4:#a35f08;
+  --accent:var(--ink);
+  --font:"Atkinson Hyperlegible Next","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+:root[data-theme="dark"]{
+  --bg:#14161a;--paper:#1b1e24;--ink:#eceef2;--muted:#b3bac5;--faint:#8a919c;--line:#2d323b;--soft:#252930;
+  --ok:#5ccf8f;--okw:#13301f;--bad:#f2877c;--badw:#3a1c1a;
+  --b1:#45c2b8;--b2:#a49df6;--b3:#ef8ec0;--b4:#e3a548;color-scheme:dark}
+[data-b="1"]{--accent:var(--b1)}[data-b="2"]{--accent:var(--b2)}[data-b="3"]{--accent:var(--b3)}[data-b="4"]{--accent:var(--b4)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5;font-variant-numeric:tabular-nums}
+.wrap{max-width:860px;margin:0 auto;padding:28px 16px 64px;display:flex;flex-direction:column;gap:22px}
+h1,h2,h3,p{margin:0}
+h1{font-size:clamp(26px,4vw,32px);letter-spacing:-.015em;line-height:1.15}
+.sub{color:var(--muted);margin-top:4px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.help{font-size:14px;color:var(--faint);margin-top:10px;max-width:70ch}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.filters button{font:inherit;font-size:14px;font-weight:700;color:var(--muted);background:transparent;border:1.5px solid var(--line);border-radius:6px;padding:4px 11px;cursor:pointer}
+.filters button[aria-pressed="true"]{color:var(--paper);background:var(--accent);border-color:var(--accent)}
+.filters button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.btn{font:inherit;font-weight:700;font-size:15px;padding:9px 18px;border:1.5px solid var(--accent);border-radius:6px;background:var(--accent);color:var(--paper);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.ghost:hover:not(:disabled){background:var(--soft)}
+.btn:disabled{opacity:.35;cursor:default}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.status{font-size:14px;color:var(--muted);display:flex;align-items:center;gap:10px;min-height:1.5em}
+.linkbtn{font:inherit;font-size:14px;font-weight:700;color:var(--accent);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+#main{display:flex;flex-direction:column;gap:26px}
+.status:empty,.filters:empty,.help:empty,.tools:empty{display:none}
+/* List */
+.group h2{font-size:17px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin-bottom:8px}
+.group h2 span{font-size:14px;font-weight:400;color:var(--muted)}
+.cards{list-style:none;margin:0;padding:0;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.cards li{display:flex;align-items:flex-start;gap:8px;border-left:5px solid var(--accent);padding:0 12px 0 0}
+.cards li + li{border-top:1px solid var(--line)}
+details{flex:1;min-width:0}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:3.2rem minmax(0,1fr) auto;gap:4px 12px;padding:11px 0 11px 12px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+summary:hover .s{color:var(--ink)}
+.qn{font-weight:700;color:var(--accent);font-size:14px}
+.s{color:var(--muted);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:15px}
+details[open] .s{display:block;-webkit-line-clamp:unset;color:var(--ink);white-space:pre-line}
+.due{font-size:13px;color:var(--faint);white-space:nowrap}
+.due.now{color:var(--accent);font-weight:700}
+.back{padding:0 0 14px 12px;margin-left:3.2rem;display:flex;flex-direction:column;gap:8px}
+.rm{flex:none;font:inherit;font-size:13px;font-weight:700;color:var(--faint);background:none;border:1.5px solid transparent;border-radius:6px;padding:4px 8px;margin-top:8px;cursor:pointer}
+.rm:hover{color:var(--bad);border-color:var(--line)}
+.rm:focus-visible{outline:2px solid var(--accent)}
+.open{font-size:14px;font-weight:700;color:var(--accent)}
+
+/* Options and explanation (shared by list and review) */
+.olist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.olist li{display:flex;gap:10px;align-items:baseline;border:0;padding:0}
+.k{flex:none;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:5px;background:var(--soft);color:var(--accent);font-weight:700;font-size:13px}
+.olist li.right .k{background:var(--ok);color:var(--paper)}
+.olist li.right > span:last-child{font-weight:700}
+.ex{display:flex;flex-direction:column;gap:8px;background:var(--bg);border-radius:6px;padding:12px 14px;font-size:15px}
+.cards .ex{background:var(--soft)}
+.ex p{max-width:72ch}
+.ex .why,.ex .alt{display:flex;gap:10px;align-items:baseline}
+.ex .why{font-weight:600}
+.ex .alt{color:var(--muted)}
+.lk{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--muted);font-weight:700;font-size:12px}
+.lk.ok{background:var(--ok);color:var(--paper)}
+.ex .take{border-left:3px solid var(--accent);padding-left:10px}
+.obj{font-size:13.5px;color:var(--faint)}
+.obj b{color:var(--muted)}
+
+/* Empty */
+.empty{background:var(--paper);border:1px dashed var(--line);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:8px;color:var(--muted)}
+.empty b{color:var(--ink)}
+.empty a{color:var(--ink);font-weight:700}
+
+/* Review */
+.card{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:18px}
+.chead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:14px}
+.chead b{color:var(--accent)}
+.chead span{color:var(--faint)}
+.stem{font-size:18.5px;line-height:1.6;white-space:pre-line;max-width:70ch}
+.card .olist{gap:10px;font-size:16.5px}
+.card .k{width:28px;height:28px}
+.rate{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.rate button{font:inherit;display:flex;flex-direction:column;align-items:center;gap:1px;padding:9px 6px;border-radius:6px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font-weight:700;cursor:pointer}
+.rate button small{font-weight:400;font-size:13px;color:var(--faint)}
+.rate button:hover{border-color:var(--accent)}
+.rate button.again{color:var(--bad)}
+.rate button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.keys{font-size:13px;color:var(--faint)}
+.rowbtns{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+@media (max-width:560px){
+  summary{grid-template-columns:2.6rem minmax(0,1fr)}
+  .due{grid-column:2}
+  .back{margin-left:0}
+  .card{padding:18px}.stem{font-size:17.5px}
+  .keys{display:none}
+}
+</style>
+</head><body>
+<script>
+/* Follow the site's light or dark toggle. */
+(function(){
+  const r=document.documentElement;
+  function theme(){ let t=null; try{ t=localStorage.getItem("theme"); }catch(e){}
+    r.dataset.theme = t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); }
+  theme(); addEventListener("storage",theme);
+})();
+</script>
+<div class="wrap">
+  <header id="top">
+    <h1>Anki</h1>
+    <p class="sub" id="sub"></p>
+    <div class="tools" id="tools"></div>
+    <p class="help" id="help"></p>
+    <div class="filters" id="filters" role="group" aria-label="Show questions from"></div>
+  </header>
+  <div class="status" id="status" role="status"></div>
+  <main id="main"></main>
+</div>
+
+<script>
+const KEY = "differential-anki";
+const ROOT = "../../";            // this page is served at static/pages/anki.html
+const L = "ABCDE";
+const DAY = 86400000;
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+let cards = [], filter = "all", review = null, removed = null;
+
+function load(){ try{ const d=JSON.parse(localStorage.getItem(KEY)||"null"); cards = d && Array.isArray(d.cards) ? d.cards.filter(c=>c && c.id && Array.isArray(c.o)) : []; }catch(e){ cards=[]; } }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify({v:1, cards})); return true; }catch(e){ status("Could not save. Browser storage is full or blocked."); return false; } }
+function status(html){ $("#status").innerHTML = html || ""; }
+
+function week(c){ const m=String(c.slug).match(/week-(\d+)/); return m ? +m[1] : 99; }
+function order(a,b){ return (a.b-b.b) || (week(a)-week(b)) || String(a.set).localeCompare(String(b.set)) || (a.n-b.n); }
+function shown(){ return cards.filter(c=>filter==="all" || String(c.b)===filter).sort(order); }
+function isDue(c, now){ return !c.r || (c.r.due||0) <= (now||Date.now()); }
+
+/* Scheduling, a light version of Anki's: Again repeats the card this session,
+   Good multiplies the interval by the card's ease, Easy goes further and raises the ease. */
+function next(r, grade){
+  r = Object.assign({ivl:0, ease:2.5, reps:0, due:0}, r||{});
+  const now = Date.now();
+  if(grade===0){ r.ivl=0; r.ease=Math.max(1.3, +(r.ease-0.2).toFixed(2)); r.due=now; }
+  else if(grade===1){ r.ivl = r.ivl<1 ? 1 : Math.round(r.ivl*r.ease); r.due=now+r.ivl*DAY; }
+  else { r.ivl = r.ivl<1 ? 4 : Math.round(r.ivl*r.ease*1.3); r.ease=+(r.ease+0.15).toFixed(2); r.due=now+r.ivl*DAY; }
+  r.reps++; return r;
+}
+function span(d){ return d<1 ? "Under 1 min" : d===1 ? "1 day" : d<31 ? d+" days" : Math.round(d/30)+" mo"; }
+function dueLabel(c){
+  if(!c.r) return ["New","now"];
+  const ms=(c.r.due||0)-Date.now();
+  if(ms<=0) return ["Due now","now"];
+  const d=Math.ceil(ms/DAY);
+  return [d===1 ? "Due tomorrow" : "Due in "+d+" days",""];
+}
+
+function fmtLine(t){
+  let m;
+  if((m=t.match(/^Correct:\s*([A-E])\.?\s*(.*)$/))) return `<p class="why"><span class="lk ok">${m[1]}</span><span>${esc(m[2])}</span></p>`;
+  if((m=t.match(/^([A-E]):\s*(.*)$/))) return `<p class="alt"><span class="lk">${m[1]}</span><span>${esc(m[2])}</span></p>`;
+  if((m=t.match(/^(Takeaway|High yield|High-yield|Key point|Clues):\s*(.*)$/i))) return `<p class="take"><b>${esc(m[1])}.</b> ${esc(m[2])}</p>`;
+  return `<p>${esc(t)}</p>`;
+}
+function optsHtml(c, reveal){
+  return `<ol class="olist">${c.o.map((o,i)=>`<li class="${reveal && i===c.a ? "right" : ""}"><span class="k">${L[i]}</span><span>${esc(o)}</span></li>`).join("")}</ol>`;
+}
+function backHtml(c){
+  const objs=(c.l||[]).map((id,k)=>`<div class="obj"><b>Objective ${esc(id)}</b> ${esc((c.obj||[])[k]||"")}</div>`).join("");
+  return `<div class="ex">${String(c.e||"").split("\n").map(fmtLine).join("")}${objs}</div>`;
+}
+
+/* ---------- header ---------- */
+function renderTop(){
+  const list=shown(), now=Date.now(), due=list.filter(c=>isDue(c,now)).length;
+  const scope = filter==="all" ? "" : " in Block "+filter;
+  $("#sub").textContent = cards.length
+    ? `${list.length} saved question${list.length===1?"":"s"}${scope}. ${due ? due+" ready to review." : "Nothing due right now."}`
+    : "Questions you save from any quiz land here.";
+  $("#tools").innerHTML = cards.length && !review ? `
+    <button class="btn" id="go" ${due?"":"disabled"}>Review ${due||""} due</button>
+    <button class="btn ghost" id="all">Study all ${list.length}</button>
+    <button class="btn ghost" id="dl">Download for Anki</button>` : "";
+  $("#help").textContent = cards.length && !review
+    ? "Download makes a file the Anki app can import. In Anki, choose File, then Import, and pick the file. Cards go to a deck called Nexus, and importing a newer download updates them instead of adding copies."
+    : "";
+  const blocks=[...new Set(cards.map(c=>String(c.b)))].sort();
+  if(filter!=="all" && !blocks.includes(filter)) filter="all";
+  $("#filters").innerHTML = blocks.length>1 && !review
+    ? [["all","All blocks"], ...blocks.map(b=>[b,"Block "+b])].map(([v,t])=>`<button data-f="${v}" ${v==="all"?"":`data-b="${v}"`} aria-pressed="${filter===v}">${t}</button>`).join("")
+    : "";
+  document.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{ filter=b.dataset.f; render(); });
+  const go=$("#go"); if(go) go.onclick=()=>startReview(list.filter(c=>isDue(c,Date.now())));
+  const all=$("#all"); if(all) all.onclick=()=>startReview(list);
+  const dl=$("#dl"); if(dl) dl.onclick=()=>download(list);
+}
+
+/* ---------- list ---------- */
+function renderList(){
+  const list=shown();
+  if(!cards.length){
+    $("#main").innerHTML = `<div class="empty"><b>Your Anki list is empty.</b>
+      <span>Open any quiz and press Save to Anki on a question. After you finish a quiz, the results screen can save every question you missed in one click.</span>
+      <a href="${ROOT}" target="_top">Go to the home page</a></div>`;
+    return;
+  }
+  const groups=[];
+  list.forEach(c=>{ const g=groups[groups.length-1]; if(g && g.slug===c.slug) g.items.push(c); else groups.push({slug:c.slug, set:c.set, b:c.b, href:c.href, items:[c]}); });
+  $("#main").innerHTML = groups.map(g=>`<section class="group" data-b="${esc(g.b)}">
+    <h2>${esc(g.set)} <span>Block ${esc(g.b)}, ${g.items.length} saved</span></h2>
+    <ul class="cards">${g.items.map(c=>{ const [dl,cls]=dueLabel(c); return `<li>
+      <details><summary><span class="qn">Q${c.n}</span><span class="s">${esc(c.p)}</span><span class="due ${cls}">${dl}</span></summary>
+        <div class="back">${optsHtml(c,true)}${backHtml(c)}${c.href?`<a class="open" href="${ROOT+esc(c.href)}" target="_top">Open ${esc(c.set)}</a>`:""}</div></details>
+      <button class="rm" data-id="${esc(c.id)}" aria-label="Remove question ${c.n} of ${esc(c.set)}">Remove</button></li>`; }).join("")}</ul>
+  </section>`).join("");
+  document.querySelectorAll(".rm").forEach(b=>b.onclick=()=>{
+    const i=cards.findIndex(c=>c.id===b.dataset.id); if(i<0) return;
+    removed={card:cards[i], at:i}; cards.splice(i,1); save(); render();
+    status(`Removed Q${removed.card.n} of ${esc(removed.card.set)}. <button class="linkbtn" id="undo">Undo</button>`);
+    $("#undo").onclick=()=>{ if(!removed) return; cards.splice(Math.min(removed.at,cards.length),0,removed.card); removed=null; save(); status(""); render(); };
+  });
+}
+
+/* ---------- review ---------- */
+function startReview(list){
+  if(!list.length) return;
+  const now=Date.now();
+  review={queue:list.slice().sort((a,b)=>((a.r&&a.r.due)||0)-((b.r&&b.r.due)||0) || order(a,b)).map(c=>c.id), shown:false, done:0, again:0, start:now};
+  status(""); render(); scrollTo({top:0});
+}
+function endReview(){ review=null; document.documentElement.removeAttribute("data-b"); render(); scrollTo({top:0}); }
+function renderReview(){
+  const id=review.queue[0], c=cards.find(x=>x.id===id);
+  if(!c){
+    if(review.queue.length){ review.queue.shift(); return renderReview(); }
+    document.documentElement.removeAttribute("data-b");
+    const upcoming=cards.filter(x=>x.r && x.r.due>Date.now()).map(x=>x.r.due).sort((a,b)=>a-b)[0];
+    const when = upcoming ? "The next card is due "+(Math.ceil((upcoming-Date.now())/DAY)===1 ? "tomorrow" : "in "+Math.ceil((upcoming-Date.now())/DAY)+" days")+"." : "";
+    $("#main").innerHTML = `<article class="card"><h2>Review done</h2><p>You went through ${review.done} card${review.done===1?"":"s"}${review.again?`, with ${review.again} repeat${review.again===1?"":"s"}`:""}. ${when}</p>
+      <div class="rowbtns"><button class="btn" id="end">Back to list</button></div></article>`;
+    $("#end").onclick=endReview; $("#end").focus();
+    return;
+  }
+  document.documentElement.dataset.b=c.b;
+  const r=c.r||{}, g=k=>span(next(r,k).ivl);
+  $("#main").innerHTML = `<article class="card">
+    <div class="chead"><b>${esc(c.set)}, Q${c.n}</b><span>${review.queue.length} left</span></div>
+    <p class="stem">${esc(c.p)}</p>
+    ${optsHtml(c, review.shown)}
+    ${review.shown ? backHtml(c)+`
+      <div class="rate" role="group" aria-label="How well did you know it?">
+        <button class="again" data-g="0">Again<small>${g(0)}</small></button>
+        <button data-g="1">Good<small>${g(1)}</small></button>
+        <button data-g="2">Easy<small>${g(2)}</small></button>
+      </div>
+      <div class="rowbtns"><button class="btn ghost" id="end">End review</button><span class="keys">Keys: 1 Again, 2 Good, 3 Easy</span></div>`
+    : `<div class="rowbtns"><button class="btn" id="flip">Show answer</button><span class="keys">Space shows the answer</span></div>
+       <div class="rowbtns"><button class="btn ghost" id="end">End review</button></div>`}
+  </article>`;
+  const f=$("#flip"); if(f){ f.onclick=()=>{ review.shown=true; renderReview(); const b=document.querySelector('[data-g="1"]'); if(b) b.focus(); }; f.focus(); }
+  document.querySelectorAll("[data-g]").forEach(b=>b.onclick=()=>rate(+b.dataset.g));
+  $("#end").onclick=endReview;
+}
+function rate(grade){
+  const id=review.queue.shift(), c=cards.find(x=>x.id===id); if(!c) return renderReview();
+  c.r=next(c.r, grade); save();
+  if(grade===0){ review.again++; review.queue.splice(Math.min(3, review.queue.length), 0, id); }
+  else review.done++;
+  review.shown=false; renderReview(); scrollTo({top:0});
+}
+addEventListener("keydown", e=>{
+  if(!review || e.altKey || e.ctrlKey || e.metaKey) return;
+  const onBtn = e.target && e.target.tagName==="BUTTON";
+  if(!review.shown && (e.key===" " || e.key==="Enter") && !onBtn){ e.preventDefault(); const f=$("#flip"); if(f) f.click(); }
+  else if(review.shown && ["1","2","3"].includes(e.key)){ e.preventDefault(); rate(+e.key-1); }
+  else if(e.key==="Escape"){ endReview(); }
+});
+
+/* ---------- download for the Anki app ----------
+   A tab-separated text file with Anki's file headers: Basic note type, deck "Nexus",
+   tags in column 3, and a stable id in column 4 so a re-import updates cards. */
+function field(html){ return '"'+String(html).replace(/\t/g," ").replace(/\r?\n/g,"<br>").replace(/"/g,'""')+'"'; }
+function tag(s){ return String(s).trim().replace(/[^\w.\-]+/g,"_").replace(/^_+|_+$/g,""); }
+function download(list){
+  if(!list.length) return;
+  const rows=list.map(c=>{
+    const front = `${esc(c.p)}<br><br>${c.o.map((o,i)=>`<b>${L[i]}.</b> ${esc(o)}`).join("<br>")}<br><br><small style="color:#888">${esc(c.set)}, Q${c.n}</small>`;
+    const objs=(c.l||[]).map((id,k)=>`<small style="color:#888">Objective ${esc(id)}: ${esc((c.obj||[])[k]||"")}</small>`).join("<br>");
+    const back = `<b>${L[c.a]}. ${esc(c.o[c.a])}</b><br><br>${String(c.e||"").split("\n").map(esc).join("<br>")}${objs?"<br><br>"+objs:""}`;
+    const tags = ["Nexus", "Block"+c.b, tag(c.set), tag(c.c), ...(c.l||[]).map(tag)].filter(Boolean).join(" ");
+    return [field(front), field(back), field(tags), field("nexus-"+c.slug+"-"+c.n)].join("\t");
+  });
+  const head = ["#separator:tab","#html:true","#notetype:Basic","#deck:Nexus","#tags column:3","#guid column:4"].join("\n");
+  const blob = new Blob([head+"\n"+rows.join("\n")+"\n"], {type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="nexus-anki-"+new Date().toISOString().slice(0,10)+".txt";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 2000);
+  status(`Downloaded ${list.length} card${list.length===1?"":"s"}. In Anki, choose File, then Import, and pick the file.`);
+}
+
+function render(){ renderTop(); review ? renderReview() : renderList(); }
+addEventListener("storage", e=>{ if(e.key===KEY){ load(); if(!review) render(); else renderTop(); } });
+load(); render();
+</script>
+</body></html>

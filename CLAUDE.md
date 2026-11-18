@@ -4,10 +4,11 @@ Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the
 
 ## Structure
 
-The site has three kinds of page and nothing else:
+The site has four kinds of page and nothing else:
 
 - `content/index.md`: home. Overall progress, a Continue link, one row per block, and a strip of flowchart tiles.
 - `content/fom/block-N/index.md`: block page. Lists that block's weekly banks, practice tests and flowcharts, with progress on every row.
+- `content/anki/index.md`: Anki tab. Embeds `/static/pages/anki.html` (source `scripts/quiz/anki.html`, copied by `scripts/quiz/build.py`). Lists saved questions, reviews them with simple spaced repetition, and downloads a tab-separated file the Anki app imports (deck Nexus, Basic notes, stable guid per question so re-imports update).
 - `content/fom/block-N/{question-bank,practice-tests,flowcharts}/<slug>.md`: wrapper page. One slim line (block link, title, full screen link), then an iframe of `/static/pages/<slug>.html`.
 
 Old addresses (`/question-bank/`, `/flowcharts/`, `/progress/`, `/fom/`, and the folder indexes) are "Moved" stubs that forward to the home or block page. Do not bring those pages back: they repeated the same lists.
@@ -20,6 +21,7 @@ All of these are generated. `scripts/items.py` lists every quiz, practice test a
 - One typeface: Atkinson Hyperlegible Next. Neutral greys for the page. Compact rows, small radii, no pills, no big hero.
 - Colour belongs to the blocks: Block 1 teal, Block 2 indigo, Block 3 berry, Block 4 amber (`--b1` to `--b4` in `quartz/styles/custom.scss`, repeated in `scripts/quiz/template.html`). Block 3 is not red, so it never reads as a wrong answer. A page picks its colour from its address (`fom/block-N`) or a `data-b="N"` attribute.
 - Progress on home and block pages comes from the inline script that `site_pages.py` writes (`PROG_JS`). It reads each quiz's saved answers from localStorage.
+- Anki: every quiz question has a Save to Anki button, and the results screen saves all missed questions. Saved cards live in localStorage under `differential-anki` ({v:1, cards:[...]}) with a copy of the question, so the Anki page needs no quiz data. Card id is `<slug>#<question number>`: never renumber questions in a published bank, or saved cards point at the wrong question. Opening a quiz refreshes saved copies from its current data and keeps review progress (`r`). The top bar shows the saved count.
 - Quiz pages share one template: `scripts/quiz/template.html`. Question data lives in `scripts/quiz/data/<slug>.json` ({title, context, questions, objectives}). Run `python3 scripts/quiz/build.py` to write every quiz to `quartz/static/pages/`. Change the template or the data, then rebuild. The quiz takes its block colour from `items.py` and follows the site's light or dark toggle.
 - Layout: custom page frame `quartz/components/frames/DifferentialFrame.tsx` (no sidebars, top bar with title, four block links, search and theme toggle, footer with credits and disclaimer). Top nav links are in `NAV` there and are rendered relative to each page, so the site works under `/Med--Questions/` or any domain. Content links stay root-relative (`/fom/...`) and Quartz rewrites them.
 

@@ -13,8 +13,17 @@ const NAV: [string, string, number][] = [
   ["Block 4", "fom/block-4/", 4],
 ]
 
+// The Anki tab shows how many questions are saved. Quizzes write the list to
+// localStorage ("differential-anki"), so the count updates as soon as you save one.
+const ANKI_COUNT = `(function(){
+  function n(){ try{ var d=JSON.parse(localStorage.getItem("differential-anki")||"null"); return d&&d.cards?d.cards.length:0; }catch(e){ return 0; } }
+  function show(){ var el=document.getElementById("anki-count"); if(!el) return; var k=n(); el.textContent=k?String(k):""; el.hidden=!k; }
+  show(); addEventListener("storage", show); addEventListener("pageshow", show);
+})();`
+
 // The block you are in is highlighted, including on its quiz and flowchart pages.
 function activeTab(slug: string): string | undefined {
+  if (slug.startsWith("anki/")) return "anki/"
   return NAV.find(([, path]) => slug.startsWith(path))?.[1]
 }
 
@@ -38,18 +47,29 @@ export const DifferentialFrame: PageFrame = {
               {First && <First {...componentData} />}
               <nav class="site-nav" aria-label="Main">
                 <ul>
-                  {NAV.map(([label, path, b]) => (
+                  {NAV.map(([, path, b]) => (
                     <li>
                       <a
                         href={`${root}/${path}`}
                         data-b={b}
+                        aria-label={`Block ${b}`}
                         class={path === current ? "active" : undefined}
                         aria-current={path === current ? "page" : undefined}
                       >
-                        {label}
+                        <span class="nav-word">Block </span>
+                        {b}
                       </a>
                     </li>
                   ))}
+                  <li>
+                    <a
+                      href={`${root}/anki/`}
+                      class={current === "anki/" ? "anki active" : "anki"}
+                      aria-current={current === "anki/" ? "page" : undefined}
+                    >
+                      Anki<span class="anki-count" id="anki-count" hidden></span>
+                    </a>
+                  </li>
                 </ul>
               </nav>
               {rest.map((HeaderComponent) => (
@@ -71,6 +91,7 @@ export const DifferentialFrame: PageFrame = {
           {footer.map((FooterComponent) => (
             <FooterComponent {...componentData} />
           ))}
+          <script dangerouslySetInnerHTML={{ __html: ANKI_COUNT }} />
           <footer class="site-footer">
             <p class="credit">
               Built by <strong>Yazdaan Ahmad</strong> and <strong>Mohammad Essa</strong>, Schulich School of Medicine

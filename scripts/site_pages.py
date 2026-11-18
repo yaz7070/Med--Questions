@@ -170,6 +170,15 @@ for b, slug, title, aid, _unused, kind, blurb in ITEMS:
     )
 
 
+# ---------- Anki page: the saved-questions list, embedded like a quiz ----------
+(C / "anki").mkdir(exist_ok=True)
+(C / "anki" / "index.md").write_text(
+    fm("Anki", 'description: "Questions you saved from the quizzes. Review them here or download them for the Anki app."\n')
+    + '<p class="embed-bar"><span class="here">Saved questions</span>'
+    + '<a class="full" href="/static/pages/anki.html" target="_blank" rel="noopener">Open full screen</a></p>\n\n'
+    + '<iframe class="embed-page" src="/static/pages/anki.html" title="Anki"></iframe>\n'
+)
+
 # ---------- block pages ----------
 def set_row(b, kind, slug, title, blurb):
     name, desc = short_name(b, kind, slug, title), topics(kind, blurb)

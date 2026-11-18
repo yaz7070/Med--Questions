@@ -51,6 +51,14 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,40px);lin
 .card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;gap:18px}
 .chead{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .tag{font-size:13px;font-weight:700;color:var(--accent);background:var(--soft);padding:3px 9px;border-radius:4px}
+.chead-r{display:flex;align-items:center;gap:12px}
+.ankibtn{font:inherit;font-size:13.5px;font-weight:700;color:var(--muted);background:transparent;border:1.5px solid var(--line);border-radius:6px;padding:4px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.ankibtn::before{content:"+";font-size:15px;line-height:1}
+.ankibtn:hover{border-color:var(--accent);color:var(--accent)}
+.ankibtn[aria-pressed="true"]{border-color:var(--accent);background:var(--soft);color:var(--accent)}
+.ankibtn[aria-pressed="true"]::before{content:"✓";font-size:12px}
+.ankibtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ankirow{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .qn{font-family:var(--display);font-weight:700;font-size:15px;color:var(--faint);font-variant-numeric:tabular-nums}
 .stem{font-size:18.5px;line-height:1.6;margin:0;white-space:pre-line;max-width:70ch}
 .hint{font-size:13px;color:var(--faint)}
@@ -210,7 +218,7 @@ function renderQ(){
   const pre = (!done && tries[cur].length) ? `<div class="hint">Redo. Your earlier attempts are saved.</div>${triesLine(cur)}` : (!done ? `<div class="hint">Tap ✕ to strike out an option. Right-click works too.</div>` : "");
   const last = cur===N-1;
   $("#main").innerHTML = `<article class="card">
-    <div class="chead"><span class="tag">${esc(q.c)}</span><span class="qn">${cur+1} of ${N}</span></div>
+    <div class="chead"><span class="tag">${esc(q.c)}</span><span class="chead-r">${ankiButton(cur)}<span class="qn">${cur+1} of ${N}</span></span></div>
     <p class="stem">${esc(q.p)}</p>
     ${pre}
     <div class="opts">${opts}</div>${fb}
@@ -222,6 +230,7 @@ function renderQ(){
     b.oncontextmenu=(e)=>{ if(done) return; e.preventDefault(); toggleStrike(+b.dataset.i); };
   });
   document.querySelectorAll(".strike").forEach(b=>b.onclick=()=>toggleStrike(+b.dataset.s));
+  const ab=$("#anki"); if(ab) ab.onclick=()=>ankiToggle(cur);
   const r=$("#redo"); if(r) r.onclick=()=>{ ans[cur]=null; strikes[cur]=[]; render(false); persist(); };
   $("#prev").onclick=()=>{cur--;render();};
   $("#next").onclick=()=>{ if(last){showResults=true;} else cur++; render(); };
@@ -248,10 +257,11 @@ function renderResults(){
     <div class="chead"><span class="tag">Results</span><span>${un?un+" unanswered":"Complete"}</span></div>
     <div><div class="big">${s} / ${N}</div><div class="stats"><span><b>${pct}%</b> correct now</span><span>First try <b>${firstTryScore()} / ${firstTryCount()}</b></span><span>Redone <b>${redone}</b></span></div></div>
     <table><thead><tr><th>Topic</th><th>Score</th></tr></thead><tbody>${rows}</tbody></table>
-    <h2>Objectives to review</h2><p class="hint">Includes questions you missed on the first try, even if a redo got them right.</p>${missHtml}${history.length?`<h2>Past attempts</h2><table><thead><tr><th>Date</th><th>Score</th></tr></thead><tbody>${history.slice().reverse().map(h=>`<tr><td>${new Date(h.date).toLocaleDateString()}</td><td>${h.score} / ${h.total}</td></tr>`).join("")}</tbody></table>`:""}
+    ${ankiMissedRow()}<h2>Objectives to review</h2><p class="hint">Includes questions you missed on the first try, even if a redo got them right.</p>${missHtml}${history.length?`<h2>Past attempts</h2><table><thead><tr><th>Date</th><th>Score</th></tr></thead><tbody>${history.slice().reverse().map(h=>`<tr><td>${new Date(h.date).toLocaleDateString()}</td><td>${h.score} / ${h.total}</td></tr>`).join("")}</tbody></table>`:""}
     <div class="nav"><button class="btn ghost" id="back">Back to questions</button><button class="btn" id="restart">Restart all</button></div>
   </article>`;
   $("#back").onclick=()=>{showResults=false;render();};
+  const am=$("#ankimissed"); if(am) am.onclick=()=>{ ankiAdd(missedIdx()); renderResults(); };
   $("#restart").onclick=()=>{
     if(answered() || tries.some(t=>t.length)){
       history.push({date:new Date().toISOString(), score:score(), answered:answered(), total:N, firstTry:firstTryScore(),
@@ -318,8 +328,52 @@ async function connect(){
   }catch(e){ /* keep local-only mode */ }
 }
 
+/* Anki: saved questions live in one shared list ("differential-anki") that the Anki tab reads.
+   Each card keeps a copy of its question, so the Anki tab works without loading every quiz. */
+const SET = {"slug": "week-7-question-bank", "title": "Week 7 Question Bank", "b": 2, "href": "fom/block-2/question-bank/week-7-question-bank"};
+const ANKI_KEY = "differential-anki";
+function ankiAll(){ try{ const d=JSON.parse(localStorage.getItem(ANKI_KEY)||"null"); return d && Array.isArray(d.cards) ? d.cards : []; }catch(e){ return []; } }
+function ankiPut(cards){ try{ localStorage.setItem(ANKI_KEY, JSON.stringify({v:1, cards})); return true; }catch(e){ setSave("Could not save to Anki. Browser storage is full or blocked.","bad"); return false; } }
+function ankiId(i){ return SET.slug+"#"+(i+1); }
+function ankiCard(i){
+  const q=QUESTIONS[i];
+  return {id:ankiId(i), slug:SET.slug, set:SET.title, b:SET.b, href:SET.href, n:i+1, c:q.c, p:q.p, o:q.o, a:q.a, e:q.e, l:q.l, obj:q.l.map(x=>OBJECTIVES[x]||"")};
+}
+function ankiHas(i, cards){ return (cards||ankiAll()).some(c=>c.id===ankiId(i)); }
+function ankiButton(i){ const s=ankiHas(i); return `<button class="ankibtn" id="anki" aria-pressed="${s}" title="${s?"Remove from":"Add to"} your Anki list">${s?"Saved to Anki":"Save to Anki"}</button>`; }
+function ankiToggle(i){
+  let cards=ankiAll();
+  if(ankiHas(i,cards)) cards=cards.filter(c=>c.id!==ankiId(i));
+  else cards.push(Object.assign(ankiCard(i), {at:new Date().toISOString()}));
+  ankiPut(cards); render(false);
+}
+function ankiAdd(list){
+  const cards=ankiAll(), have=new Set(cards.map(c=>c.id)), at=new Date().toISOString();
+  list.forEach(i=>{ if(!have.has(ankiId(i))) cards.push(Object.assign(ankiCard(i), {at})); });
+  ankiPut(cards);
+}
+function missedIdx(){ return QUESTIONS.map((q,i)=>((ans[i]!==null && ans[i]!==q.a) || (tries[i].length && !tries[i][0].ok)) ? i : -1).filter(i=>i>=0); }
+function ankiMissedRow(){
+  const m=missedIdx(); if(!m.length) return "";
+  const cards=ankiAll(), left=m.filter(i=>!ankiHas(i,cards)).length;
+  return `<div class="ankirow">${left ? `<button class="btn ghost" id="ankimissed">Save ${left} missed question${left===1?"":"s"} to Anki</button>` : `<span class="hint">All ${m.length} missed questions are in your Anki list.</span>`}</div>`;
+}
+/* Keep saved copies current when a question is corrected, without touching review progress. */
+function ankiRefresh(){
+  const cards=ankiAll(); let changed=false;
+  cards.forEach(c=>{
+    if(c.slug!==SET.slug) return;
+    const i=c.n-1; if(!(i>=0 && i<N)) return;
+    const fresh=ankiCard(i);
+    for(const k of ["set","b","href","c","p","o","a","e","l","obj"]) if(JSON.stringify(c[k])!==JSON.stringify(fresh[k])){ c[k]=fresh[k]; changed=true; }
+  });
+  if(changed) ankiPut(cards);
+}
+addEventListener("storage", e=>{ if(e.key===ANKI_KEY) render(false); });
+
 function render(top=true){ renderHeader(); showResults?renderResults():renderQ(); if(top) window.scrollTo({top:0}); }
 applySaved(lsLoad());
+ankiRefresh();
 render();
 connect();
 </script>
