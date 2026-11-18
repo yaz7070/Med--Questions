@@ -46,7 +46,4 @@ if __name__ == "__main__":
         print(f.stem, build(f))
     # The Anki tab is a hand-written page that sits beside the quizzes.
     (OUT / "anki.html").write_text((QDIR / "anki.html").read_text())
-    # Anki's scheduler (FSRS) for the Anki tab, bundled so the page needs no CDN.
-    (OUT / "vendor").mkdir(exist_ok=True)
-    (OUT / "vendor" / "ts-fsrs.min.js").write_text((QDIR / "ts-fsrs.min.js").read_text())
     print("anki")

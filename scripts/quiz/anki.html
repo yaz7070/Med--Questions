@@ -10,14 +10,14 @@
    Same tokens as the quiz template. Each card takes its block colour. */
 :root{
   --bg:#f5f6f8;--paper:#ffffff;--ink:#15181d;--muted:#4d5560;--faint:#7b828d;--line:#e0e3e8;--soft:#eef0f3;
-  --ok:#1d7a46;--okw:#e7f4ec;--bad:#b42318;--badw:#fcecea;--new:#1f5fa8;
+  --ok:#1d7a46;--okw:#e7f4ec;--bad:#b42318;--badw:#fcecea;
   --b1:#0b7a75;--b2:#4f46c8;--b3:#a3246b;--b4:#a35f08;
   --accent:var(--ink);
   --font:"Atkinson Hyperlegible Next","Segoe UI",system-ui,-apple-system,sans-serif;
 }
 :root[data-theme="dark"]{
   --bg:#14161a;--paper:#1b1e24;--ink:#eceef2;--muted:#b3bac5;--faint:#8a919c;--line:#2d323b;--soft:#252930;
-  --ok:#5ccf8f;--okw:#13301f;--bad:#f2877c;--badw:#3a1c1a;--new:#93b9ec;
+  --ok:#5ccf8f;--okw:#13301f;--bad:#f2877c;--badw:#3a1c1a;
   --b1:#45c2b8;--b2:#a49df6;--b3:#ef8ec0;--b4:#e3a548;color-scheme:dark}
 [data-b="1"]{--accent:var(--b1)}[data-b="2"]{--accent:var(--b2)}[data-b="3"]{--accent:var(--b3)}[data-b="4"]{--accent:var(--b4)}
 *{box-sizing:border-box}
@@ -42,7 +42,7 @@ h1{font-size:clamp(26px,4vw,32px);letter-spacing:-.015em;line-height:1.15}
 .linkbtn{font:inherit;font-size:14px;font-weight:700;color:var(--accent);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 
 #main{display:flex;flex-direction:column;gap:26px}
-.status:empty,.filters:empty,.help:empty,.tools:empty,.prefs:empty{display:none}
+.status:empty,.filters:empty,.help:empty,.tools:empty{display:none}
 /* List */
 .group h2{font-size:17px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin-bottom:8px}
 .group h2 span{font-size:14px;font-weight:400;color:var(--muted)}
@@ -88,27 +88,19 @@ details[open] .s{display:block;-webkit-line-clamp:unset;color:var(--ink);white-s
 .empty b{color:var(--ink)}
 .empty a{color:var(--ink);font-weight:700}
 
-/* Anki's colours for the three counts: new blue, learning red, review green */
-.counts{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px;color:var(--muted)}
-.counts b{font-size:17px;margin-right:4px}
-.counts .cn{color:var(--new)}.counts .cl{color:var(--bad)}.counts .cr{color:var(--ok)}
-.counts .cur{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
-.prefs{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin-top:12px}
-.prefs select{font:inherit;font-size:14px;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:6px;padding:3px 6px}
-.prefs select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 /* Review */
 .card{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:18px}
 .chead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:14px}
-.chead > b{color:var(--accent)}
-.chead > span{color:var(--faint)}
+.chead b{color:var(--accent)}
+.chead span{color:var(--faint)}
 .stem{font-size:18.5px;line-height:1.6;white-space:pre-line;max-width:70ch}
 .card .olist{gap:10px;font-size:16.5px}
 .card .k{width:28px;height:28px}
-.rate{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.rate{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .rate button{font:inherit;display:flex;flex-direction:column;align-items:center;gap:1px;padding:9px 6px;border-radius:6px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font-weight:700;cursor:pointer}
 .rate button small{font-weight:400;font-size:13px;color:var(--faint)}
 .rate button:hover{border-color:var(--accent)}
-.rate .g1{color:var(--bad)}.rate .g2{color:var(--muted)}.rate .g3{color:var(--ok)}.rate .g4{color:var(--new)}
+.rate button.again{color:var(--bad)}
 .rate button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .keys{font-size:13px;color:var(--faint)}
 .rowbtns{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
@@ -118,7 +110,6 @@ details[open] .s{display:block;-webkit-line-clamp:unset;color:var(--ink);white-s
   .back{margin-left:0}
   .card{padding:18px}.stem{font-size:17.5px}
   .keys{display:none}
-  .rate{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
 </head><body>
@@ -138,98 +129,47 @@ details[open] .s{display:block;-webkit-line-clamp:unset;color:var(--ink);white-s
     <div class="tools" id="tools"></div>
     <p class="help" id="help"></p>
     <div class="filters" id="filters" role="group" aria-label="Show questions from"></div>
-    <div class="prefs" id="prefs"></div>
   </header>
   <div class="status" id="status" role="status"></div>
   <main id="main"></main>
 </div>
 
-<script src="vendor/ts-fsrs.min.js"></script>
 <script>
-/* Study logic follows Anki: the FSRS scheduler (Anki's default), learning steps of 1 and 10 minutes,
-   90% desired retention, Again / Hard / Good / Easy, a daily new-card limit, a 4 am day rollover,
-   and a 20 minute learn-ahead window. Card state is stored on each saved card as c.f. */
-const KEY = "differential-anki", META_KEY = "differential-anki-meta";
+const KEY = "differential-anki";
 const ROOT = "../../";            // this page is served at static/pages/anki.html
-const L = "ABCDE", MIN = 60000, DAY = 86400000, LEARN_AHEAD = 20*MIN, ROLLOVER_H = 4;
+const L = "ABCDE";
+const DAY = 86400000;
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-const F = window.FSRS;
-const S = F.fsrs(F.generatorParameters({enable_fuzz:true, enable_short_term:true, learning_steps:["1m","10m"], relearning_steps:["10m"], request_retention:0.9}));
-const NEW = F.State.New, LEARNING = F.State.Learning, REVIEW = F.State.Review, RELEARNING = F.State.Relearning;
 
-let cards = [], filter = "all", session = null, removed = null, meta = {lim:20, d:"", n:0};
+let cards = [], filter = "all", review = null, removed = null;
 
-function load(){
-  try{ const d=JSON.parse(localStorage.getItem(KEY)||"null"); cards = d && Array.isArray(d.cards) ? d.cards.filter(c=>c && c.id && Array.isArray(c.o)) : []; }catch(e){ cards=[]; }
-  try{ meta = Object.assign({lim:20, d:"", n:0}, JSON.parse(localStorage.getItem(META_KEY)||"{}")); }catch(e){}
-  if(migrate()) save();
-}
+function load(){ try{ const d=JSON.parse(localStorage.getItem(KEY)||"null"); cards = d && Array.isArray(d.cards) ? d.cards.filter(c=>c && c.id && Array.isArray(c.o)) : []; }catch(e){ cards=[]; } }
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify({v:1, cards})); return true; }catch(e){ status("Could not save. Browser storage is full or blocked."); return false; } }
-function saveMeta(){ try{ localStorage.setItem(META_KEY, JSON.stringify(meta)); }catch(e){} }
 function status(html){ $("#status").innerHTML = html || ""; }
-
-/* Cards reviewed with the first version of this page carry {ivl, ease, due}. Move them onto FSRS. */
-function migrate(){
-  let changed=false;
-  cards.forEach(c=>{
-    if(!c.r) return;
-    if(!c.f && c.r.reps){
-      const due=new Date(c.r.due||Date.now()), ivl=c.r.ivl||0;
-      c.f = ivl>=1
-        ? {due:due.toISOString(), stability:ivl, difficulty:5, scheduled_days:ivl, reps:c.r.reps, lapses:0, learning_steps:0, state:REVIEW, last_review:new Date(due-ivl*DAY).toISOString()}
-        : {due:due.toISOString(), stability:1, difficulty:5, scheduled_days:0, reps:c.r.reps, lapses:0, learning_steps:0, state:LEARNING, last_review:new Date().toISOString()};
-    }
-    delete c.r; changed=true;
-  });
-  return changed;
-}
-
-/* ---------- Anki's day and counts ---------- */
-function dayKey(t){ const d=new Date((t||Date.now()) - ROLLOVER_H*3600000); return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); }
-function dayEnd(){ const d=new Date(Date.now() - ROLLOVER_H*3600000); d.setHours(24+ROLLOVER_H,0,0,0); return d.getTime(); }
-function newToday(){ if(meta.d!==dayKey()){ meta.d=dayKey(); meta.n=0; saveMeta(); } return meta.n; }
-function newLeft(){ return Math.max(0, meta.lim - newToday()); }
-function state(c){ return c.f ? c.f.state : NEW; }
-function due(c){ return c.f ? new Date(c.f.due).getTime() : 0; }
-const isNew = c => state(c)===NEW;
-const isLearn = c => state(c)===LEARNING || state(c)===RELEARNING;
-const isReview = c => state(c)===REVIEW;
 
 function week(c){ const m=String(c.slug).match(/week-(\d+)/); return m ? +m[1] : 99; }
 function order(a,b){ return (a.b-b.b) || (week(a)-week(b)) || String(a.set).localeCompare(String(b.set)) || (a.n-b.n); }
-function deck(){ return cards.filter(c=>filter==="all" || String(c.b)===filter).sort(order); }
-function counts(list){
-  const now=Date.now(), end=dayEnd();
-  return {
-    n: Math.min(list.filter(isNew).length, newLeft()),
-    l: list.filter(c=>isLearn(c) && due(c)<=now+LEARN_AHEAD).length,
-    r: list.filter(c=>isReview(c) && due(c)<end).length,
-  };
-}
-function countsHtml(k, cur){
-  return `<span class="counts" aria-label="${k.n} new, ${k.l} learning, ${k.r} to review">
-    <span class="cn ${cur==="n"?"cur":""}"><b>${k.n}</b>New</span>
-    <span class="cl ${cur==="l"?"cur":""}"><b>${k.l}</b>Learning</span>
-    <span class="cr ${cur==="r"?"cur":""}"><b>${k.r}</b>Review</span></span>`;
-}
+function shown(){ return cards.filter(c=>filter==="all" || String(c.b)===filter).sort(order); }
+function isDue(c, now){ return !c.r || (c.r.due||0) <= (now||Date.now()); }
 
-/* Interval labels the way Anki prints them: 1m, 10m, 3h, 4d, 2.1mo, 1.3y */
-function ivl(ms){
-  const m=Math.max(1, Math.round(ms/MIN));
-  if(m<60) return m+"m";
-  const h=m/60; if(h<24) return Math.round(h)+"h";
-  const d=h/24; if(d<30) return Math.round(d)+"d";
-  if(d<365) return (d/30).toFixed(1).replace(/\.0$/,"")+"mo";
-  return (d/365).toFixed(1).replace(/\.0$/,"")+"y";
+/* Scheduling, a light version of Anki's: Again repeats the card this session,
+   Good multiplies the interval by the card's ease, Easy goes further and raises the ease. */
+function next(r, grade){
+  r = Object.assign({ivl:0, ease:2.5, reps:0, due:0}, r||{});
+  const now = Date.now();
+  if(grade===0){ r.ivl=0; r.ease=Math.max(1.3, +(r.ease-0.2).toFixed(2)); r.due=now; }
+  else if(grade===1){ r.ivl = r.ivl<1 ? 1 : Math.round(r.ivl*r.ease); r.due=now+r.ivl*DAY; }
+  else { r.ivl = r.ivl<1 ? 4 : Math.round(r.ivl*r.ease*1.3); r.ease=+(r.ease+0.15).toFixed(2); r.due=now+r.ivl*DAY; }
+  r.reps++; return r;
 }
+function span(d){ return d<1 ? "Under 1 min" : d===1 ? "1 day" : d<31 ? d+" days" : Math.round(d/30)+" mo"; }
 function dueLabel(c){
-  if(isNew(c)) return ["New","new"];
-  const ms=due(c)-Date.now();
-  if(isLearn(c)) return [ms<=0 ? "Learning, due now" : "Learning, due in "+ivl(ms), "now"];
-  if(due(c)<dayEnd()) return ["Due today","now"];
-  const d=Math.round(ms/DAY);
-  return [d<=1 ? "Due tomorrow" : "Due in "+ivl(ms), ""];
+  if(!c.r) return ["New","now"];
+  const ms=(c.r.due||0)-Date.now();
+  if(ms<=0) return ["Due now","now"];
+  const d=Math.ceil(ms/DAY);
+  return [d===1 ? "Due tomorrow" : "Due in "+d+" days",""];
 }
 
 function fmtLine(t){
@@ -249,39 +189,32 @@ function backHtml(c){
 
 /* ---------- header ---------- */
 function renderTop(){
-  const list=deck(), k=counts(list), any=k.n+k.l+k.r;
+  const list=shown(), now=Date.now(), due=list.filter(c=>isDue(c,now)).length;
   const scope = filter==="all" ? "" : " in Block "+filter;
-  const study = !session && cards.length;
-  $("#sub").innerHTML = !cards.length ? "Questions you save from any quiz land here."
-    : session ? esc(session.cram ? "Studying every saved card"+scope+"." : "Studying"+scope+".")
-    : `${list.length} saved question${list.length===1?"":"s"}${scope}.`;
-  $("#tools").innerHTML = study ? `
-    ${countsHtml(k)}
-    <span style="flex-basis:100%"></span>
-    <button class="btn" id="go" ${any?"":"disabled"}>${any ? "Study now" : "Nothing due"}</button>
+  $("#sub").textContent = cards.length
+    ? `${list.length} saved question${list.length===1?"":"s"}${scope}. ${due ? due+" ready to review." : "Nothing due right now."}`
+    : "Questions you save from any quiz land here.";
+  $("#tools").innerHTML = cards.length && !review ? `
+    <button class="btn" id="go" ${due?"":"disabled"}>Review ${due||""} due</button>
     <button class="btn ghost" id="all">Study all ${list.length}</button>
     <button class="btn ghost" id="dl">Download for Anki</button>` : "";
-  $("#help").textContent = study
-    ? "Study now works like Anki: due reviews, cards you are learning, and up to your daily limit of new cards. Study all goes through every saved card. Download for Anki makes a file the Anki app imports (File, then Import) into a deck called Nexus."
+  $("#help").textContent = cards.length && !review
+    ? "Download makes a file the Anki app can import. In Anki, choose File, then Import, and pick the file. Cards go to a deck called Nexus, and importing a newer download updates them instead of adding copies."
     : "";
   const blocks=[...new Set(cards.map(c=>String(c.b)))].sort();
   if(filter!=="all" && !blocks.includes(filter)) filter="all";
-  $("#filters").innerHTML = blocks.length>1 && study
+  $("#filters").innerHTML = blocks.length>1 && !review
     ? [["all","All blocks"], ...blocks.map(b=>[b,"Block "+b])].map(([v,t])=>`<button data-f="${v}" ${v==="all"?"":`data-b="${v}"`} aria-pressed="${filter===v}">${t}</button>`).join("")
     : "";
-  $("#prefs").innerHTML = study ? `<label for="lim">New cards per day</label>
-    <select id="lim">${[5,10,20,50,100,9999].map(v=>`<option value="${v}" ${meta.lim===v?"selected":""}>${v===9999?"No limit":v}</option>`).join("")}</select>
-    <span>${newToday() ? newToday()+" started today" : ""}</span>` : "";
   document.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{ filter=b.dataset.f; render(); });
-  const lim=$("#lim"); if(lim) lim.onchange=()=>{ meta.lim=+lim.value; saveMeta(); render(); };
-  const go=$("#go"); if(go) go.onclick=()=>startSession(false);
-  const all=$("#all"); if(all) all.onclick=()=>startSession(true);
+  const go=$("#go"); if(go) go.onclick=()=>startReview(list.filter(c=>isDue(c,Date.now())));
+  const all=$("#all"); if(all) all.onclick=()=>startReview(list);
   const dl=$("#dl"); if(dl) dl.onclick=()=>download(list);
 }
 
 /* ---------- list ---------- */
 function renderList(){
-  const list=deck();
+  const list=shown();
   if(!cards.length){
     $("#main").innerHTML = `<div class="empty"><b>Your Anki list is empty.</b>
       <span>Open any quiz and press Save to Anki on a question. After you finish a quiz, the results screen can save every question you missed in one click.</span>
@@ -289,7 +222,7 @@ function renderList(){
     return;
   }
   const groups=[];
-  list.forEach(c=>{ const g=groups[groups.length-1]; if(g && g.slug===c.slug) g.items.push(c); else groups.push({slug:c.slug, set:c.set, b:c.b, items:[c]}); });
+  list.forEach(c=>{ const g=groups[groups.length-1]; if(g && g.slug===c.slug) g.items.push(c); else groups.push({slug:c.slug, set:c.set, b:c.b, href:c.href, items:[c]}); });
   $("#main").innerHTML = groups.map(g=>`<section class="group" data-b="${esc(g.b)}">
     <h2>${esc(g.set)} <span>Block ${esc(g.b)}, ${g.items.length} saved</span></h2>
     <ul class="cards">${g.items.map(c=>{ const [dl,cls]=dueLabel(c); return `<li>
@@ -305,104 +238,60 @@ function renderList(){
   });
 }
 
-/* ---------- study session ----------
-   Order on each step, as in Anki: learning cards that are due, then reviews due today and new cards,
-   then learning cards due within the next 20 minutes. "Study all" swaps the second group for every card. */
-function startSession(cram){
-  const ids=new Set(deck().map(c=>c.id));
-  session = {cram, ids, pool: cram ? deck().map(c=>c.id) : null, cur:null, shown:false, done:0, undo:null};
-  status(""); nextCard(); render(); scrollTo({top:0});
+/* ---------- review ---------- */
+function startReview(list){
+  if(!list.length) return;
+  const now=Date.now();
+  review={queue:list.slice().sort((a,b)=>((a.r&&a.r.due)||0)-((b.r&&b.r.due)||0) || order(a,b)).map(c=>c.id), shown:false, done:0, again:0, start:now};
+  status(""); render(); scrollTo({top:0});
 }
-function inDeck(c){ return session.ids.has(c.id); }
-function pick(){
-  const now=Date.now(), mine=cards.filter(inDeck);
-  const learnDue=mine.filter(c=>isLearn(c) && due(c)<=now).sort((a,b)=>due(a)-due(b));
-  if(learnDue.length) return learnDue[0];
-  if(session.cram){
-    while(session.pool.length){ const c=cards.find(x=>x.id===session.pool[0]); if(c && !(isLearn(c) && due(c)>now)) return c; session.pool.shift(); }
-  } else {
-    const rev=mine.filter(c=>isReview(c) && due(c)<dayEnd()).sort((a,b)=>due(a)-due(b));
-    if(rev.length) return rev[0];
-    if(newLeft()>0){ const nw=mine.filter(isNew).sort(order); if(nw.length) return nw[0]; }
-  }
-  const ahead=mine.filter(c=>isLearn(c) && due(c)<=now+LEARN_AHEAD).sort((a,b)=>due(a)-due(b));
-  return ahead[0] || null;
-}
-function nextCard(){ const c=pick(); session.cur=c ? c.id : null; session.shown=false; }
-function endSession(){ session=null; document.documentElement.removeAttribute("data-b"); render(); scrollTo({top:0}); }
-function fcard(c){ return c.f ? F.TypeConvert.card(c.f) : F.createEmptyCard(new Date()); }
-function store(card){ const o={}; for(const k in card){ const v=card[k]; o[k] = v instanceof Date ? v.toISOString() : v; } return o; }
-
-function renderSession(){
-  const c=cards.find(x=>x.id===session.cur);
-  const list=cards.filter(inDeck), k=counts(list);
+function endReview(){ review=null; document.documentElement.removeAttribute("data-b"); render(); scrollTo({top:0}); }
+function renderReview(){
+  const id=review.queue[0], c=cards.find(x=>x.id===id);
   if(!c){
+    if(review.queue.length){ review.queue.shift(); return renderReview(); }
     document.documentElement.removeAttribute("data-b");
-    const later=list.filter(x=>!isNew(x)).map(due).filter(t=>t>Date.now()).sort((a,b)=>a-b)[0];
-    const msg = later ? "The next card is due in "+ivl(later-Date.now())+"." : "";
-    const moreNew = !session.cram && list.some(isNew) && newLeft()===0 ? ` You reached today's limit of ${meta.lim} new cards. Raise it on the list page, or use Study all.` : "";
-    $("#main").innerHTML = `<article class="card"><h2>Congratulations, you have finished for now.</h2>
-      <p>You answered ${session.done} card${session.done===1?"":"s"}. ${msg}${moreNew}</p>
-      ${session.undo?`<p><button class="linkbtn" id="undo2">Undo last answer</button></p>`:""}
+    const upcoming=cards.filter(x=>x.r && x.r.due>Date.now()).map(x=>x.r.due).sort((a,b)=>a-b)[0];
+    const when = upcoming ? "The next card is due "+(Math.ceil((upcoming-Date.now())/DAY)===1 ? "tomorrow" : "in "+Math.ceil((upcoming-Date.now())/DAY)+" days")+"." : "";
+    $("#main").innerHTML = `<article class="card"><h2>Review done</h2><p>You went through ${review.done} card${review.done===1?"":"s"}${review.again?`, with ${review.again} repeat${review.again===1?"":"s"}`:""}. ${when}</p>
       <div class="rowbtns"><button class="btn" id="end">Back to list</button></div></article>`;
-    $("#end").onclick=endSession; $("#end").focus();
-    const u=$("#undo2"); if(u) u.onclick=undoLast;
+    $("#end").onclick=endReview; $("#end").focus();
     return;
   }
   document.documentElement.dataset.b=c.b;
-  const cur = isNew(c) ? "n" : isLearn(c) ? "l" : "r";
-  const sched = session.shown ? S.repeat(fcard(c), new Date()) : null;
-  const now=Date.now();
-  const btn=(g,label)=>`<button class="g${g}" data-g="${g}">${label}<small>${ivl(sched[g].card.due.getTime()-now)}</small></button>`;
+  const r=c.r||{}, g=k=>span(next(r,k).ivl);
   $("#main").innerHTML = `<article class="card">
-    <div class="chead"><b>${esc(c.set)}, Q${c.n}</b>${countsHtml(k, cur)}</div>
+    <div class="chead"><b>${esc(c.set)}, Q${c.n}</b><span>${review.queue.length} left</span></div>
     <p class="stem">${esc(c.p)}</p>
-    ${optsHtml(c, session.shown)}
-    ${session.shown ? backHtml(c)+`
+    ${optsHtml(c, review.shown)}
+    ${review.shown ? backHtml(c)+`
       <div class="rate" role="group" aria-label="How well did you know it?">
-        ${btn(F.Rating.Again,"Again")}${btn(F.Rating.Hard,"Hard")}${btn(F.Rating.Good,"Good")}${btn(F.Rating.Easy,"Easy")}
+        <button class="again" data-g="0">Again<small>${g(0)}</small></button>
+        <button data-g="1">Good<small>${g(1)}</small></button>
+        <button data-g="2">Easy<small>${g(2)}</small></button>
       </div>
-      <div class="rowbtns"><span>${session.undo?`<button class="linkbtn" id="undo2">Undo last answer</button>`:""}</span><span class="keys">Keys: 1 Again, 2 Hard, 3 or Space Good, 4 Easy</span></div>`
-    : `<div class="rowbtns"><button class="btn" id="flip">Show answer</button><span class="keys">Space shows the answer</span></div>`}
-    <div class="rowbtns"><button class="btn ghost" id="end">End session</button>${!session.shown && session.undo?`<button class="linkbtn" id="undo2">Undo last answer</button>`:""}</div>
+      <div class="rowbtns"><button class="btn ghost" id="end">End review</button><span class="keys">Keys: 1 Again, 2 Good, 3 Easy</span></div>`
+    : `<div class="rowbtns"><button class="btn" id="flip">Show answer</button><span class="keys">Space shows the answer</span></div>
+       <div class="rowbtns"><button class="btn ghost" id="end">End review</button></div>`}
   </article>`;
-  const f=$("#flip"); if(f){ f.onclick=()=>{ session.shown=true; renderSession(); const b=document.querySelector('[data-g="3"]'); if(b) b.focus(); }; f.focus(); }
-  document.querySelectorAll("[data-g]").forEach(b=>b.onclick=()=>answer(+b.dataset.g));
-  $("#end").onclick=endSession;
-  const u=$("#undo2"); if(u) u.onclick=undoLast;
+  const f=$("#flip"); if(f){ f.onclick=()=>{ review.shown=true; renderReview(); const b=document.querySelector('[data-g="1"]'); if(b) b.focus(); }; f.focus(); }
+  document.querySelectorAll("[data-g]").forEach(b=>b.onclick=()=>rate(+b.dataset.g));
+  $("#end").onclick=endReview;
 }
-function answer(grade){
-  const c=cards.find(x=>x.id===session.cur); if(!c) return;
-  const wasNew=isNew(c);
-  session.undo={id:c.id, f:c.f ? JSON.parse(JSON.stringify(c.f)) : null, wasNew, pool:session.cram ? session.pool.slice() : null, done:session.done};
-  c.f = store(S.next(fcard(c), new Date(), grade).card);
-  if(wasNew && !session.cram){ newToday(); meta.n++; saveMeta(); }
-  if(session.cram && session.pool[0]===c.id) session.pool.shift();
-  session.done++;
-  save(); nextCard(); renderTop(); renderSession(); scrollTo({top:0});
-}
-function undoLast(){
-  const u=session && session.undo; if(!u) return;
-  const c=cards.find(x=>x.id===u.id); if(!c){ session.undo=null; return; }
-  if(u.f) c.f=u.f; else delete c.f;
-  if(u.wasNew && !session.cram && meta.n>0){ meta.n--; saveMeta(); }
-  if(u.pool) session.pool=u.pool;
-  session.done=u.done; session.cur=c.id; session.shown=false; session.undo=null;
-  save(); renderTop(); renderSession();
+function rate(grade){
+  const id=review.queue.shift(), c=cards.find(x=>x.id===id); if(!c) return renderReview();
+  c.r=next(c.r, grade); save();
+  if(grade===0){ review.again++; review.queue.splice(Math.min(3, review.queue.length), 0, id); }
+  else review.done++;
+  review.shown=false; renderReview(); scrollTo({top:0});
 }
 addEventListener("keydown", e=>{
-  if(!session || e.altKey || e.metaKey) return;
-  if((e.ctrlKey && e.key.toLowerCase()==="z")){ e.preventDefault(); undoLast(); return; }
-  if(e.ctrlKey) return;
+  if(!review || e.altKey || e.ctrlKey || e.metaKey) return;
   const onBtn = e.target && e.target.tagName==="BUTTON";
-  if(!session.cur){ return; }
-  if(!session.shown && (e.key===" " || e.key==="Enter") && !onBtn){ e.preventDefault(); const f=$("#flip"); if(f) f.click(); }
-  else if(session.shown && ["1","2","3","4"].includes(e.key)){ e.preventDefault(); answer(+e.key); }
-  else if(session.shown && e.key===" " && !onBtn){ e.preventDefault(); answer(F.Rating.Good); }
-  else if(e.key==="Escape"){ endSession(); }
+  if(!review.shown && (e.key===" " || e.key==="Enter") && !onBtn){ e.preventDefault(); const f=$("#flip"); if(f) f.click(); }
+  else if(review.shown && ["1","2","3"].includes(e.key)){ e.preventDefault(); rate(+e.key-1); }
+  else if(e.key==="Escape"){ endReview(); }
 });
-/* A learning card can come due while you sit on the done screen. */
-setInterval(()=>{ if(session && !session.cur){ nextCard(); if(session.cur){ renderTop(); renderSession(); } } else if(!session){ renderTop(); } }, 30000);
 
 /* ---------- download for the Anki app ----------
    A tab-separated text file with Anki's file headers: Basic note type, deck "Nexus",
@@ -428,9 +317,8 @@ function download(list){
   status(`Downloaded ${list.length} card${list.length===1?"":"s"}. In Anki, choose File, then Import, and pick the file.`);
 }
 
-function render(){ renderTop(); session ? renderSession() : renderList(); }
-addEventListener("storage", e=>{ if(e.key===KEY || e.key===META_KEY){ load(); if(!session) render(); else renderTop(); } });
-if(!F){ document.getElementById("main").innerHTML='<div class="empty"><b>The study engine did not load.</b><span>Reload the page. If it keeps happening, your browser may be blocking scripts on this site.</span></div>'; }
-else { load(); render(); }
+function render(){ renderTop(); review ? renderReview() : renderList(); }
+addEventListener("storage", e=>{ if(e.key===KEY){ load(); if(!review) render(); else renderTop(); } });
+load(); render();
 </script>
 </body></html>
