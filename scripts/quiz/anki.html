@@ -96,20 +96,24 @@ details[open] .s{display:block;-webkit-line-clamp:unset;color:var(--ink);white-s
 .stem{font-size:18.5px;line-height:1.6;white-space:pre-line;max-width:70ch}
 .card .olist{gap:10px;font-size:16.5px}
 .card .k{width:28px;height:28px}
-.rate{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.rate button{font:inherit;display:flex;flex-direction:column;align-items:center;gap:1px;padding:9px 6px;border-radius:6px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font-weight:700;cursor:pointer}
-.rate button small{font-weight:400;font-size:13px;color:var(--faint)}
-.rate button:hover{border-color:var(--accent)}
-.rate button.again{color:var(--bad)}
-.rate button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.keys{font-size:13px;color:var(--faint)}
+.ropts{display:flex;flex-direction:column;gap:8px}
+.ropt{font:inherit;font-size:16px;text-align:left;display:flex;gap:12px;align-items:baseline;width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer}
+.ropt:hover:not(:disabled){border-color:var(--accent)}
+.ropt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ropt:disabled{cursor:default}
+.ropt.right{border-color:var(--ok);background:var(--okw)}
+.ropt.right .k{background:var(--ok);color:var(--paper)}
+.ropt.wrong{border-color:var(--bad);background:var(--badw)}
+.ropt.wrong .k{background:var(--bad);color:var(--paper)}
+.ropt .k{width:28px;height:28px}
+.verdict{font-weight:700}.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
+.due.ok{color:var(--ok)}.due.bad{color:var(--bad);font-weight:700}
 .rowbtns{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 @media (max-width:560px){
   summary{grid-template-columns:2.6rem minmax(0,1fr)}
   .due{grid-column:2}
   .back{margin-left:0}
   .card{padding:18px}.stem{font-size:17.5px}
-  .keys{display:none}
 }
 </style>
 </head><body>
@@ -138,11 +142,11 @@ details[open] .s{display:block;-webkit-line-clamp:unset;color:var(--ink);white-s
 const KEY = "differential-anki";
 const ROOT = "../../";            // this page is served at static/pages/anki.html
 const L = "ABCDE";
-const DAY = 86400000;
+
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 
-let cards = [], filter = "all", review = null, removed = null;
+let cards = [], filter = "all", review = null, removed = null;  // review: the current redo session
 
 function load(){ try{ const d=JSON.parse(localStorage.getItem(KEY)||"null"); cards = d && Array.isArray(d.cards) ? d.cards.filter(c=>c && c.id && Array.isArray(c.o)) : []; }catch(e){ cards=[]; } }
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify({v:1, cards})); return true; }catch(e){ status("Could not save. Browser storage is full or blocked."); return false; } }
@@ -151,25 +155,10 @@ function status(html){ $("#status").innerHTML = html || ""; }
 function week(c){ const m=String(c.slug).match(/week-(\d+)/); return m ? +m[1] : 99; }
 function order(a,b){ return (a.b-b.b) || (week(a)-week(b)) || String(a.set).localeCompare(String(b.set)) || (a.n-b.n); }
 function shown(){ return cards.filter(c=>filter==="all" || String(c.b)===filter).sort(order); }
-function isDue(c, now){ return !c.r || (c.r.due||0) <= (now||Date.now()); }
-
-/* Scheduling, a light version of Anki's: Again repeats the card this session,
-   Good multiplies the interval by the card's ease, Easy goes further and raises the ease. */
-function next(r, grade){
-  r = Object.assign({ivl:0, ease:2.5, reps:0, due:0}, r||{});
-  const now = Date.now();
-  if(grade===0){ r.ivl=0; r.ease=Math.max(1.3, +(r.ease-0.2).toFixed(2)); r.due=now; }
-  else if(grade===1){ r.ivl = r.ivl<1 ? 1 : Math.round(r.ivl*r.ease); r.due=now+r.ivl*DAY; }
-  else { r.ivl = r.ivl<1 ? 4 : Math.round(r.ivl*r.ease*1.3); r.ease=+(r.ease+0.15).toFixed(2); r.due=now+r.ivl*DAY; }
-  r.reps++; return r;
-}
-function span(d){ return d<1 ? "Under 1 min" : d===1 ? "1 day" : d<31 ? d+" days" : Math.round(d/30)+" mo"; }
-function dueLabel(c){
-  if(!c.r) return ["New","now"];
-  const ms=(c.r.due||0)-Date.now();
-  if(ms<=0) return ["Due now","now"];
-  const d=Math.ceil(ms/DAY);
-  return [d===1 ? "Due tomorrow" : "Due in "+d+" days",""];
+/* The list shows how you did the last time you redid each question. */
+function lastLabel(c){
+  if(!c.last) return ["Not redone yet",""];
+  return c.last.ok ? ["Right last time","ok"] : ["Missed last time","bad"];
 }
 
 function fmtLine(t){
@@ -189,17 +178,17 @@ function backHtml(c){
 
 /* ---------- header ---------- */
 function renderTop(){
-  const list=shown(), now=Date.now(), due=list.filter(c=>isDue(c,now)).length;
+  const list=shown(), missed=list.filter(c=>c.last && !c.last.ok).length;
   const scope = filter==="all" ? "" : " in Block "+filter;
-  $("#sub").textContent = cards.length
-    ? `${list.length} saved question${list.length===1?"":"s"}${scope}. ${due ? due+" ready to review." : "Nothing due right now."}`
-    : "Questions you save from any quiz land here.";
+  $("#sub").textContent = !cards.length ? "Questions you save from any quiz land here."
+    : review ? `Redoing ${review.ids.length} question${review.ids.length===1?"":"s"}${scope}.`
+    : `${list.length} saved question${list.length===1?"":"s"}${scope}.`;
   $("#tools").innerHTML = cards.length && !review ? `
-    <button class="btn" id="go" ${due?"":"disabled"}>Review ${due||""} due</button>
-    <button class="btn ghost" id="all">Study all ${list.length}</button>
+    <button class="btn" id="go">Redo ${list.length} question${list.length===1?"":"s"}</button>
+    ${missed ? `<button class="btn ghost" id="missed">Redo the ${missed} missed</button>` : ""}
     <button class="btn ghost" id="dl">Download for Anki</button>` : "";
   $("#help").textContent = cards.length && !review
-    ? "Download makes a file the Anki app can import. In Anki, choose File, then Import, and pick the file. Cards go to a deck called Nexus, and importing a newer download updates them instead of adding copies."
+    ? "Redo works like a quiz: pick an answer, then read the explanation. Download for Anki makes a file the Anki app imports (File, then Import) into a deck called Nexus."
     : "";
   const blocks=[...new Set(cards.map(c=>String(c.b)))].sort();
   if(filter!=="all" && !blocks.includes(filter)) filter="all";
@@ -207,8 +196,8 @@ function renderTop(){
     ? [["all","All blocks"], ...blocks.map(b=>[b,"Block "+b])].map(([v,t])=>`<button data-f="${v}" ${v==="all"?"":`data-b="${v}"`} aria-pressed="${filter===v}">${t}</button>`).join("")
     : "";
   document.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{ filter=b.dataset.f; render(); });
-  const go=$("#go"); if(go) go.onclick=()=>startReview(list.filter(c=>isDue(c,Date.now())));
-  const all=$("#all"); if(all) all.onclick=()=>startReview(list);
+  const go=$("#go"); if(go) go.onclick=()=>startReview(list);
+  const ms=$("#missed"); if(ms) ms.onclick=()=>startReview(list.filter(c=>c.last && !c.last.ok));
   const dl=$("#dl"); if(dl) dl.onclick=()=>download(list);
 }
 
@@ -225,7 +214,7 @@ function renderList(){
   list.forEach(c=>{ const g=groups[groups.length-1]; if(g && g.slug===c.slug) g.items.push(c); else groups.push({slug:c.slug, set:c.set, b:c.b, href:c.href, items:[c]}); });
   $("#main").innerHTML = groups.map(g=>`<section class="group" data-b="${esc(g.b)}">
     <h2>${esc(g.set)} <span>Block ${esc(g.b)}, ${g.items.length} saved</span></h2>
-    <ul class="cards">${g.items.map(c=>{ const [dl,cls]=dueLabel(c); return `<li>
+    <ul class="cards">${g.items.map(c=>{ const [dl,cls]=lastLabel(c); return `<li>
       <details><summary><span class="qn">Q${c.n}</span><span class="s">${esc(c.p)}</span><span class="due ${cls}">${dl}</span></summary>
         <div class="back">${optsHtml(c,true)}${backHtml(c)}${c.href?`<a class="open" href="${ROOT+esc(c.href)}" target="_top">Open ${esc(c.set)}</a>`:""}</div></details>
       <button class="rm" data-id="${esc(c.id)}" aria-label="Remove question ${c.n} of ${esc(c.set)}">Remove</button></li>`; }).join("")}</ul>
@@ -238,58 +227,67 @@ function renderList(){
   });
 }
 
-/* ---------- review ---------- */
+/* ---------- redo: the saved questions as a quiz ---------- */
 function startReview(list){
   if(!list.length) return;
-  const now=Date.now();
-  review={queue:list.slice().sort((a,b)=>((a.r&&a.r.due)||0)-((b.r&&b.r.due)||0) || order(a,b)).map(c=>c.id), shown:false, done:0, again:0, start:now};
+  review={ids:list.map(c=>c.id), i:0, pick:{}, right:0};
   status(""); render(); scrollTo({top:0});
 }
 function endReview(){ review=null; document.documentElement.removeAttribute("data-b"); render(); scrollTo({top:0}); }
 function renderReview(){
-  const id=review.queue[0], c=cards.find(x=>x.id===id);
-  if(!c){
-    if(review.queue.length){ review.queue.shift(); return renderReview(); }
-    document.documentElement.removeAttribute("data-b");
-    const upcoming=cards.filter(x=>x.r && x.r.due>Date.now()).map(x=>x.r.due).sort((a,b)=>a-b)[0];
-    const when = upcoming ? "The next card is due "+(Math.ceil((upcoming-Date.now())/DAY)===1 ? "tomorrow" : "in "+Math.ceil((upcoming-Date.now())/DAY)+" days")+"." : "";
-    $("#main").innerHTML = `<article class="card"><h2>Review done</h2><p>You went through ${review.done} card${review.done===1?"":"s"}${review.again?`, with ${review.again} repeat${review.again===1?"":"s"}`:""}. ${when}</p>
-      <div class="rowbtns"><button class="btn" id="end">Back to list</button></div></article>`;
-    $("#end").onclick=endReview; $("#end").focus();
-    return;
-  }
+  if(review.i>=review.ids.length) return renderDone();
+  const c=cards.find(x=>x.id===review.ids[review.i]);
+  if(!c){ review.ids.splice(review.i,1); return renderReview(); }
   document.documentElement.dataset.b=c.b;
-  const r=c.r||{}, g=k=>span(next(r,k).ivl);
+  const pick=review.pick[c.id], done=pick!==undefined, last=review.i===review.ids.length-1;
   $("#main").innerHTML = `<article class="card">
-    <div class="chead"><b>${esc(c.set)}, Q${c.n}</b><span>${review.queue.length} left</span></div>
+    <div class="chead"><b>${esc(c.set)}, Q${c.n}</b><span>${review.i+1} of ${review.ids.length}</span></div>
     <p class="stem">${esc(c.p)}</p>
-    ${optsHtml(c, review.shown)}
-    ${review.shown ? backHtml(c)+`
-      <div class="rate" role="group" aria-label="How well did you know it?">
-        <button class="again" data-g="0">Again<small>${g(0)}</small></button>
-        <button data-g="1">Good<small>${g(1)}</small></button>
-        <button data-g="2">Easy<small>${g(2)}</small></button>
-      </div>
-      <div class="rowbtns"><button class="btn ghost" id="end">End review</button><span class="keys">Keys: 1 Again, 2 Good, 3 Easy</span></div>`
-    : `<div class="rowbtns"><button class="btn" id="flip">Show answer</button><span class="keys">Space shows the answer</span></div>
-       <div class="rowbtns"><button class="btn ghost" id="end">End review</button></div>`}
+    <div class="ropts" role="group" aria-label="Answer options">${c.o.map((o,i)=>{
+      const cls = !done ? "" : i===c.a ? "right" : i===pick ? "wrong" : "";
+      return `<button class="ropt ${cls}" data-i="${i}" ${done?"disabled":""}><span class="k">${L[i]}</span><span>${esc(o)}</span></button>`;
+    }).join("")}</div>
+    ${done ? `<p class="verdict ${pick===c.a?"ok":"bad"}">${pick===c.a ? "Correct." : "Not quite. The answer is "+L[c.a]+"."}</p>${backHtml(c)}` : ""}
+    <div class="rowbtns">
+      <button class="btn ghost" id="end">End</button>
+      <span class="rowbtns">${done ? `<button class="linkbtn" id="rmc">Remove from Anki</button>` : ""}
+      <button class="btn" id="nx" ${done?"":"disabled"}>${last ? "See results" : "Next"}</button></span>
+    </div>
   </article>`;
-  const f=$("#flip"); if(f){ f.onclick=()=>{ review.shown=true; renderReview(); const b=document.querySelector('[data-g="1"]'); if(b) b.focus(); }; f.focus(); }
-  document.querySelectorAll("[data-g]").forEach(b=>b.onclick=()=>rate(+b.dataset.g));
+  document.querySelectorAll(".ropt").forEach(b=>b.onclick=()=>choose(+b.dataset.i));
+  $("#nx").onclick=()=>{ review.i++; renderReview(); scrollTo({top:0}); };
   $("#end").onclick=endReview;
+  const rm=$("#rmc"); if(rm) rm.onclick=()=>{
+    const k=cards.findIndex(x=>x.id===c.id); if(k<0) return;
+    cards.splice(k,1); save(); review.ids.splice(review.i,1); if(pick===c.a) review.right--;
+    status(`Removed Q${c.n} of ${esc(c.set)}.`); renderTop(); renderReview();
+  };
+  if(done) $("#nx").focus();
 }
-function rate(grade){
-  const id=review.queue.shift(), c=cards.find(x=>x.id===id); if(!c) return renderReview();
-  c.r=next(c.r, grade); save();
-  if(grade===0){ review.again++; review.queue.splice(Math.min(3, review.queue.length), 0, id); }
-  else review.done++;
-  review.shown=false; renderReview(); scrollTo({top:0});
+function choose(i){
+  const c=cards.find(x=>x.id===review.ids[review.i]); if(!c || review.pick[c.id]!==undefined) return;
+  review.pick[c.id]=i; if(i===c.a) review.right++;
+  c.last={ok:i===c.a, at:new Date().toISOString()}; save();
+  renderReview();
+}
+function renderDone(){
+  document.documentElement.removeAttribute("data-b");
+  const n=review.ids.length, right=review.ids.filter(id=>{ const c=cards.find(x=>x.id===id); return c && review.pick[id]===c.a; });
+  $("#main").innerHTML = `<article class="card"><h2>${right.length} of ${n} right</h2>
+    <p>${right.length===n ? "You got every one. Remove them if you no longer need them flagged." : "The ones you missed stay marked, so Redo the missed brings them back."}</p>
+    <div class="rowbtns"><button class="btn" id="end">Back to list</button>
+    ${right.length ? `<button class="btn ghost" id="rmright">Remove the ${right.length} you got right</button>` : ""}</div></article>`;
+  $("#end").onclick=endReview; $("#end").focus();
+  const r=$("#rmright"); if(r) r.onclick=()=>{
+    const gone=new Set(right); cards=cards.filter(c=>!gone.has(c.id)); save();
+    status(`Removed ${gone.size} question${gone.size===1?"":"s"} you got right.`); endReview();
+  };
 }
 addEventListener("keydown", e=>{
   if(!review || e.altKey || e.ctrlKey || e.metaKey) return;
-  const onBtn = e.target && e.target.tagName==="BUTTON";
-  if(!review.shown && (e.key===" " || e.key==="Enter") && !onBtn){ e.preventDefault(); const f=$("#flip"); if(f) f.click(); }
-  else if(review.shown && ["1","2","3"].includes(e.key)){ e.preventDefault(); rate(+e.key-1); }
+  const k=e.key.toUpperCase(), idx="ABCDE".indexOf(k)>=0 ? "ABCDE".indexOf(k) : "12345".indexOf(e.key);
+  const b=idx>=0 && document.querySelector(`.ropt[data-i="${idx}"]:not([disabled])`);
+  if(b){ e.preventDefault(); b.click(); }
   else if(e.key==="Escape"){ endReview(); }
 });
 
