@@ -146,6 +146,24 @@ ITEMS = [
  ],
  [
   3,
+  "block-3-practice-test-1",
+  "Block 3 Practice Test 1",
+  None,
+  None,
+  "test",
+  "50 questions across Weeks 9 to 12. Exam-style mix."
+ ],
+ [
+  3,
+  "block-3-practice-test-2",
+  "Block 3 Practice Test 2",
+  None,
+  None,
+  "test",
+  "50 questions across Weeks 9 to 12. Exam-style mix."
+ ],
+ [
+  3,
   "anemia-workup-map",
   "Anemia Workup Map",
   None,
