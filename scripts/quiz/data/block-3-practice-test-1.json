@@ -253,21 +253,6 @@
    ]
   },
   {
-   "c": "Week 10",
-   "p": "Patient A, 24, gets a red cell transfusion and develops a fever. The units were compatible and no infection is found. Patient B, 78, has heart failure and becomes short of breath after his third unit, and he improves with diuresis. Which reaction does each have, in order?",
-   "o": [
-    "A FNHTR, B TACO",
-    "A TRALI, B FNHTR",
-    "A bacterial sepsis, B TACO",
-    "A acute hemolytic reaction, B TRALI"
-   ],
-   "a": 0,
-   "e": "Correct: A. Fever with compatible units and no infection is a febrile non-hemolytic transfusion reaction. Dyspnea in heart failure that improves with diuresis is transfusion-associated circulatory overload.\nB: TRALI causes dyspnea, and Patient A has fever only.\nC: No infection was found for Patient A.\nD: Patient A's units were compatible, and Patient B improved with diuresis.\nTakeaway: Fever: FNHTR, hemolysis, sepsis. Dyspnea: TACO, TRALI.",
-   "l": [
-    "W10 9.5"
-   ]
-  },
-  {
    "c": "Week 12",
    "p": "Which are palliative uses of radiation therapy?\ni) Spinal cord compression\nii) Superior vena cava syndrome\niii) Bleeding from a GI or gynecologic tumour\niv) CNS prophylaxis in ALL",
    "o": [
@@ -813,7 +798,6 @@
   "W10 8.3": "Recognize the special consideration including patient with renal impairment, pregnancy, post operative setting, in under- and over-weight populations",
   "W10 9.1": "Describe blood group, antibody screen and crossmatch.",
   "W10 9.4": "List the indications for red cell, platelet and plasma transfusions.",
-  "W10 9.5": "List the infectious and non-infectious risks of blood transfusions.",
   "W10 9.6": "Describe the contents and storage of blood and blood products.",
   "W10 11.1": "List possible genetic disorders of primary hemostasis.",
   "W11 1.1": "Identify and analyze abnormalities on complete blood count (CBC) to formulate differential diagnoses for leukocytosis.",

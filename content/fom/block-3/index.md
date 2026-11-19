@@ -19,7 +19,7 @@ description: "Weeks 9 to 12. Anemia, bleeding, myeloid disorders, lymphadenopath
 
 <h2 class="section-title">Practice tests</h2>
 <ul class="sets">
-<li><a class="set" href="/fom/block-3/practice-tests/block-3-practice-test-1" data-quiz="block-3-practice-test-1"><span class="set-name">Practice Test 1</span><span class="set-desc">Mixed questions from Weeks 9 to 12, exam style.</span><span class="set-pg"><span class="pg-txt">50 questions</span><span class="pg-bar" aria-hidden="true"><i></i></span></span><span class="set-go">Start</span></a></li>
+<li><a class="set" href="/fom/block-3/practice-tests/block-3-practice-test-1" data-quiz="block-3-practice-test-1"><span class="set-name">Practice Test 1</span><span class="set-desc">Mixed questions from Weeks 9 to 12, exam style.</span><span class="set-pg"><span class="pg-txt">49 questions</span><span class="pg-bar" aria-hidden="true"><i></i></span></span><span class="set-go">Start</span></a></li>
 <li><a class="set" href="/fom/block-3/practice-tests/block-3-practice-test-2" data-quiz="block-3-practice-test-2"><span class="set-name">Practice Test 2</span><span class="set-desc">Mixed questions from Weeks 9 to 12, exam style.</span><span class="set-pg"><span class="pg-txt">50 questions</span><span class="pg-bar" aria-hidden="true"><i></i></span></span><span class="set-go">Start</span></a></li>
 </ul>
 
@@ -33,7 +33,7 @@ description: "Weeks 9 to 12. Anemia, bleeding, myeloid disorders, lymphadenopath
 
 <script>
 (function(){
-  const Q = [{"s": "week-9-question-bank", "n": 50, "b": 3, "t": "Week 9 Question Bank", "h": "fom/block-3/question-bank/week-9-question-bank"}, {"s": "week-10-question-bank", "n": 59, "b": 3, "t": "Week 10 Question Bank", "h": "fom/block-3/question-bank/week-10-question-bank"}, {"s": "week-11-question-bank", "n": 50, "b": 3, "t": "Week 11 Question Bank", "h": "fom/block-3/question-bank/week-11-question-bank"}, {"s": "week-12-question-bank", "n": 50, "b": 3, "t": "Week 12 Question Bank", "h": "fom/block-3/question-bank/week-12-question-bank"}, {"s": "block-3-practice-test-1", "n": 50, "b": 3, "t": "Block 3 Practice Test 1", "h": "fom/block-3/practice-tests/block-3-practice-test-1"}, {"s": "block-3-practice-test-2", "n": 50, "b": 3, "t": "Block 3 Practice Test 2", "h": "fom/block-3/practice-tests/block-3-practice-test-2"}];
+  const Q = [{"s": "week-9-question-bank", "n": 50, "b": 3, "t": "Week 9 Question Bank", "h": "fom/block-3/question-bank/week-9-question-bank"}, {"s": "week-10-question-bank", "n": 59, "b": 3, "t": "Week 10 Question Bank", "h": "fom/block-3/question-bank/week-10-question-bank"}, {"s": "week-11-question-bank", "n": 50, "b": 3, "t": "Week 11 Question Bank", "h": "fom/block-3/question-bank/week-11-question-bank"}, {"s": "week-12-question-bank", "n": 50, "b": 3, "t": "Week 12 Question Bank", "h": "fom/block-3/question-bank/week-12-question-bank"}, {"s": "block-3-practice-test-1", "n": 49, "b": 3, "t": "Block 3 Practice Test 1", "h": "fom/block-3/practice-tests/block-3-practice-test-1"}, {"s": "block-3-practice-test-2", "n": 50, "b": 3, "t": "Block 3 Practice Test 2", "h": "fom/block-3/practice-tests/block-3-practice-test-2"}];
   function stat(q){
     let d = null;
     try { d = JSON.parse(localStorage.getItem("differential-" + q.s) || "null"); } catch(e) {}
