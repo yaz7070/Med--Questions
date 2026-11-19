@@ -13,8 +13,8 @@ const NAV: [string, string, number][] = [
   ["Block 4", "fom/block-4/", 4],
 ]
 
-// The Anki tab shows how many questions are saved. Quizzes write the list to
-// localStorage ("differential-anki"), so the count updates as soon as you save one.
+// The Flagged tab shows how many questions are flagged. Quizzes write the list to
+// localStorage ("differential-anki"), so the count updates as soon as you flag one.
 const ANKI_COUNT = `(function(){
   function n(){ try{ var d=JSON.parse(localStorage.getItem("differential-anki")||"null"); return d&&d.cards?d.cards.length:0; }catch(e){ return 0; } }
   function show(){ var el=document.getElementById("anki-count"); if(!el) return; var k=n(); el.textContent=k?String(k):""; el.hidden=!k; }
@@ -23,7 +23,7 @@ const ANKI_COUNT = `(function(){
 
 // The block you are in is highlighted, including on its quiz and flowchart pages.
 function activeTab(slug: string): string | undefined {
-  if (slug.startsWith("anki/")) return "anki/"
+  if (slug.startsWith("flagged/")) return "flagged/"
   return NAV.find(([, path]) => slug.startsWith(path))?.[1]
 }
 
@@ -63,11 +63,11 @@ export const DifferentialFrame: PageFrame = {
                   ))}
                   <li>
                     <a
-                      href={`${root}/anki/`}
-                      class={current === "anki/" ? "anki active" : "anki"}
-                      aria-current={current === "anki/" ? "page" : undefined}
+                      href={`${root}/flagged/`}
+                      class={current === "flagged/" ? "anki active" : "anki"}
+                      aria-current={current === "flagged/" ? "page" : undefined}
                     >
-                      Anki<span class="anki-count" id="anki-count" hidden></span>
+                      Flagged<span class="anki-count" id="anki-count" hidden></span>
                     </a>
                   </li>
                 </ul>

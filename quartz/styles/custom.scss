@@ -468,7 +468,7 @@ a.set {
 
 // ---------- Quiz and flowchart pages: one slim line, then the embed ----------
 
-body[data-slug^="anki/"],
+body[data-slug^="flagged/"],
 body[data-slug*="/question-bank/"],
 body[data-slug*="/practice-tests/"],
 body[data-slug*="/flowcharts/"] {
@@ -585,7 +585,7 @@ a.flowtile {
   color: var(--darkgray);
 }
 
-// ---------- Anki tab in the top bar ----------
+// ---------- Flagged tab in the top bar ----------
 
 header .site-nav li a {
   white-space: nowrap;
@@ -602,7 +602,7 @@ header .site-nav li a {
     padding-right: 0.15rem;
   }
 }
-// Narrow phones: block tabs shrink to their colour square and number, so Anki stays in view.
+// Narrow phones: block tabs shrink to their colour square and number, so Flagged stays in view.
 @media (max-width: 420px) {
   header .site-nav .nav-word {
     display: none;

@@ -53,10 +53,9 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,40px);lin
 .tag{font-size:13px;font-weight:700;color:var(--accent);background:var(--soft);padding:3px 9px;border-radius:4px}
 .chead-r{display:flex;align-items:center;gap:12px}
 .ankibtn{font:inherit;font-size:13.5px;font-weight:700;color:var(--muted);background:transparent;border:1.5px solid var(--line);border-radius:6px;padding:4px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
-.ankibtn::before{content:"+";font-size:15px;line-height:1}
+.ankibtn::before{content:"";width:9px;height:11px;background:currentColor;clip-path:polygon(0 0,100% 30%,0 60%);border-left:2px solid currentColor;box-sizing:content-box}
 .ankibtn:hover{border-color:var(--accent);color:var(--accent)}
 .ankibtn[aria-pressed="true"]{border-color:var(--accent);background:var(--soft);color:var(--accent)}
-.ankibtn[aria-pressed="true"]::before{content:"✓";font-size:12px}
 .ankibtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .ankirow{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .qn{font-family:var(--display);font-weight:700;font-size:15px;color:var(--faint);font-variant-numeric:tabular-nums}
@@ -102,6 +101,11 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,40px);lin
 .obj{font-size:13.5px;color:var(--faint);line-height:1.5}
 .obj b{color:var(--muted)}
 .fbtools{display:flex;justify-content:flex-end}
+.offrow{display:flex;justify-content:flex-start}
+.offbtn{font:inherit;font-size:13.5px;color:var(--faint);background:none;border:0;padding:2px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.offbtn:hover{color:var(--bad)}
+.offbtn[aria-pressed="true"]{color:var(--bad);font-weight:700}
+.offbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 /* Buttons */
 .nav{display:flex;justify-content:space-between;gap:10px}
@@ -221,7 +225,8 @@ function renderQ(){
     <div class="chead"><span class="tag">${esc(q.c)}</span><span class="chead-r">${ankiButton(cur)}<span class="qn">${cur+1} of ${N}</span></span></div>
     <p class="stem">${esc(q.p)}</p>
     ${pre}
-    <div class="opts">${opts}</div>${fb}
+    <div class="opts">${opts}</div>
+    <div class="offrow">${offButton(cur)}</div>${fb}
     <div class="nav"><button class="btn ghost" id="prev" ${cur===0?"disabled":""}>Previous</button>
     <button class="btn" id="next" ${done?"":"disabled"}>${last?"See results":"Next"}</button></div>
   </article>`;
@@ -231,6 +236,7 @@ function renderQ(){
   });
   document.querySelectorAll(".strike").forEach(b=>b.onclick=()=>toggleStrike(+b.dataset.s));
   const ab=$("#anki"); if(ab) ab.onclick=()=>ankiToggle(cur);
+  const ob=$("#off"); if(ob) ob.onclick=()=>offToggle(cur);
   const r=$("#redo"); if(r) r.onclick=()=>{ ans[cur]=null; strikes[cur]=[]; render(false); persist(); };
   $("#prev").onclick=()=>{cur--;render();};
   $("#next").onclick=()=>{ if(last){showResults=true;} else cur++; render(); };
@@ -328,19 +334,19 @@ async function connect(){
   }catch(e){ /* keep local-only mode */ }
 }
 
-/* Anki: saved questions live in one shared list ("differential-anki") that the Anki tab reads.
-   Each card keeps a copy of its question, so the Anki tab works without loading every quiz. */
+/* Flagged: flagged questions live in one shared list ("differential-anki", the key predates the rename)
+   that the Flagged tab reads. Each card keeps a copy of its question, so the tab works without loading every quiz. */
 const SET = {"slug": "week-5-question-bank", "title": "Week 5 Question Bank", "b": 2, "href": "fom/block-2/question-bank/week-5-question-bank"};
 const ANKI_KEY = "differential-anki";
 function ankiAll(){ try{ const d=JSON.parse(localStorage.getItem(ANKI_KEY)||"null"); return d && Array.isArray(d.cards) ? d.cards : []; }catch(e){ return []; } }
-function ankiPut(cards){ try{ localStorage.setItem(ANKI_KEY, JSON.stringify({v:1, cards})); return true; }catch(e){ setSave("Could not save to Anki. Browser storage is full or blocked.","bad"); return false; } }
+function ankiPut(cards){ try{ localStorage.setItem(ANKI_KEY, JSON.stringify({v:1, cards})); return true; }catch(e){ setSave("Could not flag. Browser storage is full or blocked.","bad"); return false; } }
 function ankiId(i){ return SET.slug+"#"+(i+1); }
 function ankiCard(i){
   const q=QUESTIONS[i];
   return {id:ankiId(i), slug:SET.slug, set:SET.title, b:SET.b, href:SET.href, n:i+1, c:q.c, p:q.p, o:q.o, a:q.a, e:q.e, l:q.l, obj:q.l.map(x=>OBJECTIVES[x]||"")};
 }
 function ankiHas(i, cards){ return (cards||ankiAll()).some(c=>c.id===ankiId(i)); }
-function ankiButton(i){ const s=ankiHas(i); return `<button class="ankibtn" id="anki" aria-pressed="${s}" title="${s?"Remove from":"Add to"} your Anki list">${s?"Saved to Anki":"Save to Anki"}</button>`; }
+function ankiButton(i){ const s=ankiHas(i); return `<button class="ankibtn" id="anki" aria-pressed="${s}" title="${s?"Remove the flag":"Flag this question for review"}">${s?"Flagged":"Flag"}</button>`; }
 function ankiToggle(i){
   let cards=ankiAll();
   if(ankiHas(i,cards)) cards=cards.filter(c=>c.id!==ankiId(i));
@@ -356,7 +362,7 @@ function missedIdx(){ return QUESTIONS.map((q,i)=>((ans[i]!==null && ans[i]!==q.
 function ankiMissedRow(){
   const m=missedIdx(); if(!m.length) return "";
   const cards=ankiAll(), left=m.filter(i=>!ankiHas(i,cards)).length;
-  return `<div class="ankirow">${left ? `<button class="btn ghost" id="ankimissed">Save ${left} missed question${left===1?"":"s"} to Anki</button>` : `<span class="hint">All ${m.length} missed questions are in your Anki list.</span>`}</div>`;
+  return `<div class="ankirow">${left ? `<button class="btn ghost" id="ankimissed">Flag ${left} missed question${left===1?"":"s"} for review</button>` : `<span class="hint">All ${m.length} missed questions are flagged.</span>`}</div>`;
 }
 /* Keep saved copies current when a question is corrected, without touching review progress. */
 function ankiRefresh(){
@@ -369,7 +375,21 @@ function ankiRefresh(){
   });
   if(changed) ankiPut(cards);
 }
-addEventListener("storage", e=>{ if(e.key===ANKI_KEY) render(false); });
+addEventListener("storage", e=>{ if(e.key===ANKI_KEY || e.key===OFF_KEY) render(false); });
+
+/* Not in course content: questions you report land in "differential-offcontent".
+   The Flagged tab lists them with a Copy list button, so they can be sent in for removal. */
+const OFF_KEY = "differential-offcontent";
+function offAll(){ try{ const d=JSON.parse(localStorage.getItem(OFF_KEY)||"null"); return d && Array.isArray(d.items) ? d.items : []; }catch(e){ return []; } }
+function offHas(i){ return offAll().some(x=>x.id===ankiId(i)); }
+function offButton(i){ const s=offHas(i); return `<button class="offbtn" id="off" aria-pressed="${s}">${s?"Reported as not in course content. Undo":"Not in course content?"}</button>`; }
+function offToggle(i){
+  let items=offAll();
+  if(offHas(i)) items=items.filter(x=>x.id!==ankiId(i));
+  else { const q=QUESTIONS[i]; items.push({id:ankiId(i), slug:SET.slug, set:SET.title, b:SET.b, href:SET.href, n:i+1, c:q.c, p:q.p, key:q.o[q.a], at:new Date().toISOString()}); }
+  try{ localStorage.setItem(OFF_KEY, JSON.stringify({v:1, items})); }catch(e){ setSave("Could not save the report. Browser storage is full or blocked.","bad"); }
+  render(false);
+}
 
 function render(top=true){ renderHeader(); showResults?renderResults():renderQ(); if(top) window.scrollTo({top:0}); }
 applySaved(lsLoad());

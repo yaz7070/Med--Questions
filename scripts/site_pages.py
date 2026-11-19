@@ -170,14 +170,16 @@ for b, slug, title, aid, _unused, kind, blurb in ITEMS:
     )
 
 
-# ---------- Anki page: the saved-questions list, embedded like a quiz ----------
-(C / "anki").mkdir(exist_ok=True)
-(C / "anki" / "index.md").write_text(
-    fm("Anki", 'description: "Questions you saved from the quizzes. Review them here or download them for the Anki app."\n')
-    + '<p class="embed-bar"><span class="here">Saved questions</span>'
-    + '<a class="full" href="/static/pages/anki.html" target="_blank" rel="noopener">Open full screen</a></p>\n\n'
-    + '<iframe class="embed-page" src="/static/pages/anki.html" title="Anki"></iframe>\n'
+# ---------- Flagged page: flagged questions, embedded like a quiz ----------
+(C / "flagged").mkdir(exist_ok=True)
+(C / "flagged" / "index.md").write_text(
+    fm("Flagged", 'description: "Questions you flagged for review, plus any you reported as not in course content."\n')
+    + '<p class="embed-bar"><span class="here">Flagged questions</span>'
+    + '<a class="full" href="/static/pages/flagged.html" target="_blank" rel="noopener">Open full screen</a></p>\n\n'
+    + '<iframe class="embed-page" src="/static/pages/flagged.html" title="Flagged"></iframe>\n'
 )
+(C / "anki").mkdir(exist_ok=True)
+(C / "anki" / "index.md").write_text(moved("Flagged", "/flagged/"))
 
 # ---------- block pages ----------
 def set_row(b, kind, slug, title, blurb):

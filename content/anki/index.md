@@ -1,8 +1,7 @@
 ---
-title: "Anki"
-description: "Questions you saved from the quizzes. Review them here or download them for the Anki app."
+title: "Moved"
 ---
 
-<p class="embed-bar"><span class="here">Saved questions</span><a class="full" href="/static/pages/anki.html" target="_blank" rel="noopener">Open full screen</a></p>
+<p class="moved">This page moved. <a href="/flagged/">Go to Flagged</a>.</p>
 
-<iframe class="embed-page" src="/static/pages/anki.html" title="Anki"></iframe>
+<script>(function(){var a=document.querySelector(".moved a");if(a)location.replace(a.href);})();</script>

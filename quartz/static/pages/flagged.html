@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<style>
+/* Nexus Flagged page. Source: scripts/quiz/flagged.html (build.py copies it to quartz/static/pages/).
+   Reads the shared list "differential-anki" (key kept from before the rename) that every quiz writes to with Flag.
+   Also lists questions reported as not in course content ("differential-offcontent").
+   Same tokens as the quiz template. Each card takes its block colour. */
+:root{
+  --bg:#f5f6f8;--paper:#ffffff;--ink:#15181d;--muted:#4d5560;--faint:#7b828d;--line:#e0e3e8;--soft:#eef0f3;
+  --ok:#1d7a46;--okw:#e7f4ec;--bad:#b42318;--badw:#fcecea;
+  --b1:#0b7a75;--b2:#4f46c8;--b3:#a3246b;--b4:#a35f08;
+  --accent:var(--ink);
+  --font:"Atkinson Hyperlegible Next","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+:root[data-theme="dark"]{
+  --bg:#14161a;--paper:#1b1e24;--ink:#eceef2;--muted:#b3bac5;--faint:#8a919c;--line:#2d323b;--soft:#252930;
+  --ok:#5ccf8f;--okw:#13301f;--bad:#f2877c;--badw:#3a1c1a;
+  --b1:#45c2b8;--b2:#a49df6;--b3:#ef8ec0;--b4:#e3a548;color-scheme:dark}
+[data-b="1"]{--accent:var(--b1)}[data-b="2"]{--accent:var(--b2)}[data-b="3"]{--accent:var(--b3)}[data-b="4"]{--accent:var(--b4)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5;font-variant-numeric:tabular-nums}
+.wrap{max-width:860px;margin:0 auto;padding:28px 16px 64px;display:flex;flex-direction:column;gap:22px}
+h1,h2,h3,p{margin:0}
+h1{font-size:clamp(26px,4vw,32px);letter-spacing:-.015em;line-height:1.15}
+.sub{color:var(--muted);margin-top:4px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.help{font-size:14px;color:var(--faint);margin-top:10px;max-width:70ch}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.filters button{font:inherit;font-size:14px;font-weight:700;color:var(--muted);background:transparent;border:1.5px solid var(--line);border-radius:6px;padding:4px 11px;cursor:pointer}
+.filters button[aria-pressed="true"]{color:var(--paper);background:var(--accent);border-color:var(--accent)}
+.filters button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.btn{font:inherit;font-weight:700;font-size:15px;padding:9px 18px;border:1.5px solid var(--accent);border-radius:6px;background:var(--accent);color:var(--paper);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.ghost:hover:not(:disabled){background:var(--soft)}
+.btn:disabled{opacity:.35;cursor:default}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.status{font-size:14px;color:var(--muted);display:flex;align-items:center;gap:10px;min-height:1.5em}
+.offsec{margin-top:34px;display:flex;flex-direction:column;gap:10px}
+.offsec:empty{display:none}
+.offsec h2{font-size:17px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.offsec h2 span{font-size:14px;font-weight:400;color:var(--muted)}
+.offsec .hint{font-size:14px;color:var(--muted);margin:0}
+.offlist{list-style:none;margin:0;padding:0;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.offlist li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:11px 12px;border-left:5px solid var(--bad);align-items:baseline}
+.offlist li + li{border-top:1px solid var(--line)}
+.offlist .set{font-size:13.5px;font-weight:700;color:var(--muted)}
+.offlist .s{grid-column:1}
+.offlist .rm2{grid-row:1 / span 2;grid-column:2}
+.offtools{display:flex;flex-wrap:wrap;gap:10px}
+.linkbtn{font:inherit;font-size:14px;font-weight:700;color:var(--accent);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+#main{display:flex;flex-direction:column;gap:26px}
+.status:empty,.filters:empty,.help:empty,.tools:empty{display:none}
+/* List */
+.group h2{font-size:17px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin-bottom:8px}
+.group h2 span{font-size:14px;font-weight:400;color:var(--muted)}
+.cards{list-style:none;margin:0;padding:0;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.cards li{display:flex;align-items:flex-start;gap:8px;border-left:5px solid var(--accent);padding:0 12px 0 0}
+.cards li + li{border-top:1px solid var(--line)}
+details{flex:1;min-width:0}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:3.2rem minmax(0,1fr) auto;gap:4px 12px;padding:11px 0 11px 12px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+summary:hover .s{color:var(--ink)}
+.qn{font-weight:700;color:var(--accent);font-size:14px}
+.s{color:var(--muted);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:15px}
+details[open] .s{display:block;-webkit-line-clamp:unset;color:var(--ink);white-space:pre-line}
+.due{font-size:13px;color:var(--faint);white-space:nowrap}
+.due.now{color:var(--accent);font-weight:700}
+.back{padding:0 0 14px 12px;margin-left:3.2rem;display:flex;flex-direction:column;gap:8px}
+.rm{flex:none;font:inherit;font-size:13px;font-weight:700;color:var(--faint);background:none;border:1.5px solid transparent;border-radius:6px;padding:4px 8px;margin-top:8px;cursor:pointer}
+.rm:hover{color:var(--bad);border-color:var(--line)}
+.rm:focus-visible{outline:2px solid var(--accent)}
+.open{font-size:14px;font-weight:700;color:var(--accent)}
+
+/* Options and explanation (shared by list and review) */
+.olist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.olist li{display:flex;gap:10px;align-items:baseline;border:0;padding:0}
+.k{flex:none;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:5px;background:var(--soft);color:var(--accent);font-weight:700;font-size:13px}
+.olist li.right .k{background:var(--ok);color:var(--paper)}
+.olist li.right > span:last-child{font-weight:700}
+.ex{display:flex;flex-direction:column;gap:8px;background:var(--bg);border-radius:6px;padding:12px 14px;font-size:15px}
+.cards .ex{background:var(--soft)}
+.ex p{max-width:72ch}
+.ex .why,.ex .alt{display:flex;gap:10px;align-items:baseline}
+.ex .why{font-weight:600}
+.ex .alt{color:var(--muted)}
+.lk{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--muted);font-weight:700;font-size:12px}
+.lk.ok{background:var(--ok);color:var(--paper)}
+.ex .take{border-left:3px solid var(--accent);padding-left:10px}
+.obj{font-size:13.5px;color:var(--faint)}
+.obj b{color:var(--muted)}
+
+/* Empty */
+.empty{background:var(--paper);border:1px dashed var(--line);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:8px;color:var(--muted)}
+.empty b{color:var(--ink)}
+.empty a{color:var(--ink);font-weight:700}
+
+/* Review */
+.card{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:18px}
+.chead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:14px}
+.chead b{color:var(--accent)}
+.chead span{color:var(--faint)}
+.stem{font-size:18.5px;line-height:1.6;white-space:pre-line;max-width:70ch}
+.card .olist{gap:10px;font-size:16.5px}
+.card .k{width:28px;height:28px}
+.ropts{display:flex;flex-direction:column;gap:8px}
+.ropt{font:inherit;font-size:16px;text-align:left;display:flex;gap:12px;align-items:baseline;width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer}
+.ropt:hover:not(:disabled){border-color:var(--accent)}
+.ropt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ropt:disabled{cursor:default}
+.ropt.right{border-color:var(--ok);background:var(--okw)}
+.ropt.right .k{background:var(--ok);color:var(--paper)}
+.ropt.wrong{border-color:var(--bad);background:var(--badw)}
+.ropt.wrong .k{background:var(--bad);color:var(--paper)}
+.ropt .k{width:28px;height:28px}
+.verdict{font-weight:700}.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
+.due.ok{color:var(--ok)}.due.bad{color:var(--bad);font-weight:700}
+.rowbtns{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+@media (max-width:560px){
+  summary{grid-template-columns:2.6rem minmax(0,1fr)}
+  .due{grid-column:2}
+  .back{margin-left:0}
+  .card{padding:18px}.stem{font-size:17.5px}
+}
+</style>
+</head><body>
+<script>
+/* Follow the site's light or dark toggle. */
+(function(){
+  const r=document.documentElement;
+  function theme(){ let t=null; try{ t=localStorage.getItem("theme"); }catch(e){}
+    r.dataset.theme = t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); }
+  theme(); addEventListener("storage",theme);
+})();
+</script>
+<div class="wrap">
+  <header id="top">
+    <h1>Flagged</h1>
+    <p class="sub" id="sub"></p>
+    <div class="tools" id="tools"></div>
+    <p class="help" id="help"></p>
+    <div class="filters" id="filters" role="group" aria-label="Show questions from"></div>
+  </header>
+  <div class="status" id="status" role="status"></div>
+  <main id="main"></main>
+  <section class="offsec" id="offsec" aria-labelledby="offh"></section>
+</div>
+
+<script>
+const KEY = "differential-anki";
+const ROOT = "../../";            // this page is served at static/pages/flagged.html
+const L = "ABCDE";
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+let cards = [], filter = "all", review = null, removed = null;  // review: the current redo session
+
+function load(){ try{ const d=JSON.parse(localStorage.getItem(KEY)||"null"); cards = d && Array.isArray(d.cards) ? d.cards.filter(c=>c && c.id && Array.isArray(c.o)) : []; }catch(e){ cards=[]; } }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify({v:1, cards})); return true; }catch(e){ status("Could not save. Browser storage is full or blocked."); return false; } }
+function status(html){ $("#status").innerHTML = html || ""; }
+
+function week(c){ const m=String(c.slug).match(/week-(\d+)/); return m ? +m[1] : 99; }
+function order(a,b){ return (a.b-b.b) || (week(a)-week(b)) || String(a.set).localeCompare(String(b.set)) || (a.n-b.n); }
+function shown(){ return cards.filter(c=>filter==="all" || String(c.b)===filter).sort(order); }
+/* The list shows how you did the last time you redid each question. */
+function lastLabel(c){
+  if(!c.last) return ["Not redone yet",""];
+  return c.last.ok ? ["Right last time","ok"] : ["Missed last time","bad"];
+}
+
+function fmtLine(t){
+  let m;
+  if((m=t.match(/^Correct:\s*([A-E])\.?\s*(.*)$/))) return `<p class="why"><span class="lk ok">${m[1]}</span><span>${esc(m[2])}</span></p>`;
+  if((m=t.match(/^([A-E]):\s*(.*)$/))) return `<p class="alt"><span class="lk">${m[1]}</span><span>${esc(m[2])}</span></p>`;
+  if((m=t.match(/^(Takeaway|High yield|High-yield|Key point|Clues):\s*(.*)$/i))) return `<p class="take"><b>${esc(m[1])}.</b> ${esc(m[2])}</p>`;
+  return `<p>${esc(t)}</p>`;
+}
+function optsHtml(c, reveal){
+  return `<ol class="olist">${c.o.map((o,i)=>`<li class="${reveal && i===c.a ? "right" : ""}"><span class="k">${L[i]}</span><span>${esc(o)}</span></li>`).join("")}</ol>`;
+}
+function backHtml(c){
+  const objs=(c.l||[]).map((id,k)=>`<div class="obj"><b>Objective ${esc(id)}</b> ${esc((c.obj||[])[k]||"")}</div>`).join("");
+  return `<div class="ex">${String(c.e||"").split("\n").map(fmtLine).join("")}${objs}</div>`;
+}
+
+/* ---------- header ---------- */
+function renderTop(){
+  const list=shown(), missed=list.filter(c=>c.last && !c.last.ok).length;
+  const scope = filter==="all" ? "" : " in Block "+filter;
+  $("#sub").textContent = !cards.length ? "Questions you flag from any quiz land here."
+    : review ? `Redoing ${review.ids.length} question${review.ids.length===1?"":"s"}${scope}.`
+    : `${list.length} flagged question${list.length===1?"":"s"}${scope}.`;
+  $("#tools").innerHTML = cards.length && !review ? `
+    <button class="btn" id="go">Redo ${list.length} question${list.length===1?"":"s"}</button>
+    ${missed ? `<button class="btn ghost" id="missed">Redo the ${missed} missed</button>` : ""}
+    <button class="btn ghost" id="dl">Download for Anki</button>` : "";
+  $("#help").textContent = cards.length && !review
+    ? "Redo works like a quiz: pick an answer, then read the explanation. Download for Anki makes a file the Anki app imports into a deck called Nexus."
+    : "";
+  const blocks=[...new Set(cards.map(c=>String(c.b)))].sort();
+  if(filter!=="all" && !blocks.includes(filter)) filter="all";
+  $("#filters").innerHTML = blocks.length>1 && !review
+    ? [["all","All blocks"], ...blocks.map(b=>[b,"Block "+b])].map(([v,t])=>`<button data-f="${v}" ${v==="all"?"":`data-b="${v}"`} aria-pressed="${filter===v}">${t}</button>`).join("")
+    : "";
+  document.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{ filter=b.dataset.f; render(); });
+  const go=$("#go"); if(go) go.onclick=()=>startReview(list);
+  const ms=$("#missed"); if(ms) ms.onclick=()=>startReview(list.filter(c=>c.last && !c.last.ok));
+  const dl=$("#dl"); if(dl) dl.onclick=()=>download(list);
+}
+
+/* ---------- list ---------- */
+function renderList(){
+  const list=shown();
+  if(!cards.length){
+    $("#main").innerHTML = `<div class="empty"><b>No flagged questions yet.</b>
+      <span>Open any quiz and press Flag on a question. After you finish a quiz, the results screen flags every question you missed in one click.</span>
+      <a href="${ROOT}" target="_top">Go to the home page</a></div>`;
+    return;
+  }
+  const groups=[];
+  list.forEach(c=>{ const g=groups[groups.length-1]; if(g && g.slug===c.slug) g.items.push(c); else groups.push({slug:c.slug, set:c.set, b:c.b, href:c.href, items:[c]}); });
+  $("#main").innerHTML = groups.map(g=>`<section class="group" data-b="${esc(g.b)}">
+    <h2>${esc(g.set)} <span>Block ${esc(g.b)}, ${g.items.length} flagged</span></h2>
+    <ul class="cards">${g.items.map(c=>{ const [dl,cls]=lastLabel(c); return `<li>
+      <details><summary><span class="qn">Q${c.n}</span><span class="s">${esc(c.p)}</span><span class="due ${cls}">${dl}</span></summary>
+        <div class="back">${optsHtml(c,true)}${backHtml(c)}${c.href?`<a class="open" href="${ROOT+esc(c.href)}" target="_top">Open ${esc(c.set)}</a>`:""}</div></details>
+      <button class="rm" data-id="${esc(c.id)}" aria-label="Remove question ${c.n} of ${esc(c.set)}">Remove</button></li>`; }).join("")}</ul>
+  </section>`).join("");
+  document.querySelectorAll(".rm").forEach(b=>b.onclick=()=>{
+    const i=cards.findIndex(c=>c.id===b.dataset.id); if(i<0) return;
+    removed={card:cards[i], at:i}; cards.splice(i,1); save(); render();
+    status(`Removed Q${removed.card.n} of ${esc(removed.card.set)}. <button class="linkbtn" id="undo">Undo</button>`);
+    $("#undo").onclick=()=>{ if(!removed) return; cards.splice(Math.min(removed.at,cards.length),0,removed.card); removed=null; save(); status(""); render(); };
+  });
+}
+
+/* ---------- redo: the saved questions as a quiz ---------- */
+function startReview(list){
+  if(!list.length) return;
+  review={ids:list.map(c=>c.id), i:0, pick:{}, right:0};
+  status(""); render(); scrollTo({top:0});
+}
+function endReview(){ review=null; document.documentElement.removeAttribute("data-b"); render(); scrollTo({top:0}); }
+function renderReview(){
+  if(review.i>=review.ids.length) return renderDone();
+  const c=cards.find(x=>x.id===review.ids[review.i]);
+  if(!c){ review.ids.splice(review.i,1); return renderReview(); }
+  document.documentElement.dataset.b=c.b;
+  const pick=review.pick[c.id], done=pick!==undefined, last=review.i===review.ids.length-1;
+  $("#main").innerHTML = `<article class="card">
+    <div class="chead"><b>${esc(c.set)}, Q${c.n}</b><span>${review.i+1} of ${review.ids.length}</span></div>
+    <p class="stem">${esc(c.p)}</p>
+    <div class="ropts" role="group" aria-label="Answer options">${c.o.map((o,i)=>{
+      const cls = !done ? "" : i===c.a ? "right" : i===pick ? "wrong" : "";
+      return `<button class="ropt ${cls}" data-i="${i}" ${done?"disabled":""}><span class="k">${L[i]}</span><span>${esc(o)}</span></button>`;
+    }).join("")}</div>
+    ${done ? `<p class="verdict ${pick===c.a?"ok":"bad"}">${pick===c.a ? "Correct." : "Not quite. The answer is "+L[c.a]+"."}</p>${backHtml(c)}` : ""}
+    <div class="rowbtns">
+      <button class="btn ghost" id="end">End</button>
+      <span class="rowbtns">${done ? `<button class="linkbtn" id="rmc">Remove flag</button>` : ""}
+      <button class="btn" id="nx" ${done?"":"disabled"}>${last ? "See results" : "Next"}</button></span>
+    </div>
+  </article>`;
+  document.querySelectorAll(".ropt").forEach(b=>b.onclick=()=>choose(+b.dataset.i));
+  $("#nx").onclick=()=>{ review.i++; renderReview(); scrollTo({top:0}); };
+  $("#end").onclick=endReview;
+  const rm=$("#rmc"); if(rm) rm.onclick=()=>{
+    const k=cards.findIndex(x=>x.id===c.id); if(k<0) return;
+    cards.splice(k,1); save(); review.ids.splice(review.i,1); if(pick===c.a) review.right--;
+    status(`Removed Q${c.n} of ${esc(c.set)}.`); renderTop(); renderReview();
+  };
+  if(done) $("#nx").focus();
+}
+function choose(i){
+  const c=cards.find(x=>x.id===review.ids[review.i]); if(!c || review.pick[c.id]!==undefined) return;
+  review.pick[c.id]=i; if(i===c.a) review.right++;
+  c.last={ok:i===c.a, at:new Date().toISOString()}; save();
+  renderReview();
+}
+function renderDone(){
+  document.documentElement.removeAttribute("data-b");
+  const n=review.ids.length, right=review.ids.filter(id=>{ const c=cards.find(x=>x.id===id); return c && review.pick[id]===c.a; });
+  $("#main").innerHTML = `<article class="card"><h2>${right.length} of ${n} right</h2>
+    <p>${right.length===n ? "You got every one. Remove the flags if you no longer need them." : "The ones you missed stay marked, so Redo the missed brings them back."}</p>
+    <div class="rowbtns"><button class="btn" id="end">Back to list</button>
+    ${right.length ? `<button class="btn ghost" id="rmright">Remove the ${right.length} you got right</button>` : ""}</div></article>`;
+  $("#end").onclick=endReview; $("#end").focus();
+  const r=$("#rmright"); if(r) r.onclick=()=>{
+    const gone=new Set(right); cards=cards.filter(c=>!gone.has(c.id)); save();
+    status(`Removed ${gone.size} question${gone.size===1?"":"s"} you got right.`); endReview();
+  };
+}
+addEventListener("keydown", e=>{
+  if(!review || e.altKey || e.ctrlKey || e.metaKey) return;
+  const k=e.key.toUpperCase(), idx="ABCDE".indexOf(k)>=0 ? "ABCDE".indexOf(k) : "12345".indexOf(e.key);
+  const b=idx>=0 && document.querySelector(`.ropt[data-i="${idx}"]:not([disabled])`);
+  if(b){ e.preventDefault(); b.click(); }
+  else if(e.key==="Escape"){ endReview(); }
+});
+
+/* ---------- download for the Anki app ----------
+   A tab-separated text file with Anki's file headers: Basic note type, deck "Nexus",
+   tags in column 3, and a stable id in column 4 so a re-import updates cards. */
+function field(html){ return '"'+String(html).replace(/\t/g," ").replace(/\r?\n/g,"<br>").replace(/"/g,'""')+'"'; }
+function tag(s){ return String(s).trim().replace(/[^\w.\-]+/g,"_").replace(/^_+|_+$/g,""); }
+function download(list){
+  if(!list.length) return;
+  const rows=list.map(c=>{
+    const front = `${esc(c.p)}<br><br>${c.o.map((o,i)=>`<b>${L[i]}.</b> ${esc(o)}`).join("<br>")}<br><br><small style="color:#888">${esc(c.set)}, Q${c.n}</small>`;
+    const objs=(c.l||[]).map((id,k)=>`<small style="color:#888">Objective ${esc(id)}: ${esc((c.obj||[])[k]||"")}</small>`).join("<br>");
+    const back = `<b>${L[c.a]}. ${esc(c.o[c.a])}</b><br><br>${String(c.e||"").split("\n").map(esc).join("<br>")}${objs?"<br><br>"+objs:""}`;
+    const tags = ["Nexus", "Block"+c.b, tag(c.set), tag(c.c), ...(c.l||[]).map(tag)].filter(Boolean).join(" ");
+    return [field(front), field(back), field(tags), field("nexus-"+c.slug+"-"+c.n)].join("\t");
+  });
+  const head = ["#separator:tab","#html:true","#notetype:Basic","#deck:Nexus","#tags column:3","#guid column:4"].join("\n");
+  const blob = new Blob([head+"\n"+rows.join("\n")+"\n"], {type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="nexus-anki-"+new Date().toISOString().slice(0,10)+".txt";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 2000);
+  status(`Downloaded ${list.length} card${list.length===1?"":"s"}. In Anki, choose File, then Import, and pick the file.`);
+}
+
+/* ---------- not in course content ---------- */
+const OFF_KEY = "differential-offcontent";
+function offAll(){ try{ const d=JSON.parse(localStorage.getItem(OFF_KEY)||"null"); return d && Array.isArray(d.items) ? d.items.filter(x=>x && x.id) : []; }catch(e){ return []; } }
+function offPut(items){ try{ localStorage.setItem(OFF_KEY, JSON.stringify({v:1, items})); }catch(e){ status("Could not save. Browser storage is full or blocked."); } }
+function offText(items){ return "Not in course content:\n" + items.map(x=>`- ${x.set}, Q${x.n} (${x.c}): ${x.p.replace(/\s+/g," ").slice(0,140)} [answer: ${x.key}]`).join("\n"); }
+function renderOff(){
+  const el=$("#offsec"), items=offAll().sort(order);
+  if(review || !items.length){ el.innerHTML=""; return; }
+  el.innerHTML = `<h2 id="offh">Not in course content <span>${items.length} reported</span></h2>
+    <p class="hint">Questions you marked as off-course. Copy the list and send it in to have them removed from the quizzes.</p>
+    <div class="offtools"><button class="btn ghost" id="offcopy">Copy list</button><button class="btn ghost" id="offclear">Clear list</button></div>
+    <ul class="offlist">${items.map(x=>`<li><span class="set">${esc(x.set)}, Q${x.n}</span><span class="s">${esc(x.p)}</span>
+      <button class="rm rm2" data-off="${esc(x.id)}" aria-label="Remove report for question ${x.n} of ${esc(x.set)}">Remove</button></li>`).join("")}</ul>`;
+  $("#offcopy").onclick=async()=>{
+    const txt=offText(items);
+    try{ await navigator.clipboard.writeText(txt); status(`Copied ${items.length} question${items.length===1?"":"s"}. Paste the list into a message.`); }
+    catch(e){ const ta=document.createElement("textarea"); ta.value=txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand("copy"); status("Copied the list."); }catch(_){ status("Could not copy. Select the text in the list instead."); } ta.remove(); }
+  };
+  $("#offclear").onclick=()=>{ const keep=offAll(); offPut([]); renderOff(); status(`Cleared ${keep.length} report${keep.length===1?"":"s"}. <button class="linkbtn" id="offundo">Undo</button>`); $("#offundo").onclick=()=>{ offPut(keep); status(""); renderOff(); }; };
+  document.querySelectorAll("[data-off]").forEach(b=>b.onclick=()=>{ offPut(offAll().filter(x=>x.id!==b.dataset.off)); renderOff(); });
+}
+function render(){ renderTop(); review ? renderReview() : renderList(); renderOff(); }
+addEventListener("storage", e=>{ if(e.key===KEY){ load(); if(!review) render(); else renderTop(); } if(e.key===OFF_KEY) renderOff(); });
+load(); render();
+</script>
+</body></html>

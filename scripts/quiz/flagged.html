@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Anki</title>
+<title>Flagged</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
 <style>
-/* Nexus Anki page. Source: scripts/quiz/anki.html (build.py copies it to quartz/static/pages/).
-   Reads the shared list "differential-anki" that every quiz writes to with Save to Anki.
+/* Nexus Flagged page. Source: scripts/quiz/flagged.html (build.py copies it to quartz/static/pages/).
+   Reads the shared list "differential-anki" (key kept from before the rename) that every quiz writes to with Flag.
+   Also lists questions reported as not in course content ("differential-offcontent").
    Same tokens as the quiz template. Each card takes its block colour. */
 :root{
   --bg:#f5f6f8;--paper:#ffffff;--ink:#15181d;--muted:#4d5560;--faint:#7b828d;--line:#e0e3e8;--soft:#eef0f3;
@@ -39,6 +40,18 @@ h1{font-size:clamp(26px,4vw,32px);letter-spacing:-.015em;line-height:1.15}
 .btn:disabled{opacity:.35;cursor:default}
 .btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .status{font-size:14px;color:var(--muted);display:flex;align-items:center;gap:10px;min-height:1.5em}
+.offsec{margin-top:34px;display:flex;flex-direction:column;gap:10px}
+.offsec:empty{display:none}
+.offsec h2{font-size:17px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.offsec h2 span{font-size:14px;font-weight:400;color:var(--muted)}
+.offsec .hint{font-size:14px;color:var(--muted);margin:0}
+.offlist{list-style:none;margin:0;padding:0;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.offlist li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:11px 12px;border-left:5px solid var(--bad);align-items:baseline}
+.offlist li + li{border-top:1px solid var(--line)}
+.offlist .set{font-size:13.5px;font-weight:700;color:var(--muted)}
+.offlist .s{grid-column:1}
+.offlist .rm2{grid-row:1 / span 2;grid-column:2}
+.offtools{display:flex;flex-wrap:wrap;gap:10px}
 .linkbtn{font:inherit;font-size:14px;font-weight:700;color:var(--accent);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 
 #main{display:flex;flex-direction:column;gap:26px}
@@ -128,7 +141,7 @@ details[open] .s{display:block;-webkit-line-clamp:unset;color:var(--ink);white-s
 </script>
 <div class="wrap">
   <header id="top">
-    <h1>Anki</h1>
+    <h1>Flagged</h1>
     <p class="sub" id="sub"></p>
     <div class="tools" id="tools"></div>
     <p class="help" id="help"></p>
@@ -136,11 +149,12 @@ details[open] .s{display:block;-webkit-line-clamp:unset;color:var(--ink);white-s
   </header>
   <div class="status" id="status" role="status"></div>
   <main id="main"></main>
+  <section class="offsec" id="offsec" aria-labelledby="offh"></section>
 </div>
 
 <script>
 const KEY = "differential-anki";
-const ROOT = "../../";            // this page is served at static/pages/anki.html
+const ROOT = "../../";            // this page is served at static/pages/flagged.html
 const L = "ABCDE";
 
 const $ = s => document.querySelector(s);
@@ -180,15 +194,15 @@ function backHtml(c){
 function renderTop(){
   const list=shown(), missed=list.filter(c=>c.last && !c.last.ok).length;
   const scope = filter==="all" ? "" : " in Block "+filter;
-  $("#sub").textContent = !cards.length ? "Questions you save from any quiz land here."
+  $("#sub").textContent = !cards.length ? "Questions you flag from any quiz land here."
     : review ? `Redoing ${review.ids.length} question${review.ids.length===1?"":"s"}${scope}.`
-    : `${list.length} saved question${list.length===1?"":"s"}${scope}.`;
+    : `${list.length} flagged question${list.length===1?"":"s"}${scope}.`;
   $("#tools").innerHTML = cards.length && !review ? `
     <button class="btn" id="go">Redo ${list.length} question${list.length===1?"":"s"}</button>
     ${missed ? `<button class="btn ghost" id="missed">Redo the ${missed} missed</button>` : ""}
     <button class="btn ghost" id="dl">Download for Anki</button>` : "";
   $("#help").textContent = cards.length && !review
-    ? "Redo works like a quiz: pick an answer, then read the explanation. Download for Anki makes a file the Anki app imports (File, then Import) into a deck called Nexus."
+    ? "Redo works like a quiz: pick an answer, then read the explanation. Download for Anki makes a file the Anki app imports into a deck called Nexus."
     : "";
   const blocks=[...new Set(cards.map(c=>String(c.b)))].sort();
   if(filter!=="all" && !blocks.includes(filter)) filter="all";
@@ -205,15 +219,15 @@ function renderTop(){
 function renderList(){
   const list=shown();
   if(!cards.length){
-    $("#main").innerHTML = `<div class="empty"><b>Your Anki list is empty.</b>
-      <span>Open any quiz and press Save to Anki on a question. After you finish a quiz, the results screen can save every question you missed in one click.</span>
+    $("#main").innerHTML = `<div class="empty"><b>No flagged questions yet.</b>
+      <span>Open any quiz and press Flag on a question. After you finish a quiz, the results screen flags every question you missed in one click.</span>
       <a href="${ROOT}" target="_top">Go to the home page</a></div>`;
     return;
   }
   const groups=[];
   list.forEach(c=>{ const g=groups[groups.length-1]; if(g && g.slug===c.slug) g.items.push(c); else groups.push({slug:c.slug, set:c.set, b:c.b, href:c.href, items:[c]}); });
   $("#main").innerHTML = groups.map(g=>`<section class="group" data-b="${esc(g.b)}">
-    <h2>${esc(g.set)} <span>Block ${esc(g.b)}, ${g.items.length} saved</span></h2>
+    <h2>${esc(g.set)} <span>Block ${esc(g.b)}, ${g.items.length} flagged</span></h2>
     <ul class="cards">${g.items.map(c=>{ const [dl,cls]=lastLabel(c); return `<li>
       <details><summary><span class="qn">Q${c.n}</span><span class="s">${esc(c.p)}</span><span class="due ${cls}">${dl}</span></summary>
         <div class="back">${optsHtml(c,true)}${backHtml(c)}${c.href?`<a class="open" href="${ROOT+esc(c.href)}" target="_top">Open ${esc(c.set)}</a>`:""}</div></details>
@@ -250,7 +264,7 @@ function renderReview(){
     ${done ? `<p class="verdict ${pick===c.a?"ok":"bad"}">${pick===c.a ? "Correct." : "Not quite. The answer is "+L[c.a]+"."}</p>${backHtml(c)}` : ""}
     <div class="rowbtns">
       <button class="btn ghost" id="end">End</button>
-      <span class="rowbtns">${done ? `<button class="linkbtn" id="rmc">Remove from Anki</button>` : ""}
+      <span class="rowbtns">${done ? `<button class="linkbtn" id="rmc">Remove flag</button>` : ""}
       <button class="btn" id="nx" ${done?"":"disabled"}>${last ? "See results" : "Next"}</button></span>
     </div>
   </article>`;
@@ -274,7 +288,7 @@ function renderDone(){
   document.documentElement.removeAttribute("data-b");
   const n=review.ids.length, right=review.ids.filter(id=>{ const c=cards.find(x=>x.id===id); return c && review.pick[id]===c.a; });
   $("#main").innerHTML = `<article class="card"><h2>${right.length} of ${n} right</h2>
-    <p>${right.length===n ? "You got every one. Remove them if you no longer need them flagged." : "The ones you missed stay marked, so Redo the missed brings them back."}</p>
+    <p>${right.length===n ? "You got every one. Remove the flags if you no longer need them." : "The ones you missed stay marked, so Redo the missed brings them back."}</p>
     <div class="rowbtns"><button class="btn" id="end">Back to list</button>
     ${right.length ? `<button class="btn ghost" id="rmright">Remove the ${right.length} you got right</button>` : ""}</div></article>`;
   $("#end").onclick=endReview; $("#end").focus();
@@ -315,8 +329,29 @@ function download(list){
   status(`Downloaded ${list.length} card${list.length===1?"":"s"}. In Anki, choose File, then Import, and pick the file.`);
 }
 
-function render(){ renderTop(); review ? renderReview() : renderList(); }
-addEventListener("storage", e=>{ if(e.key===KEY){ load(); if(!review) render(); else renderTop(); } });
+/* ---------- not in course content ---------- */
+const OFF_KEY = "differential-offcontent";
+function offAll(){ try{ const d=JSON.parse(localStorage.getItem(OFF_KEY)||"null"); return d && Array.isArray(d.items) ? d.items.filter(x=>x && x.id) : []; }catch(e){ return []; } }
+function offPut(items){ try{ localStorage.setItem(OFF_KEY, JSON.stringify({v:1, items})); }catch(e){ status("Could not save. Browser storage is full or blocked."); } }
+function offText(items){ return "Not in course content:\n" + items.map(x=>`- ${x.set}, Q${x.n} (${x.c}): ${x.p.replace(/\s+/g," ").slice(0,140)} [answer: ${x.key}]`).join("\n"); }
+function renderOff(){
+  const el=$("#offsec"), items=offAll().sort(order);
+  if(review || !items.length){ el.innerHTML=""; return; }
+  el.innerHTML = `<h2 id="offh">Not in course content <span>${items.length} reported</span></h2>
+    <p class="hint">Questions you marked as off-course. Copy the list and send it in to have them removed from the quizzes.</p>
+    <div class="offtools"><button class="btn ghost" id="offcopy">Copy list</button><button class="btn ghost" id="offclear">Clear list</button></div>
+    <ul class="offlist">${items.map(x=>`<li><span class="set">${esc(x.set)}, Q${x.n}</span><span class="s">${esc(x.p)}</span>
+      <button class="rm rm2" data-off="${esc(x.id)}" aria-label="Remove report for question ${x.n} of ${esc(x.set)}">Remove</button></li>`).join("")}</ul>`;
+  $("#offcopy").onclick=async()=>{
+    const txt=offText(items);
+    try{ await navigator.clipboard.writeText(txt); status(`Copied ${items.length} question${items.length===1?"":"s"}. Paste the list into a message.`); }
+    catch(e){ const ta=document.createElement("textarea"); ta.value=txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand("copy"); status("Copied the list."); }catch(_){ status("Could not copy. Select the text in the list instead."); } ta.remove(); }
+  };
+  $("#offclear").onclick=()=>{ const keep=offAll(); offPut([]); renderOff(); status(`Cleared ${keep.length} report${keep.length===1?"":"s"}. <button class="linkbtn" id="offundo">Undo</button>`); $("#offundo").onclick=()=>{ offPut(keep); status(""); renderOff(); }; };
+  document.querySelectorAll("[data-off]").forEach(b=>b.onclick=()=>{ offPut(offAll().filter(x=>x.id!==b.dataset.off)); renderOff(); });
+}
+function render(){ renderTop(); review ? renderReview() : renderList(); renderOff(); }
+addEventListener("storage", e=>{ if(e.key===KEY){ load(); if(!review) render(); else renderTop(); } if(e.key===OFF_KEY) renderOff(); });
 load(); render();
 </script>
 </body></html>

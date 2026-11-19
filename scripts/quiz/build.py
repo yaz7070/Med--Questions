@@ -2,7 +2,7 @@
 
 Run from the repo root: python3 scripts/quiz/build.py
 Data file shape: {"title", "context", "questions": [{c, p, o, a, e, l}], "objectives": {id: text}}
-Output: quartz/static/pages/<slug>.html, plus anki.html copied from scripts/quiz/anki.html
+Output: quartz/static/pages/<slug>.html, plus flagged.html copied from scripts/quiz/flagged.html
 """
 import html, json, pathlib, sys
 
@@ -44,6 +44,10 @@ if __name__ == "__main__":
     files = [QDIR / "data" / f"{a}.json" for a in sys.argv[1:]] or sorted((QDIR / "data").glob("*.json"))
     for f in files:
         print(f.stem, build(f))
-    # The Anki tab is a hand-written page that sits beside the quizzes.
-    (OUT / "anki.html").write_text((QDIR / "anki.html").read_text())
-    print("anki")
+    # The Flagged tab is a hand-written page that sits beside the quizzes.
+    (OUT / "flagged.html").write_text((QDIR / "flagged.html").read_text())
+    # Old address from when the tab was called Anki.
+    (OUT / "anki.html").write_text('<!doctype html><meta charset="utf-8"><title>Moved</title>'
+        '<script>location.replace("flagged.html"+location.search+location.hash)</script>'
+        '<p>This page moved. <a href="flagged.html">Go to Flagged</a>.</p>')
+    print("flagged")
