@@ -1,0 +1,401 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Block 3 ISGL Questions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<style>
+/* Nexus quiz page. Matches the site: neutral greys, one typeface, and the block's colour as --accent. */
+:root{
+  --bg:#f5f6f8;--paper:#ffffff;--ink:#15181d;--muted:#4d5560;--faint:#7b828d;--line:#e0e3e8;
+  --accent:#0b7a75;--soft:#eef0f3;
+  --ok:#1d7a46;--okw:#e7f4ec;--bad:#b42318;--badw:#fcecea;--tick:#dfe2e7;
+  --display:"Atkinson Hyperlegible Next","Segoe UI",system-ui,-apple-system,sans-serif;
+  --body:"Atkinson Hyperlegible Next","Segoe UI",system-ui,-apple-system,sans-serif;
+  --r:8px;
+}
+:root[data-b="2"]{--accent:#4f46c8}:root[data-b="3"]{--accent:#a3246b}:root[data-b="4"]{--accent:#a35f08}
+:root[data-theme="dark"]{
+  --bg:#14161a;--paper:#1b1e24;--ink:#eceef2;--muted:#b3bac5;--faint:#8a919c;--line:#2d323b;
+  --accent:#45c2b8;--soft:#252930;
+  --ok:#5ccf8f;--okw:#13301f;--bad:#f2877c;--badw:#3a1c1a;--tick:#30353e;color-scheme:dark}
+:root[data-theme="dark"][data-b="2"]{--accent:#a49df6}:root[data-theme="dark"][data-b="3"]{--accent:#ef8ec0}:root[data-theme="dark"][data-b="4"]{--accent:#e3a548}
+.btn:hover:not(:disabled){filter:brightness(.92)}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:820px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:20px}
+
+/* Header */
+header{display:flex;flex-direction:column;gap:10px}
+.context{margin:0;color:var(--faint);font-size:14px;font-weight:600}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,40px);line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.stats{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+.stats b{color:var(--ink);font-weight:700}
+.bar{height:6px;border-radius:999px;background:var(--tick);overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:var(--accent);border-radius:999px;transition:width .25s ease}
+.map summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:14px;width:max-content;list-style:none;padding:2px 0}
+.map summary::-webkit-details-marker{display:none}
+.map summary::before{content:"▸";display:inline-block;margin-right:6px;transition:transform .15s ease}
+.map[open] summary::before{transform:rotate(90deg)}
+.map summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.ticks{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.tick{width:14px;height:14px;border:0;border-radius:4px;background:var(--tick);padding:0;cursor:pointer}
+.tick:hover{background:var(--faint)}
+.tick.ok{background:var(--ok)}.tick.bad{background:var(--bad)}
+.tick.cur{outline:2px solid var(--accent);outline-offset:2px}
+.tick.redo{box-shadow:inset 0 -3px 0 var(--accent)}
+.tick:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.save{font-size:13px;color:var(--faint)}
+.save.ok{color:var(--ok)}.save.bad{color:var(--bad)}
+
+/* Question card */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;gap:18px}
+.chead{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tag{font-size:13px;font-weight:700;color:var(--accent);background:var(--soft);padding:3px 9px;border-radius:4px}
+.chead-r{display:flex;align-items:center;gap:12px}
+.ankibtn{font:inherit;font-size:13.5px;font-weight:700;color:var(--muted);background:transparent;border:1.5px solid var(--line);border-radius:6px;padding:4px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.ankibtn::before{content:"";width:9px;height:11px;background:currentColor;clip-path:polygon(0 0,100% 30%,0 60%);border-left:2px solid currentColor;box-sizing:content-box}
+.ankibtn:hover{border-color:var(--accent);color:var(--accent)}
+.ankibtn[aria-pressed="true"]{border-color:var(--accent);background:var(--soft);color:var(--accent)}
+.ankibtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ankirow{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.qn{font-family:var(--display);font-weight:700;font-size:15px;color:var(--faint);font-variant-numeric:tabular-nums}
+.stem{font-size:18.5px;line-height:1.6;margin:0;white-space:pre-line;max-width:70ch}
+.hint{font-size:13px;color:var(--faint)}
+.tries{font-size:13px;color:var(--muted)}
+.tries .bad{color:var(--bad);font-weight:600}.tries .ok{color:var(--ok);font-weight:600}
+
+/* Options */
+.opts{display:flex;flex-direction:column;gap:10px}
+.optrow{display:flex;gap:8px;align-items:stretch}
+.optrow .opt{flex:1;min-width:0}
+.opt{display:flex;gap:14px;align-items:center;text-align:left;width:100%;background:var(--paper);color:var(--ink);border:1.5px solid var(--line);border-radius:var(--r);padding:12px 16px;font:inherit;font-size:16.5px;line-height:1.45;cursor:pointer;transition:border-color .12s ease,background .12s ease}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--soft)}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opt:disabled{cursor:default}
+.opt .k{flex:none;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:6px;background:var(--soft);color:var(--accent);font-family:var(--display);font-weight:700;font-size:14px}
+.opt.right{border-color:var(--ok);background:var(--okw)}
+.opt.right .k{background:var(--ok);color:var(--paper)}
+.opt.wrong{border-color:var(--bad);background:var(--badw)}
+.opt.wrong .k{background:var(--bad);color:var(--paper)}
+.strike{flex:none;width:44px;border:1.5px solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--faint);font-size:14px;cursor:pointer;display:grid;place-items:center}
+.strike:hover{border-color:var(--accent);color:var(--accent)}
+.strike:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.strike[aria-pressed="true"]{background:var(--soft);color:var(--ink)}
+.optrow.struck .opt > span:last-child{text-decoration:line-through;color:var(--faint)}
+.optrow.struck .opt .k{opacity:.45}
+
+/* Feedback */
+.fb{background:var(--bg);border-radius:var(--r);padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.verdict{font-family:var(--display);font-weight:700;font-size:18px;display:flex;align-items:center;gap:8px}
+.verdict::before{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;font-size:13px;color:var(--paper)}
+.verdict.ok{color:var(--ok)}.verdict.ok::before{content:"✓";background:var(--ok)}
+.verdict.bad{color:var(--bad)}.verdict.bad::before{content:"✕";background:var(--bad)}
+.fb p{margin:0;max-width:72ch}
+.fb .why,.fb .alt{display:flex;gap:10px;align-items:baseline}
+.fb .why{font-weight:600}
+.lk{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--muted);font-family:var(--display);font-weight:700;font-size:12px;transform:translateY(-1px)}
+.lk.ok{background:var(--ok);color:var(--paper)}
+.fb .alt{color:var(--muted)}
+.fb .take{border-left:3px solid var(--accent);padding:2px 0 2px 12px;color:var(--ink)}
+.fb .take b{color:var(--accent)}
+.obj{font-size:13.5px;color:var(--faint);line-height:1.5}
+.obj b{color:var(--muted)}
+.fbtools{display:flex;justify-content:flex-end}
+.offrow{display:flex;justify-content:flex-start}
+.offbtn{font:inherit;font-size:13.5px;color:var(--faint);background:none;border:0;padding:2px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.offbtn:hover{color:var(--bad)}
+.offbtn[aria-pressed="true"]{color:var(--bad);font-weight:700}
+.offbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Buttons */
+.nav{display:flex;justify-content:space-between;gap:10px}
+.btn{font-family:var(--display);font-weight:700;font-size:15px;padding:10px 20px;border:1.5px solid var(--accent);border-radius:6px;background:var(--accent);color:var(--paper);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.ghost:hover:not(:disabled){background:var(--soft);color:var(--accent);border-color:var(--accent)}
+.btn:disabled{opacity:.35;cursor:default}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* Results */
+.big{font-family:var(--display);font-size:clamp(48px,9vw,72px);font-weight:700;line-height:1;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td,th{text-align:left;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;vertical-align:middle}
+th{font-size:13px;font-weight:700;color:var(--faint)}
+td:last-child,th:last-child{text-align:right;white-space:nowrap;padding-left:12px}
+.meter{display:block;height:5px;border-radius:999px;background:var(--tick);margin-top:6px;max-width:320px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--accent);border-radius:999px}
+h2{font-family:var(--display);font-size:21px;font-weight:700;margin:6px 0 0}
+h3{font-size:14px;font-weight:700;color:var(--faint);margin:6px 0 0}
+.miss{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.miss code{font-family:var(--display);font-weight:700;font-size:13px;color:var(--bad);background:var(--badw);padding:1px 7px;border-radius:999px;margin-right:8px}
+
+@media (max-width:560px){.card{padding:18px}.stem{font-size:17.5px}.opt{padding:11px 12px;gap:10px}.strike{width:40px}}
+@media (prefers-reduced-motion:no-preference){.fb{animation:in .2s ease-out}@keyframes in{from{opacity:.3;transform:translateY(4px)}to{opacity:1;transform:none}}}
+@media (prefers-reduced-motion:reduce){.bar span,.opt,.map summary::before{transition:none}}
+</style>
+
+<script>
+/* Block colour, and the same light or dark choice as the site's toggle. */
+(function(){
+  const r=document.documentElement; r.dataset.b="3";
+  function theme(){ let t=null; try{ t=localStorage.getItem("theme"); }catch(e){}
+    r.dataset.theme = t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); }
+  theme(); addEventListener("storage",theme);
+})();
+</script>
+<div class="wrap">
+  <header>
+    <p class="context">Foundations of Medicine, Block 3, ISGL sessions</p>
+    <h1>Block 3 ISGL Questions</h1>
+    <div class="stats" id="stats"></div>
+    <div class="bar" aria-hidden="true"><span id="barfill"></span></div>
+    <details class="map" id="map"><summary>Question map</summary><div class="ticks" id="ticks" aria-label="Question map"></div></details>
+    <div class="save" id="save" role="status">Progress saves in this browser.</div>
+  </header>
+  <main id="main"></main>
+</div>
+
+<script>
+const QUESTIONS = [{"c": "Week 12 ISGL", "p": "Sarah's illness is linked to her camping trip. She also worked in a chemistry lab over the summer. Which environmental factor best explains her risk?", "o": ["UV exposure from long days spent camping", "Pesticide spraying in the park", "Solvent exposure in her summer lab job", "Warmer temperatures expanding tick range"], "a": 3, "e": "Correct: D. Warmer temperatures expand tick range, which is the climate link in her Lyme disease.\nA: UV exposure is a separate environmental topic and does not cause tick-borne illness.\nB: Pesticides are a separate environmental topic in the module.\nC: The lab solvents are a distractor in this case.\nTakeaway: Climate change drives the spread of vector-borne disease.", "l": ["W12 ENV"]}, {"c": "Week 12 ISGL", "p": "Sarah is diagnosed with Lyme disease. Which statement about her diagnosis is correct?", "o": ["It is not reportable after one case", "It is reportable only if she is admitted", "It is reportable to public health", "It is reportable only by her own doctor"], "a": 2, "e": "Correct: C. Lyme disease is a disease of public health significance, so it is reportable.\nA: Its status as a disease of public health significance makes each case reportable.\nB: Its status as a disease of public health significance makes it reportable, not the care setting.\nD: Reporting follows the disease, not which doctor made the diagnosis.\nTakeaway: Know what \"disease of public health significance\" means for your duty to report.", "l": ["W12 ENV"]}, {"c": "Week 10 ISGL", "p": "Mrs. Haddad, 52, arrived in Canada 3 months ago and speaks limited English. Her 14-year-old son offers to interpret at her visit for back pain. What is the best approach?", "o": ["Book a professional interpreter", "Speak slowly and give an English handout", "Rely on gestures and a pain scale", "Let her son interpret for the visit"], "a": 0, "e": "Correct: A. For a newcomer with limited English, use a professional interpreter, not family. Speak plainly and use teach-back.\nB: A handout in English does not overcome the language barrier.\nC: Gestures cannot confirm she understands. Teach-back through an interpreter can.\nD: Family members should not interpret.\nTakeaway: Underrepresented groups need the plan fitted to their reality, including language.", "l": ["W10 S4"]}, {"c": "Week 9 ISGL", "p": "Your classmate Dev has gone quiet in small group, skips social events and deflects every compliment. He is anxious even before low-stakes quizzes. He shows no signs of depression or safety concerns. What is the best first step?", "o": ["Report your concerns to the faculty right away", "Check in with him privately and listen first", "Wait to see whether he raises it with you", "Tell him his grades prove he is doing fine"], "a": 1, "e": "Correct: B. Going quiet, skipping events, deflecting compliments and anxiety over low-stakes tasks are signs a peer is struggling. Start with a private, casual check-in and listen before trying to fix it.\nA: Escalation to LEO or a faculty member is for signs of depression or safety concerns.\nC: Waiting leaves the pattern unnamed. The approach starts with you checking in.\nD: Pointing out evidence of competence comes after you listen and normalize the feeling.\nTakeaway: Supports for students: the Schulich Learner Experience Office, Western Wellness, mentors and peer support.", "l": ["W9 S3", "W9 S4"]}, {"c": "Week 9 ISGL", "p": "Samantha, a first-year medical student, spends every night before a formative quiz over-preparing. She passes with a high mark. Following the imposter cycle, which step comes next?", "o": ["She credits the result to luck or effort", "Her anxiety before the next quiz fades", "She accepts the praise from her peers", "She asks a trusted mentor for extra support"], "a": 0, "e": "Correct: A. The imposter cycle runs task, anxiety, over-preparing or procrastinating, success, then credit goes to luck or effort. Praise is then discounted and the fraud feeling grows.\nB: The fraud feeling grows, so the next task brings more anxiety.\nC: Praise gets discounted in the cycle, not accepted.\nD: Seeking support is a way out of the cycle, not one of its steps.\nTakeaway: Imposter syndrome is an inaccurate self-assessment, closely tied to perfectionism.", "l": ["W9 S1"]}, {"c": "Week 10 ISGL", "p": "Which statement about implicit bias is correct?", "o": ["It is driven mainly by slow, deliberate System 2", "Implicit attitudes improved as fast as explicit attitudes", "Holding it means a person is racist or sexist", "It acts most under fatigue, hunger and time pressure"], "a": 3, "e": "Correct: D. Implicit bias has its strongest effect under fatigue, stress, hunger, time pressure and heavy cognitive load.\nA: Fast, automatic System 1 steers most behaviour.\nB: Explicit attitudes improved over decades, but implicit attitudes have not.\nC: Having bias does not make you racist or sexist. It is a normal brain shortcut.\nTakeaway: Implicit bias often clashes with your stated beliefs.", "l": ["W10 S1"]}, {"c": "Week 9 ISGL", "p": "Which are career consequences of untreated imposter syndrome in a physician?\ni) Burnout from over-preparing\nii) Hiding uncertainty in a way that puts patient safety at risk\niii) Turning down leadership roles\niv) Responding to errors with learning instead of shame", "o": ["i) and iii) only", "ii), iii) and iv) only", "i), ii) and iii) only", "All of the above"], "a": 2, "e": "Correct: C. Over-preparing leads to burnout, hiding uncertainty and not asking for help puts patient safety at risk, and affected physicians turn down leadership roles or competitive specialties.\nA: This leaves out the patient safety risk from hiding uncertainty.\nB: Statement iv) is reversed. Imposter syndrome makes you respond to errors with shame.\nD: Statement iv) is reversed.\nTakeaway: It also weakens teaching and raises the risk of anxiety and depression.", "l": ["W9 S2"]}, {"c": "Week 10 ISGL", "p": "Andrea, 34, is a PSW on probation with no work benefits. She hurt her back lifting a patient during her shift. She is 2 weeks into the job and worried about missing work. Which resource best covers her physio, drugs and lost wages?", "o": ["OHIP-funded community physio", "A WSIB claim for a work injury", "The Trillium Drug Program", "Employment Insurance sickness benefits"], "a": 1, "e": "Correct: B. Her injury happened at work, so a WSIB claim covers physio, drugs and lost wages.\nA: OHIP physio is for those 19 and under, 65 and over, after a recent hospital stay or day surgery, or on OW or ODSP. She fits none.\nC: Trillium helps with high drug costs relative to income, with an income-based deductible. It does not cover physio or wages.\nD: EI sickness benefits replace some income only, not physio or drugs.\nTakeaway: Ask whether the injury started at work. It opens the door to WSIB.", "l": ["W10 S2", "W10 S3"]}, {"c": "Week 10 ISGL", "p": "Dr. Lee sees a frustrated patient who waited 3 hours. She says, \"If I were in your shoes, I might feel ignored. Am I close?\" Which of van Ryn's strategies to reduce bias is she using?", "o": ["Perspective-taking", "Counter-stereotypic contact", "Protecting cognitive resources", "Partnership-building"], "a": 0, "e": "Correct: A. Perspective-taking means picturing the visit from the patient's side, then checking it with them.\nB: Counter-stereotypic contact is a separate strategy from Capatosto, not one of van Ryn's three.\nC: Protecting cognitive resources means sleep, food, stress control and fixing system pressures.\nD: Partnership-building uses \"we\" and \"let's\" and names shared goals.\nTakeaway: van Ryn's 3 strategies: perspective-taking, partnership-building, protecting cognitive resources.", "l": ["W10 S1"]}, {"c": "Week 12 ISGL", "p": "Sarah, 21, has fever and tender right groin nodes for 1 week, with possible mild splenomegaly. She has a 5 cm circular red rash on the back of her upper leg. She went camping at Pinery Provincial Park 2 weeks ago. What is the most likely diagnosis?", "o": ["Cat scratch disease", "Lyme disease", "Lymphoma of the groin nodes", "Infectious mononucleosis"], "a": 1, "e": "Correct: B. A circular rash after camping, with fever, points to Lyme disease. The rash is erythema migrans, and Pinery is a known tick area in Ontario.\nA: Cat scratch disease is on the differential, but she has no cat exposure.\nC: Lymphoma is on the differential, but it does not explain the rash after camping.\nD: Mono is on the differential, but it does not explain the circular rash.\nTakeaway: Fever with lymphadenopathy has a wide differential: mono, cat scratch, STIs, lymphoma, local skin infection.", "l": ["W12 ENV"]}];
+const OBJECTIVES = {"W9 S1": "Session objective: Explain the concept of Imposter Syndrome", "W9 S2": "Session objective: Describe the relevance of Imposter Syndrome to your career", "W9 S3": "Session objective: Describe approaches to identify and minimize the effects of Imposter Syndrome", "W9 S4": "Session objective: List the supports available for Imposter Syndrome", "W10 S1": "Session objective: Review implicit bias, and strategic ways we can minimize the impact it has on our care", "W10 S2": "Session objective: Identify common social determinants of health and how that might inform health care navigation", "W10 S3": "Session objective: Review various financial support resources for patients, and how they inform medical care planning and strategies", "W10 S4": "Session objective: Discuss strategic ways of caring for specific underrepresented populations, reducing barriers to care and ensuring they get the best care possible", "W12 ENV": "Linked MCC objective: Health and the Climate Crisis/Environment."};
+const L = "ABCDE";
+const N = QUESTIONS.length;
+let cur = 0, showResults = false;
+let ans = new Array(N).fill(null);           // current pick per question
+let tries = QUESTIONS.map(()=>[]);           // every locked attempt: {pick, ok, at}
+let strikes = QUESTIONS.map(()=>[]);         // struck option indexes for the open attempt
+let history = [], db = null, uid = null, writing = false, dirty = false;
+const MAP=document.getElementById("map"); if(MAP && QUESTIONS.length<=60) MAP.open=true;
+const LS_KEY = "differential-block-3-isgl-questions";
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+function score(){ return ans.reduce((n,a,i)=>n+(a!==null&&a===QUESTIONS[i].a?1:0),0); }
+function answered(){ return ans.filter(a=>a!==null).length; }
+function firstTryScore(){ return tries.reduce((n,t)=>n+(t.length&&t[0].ok?1:0),0); }
+function firstTryCount(){ return tries.filter(t=>t.length).length; }
+
+function renderHeader(){
+  const bf=$("#barfill"); if(bf) bf.style.width=(100*answered()/N)+"%";
+  $("#stats").innerHTML = `<span>Question <b>${showResults?"–":cur+1}</b> of <b>${N}</b></span><span>Answered <b>${answered()}</b></span><span>Score <b>${score()} / ${answered()}</b></span>`;
+  $("#ticks").innerHTML = QUESTIONS.map((q,i)=>{
+    const st = ans[i]===null?"":(ans[i]===q.a?"ok":"bad");
+    const redo = tries[i].length>1 || (ans[i]===null && tries[i].length>0);
+    return `<button class="tick ${st} ${redo?"redo":""} ${(!showResults&&i===cur)?"cur":""}" data-i="${i}" aria-label="Question ${i+1}"></button>`;
+  }).join("");
+  document.querySelectorAll(".tick").forEach(b=>b.onclick=()=>{cur=+b.dataset.i;showResults=false;render();});
+}
+
+function triesLine(i, includeCurrent){
+  const t = includeCurrent ? tries[i] : tries[i];
+  if(!t.length) return "";
+  const parts = t.map((x,k)=>`<span class="${x.ok?"ok":"bad"}">${k+1}: ${L[x.pick]} ${x.ok?"correct":"wrong"}</span>`).join(" · ");
+  return `<div class="tries">Attempts ${parts}</div>`;
+}
+
+function fmtLine(t){
+  let m;
+  if((m=t.match(/^Correct:\s*([A-E])\.?\s*(.*)$/)) || (m=t.match(/^([A-E]) is correct\.?\s*(.*)$/)))
+    return `<p class="why"><span class="lk ok">${m[1]}</span><span>${esc(m[2])}</span></p>`;
+  if((m=t.match(/^([A-E]):\s*(.*)$/)))
+    return `<p class="alt"><span class="lk">${m[1]}</span><span>${esc(m[2])}</span></p>`;
+  if((m=t.match(/^(Takeaway|High yield|High-yield|Key point|Clues):\s*(.*)$/i)))
+    return `<p class="take"><b>${esc(m[1])}.</b> ${esc(m[2])}</p>`;
+  return `<p>${esc(t)}</p>`;
+}
+
+function renderQ(){
+  const q = QUESTIONS[cur], a = ans[cur], done = a!==null, st = strikes[cur];
+  const opts = q.o.map((o,i)=>{
+    let c = "";
+    if(done){ if(i===q.a) c="right"; else if(i===a) c="wrong"; }
+    const struck = !done && st.includes(i);
+    const strikeBtn = done ? "" : `<button class="strike" data-s="${i}" aria-pressed="${struck}" aria-label="${struck?"Restore":"Strike out"} option ${L[i]}" title="${struck?"Restore":"Strike out"} option">${struck?"↺":"✕"}</button>`;
+    return `<div class="optrow ${struck?"struck":""}"><button class="opt ${c}" data-i="${i}" ${done?"disabled":""}><span class="k">${L[i]}</span><span>${esc(o)}</span></button>${strikeBtn}</div>`;
+  }).join("");
+  let fb = "";
+  if(done){
+    const ok = a===q.a;
+    const lines = q.e.split("\n").map(fmtLine).join("");
+    const objs = q.l.map(id=>`<div class="obj"><b>Objective ${esc(id)}</b> ${esc(OBJECTIVES[id]||"")}</div>`).join("");
+    fb = `<div class="fb" role="status"><div class="verdict ${ok?"ok":"bad"}">${ok?"Correct.":"Incorrect. The answer is "+L[q.a]+"."}</div>${lines}${objs}${triesLine(cur)}<div class="fbtools"><button class="btn ghost" id="redo">Reset and redo this question</button></div></div>`;
+  }
+  const pre = (!done && tries[cur].length) ? `<div class="hint">Redo. Your earlier attempts are saved.</div>${triesLine(cur)}` : (!done ? `<div class="hint">Tap ✕ to strike out an option. Right-click works too.</div>` : "");
+  const last = cur===N-1;
+  $("#main").innerHTML = `<article class="card">
+    <div class="chead"><span class="tag">${esc(q.c)}</span><span class="chead-r">${ankiButton(cur)}<span class="qn">${cur+1} of ${N}</span></span></div>
+    <p class="stem">${esc(q.p)}</p>
+    ${pre}
+    <div class="opts">${opts}</div>
+    <div class="offrow">${offButton(cur)}</div>${fb}
+    <div class="nav"><button class="btn ghost" id="prev" ${cur===0?"disabled":""}>Previous</button>
+    <button class="btn" id="next" ${done?"":"disabled"}>${last?"See results":"Next"}</button></div>
+  </article>`;
+  document.querySelectorAll(".opt").forEach(b=>{
+    b.onclick=()=>{ const p=+b.dataset.i; ans[cur]=p; tries[cur].push({pick:p, ok:p===q.a, at:new Date().toISOString()}); tries[cur]=tries[cur].slice(-10); strikes[cur]=[]; render(false); persist(); };
+    b.oncontextmenu=(e)=>{ if(done) return; e.preventDefault(); toggleStrike(+b.dataset.i); };
+  });
+  document.querySelectorAll(".strike").forEach(b=>b.onclick=()=>toggleStrike(+b.dataset.s));
+  const ab=$("#anki"); if(ab) ab.onclick=()=>ankiToggle(cur);
+  const ob=$("#off"); if(ob) ob.onclick=()=>offToggle(cur);
+  const r=$("#redo"); if(r) r.onclick=()=>{ ans[cur]=null; strikes[cur]=[]; render(false); persist(); };
+  $("#prev").onclick=()=>{cur--;render();};
+  $("#next").onclick=()=>{ if(last){showResults=true;} else cur++; render(); };
+}
+
+function toggleStrike(i){
+  const s = strikes[cur], k = s.indexOf(i);
+  if(k<0) s.push(i); else s.splice(k,1);
+  render(false); persist();
+}
+
+function renderResults(){
+  const s = score(), pct = Math.round(100*s/N);
+  const cats = {};
+  QUESTIONS.forEach((q,i)=>{ cats[q.c]=cats[q.c]||[0,0]; cats[q.c][1]++; if(ans[i]===q.a) cats[q.c][0]++; });
+  const rows = Object.entries(cats).map(([c,[r,t]])=>`<tr><td>${esc(c)}<span class="meter"><i style="width:${Math.round(100*r/t)}%"></i></span></td><td>${r} / ${t}</td></tr>`).join("");
+  const missed = {};
+  QUESTIONS.forEach((q,i)=>{ const wrongFirst = tries[i].length && !tries[i][0].ok; if(ans[i]!==q.a || wrongFirst) q.l.forEach(id=>{ const w=id.split(" ")[0]; missed[w]=missed[w]||new Set(); missed[w].add(id); }); });
+  const weeks = Object.keys(missed).sort((x,y)=>parseInt(x.slice(1))-parseInt(y.slice(1)));
+  const missHtml = weeks.length ? weeks.map(w=>`<h3>Week ${w.slice(1)}</h3><ul class="miss">${[...missed[w]].map(id=>`<li><code>${esc(id)}</code>${esc(OBJECTIVES[id]||"")}</li>`).join("")}</ul>`).join("") : "<p>No missed objectives.</p>";
+  const redone = tries.filter(t=>t.length>1).length;
+  const un = N - answered();
+  $("#main").innerHTML = `<article class="card">
+    <div class="chead"><span class="tag">Results</span><span>${un?un+" unanswered":"Complete"}</span></div>
+    <div><div class="big">${s} / ${N}</div><div class="stats"><span><b>${pct}%</b> correct now</span><span>First try <b>${firstTryScore()} / ${firstTryCount()}</b></span><span>Redone <b>${redone}</b></span></div></div>
+    <table><thead><tr><th>Topic</th><th>Score</th></tr></thead><tbody>${rows}</tbody></table>
+    ${ankiMissedRow()}<h2>Objectives to review</h2><p class="hint">Includes questions you missed on the first try, even if a redo got them right.</p>${missHtml}${history.length?`<h2>Past attempts</h2><table><thead><tr><th>Date</th><th>Score</th></tr></thead><tbody>${history.slice().reverse().map(h=>`<tr><td>${new Date(h.date).toLocaleDateString()}</td><td>${h.score} / ${h.total}</td></tr>`).join("")}</tbody></table>`:""}
+    <div class="nav"><button class="btn ghost" id="back">Back to questions</button><button class="btn" id="restart">Restart all</button></div>
+  </article>`;
+  $("#back").onclick=()=>{showResults=false;render();};
+  const am=$("#ankimissed"); if(am) am.onclick=()=>{ ankiAdd(missedIdx()); renderResults(); };
+  $("#restart").onclick=()=>{
+    if(answered() || tries.some(t=>t.length)){
+      history.push({date:new Date().toISOString(), score:score(), answered:answered(), total:N, firstTry:firstTryScore(),
+        missed:QUESTIONS.map((q,i)=>ans[i]!==null&&ans[i]!==q.a?"q"+(i+1):null).filter(Boolean)});
+      history=history.slice(-20);
+    }
+    ans.fill(null); tries=QUESTIONS.map(()=>[]); strikes=QUESTIONS.map(()=>[]); cur=0; showResults=false; render(); persist();
+  };
+}
+
+function setSave(text, cls){ const el=$("#save"); if(el){ el.textContent=text; el.className="save "+(cls||""); } }
+function bodyOf(){
+  const a = {};
+  QUESTIONS.forEach((q,i)=>{
+    if(ans[i]===null && !tries[i].length && !strikes[i].length) return;
+    a["q"+(i+1)] = {pick:ans[i], ok:ans[i]!==null && ans[i]===q.a, l:q.l, tries:tries[i], strikes:strikes[i]};
+  });
+  return {answers:a, history, total:N, answered:answered(), score:score(), firstTry:firstTryScore(), updatedAt:new Date().toISOString()};
+}
+function validPick(i,p){ return Number.isInteger(p) && p>=0 && p<QUESTIONS[i].o.length; }
+function applySaved(d){
+  if(!d || typeof d!=="object") return;
+  ans.fill(null); tries=QUESTIONS.map(()=>[]); strikes=QUESTIONS.map(()=>[]);
+  const a = d.answers || {};
+  for(const k in a){
+    const i = parseInt(k.slice(1),10)-1, row = a[k];
+    if(!(i>=0 && i<N) || !row || typeof row!=="object") continue;
+    if(validPick(i,row.pick)) ans[i]=row.pick;
+    if(Array.isArray(row.tries)) tries[i]=row.tries.filter(t=>t&&validPick(i,t.pick)).map(t=>({pick:t.pick, ok:t.pick===QUESTIONS[i].a, at:String(t.at||"")})).slice(-10);
+    else if(ans[i]!==null) tries[i]=[{pick:ans[i], ok:ans[i]===QUESTIONS[i].a, at:""}];
+    if(Array.isArray(row.strikes)) strikes[i]=row.strikes.filter(x=>validPick(i,x));
+  }
+  history = Array.isArray(d.history) ? d.history.slice(-20) : [];
+  const first = ans.findIndex(x=>x===null); cur = first<0 ? N-1 : first;
+}
+function lsLoad(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"null"); }catch(e){ return null; } }
+function lsSave(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(bodyOf())); }catch(e){} }
+async function persist(){
+  lsSave();
+  if(!db || !uid) return;
+  dirty = true; if(writing) return; writing = true;
+  while(dirty){
+    dirty = false;
+    setSave("Saving…");
+    try{ await db.doc("attempts/"+uid).set(bodyOf()); setSave("Progress saved to your account.","ok"); }
+    catch(e){
+      if(e && e.code==="invalid_argument"){ db=null; setSave("Progress saves in this browser only.","bad"); break; }
+      setSave("Could not save to your account. Progress saves in this browser.","bad");
+    }
+  }
+  writing = false;
+}
+async function connect(){
+  try{
+    if(!window.claude || !window.claude.use) return;
+    const [u, d] = await Promise.all([window.claude.use("user"), window.claude.use("db")]);
+    if(!u || !d) return;
+    const id = await u.id(); if(!id) return;
+    db = d; uid = id;
+    const snap = await db.doc("attempts/"+uid).get();
+    if(snap.exists){ applySaved(snap.data()); render(); setSave("Progress saved to your account.","ok"); }
+    else if(answered() || tries.some(t=>t.length)){ persist(); }
+    else setSave("Progress saves to your account.","ok");
+  }catch(e){ /* keep local-only mode */ }
+}
+
+/* Flagged: flagged questions live in one shared list ("differential-anki", the key predates the rename)
+   that the Flagged tab reads. Each card keeps a copy of its question, so the tab works without loading every quiz. */
+const SET = {"slug": "block-3-isgl-questions", "title": "Block 3 ISGL Questions", "b": 3, "href": "fom/block-3/question-bank/block-3-isgl-questions"};
+const ANKI_KEY = "differential-anki";
+function ankiAll(){ try{ const d=JSON.parse(localStorage.getItem(ANKI_KEY)||"null"); return d && Array.isArray(d.cards) ? d.cards : []; }catch(e){ return []; } }
+function ankiPut(cards){ try{ localStorage.setItem(ANKI_KEY, JSON.stringify({v:1, cards})); return true; }catch(e){ setSave("Could not flag. Browser storage is full or blocked.","bad"); return false; } }
+function ankiId(i){ return SET.slug+"#"+(i+1); }
+function ankiCard(i){
+  const q=QUESTIONS[i];
+  return {id:ankiId(i), slug:SET.slug, set:SET.title, b:SET.b, href:SET.href, n:i+1, c:q.c, p:q.p, o:q.o, a:q.a, e:q.e, l:q.l, obj:q.l.map(x=>OBJECTIVES[x]||"")};
+}
+function ankiHas(i, cards){ return (cards||ankiAll()).some(c=>c.id===ankiId(i)); }
+function ankiButton(i){ const s=ankiHas(i); return `<button class="ankibtn" id="anki" aria-pressed="${s}" title="${s?"Remove the flag":"Flag this question for review"}">${s?"Flagged":"Flag"}</button>`; }
+function ankiToggle(i){
+  let cards=ankiAll();
+  if(ankiHas(i,cards)) cards=cards.filter(c=>c.id!==ankiId(i));
+  else cards.push(Object.assign(ankiCard(i), {at:new Date().toISOString()}));
+  ankiPut(cards); render(false);
+}
+function ankiAdd(list){
+  const cards=ankiAll(), have=new Set(cards.map(c=>c.id)), at=new Date().toISOString();
+  list.forEach(i=>{ if(!have.has(ankiId(i))) cards.push(Object.assign(ankiCard(i), {at})); });
+  ankiPut(cards);
+}
+function missedIdx(){ return QUESTIONS.map((q,i)=>((ans[i]!==null && ans[i]!==q.a) || (tries[i].length && !tries[i][0].ok)) ? i : -1).filter(i=>i>=0); }
+function ankiMissedRow(){
+  const m=missedIdx(); if(!m.length) return "";
+  const cards=ankiAll(), left=m.filter(i=>!ankiHas(i,cards)).length;
+  return `<div class="ankirow">${left ? `<button class="btn ghost" id="ankimissed">Flag ${left} missed question${left===1?"":"s"} for review</button>` : `<span class="hint">All ${m.length} missed questions are flagged.</span>`}</div>`;
+}
+/* Keep saved copies current when a question is corrected, without touching review progress. */
+function ankiRefresh(){
+  const cards=ankiAll(); let changed=false;
+  cards.forEach(c=>{
+    if(c.slug!==SET.slug) return;
+    const i=c.n-1; if(!(i>=0 && i<N)) return;
+    const fresh=ankiCard(i);
+    for(const k of ["set","b","href","c","p","o","a","e","l","obj"]) if(JSON.stringify(c[k])!==JSON.stringify(fresh[k])){ c[k]=fresh[k]; changed=true; }
+  });
+  if(changed) ankiPut(cards);
+}
+addEventListener("storage", e=>{ if(e.key===ANKI_KEY || e.key===OFF_KEY) render(false); });
+
+/* Not in course content: questions you report land in "differential-offcontent".
+   The Flagged tab lists them with a Copy list button, so they can be sent in for removal. */
+const OFF_KEY = "differential-offcontent";
+function offAll(){ try{ const d=JSON.parse(localStorage.getItem(OFF_KEY)||"null"); return d && Array.isArray(d.items) ? d.items : []; }catch(e){ return []; } }
+function offHas(i){ return offAll().some(x=>x.id===ankiId(i)); }
+function offButton(i){ const s=offHas(i); return `<button class="offbtn" id="off" aria-pressed="${s}">${s?"Reported as not in course content. Undo":"Not in course content?"}</button>`; }
+function offToggle(i){
+  let items=offAll();
+  if(offHas(i)) items=items.filter(x=>x.id!==ankiId(i));
+  else { const q=QUESTIONS[i]; items.push({id:ankiId(i), slug:SET.slug, set:SET.title, b:SET.b, href:SET.href, n:i+1, c:q.c, p:q.p, key:q.o[q.a], at:new Date().toISOString()}); }
+  try{ localStorage.setItem(OFF_KEY, JSON.stringify({v:1, items})); }catch(e){ setSave("Could not save the report. Browser storage is full or blocked.","bad"); }
+  render(false);
+}
+
+function render(top=true){ renderHeader(); showResults?renderResults():renderQ(); if(top) window.scrollTo({top:0}); }
+applySaved(lsLoad());
+ankiRefresh();
+render();
+connect();
+</script>
+
+</body></html>
