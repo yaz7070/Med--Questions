@@ -33,7 +33,7 @@ description: "Weeks 9 to 12. Anemia, bleeding, myeloid disorders, lymphadenopath
 
 <h2 class="section-title">Summaries</h2>
 <ul class="sets">
-<li><a class="set flow" href="/fom/block-3/summaries/block-3-isgl-summary"><span class="set-name">ISGL Summary</span><span class="set-desc">Key points from the Week 8 to 14 ISGL sessions.</span><span class="set-go">Open</span></a></li>
+<li><a class="set flow" href="/fom/block-3/summaries/block-3-isgl-summary"><span class="set-name">ISGL Summary</span><span class="set-desc">Key points from the Week 9, 10 and 12 ISGL sessions.</span><span class="set-go">Open</span></a></li>
 </ul>
 
 <script>

@@ -414,9 +414,11 @@ W14 = dict(
 )
 
 
-# All ISGL weeks live on the Block 3 page, at the student's request.
+# One ISGL summary per block, holding that block's weeks.
 PAGES = {
-    3: dict(weeks=[W8, W9, W10, W12, W13, W14], intro="Key points from the ISGL sessions for Weeks 8 to 14. No Week 11 module is on file yet."),
+    2: dict(weeks=[W8], intro="Key points from the Block 2 ISGL sessions on file."),
+    3: dict(weeks=[W9, W10, W12], intro="Key points from the Block 3 ISGL sessions. No Week 11 module is on file yet."),
+    4: dict(weeks=[W13, W14], intro="Key points from the Block 4 ISGL sessions on file."),
 }
 COLOURS = {2: ("#4f46c8", "#ecebfb", "#a49df6", "#1e1c38"),
            3: ("#a3246b", "#f8e9f1", "#ef8ec0", "#2c1722"),
