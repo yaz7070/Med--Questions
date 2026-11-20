@@ -27,8 +27,7 @@ BLOCKS = {
 }
 FOLDER = {"quiz": "question-bank", "test": "practice-tests", "flow": "flowcharts", "summary": "summaries"}
 SECTIONS = [("quiz", "Weekly question banks"), ("test", "Practice tests"), ("flow", "Flowcharts"), ("summary", "Summaries")]
-# Summary pages are plain notes written in scripts/summaries/<slug>.md (no frontmatter).
-SUMDIR = ROOT / "scripts" / "summaries"
+# Summary pages are hand-written HTML in quartz/static/pages/<slug>.html, embedded like a flowchart.
 
 
 def fm(title, extra=""):
@@ -163,13 +162,6 @@ for b, slug, title, aid, _unused, kind, blurb in ITEMS:
     folder = FOM / f"block-{b}" / FOLDER[kind]
     folder.mkdir(parents=True, exist_ok=True)
     tag = {"quiz": "quiz", "test": "practice-test", "flow": "flowchart", "summary": "summary"}[kind]
-    if kind == "summary":
-        (folder / f"{slug}.md").write_text(
-            fm(title, f"tags:\n  - block-{b}\n  - {tag}\ndescription: \"{blurb}\"\n")
-            + f'<p class="embed-bar"><a href="/fom/block-{b}/">Block {b}</a><span class="sep" aria-hidden="true">/</span>'
-            + f'<span class="here">{e(title)}</span></p>\n\n'
-            + (SUMDIR / f"{slug}.md").read_text())
-        continue
     (folder / f"{slug}.md").write_text(
         fm(title, f"tags:\n  - block-{b}\n  - {tag}\ndescription: \"{blurb}\"\n")
         + f'<p class="embed-bar"><a href="/fom/block-{b}/">Block {b}</a><span class="sep" aria-hidden="true">/</span>'
