@@ -147,7 +147,7 @@ ITEMS = [
  [
   3,
   "block-3-practice-test-1",
-  "Block 3 Practice Test 1",
+  "Block 3 Practice Test 1 (Updated)",
   None,
   None,
   "test",
@@ -156,7 +156,7 @@ ITEMS = [
  [
   3,
   "block-3-practice-test-2",
-  "Block 3 Practice Test 2",
+  "Block 3 Practice Test 2 (Updated)",
   None,
   None,
   "test",
