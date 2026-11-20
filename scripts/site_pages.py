@@ -237,6 +237,9 @@ for b, (name, wk, about) in BLOCKS.items():
         has.append(plural(len(t), "practice test", "practice tests"))
     if fl:
         has.append(plural(len(fl), "flowchart", "flowcharts"))
+    sm = by.get((b, "summary"), [])
+    if sm:
+        has.append(plural(len(sm), "summary", "summaries"))
     if q or t:
         pg = (f'<span class="block-pg"><span data-sum="{b}"></span>'
               f'<span class="pg-bar" aria-hidden="true"><i data-sum-bar="{b}"></i></span></span>')
