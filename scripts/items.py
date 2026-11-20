@@ -169,25 +169,7 @@ ITEMS = [
   None,
   None,
   "summary",
-  "Key points from the Week 9, 10 and 12 ISGL sessions."
- ],
- [
-  2,
-  "block-2-isgl-summary",
-  "ISGL Summary",
-  None,
-  None,
-  "summary",
-  "Key points from the Week 8 ISGL session on capacity and consent."
- ],
- [
-  4,
-  "block-4-isgl-summary",
-  "ISGL Summary",
-  None,
-  None,
-  "summary",
-  "Key points from the Week 13 and 14 ISGL sessions."
+  "Key points from the Week 8 to 14 ISGL sessions."
  ],
  [
   3,

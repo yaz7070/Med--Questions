@@ -27,11 +27,6 @@ description: "Weeks 5 to 8. Adult screening, cancer, aging, therapeutics and pre
 <li><a class="set flow" href="/fom/block-2/flowcharts/cancer-workup-map"><span class="set-name">Cancer Workup Map</span><span class="set-desc">Week 6: breast mass, screening, pathology report, treatment, hereditary cancer, carcinogenesis.</span><span class="set-go">Open</span></a></li>
 </ul>
 
-<h2 class="section-title">Summaries</h2>
-<ul class="sets">
-<li><a class="set flow" href="/fom/block-2/summaries/block-2-isgl-summary"><span class="set-name">ISGL Summary</span><span class="set-desc">Key points from the Week 8 ISGL session on capacity and consent.</span><span class="set-go">Open</span></a></li>
-</ul>
-
 <script>
 (function(){
   const Q = [{"s": "week-5-question-bank", "n": 46, "b": 2, "t": "Week 5 Question Bank", "h": "fom/block-2/question-bank/week-5-question-bank"}, {"s": "week-6-question-bank", "n": 32, "b": 2, "t": "Week 6 Question Bank", "h": "fom/block-2/question-bank/week-6-question-bank"}, {"s": "week-7-question-bank", "n": 53, "b": 2, "t": "Week 7 Question Bank", "h": "fom/block-2/question-bank/week-7-question-bank"}, {"s": "week-8-question-bank", "n": 39, "b": 2, "t": "Week 8 Question Bank", "h": "fom/block-2/question-bank/week-8-question-bank"}, {"s": "block-2-practice-exam", "n": 40, "b": 2, "t": "Block 2 Practice Exam", "h": "fom/block-2/practice-tests/block-2-practice-exam"}];

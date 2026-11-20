@@ -414,10 +414,9 @@ W14 = dict(
 )
 
 
+# All ISGL weeks live on the Block 3 page, at the student's request.
 PAGES = {
-    2: dict(weeks=[W8], intro="Key points from the Block 2 ISGL sessions on file."),
-    3: dict(weeks=[W9, W10, W12], intro="Key points from the Block 3 ISGL sessions. No Week 11 module is on file yet."),
-    4: dict(weeks=[W13, W14], intro="Key points from the Block 4 ISGL sessions on file."),
+    3: dict(weeks=[W8, W9, W10, W12, W13, W14], intro="Key points from the ISGL sessions for Weeks 8 to 14. No Week 11 module is on file yet."),
 }
 COLOURS = {2: ("#4f46c8", "#ecebfb", "#a49df6", "#1e1c38"),
            3: ("#a3246b", "#f8e9f1", "#ef8ec0", "#2c1722"),
@@ -440,6 +439,7 @@ header p{color:var(--muted);margin-top:6px}
 .tag{display:inline-block;font-size:12px;font-weight:700;border-radius:4px;padding:1px 6px;vertical-align:2px;white-space:nowrap}
 .t-read{color:var(--read);background:var(--read-bg)}.t-notes{color:var(--notes);background:var(--notes-bg)}.t-out{color:var(--out);background:var(--out-bg)}
 .tabs{position:sticky;top:0;z-index:5;background:var(--bg);display:flex;gap:6px;padding:8px 0;border-bottom:1px solid var(--line)}
+.tabs.many{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
 .tabs button{flex:1;min-width:0;font:inherit;font-size:14px;font-weight:700;color:var(--muted);background:var(--surface);border:1.5px solid var(--line);border-radius:8px;padding:7px 8px;cursor:pointer;line-height:1.25}
 .tabs button span{display:block;font-weight:400;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tabs button[aria-selected="true"]{color:var(--c);border-color:var(--c);background:var(--cbg)}
@@ -510,7 +510,7 @@ def render(b, page):
            f'<header><h1>ISGL Summary</h1><p>{page["intro"]} Tap a card to open it. Untagged lines come from the ISGL modules.</p>'
            f'<div class="legend">{legend}</div></header>']
     if len(weeks) > 1:
-        out.append('<div class="tabs" role="tablist" aria-label="Weeks">' + "".join(
+        out.append(f'<div class="tabs{" many" if len(weeks) > 3 else ""}" role="tablist" aria-label="Weeks">' + "".join(
             f'<button role="tab" id="t{w["id"]}" aria-controls="{w["id"]}" aria-selected="{str(i == 0).lower()}"{"" if i == 0 else " tabindex=\"-1\""}>{w["tab"]}<span>{w["short"]}</span></button>'
             for i, w in enumerate(weeks)) + "</div>")
     for i, w in enumerate(weeks):
