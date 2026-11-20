@@ -164,12 +164,12 @@ ITEMS = [
  ],
  [
   3,
-  "block-3-isgl-questions",
-  "Block 3 ISGL Questions",
+  "block-3-isgl-summary",
+  "ISGL Summary",
   None,
   None,
-  "quiz",
-  "10 questions on the Week 9, 10 and 12 ISGL sessions."
+  "summary",
+  "Key points from the Week 9, 10 and 12 ISGL sessions."
  ],
  [
   3,

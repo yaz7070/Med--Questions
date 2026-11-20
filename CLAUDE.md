@@ -4,11 +4,12 @@ Quartz 5 site. Content lives in `content/`. Pushing to branch `v5` redeploys the
 
 ## Structure
 
-The site has four kinds of page and nothing else:
+The site has these kinds of page and nothing else:
 
 - `content/index.md`: home. Overall progress, a Continue link, one row per block, and a strip of flowchart tiles.
 - `content/fom/block-N/index.md`: block page. Lists that block's weekly banks, practice tests and flowcharts, with progress on every row.
 - `content/flagged/index.md`: Flagged tab (was Anki; `/anki/` and `static/pages/anki.html` forward to it). Embeds `/static/pages/flagged.html` (source `scripts/quiz/flagged.html`, copied by `scripts/quiz/build.py`). Lists flagged questions and lets you redo them like a quiz, marking each right or wrong (`c.last`). No spaced repetition and no rating buttons. It also downloads a tab-separated file the Anki app imports (deck Nexus, Basic notes, stable guid per question so re-imports update).
+- `content/fom/block-N/summaries/<slug>.md`: summary page (kind "summary" in `items.py`). Plain notes, written from `scripts/summaries/<slug>.md`, listed under Summaries on the block page.
 - `content/fom/block-N/{question-bank,practice-tests,flowcharts}/<slug>.md`: wrapper page. One slim line (block link, title, full screen link), then an iframe of `/static/pages/<slug>.html`.
 
 Old addresses (`/question-bank/`, `/flowcharts/`, `/progress/`, `/fom/`, and the folder indexes) are "Moved" stubs that forward to the home or block page. Do not bring those pages back: they repeated the same lists.

@@ -25,8 +25,10 @@ BLOCKS = {
     3: ("Hematology", "Weeks 9 to 12", "Anemia, bleeding, myeloid disorders, lymphadenopathy and lymphoid disorders."),
     4: ("Infection and immunity", "Weeks 13 to 15", "Fever, antibiotics, sepsis and immune dysfunction."),
 }
-FOLDER = {"quiz": "question-bank", "test": "practice-tests", "flow": "flowcharts"}
-SECTIONS = [("quiz", "Weekly question banks"), ("test", "Practice tests"), ("flow", "Flowcharts")]
+FOLDER = {"quiz": "question-bank", "test": "practice-tests", "flow": "flowcharts", "summary": "summaries"}
+SECTIONS = [("quiz", "Weekly question banks"), ("test", "Practice tests"), ("flow", "Flowcharts"), ("summary", "Summaries")]
+# Summary pages are plain notes written in scripts/summaries/<slug>.md (no frontmatter).
+SUMDIR = ROOT / "scripts" / "summaries"
 
 
 def fm(title, extra=""):
@@ -160,7 +162,14 @@ for b in BLOCKS:
 for b, slug, title, aid, _unused, kind, blurb in ITEMS:
     folder = FOM / f"block-{b}" / FOLDER[kind]
     folder.mkdir(parents=True, exist_ok=True)
-    tag = {"quiz": "quiz", "test": "practice-test", "flow": "flowchart"}[kind]
+    tag = {"quiz": "quiz", "test": "practice-test", "flow": "flowchart", "summary": "summary"}[kind]
+    if kind == "summary":
+        (folder / f"{slug}.md").write_text(
+            fm(title, f"tags:\n  - block-{b}\n  - {tag}\ndescription: \"{blurb}\"\n")
+            + f'<p class="embed-bar"><a href="/fom/block-{b}/">Block {b}</a><span class="sep" aria-hidden="true">/</span>'
+            + f'<span class="here">{e(title)}</span></p>\n\n'
+            + (SUMDIR / f"{slug}.md").read_text())
+        continue
     (folder / f"{slug}.md").write_text(
         fm(title, f"tags:\n  - block-{b}\n  - {tag}\ndescription: \"{blurb}\"\n")
         + f'<p class="embed-bar"><a href="/fom/block-{b}/">Block {b}</a><span class="sep" aria-hidden="true">/</span>'
@@ -184,7 +193,7 @@ for b, slug, title, aid, _unused, kind, blurb in ITEMS:
 # ---------- block pages ----------
 def set_row(b, kind, slug, title, blurb):
     name, desc = short_name(b, kind, slug, title), topics(kind, blurb)
-    if kind == "flow":
+    if kind in ("flow", "summary"):
         return (f'<li><a class="set flow" href="{href(b, kind, slug)}"><span class="set-name">{e(name)}</span>'
                 f'<span class="set-desc">{e(desc)}</span><span class="set-go">Open</span></a></li>')
     n = qcount(slug)

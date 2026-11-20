@@ -11,7 +11,6 @@ description: "Weeks 9 to 12. Anemia, bleeding, myeloid disorders, lymphadenopath
 
 <h2 class="section-title">Weekly question banks</h2>
 <ul class="sets">
-<li><a class="set" href="/fom/block-3/question-bank/block-3-isgl-questions" data-quiz="block-3-isgl-questions"><span class="set-name">Week 0</span><span class="set-desc">On the Week 9, 10 and 12 ISGL sessions.</span><span class="set-pg"><span class="pg-txt">10 questions</span><span class="pg-bar" aria-hidden="true"><i></i></span></span><span class="set-go">Start</span></a></li>
 <li><a class="set" href="/fom/block-3/question-bank/week-9-question-bank" data-quiz="week-9-question-bank"><span class="set-name">Week 9</span><span class="set-desc">Microcytic, normocytic, macrocytic and hemolytic anemia, MDS, quality improvement.</span><span class="set-pg"><span class="pg-txt">50 questions</span><span class="pg-bar" aria-hidden="true"><i></i></span></span><span class="set-go">Start</span></a></li>
 <li><a class="set" href="/fom/block-3/question-bank/week-10-question-bank" data-quiz="week-10-question-bank"><span class="set-name">Week 10</span><span class="set-desc">Bleeding disorders, Thrombocytopenia, Coagulation tests.</span><span class="set-pg"><span class="pg-txt">59 questions</span><span class="pg-bar" aria-hidden="true"><i></i></span></span><span class="set-go">Start</span></a></li>
 <li><a class="set" href="/fom/block-3/question-bank/week-11-question-bank" data-quiz="week-11-question-bank"><span class="set-name">Week 11</span><span class="set-desc">Leukemias, myeloproliferative neoplasms, emergencies, chemotherapy, trial design.</span><span class="set-pg"><span class="pg-txt">50 questions</span><span class="pg-bar" aria-hidden="true"><i></i></span></span><span class="set-go">Start</span></a></li>
@@ -32,9 +31,14 @@ description: "Weeks 9 to 12. Anemia, bleeding, myeloid disorders, lymphadenopath
 <li><a class="set flow" href="/fom/block-3/flowcharts/lymphoid-disorders-map"><span class="set-name">Lymphoid Disorders Map</span><span class="set-desc">Week 12: enlarged nodes, lymphoma, plasma cell disorders, mediastinal mass.</span><span class="set-go">Open</span></a></li>
 </ul>
 
+<h2 class="section-title">Summaries</h2>
+<ul class="sets">
+<li><a class="set flow" href="/fom/block-3/summaries/block-3-isgl-summary"><span class="set-name">ISGL Summary</span><span class="set-desc">Key points from the Week 9, 10 and 12 ISGL sessions.</span><span class="set-go">Open</span></a></li>
+</ul>
+
 <script>
 (function(){
-  const Q = [{"s": "block-3-isgl-questions", "n": 10, "b": 3, "t": "Block 3 ISGL Questions", "h": "fom/block-3/question-bank/block-3-isgl-questions"}, {"s": "week-9-question-bank", "n": 50, "b": 3, "t": "Week 9 Question Bank", "h": "fom/block-3/question-bank/week-9-question-bank"}, {"s": "week-10-question-bank", "n": 59, "b": 3, "t": "Week 10 Question Bank", "h": "fom/block-3/question-bank/week-10-question-bank"}, {"s": "week-11-question-bank", "n": 50, "b": 3, "t": "Week 11 Question Bank", "h": "fom/block-3/question-bank/week-11-question-bank"}, {"s": "week-12-question-bank", "n": 50, "b": 3, "t": "Week 12 Question Bank", "h": "fom/block-3/question-bank/week-12-question-bank"}, {"s": "block-3-practice-test-1", "n": 49, "b": 3, "t": "Block 3 Practice Test 1", "h": "fom/block-3/practice-tests/block-3-practice-test-1"}, {"s": "block-3-practice-test-2", "n": 50, "b": 3, "t": "Block 3 Practice Test 2", "h": "fom/block-3/practice-tests/block-3-practice-test-2"}];
+  const Q = [{"s": "week-9-question-bank", "n": 50, "b": 3, "t": "Week 9 Question Bank", "h": "fom/block-3/question-bank/week-9-question-bank"}, {"s": "week-10-question-bank", "n": 59, "b": 3, "t": "Week 10 Question Bank", "h": "fom/block-3/question-bank/week-10-question-bank"}, {"s": "week-11-question-bank", "n": 50, "b": 3, "t": "Week 11 Question Bank", "h": "fom/block-3/question-bank/week-11-question-bank"}, {"s": "week-12-question-bank", "n": 50, "b": 3, "t": "Week 12 Question Bank", "h": "fom/block-3/question-bank/week-12-question-bank"}, {"s": "block-3-practice-test-1", "n": 49, "b": 3, "t": "Block 3 Practice Test 1", "h": "fom/block-3/practice-tests/block-3-practice-test-1"}, {"s": "block-3-practice-test-2", "n": 50, "b": 3, "t": "Block 3 Practice Test 2", "h": "fom/block-3/practice-tests/block-3-practice-test-2"}];
   function stat(q){
     let d = null;
     try { d = JSON.parse(localStorage.getItem("differential-" + q.s) || "null"); } catch(e) {}
