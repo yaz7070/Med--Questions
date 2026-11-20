@@ -151,7 +151,7 @@ ITEMS = [
   None,
   None,
   "test",
-  "49 questions across Weeks 9 to 12. Exam-style mix."
+  "50 questions across Weeks 9 to 12: 35 discrete, 15 CBC cases."
  ],
  [
   3,
@@ -160,7 +160,7 @@ ITEMS = [
   None,
   None,
   "test",
-  "50 questions across Weeks 9 to 12. Exam-style mix."
+  "50 questions across Weeks 9 to 12: 35 discrete, 15 CBC cases."
  ],
  [
   3,
