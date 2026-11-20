@@ -44,7 +44,12 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,40px);lin
 .tick.cur{outline:2px solid var(--accent);outline-offset:2px}
 .tick.redo{box-shadow:inset 0 -3px 0 var(--accent)}
 .tick:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.saverow{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .save{font-size:13px;color:var(--faint)}
+.resetbtn{font:inherit;font-size:13px;font-weight:700;color:var(--muted);background:none;border:1px solid var(--line);border-radius:6px;padding:3px 10px;cursor:pointer}
+.resetbtn:hover{color:var(--bad);border-color:var(--bad)}
+.resetbtn.armed{color:#fff;background:var(--bad);border-color:var(--bad)}
+.resetbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .save.ok{color:var(--ok)}.save.bad{color:var(--bad)}
 
 /* Question card */
@@ -149,7 +154,7 @@ h3{font-size:14px;font-weight:700;color:var(--faint);margin:6px 0 0}
     <div class="stats" id="stats"></div>
     <div class="bar" aria-hidden="true"><span id="barfill"></span></div>
     <details class="map" id="map"><summary>Question map</summary><div class="ticks" id="ticks" aria-label="Question map"></div></details>
-    <div class="save" id="save" role="status">Progress saves in this browser.</div>
+    <div class="saverow"><div class="save" id="save" role="status">Progress saves in this browser.</div><button class="resetbtn" id="resetall" type="button">Reset all answers</button></div>
   </header>
   <main id="main"></main>
 </div>
@@ -268,15 +273,26 @@ function renderResults(){
   </article>`;
   $("#back").onclick=()=>{showResults=false;render();};
   const am=$("#ankimissed"); if(am) am.onclick=()=>{ ankiAdd(missedIdx()); renderResults(); };
-  $("#restart").onclick=()=>{
-    if(answered() || tries.some(t=>t.length)){
-      history.push({date:new Date().toISOString(), score:score(), answered:answered(), total:N, firstTry:firstTryScore(),
-        missed:QUESTIONS.map((q,i)=>ans[i]!==null&&ans[i]!==q.a?"q"+(i+1):null).filter(Boolean)});
-      history=history.slice(-20);
-    }
-    ans.fill(null); tries=QUESTIONS.map(()=>[]); strikes=QUESTIONS.map(()=>[]); cur=0; showResults=false; render(); persist();
-  };
+  $("#restart").onclick=resetAll;
 }
+/* Clear every answer, redo and strike-out. The attempt is kept in Past attempts. Flags are not touched. */
+function resetAll(){
+  if(answered() || tries.some(t=>t.length)){
+    history.push({date:new Date().toISOString(), score:score(), answered:answered(), total:N, firstTry:firstTryScore(),
+      missed:QUESTIONS.map((q,i)=>ans[i]!==null&&ans[i]!==q.a?"q"+(i+1):null).filter(Boolean)});
+    history=history.slice(-20);
+  }
+  ans.fill(null); tries=QUESTIONS.map(()=>[]); strikes=QUESTIONS.map(()=>[]); cur=0; showResults=false; render(); persist();
+}
+/* Header button: first tap arms it, second tap within 4 seconds resets. No browser dialog. */
+(function(){
+  const b=document.getElementById("resetall"); let timer=null;
+  const disarm=()=>{ b.classList.remove("armed"); b.textContent="Reset all answers"; clearTimeout(timer); timer=null; };
+  b.onclick=()=>{
+    if(!b.classList.contains("armed")){ b.classList.add("armed"); b.textContent="Tap again to reset"; timer=setTimeout(disarm,4000); return; }
+    disarm(); resetAll(); setSave("All answers cleared. Your score is saved in Past attempts.","ok");
+  };
+})();
 
 function setSave(text, cls){ const el=$("#save"); if(el){ el.textContent=text; el.className="save "+(cls||""); } }
 function bodyOf(){
