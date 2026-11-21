@@ -79,7 +79,7 @@ ITEMS = [
   None,
   None,
   "quiz",
-  "50 questions. Microcytic, normocytic, macrocytic and hemolytic anemia, MDS, quality improvement."
+  "40 questions: 28 discrete, 12 CBC cases. Anemias, hemoglobinopathies, hemolysis, MDS, quality improvement."
  ],
  [
   3,
@@ -88,7 +88,7 @@ ITEMS = [
   None,
   None,
   "quiz",
-  "59 questions. Bleeding disorders, Thrombocytopenia, Coagulation tests."
+  "40 questions: 28 discrete, 12 CBC cases. Bleeding disorders, thrombocytopenia, coagulation, anticoagulants, transfusion."
  ],
  [
   3,
@@ -97,7 +97,7 @@ ITEMS = [
   None,
   None,
   "quiz",
-  "50 questions. Leukemias, myeloproliferative neoplasms, emergencies, chemotherapy, trial design."
+  "40 questions: 28 discrete, 12 CBC cases. Leukemias, myeloproliferative neoplasms, emergencies, chemotherapy, trial design."
  ],
  [
   3,
@@ -106,7 +106,7 @@ ITEMS = [
   None,
   None,
   "quiz",
-  "50 questions. Lymphadenopathy, lymphoma, myeloma, mediastinal mass, radiation therapy."
+  "40 questions: 28 discrete, 12 cases. Lymphadenopathy, lymphoma, myeloma, mediastinal mass, radiation therapy."
  ],
  [
   1,
