@@ -102,6 +102,9 @@ figure.dia figcaption,figure.pic figcaption{font-size:13px;color:var(--faint)}
 .legend5{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;list-style:none;padding:0;margin:0;max-width:none}
 .legend5 li{display:flex;gap:8px;align-items:flex-start;font-size:15px;line-height:1.45}
 .legend5 .n{flex:none;width:24px;height:24px;border-radius:50%;background:var(--c);color:#fff;font-weight:700;font-size:13px;display:grid;place-items:center;margin-top:1px}
+.lesions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.les{background:var(--soft);border-radius:8px;padding:6px 6px 8px;text-align:center}.les svg{width:100%;height:auto;display:block}
+.les .lh{font-weight:700;font-size:15px}.les .ls{font-size:13px;color:var(--muted)}
 figure.pic{text-align:center}
 figure.pic img{max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:#fff}
 details.nn{background:var(--surface);border:1px solid var(--line);border-radius:10px}
@@ -140,6 +143,7 @@ body.searching .panel{display:flex !important}
   .cols.n2,.cols.n3,.cols.n4{grid-template-columns:1fr}
   .tw table{min-width:440px}
   .scale{flex-direction:column}
+  .lesions{grid-template-columns:1fr 1fr}
 }
 </style></head><body data-w="13">
 <script>(function(){const r=document.documentElement;function theme(){let t=null;try{t=localStorage.getItem("theme");}catch(e){}
