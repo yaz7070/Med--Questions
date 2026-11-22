@@ -123,52 +123,54 @@ W9 = dict(
     goal="Explain imposter syndrome, see its relevance to your career, identify and reduce its effects, and know the supports.",
     cards=[
         card("What it is", ul(
-            "Introduced by Clance and Imes in 1978. Many high-achieving women credited their success to luck, not their talents or qualifications.",
-            "About 70% of men and women feel it at some point.",
-            "A form of <b>inaccurate self-assessment</b>, linked to perfectionism.",
+            "Introduced by <b>Clance and Imes in 1978</b>. High-achieving women credited their success to luck, not their talents or qualifications.",
+            "About <b>70%</b> of men and women feel it at some point.",
+            "A form of <b>inaccurate self-assessment</b>, linked to <b>perfectionism</b>.",
             "Common in medicine because of its high-stakes, evaluative culture.",
-            "<b>Triggers:</b> poor performance or errors, with guilt, anxiety and self-doubt.",
+        )),
+        card("Triggers and why medicine is at risk", ul(
+            "<b>Triggers:</b> poor performance or errors, followed by guilt, anxiety and self-doubt.",
             "The profession does a poor job of preparing physicians to manage errors or seek support.",
         )),
         card("Consequences", ul(
             "Psychological wellbeing", "Burnout", "Clinical performance", "Career advancement",
             "Effectiveness as a teacher", "Support for learners and peers",
         )),
-        card("The case: Samantha", sub("Evidence of imposter syndrome") + ul(
-            "Felt relieved and lucky to pass her first exam.",
-            "Spent winter break exhausted, worrying about how she did.",
-            "Afraid her peers would find out she wasn't good enough.",
-            "Grew more reserved and pulled away from peers.",
-            "Anxious about every assignment and quiz, formative or not.",
+        card("How to recognize it", sub("Signs") + ul(
+            "Credits success to luck, not ability.",
+            "Fears peers will find out they are not good enough.",
+            "Anxious about every assessment, even low-stakes or formative ones.",
+            "Withdraws from peers and goes quiet.",
+            "Deflects compliments and discounts praise.",
         ) + sub("Risk factors") + ul(
-            "Rejected on her first application with no interviews, and no Master's spot.",
-            "Worked as a data entry clerk and banquet server before getting in.",
-            "Hard transition back to school.",
-            "Older than her peers, from a smaller university outside Ontario.",
-            "Felt she couldn't fit in, and compared herself to peers who answered easily.",
+            "A non-traditional path into medicine or a prior rejection",
+            "Feeling different from peers (age, school, background)",
+            "Comparing yourself to peers who seem to answer easily",
+            "Big transitions, such as starting medical school",
         )),
         card("The imposter cycle", '<ol class="cycle"><li>Task</li><li>Anxiety</li><li>Over-prepare or procrastinate</li><li>Success</li><li>Credit goes to luck or effort</li><li>Praise discounted</li><li class="loop">Fraud feeling grows, repeat</li></ol>', OUT),
-        card("Helping a peer", sub("Signs") + p("Goes quiet in small group, skips social events, puts themselves down, deflects compliments, gets anxious over low-stakes tasks.") + ol(
-            "Check in privately and casually.",
+        card("Reducing its effects", ol(
+            "Check in on a peer privately and casually.",
             "Listen first. Don't rush to fix it.",
             "Normalize it by sharing your own self-doubt.",
-            "Point to evidence of their competence.",
-            "Point them to supports. Escalate to the Learner Experience Office (LEO) or faculty for signs of depression or safety concerns.",
+            "Point to concrete evidence of competence.",
+            "Point to supports. Escalate for signs of depression or safety concerns.",
+        ) + pairs(
+            ("Students", "Schulich Learner Experience Office personal counselling."),
+            ("Physicians", "CMA Physician Wellness Hub."),
         ), OUT),
-        card("Supports", pairs(
-            ("Students", "Schulich Learner Experience Office personal counselling (listed in the module)."),
-            ("Physicians", "CMA Physician Wellness Hub (listed in the module)."),
-        ) + p(f"{tag(OUT)} Also: Western Wellness and mentors for students, the PARO 24/7 helpline for residents, and the OMA Physician Health Program for physicians.")),
-        card("In the session", ul(
-            "Give a classmate a genuine, specific compliment, and notice how hard it is to accept one.",
-            "Share past experiences of imposter syndrome.",
-            "Privately write down 3 things you are great at.",
-        )),
+        card("Likely test angles", ul(
+            "Imposter syndrome is an <b>inaccurate</b> self-assessment. Low confidence that matches real performance is not imposter syndrome.",
+            "It is not a diagnosis. Burnout is one of its consequences. Depression or safety concerns need escalation, not just reassurance.",
+            "Errors are the classic trigger, so healthy error disclosure and support-seeking protect against it.",
+            "It affects how you teach and support others, not only you.",
+        ), OUT),
     ],
     recall=[
         ("What kind of self-assessment is imposter syndrome?", "An inaccurate one, linked to perfectionism."),
         ("What triggers it during medical school?", "Poor performance or errors, with guilt, anxiety and self-doubt."),
-        ("Name three consequences for physicians.", "Any three of: worse psychological wellbeing, burnout, weaker clinical performance, slower career advancement, less effective teaching, less support for learners and peers."),
+        ("About what share of people feel it at some point?", "About 70% of men and women."),
+        ("Name three consequences for physicians.", "Any three of: worse wellbeing, burnout, weaker clinical performance, slower career advancement, less effective teaching, less support for learners and peers."),
     ],
 )
 
@@ -180,61 +182,57 @@ W10 = dict(
     goal="Reduce the impact of implicit bias, use the social determinants of health (SDH) and financial supports to plan care, and lower barriers for underrepresented groups.",
     cards=[
         card("Why it matters", ul(
-            "The privilege we experience is largely a function of luck. Many opportunities come from the context we were born into, not hard work.",
+            "Privilege is largely a function of luck. Many opportunities come from the context we were born into, not hard work.",
             "Know your patient's context and meet them where they are, so the plan is one they can follow.",
         )),
         card("Implicit bias", ul(
-            "Unconscious, and informed by all of your past experiences. Don't feel bad about having it. It can't be helped.",
+            "<b>Unconscious</b>, and shaped by all your past experiences. Everyone has it.",
             "The space between the biased thought and your reaction is where you have a choice.",
-            "<b>Mindfulness:</b> focusing your awareness on the present moment while calmly acknowledging your feelings, thoughts and bodily sensations.",
-            "<b>Sleep matters.</b> Alkozei and colleagues showed sleep restriction increased implicit bias and influenced explicit decisions.",
-            "You are least likely to fall victim to bias when well rested, fed and hydrated.",
-            "The Harvard <b>Implicit Association Test (IAT)</b> helps identify your biases and guides what to explore next.",
+            "<b>Mindfulness:</b> focusing awareness on the present moment while calmly acknowledging feelings, thoughts and bodily sensations.",
+            "<b>Sleep restriction increases implicit bias</b> and influences explicit decisions. You resist bias best when rested, fed and hydrated.",
+            "The Harvard <b>Implicit Association Test (IAT)</b> helps identify your biases.",
             "Under stress, practise self-compassion and remember most patients are doing what they think is reasonable.",
         )),
-        card("The case: Andrea", sub("Your state") + p("Poor sleep, little breakfast, no lunch by 1:30 pm.") + sub("First impressions") + p("Smells of cigarettes, staring at her phone, obese, poor hygiene. Has a family doctor but came to a walk-in for 1 month of low back pain.") + sub("What the history showed") + ul(
-            "Feels judged and dismissed by her family doctor, waits 3 to 4 months for 5-minute visits.",
-            "No reliable transportation, and the walk-in is closer to home.",
-            "Cut down to half a pack a day.",
-            "PSW in long-term care, working overtime after staffing cuts, came straight from a shift.",
-            "Single mom. Her son had a fever, so she was checking her phone.",
-        ) + sub("The plan that failed") + p("Heating pad, NSAIDs and a physio referral. She came back unimproved because she couldn't afford the NSAIDs or physio. She is on probation at work, worried about missing time, and has no health benefits yet.")),
-        card("Reducing bias", sub("van Ryn's 3 strategies") + pairs(
+        card("When bias acts: System 1 and System 2", pairs(
+            ("System 1", "Fast, automatic. Steers most behaviour. Where bias lives."),
+            ("System 2", "Slow, deliberate. Can override System 1 when you have the resources."),
+        ) + p("Bias acts most under fatigue, stress, hunger, time pressure and heavy cognitive load."), READ),
+        card("Reducing bias: 3 strategies", pairs(
             ("Perspective-taking", "Picture the visit from the patient's side, then check it with them."),
             ("Partnership-building", "Use \"we\" and \"let's\", and name shared goals."),
             ("Protect cognitive resources", "Sleep, eat, manage stress, and fix system pressures."),
-        ) + sub("System 1 and System 2") + ul(
-            "System 1 is fast and automatic and steers most behaviour. System 2 is slow and deliberate.",
-            "Bias acts most under fatigue, stress, hunger, time pressure and heavy cognitive load.",
         ), READ),
-        card("Bias in care (CPSO examples)", ul(
+        card("What bias does to care", ul(
             "Women are 3 times less likely to be referred for knee replacement when it is indicated.",
             "Black and Hispanic patients get less pain medication despite higher pain scores.",
             "COPD is underdiagnosed in women.",
             "Patients sense bias, so trust, adherence and follow-up drop.",
         ), READ),
-        card("SDH and money", ul(
-            "OHIP covers much of the immediate evaluation, but often less of the plan.",
-            "Income sources to know: employment, Ontario Works (OW), ODSP, CPP Disability (CPPD), CPP and Employment Insurance (EI). Some come with drug and health service coverage.",
+        card("SDH: why a good plan fails", ul(
+            "<b>SDH</b> are the social and economic conditions that shape health: income, employment and working conditions, caregiving, access to care, transportation, social support, health behaviours.",
+            "OHIP covers much of the immediate evaluation, but often not the plan: drugs, physio and other services.",
+            "A plan fails when the patient can't afford it, has no benefits, can't take time off work, or can't get to appointments. Ask before you prescribe.",
         )),
-        card("SDH and coverage details", ul(
-            "<b>SDH</b> are the social and economic conditions that shape health. In Andrea's case: income, employment and working conditions, caregiving, access to care, social support and smoking.",
+        card("Income and coverage supports", ul(
+            "Income sources: employment, <b>Ontario Works (OW)</b>, <b>ODSP</b>, <b>CPP Disability</b>, CPP and <b>Employment Insurance (EI)</b>. Some come with drug and health coverage.",
             "<b>WSIB:</b> work injuries. Covers wages, drugs and physio.",
-            "<b>Ontario Drug Benefit:</b> age 65 and over, under 25 without a private plan (OHIP+), OW or ODSP, long-term care, home care, Trillium.",
+            "<b>Ontario Drug Benefit:</b> 65 and over, under 25 without a private plan (OHIP+), OW or ODSP, long-term care, home care, Trillium.",
             "<b>Trillium:</b> high drug costs relative to income, with an income-based deductible.",
-            "<b>OHIP physio:</b> age 19 and under, 65 and over, a hospital stay or day surgery in the last 12 months, or OW or ODSP.",
-        ) + p("Ontario government pages, checked Nov 4, 2026.", "note"), OUT),
-        card("Changing the patient", p("The module asks how your plan changes for each patient. Suggested answers:") + pairs(
+            "<b>OHIP physio:</b> 19 and under, 65 and over, a hospital stay or day surgery in the last 12 months, or OW or ODSP.",
+        ), OUT),
+        card("Likely test angles: adapting the plan", pairs(
             ("Newcomer, limited English", "Professional interpreter, not family. Plain language and teach-back."),
-            ("Opioid use disorder", "Avoid diagnostic overshadowing. Non-opioid care first. Check the Narcotics Monitoring System."),
-            ("Schizophrenia or bipolar", "Avoid diagnostic overshadowing. NSAIDs raise lithium levels. Ask about ODSP."),
-            ("Age 75 with mild cognitive impairment", "Presume capacity and speak to her directly. Avoid oral NSAIDs. Screen for falls."),
+            ("Substance use disorder", "Avoid diagnostic overshadowing. Non-opioid care first."),
+            ("Serious mental illness", "Avoid diagnostic overshadowing. NSAIDs raise lithium levels. Ask about ODSP."),
+            ("Older adult with cognitive impairment", "Presume capacity and speak to them directly. Avoid oral NSAIDs. Screen for falls."),
+            ("No benefits, can't miss work", "Lower-cost options, check coverage programs, flexible follow-up."),
         ), OUT),
     ],
     recall=[
         ("Where do you have a choice when implicit bias kicks in?", "In the space between the biased thought and your reaction."),
-        ("What did Alkozei show about sleep restriction?", "It increased implicit bias and influenced explicit decisions."),
-        ("Why did Andrea's first plan fail?", "She couldn't afford NSAIDs or physio, had no benefits yet, and was on probation at work."),
+        ("What does sleep restriction do to implicit bias?", "Increases it and influences explicit decisions."),
+        ("Name the three strategies to reduce bias.", "Perspective-taking, partnership-building, protecting cognitive resources."),
+        ("Which drug program covers work injuries, including wages and physio?", "WSIB."),
     ],
 )
 
@@ -245,39 +243,53 @@ W12 = dict(
     id="w12", tab="Week 12", short="Environment", title="Environment and health",
     goal="Describe how environmental and climate concerns contribute to or trigger illness, identify vulnerable patient groups, and prescribe healthy choices that help both patient and local environment.",
     cards=[
-        card("The case: Sarah, 21", ul(
-            "University student in the ER with right groin swelling, fatigue and a temperature of 39°C.",
-            "Unwell for a week. The lump grew from grape-sized to multiple small strawberry-sized masses. Fevers on and off for 3 days.",
-            "Mild headaches, myalgias and arthralgias. Lower appetite.",
-            "Summer in a chemistry lab and playing ultimate frisbee. Camped at Pinery Provincial Park 2 weeks ago.",
-            "Father had colon cancer in his early 50s. Mother has hypertension and lupus.",
-            "<b>Exam:</b> BP 96/60, HR 115, T 38.6°C. Possible mild splenomegaly. Multiple tender, soft, rubbery right groin nodes of 1 to 2 cm, not very mobile. A 5 to 6 cm red, circular rash on the back of her upper leg.",
-            "No neck or armpit nodes.",
+        card("Core idea", ul(
+            "Climate change is causing unprecedented impacts on human health.",
+            "Physicians are at the front line of assessing and managing the direct and indirect effects of planetary health on patients.",
         )),
-        card("Reading the case", ul(
-            "<b>Lyme disease</b> fits best. A large circular rash after camping, with fever, is erythema migrans.",
-            "<b>Climate link:</b> Pinery is a tick area, and warmer temperatures expand tick range.",
-            "<b>Disease of public health significance:</b> Lyme is one, so it must be reported to public health.",
-            "<b>Differential:</b> mono, cat scratch disease, STIs, lymphoma, local skin infection.",
-            "The lab solvents don't explain her illness.",
+        card("Climate and vector-borne disease", ul(
+            "Warmer temperatures expand the range and season of vectors such as ticks and mosquitoes.",
+            "<b>Lyme disease</b> (tick-borne) is the classic Canadian example. Think of it with fever, myalgias, arthralgias and a large expanding circular rash (<b>erythema migrans</b>) after time outdoors in a tick area.",
+            "Other climate-linked infections in Canada include West Nile virus.",
+            "Temperature extremes also cause heat illness and worsen chronic disease.",
         ), OUT),
-        card("What the module asks you to discuss", ul(
-            "Temperature extremes and changes, and their effect on vector-borne infections.",
-            "Environmental and occupational exposure to UV light, certain herbicides and pesticides, and solvents.",
-            "Measures in primary care to improve a patient's climate resilience.",
-            "How your hospital or clinic can cut its environmental footprint.",
-            "How you can advocate for your patients' current and future health.",
-        )),
-        card("Readings", ul(
-            "McCally: environment and health overview",
-            "Galanis and Ogden: climate change and emerging diseases",
-            "Chekuri and Harper: climate-smart health care and the family physician",
-            "Clapp: environment and cancer",
-        )),
+        card("Environmental and occupational exposures", pairs(
+            ("Ultraviolet light", "Skin cancer, including melanoma. Sun protection counselling."),
+            ("Herbicides and pesticides", "Linked to some cancers and other illness. Ask about agricultural and occupational exposure."),
+            ("Solvents", "Occupational exposure in labs and industry. Linked to some cancers."),
+        ) + p("Take an occupational and environmental history: where the patient works, lives and spends time."), OUT),
+        card("Who is most vulnerable", ul(
+            "Older adults and young children",
+            "People with chronic disease (heart, lung, kidney)",
+            "Outdoor and agricultural workers",
+            "People with low income or unstable housing",
+            "Pregnant people",
+        ), OUT),
+        card("Diseases of public health significance", ul(
+            "Certain diseases must be reported to public health by law. Lyme disease is one.",
+            "Reporting drives surveillance and lets public health act.",
+        ), OUT),
+        card("What you can do", sub("With patients: climate resilience") + ul(
+            "Heat warnings, hydration and cooling plans for high-risk patients.",
+            "Tick checks, repellent and sun protection.",
+            "Healthy choices that also help the environment: active transport (walking, cycling), a plant-rich diet.",
+        ) + sub("Your clinic or hospital") + ul(
+            "Cut waste and energy use. Choose lower-carbon options, such as inhalers with a lower carbon footprint where suitable.",
+        ) + sub("Advocacy") + ul(
+            "Speak up for policies that protect your patients' current and future health.",
+        ), OUT),
+        card("Likely test angles", ul(
+            "Fever, lymphadenopathy and a large circular rash after camping: Lyme disease, reportable to public health.",
+            "Differential for fever with lymphadenopathy in a young adult: mono, cat scratch disease, STIs, lymphoma, local skin infection.",
+            "Link a disease to its environmental driver: temperature to vectors, UV to skin cancer, pesticides and solvents to cancer.",
+            "Name a vulnerable group and a prescription that helps both patient and planet.",
+        ), OUT),
     ],
     recall=[
-        ("Which findings point to a tick-borne cause?", "Camping at Pinery 2 weeks earlier and a large circular rash, with fever, arthralgias and myalgias."),
-        ("Which two environmental exposure groups does the module name?", "Temperature changes affecting vector-borne infections, and exposure to UV, herbicides, pesticides and solvents."),
+        ("How does climate change affect tick-borne disease?", "Warmer temperatures expand tick range and season, raising Lyme disease risk."),
+        ("What rash suggests Lyme disease?", "Erythema migrans: a large, expanding, red circular rash."),
+        ("Name the three exposures the module highlights.", "UV light, herbicides and pesticides, and solvents."),
+        ("Give one healthy choice that helps both patient and environment.", "Active transport (walking, cycling) or a plant-rich diet."),
     ],
 )
 
@@ -289,22 +301,20 @@ W13 = dict(
     goal="Give respectful, inclusive, patient-centred care by adapting communication, supporting autonomy and recognizing barriers to equitable care.",
     cards=[
         card("Core idea", ul(
-            "Disability is not a tragedy, but a difference.",
-            "<b>Gord, 42:</b> cerebral palsy. Uses a custom communication board. Support worker Ryan.",
-            "<b>Brandy:</b> cri-du-chat syndrome. Came to the ED after a fall with a suspected head injury. Support worker Denise.",
+            "<b>Disability is not a tragedy, but a difference.</b>",
             "Disability, stigma and system barriers affect access to safe, equitable, patient-centred care.",
         )),
         card("Communication", ul(
             "Greet with respect, attend to comfort and the need for an interpreter, and orient the patient to the interview.",
             "Use communication aids: communication boards and books, social stories, interpreters, American Sign Language.",
             "Bring in health care navigators and patient advocates for other barriers.",
-            "Speak to the patient first. Include support workers, with the patient's permission.",
+            "<b>Speak to the patient first.</b> Include support workers with the patient's permission.",
             "Use appropriate nonverbal communication: positioning, posture, facial expression.",
-            "Use clear language, check for understanding, and clarify.",
+            "Use clear language, check understanding, and clarify.",
             "Build a shared plan with the patient, family and other professionals.",
         )),
         card("Agitation and challenging behaviour", ul(
-            "It may reflect communication barriers, pain, fear, sensory overload, environmental stressors, unmet needs or underlying illness.",
+            "Treat it as communication. It may reflect communication barriers, <b>pain</b>, fear, sensory overload, environmental stressors, unmet needs or underlying illness.",
             "Many people with intellectual disabilities find it harder to regulate emotions or say what is wrong.",
             "Long ED waits create extra challenges for people with intellectual and developmental disabilities (IDD).",
         )),
@@ -320,18 +330,26 @@ W13 = dict(
         )),
         card("Capacity", ul(
             "Patients are <b>presumed capable</b>.",
-            "Capacity is <b>specific to each treatment decision</b>.",
+            "Capacity is <b>specific to each treatment decision</b> and can change over time.",
         )),
         card("Bias and anti-oppressive care", ul(
             "Reflect on your assumptions about people with disabilities, and how your values shape your communication.",
-            "Recognize the effects of stigma and discrimination on groups facing health inequities, including by race, ethnicity, immigration, income, religion, disability, gender identity, sexual orientation, weight and substance use.",
+            "Recognize the effects of stigma and discrimination on groups facing health inequities: race, ethnicity, immigration, income, religion, disability, gender identity, sexual orientation, weight and substance use.",
             "Know your limits of competence.",
         )),
+        card("Likely test angles", ul(
+            "A patient with a disability arrives with a support worker. Who do you address first? The patient.",
+            "A non-verbal patient becomes agitated. First think pain or another unmet need, not \"behaviour\".",
+            "Disability does not mean incapacity. Assess capacity for each decision.",
+            "Diagnostic overshadowing: don't blame new symptoms on the disability.",
+            "Screening and prevention still apply, and abuse and neglect risk is higher.",
+        ), OUT),
     ],
     recall=[
         ("Name four things agitation may reflect.", "Any four of: communication barriers, pain, fear, sensory overload, environmental stressors, unmet needs, underlying illness."),
         ("Who do you speak to first, the patient or the support worker?", "The patient."),
         ("Is capacity global or decision-specific?", "Decision-specific, and patients are presumed capable."),
+        ("Name the two critical findings for adults with developmental disabilities.", "Level of intellectual and adaptive functioning, and risk factors for abuse and neglect."),
     ],
 )
 
@@ -342,26 +360,6 @@ W14 = dict(
     id="w14", tab="Week 14", short="Vaccines", title="Vaccination and public health",
     goal="Counsel patients and families about vaccines and hesitancy, using patient-centred communication, informed consent, advocacy and public health principles.",
     cards=[
-        card("The case: Sophie, 11", ul(
-            "Due for HPV, a meningococcal booster and catch-up MMR. Vaccines were delayed by COVID-19, and the family moved from a rural area with poor access.",
-            "Her mother read online that vaccines cause infertility and developmental problems, thinks HPV is \"too new\" and that kids get \"too many vaccines too early\". A friend's child got fever and fatigue after vaccines.",
-            "Sophie is unsure, scared of needles and worried about side effects. Friends told her \"these diseases do not exist anymore\".",
-            "<b>Part 2:</b> a measles exposure at school, with possible exclusion for under-vaccinated students. After catch-up shots, Sophie has mild fever, fatigue and a sore arm the next day.",
-        )),
-        card("Vaccine hesitancy", ul(
-            "Delay in accepting, or refusing, vaccines despite available services.",
-            "Most hesitant parents under-immunize. 3% of parents refuse outright.",
-        ) + sub("Causes named in the module") + ul(
-            "Safety concerns", "Misinformation on social media and online", "Mistrust of institutions",
-            "Prior negative health care experiences", "Cultural beliefs", "Trouble accessing care",
-        ) + sub("Approach") + ul(
-            "Prepare before the visit and set aside extra time.",
-            "Use presumptive and motivational interviewing techniques to find the specific concern.",
-            "Use simple, clear language for disease risks and vaccine benefits and risks.",
-            "Address pain head on.",
-            "Don't dismiss vaccine refusers from your practice.",
-            "Herd immunity does not guarantee personal protection.",
-        ), NOTES),
         card("What the module expects you to do", ul(
             "Assess immunization status and recommend a schedule, including catch-up.",
             "Get an immunization history, including precautions and contraindications.",
@@ -371,15 +369,30 @@ W14 = dict(
             "Find patients who would benefit but don't come for routine visits.",
             "Report and manage adverse reactions.",
         )),
+        card("Vaccine hesitancy", ul(
+            "<b>Delay in accepting, or refusing, vaccines despite available services.</b>",
+            "Most hesitant parents under-immunize. <b>3%</b> of parents refuse outright.",
+        ) + sub("Common causes") + ul(
+            "Safety concerns", "Misinformation on social media and online", "Mistrust of institutions",
+            "Prior negative health care experiences", "Cultural beliefs", "Trouble accessing care",
+        ), NOTES),
+        card("Counselling approach", ul(
+            "Prepare before the visit and set aside extra time.",
+            "Use presumptive and motivational interviewing techniques to find the specific concern.",
+            "Use simple, clear language for disease risks and vaccine benefits and risks.",
+            "Address pain and needle fear head on.",
+            "<b>Don't dismiss vaccine refusers</b> from your practice.",
+            "Herd immunity does not guarantee personal protection.",
+        ), NOTES),
         card("Adverse events (AEFI)", ul(
             "An unwanted or unexpected health effect within <b>6 weeks</b> of immunization. It may or may not be caused by the vaccine.",
             "Causes: a vaccine component (allergy), a defective product, the vaccination process (error or anxiety, such as syncope), or something unrelated.",
+            "Expected effects: sore arm, mild fever, fatigue.",
             "Frequency scale: very common 10% or more, common 1 to 10%, uncommon 0.1 to 1%, rare 1 to 10 per 10,000, very rare under 1 per 10,000.",
             "<b>MMR:</b> febrile seizures 3 to 9 per 10,000, thrombocytopenia 2 to 3 per 100,000, anaphylaxis 3 to 10 per million.",
-            "<b>HPV and meningococcal ACYW:</b> no adverse events listed.",
         ) + sub("Reporting") + ul(
-            "Mandatory for providers who give vaccines, under s.38 of the Health Protection and Promotion Act.",
-            "Fill out the AEFI form and send it to the local public health unit.",
+            "<b>Mandatory</b> for providers who give vaccines, under s.38 of the Health Protection and Promotion Act.",
+            "Send the AEFI form to the <b>local public health unit</b>.",
             "Local review, then provincial, then national (PHAC), then WHO. Manufacturers report serious events to Health Canada.",
             "The Vaccine Injury Support Program supports people with serious, permanent injury from a vaccine.",
         ), NOTES),
@@ -390,8 +403,8 @@ W14 = dict(
             "Reportable diseases place legal obligations on clinicians.",
         ), NOTES),
         card("Who regulates vaccines", ul(
-            "Health Canada reviews and approves vaccines that are safe, work, meet manufacturing standards and have benefits that outweigh risks.",
-            "Trials run in phases: I (tens of volunteers), II (hundreds), III (tens of thousands).",
+            "Health Canada approves vaccines that are safe, work, meet manufacturing standards and have benefits that outweigh risks.",
+            "Trials: phase I (tens of volunteers), II (hundreds), III (tens of thousands).",
             "Governments coordinate purchase and distribution. Monitoring continues after approval.",
         ), NOTES),
         card("Outbreak steps", ol(
@@ -399,17 +412,25 @@ W14 = dict(
             "Orient the data by person, place and time", "Generate hypotheses", "Test hypotheses",
             "Implement prevention and control", "Communicate the findings", "Debrief the team",
         ), NOTES),
-        card("Ontario funding and school rules", ul(
+        card("Ontario funding, schools and consent", ul(
             "Routine vaccines are publicly funded through Ontario's immunization schedule.",
             "Public health units run Grade 7 school clinics for HPV, meningococcal and hepatitis B.",
             "School attendance requires certain vaccines, with medical or conscience exemptions. Exempt students can be excluded during outbreaks.",
-            "Ontario has no fixed age of consent for treatment. A capable child can consent.",
+            "Ontario has no fixed age of consent for treatment. A capable child can consent to their own vaccines.",
+        ), OUT),
+        card("Likely test angles", ul(
+            "Hesitant versus refusing: most hesitant parents under-immunize, only 3% refuse.",
+            "Mild fever and a sore arm the day after a vaccine: expected, reassure. Anaphylaxis within minutes: epinephrine.",
+            "An AEFI is reported on a temporal link. You don't need proof the vaccine caused it.",
+            "Measles contact: vaccine within 72 hours, or immune globulin within 4 to 6 days for high-risk contacts.",
+            "Delayed vaccines (pandemic, moving, poor access): plan catch-up, don't restart the series.",
         ), OUT),
     ],
     recall=[
         ("What is the time window for an AEFI?", "Within 6 weeks of immunization."),
         ("Measles contact, immunocompetent, over 6 months. What and by when?", "MMR vaccine within 72 hours."),
         ("Who do you send an AEFI report to?", "The local public health unit."),
+        ("Can a capable 11-year-old consent to their own vaccine in Ontario?", "Yes. Ontario has no fixed age of consent for treatment."),
     ],
 )
 
@@ -417,8 +438,8 @@ W14 = dict(
 # One ISGL summary per block, holding that block's weeks.
 PAGES = {
     2: dict(weeks=[W8], intro="Key points from the Block 2 ISGL sessions on file."),
-    3: dict(weeks=[W9, W10, W12], intro="Key points from the Block 3 ISGL sessions. No Week 11 module is on file yet."),
-    4: dict(weeks=[W13, W14], intro="Key points from the Block 4 ISGL sessions on file."),
+    3: dict(weeks=[W9, W10, W12], intro="Core concepts and likely test angles from the Block 3 ISGL sessions. No Week 11 module is on file yet."),
+    4: dict(weeks=[W13, W14], intro="Core concepts and likely test angles from the Block 4 ISGL sessions."),
 }
 COLOURS = {2: ("#4f46c8", "#ecebfb", "#a49df6", "#1e1c38"),
            3: ("#a3246b", "#f8e9f1", "#ef8ec0", "#2c1722"),
