@@ -182,6 +182,33 @@ ITEMS = [
  ],
  [
   4,
+  "week-13-summary",
+  "Week 13 Summary",
+  None,
+  None,
+  "summary",
+  "Microbiology lab, bacteria, viruses, fungi, antimicrobials, infection control, outbreaks."
+ ],
+ [
+  4,
+  "week-14-summary",
+  "Week 14 Summary",
+  None,
+  None,
+  "summary",
+  "Fever, inflammation, sepsis, immunodeficiency, opportunistic infections, rashes."
+ ],
+ [
+  4,
+  "week-15-summary",
+  "Week 15 Summary",
+  None,
+  None,
+  "summary",
+  "Hypersensitivity, anaphylaxis, allergies and testing, autoimmunity, vaccines."
+ ],
+ [
+  4,
   "block-4-isgl-summary",
   "ISGL Summary",
   None,
