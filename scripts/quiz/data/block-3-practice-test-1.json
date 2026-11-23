@@ -4,7 +4,7 @@
  "questions": [
   {
    "c": "Week 9",
-   "p": "Which of the following are associated with target cells on the blood film?\ni) Liver disease\nii) Hyposplenism\niii) Thalassemia\niv) Hereditary spherocytosis",
+   "p": "Marcus, 58, has alcohol-related cirrhosis and is seen for fatigue. His chart lists a splenectomy after a car crash at age 20, a cousin with hereditary spherocytosis, and an old report of microcytosis that was never worked up. His film today is reported as showing many target cells.\n\nWhich of the following can produce target cells on a blood film?\ni) Liver disease\nii) Hyposplenism\niii) Thalassemia\niv) Hereditary spherocytosis",
    "o": [
     "ii), iii) and iv) only",
     "i) and iii) only",
@@ -12,7 +12,7 @@
     "All of the above"
    ],
    "a": 2,
-   "e": "Correct: C. Target cells come from excess membrane relative to cell volume. Causes include liver disease and alcohol, hyposplenism, thalassemia, and rarely severe iron deficiency.\nA: Hereditary spherocytosis gives spherocytes, not target cells.\nB: This leaves out hyposplenism.\nD: Statement iv) gives spherocytes.\nTakeaway: Spherocytes: hereditary spherocytosis and autoimmune hemolytic anemia.",
+   "e": "Correct: C. Target cells come from excess membrane relative to cell volume. Causes include liver disease and alcohol, hyposplenism, thalassemia, and rarely severe iron deficiency.\nA: Hereditary spherocytosis gives spherocytes, not target cells.\nB: This leaves out hyposplenism.\nD: Statement iv) gives spherocytes.\nRed herring: The cousin with hereditary spherocytosis tempts you to include iv). That condition gives spherocytes, not target cells. Marcus has three real causes: liver disease, a splenectomy and a possible thalassemia behind the microcytosis.\nTakeaway: Spherocytes: hereditary spherocytosis and autoimmune hemolytic anemia.",
    "l": [
     "W9 9.1",
     "W9 1.1"
@@ -20,7 +20,7 @@
   },
   {
    "c": "Week 12",
-   "p": "Victor, 55, has a lymphoma found only in his stomach. CT shows no enlarged lymph nodes and his marrow is clear. He has no fever, night sweats or weight loss. What is his Ann Arbor stage?",
+   "p": "Victor, 55, has 2 months of epigastric pain and early satiety. Endoscopic biopsy shows lymphoma confined to the stomach. He has lost 2 kg (from 84 kg) since he began eating smaller meals, and he has woken up warm a few nights since his bedroom radiator got stuck on high. He has had no fevers. CT of the chest, abdomen and pelvis shows no enlarged lymph nodes, and his bone marrow biopsy is clear.\n\nWhat is his Ann Arbor stage?",
    "o": [
     "Stage IE, A",
     "Stage IE, B",
@@ -28,14 +28,14 @@
     "Stage IIE, A"
    ],
    "a": 0,
-   "e": "Correct: A. A single extralymphatic organ or site with no nodes is stage IE. No B symptoms gives the A suffix.\nB: B needs B symptoms.\nC: Stage IV is diffuse extralymphatic involvement, such as marrow.\nD: Stage II needs two or more node regions, or an extralymphatic site with nodes, on one side of the diaphragm.\nTakeaway: Stage I: one region or one extralymphatic site.",
+   "e": "Correct: A. A single extralymphatic organ or site with no nodes is stage IE. No B symptoms gives the A suffix.\nB: B needs B symptoms.\nC: Stage IV is diffuse extralymphatic involvement, such as marrow.\nD: Stage II needs two or more node regions, or an extralymphatic site with nodes, on one side of the diaphragm.\nRed herring: 2 kg is far below 10% of body weight, and waking warm beside a stuck radiator is not a drenching night sweat. He has no B symptoms, so the suffix is A.\nTakeaway: Stage I: one region or one extralymphatic site.",
    "l": [
     "W12 5.3"
    ]
   },
   {
    "c": "Week 10",
-   "p": "A man with a ruptured spleen is in a massive transfusion and needs replacement of all his clotting factors. The product is stored in a freezer and must be thawed before use. Which product is it?",
+   "p": "Kofi, 34, fell from a ladder and has a ruptured spleen. He is in the OR on a massive transfusion protocol and has received 8 units of red cells. He takes no anticoagulants or antiplatelet drugs. His latest INR is 2.1, his aPTT is prolonged and his fibrinogen is at the low end of normal. The anesthetist asks for one product that replaces all of his coagulation factors. It is stored in a freezer and must be thawed before use.\n\nWhich product is it?",
    "o": [
     "Platelets",
     "Frozen plasma",
@@ -44,14 +44,14 @@
     "Prothrombin complex concentrate"
    ],
    "a": 1,
-   "e": "Correct: B. Plasma contains all coagulation factors. It is stored at -18°C for up to 1 year and takes about 20 minutes to thaw.\nA: Platelets are stored at room temperature for up to 7 days, as in your Week 10 quiz.\nC: Fibrinogen concentrate replaces fibrinogen only.\nD: Cryoprecipitate is also frozen, but it holds FVIII, FXIII, vWF and fibrinogen, not all factors.\nE: PCC holds the vitamin K dependent factors.\nTakeaway: Room temperature: platelets and fibrinogen concentrate. Fridge: red cells. Freezer: plasma and cryo.",
+   "e": "Correct: B. Plasma contains all coagulation factors. It is stored at -18°C for up to 1 year and takes about 20 minutes to thaw.\nA: Platelets are stored at room temperature for up to 7 days, as in your Week 10 quiz.\nC: Fibrinogen concentrate replaces fibrinogen only.\nD: Cryoprecipitate is also frozen, but it holds FVIII, FXIII, vWF and fibrinogen, not all factors.\nE: PCC holds the vitamin K dependent factors.\nRed herring: The borderline fibrinogen tempts cryoprecipitate or fibrinogen concentrate, but both replace only some factors. He is not on warfarin, so PCC is not the targeted choice either.\nTakeaway: Room temperature: platelets and fibrinogen concentrate. Fridge: red cells. Freezer: plasma and cryo.",
    "l": [
     "W10 9.6"
    ]
   },
   {
    "c": "Week 11",
-   "p": "In a trial, a new drug lowers the relapse rate from 20% in the control group to 15% in the treatment group. What are the absolute risk reduction and the number needed to treat?",
+   "p": "A 2-year trial enrolls 1,000 adults in remission from a lymphoid malignancy. Relapse occurs in 20% of the control group and 15% of the treatment group. Median survival is 6.2 years in both groups, and 8% of treated patients stop the drug because of a rash. The drug costs $2,000 a month.\n\nFor relapse, what are the absolute risk reduction and the number needed to treat?",
    "o": [
     "ARR 25%, NNT 4",
     "ARR 5%, NNT 5",
@@ -59,14 +59,14 @@
     "ARR 5%, NNT 20"
    ],
    "a": 3,
-   "e": "Correct: D. ARR is control risk minus treatment risk: 20% minus 15% is 5%. NNT is the number treated to prevent one event: 1 divided by 0.05 is 20.\nA: 25% is the relative risk reduction (5 divided by 20), not the ARR.\nB: NNT is 1 divided by 0.05, which is 20.\nC: 15% is the risk in the treatment group.\nTakeaway: NNT = 1 / ARR.",
+   "e": "Correct: D. ARR is control risk minus treatment risk: 20% minus 15% is 5%. NNT is the number treated to prevent one event: 1 divided by 0.05 is 20.\nA: 25% is the relative risk reduction (5 divided by 20), not the ARR.\nB: NNT is 1 divided by 0.05, which is 20.\nC: 15% is the risk in the treatment group.\nRed herring: Survival, the rash rate and the cost are extra numbers. Only the two relapse rates enter the ARR.\nTakeaway: NNT = 1 / ARR.",
    "l": [
     "W11 11.3"
    ]
   },
   {
    "c": "Week 10",
-   "p": "Which pairing of antiplatelet drug and its target is correct?",
+   "p": "Ruth, 66, had a coronary stent placed 3 months ago and takes two antiplatelet drugs. She also takes ramipril and atorvastatin. Before a dental extraction, her dentist asks which of her drugs works through the receptor for ADP released from platelet dense granules.\n\nWhich pairing of antiplatelet drug and target is correct?",
    "o": [
     "Clopidogrel blocks the P2Y12 pathway",
     "Abciximab inhibits cyclooxygenase",
@@ -74,14 +74,14 @@
     "Clopidogrel inhibits thromboxane synthase"
    ],
    "a": 0,
-   "e": "Correct: A. Clopidogrel blocks the P2Y12 receptor pathway, which ADP from the dense granules acts on.\nB: Abciximab is directed against glycoprotein IIb/IIIa.\nC: Aspirin inhibits cyclooxygenase and lowers thromboxane A2.\nD: Clopidogrel acts on P2Y12, and aspirin is the drug that lowers thromboxane A2.\nTakeaway: Aspirin: COX. Clopidogrel: P2Y12. Abciximab: GPIIb/IIIa.",
+   "e": "Correct: A. Clopidogrel blocks the P2Y12 receptor pathway, which ADP from the dense granules acts on.\nB: Abciximab is directed against glycoprotein IIb/IIIa.\nC: Aspirin inhibits cyclooxygenase and lowers thromboxane A2.\nD: Clopidogrel acts on P2Y12, and aspirin is the drug that lowers thromboxane A2.\nRed herring: The upcoming extraction makes you think about bleeding risk and stopping drugs, but the question only tests mechanism.\nTakeaway: Aspirin: COX. Clopidogrel: P2Y12. Abciximab: GPIIb/IIIa.",
    "l": [
     "W10 1.4"
    ]
   },
   {
    "c": "Week 12",
-   "p": "Sophie, 24, has classical Hodgkin lymphoma. Staging shows stage IIA disease with a bulky mediastinal mass. Which treatment plan fits best?",
+   "p": "Sophie, 24, has classical Hodgkin lymphoma. PET-CT shows disease in nodes of the neck and mediastinum only, all above the diaphragm, and the mediastinal mass is bulky. She has itchy skin at night but no fevers, weight loss or drenching sweats. She is worried about fertility and asks whether radiation alone could spare her chemotherapy.\n\nWhich treatment plan fits best?",
    "o": [
     "Radiation alone to the mediastinum",
     "A full course, ABVD × 2 then AVD × 4",
@@ -89,14 +89,14 @@
     "A short course of chemotherapy, then radiation"
    ],
    "a": 1,
-   "e": "Correct: B. Bulky disease is often treated like advanced stage. She gets the full course of ABVD × 2 then AVD × 4, with radiation if a PET-positive residual mass persists.\nA: Chemotherapy is the main modality in Hodgkin lymphoma.\nC: All Hodgkin patients are treated, aiming to cure.\nD: A short course then involved-field radiation is for non-bulky stage I to II.\nTakeaway: Bulky early stage Hodgkin is treated as advanced.",
+   "e": "Correct: B. Bulky disease is often treated like advanced stage. She gets the full course of ABVD × 2 then AVD × 4, with radiation if a PET-positive residual mass persists.\nA: Chemotherapy is the main modality in Hodgkin lymphoma.\nC: All Hodgkin patients are treated, aiming to cure.\nD: A short course then involved-field radiation is for non-bulky stage I to II.\nRed herring: Itch is not a B symptom, so she stays stage IIA. Her wish to avoid chemotherapy does not change the rule that bulky early-stage disease is treated like advanced disease.\nTakeaway: Bulky early stage Hodgkin is treated as advanced.",
    "l": [
     "W12 5.5"
    ]
   },
   {
    "c": "Week 9",
-   "p": "Which test result is high in anemia of chronic inflammation but low in iron deficiency anemia?",
+   "p": "Elena, 70, has active rheumatoid arthritis and a mild microcytic anemia. She takes naproxen daily and mentions her stools looked darker for a few days last month. Her family doctor wants one iron study to separate anemia of chronic inflammation from iron deficiency.\n\nWhich result, if HIGH, best supports anemia of chronic inflammation rather than iron deficiency anemia?",
    "o": [
     "RDW",
     "Transferrin",
@@ -104,7 +104,7 @@
     "Serum transferrin receptor"
    ],
    "a": 2,
-   "e": "Correct: C. In anemia of chronic inflammation, hepcidin traps iron in stores, so ferritin is high. In iron deficiency, stores are empty, so ferritin is low.\nA: RDW is high in iron deficiency.\nB: Transferrin is high in iron deficiency and low in chronic inflammation.\nD: Serum transferrin receptor is high in iron deficiency.\nTakeaway: Ferritin reflects body iron stores.",
+   "e": "Correct: C. In anemia of chronic inflammation, hepcidin traps iron in stores, so ferritin is high. In iron deficiency, stores are empty, so ferritin is low.\nA: RDW is high in iron deficiency.\nB: Transferrin is high in iron deficiency and low in chronic inflammation.\nD: Serum transferrin receptor is high in iron deficiency.\nRed herring: Daily naproxen and darker stools push you toward GI blood loss and iron deficiency. A high ferritin argues against iron deficiency, because empty stores give a low ferritin.\nTakeaway: Ferritin reflects body iron stores.",
    "l": [
     "W9 1.4",
     "W9 1.3"
@@ -112,15 +112,15 @@
   },
   {
    "c": "Week 9",
-   "p": "Which hereditary hemolytic anemia is inherited in an X-linked recessive pattern?",
+   "p": "Nikos, 6, of Greek descent, develops dark urine and yellow eyes 2 days after eating fava beans at a family celebration. His older sister ate the same meal and is well. His father was told years ago that he has a mild thalassemia trait.\n\nWhich inheritance pattern best explains why Nikos, and not his sister, became ill?",
    "o": [
-    "β-thalassemia major",
-    "Sickle cell disease",
-    "Hereditary spherocytosis",
-    "G6PD deficiency"
+    "Autosomal dominant",
+    "Autosomal recessive",
+    "X-linked dominant",
+    "X-linked recessive"
    ],
    "a": 3,
-   "e": "Correct: D. G6PD deficiency is X-linked recessive and common in Africans, Asians and Mediterraneans.\nA: β-thalassemia major is a homozygous globin gene defect, not X-linked.\nB: Sickle cell disease is autosomal recessive.\nC: Hereditary spherocytosis is autosomal dominant.\nTakeaway: Hemolysis labs: high retics, LDH and indirect bilirubin, low haptoglobin.",
+   "e": "Correct: D. Hemolysis after fava beans in a boy of Mediterranean descent fits G6PD deficiency, which is X-linked recessive. Boys with one affected X are affected, while girls are usually carriers.\nA: Autosomal dominant is the pattern of hereditary spherocytosis.\nB: Autosomal recessive is the pattern of sickle cell disease, and it affects boys and girls equally.\nC: X-linked dominant would affect girls too, and no Block 3 hemolytic anemia follows it.\nRed herring: The father's thalassemia trait is a distractor. Thalassemia does not cause sudden hemolysis after fava beans.\nTakeaway: Hemolysis labs: high retics, LDH and indirect bilirubin, low haptoglobin.",
    "l": [
     "W9 6.1",
     "W9 6.2"
@@ -128,7 +128,7 @@
   },
   {
    "c": "Week 12",
-   "p": "Which imaging test is the standard of care for bony disease in multiple myeloma?",
+   "p": "Harold, 68, has 3 months of low back pain, fatigue and constipation. His creatinine is 190 µmol/L, calcium is high and serum protein electrophoresis shows an M protein. His family doctor already ordered a bone scan, which was reported as normal. The hematologist now wants to assess his bones properly.\n\nWhich imaging test is the standard of care for bony disease in multiple myeloma?",
    "o": [
     "Bone scan",
     "Serum free light chain assay",
@@ -136,22 +136,22 @@
     "Skeletal survey"
    ],
    "a": 3,
-   "e": "Correct: D. Lytic lesions or fractures can show on XR, CT, PET-CT or MRI, and the skeletal survey is the standard of care.\nA: A bone scan is listed for lymphoma bone involvement.\nB: The free light chain assay finds the M protein, not bone lesions.\nC: Flow cytometry studies the marrow plasma cells.\nTakeaway: Myeloma bone disease: skeletal survey.",
+   "e": "Correct: D. Lytic lesions or fractures can show on XR, CT, PET-CT or MRI, and the skeletal survey is the standard of care.\nA: A bone scan is listed for lymphoma bone involvement.\nB: The free light chain assay finds the M protein, not bone lesions.\nC: Flow cytometry studies the marrow plasma cells.\nRed herring: The normal bone scan tempts you to say his bones are fine. A bone scan is listed for lymphoma bone involvement. For myeloma, the skeletal survey is the standard of care.\nTakeaway: Myeloma bone disease: skeletal survey.",
    "l": [
     "W12 8.4"
    ]
   },
   {
    "c": "Week 11",
-   "p": "Smudge cells on the peripheral blood film are associated with which disorder?",
+   "p": "Walter, 72, is referred for a WBC of 38 × 10⁹/L found on routine bloodwork, with lymphocytes of 33 × 10⁹/L. He feels well. He had a cold 2 weeks ago, and his granddaughter recently had mononucleosis. On exam he has small, painless nodes in the neck and a spleen tip just palpable.\n\nWhich finding on his peripheral blood film would best support the most likely diagnosis?",
    "o": [
-    "Chronic myeloid leukemia",
-    "Acute lymphoblastic leukemia",
-    "Chronic lymphocytic leukemia",
-    "Primary myelofibrosis"
+    "A bimodal spread of myelocytes and neutrophils",
+    "Blasts with no granules",
+    "Smudge cells",
+    "Teardrop cells"
    ],
    "a": 2,
-   "e": "Correct: C. Smudge cells on the film are a feature of CLL, a clonal malignancy of mature B cells.\nA: CML shows a bimodal spread of myelocytes and neutrophils.\nB: ALL shows blasts with no granules.\nD: Myelofibrosis shows teardrop cells.\nTakeaway: CLL is the most common leukemia, with a median age of 70.",
+   "e": "Correct: C. A marked lymphocytosis in a well 72-year-old with nodes and a palpable spleen fits CLL, a clonal malignancy of mature B cells. Smudge cells on the film are its feature.\nA: A bimodal spread of myelocytes and neutrophils is the film of CML.\nB: Blasts with no granules suggest ALL.\nD: Teardrop cells suggest myelofibrosis.\nRed herring: The recent cold and the grandchild with mono tempt a reactive lymphocytosis. A lymphocyte count this high in a 72-year-old with nodes and a palpable spleen points to CLL.\nTakeaway: CLL is the most common leukemia, with a median age of 70.",
    "l": [
     "W11 4.3",
     "W12 4.1"
@@ -159,7 +159,7 @@
   },
   {
    "c": "Week 12",
-   "p": "Which are palliative uses of radiation therapy?\ni) Spinal cord compression\nii) Superior vena cava syndrome\niii) Bleeding from a GI or gynecologic tumour\niv) CNS prophylaxis in ALL",
+   "p": "A radiation oncologist reviews her clinic list. Which of these patients are receiving radiation with palliative rather than curative intent?\ni) A man with myeloma and new leg weakness from spinal cord compression\nii) A woman with lung cancer and facial swelling from superior vena cava obstruction\niii) A woman with cervical cancer that is bleeding\niv) A child with ALL getting cranial radiation as CNS prophylaxis",
    "o": [
     "i) and ii) only",
     "i), ii) and iii) only",
@@ -167,14 +167,14 @@
     "All of the above"
    ],
    "a": 1,
-   "e": "Correct: B. Cord compression, vascular compression such as SVC syndrome and tumour bleeding are listed palliative uses.\nA: This leaves out tumour bleeding.\nC: CNS prophylaxis in ALL is a curative use.\nD: Statement iv) is a curative use.\nTakeaway: Radiation cures limited disease and palliates compression and bleeding.",
+   "e": "Correct: B. Cord compression, vascular compression such as SVC syndrome and tumour bleeding are listed palliative uses.\nA: This leaves out tumour bleeding.\nC: CNS prophylaxis in ALL is a curative use.\nD: Statement iv) is a curative use.\nRed herring: Cranial radiation in ALL sounds like symptom control, but it is CNS prophylaxis given as part of curative treatment.\nTakeaway: Radiation cures limited disease and palliates compression and bleeding.",
    "l": [
     "W12 12.1"
    ]
   },
   {
    "c": "Week 10",
-   "p": "Hana, 16, has had heavy periods since menarche that soak through a pad every hour. She has had nosebleeds since childhood that needed cautery, and she bled for 2 days after a tooth extraction. Her mother bruises easily and had a postpartum hemorrhage. She takes no drugs. Exam shows scattered bruises on her shins.\n\nHb 106 g/L (ref 115-160)\nMCV 76 fL (ref 80-100)\nPlatelets 240 × 10⁹/L (ref 150-450)\nPT/INR normal\naPTT mildly prolonged\nvWF antigen low\nvWF activity low, in proportion to antigen\n\nWhat is the most likely diagnosis?",
+   "p": "Hana, 16, sees her family doctor for tiredness. Her periods have been heavy since menarche at 12 and soak through a pad every hour on the first 2 days. She has had nosebleeds since childhood that twice needed cautery, and she bled for 2 days after a tooth extraction last year. She takes ibuprofen for cramps during her periods. She had a viral sore throat 3 weeks ago. Her mother bruises easily and had a postpartum hemorrhage after Hana's birth. Her maternal uncle is healthy. She plays field hockey and often has bruises on her shins.\n\nShe has no joint pain, no blood in her urine or stool, and no weight loss. She is a straight-A student but has missed school on heavy days. She takes no other medications and has no allergies. She does not smoke or drink. Her father and younger brother are well.\n\nExam: HR 96, BP 108/66, T 36.8°C.  pale. Scattered bruises on both shins. No joint swelling. No hepatosplenomegaly.\n\nHb 106 g/L (ref 115-160)\nMCV 76 fL (ref 80-100)\nFerritin low\nPlatelets 240 × 10⁹/L (ref 150-450)\nPT/INR normal\naPTT mildly prolonged\nvWF antigen low\nvWF activity low, in proportion to antigen\nFactor VIII activity mildly low\n\nWhat is the most likely diagnosis?",
    "o": [
     "Hemophilia A",
     "Glanzmann thrombasthenia",
@@ -183,7 +183,7 @@
     "Type 1 von Willebrand disease"
    ],
    "a": 4,
-   "e": "Correct: E. Mucosal bleeding in a girl, an affected mother, a normal platelet count, and a proportional drop in vWF antigen and activity fit type 1 VWD, the most common form. Inheritance is autosomal, so both sexes are affected.\nA: Hemophilia A is X-linked, mostly affects males, and causes joint and muscle bleeds.\nB: Glanzmann thrombasthenia is a platelet aggregation disorder, with normal vWF levels.\nC: Type 2 is qualitative, with vWF activity under 70% of the antigen.\nD: ITP gives a low platelet count.\nTakeaway: Treat type 1 VWD with DDAVP, and tranexamic acid for mucosal bleeding.",
+   "e": "Correct: E. Mucosal bleeding in a girl, an affected mother, a normal platelet count, and a proportional drop in vWF antigen and activity fit type 1 VWD, the most common form. Inheritance is autosomal, so both sexes are affected.\nA: Hemophilia A is X-linked, mostly affects males, and causes joint and muscle bleeds.\nB: Glanzmann thrombasthenia is a platelet aggregation disorder, with normal vWF levels.\nC: Type 2 is qualitative, with vWF activity under 70% of the antigen.\nD: ITP gives a low platelet count.\nRed herring: Ibuprofen, field hockey bruises and the recent viral illness are distractors. A normal platelet count rules out ITP, and lifelong mucosal bleeding with a proportional drop in vWF antigen and activity points to type 1 VWD. The low ferritin is the result of her heavy periods.\nTakeaway: Treat type 1 VWD with DDAVP, and tranexamic acid for mucosal bleeding.",
    "l": [
     "W10 5.3",
     "W10 11.1"
@@ -191,7 +191,7 @@
   },
   {
    "c": "Week 11",
-   "p": "Which describes standard treatment of acute lymphoblastic leukemia?",
+   "p": "Liam, 7, has just been diagnosed with B-cell acute lymphoblastic leukemia. His parents are planning time off work and ask how long treatment will last. A neighbour with leukemia told them he takes \"one pill a day forever\", and an uncle who had leukemia as an adult told them his treatment was \"over in about 6 months\".\n\nWhich describes standard treatment of acute lymphoblastic leukemia?",
    "o": [
     "2-3 years of chemotherapy with CNS prophylaxis",
     "A tyrosine kinase inhibitor taken daily for life",
@@ -199,7 +199,7 @@
     "7+3 induction, with treatment over in 4-6 months"
    ],
    "a": 0,
-   "e": "Correct: A. ALL treatment runs 2 to 3 years on the Dana-Farber protocol: induction, consolidation and low-dose maintenance, plus CNS prophylaxis by LP or radiation. About 90% of children are cured.\nB: A daily TKI is chronic treatment for CML.\nC: Radiation and surgery are not treatment options for acute leukemia.\nD: 7+3 induction over 4 to 6 months is the AML timeline.\nTakeaway: Children with ALL: 90% cured.",
+   "e": "Correct: A. ALL treatment runs 2 to 3 years on the Dana-Farber protocol: induction, consolidation and low-dose maintenance, plus CNS prophylaxis by LP or radiation. About 90% of children are cured.\nB: A daily TKI is chronic treatment for CML.\nC: Radiation and surgery are not treatment options for acute leukemia.\nD: 7+3 induction over 4 to 6 months is the AML timeline.\nRed herring: The neighbour's daily pill is a TKI for CML, and the uncle's 6-month course matches AML. Neither applies to childhood ALL.\nTakeaway: Children with ALL: 90% cured.",
    "l": [
     "W11 4.3",
     "W11 4.5"
@@ -207,7 +207,7 @@
   },
   {
    "c": "Week 9",
-   "p": "Rosa, 31, has systemic lupus erythematosus. Over 2 weeks she has grown tired and short of breath, and her family noticed her eyes are yellow. She has no new drugs, no fever and no recent infection. On exam she is pale and jaundiced, with a palpable spleen tip.\n\nHb 78 g/L (ref 115-160)\nMCV 104 fL (ref 80-100)\nReticulocytes high\nWBC 6.0 × 10⁹/L (ref 4-10)\nPlatelets 210 × 10⁹/L (ref 150-450)\nLDH high\nIndirect bilirubin high\nHaptoglobin low\nDAT positive for IgG\nFilm: spherocytes and polychromasia. No agglutination.\n\nWhat is the most likely diagnosis?",
+   "p": "Rosa, 31, has systemic lupus erythematosus treated with hydroxychloroquine. Over 2 weeks she has grown tired and short of breath on stairs, and her partner noticed her eyes are yellow. Her fingers turn white in the cold, which she has had for years. She returned from a holiday in Greece 3 weeks ago. Her cousin had a splenectomy for hereditary spherocytosis. She has started no new drugs and has had no fever or infection.\n\nShe has no chest pain, cough, urinary symptoms or rash flare. Her joint pain has been stable for a year. She works as a teacher, does not smoke, and drinks rarely. She has no allergies. Her lupus specialist last saw her 4 months ago, when her bloodwork was normal.\n\nExam: HR 108, BP 112/70, RR 20, T 37.2°C, oxygen saturation 97%.  pale and jaundiced. Spleen tip palpable. No petechiae.\n\nHb 78 g/L (ref 115-160)\nMCV 104 fL (ref 80-100)\nReticulocytes high\nWBC 6.0 × 10⁹/L (ref 4-10)\nPlatelets 210 × 10⁹/L (ref 150-450)\nLDH high\nIndirect bilirubin high\nHaptoglobin low\nDAT positive for IgG\nFilm: spherocytes and polychromasia. No agglutination. No schistocytes.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Hereditary spherocytosis",
     "Cold autoimmune hemolytic anemia",
@@ -216,7 +216,7 @@
     "Warm autoimmune hemolytic anemia"
    ],
    "a": 4,
-   "e": "Correct: E. Hemolysis labs, spherocytes and a positive DAT for IgG in a patient with SLE fit warm AIHA. The antibodies bind at 37°C, and SLE is a listed cause. The raised MCV comes from the reticulocytosis.\nA: Hereditary spherocytosis has a negative DAT.\nB: Cold AIHA is IgM with C3 on the DAT, and shows agglutination.\nC: TTP has schistocytes and severe thrombocytopenia.\nD: G6PD deficiency has a negative DAT, with bite cells.\nTakeaway: Warm AIHA: steroids if severe, splenectomy, immunosuppressive drugs.",
+   "e": "Correct: E. Hemolysis labs, spherocytes and a positive DAT for IgG in a patient with SLE fit warm AIHA. The antibodies bind at 37°C, and SLE is a listed cause. The raised MCV comes from the reticulocytosis.\nA: Hereditary spherocytosis has a negative DAT.\nB: Cold AIHA is IgM with C3 on the DAT, and shows agglutination.\nC: TTP has schistocytes and severe thrombocytopenia.\nD: G6PD deficiency has a negative DAT, with bite cells.\nRed herring: Cold fingers suggest cold AIHA, the Greek holiday suggests G6PD deficiency, and the cousin suggests hereditary spherocytosis. The DAT settles it: positive for IgG, with no agglutination, is warm AIHA. SLE is a listed cause. The high MCV comes from the reticulocytes.\nTakeaway: Warm AIHA: steroids if severe, splenectomy, immunosuppressive drugs.",
    "l": [
     "W9 6.3",
     "W9 6.4"
@@ -224,7 +224,7 @@
   },
   {
    "c": "Week 10",
-   "p": "A patient on hemodialysis for kidney failure has a new proximal DVT. Which anticoagulant fits best?",
+   "p": "Paul, 61, has end-stage kidney disease on hemodialysis 3 times a week. He also has colon cancer and finished chemotherapy 2 months ago. He now has a swollen right leg, and ultrasound shows a proximal DVT. He has no bleeding, and his platelets are normal.\n\nWhich anticoagulant fits best?",
    "o": [
     "Dalteparin",
     "Fondaparinux",
@@ -232,7 +232,7 @@
     "Rivaroxaban"
    ],
    "a": 2,
-   "e": "Correct: C. Warfarin is the listed DVT treatment for patients with renal failure. LMWH, fondaparinux and the direct Xa inhibitors are cleared by the kidney, and their half-life lengthens in renal failure.\nA: Dalteparin is renally cleared, and its half-life lengthens in renal failure.\nB: Fondaparinux is renally cleared.\nD: Rivaroxaban is renally cleared.\nTakeaway: LMWH for cancer and pregnancy. Warfarin for renal failure.",
+   "e": "Correct: C. Warfarin is the listed DVT treatment for patients with renal failure. LMWH, fondaparinux and the direct Xa inhibitors are cleared by the kidney, and their half-life lengthens in renal failure.\nA: Dalteparin is renally cleared, and its half-life lengthens in renal failure.\nB: Fondaparinux is renally cleared.\nD: Rivaroxaban is renally cleared.\nRed herring: Cancer usually points to LMWH, but LMWH, fondaparinux and the direct Xa inhibitors are cleared by the kidney and build up in renal failure. Warfarin is the listed choice in renal failure.\nTakeaway: LMWH for cancer and pregnancy. Warfarin for renal failure.",
    "l": [
     "W10 6.4",
     "W10 8.3"
@@ -240,7 +240,7 @@
   },
   {
    "c": "Week 10",
-   "p": "A 70-year-old man arrives in hemorrhagic shock after a crash. His blood group is unknown and red cells are needed before testing can be done. Which group should the blood bank issue?",
+   "p": "A man who looks about 70 arrives by ambulance in hemorrhagic shock after a highway crash. He has no ID, is unconscious, and no family is present. His BP is 70/40 despite crystalloid. The ED has drawn a group and screen, but red cells are needed now, before any testing is done.\n\nWhich red cell group should the blood bank issue?",
    "o": [
     "O negative",
     "O positive",
@@ -248,14 +248,14 @@
     "AB positive"
    ],
    "a": 1,
-   "e": "Correct: B. O negative is the universal red cell donor, but O positive is used for males and for women over 45. O negative is kept for women under 45.\nA: O negative is kept for women under 45.\nC: AB negative is not a universal donor group.\nD: AB positive is the universal recipient, not the universal donor.\nTakeaway: Red cells: O donor, AB recipient. Plasma: AB donor.",
+   "e": "Correct: B. O negative is the universal red cell donor, but O positive is used for males and for women over 45. O negative is kept for women under 45.\nA: O negative is kept for women under 45.\nC: AB negative is not a universal donor group.\nD: AB positive is the universal recipient, not the universal donor.\nRed herring: O negative is the famous universal donor, so it tempts you. It is kept for women under 45. Men and women over 45 get O positive.\nTakeaway: Red cells: O donor, AB recipient. Plasma: AB donor.",
    "l": [
     "W10 9.1"
    ]
   },
   {
    "c": "Week 11",
-   "p": "Which set of lab changes fits tumour lysis syndrome?",
+   "p": "Jamal, 19, has a new diagnosis of a high-grade lymphoid malignancy with a very high WBC and a bulky abdominal mass. He started chemotherapy yesterday. Today he has muscle cramps, tingling around his mouth, palpitations and less urine output. He drank little overnight because of nausea.\n\nWhich set of lab changes fits his most likely complication?",
    "o": [
     "High K, high phosphate, high uric acid, low calcium",
     "Low K, high phosphate, low uric acid, high calcium",
@@ -263,14 +263,14 @@
     "High K, low phosphate, high uric acid, high calcium"
    ],
    "a": 0,
-   "e": "Correct: A. Tumour lysis syndrome brings hyperphosphatemia, hyperuricemia, hyperkalemia, hypocalcemia and acidosis, which can lead to acute renal failure.\nB: Potassium and uric acid rise, and calcium falls.\nC: Potassium, phosphate and uric acid all rise.\nD: Phosphate rises and calcium falls.\nTakeaway: Prevent it with hydration and allopurinol or rasburicase.",
+   "e": "Correct: A. Tumour lysis syndrome brings hyperphosphatemia, hyperuricemia, hyperkalemia, hypocalcemia and acidosis, which can lead to acute renal failure.\nB: Potassium and uric acid rise, and calcium falls.\nC: Potassium, phosphate and uric acid all rise.\nD: Phosphate rises and calcium falls.\nRed herring: Poor intake overnight tempts you toward simple dehydration. Cramps and tingling come from low calcium, and the timing after chemotherapy in a bulky, fast-growing tumour points to tumour lysis syndrome.\nTakeaway: Prevent it with hydration and allopurinol or rasburicase.",
    "l": [
     "W11 3.4"
    ]
   },
   {
    "c": "Week 10",
-   "p": "Gordon, 64, is on day 7 of unfractionated heparin prophylaxis after hip replacement. He now has a swollen, painful left calf, and ultrasound shows a new DVT. He has no bleeding. He has no other new drugs, and his blood cultures are negative.\n\nHb 118 g/L (ref 135-170)\nWBC 8.2 × 10⁹/L (ref 4-10)\nPlatelets 92 (was 260 before surgery) × 10⁹/L (ref 150-450)\nPT/INR normal\nFibrinogen normal\nFilm: no schistocytes.\n\nWhat is the most likely diagnosis?",
+   "p": "Gordon, 64, is on day 7 after an elective right hip replacement. He has received subcutaneous unfractionated heparin since surgery. He got 2 units of red cells during the operation and cefazolin for 24 hours after it. He had a fever of 37.9°C on day 2 that settled. Today his left calf is swollen and painful, and ultrasound shows a new DVT. He has no bleeding, bruising or petechiae. Blood cultures are negative.\n\nBefore surgery he had well-controlled type 2 diabetes on metformin and hypertension on ramipril. He has no personal or family history of clots. He mobilized with physio from day 1. He has no chest pain or shortness of breath. He does not smoke and drinks socially.\n\nVitals: HR 88, BP 136/82, RR 16, T 37.1°C, oxygen saturation 97%. Healing hip wound. Left calf swollen and tender, 3 cm larger than the right. \n\nHb 118 g/L (ref 135-170)\nWBC 8.2 × 10⁹/L (ref 4-10)\nPlatelets 92 × 10⁹/L (ref 150-450), 260 before surgery\nPT/INR normal\nFibrinogen normal\nFilm: no schistocytes.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Thrombotic thrombocytopenic purpura",
     "Dilutional thrombocytopenia",
@@ -279,7 +279,7 @@
     "Heparin-induced thrombocytopenia"
    ],
    "a": 4,
-   "e": "Correct: E. A platelet fall of more than half, 5 to 10 days into heparin, with a new thrombosis and no bleeding, fits HIT. Antibodies form against the heparin-PF4 complex and activate platelets.\nA: TTP shows schistocytes and hemolytic anemia.\nB: Dilution follows massive transfusion and does not cause a new clot.\nC: DIC raises the INR and lowers fibrinogen.\nD: ITP is a diagnosis of exclusion and does not cause thrombosis on heparin.\nTakeaway: HIT: stop all heparin, start a non-heparin anticoagulant, avoid platelet transfusions.",
+   "e": "Correct: E. A platelet fall of more than half, 5 to 10 days into heparin, with a new thrombosis and no bleeding, fits HIT. Antibodies form against the heparin-PF4 complex and activate platelets.\nA: TTP shows schistocytes and hemolytic anemia.\nB: Dilution follows massive transfusion and does not cause a new clot.\nC: DIC raises the INR and lowers fibrinogen.\nD: ITP is a diagnosis of exclusion and does not cause thrombosis on heparin.\nRed herring: The 2 units of blood suggest dilution, cefazolin suggests a drug-induced low platelet count, and the early fever suggests infection. Only HIT explains a fall of more than half at day 5 to 10 of heparin with a new clot and no bleeding.\nTakeaway: HIT: stop all heparin, start a non-heparin anticoagulant, avoid platelet transfusions.",
    "l": [
     "W10 3.4",
     "W10 3.5"
@@ -287,15 +287,15 @@
   },
   {
    "c": "Week 10",
-   "p": "Which test in the von Willebrand disease screen measures vWF quality?",
+   "p": "Mira, 14, has heavy periods and easy bruising. Her von Willebrand screen returns:\n\nvWF antigen 0.55 (low)\nvWF activity 0.25 (low)\nFactor VIII activity 0.50 (low)\nPlatelets 230 × 10⁹/L (ref 150-450)\n\nHer brother has never had a bleeding problem.\n\nWhich interpretation fits best?",
    "o": [
-    "Factor VIII activity",
-    "vWF antigen",
-    "Platelet count",
-    "vWF activity"
+    "A hemophilia A carrier state",
+    "A normal screen",
+    "Type 1 VWD, with activity in proportion to antigen",
+    "Type 2 VWD, with activity well below antigen"
    ],
    "a": 3,
-   "e": "Correct: D. The VWD screen has three parts: vWF antigen for quantity, vWF activity for quality, and factor VIII activity for the carrier role.\nA: Factor VIII activity assesses vWF's role as a protective carrier.\nB: vWF antigen measures quantity.\nC: The platelet count can be low in type 2B but does not measure vWF.\nTakeaway: Type 2 VWD: vWF activity is under 70% of the vWF antigen.",
+   "e": "Correct: D. vWF antigen measures quantity and vWF activity measures quality. Her activity is about 45% of her antigen, which is under 70%, so the defect is qualitative: type 2 VWD.\nA: A low factor VIII alone suggests a hemophilia A carrier, but here the vWF tests are clearly abnormal. vWF carries and protects factor VIII, so factor VIII falls with vWF.\nB: Both vWF tests are low.\nC: In type 1, activity falls in proportion to antigen.\nRed herring: The low factor VIII tempts a hemophilia carrier state. Factor VIII falls because vWF carries it. The ratio of activity to antigen (0.25 / 0.55) decides the type.\nTakeaway: Type 2 VWD: vWF activity is under 70% of the vWF antigen.",
    "l": [
     "W10 5.1",
     "W10 5.3"
@@ -303,7 +303,7 @@
   },
   {
    "c": "Week 11",
-   "p": "Dennis, 52, has had headaches and itchy skin after every hot shower for months. His toes burn and turn red at times. He does not smoke, has no lung or heart disease, and does not snore. On exam he has a ruddy face and a palpable spleen.\n\nHb 188 g/L (ref 135-170)\nHematocrit 0.56\nWBC 13.2 × 10⁹/L (ref 4-10)\nPlatelets 520 × 10⁹/L (ref 150-450)\nSerum EPO low\nJAK2 V617F positive\n\nWhat is the most likely diagnosis?",
+   "p": "Dennis, 52, has had headaches and itchy skin after every hot shower for months. His toes burn and turn red at times. Last month he had his first gout attack in his big toe. He quit smoking 15 years ago. He has no lung or heart disease, and his wife says he does not snore. He had gastroenteritis 3 weeks ago, and his first CBC was drawn then, so his doctor repeated it after he recovered.\n\nHe has no chest pain, shortness of breath or leg swelling. He had a transient episode of blurry vision last year that resolved on its own. He works as an accountant and walks daily. He takes no regular medications and has no allergies. His father had a heart attack at 70.\n\nExam: HR 78, BP 148/92, RR 14.  ruddy face. Spleen palpable 3 cm below the costal margin. Oxygen saturation 98% on room air.\n\nRepeat labs:\nHb 188 g/L (ref 135-170)\nHematocrit 0.56\nWBC 13.2 × 10⁹/L (ref 4-10)\nPlatelets 520 × 10⁹/L (ref 150-450)\nSerum EPO low\nJAK2 V617F positive\n\nWhat is the most likely diagnosis?",
    "o": [
     "EPO-secreting renal tumour",
     "Secondary erythrocytosis from hypoxia",
@@ -312,7 +312,7 @@
     "Polycythemia vera"
    ],
    "a": 4,
-   "e": "Correct: E. Erythrocytosis with aquagenic pruritus, erythromelalgia, a ruddy face, splenomegaly, a low EPO and JAK2 V617F fit polycythemia vera. When Hb, platelets and WBC are all high, treat it as erythrocytosis.\nA: An EPO-secreting tumour raises EPO.\nB: Secondary erythrocytosis has a normal or high EPO, and he has no hypoxic cause.\nC: ET mainly raises platelets, without erythrocytosis.\nD: CML gives a very high WBC with basophilia, not a high Hb.\nTakeaway: PV: ASA 81 mg plus hematocrit under 0.45.",
+   "e": "Correct: E. Erythrocytosis with aquagenic pruritus, erythromelalgia, a ruddy face, splenomegaly, a low EPO and JAK2 V617F fit polycythemia vera. When Hb, platelets and WBC are all high, treat it as erythrocytosis.\nA: An EPO-secreting tumour raises EPO.\nB: Secondary erythrocytosis has a normal or high EPO, and he has no hypoxic cause.\nC: ET mainly raises platelets, without erythrocytosis.\nD: CML gives a very high WBC with basophilia, not a high Hb.\nRed herring: The gastroenteritis suggests dehydration, and the old smoking history suggests secondary erythrocytosis. The repeat CBC after recovery, normal oxygen and a low EPO rule both out. The high platelets and WBC tempt ET or CML, but when Hb, platelets and WBC are all high, treat it as erythrocytosis.\nTakeaway: PV: ASA 81 mg plus hematocrit under 0.45.",
    "l": [
     "W11 6.4",
     "W11 6.3"
@@ -320,7 +320,7 @@
   },
   {
    "c": "Week 11",
-   "p": "Which of the following is a minor WHO criterion for polycythemia vera?",
+   "p": "Dennis's hematologist works through the WHO criteria for polycythemia vera. Dennis already meets all three major criteria: a high hemoglobin, a hypercellular marrow and a JAK2 mutation. His spleen is palpable and his platelets are 520 × 10⁹/L.\n\nWhich finding would satisfy the single minor WHO criterion for polycythemia vera?",
    "o": [
     "A high serum EPO",
     "Palpable splenomegaly",
@@ -328,7 +328,7 @@
     "A subnormal serum EPO"
    ],
    "a": 3,
-   "e": "Correct: D. Polycythemia vera has one minor WHO criterion: a subnormal serum EPO. The major criteria are a high Hb or hematocrit, a hypercellular marrow, and a JAK2 mutation.\nA: A high EPO points to secondary erythrocytosis.\nB: Palpable splenomegaly is a minor criterion for primary myelofibrosis.\nC: A platelet count of 450 or more is the first major criterion for ET.\nTakeaway: Low EPO is primary. Normal or high EPO is secondary.",
+   "e": "Correct: D. Polycythemia vera has one minor WHO criterion: a subnormal serum EPO. The major criteria are a high Hb or hematocrit, a hypercellular marrow, and a JAK2 mutation.\nA: A high EPO points to secondary erythrocytosis.\nB: Palpable splenomegaly is a minor criterion for primary myelofibrosis.\nC: A platelet count of 450 or more is the first major criterion for ET.\nRed herring: His palpable spleen and high platelets are real findings, but they are criteria for myelofibrosis and ET, not the minor criterion for PV.\nTakeaway: Low EPO is primary. Normal or high EPO is secondary.",
    "l": [
     "W11 6.4",
     "W11 6.3"
@@ -336,22 +336,22 @@
   },
   {
    "c": "Week 11",
-   "p": "In febrile neutropenia, when should IV vancomycin be added to empiric antibiotics?",
+   "p": "Aisha, 45, is on day 10 after chemotherapy for AML. She has a temperature of 38.6°C. Her ANC is 0.3 × 10⁹/L. BP 124/78, HR 98, and she looks well. Her PICC line site is clean and not tender. She has a mild dry cough. Blood cultures are drawn. A colleague suggests adding vancomycin \"to cover everything\".\n\nWhich statement about adding IV vancomycin fits the guidance?",
    "o": [
-    "Only if the fever lasts more than 72 hours",
-    "Skin or catheter infection, or instability",
-    "Every patient, as part of the first dose",
-    "Only once blood cultures grow a gram-positive"
+    "Add it now, since every febrile neutropenic patient needs it",
+    "Not yet. Add it for skin or catheter infection, or instability",
+    "Wait until blood cultures grow a gram-positive organism",
+    "Add it only if the fever lasts more than 72 hours"
    ],
    "a": 1,
-   "e": "Correct: B. Start broad-spectrum antibiotics such as IV piperacillin-tazobactam or imipenem. Add IV vancomycin if there are signs of skin or IV catheter site infection, or the patient is hemodynamically unstable.\nA: No fever-duration rule is given for adding vancomycin.\nC: Vancomycin is added only for those indications, not for everyone.\nD: Empiric treatment does not wait for culture results.\nTakeaway: Febrile neutropenia is an oncologic emergency.",
+   "e": "Correct: B. Start broad-spectrum antibiotics such as IV piperacillin-tazobactam or imipenem now. Add IV vancomycin for signs of skin or IV catheter site infection, or if the patient is hemodynamically unstable. Aisha has none of these.\nA: Vancomycin is added only for those indications, not for everyone.\nC: Empiric treatment does not wait for culture results.\nD: No fever-duration rule is given for adding vancomycin.\nRed herring: The PICC line and the cough tempt you to add vancomycin. A clean, non-tender line site and stable vital signs do not meet the indications.\nTakeaway: Febrile neutropenia is an oncologic emergency.",
    "l": [
     "W11 2.3"
    ]
   },
   {
    "c": "Week 11",
-   "p": "Noah, 5, has 3 weeks of tiredness, pale skin, nosebleeds and bone pain that wakes him at night. He has had two fevers. On exam he has pallor, bruises, enlarged nodes in the neck and an enlarged liver and spleen. Chest X-ray shows a mediastinal mass.\n\nHb 72 g/L (ref 110-140)\nWBC 48 × 10⁹/L (ref 4-10)\nPlatelets 31 × 10⁹/L (ref 150-450)\nLDH high\nUric acid high\nFilm: many blasts with no granules.\n\nWhat is the most likely diagnosis?",
+   "p": "Noah, 5, has 3 weeks of tiredness, pale skin, nosebleeds and leg pain that wakes him at night. He had strep throat 4 weeks ago, treated with amoxicillin, and he has had two fevers since. His older brother had mononucleosis last month. His mother thinks the bruises on his legs come from soccer.\n\nHe was born at term with no problems. His vaccines are up to date. He has had no recent travel and no sick contacts at daycare apart from his brother. He has been eating less and sleeping more. He has no cough, rash, joint swelling or blood in his urine.\n\nExam: HR 128, BP 96/58, RR 24, T 37.9°C.  pale. Bruises on his legs and trunk. Enlarged, non-tender nodes in the neck. Liver 3 cm and spleen 4 cm below the costal margins.\n\nChest X-ray: mediastinal mass.\n\nHb 72 g/L (ref 110-140)\nWBC 48 × 10⁹/L (ref 4-10)\nPlatelets 31 × 10⁹/L (ref 150-450)\nLDH high\nUric acid high\nFilm: many blasts with no granules.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Acute myeloid leukemia",
     "Aplastic anemia",
@@ -360,7 +360,7 @@
     "Immune thrombocytopenia"
    ],
    "a": 2,
-   "e": "Correct: C. A child with marrow failure, bone pain, organ enlargement, a mediastinal mass and blasts without granules has ALL. ALL makes up 80% of childhood leukemias.\nA: AML is 15% of childhood leukemias, and its blasts often carry an Auer rod.\nB: Aplastic anemia has no blasts and no organ enlargement.\nD: CML is rare in children and shows mature myeloid cells.\nE: ITP lowers platelets only.\nTakeaway: About 90% of children with ALL are cured.",
+   "e": "Correct: C. A child with marrow failure, bone pain, organ enlargement, a mediastinal mass and blasts without granules has ALL. ALL makes up 80% of childhood leukemias.\nA: AML is 15% of childhood leukemias, and its blasts often carry an Auer rod.\nB: Aplastic anemia has no blasts and no organ enlargement.\nD: CML is rare in children and shows mature myeloid cells.\nE: ITP lowers platelets only.\nRed herring: Strep throat, a brother with mono and soccer bruises all offer innocent explanations. Blasts on the film, three low or abnormal cell lines and a mediastinal mass point to ALL.\nTakeaway: About 90% of children with ALL are cured.",
    "l": [
     "W11 4.1",
     "W11 4.2"
@@ -368,7 +368,7 @@
   },
   {
    "c": "Week 10",
-   "p": "Patient A, 47, has bleeding gums and petechiae. Her platelets are 12, and INR, PTT and fibrinogen are normal. Patient B, 47, has a swollen, painful knee from a bleed into the joint. His PTT is prolonged and his CBC is normal. Which type of hemostatic problem does each have, in order?",
+   "p": "Two patients, both 47, are seen in the same clinic.\n\nPatient A, a woman, has bleeding gums and petechiae on her legs. She started a new blood pressure pill 2 months ago. Her platelets are 12 × 10⁹/L. INR, PTT and fibrinogen are normal.\n\nPatient B, a man, has a swollen, painful knee from a bleed into the joint after a minor fall. He takes aspirin for headaches. His PTT is prolonged and his CBC is normal.\n\nWhich type of hemostatic problem does each have, in order?",
    "o": [
     "A primary, B secondary",
     "Both secondary",
@@ -376,7 +376,7 @@
     "Both primary hemostasis"
    ],
    "a": 0,
-   "e": "Correct: A. Mucosal bleeding with a low platelet count is a primary hemostatic problem. Deep bleeding with a prolonged PTT is a secondary problem.\nB: Patient A has severe thrombocytopenia, which is primary.\nC: This reverses the two patterns.\nD: Patient B has a prolonged PTT and a normal platelet count, which is secondary.\nTakeaway: Mucosal bleeding is more likely primary. Deep bleeding is more likely secondary.",
+   "e": "Correct: A. Mucosal bleeding with a low platelet count is a primary hemostatic problem. Deep bleeding with a prolonged PTT is a secondary problem.\nB: Patient A has severe thrombocytopenia, which is primary.\nC: This reverses the two patterns.\nD: Patient B has a prolonged PTT and a normal platelet count, which is secondary.\nRed herring: Patient B's aspirin tempts you to call his problem primary. A joint bleed with a prolonged PTT and normal platelets is a secondary hemostatic problem.\nTakeaway: Mucosal bleeding is more likely primary. Deep bleeding is more likely secondary.",
    "l": [
     "W10 4.1",
     "W10 1.3"
@@ -384,7 +384,7 @@
   },
   {
    "c": "Week 10",
-   "p": "Which platelet function disorder is a disorder of platelet aggregation?",
+   "p": "Amira, 9, has had nosebleeds and gum bleeding since infancy and bruises easily. Her parents are first cousins. Her platelet count and platelet size are normal. Specialized testing shows normal platelet adhesion and normal granules, but her platelets fail to aggregate.\n\nWhich platelet function disorder does she have?",
    "o": [
     "Scott syndrome",
     "Gray platelet syndrome",
@@ -392,14 +392,14 @@
     "Bernard Soulier syndrome"
    ],
    "a": 2,
-   "e": "Correct: C. Glanzmann thrombasthenia is the listed disorder of platelet aggregation.\nA: Scott syndrome is a disorder of pro-coagulant activity.\nB: Gray platelet syndrome is a disorder of granules.\nD: Bernard Soulier syndrome is a disorder of adhesion.\nTakeaway: Platelet function disorders give mucosal bleeding and easy bruising.",
+   "e": "Correct: C. Glanzmann thrombasthenia is the listed disorder of platelet aggregation.\nA: Scott syndrome is a disorder of pro-coagulant activity.\nB: Gray platelet syndrome is a disorder of granules.\nD: Bernard Soulier syndrome is a disorder of adhesion.\nRed herring: Consanguinity fits several inherited platelet disorders. The test result picks the step: a failure of aggregation is Glanzmann thrombasthenia.\nTakeaway: Platelet function disorders give mucosal bleeding and easy bruising.",
    "l": [
     "W10 5.1"
    ]
   },
   {
    "c": "Week 11",
-   "p": "Which statement about bone marrow sampling is correct?",
+   "p": "Ivan, 66, needs a bone marrow aspirate and core biopsy to work up pancytopenia. He has severe obesity, and his posterior iliac crests are hard to feel. The resident suggests three back-up sites: the sternum, the tibia and a rib. Ivan is not a child.\n\nWhich statement about bone marrow sampling is correct?",
    "o": [
     "Sternal aspirates are allowed, sternal cores are not",
     "The tibia is an accepted aspirate site in adults",
@@ -407,14 +407,14 @@
     "Core biopsies may be taken from the ribs"
    ],
    "a": 0,
-   "e": "Correct: A. The PSIS is the standard site. In extenuating circumstances the sternum can be used for an aspirate, but a core biopsy is never taken from the sternum because it is too close to the heart.\nB: The tibia is used only in children.\nC: The PSIS is the standard site in adults and children, as in your Week 11 quiz.\nD: Core biopsies are never taken from the ribs.\nTakeaway: Core biopsy: never sternum, tibia, skull or ribs.",
+   "e": "Correct: A. The PSIS is the standard site. In extenuating circumstances the sternum can be used for an aspirate, but a core biopsy is never taken from the sternum because it is too close to the heart.\nB: The tibia is used only in children.\nC: The PSIS is the standard site in adults and children, as in your Week 11 quiz.\nD: Core biopsies are never taken from the ribs.\nRed herring: His body habitus makes alternative sites tempting, but the site rules do not change: the tibia is used only in children, and a core is never taken from the sternum or ribs.\nTakeaway: Core biopsy: never sternum, tibia, skull or ribs.",
    "l": [
     "W11 9.2"
    ]
   },
   {
    "c": "Week 12",
-   "p": "Clifford, 72, has 4 months of back pain, fatigue and thirst. He has had two chest infections this year. He is confused today. X-rays show lytic lesions in his spine and skull.\n\nHb 88 g/L (ref 135-170)\nMCV 92 fL (ref 80-100)\nWBC 4.1 × 10⁹/L (ref 4-10)\nPlatelets 168 × 10⁹/L (ref 150-450)\nCalcium 2.98 mmol/L\nCreatinine 210 µmol/L\nAlbumin low\nTotal protein high\nFilm: rouleaux.\n\nWhat is the most likely diagnosis?",
+   "p": "Clifford, 72, has 4 months of low back pain, fatigue and thirst. He blames the back pain on lifting boxes when he moved house in the spring. He has had two chest infections this year, each treated with antibiotics. He had a PSA test 2 years ago that was mildly raised, and his urologist planned to repeat it. He is confused today, and his daughter says he has been drinking water all day and passing urine often.\n\nHe has no chest pain, headache or weakness. He has had no fevers since his last chest infection. He takes amlodipine for blood pressure and has started acetaminophen for his back. He is a retired electrician, does not smoke and drinks 2 beers a week.\n\nExam: HR 98, BP 104/62, RR 18, T 36.9°C.  dry mucous membranes. Tender over the lumbar spine. No lymph nodes or spleen.\n\nX-rays: lytic lesions in the spine and skull.\n\nHb 88 g/L (ref 135-170)\nMCV 92 fL (ref 80-100)\nWBC 4.1 × 10⁹/L (ref 4-10)\nPlatelets 168 × 10⁹/L (ref 150-450)\nCalcium 2.98 mmol/L\nCreatinine 210 µmol/L\nAlbumin low\nTotal protein high\nFilm: rouleaux.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Monoclonal gammopathy of undetermined significance",
     "Chronic lymphocytic leukemia",
@@ -423,7 +423,7 @@
     "Multiple myeloma"
    ],
    "a": 4,
-   "e": "Correct: E. He meets the CRAB criteria: calcium over 2.52, creatinine over 175, Hb under 100 and lytic bone lesions. With rouleaux and recurrent infections, this is multiple myeloma.\nA: MGUS causes no organ damage.\nB: CLL raises lymphocytes and shows smudge cells.\nC: A solitary plasmacytoma is a single tumour without widespread organ damage.\nD: Nothing points to a prostate primary, and it would not explain the rouleaux.\nTakeaway: Confirm with protein electrophoresis, free light chains and a marrow biopsy.",
+   "e": "Correct: E. He meets the CRAB criteria: calcium over 2.52, creatinine over 175, Hb under 100 and lytic bone lesions. With rouleaux and recurrent infections, this is multiple myeloma.\nA: MGUS causes no organ damage.\nB: CLL raises lymphocytes and shows smudge cells.\nC: A solitary plasmacytoma is a single tumour without widespread organ damage.\nD: Nothing points to a prostate primary, and it would not explain the rouleaux.\nRed herring: The house move explains the back pain, and the old PSA suggests prostate cancer. Lytic skull lesions, rouleaux, a high total protein, recurrent infections and all four CRAB features point to myeloma.\nTakeaway: Confirm with protein electrophoresis, free light chains and a marrow biopsy.",
    "l": [
     "W12 8.2",
     "W12 8.4"
@@ -431,7 +431,7 @@
   },
   {
    "c": "Week 9",
-   "p": "Sofia, 24, of Greek descent, is seen for fatigue before a planned pregnancy. She has normal periods, eats a varied diet including red meat, and has never had a GI bleed. Her mother was told she had \"small blood cells\" years ago. On exam she has mild pallor, no jaundice and no splenomegaly.\n\nHb 108 g/L (ref 115-160)\nMCV 62 fL (ref 80-100)\nRBC count high\nRDW normal\nWBC 6.2 × 10⁹/L (ref 4-10)\nPlatelets 260 × 10⁹/L (ref 150-450)\nFerritin normal\nHbA2 elevated\nFilm: hypochromic microcytes with target cells.\n\nWhat is the most likely diagnosis?",
+   "p": "Sofia, 24, of Greek descent, sees her doctor for fatigue before a planned pregnancy. She ran a marathon 2 months ago and trains 5 days a week. Her periods are regular and normal. She eats a varied diet including red meat and has never had a GI bleed. She gave blood once last year. Her mother was told years ago that she had \"small blood cells\" and was given iron that never helped.\n\nShe has no shortness of breath, chest pain or dizziness. Her bowel habits are normal, and she has no blood in her stool. She takes no medications apart from a multivitamin. She does not smoke and drinks socially. Her partner has no known blood disorder.\n\nExam: HR 82, BP 110/68.  mild pallor. No jaundice. No splenomegaly.\n\nHb 108 g/L (ref 115-160)\nMCV 62 fL (ref 80-100)\nRBC count high\nRDW normal\nWBC 6.2 × 10⁹/L (ref 4-10)\nPlatelets 260 × 10⁹/L (ref 150-450)\nFerritin normal\nHbA2 elevated\nFilm: hypochromic microcytes with target cells.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Anemia of chronic inflammation",
     "Iron deficiency anemia",
@@ -440,7 +440,7 @@
     "α-thalassemia trait"
    ],
    "a": 3,
-   "e": "Correct: D. A Mediterranean woman with a very low MCV, a high RBC count, a normal ferritin, a family history and a raised HbA2 has β-thalassemia minor, the heterozygous form.\nA: Anemia of chronic inflammation needs a significant other medical problem, and she has none.\nB: Iron deficiency gives a low ferritin and a high RDW.\nC: Sideroblastic anemia needs a toxin, drug, B6 deficiency or MDS, and shows basophilic stippling.\nE: α-thalassemia is more common in Southeast Asia and Africa and has a normal HbA2.\nTakeaway: Thalassemia: high RBC count. Iron deficiency: low RBC count, high RDW.",
+   "e": "Correct: D. A Mediterranean woman with a very low MCV, a high RBC count, a normal ferritin, a family history and a raised HbA2 has β-thalassemia minor, the heterozygous form.\nA: Anemia of chronic inflammation needs a significant other medical problem, and she has none.\nB: Iron deficiency gives a low ferritin and a high RDW.\nC: Sideroblastic anemia needs a toxin, drug, B6 deficiency or MDS, and shows basophilic stippling.\nE: α-thalassemia is more common in Southeast Asia and Africa and has a normal HbA2.\nRed herring: Marathon running and blood donation are listed causes of iron loss and tempt iron deficiency. A normal ferritin, a high RBC count, a normal RDW and a raised HbA2 point to β-thalassemia minor. Her mother's iron that never helped is another clue.\nTakeaway: Thalassemia: high RBC count. Iron deficiency: low RBC count, high RDW.",
    "l": [
     "W9 2.2",
     "W9 1.4"
@@ -448,7 +448,7 @@
   },
   {
    "c": "Week 9",
-   "p": "Dennis, 68, has 3 months of fatigue and shortness of breath on stairs. He has had black stools on and off and takes ibuprofen daily for knee pain. He craves ice. On exam he is pale, with a resting heart rate of 104 and spoon-shaped nails.\n\nHb 82 g/L (ref 135-170)\nMCV 68 fL (ref 80-100)\nRDW high\nWBC 7.1 × 10⁹/L (ref 4-10)\nPlatelets 480 × 10⁹/L (ref 150-450)\nFerritin low\nTransferrin high\nFilm: hypochromic microcytes with anisocytosis, poikilocytosis and elliptocytes.\n\nWhat is the most likely diagnosis?",
+   "p": "Dennis, 68, has 3 months of fatigue and shortness of breath on stairs. He takes ibuprofen daily for knee osteoarthritis and has noticed black stools on and off, which he put down to the iron-rich spinach he eats. He has rheumatoid arthritis in his hands, well controlled on methotrexate. He craves ice and chews it all day.\n\nHe has no abdominal pain, vomiting or weight loss. He has never had a colonoscopy. He takes methotrexate weekly, folic acid, ibuprofen 400 mg three times daily and omeprazole \"when he remembers\". He is a retired bus driver, does not smoke and drinks 1 to 2 beers a day.\n\nExam: HR 104, BP 118/72, RR 16.  pale. Resting heart rate 104. Spoon-shaped nails.\n\nHb 82 g/L (ref 135-170)\nMCV 68 fL (ref 80-100)\nRDW high\nWBC 7.1 × 10⁹/L (ref 4-10)\nPlatelets 480 × 10⁹/L (ref 150-450)\nFerritin low\nTransferrin high\nFilm: hypochromic microcytes with anisocytosis, poikilocytosis and elliptocytes.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Lead poisoning",
     "Iron deficiency anemia",
@@ -457,7 +457,7 @@
     "Sideroblastic anemia"
    ],
    "a": 1,
-   "e": "Correct: B. Melena on daily ibuprofen, pica, koilonychia, a low ferritin, a high transferrin and a high RDW point to iron deficiency from GI blood loss. Iron deficiency is also a listed cause of reactive thrombocytosis.\nA: Lead poisoning shows basophilic stippling.\nC: Anemia of chronic inflammation has a high ferritin and low transferrin.\nD: β-thalassemia minor has a normal ferritin and a raised HbA2.\nE: Sideroblastic anemia has normal iron stores and basophilic stippling.\nTakeaway: In iron deficiency, find the source of loss. In an older man, think GI bleeding.",
+   "e": "Correct: B. Melena on daily ibuprofen, pica, koilonychia, a low ferritin, a high transferrin and a high RDW point to iron deficiency from GI blood loss. Iron deficiency is also a listed cause of reactive thrombocytosis.\nA: Lead poisoning shows basophilic stippling.\nC: Anemia of chronic inflammation has a high ferritin and low transferrin.\nD: β-thalassemia minor has a normal ferritin and a raised HbA2.\nE: Sideroblastic anemia has normal iron stores and basophilic stippling.\nRed herring: Rheumatoid arthritis tempts anemia of chronic inflammation, but that gives a high ferritin and low transferrin. His low ferritin, high transferrin, pica and koilonychia point to iron deficiency from GI loss. The high platelets are reactive.\nTakeaway: In iron deficiency, find the source of loss. In an older man, think GI bleeding.",
    "l": [
     "W9 1.4",
     "W9 1.5"
@@ -465,7 +465,7 @@
   },
   {
    "c": "Week 11",
-   "p": "Which of the following is associated with t(15;17)?",
+   "p": "Leila, 38, is admitted with gum bleeding, bruising and a falling fibrinogen. The hematologist sends her marrow for cytogenetics and asks the lab to look for the translocation that would confirm the suspected diagnosis and predict response to ATRA.\n\nWhich disorder is associated with t(15;17)?",
    "o": [
     "Multiple myeloma",
     "Chronic lymphocytic leukemia",
@@ -474,7 +474,7 @@
     "Acute promyelocytic leukemia"
    ],
    "a": 4,
-   "e": "Correct: E. t(15;17), giving the PML/RARα fusion gene, confirms acute promyelocytic leukemia.\nA: Myeloma FISH looks for t(4;14), t(14;16) and del(17p).\nB: CLL is tested with FISH but has no listed translocation.\nC: CML has t(9;22), the Philadelphia chromosome.\nD: Follicular lymphoma has t(14;18).\nTakeaway: APL is treated with ATRA and arsenic.",
+   "e": "Correct: E. t(15;17), giving the PML/RARα fusion gene, confirms acute promyelocytic leukemia.\nA: Myeloma FISH looks for t(4;14), t(14;16) and del(17p).\nB: CLL is tested with FISH but has no listed translocation.\nC: CML has t(9;22), the Philadelphia chromosome.\nD: Follicular lymphoma has t(14;18).\nRed herring: Bleeding and a low fibrinogen also fit DIC from any cause. The ATRA clue and t(15;17) point to APL.\nTakeaway: APL is treated with ATRA and arsenic.",
    "l": [
     "W11 9.5",
     "W11 9.6"
@@ -482,7 +482,7 @@
   },
   {
    "c": "Week 9",
-   "p": "Which anemia is treated with erythropoietin in severe cases?",
+   "p": "Four patients have anemia, and the team considers erythropoietin for each: a 28-year-old with β-thalassemia minor and Hb 112 g/L, a 70-year-old with rheumatoid arthritis and severe anemia despite treating the arthritis, a 45-year-old with heavy periods and a low ferritin, and a 19-year-old with hereditary spherocytosis.\n\nWhich anemia is treated with erythropoietin in severe cases?",
    "o": [
     "β-thalassemia minor",
     "Anemia of chronic inflammation",
@@ -490,7 +490,7 @@
     "Hereditary spherocytosis"
    ],
    "a": 1,
-   "e": "Correct: B. Anemia of chronic inflammation is treated by targeting the underlying disease, and erythropoietin is used in severe cases.\nA: β-thalassemia minor is mild and needs genetic counselling, not EPO.\nC: Iron deficiency is treated with iron replacement.\nD: Hereditary spherocytosis is treated with folate, vaccination and penicillin prophylaxis.\nTakeaway: Anemia of chronic inflammation seldom needs a transfusion.",
+   "e": "Correct: B. Anemia of chronic inflammation is treated by targeting the underlying disease, and erythropoietin is used in severe cases.\nA: β-thalassemia minor is mild and needs genetic counselling, not EPO.\nC: Iron deficiency is treated with iron replacement.\nD: Hereditary spherocytosis is treated with folate, vaccination and penicillin prophylaxis.\nRed herring: Every patient has an anemia, but only anemia of chronic inflammation lists EPO for severe cases. Iron deficiency needs iron, and the others have their own treatments.\nTakeaway: Anemia of chronic inflammation seldom needs a transfusion.",
    "l": [
     "W9 7.4",
     "W9 3.2"
@@ -498,7 +498,7 @@
   },
   {
    "c": "Week 11",
-   "p": "Vincristine is the O in CHOP-R. Which statement about how it works is correct?",
+   "p": "Grace, 64, has diffuse large B-cell lymphoma and starts CHOP-R. Two weeks after her first cycle she has numbness and tingling in her fingers and toes. The nurse explains that one drug in the regimen causes this because of how it acts on dividing cells.\n\nVincristine is the O in CHOP-R. Which statement about how it works is correct?",
    "o": [
     "It inhibits microtubule assembly in M phase",
     "It interferes with nucleic acid metabolism",
@@ -506,7 +506,7 @@
     "It inhibits topoisomerase II and intercalates DNA"
    ],
    "a": 0,
-   "e": "Correct: A. Vincristine (Oncovin) is a vinca alkaloid. It inhibits microtubule assembly in metaphase and disrupts M phase.\nB: Interfering with nucleic acid metabolism describes anti-metabolites such as methotrexate.\nC: Cross-linking guanine describes alkylating agents such as cyclophosphamide.\nD: Topoisomerase II inhibition and intercalation describe anti-tumour antibiotics such as doxorubicin.\nTakeaway: Know one mechanism per class.",
+   "e": "Correct: A. Vincristine (Oncovin) is a vinca alkaloid. It inhibits microtubule assembly in metaphase and disrupts M phase.\nB: Interfering with nucleic acid metabolism describes anti-metabolites such as methotrexate.\nC: Cross-linking guanine describes alkylating agents such as cyclophosphamide.\nD: Topoisomerase II inhibition and intercalation describe anti-tumour antibiotics such as doxorubicin.\nRed herring: The neuropathy is the clinical hook. The question tests the mechanism of vincristine, a vinca alkaloid acting in M phase.\nTakeaway: Know one mechanism per class.",
    "l": [
     "W11 7.3",
     "W11 7.6"
@@ -514,7 +514,7 @@
   },
   {
    "c": "Week 11",
-   "p": "Investigators compare a new oral drug with the standard IV drug. They expect it to work about as well, but it is easier to take and less toxic. Which trial design fits?",
+   "p": "A drug company has a new oral drug for a blood cancer. The standard drug is given IV in hospital and causes hair loss. Early data suggest the new drug works about as well, with fewer side effects and no hospital visits. The company does not expect it to beat the standard drug, and it plans to enroll 1,200 patients across 40 centres.\n\nWhich trial design fits?",
    "o": [
     "Equivalence trial",
     "Phase 1 trial",
@@ -522,14 +522,14 @@
     "Non-inferiority trial"
    ],
    "a": 3,
-   "e": "Correct: D. A non-inferiority trial shows that the new therapy is not clinically worse than the comparator. It suits a drug that may not work better but offers safety, tolerability or convenience.\nA: An equivalence trial shows the difference lies between a lower and an upper margin.\nB: Phase 1 trials study safety and dose in 10 to 30 people.\nC: A superiority trial expects the new drug to work better.\nTakeaway: The non-inferiority margin must be set in advance.",
+   "e": "Correct: D. A non-inferiority trial shows that the new therapy is not clinically worse than the comparator. It suits a drug that may not work better but offers safety, tolerability or convenience.\nA: An equivalence trial shows the difference lies between a lower and an upper margin.\nB: Phase 1 trials study safety and dose in 10 to 30 people.\nC: A superiority trial expects the new drug to work better.\nRed herring: The large size and many centres make it sound like a phase 3 superiority trial. The goal is to show it is not clinically worse, so the design is non-inferiority.\nTakeaway: The non-inferiority margin must be set in advance.",
    "l": [
     "W11 11.4"
    ]
   },
   {
    "c": "Week 9",
-   "p": "Janice, 32, has been a strict vegan for 7 years and takes no supplements. Over 6 months she has had fatigue, poor concentration, irritability and tingling in both feet. On exam she has a smooth red tongue and reduced vibration and position sense in her toes.\n\nHb 88 g/L (ref 115-160)\nMCV 118 fL (ref 80-100)\nReticulocytes low\nWBC 3.6 × 10⁹/L (ref 4-10)\nPlatelets 128 × 10⁹/L (ref 150-450)\nMethylmalonic acid high\nHomocysteine high\nFilm: oval macrocytes and hypersegmented neutrophils.\n\nWhat is the most likely diagnosis?",
+   "p": "Janice, 32, has been a strict vegan for 7 years and takes no supplements. Over 6 months she has had fatigue, poor concentration, irritability and tingling in both feet. She drinks 2 glasses of wine a week. She has hypothyroidism on a stable dose of levothyroxine with a normal TSH last month. She is planning a pregnancy and started a folic acid supplement 2 months ago.\n\nShe has no diarrhea, abdominal pain or weight loss. Her periods are regular and light. She works as a graphic designer and has had trouble meeting deadlines. Her mother has pernicious anemia, and her grandmother had \"thyroid problems\".\n\nExam: HR 94, BP 112/70.  smooth red tongue. Reduced vibration and position sense in her toes. Positive Romberg.\n\nHb 88 g/L (ref 115-160)\nMCV 118 fL (ref 80-100)\nReticulocytes low\nWBC 3.6 × 10⁹/L (ref 4-10)\nPlatelets 128 × 10⁹/L (ref 150-450)\nMethylmalonic acid high\nHomocysteine high\nFilm: oval macrocytes and hypersegmented neutrophils.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Liver disease",
     "Hypothyroidism",
@@ -538,7 +538,7 @@
     "Vitamin B12 deficiency"
    ],
    "a": 4,
-   "e": "Correct: E. A strict vegan diet, neurological signs with loss of proprioception, megaloblastic changes, and a high MMA plus homocysteine fit B12 deficiency. Body stores last 3 to 4 years, so it appears after years of a vegan diet.\nA: Liver disease is non-megaloblastic.\nB: Hypothyroidism is non-megaloblastic, with large round red cells and normal neutrophils.\nC: Folate deficiency raises homocysteine only, and does not cause the neurological signs.\nD: MDS is seen mostly in the elderly and would not explain a high MMA.\nTakeaway: B12 stores last 3 to 4 years. Folate stores last 3 to 6 months.",
+   "e": "Correct: E. A strict vegan diet, neurological signs with loss of proprioception, megaloblastic changes, and a high MMA plus homocysteine fit B12 deficiency. Body stores last 3 to 4 years, so it appears after years of a vegan diet.\nA: Liver disease is non-megaloblastic.\nB: Hypothyroidism is non-megaloblastic, with large round red cells and normal neutrophils.\nC: Folate deficiency raises homocysteine only, and does not cause the neurological signs.\nD: MDS is seen mostly in the elderly and would not explain a high MMA.\nRed herring: Alcohol and hypothyroidism both cause macrocytosis, but they are non-megaloblastic, and her TSH is normal. The folic acid tempts you away from a vitamin deficiency, but it can mask the anemia of B12 deficiency while the nerve damage progresses. A high MMA confirms B12.\nTakeaway: B12 stores last 3 to 4 years. Folate stores last 3 to 6 months.",
    "l": [
     "W9 8.4",
     "W9 4.4"
@@ -546,7 +546,7 @@
   },
   {
    "c": "Week 9",
-   "p": "Elsie, 71, recovered from a Mycoplasma pneumonia 3 weeks ago. Since then she has felt tired, and her fingers turn painful and pale when she goes outside in the cold. On exam she is pale with mild jaundice. Her spleen is not enlarged.\n\nHb 92 g/L (ref 115-160)\nMCV 112 fL (ref 80-100)\nReticulocytes high\nWBC 7.4 × 10⁹/L (ref 4-10)\nPlatelets 245 × 10⁹/L (ref 150-450)\nLDH high\nHaptoglobin low\nDAT positive for C3\nFilm: red cells clustered together in large groups.\n\nWhat is the most likely diagnosis?",
+   "p": "Elsie, 71, recovered from a Mycoplasma pneumonia 3 weeks ago, treated with azithromycin. Since then she has felt tired, and her fingers turn painful and pale when she goes outside in the cold. Her sister has lupus. She has noticed dark urine some mornings. She takes amlodipine for blood pressure.\n\nShe has no fever now, and her cough has resolved. She has had no new rashes, joint pain or weight loss. She does not smoke. She lives alone and walks her dog twice daily, which is when her fingers hurt most.\n\nExam: HR 96, BP 128/74, T 36.7°C.  pale with mild jaundice. Spleen not enlarged.\n\nHb 92 g/L (ref 115-160)\nMCV 112 fL (ref 80-100)\nReticulocytes high\nWBC 7.4 × 10⁹/L (ref 4-10)\nPlatelets 245 × 10⁹/L (ref 150-450)\nLDH high\nHaptoglobin low\nDAT positive for C3\nFilm: red cells clustered together in large groups.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Warm autoimmune hemolytic anemia",
     "Vitamin B12 deficiency",
@@ -555,7 +555,7 @@
     "Paroxysmal nocturnal hemoglobinuria"
    ],
    "a": 2,
-   "e": "Correct: C. Agglutination, a DAT positive for C3, and symptoms in the cold after Mycoplasma infection fit cold AIHA. IgM antibodies bind at 4 to 30°C and form tetramers that link red cells.\nA: Warm AIHA is IgG on the DAT and shows spherocytes without agglutination.\nB: B12 deficiency is megaloblastic with a low reticulocyte count and no hemolysis on the DAT.\nD: Myeloma causes rouleaux, a stack of coins, not clumps.\nE: PNH is a clonal PIGA disorder and is not immune mediated.\nTakeaway: Cold agglutinin disease can raise the MCV falsely, as clumps are counted as large cells.",
+   "e": "Correct: C. Agglutination, a DAT positive for C3, and symptoms in the cold after Mycoplasma infection fit cold AIHA. IgM antibodies bind at 4 to 30°C and form tetramers that link red cells.\nA: Warm AIHA is IgG on the DAT and shows spherocytes without agglutination.\nB: B12 deficiency is megaloblastic with a low reticulocyte count and no hemolysis on the DAT.\nD: Myeloma causes rouleaux, a stack of coins, not clumps.\nE: PNH is a clonal PIGA disorder and is not immune mediated.\nRed herring: Dark morning urine suggests paroxysmal nocturnal hemoglobinuria, and her sister's lupus suggests warm AIHA. PNH is not immune mediated, and warm AIHA is IgG with spherocytes. Agglutination and a DAT positive for C3 after Mycoplasma mean cold AIHA. The high MCV is partly false, as clumps are counted as large cells.\nTakeaway: Cold agglutinin disease can raise the MCV falsely, as clumps are counted as large cells.",
    "l": [
     "W9 6.3",
     "W9 9.3"
@@ -563,7 +563,7 @@
   },
   {
    "c": "Week 9",
-   "p": "A classmate thinks your patient's megaloblastic anemia is from folate deficiency. Which findings point to B12 deficiency instead?\ni) A raised methylmalonic acid\nii) Loss of proprioception in the feet\niii) A raised homocysteine\niv) Hypersegmented neutrophils on the film",
+   "p": "Your patient, 54, has a megaloblastic anemia, a long history of alcohol use and a poor diet, and she had part of her small bowel removed for Crohn's disease. A classmate thinks it is folate deficiency because of the alcohol and diet.\n\nWhich findings point to B12 deficiency instead?\ni) A raised methylmalonic acid\nii) Loss of proprioception in the feet\niii) A raised homocysteine\niv) Hypersegmented neutrophils on the film",
    "o": [
     "i) and ii) only",
     "i), ii) and iii) only",
@@ -571,7 +571,7 @@
     "All of the above"
    ],
    "a": 0,
-   "e": "Correct: A. Methylmalonic acid rises only when B12 is low, and loss of proprioception is a B12 neurological feature.\nB: Homocysteine rises in both deficiencies, so it does not separate them.\nC: Homocysteine and hypersegmented neutrophils are shared by both.\nD: Statements iii) and iv) occur in both deficiencies.\nTakeaway: MMA plus homocysteine means B12. Homocysteine only means folate.",
+   "e": "Correct: A. Methylmalonic acid rises only when B12 is low, and loss of proprioception is a B12 neurological feature.\nB: Homocysteine rises in both deficiencies, so it does not separate them.\nC: Homocysteine and hypersegmented neutrophils are shared by both.\nD: Statements iii) and iv) occur in both deficiencies.\nRed herring: Alcohol and poor diet support folate deficiency, and bowel surgery supports B12 deficiency, so the history cannot decide. Only the findings that are specific to B12 count.\nTakeaway: MMA plus homocysteine means B12. Homocysteine only means folate.",
    "l": [
     "W9 7.5",
     "W9 4.3"
@@ -579,7 +579,7 @@
   },
   {
    "c": "Week 11",
-   "p": "Leila, 38, has 1 week of fatigue, gum bleeding and large bruises. Today she has a headache. On exam she has petechiae, oozing gums and no lymph nodes or spleen.\n\nHb 86 g/L (ref 115-160)\nWBC 1.8 × 10⁹/L (ref 4-10)\nPlatelets 22 × 10⁹/L (ref 150-450)\nPT/INR 1.8\nFibrinogen 0.9 g/L\nD-dimer elevated\nFilm: abnormal promyelocytes, several with multiple Auer rods in the same cell.\nFlow cytometry: HLA-DR negative.\n\nWhat is the most likely diagnosis?",
+   "p": "Leila, 38, has 1 week of fatigue, gum bleeding and large bruises. Today she has a headache. She started an oral contraceptive pill 3 months ago. She had a flu-like illness 2 weeks ago. She takes ibuprofen for headaches, and her mother has ITP.\n\nShe has no fever, joint pain or weight loss. Her periods have been heavier this month. She works as a nurse and has had no known toxic exposures. She does not smoke or drink.\n\nExam: HR 112, BP 104/64, T 37.4°C.  petechiae on her legs, oozing gums. No lymph nodes. No spleen.\n\nHb 86 g/L (ref 115-160)\nWBC 1.8 × 10⁹/L (ref 4-10)\nPlatelets 22 × 10⁹/L (ref 150-450)\nPT/INR 1.8\nFibrinogen 0.9 g/L\nD-dimer elevated\nFilm: abnormal promyelocytes, several with multiple Auer rods in the same cell.\nFlow cytometry: HLA-DR negative.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Chronic myeloid leukemia",
     "Acute lymphoblastic leukemia",
@@ -588,7 +588,7 @@
     "Acute promyelocytic leukemia"
    ],
    "a": 4,
-   "e": "Correct: E. Pancytopenia with DIC, cells with 2 or more Auer rods, and HLA-DR negative flow fit APL. Its main early risk is fatal hemorrhage, often cerebral.\nA: CML gives a high WBC with basophils, eosinophils and myelocytes.\nB: ALL blasts have no granules and no Auer rods.\nC: ITP lowers platelets only, with normal clotting tests.\nD: Aplastic anemia has no abnormal cells in the blood and no DIC.\nTakeaway: Confirm with t(15;17) or PML/RARα, and start ATRA.",
+   "e": "Correct: E. Pancytopenia with DIC, cells with 2 or more Auer rods, and HLA-DR negative flow fit APL. Its main early risk is fatal hemorrhage, often cerebral.\nA: CML gives a high WBC with basophils, eosinophils and myelocytes.\nB: ALL blasts have no granules and no Auer rods.\nC: ITP lowers platelets only, with normal clotting tests.\nD: Aplastic anemia has no abnormal cells in the blood and no DIC.\nRed herring: The viral illness, ibuprofen and a mother with ITP all suggest ITP, but ITP lowers platelets only, with normal clotting tests. DIC with a low fibrinogen and abnormal promyelocytes with multiple Auer rods mean APL, an emergency.\nTakeaway: Confirm with t(15;17) or PML/RARα, and start ATRA.",
    "l": [
     "W11 9.5",
     "W11 9.6"
@@ -596,7 +596,7 @@
   },
   {
    "c": "Week 11",
-   "p": "Bruno, 58, has 3 months of fatigue, night sweats, weight loss and a heavy feeling in his left upper abdomen. On exam his spleen is palpable 10 cm below the costal margin. He has no lymph nodes.\n\nHb 112 g/L (ref 135-170)\nWBC 180 × 10⁹/L (ref 4-10)\nBasophils increased\nEosinophils increased\nPlatelets 560 × 10⁹/L (ref 150-450)\nFilm: myelocytes and neutrophils in a bimodal spread, with few blasts.\n\nWhat is the most likely diagnosis?",
+   "p": "Bruno, 58, has 3 months of fatigue, night sweats, weight loss and a heavy, full feeling in his left upper abdomen after small meals. He had a dental abscess 2 weeks ago, treated with antibiotics. He has smoked a pack a day for 30 years.\n\nHe has no bone pain, bleeding or bruising. His bowel and bladder habits are normal. He takes no regular medications. He works as a mechanic and drinks 3 to 4 beers on weekends. His brother has hemochromatosis.\n\nExam: HR 92, BP 132/84, T 37.0°C.  spleen palpable 10 cm below the costal margin. No lymph nodes.\n\nHb 112 g/L (ref 135-170)\nWBC 180 × 10⁹/L (ref 4-10)\nBasophils increased\nEosinophils increased\nPlatelets 560 × 10⁹/L (ref 150-450)\nFilm: myelocytes and neutrophils in a bimodal spread, with few blasts. No toxic granules.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Acute myeloid leukemia",
     "Chronic lymphocytic leukemia",
@@ -605,7 +605,7 @@
     "Primary myelofibrosis"
    ],
    "a": 2,
-   "e": "Correct: C. A very high WBC with basophilia, eosinophilia, thrombocytosis, a bimodal spread of myelocytes and neutrophils, and a large spleen fit CML in chronic phase.\nA: AML shows large blast cells, often with an Auer rod.\nB: CLL raises mature lymphocytes, with smudge cells.\nD: A reactive neutrophilia has no basophilia and shows toxic granules.\nE: Myelofibrosis gives pancytopenia with teardrop cells.\nTakeaway: Confirm with t(9;22) or BCR-ABL, and treat with imatinib.",
+   "e": "Correct: C. A very high WBC with basophilia, eosinophilia, thrombocytosis, a bimodal spread of myelocytes and neutrophils, and a large spleen fit CML in chronic phase.\nA: AML shows large blast cells, often with an Auer rod.\nB: CLL raises mature lymphocytes, with smudge cells.\nD: A reactive neutrophilia has no basophilia and shows toxic granules.\nE: Myelofibrosis gives pancytopenia with teardrop cells.\nRed herring: The dental abscess suggests a reactive neutrophilia, but a reactive picture shows toxic granules and no basophilia. A WBC of 180 with basophils, eosinophils, a bimodal spread and a huge spleen means CML.\nTakeaway: Confirm with t(9;22) or BCR-ABL, and treat with imatinib.",
    "l": [
     "W11 3.3",
     "W11 3.1"
@@ -613,7 +613,7 @@
   },
   {
    "c": "Week 10",
-   "p": "Amira, 52, is in the ICU with septic shock from a perforated bowel. Over the last day she has started oozing from her IV and arterial line sites and has new purpura on her arms. She is on no anticoagulants.\n\nHb 84 g/L (ref 115-160)\nWBC 21.0 × 10⁹/L (ref 4-10)\nPlatelets 35 × 10⁹/L (ref 150-450)\nPT/INR 2.0\naPTT prolonged\nFibrinogen 0.8 g/L\nD-dimer markedly elevated\nFilm: schistocytes.\n\nWhat is the most likely diagnosis?",
+   "p": "Amira, 52, is in the ICU with septic shock from a perforated bowel. She has had 4 units of red cells. Her line is flushed with heparin saline. Over the last day she has started oozing from her IV and arterial line sites and has new purpura on her arms. She drinks heavily, and her albumin is low.\n\nShe had an emergency laparotomy 2 days ago. She is on norepinephrine and broad-spectrum antibiotics. Her urine output has fallen. She has had no prior bleeding problems and no family history of bleeding.\n\nVitals: HR 124, BP 86/50 on norepinephrine, T 38.9°C. \n\nHb 84 g/L (ref 115-160)\nWBC 21.0 × 10⁹/L (ref 4-10)\nPlatelets 35 × 10⁹/L (ref 150-450), 210 two days ago\nPT/INR 2.0\naPTT prolonged\nFibrinogen 0.8 g/L\nD-dimer markedly elevated\nFilm: schistocytes.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Thrombotic thrombocytopenic purpura (TTP)",
     "Immune thrombocytopenia",
@@ -622,7 +622,7 @@
     "Vitamin K deficiency"
    ],
    "a": 3,
-   "e": "Correct: D. Sepsis with bleeding, low platelets, a high INR, a fibrinogen under 1 g/L, a raised D-dimer and schistocytes fit DIC. Overactive coagulation consumes clotting factors and platelets.\nA: TTP has a normal INR and fibrinogen.\nB: ITP leaves the INR and fibrinogen normal.\nC: HIT causes thrombosis without bleeding, after heparin exposure.\nE: Vitamin K deficiency does not lower fibrinogen or platelets.\nTakeaway: DIC bleeding: cryoprecipitate if fibrinogen is under 1.0 g/L, platelets if under 50, plasma if INR over 1.5.",
+   "e": "Correct: D. Sepsis with bleeding, low platelets, a high INR, a fibrinogen under 1 g/L, a raised D-dimer and schistocytes fit DIC. Overactive coagulation consumes clotting factors and platelets.\nA: TTP has a normal INR and fibrinogen.\nB: ITP leaves the INR and fibrinogen normal.\nC: HIT causes thrombosis without bleeding, after heparin exposure.\nE: Vitamin K deficiency does not lower fibrinogen or platelets.\nRed herring: Heparin flushes suggest HIT, and heavy drinking suggests liver disease. HIT causes clots, not bleeding, and liver disease does not explain schistocytes with a fibrinogen under 1 g/L. Sepsis with consumption of factors and platelets means DIC.\nTakeaway: DIC bleeding: cryoprecipitate if fibrinogen is under 1.0 g/L, platelets if under 50, plasma if INR over 1.5.",
    "l": [
     "W10 3.5",
     "W10 4.2.3"
@@ -630,7 +630,7 @@
   },
   {
    "c": "Week 10",
-   "p": "A patient on warfarin has a major GI bleed with a high INR. Which treatment reverses the warfarin?",
+   "p": "Frank, 78, takes warfarin for atrial fibrillation. He had a urinary tract infection last week, treated with an antibiotic, and his INR is now 6.8. Today he vomits blood and his BP is 88/50. He also takes aspirin 81 mg daily and had a dose this morning.\n\nWhich treatment reverses the warfarin?",
    "o": [
     "Idarucizumab",
     "PCC and vitamin K",
@@ -639,14 +639,14 @@
     "DDAVP and cryoprecipitate"
    ],
    "a": 1,
-   "e": "Correct: B. Warfarin is reversed urgently with PCC. Vitamin K is given with it to prevent rebound coagulopathy when the PCC wears off.\nA: Idarucizumab reverses dabigatran.\nC: Andexanet alpha is for Xa inhibitors and is pending approval.\nD: Protamine reverses heparin.\nE: DDAVP treats mild hemophilia A and type 1 VWD, and cryoprecipitate replaces fibrinogen.\nTakeaway: Warfarin reversal: PCC plus vitamin K.",
+   "e": "Correct: B. Warfarin is reversed urgently with PCC. Vitamin K is given with it to prevent rebound coagulopathy when the PCC wears off.\nA: Idarucizumab reverses dabigatran.\nC: Andexanet alpha is for Xa inhibitors and is pending approval.\nD: Protamine reverses heparin.\nE: DDAVP treats mild hemophilia A and type 1 VWD, and cryoprecipitate replaces fibrinogen.\nRed herring: The aspirin is a distractor. It adds to bleeding, but the question asks how to reverse warfarin, which is PCC with vitamin K. The antibiotic likely raised his INR.\nTakeaway: Warfarin reversal: PCC plus vitamin K.",
    "l": [
     "W10 7.3"
    ]
   },
   {
    "c": "Week 12",
-   "p": "Adam, 30, has an anterior mediastinal mass that has caused symptoms over several months. AFP is normal and beta-hCG is mildly raised. Which diagnosis is most likely?",
+   "p": "Adam, 30, has had a cough and chest pressure that slowly worsened over several months. CT shows an anterior mediastinal mass. His testicular exam is normal. He has no fevers or weight loss. His father had myasthenia gravis. AFP is normal and beta-hCG is mildly raised.\n\nWhich diagnosis is most likely?",
    "o": [
     "Non-seminomatous germ cell tumour",
     "Seminoma",
@@ -654,7 +654,7 @@
     "Thymoma"
    ],
    "a": 1,
-   "e": "Correct: B. An onset over months fits lymphoma or seminoma, and beta-hCG is raised in 10% of seminomas. AFP is the marker of non-seminomatous tumours.\nA: Non-seminomatous tumours raise AFP in 60 to 80% and come on over days.\nC: Lymphoblastic lymphoma comes on over days.\nD: Thymoma grows over years and is linked to anti-AChR.\nTakeaway: Days: lymphoblastic or NSGCT. Months: lymphoma, seminoma. Years: thymoma, teratoma.",
+   "e": "Correct: B. An onset over months fits lymphoma or seminoma, and beta-hCG is raised in 10% of seminomas. AFP is the marker of non-seminomatous tumours.\nA: Non-seminomatous tumours raise AFP in 60 to 80% and come on over days.\nC: Lymphoblastic lymphoma comes on over days.\nD: Thymoma grows over years and is linked to anti-AChR.\nRed herring: His father's myasthenia gravis tempts thymoma, but thymoma grows over years and is linked to anti-AChR in the patient, not a relative. Months of symptoms with a mildly raised beta-hCG and normal AFP fit seminoma.\nTakeaway: Days: lymphoblastic or NSGCT. Months: lymphoma, seminoma. Years: thymoma, teratoma.",
    "l": [
     "W12 6.3",
     "W12 6.2"
@@ -662,7 +662,7 @@
   },
   {
    "c": "Week 11",
-   "p": "Gloria, 70, has 3 days of fever, productive cough and right-sided chest pain. Chest X-ray shows a right lower lobe consolidation. She has no weight loss, night sweats or enlarged organs.\n\nHb 128 g/L (ref 115-160)\nWBC 24 × 10⁹/L (ref 4-10)\nNeutrophils 21, mature with some bands × 10⁹/L\nBasophils normal\nPlatelets 380 × 10⁹/L (ref 150-450)\nFilm: toxic granules, toxic vacuoles and Döhle bodies. No blasts or promyelocytes.\n\nWhat is the most likely diagnosis?",
+   "p": "Gloria, 70, has 3 days of fever, productive cough and right-sided chest pain. She has smoked for 40 years. She had a hip replacement 6 months ago. She takes prednisone 5 mg daily for polymyalgia rheumatica. Chest X-ray shows a right lower lobe consolidation. She has no weight loss, night sweats or enlarged organs.\n\nShe has mild COPD and uses a puffer as needed. She has had no recent travel. She lives with her husband, who is well. She has had no rash, joint pain or bleeding. Her last CBC a year ago was normal.\n\nVitals: HR 108, BP 118/70, RR 26, T 38.8°C, oxygen saturation 91% on room air. Crackles at the right base. \n\nHb 128 g/L (ref 115-160)\nWBC 24 × 10⁹/L (ref 4-10)\nNeutrophils 21 × 10⁹/L, mature with some bands\nBasophils normal\nPlatelets 380 × 10⁹/L (ref 150-450)\nFilm: toxic granules, toxic vacuoles and Döhle bodies. No blasts or promyelocytes.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Reactive neutrophilia",
     "Chronic myeloid leukemia",
@@ -671,7 +671,7 @@
     "Polycythemia vera"
    ],
    "a": 0,
-   "e": "Correct: A. Mature neutrophils with toxic granules, toxic vacuoles and Döhle bodies, no blasts, and an obvious pneumonia fit a secondary, reactive neutrophilia.\nB: CML shows basophilia, eosinophilia and myelocytes, usually with a large spleen.\nC: CLL raises lymphocytes, not neutrophils.\nD: AML shows blasts in the blood.\nE: PV raises the Hb.\nTakeaway: Primary neutrophilia: immature myeloid cells and often a WBC over 30.",
+   "e": "Correct: A. Mature neutrophils with toxic granules, toxic vacuoles and Döhle bodies, no blasts, and an obvious pneumonia fit a secondary, reactive neutrophilia.\nB: CML shows basophilia, eosinophilia and myelocytes, usually with a large spleen.\nC: CLL raises lymphocytes, not neutrophils.\nD: AML shows blasts in the blood.\nE: PV raises the Hb.\nRed herring: A WBC of 24 in a smoker on steroids tempts a primary myeloid disorder. Mature neutrophils with toxic changes, normal basophils, no blasts and an obvious pneumonia fit a reactive neutrophilia. Steroids also raise neutrophils.\nTakeaway: Primary neutrophilia: immature myeloid cells and often a WBC over 30.",
    "l": [
     "W11 1.4",
     "W11 1.1"
@@ -679,7 +679,7 @@
   },
   {
    "c": "Week 10",
-   "p": "A 10-day-old boy has oozing from his umbilical stump and bleeds for days after circumcision. Platelets, INR, aPTT and fibrinogen are all normal. Which test should come next?",
+   "p": "A 10-day-old boy has oozing from his umbilical stump and bled for days after circumcision. He received vitamin K at birth. His mother had a heavy period history but no diagnosis. His maternal uncle has hemophilia A.\n\nPlatelets, INR, aPTT and fibrinogen are all normal.\n\nWhich test should come next?",
    "o": [
     "Anti-Xa assay",
     "50:50 mixing study",
@@ -687,7 +687,7 @@
     "D-dimer"
    ],
    "a": 2,
-   "e": "Correct: C. Bleeding with a normal INR and aPTT has a short list that includes FXIII deficiency, as in your Week 10 quiz. A factor XIII assay is one of the follow-up tests.\nA: Anti-Xa measures the activity of heparin and Xa inhibitors.\nB: A mixing study works up a prolonged clotting time, and his are normal.\nD: D-dimers come from plasmin breaking down cross-linked fibrin and do not diagnose a factor deficiency.\nTakeaway: Normal INR and PTT with bleeding: platelets, VWD, FXIII, fibrinolysis, vessels.",
+   "e": "Correct: C. Bleeding with a normal INR and aPTT has a short list that includes FXIII deficiency, as in your Week 10 quiz. A factor XIII assay is one of the follow-up tests.\nA: Anti-Xa measures the activity of heparin and Xa inhibitors.\nB: A mixing study works up a prolonged clotting time, and his are normal.\nD: D-dimers come from plasmin breaking down cross-linked fibrin and do not diagnose a factor deficiency.\nRed herring: The uncle with hemophilia A is a strong distractor, but hemophilia A prolongs the aPTT, and his aPTT is normal. Vitamin K was given. Bleeding with a normal INR and aPTT points to a short list that includes FXIII deficiency.\nTakeaway: Normal INR and PTT with bleeding: platelets, VWD, FXIII, fibrinolysis, vessels.",
    "l": [
     "W10 4.2.3",
     "W10 5.2"
@@ -695,7 +695,7 @@
   },
   {
    "c": "Week 9",
-   "p": "Albert, 79, has lower-risk MDS on IPSS. Which belong in his management?\ni) Red cell transfusion when Hb falls below 70 g/L\nii) Growth factor support with EPO or G-CSF\niii) Monitoring and treating iron overload\niv) Hypomethylating agents to slow progression",
+   "p": "Albert, 79, has lower-risk MDS on IPSS. His Hb is 68 g/L and he has needed red cells every 3 weeks for a year. His ferritin keeps rising. He is fit for his age and still golfs. His son read online that a newer drug \"can slow the disease\" and asks to start it.\n\nWhich belong in his management?\ni) Red cell transfusion when Hb falls below 70 g/L\nii) Growth factor support with EPO or G-CSF\niii) Monitoring and treating iron overload\niv) Hypomethylating agents to slow progression",
    "o": [
     "i), ii) and iii) only",
     "i) and ii) only",
@@ -703,14 +703,14 @@
     "All of the above"
    ],
    "a": 0,
-   "e": "Correct: A. Lower-risk MDS care aims at quality of life: transfusions below 70 g/L, managing iron overload and growth factor support.\nB: This leaves out iron overload, which transfused patients need watched.\nC: Hypomethylating agents such as azacitidine belong to higher-risk care.\nD: Statement iv) is higher-risk management.\nTakeaway: Lower risk: support. Higher risk: change the course.",
+   "e": "Correct: A. Lower-risk MDS care aims at quality of life: transfusions below 70 g/L, managing iron overload and growth factor support.\nB: This leaves out iron overload, which transfused patients need watched.\nC: Hypomethylating agents such as azacitidine belong to higher-risk care.\nD: Statement iv) is higher-risk management.\nRed herring: His fitness and his son's request tempt you to add a hypomethylating agent. Those drugs belong to higher-risk MDS. Lower-risk care aims at quality of life.\nTakeaway: Lower risk: support. Higher risk: change the course.",
    "l": [
     "W9 10.5"
    ]
   },
   {
    "c": "Week 10",
-   "p": "Walter, 81, has eaten very little for 6 weeks since a stroke and has had courses of antibiotics for aspiration pneumonia. He now has easy bruising and blood in his urine. He takes no anticoagulants. His albumin and liver enzymes are normal.\n\nHb 124 g/L (ref 135-170)\nPlatelets 230 × 10⁹/L (ref 150-450)\nPT/INR 3.1\naPTT mildly prolonged\nFibrinogen normal\n\nWhat is the most likely diagnosis?",
+   "p": "Walter, 81, has eaten very little for 6 weeks since a stroke and has had two courses of antibiotics for aspiration pneumonia. He now has easy bruising and blood in his urine. He drinks one beer a day. His brother has hemophilia. He takes no anticoagulants or antiplatelets. His albumin and liver enzymes are normal.\n\nHe lives in a long-term care home, where he needs help with feeding. His last antibiotic was a 2-week course that ended 5 days ago. He has no abdominal pain or jaundice. His daughter says he bruised \"from the slightest bump\" this week.\n\nVitals: HR 86, BP 132/78, T 36.9°C. Bruises on his forearms and shins. No jaundice. No spider nevi. \n\nHb 124 g/L (ref 135-170)\nPlatelets 230 × 10⁹/L (ref 150-450)\nPT/INR 3.1\naPTT mildly prolonged\nFibrinogen normal\n\nWhat is the most likely diagnosis?",
    "o": [
     "Disseminated intravascular coagulation",
     "Hemophilia A",
@@ -719,14 +719,14 @@
     "Vitamin K deficiency"
    ],
    "a": 4,
-   "e": "Correct: E. Poor intake with a high INR, a normal platelet count, a normal fibrinogen and normal liver tests fit vitamin K deficiency, which lowers factors II, VII, IX and X.\nA: DIC lowers platelets and fibrinogen.\nB: Hemophilia A prolongs the aPTT with a normal INR.\nC: ITP gives a low platelet count with normal clotting tests.\nD: VWD leaves the INR normal.\nTakeaway: Severe liver disease can look similar, but it brings abnormal liver tests.",
+   "e": "Correct: E. Poor intake with a high INR, a normal platelet count, a normal fibrinogen and normal liver tests fit vitamin K deficiency, which lowers factors II, VII, IX and X.\nA: DIC lowers platelets and fibrinogen.\nB: Hemophilia A prolongs the aPTT with a normal INR.\nC: ITP gives a low platelet count with normal clotting tests.\nD: VWD leaves the INR normal.\nRed herring: His brother's hemophilia tempts an inherited bleeding disorder, but hemophilia would not appear at 81 with a high INR. The beer suggests liver disease, but his liver tests are normal. Poor intake plus antibiotics lowers vitamin K.\nTakeaway: Severe liver disease can look similar, but it brings abnormal liver tests.",
    "l": [
     "W10 4.2.3"
    ]
   },
   {
    "c": "Week 10",
-   "p": "A deficiency of which factor can greatly prolong the aPTT without causing bleeding?",
+   "p": "A 45-year-old woman is booked for a knee arthroscopy. Her pre-op aPTT is markedly prolonged and does not correct with time. She has had two C-sections, a tonsillectomy and many dental extractions with no abnormal bleeding. She takes no medications.\n\nA deficiency of which factor can greatly prolong the aPTT without causing bleeding?",
    "o": [
     "Factor IX",
     "Factor VIII",
@@ -734,7 +734,7 @@
     "Factor XII"
    ],
    "a": 3,
-   "e": "Correct: D. Contact factors, including factor XII, can profoundly raise the aPTT but do not cause a bleeding tendency.\nA: Factor IX deficiency is hemophilia B and causes bleeding.\nB: Factor VIII deficiency is hemophilia A and causes bleeding.\nC: Factor XI deficiency causes bleeding.\nTakeaway: Factor XII is not required for clotting in the body.",
+   "e": "Correct: D. Contact factors, including factor XII, can profoundly raise the aPTT but do not cause a bleeding tendency.\nA: Factor IX deficiency is hemophilia B and causes bleeding.\nB: Factor VIII deficiency is hemophilia A and causes bleeding.\nC: Factor XI deficiency causes bleeding.\nRed herring: A very long aPTT before surgery is alarming, but her clean bleeding history after several operations points to a contact factor deficiency that does not cause bleeding.\nTakeaway: Factor XII is not required for clotting in the body.",
    "l": [
     "W10 4.2",
     "W10 11.1"
@@ -742,7 +742,7 @@
   },
   {
    "c": "Week 11",
-   "p": "A 70-year-old man has a marrow core biopsy for anemia. Cellularity is reported as 30%. How is this best described?",
+   "p": "A 70-year-old man has a marrow core biopsy for unexplained anemia. The report says: \"Cellularity 30%. Trilineage hematopoiesis present. No infiltrate.\" His resident worries that 30% sounds low compared with the 50% he learned for a young adult.\n\nHow is this cellularity best described?",
    "o": [
     "Hypercellular for his age",
     "Hypocellular for his age",
@@ -750,14 +750,14 @@
     "Not assessable on a core biopsy"
    ],
    "a": 2,
-   "e": "Correct: C. Marrow cellularity is about 100 minus age, so a 70-year-old should be about 30%.\nA: Hypercellular is well above that, such as 80% in an 80-year-old in your Jeopardy deck.\nB: Hypocellular is well below that, as in aplastic anemia.\nD: Cellularity is assessed on the core biopsy.\nTakeaway: Cellularity = 100 minus age.",
+   "e": "Correct: C. Marrow cellularity is about 100 minus age, so a 70-year-old should be about 30%.\nA: Hypercellular is well above that, such as 80% in an 80-year-old in your Jeopardy deck.\nB: Hypocellular is well below that, as in aplastic anemia.\nD: Cellularity is assessed on the core biopsy.\nRed herring: The resident compares him with a young adult. Marrow cellularity falls with age and is about 100 minus age.\nTakeaway: Cellularity = 100 minus age.",
    "l": [
     "W11 9.3"
    ]
   },
   {
    "c": "Week 10",
-   "p": "A deficiency of which clotting factor prolongs the PT/INR but leaves the aPTT normal?",
+   "p": "A 30-year-old man is found to have a prolonged PT/INR on routine pre-op testing. He takes no drugs, eats a normal diet and has normal liver tests. His aPTT, fibrinogen and platelets are normal. His sister has a similar result.\n\nA deficiency of which clotting factor prolongs the PT/INR but leaves the aPTT normal?",
    "o": [
     "Factor IX",
     "Factor VIII",
@@ -766,14 +766,14 @@
     "Factor VII"
    ],
    "a": 4,
-   "e": "Correct: E. An isolated high PT/INR points to the extrinsic pathway, which is factor VII.\nA: Factor IX deficiency prolongs the aPTT.\nB: Factor VIII deficiency prolongs the aPTT.\nC: Factor XIII deficiency leaves both the INR and aPTT normal.\nD: Factor XII deficiency prolongs the aPTT.\nTakeaway: aPTT alone: VIII, IX, XI, XII. INR alone: VII. Both: X, V, II.",
+   "e": "Correct: E. An isolated high PT/INR points to the extrinsic pathway, which is factor VII.\nA: Factor IX deficiency prolongs the aPTT.\nB: Factor VIII deficiency prolongs the aPTT.\nC: Factor XIII deficiency leaves both the INR and aPTT normal.\nD: Factor XII deficiency prolongs the aPTT.\nRed herring: A normal diet and normal liver tests rule out vitamin K deficiency and liver disease. An isolated high INR with a family pattern points to factor VII.\nTakeaway: aPTT alone: VIII, IX, XI, XII. INR alone: VII. Both: X, V, II.",
    "l": [
     "W10 4.2"
    ]
   },
   {
    "c": "Week 12",
-   "p": "Mia, 26, had radiation to her neck and mediastinum for Hodgkin lymphoma 3 months ago. When she bends her neck forward, she feels electric tingling down her arms and legs. Which explanation fits?",
+   "p": "Mia, 26, had radiation to her neck and mediastinum for Hodgkin lymphoma 3 months ago. She now has electric tingling that shoots down her arms and legs when she bends her neck forward. She also feels more tired than usual and has gained 2 kg. She has no cough, fever or chest pain.\n\nWhich explanation fits her tingling?",
    "o": [
     "Late hypothyroidism from the radiation",
     "Radiation pericarditis, inflaming the heart sac",
@@ -781,14 +781,14 @@
     "Transient demyelination of the spinal cord"
    ],
    "a": 3,
-   "e": "Correct: D. Paresthesia into the arms and legs on neck flexion is L'Hermitte's sign, a subacute effect from transient demyelination of the spinal cord.\nA: Hypothyroidism is a late effect and does not cause tingling on neck flexion.\nB: Pericarditis is inflammation of the sac around the heart.\nC: Pneumonitis causes fever, cough and dyspnea 6 to 12 weeks after mediastinal RT.\nTakeaway: Subacute: pneumonitis, pericarditis, L'Hermitte's sign. Late: hypothyroidism, infertility, second cancers.",
+   "e": "Correct: D. Paresthesia into the arms and legs on neck flexion is L'Hermitte's sign, a subacute effect from transient demyelination of the spinal cord.\nA: Hypothyroidism is a late effect and does not cause tingling on neck flexion.\nB: Pericarditis is inflammation of the sac around the heart.\nC: Pneumonitis causes fever, cough and dyspnea 6 to 12 weeks after mediastinal RT.\nRed herring: Fatigue and weight gain tempt hypothyroidism, but that is a late effect and does not cause tingling on neck flexion. This is L'Hermitte's sign, a subacute effect.\nTakeaway: Subacute: pneumonitis, pericarditis, L'Hermitte's sign. Late: hypothyroidism, infertility, second cancers.",
    "l": [
     "W12 12.3"
    ]
   },
   {
    "c": "Week 9",
-   "p": "Which of the following is associated with basophilic stippling on the blood film?",
+   "p": "A 3-year-old lives in an old house that is being renovated, and the family recently moved from a region where thalassemia is common. Her blood film shows microcytic, hypochromic cells, and one feature on the film points to a specific toxic cause.\n\nWhich of the following is associated with basophilic stippling on the blood film?",
    "o": [
     "Anemia of chronic inflammation",
     "Lead poisoning",
@@ -796,7 +796,7 @@
     "Iron deficiency anemia"
    ],
    "a": 1,
-   "e": "Correct: B. Basophilic stippling is a feature of sideroblastic anemia, and lead poisoning is a listed cause of sideroblastic anemia.\nA: Anemia of chronic inflammation shows hypochromic cells without stippling.\nC: Hereditary spherocytosis shows spherocytes.\nD: Iron deficiency shows hypochromia, anisocytosis, target cells and elliptocytes.\nTakeaway: TAILS: thalassemia, chronic inflammation, iron deficiency, lead, sideroblastic.",
+   "e": "Correct: B. Basophilic stippling is a feature of sideroblastic anemia, and lead poisoning is a listed cause of sideroblastic anemia.\nA: Anemia of chronic inflammation shows hypochromic cells without stippling.\nC: Hereditary spherocytosis shows spherocytes.\nD: Iron deficiency shows hypochromia, anisocytosis, target cells and elliptocytes.\nRed herring: The family's origin tempts thalassemia. Renovation of an old house is the exposure clue, and basophilic stippling with lead poisoning is the link.\nTakeaway: TAILS: thalassemia, chronic inflammation, iron deficiency, lead, sideroblastic.",
    "l": [
     "W9 1.5",
     "W9 1.1"
