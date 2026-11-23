@@ -4,7 +4,7 @@
  "questions": [
   {
    "c": "Non-Hodgkin lymphoma",
-   "p": "Jacob, 12, has 3 weeks of a swelling belly, abdominal pain and vomiting. CT shows a large mass in the right lower abdomen. He has lost weight.\n\nHb 118 g/L (ref 115-155)\nWBC 9.6 × 10⁹/L (ref 4-10)\nPlatelets 340 × 10⁹/L (ref 150-450)\nLDH very high\nUric acid high\nBiopsy: sheets of medium-sized B cells with scattered macrophages giving a starry-sky pattern, and very high mitotic activity.\n\nWhat is the most likely diagnosis?",
+   "p": "Jacob, 12, has 3 weeks of a swelling belly, abdominal pain and vomiting. His family thought it was appendicitis because the pain began in the right lower abdomen. He had mononucleosis a year ago. His uncle had follicular lymphoma. He has lost 3 kg.\n\nHe has had no fevers or night sweats. He is passing less urine than usual. He takes no medications.\n\nReview of systems: no diarrhea, blood in stool, cough or bone pain. He is in grade 7 and plays hockey. He was born at term and has had no prior illnesses apart from mono.\n\nVitals: HR 112, BP 112/70, T 37.2°C.\nExam: Distended abdomen with a large, firm right lower quadrant mass. No peripheral nodes.\n\nCT: large mass in the right lower abdomen.\n\nHb 118 g/L (ref 115-155)\nWBC 9.6 × 10⁹/L (ref 4-10)\nPlatelets 340 × 10⁹/L (ref 150-450)\nLDH very high\nUric acid high\nBiopsy: sheets of medium-sized B cells with scattered macrophages giving a starry-sky pattern, and very high mitotic activity.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Burkitt lymphoma",
     "Diffuse large B-cell lymphoma",
@@ -13,14 +13,14 @@
     "Follicular lymphoma"
    ],
    "a": 0,
-   "e": "Correct: A. A child with a fast-growing abdominal mass, a very high LDH and a starry-sky pattern has Burkitt lymphoma, from t(8;14) with c-Myc activation.\nB: DLBCL shows sheets of large cells without a starry-sky pattern.\nC: ALL presents with blasts in the blood and marrow failure.\nD: Anaplastic large cell lymphoma has t(2;5) with ALK1.\nE: Follicular lymphoma is indolent and seen in older adults.\nTakeaway: Watch for tumour lysis syndrome when treatment starts.",
+   "e": "Correct: A. A child with a fast-growing abdominal mass, a very high LDH and a starry-sky pattern has Burkitt lymphoma, from t(8;14) with c-Myc activation.\nB: DLBCL shows sheets of large cells without a starry-sky pattern.\nC: ALL presents with blasts in the blood and marrow failure.\nD: Anaplastic large cell lymphoma has t(2;5) with ALK1.\nE: Follicular lymphoma is indolent and seen in older adults.\nRed herring: The right lower quadrant pain tempts appendicitis, and his uncle's follicular lymphoma tempts the same diagnosis. A starry-sky pattern with very high mitotic activity in a child means Burkitt lymphoma.\nTakeaway: Watch for tumour lysis syndrome when treatment starts.",
    "l": [
     "W12 4.6"
    ]
   },
   {
    "c": "Lymphadenopathy",
-   "p": "Which child most needs further workup for possible malignancy?",
+   "p": "Four children are referred to a pediatric lymph node clinic. Their parents are worried because each child's node is large or long-lasting. The 7-year-old has the largest node, at 2.5 cm.\n\nWhich child most needs further workup for possible malignancy?",
    "o": [
     "A 4-year-old with small neck nodes and an ear infection",
     "A newborn with a 1.5 cm non-tender neck node",
@@ -28,7 +28,7 @@
     "A 7-year-old whose 2.5 cm node shrank on antibiotics"
    ],
    "a": 1,
-   "e": "Correct: B. Non-tender nodes over 1 cm with onset in the neonatal period are a listed concerning feature.\nA: Small nodes with an ear infection fit a reactive cause.\nC: Tender nodes with throat symptoms suggest an infection, and ENT symptoms are reassuring.\nD: Nodes of 2 cm or more are concerning when they grow or fail to resolve after 2 weeks of antibiotics. This one shrank.\nTakeaway: In children, benign causes are more likely the younger the child, except in the neonatal period.",
+   "e": "Correct: B. Non-tender nodes over 1 cm with onset in the neonatal period are a listed concerning feature.\nA: Small nodes with an ear infection fit a reactive cause.\nC: Tender nodes with throat symptoms suggest an infection, and ENT symptoms are reassuring.\nD: Nodes of 2 cm or more are concerning when they grow or fail to resolve after 2 weeks of antibiotics. This one shrank.\nRed herring: The 7-year-old has the biggest node, but it shrank on antibiotics, which points to infection. A non-tender node over 1 cm in a newborn is a listed concerning feature.\nTakeaway: In children, benign causes are more likely the younger the child, except in the neonatal period.",
    "l": [
     "W12 3.3",
     "W12 3.2"
@@ -36,7 +36,7 @@
   },
   {
    "c": "Biopsy and lab tests",
-   "p": "A fine needle aspirate of an enlarged neck node shows many small lymphocytes. Which limitation of FNA matters most here?",
+   "p": "Walter, 66, has a 2 cm neck node. The ENT surgeon is busy, so a radiologist does a fine needle aspirate in clinic. It is quick and cheap, and it shows many small lymphocytes. The hematologist is not satisfied with the result.\n\nWhich limitation of FNA matters most here?",
    "o": [
     "It must be done by a surgeon in an operating room",
     "It is the most expensive of the three sampling methods",
@@ -44,14 +44,14 @@
     "It carries the highest infection risk of all the sampling options available"
    ],
    "a": 2,
-   "e": "Correct: C. FNA gives no nodal architecture, so it cannot sub-classify lymphoma. It also cannot separate benign from malignant low grade LPD.\nA: FNA needs no surgeon and no OR.\nB: FNA is the least expensive option.\nD: FNA has a lower risk of infection and complications.\nTakeaway: FNA is easy and cheap but cannot show architecture.",
+   "e": "Correct: C. FNA gives no nodal architecture, so it cannot sub-classify lymphoma. It also cannot separate benign from malignant low grade LPD.\nA: FNA needs no surgeon and no OR.\nB: FNA is the least expensive option.\nD: FNA has a lower risk of infection and complications.\nRed herring: Speed and cost sound like the issue, but FNA is fast and cheap. The problem is that it loses node architecture, so lymphoma cannot be sub-classified.\nTakeaway: FNA is easy and cheap but cannot show architecture.",
    "l": [
     "W12 1.6"
    ]
   },
   {
    "c": "Hodgkin lymphoma",
-   "p": "Raymond, 38, noticed a painless lump in his right neck 6 months ago that has grown slowly. He has no fevers, night sweats or weight loss. CT shows only two enlarged nodes in the right neck.\n\nHb 148 g/L (ref 135-170)\nWBC 7.2 × 10⁹/L (ref 4-10)\nPlatelets 260 × 10⁹/L (ref 150-450)\nLDH normal\nNode biopsy: nodular architecture with large cells that have a popcorn appearance, arising from germinal centre B cells.\nStains: CD20 and CD45 positive, CD15 and CD30 negative.\n\nWhat is the most likely diagnosis?",
+   "p": "Raymond, 38, noticed a painless lump in his right neck 6 months ago that has grown slowly. He had a dental abscess on the right side 2 months ago. He has itchy skin after hot showers. His brother had nodular sclerosis Hodgkin lymphoma.\n\nHe has had no fevers, night sweats or weight loss. He runs marathons.\n\nReview of systems: no cough, chest pain, abdominal pain or bone pain. He takes no medications. He works as a high school teacher and does not smoke.\n\nVitals: HR 58, BP 120/76.\nExam: Two firm, non-tender nodes in the right neck. No other nodes. No spleen.\n\nCT: only two enlarged nodes in the right neck.\n\nHb 148 g/L (ref 135-170)\nWBC 7.2 × 10⁹/L (ref 4-10)\nPlatelets 260 × 10⁹/L (ref 150-450)\nLDH normal\nNode biopsy: nodular architecture with large cells that have a popcorn appearance, arising from germinal centre B cells.\nStains: CD20 and CD45 positive, CD15 and CD30 negative.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Nodular sclerosis Hodgkin lymphoma",
     "Small lymphocytic lymphoma",
@@ -60,7 +60,7 @@
     "Diffuse large B-cell lymphoma"
    ],
    "a": 3,
-   "e": "Correct: D. Popcorn cells that are CD20 and CD45 positive and CD15 and CD30 negative, in a nodular pattern, with early-stage disease and no B symptoms, fit NLPHL, 5% of HL.\nA: Nodular sclerosis shows lacunar cells that are CD15 and CD30 positive and CD20 negative.\nB: SLL is a disease of older adults with smudge cells and blood involvement.\nC: Follicular lymphoma has a follicular pattern without popcorn cells.\nE: DLBCL is a rapidly enlarging mass with loss of node structure.\nTakeaway: NLPHL: mostly early stage, indolent, with an excellent prognosis.",
+   "e": "Correct: D. Popcorn cells that are CD20 and CD45 positive and CD15 and CD30 negative, in a nodular pattern, with early-stage disease and no B symptoms, fit NLPHL, 5% of HL.\nA: Nodular sclerosis shows lacunar cells that are CD15 and CD30 positive and CD20 negative.\nB: SLL is a disease of older adults with smudge cells and blood involvement.\nC: Follicular lymphoma has a follicular pattern without popcorn cells.\nE: DLBCL is a rapidly enlarging mass with loss of node structure.\nRed herring: His brother's nodular sclerosis HL tempts the same type, but nodular sclerosis is CD15 and CD30 positive. The dental abscess tempts reactive nodes. Popcorn cells that are CD20 positive and CD15 and CD30 negative mean NLPHL.\nTakeaway: NLPHL: mostly early stage, indolent, with an excellent prognosis.",
    "l": [
     "W12 4.2",
     "W12 4.7"
@@ -68,7 +68,7 @@
   },
   {
    "c": "Staging",
-   "p": "A pathology report calls a lymphoma aggressive. Imaging shows involved nodes on both sides of the diaphragm. Which interpretation is correct?",
+   "p": "Ingrid, 60, has a lymphoma that the pathology report calls aggressive. Imaging shows involved nodes in her neck and groin, on both sides of the diaphragm. Her marrow is clear. Her husband asks whether \"aggressive\" means it has spread everywhere.\n\nWhich interpretation is correct?",
    "o": [
     "Aggressive describes the stage. Both sides of the diaphragm describes its grade",
     "Aggressive describes clinical behaviour. Both sides of the diaphragm is stage II",
@@ -76,7 +76,7 @@
     "Aggressive describes clinical behaviour. Both sides of the diaphragm is stage III"
    ],
    "a": 3,
-   "e": "Correct: D. Indolent, aggressive and very aggressive describe clinical behaviour. Ann Arbor staging describes spread, and nodes on both sides of the diaphragm is stage III.\nA: This swaps behaviour and stage.\nB: Stage II stays on one side of the diaphragm.\nC: Stage IV means diffuse extralymphatic involvement, and behaviour is not a stage.\nTakeaway: Behaviour describes the tumour. Stage describes where it is.",
+   "e": "Correct: D. Indolent, aggressive and very aggressive describe clinical behaviour. Ann Arbor staging describes spread, and nodes on both sides of the diaphragm is stage III.\nA: This swaps behaviour and stage.\nB: Stage II stays on one side of the diaphragm.\nC: Stage IV means diffuse extralymphatic involvement, and behaviour is not a stage.\nRed herring: Her husband links \"aggressive\" with spread, which tempts you to merge grade and stage. Aggressive describes behaviour. Nodes on both sides of the diaphragm is stage III.\nTakeaway: Behaviour describes the tumour. Stage describes where it is.",
    "l": [
     "W12 4.3",
     "W12 5.3"
@@ -84,7 +84,7 @@
   },
   {
    "c": "Non-Hodgkin lymphoma",
-   "p": "Which statement about prognosis in non-Hodgkin lymphoma is correct?",
+   "p": "Two patients have DLBCL. Gene expression profiling shows Patient 1 has the germinal centre B-cell type and Patient 2 has the activated B-cell type. Both are 60 and have the same stage. A third patient, with follicular lymphoma, asks how her risk is scored.\n\nWhich statement about prognosis in non-Hodgkin lymphoma is correct?",
    "o": [
     "DLBCL of germinal centre type does better than activated B-cell type",
     "Follicular lymphoma is risk scored with the standard IPI and nothing else",
@@ -92,14 +92,14 @@
     "DLBCL is indolent and is usually incurable with treatment"
    ],
    "a": 0,
-   "e": "Correct: A. DLBCL has a better prognosis if it is of germinal centre B-cell type rather than activated B-cell type.\nB: Follicular lymphoma uses the FLIPI.\nC: Median survival in CLL is 10 to 15 years if caught early.\nD: DLBCL is aggressive but responds well to treatment.\nTakeaway: IPI for DLBCL, FLIPI for follicular.",
+   "e": "Correct: A. DLBCL has a better prognosis if it is of germinal centre B-cell type rather than activated B-cell type.\nB: Follicular lymphoma uses the FLIPI.\nC: Median survival in CLL is 10 to 15 years if caught early.\nD: DLBCL is aggressive but responds well to treatment.\nRed herring: The follicular lymphoma patient tempts you toward the standard IPI, but follicular lymphoma has its own index. DLBCL of germinal centre type does better than activated B-cell type.\nTakeaway: IPI for DLBCL, FLIPI for follicular.",
    "l": [
     "W12 5.4"
    ]
   },
   {
    "c": "Plasma cell disorders",
-   "p": "Harold, 68, had a serum protein electrophoresis during a workup for mild fatigue, which showed an M protein. He has no bone pain, infections or weight loss.\n\nHb 138 g/L (ref 135-170)\nWBC 6.4 × 10⁹/L (ref 4-10)\nPlatelets 230 × 10⁹/L (ref 150-450)\nCalcium 2.36 mmol/L\nCreatinine 82 µmol/L\nMarrow plasma cells 14%, monoclonal\nSkeletal survey: no lytic lesions.\n\nWhat is the most likely diagnosis?",
+   "p": "Harold, 68, had a serum protein electrophoresis during a workup for mild fatigue, which showed an M protein. He sleeps poorly because of his new grandchild. He had a kidney stone 5 years ago. He has mild back stiffness in the mornings that eases with walking. His brother has myeloma.\n\nHe has had no bone pain, infections or weight loss. He takes no medications.\n\nReview of systems: no cough, chest pain, numbness or tingling, and no blood in his urine. He is a retired teacher who walks daily. He does not smoke and drinks a glass of wine with dinner.\n\nVitals: HR 70, BP 128/78.\nExam: Normal.\n\nHb 138 g/L (ref 135-170)\nWBC 6.4 × 10⁹/L (ref 4-10)\nPlatelets 230 × 10⁹/L (ref 150-450)\nCalcium 2.36 mmol/L\nCreatinine 82 µmol/L\nMarrow plasma cells 14%, monoclonal\nSkeletal survey: no lytic lesions.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Solitary plasmacytoma",
     "POEMS syndrome",
@@ -108,7 +108,7 @@
     "Smoldering myeloma"
    ],
    "a": 4,
-   "e": "Correct: E. Monoclonal plasma cells of 10% or more in the marrow with no CRAB organ damage and no symptoms is smoldering myeloma.\nA: A plasmacytoma is a single tumour.\nB: POEMS brings neuropathy, organomegaly, endocrine and skin changes.\nC: Multiple myeloma needs organ damage.\nD: MGUS has fewer than 10% plasma cells.\nTakeaway: Smoldering myeloma: close follow-up every 3 to 6 months.",
+   "e": "Correct: E. Monoclonal plasma cells of 10% or more in the marrow with no CRAB organ damage and no symptoms is smoldering myeloma.\nA: A plasmacytoma is a single tumour.\nB: POEMS brings neuropathy, organomegaly, endocrine and skin changes.\nC: Multiple myeloma needs organ damage.\nD: MGUS has fewer than 10% plasma cells.\nRed herring: His brother's myeloma, the old kidney stone and back stiffness tempt multiple myeloma. He has no CRAB features: calcium, creatinine and Hb are normal and there are no lytic lesions. Plasma cells of 10% or more without organ damage is smoldering myeloma.\nTakeaway: Smoldering myeloma: close follow-up every 3 to 6 months.",
    "l": [
     "W12 7.2",
     "W12 7.3"
@@ -116,7 +116,7 @@
   },
   {
    "c": "Plasma cell disorders",
-   "p": "Why is daratumumab, and not rituximab, used as an antibody therapy in multiple myeloma?",
+   "p": "Grace, 66, has multiple myeloma. Her friend with follicular lymphoma was treated with rituximab and did well, and Grace asks why she is getting daratumumab instead.\n\nWhy is daratumumab, and not rituximab, used as an antibody therapy in multiple myeloma?",
    "o": [
     "Rituximab targets CD38, which plasma cells do not carry",
     "Plasma cells lack CD20, and daratumumab targets CD38",
@@ -124,14 +124,14 @@
     "Daratumumab targets the CD20 that plasma cells carry"
    ],
    "a": 1,
-   "e": "Correct: B. Plasma cells do not express CD20, the target of rituximab. Daratumumab targets CD38 and is listed for myeloma.\nA: Rituximab targets CD20.\nC: Plasma cells do not express CD20, so a CD20 antibody would miss them.\nD: Daratumumab targets CD38, and plasma cells do not carry CD20.\nTakeaway: Rituximab is for B-cell lymphomas. Daratumumab is for myeloma.",
+   "e": "Correct: B. Plasma cells do not express CD20, the target of rituximab. Daratumumab targets CD38 and is listed for myeloma.\nA: Rituximab targets CD20.\nC: Plasma cells do not express CD20, so a CD20 antibody would miss them.\nD: Daratumumab targets CD38, and plasma cells do not carry CD20.\nRed herring: Her friend's success with rituximab tempts you to think it would work. Plasma cells lack CD20. Daratumumab targets CD38.\nTakeaway: Rituximab is for B-cell lymphomas. Daratumumab is for myeloma.",
    "l": [
     "W12 7.1"
    ]
   },
   {
    "c": "Non-Hodgkin lymphoma",
-   "p": "Arthur, 63, has had painless lumps in his neck, armpits and groin for over a year. They come and go in size. He feels well, with no fevers or weight loss. On exam he has rubbery nodes in all three areas and a palpable spleen.\n\nHb 124 g/L (ref 135-170)\nWBC 4.6 × 10⁹/L (ref 4-10)\nPlatelets 142 × 10⁹/L (ref 150-450)\nLDH normal\nNode biopsy: a follicular pattern of small B cells.\nCytogenetics: t(14;18).\n\nWhat is the most likely diagnosis?",
+   "p": "Arthur, 63, has had painless lumps in his neck, armpits and groin for over a year. They come and go in size. He had a cold last month, and his nodes seemed bigger during it. He was treated for latent TB 20 years ago. His granddaughter has a cat that scratches him.\n\nHe feels well, with no fevers or weight loss. He walks daily.\n\nReview of systems: no cough, abdominal pain, itching or bleeding. He worked as a farmer for 30 years. He does not smoke. His wife is well.\n\nVitals: HR 74, BP 130/80.\nExam: Rubbery nodes in the neck, armpits and groin. Palpable spleen tip.\n\nHb 124 g/L (ref 135-170)\nWBC 4.6 × 10⁹/L (ref 4-10)\nPlatelets 142 × 10⁹/L (ref 150-450)\nLDH normal\nNode biopsy: a follicular pattern of small B cells.\nCytogenetics: t(14;18).\n\nWhat is the most likely diagnosis?",
    "o": [
     "Burkitt lymphoma",
     "Diffuse large B-cell lymphoma",
@@ -140,7 +140,7 @@
     "Follicular lymphoma"
    ],
    "a": 4,
-   "e": "Correct: E. Widespread painless nodes in an older adult with an indolent course, a follicular pattern and t(14;18) with Bcl-2 activation fit follicular lymphoma, the second most common NHL.\nA: Burkitt has t(8;14) and a starry-sky pattern.\nB: DLBCL grows fast, with large cells and loss of node structure.\nC: Mantle cell lymphoma has t(11;14) with cyclin D1.\nD: NLPHL shows popcorn cells, not t(14;18).\nTakeaway: Follicular lymphoma: watch and wait until symptoms develop.",
+   "e": "Correct: E. Widespread painless nodes in an older adult with an indolent course, a follicular pattern and t(14;18) with Bcl-2 activation fit follicular lymphoma, the second most common NHL.\nA: Burkitt has t(8;14) and a starry-sky pattern.\nB: DLBCL grows fast, with large cells and loss of node structure.\nC: Mantle cell lymphoma has t(11;14) with cyclin D1.\nD: NLPHL shows popcorn cells, not t(14;18).\nRed herring: The cold, the cat and the old TB all offer benign causes of nodes. Waxing and waning widespread nodes with a follicular pattern and t(14;18) mean follicular lymphoma.\nTakeaway: Follicular lymphoma: watch and wait until symptoms develop.",
    "l": [
     "W12 4.6",
     "W12 5.5"
@@ -148,7 +148,7 @@
   },
   {
    "c": "Lymphadenopathy",
-   "p": "Which findings in an adult with lymphadenopathy raise concern for malignancy?\ni) Fever for more than 1 week with night sweats\nii) A tender 1 cm neck node with a sore throat\niii) A supraclavicular node\niv) Weight loss of more than 10% of body weight",
+   "p": "A family doctor sees four adults with lymphadenopathy in one week: one with a long fever and night sweats, one with a sore throat and a tender neck node, one with a node above the clavicle, and one who lost 12% of her weight.\n\nWhich findings in an adult with lymphadenopathy raise concern for malignancy?\ni) Fever for more than 1 week with night sweats\nii) A tender 1 cm neck node with a sore throat\niii) A supraclavicular node\niv) Weight loss of more than 10% of body weight",
    "o": [
     "ii), iii) and iv) only",
     "i) and iv) only",
@@ -156,14 +156,14 @@
     "All of the above"
    ],
    "a": 2,
-   "e": "Correct: C. Fever over 1 week, night sweats, weight loss over 10% and supraclavicular nodes are listed features concerning for malignancy.\nA: A tender small node with throat symptoms is not a red flag. Absence of ENT symptoms is the concerning feature.\nB: This leaves out the supraclavicular node, a listed red flag.\nD: Statement ii) is not a concerning feature.\nTakeaway: Red flags: B symptoms, supraclavicular, generalized, fixed or matted, abnormal CXR or CBC.",
+   "e": "Correct: C. Fever over 1 week, night sweats, weight loss over 10% and supraclavicular nodes are listed features concerning for malignancy.\nA: A tender small node with throat symptoms is not a red flag. Absence of ENT symptoms is the concerning feature.\nB: This leaves out the supraclavicular node, a listed red flag.\nD: Statement ii) is not a concerning feature.\nRed herring: Any node in an adult can feel worrying, but a tender node with a sore throat is the classic reactive pattern.\nTakeaway: Red flags: B symptoms, supraclavicular, generalized, fixed or matted, abnormal CXR or CBC.",
    "l": [
     "W12 2.3"
    ]
   },
   {
    "c": "Non-Hodgkin lymphoma",
-   "p": "Jacob, 12, has a fast-growing abdominal mass. Biopsy shows a starry-sky pattern. Which genetic change is most likely?",
+   "p": "Jacob, 12, has a fast-growing abdominal mass with a very high LDH. Biopsy shows a starry-sky pattern. His uncle had follicular lymphoma, and the family asks if Jacob has \"the same gene change\".\n\nWhich genetic change is most likely?",
    "o": [
     "t(8;14) with c-Myc activation",
     "t(11;14) with cyclin D1 overexpression",
@@ -171,14 +171,14 @@
     "t(2;5) with an ALK1 mutation"
    ],
    "a": 0,
-   "e": "Correct: A. A starry-sky pattern is the mark of Burkitt lymphoma, which carries t(8;14) and c-Myc activation.\nB: t(11;14) with cyclin D1 is mantle cell lymphoma.\nC: t(14;18) with Bcl-2 is follicular lymphoma.\nD: t(2;5) with ALK1 is anaplastic large cell lymphoma.\nTakeaway: Starry sky means Burkitt means t(8;14).",
+   "e": "Correct: A. A starry-sky pattern is the mark of Burkitt lymphoma, which carries t(8;14) and c-Myc activation.\nB: t(11;14) with cyclin D1 is mantle cell lymphoma.\nC: t(14;18) with Bcl-2 is follicular lymphoma.\nD: t(2;5) with ALK1 is anaplastic large cell lymphoma.\nRed herring: The uncle's follicular lymphoma tempts t(14;18). A starry-sky pattern means Burkitt lymphoma, with t(8;14) and c-Myc activation.\nTakeaway: Starry sky means Burkitt means t(8;14).",
    "l": [
     "W12 4.6"
    ]
   },
   {
    "c": "Plasma cell disorders",
-   "p": "Ruth, 72, has an M protein found on routine bloodwork. She feels well and has no bone pain, infections or weight loss.\n\nHb 128 g/L (ref 115-160)\nWBC 5.9 × 10⁹/L (ref 4-10)\nPlatelets 250 × 10⁹/L (ref 150-450)\nCalcium 2.31 mmol/L\nCreatinine 74 µmol/L\nMarrow plasma cells 6%\nSkeletal survey: no lytic lesions.\n\nWhat is the most likely diagnosis?",
+   "p": "Ruth, 72, has an M protein found on routine bloodwork done for her osteoporosis clinic. She has had a wrist fracture after a fall on ice. She has mild anemia from heavy NSAID use for arthritis, and her ferritin is low. She feels well otherwise.\n\nShe has had no bone pain, infections or weight loss.\n\nReview of systems: no numbness, tingling, cough or blood in her urine. She takes alendronate, naproxen and a calcium supplement. She lives alone and still volunteers at her church.\n\nVitals: HR 76, BP 134/80.\nExam: Normal.\n\nHb 128 g/L (ref 115-160)\nWBC 5.9 × 10⁹/L (ref 4-10)\nPlatelets 250 × 10⁹/L (ref 150-450)\nCalcium 2.31 mmol/L\nCreatinine 74 µmol/L\nMarrow plasma cells 6%\nSkeletal survey: no lytic lesions.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Multiple myeloma",
     "MGUS",
@@ -187,7 +187,7 @@
     "AL amyloidosis"
    ],
    "a": 1,
-   "e": "Correct: B. An asymptomatic M protein with fewer than 10% marrow plasma cells and no organ damage is MGUS, with a 0.5 to 2% yearly risk of myeloma.\nA: Myeloma needs organ damage.\nC: Plasma cell leukemia needs plasma cells in the blood.\nD: Smoldering myeloma needs 10% or more plasma cells.\nE: AL amyloidosis brings organ damage from deposits.\nTakeaway: MGUS: monitor 1 to 2 times a year.",
+   "e": "Correct: B. An asymptomatic M protein with fewer than 10% marrow plasma cells and no organ damage is MGUS, with a 0.5 to 2% yearly risk of myeloma.\nA: Myeloma needs organ damage.\nC: Plasma cell leukemia needs plasma cells in the blood.\nD: Smoldering myeloma needs 10% or more plasma cells.\nE: AL amyloidosis brings organ damage from deposits.\nRed herring: The wrist fracture tempts a myeloma bone lesion, but it followed a fall on ice and the skeletal survey is clear. Fewer than 10% plasma cells with no organ damage is MGUS.\nTakeaway: MGUS: monitor 1 to 2 times a year.",
    "l": [
     "W12 7.3",
     "W12 7.4"
@@ -195,7 +195,7 @@
   },
   {
    "c": "Radiation",
-   "p": "Which statement about radiation therapy for lymphoma is FALSE?",
+   "p": "Kerry, 30, will have radiation for early-stage Hodgkin lymphoma. Her nurse answers questions in a handout. One statement has crept in by mistake.\n\nWhich statement about radiation therapy for lymphoma is FALSE?",
    "o": [
     "It carries a slight risk of a second cancer years later",
     "It only treats tumour cells inside the radiation field",
@@ -203,14 +203,14 @@
     "It damages only cancer cells and spares normal cells"
    ],
    "a": 3,
-   "e": "Correct: D. Radiation damages the DNA of both normal and cancer cells. So the claim that it spares normal cells is false.\nA: True. There is a slight risk of secondary cancer many years later.\nB: True. Radiation only works on tumour cells in the field.\nC: True. External beam radiation is painless.\nTakeaway: Every tissue has a dose limit. Spinal cord, bowel, kidney and lungs often limit treatment.",
+   "e": "Correct: D. Radiation damages the DNA of both normal and cancer cells. So the claim that it spares normal cells is false.\nA: True. There is a slight risk of secondary cancer many years later.\nB: True. Radiation only works on tumour cells in the field.\nC: True. External beam radiation is painless.\nRed herring: \"Painless\" and \"slight second cancer risk\" sound like the risky claims, but both are true. Radiation damages DNA in normal and cancer cells alike.\nTakeaway: Every tissue has a dose limit. Spinal cord, bowel, kidney and lungs often limit treatment.",
    "l": [
     "W12 12.2"
    ]
   },
   {
    "c": "Lymphadenopathy",
-   "p": "Which statement about lymphadenopathy in children is correct?",
+   "p": "A pediatric resident sees many children with neck nodes. Her attending asks her to state one rule about lymphadenopathy in children before she orders more tests.\n\nWhich statement about lymphadenopathy in children is correct?",
    "o": [
     "Lymphoid tissue mass peaks in early childhood",
     "Palpable nodes are rare between ages 4 and 8",
@@ -218,14 +218,14 @@
     "Having ear, nose and throat symptoms makes malignancy more likely"
    ],
    "a": 2,
-   "e": "Correct: C. Lymphadenopathy is common in children, and benign causes are more likely at a younger age.\nA: Lymphoid tissue mass peaks in adolescence.\nB: Lymphadenopathy is found in about 90% of children aged 4 to 8.\nD: The absence of ENT symptoms is the concerning feature.\nTakeaway: Peak lymphoid mass is in adolescence. Nodes are very common in young children.",
+   "e": "Correct: C. Lymphadenopathy is common in children, and benign causes are more likely at a younger age.\nA: Lymphoid tissue mass peaks in adolescence.\nB: Lymphadenopathy is found in about 90% of children aged 4 to 8.\nD: The absence of ENT symptoms is the concerning feature.\nRed herring: ENT symptoms make a node feel more serious, but they point to infection. Benign causes are more likely the younger the child.\nTakeaway: Peak lymphoid mass is in adolescence. Nodes are very common in young children.",
    "l": [
     "W12 3.1"
    ]
   },
   {
    "c": "Plasma cell disorders",
-   "p": "Ruth, 72, has MGUS. Which follow-up plan and risk of progression to myeloma match the notes?",
+   "p": "Ruth, 72, has MGUS with fewer than 10% marrow plasma cells and no organ damage. Her daughter read that MGUS \"turns into cancer\" and wants her treated now. Ruth's friend had smoldering myeloma and was seen every few months.\n\nWhich follow-up plan and risk of progression to myeloma match the notes?",
    "o": [
     "Monitor 1-2 times a year. Risk of myeloma is 0.5-2%",
     "Start therapy now. Risk of myeloma is 0.5-2%",
@@ -233,7 +233,7 @@
     "Follow up every 3-6 months. Risk of myeloma is 5-25%"
    ],
    "a": 0,
-   "e": "Correct: A. MGUS is monitored once or twice a year and carries a 0.5 to 2% risk of myeloma.\nB: MGUS is asymptomatic and is monitored, not treated.\nC: High dose combination chemotherapy is for plasma cell leukemia.\nD: Follow-up every 3 to 6 months with a 5 to 25% risk is smoldering myeloma.\nTakeaway: MGUS is watched. Smoldering is watched more closely. Myeloma is treated.",
+   "e": "Correct: A. MGUS is monitored once or twice a year and carries a 0.5 to 2% risk of myeloma.\nB: MGUS is asymptomatic and is monitored, not treated.\nC: High dose combination chemotherapy is for plasma cell leukemia.\nD: Follow-up every 3 to 6 months with a 5 to 25% risk is smoldering myeloma.\nRed herring: Her friend's every-few-months follow-up and 5 to 25% risk belong to smoldering myeloma. MGUS is monitored once or twice a year, with a 0.5 to 2% risk.\nTakeaway: MGUS is watched. Smoldering is watched more closely. Myeloma is treated.",
    "l": [
     "W12 7.3",
     "W12 7.4"
@@ -241,7 +241,7 @@
   },
   {
    "c": "Hodgkin lymphoma",
-   "p": "Which statement comparing Hodgkin with non-Hodgkin lymphoma is FALSE?",
+   "p": "A student writes four statements comparing Hodgkin and non-Hodgkin lymphoma on a flashcard. She mixes up which lymphoma skips node groups.\n\nWhich statement comparing Hodgkin with non-Hodgkin lymphoma is FALSE?",
    "o": [
     "All Hodgkin lymphoma is treated with the aim of cure",
     "Hodgkin lymphoma often spreads in a non-contiguous pattern",
@@ -249,14 +249,14 @@
     "Hodgkin lymphoma is usually nodal, and extranodal disease is rare"
    ],
    "a": 1,
-   "e": "Correct: B. Hodgkin lymphoma spreads contiguously, from neck to supraclavicular, thorax and abdomen. Non-Hodgkin lymphoma can spread non-contiguously. So this statement is false.\nA: True. All HL patients must be treated with the aim to cure.\nC: True. RS cells in an inflammatory background are the HL hallmark.\nD: True. HL is nodal, and extranodal disease is rare.\nTakeaway: HL: contiguous, nodal, RS cells, curable. NHL: varied spread, monoclonal.",
+   "e": "Correct: B. Hodgkin lymphoma spreads contiguously, from neck to supraclavicular, thorax and abdomen. Non-Hodgkin lymphoma can spread non-contiguously. So this statement is false.\nA: True. All HL patients must be treated with the aim to cure.\nC: True. RS cells in an inflammatory background are the HL hallmark.\nD: True. HL is nodal, and extranodal disease is rare.\nRed herring: \"Non-contiguous\" sounds like an aggressive feature that fits Hodgkin. Hodgkin spreads contiguously. Non-Hodgkin can skip.\nTakeaway: HL: contiguous, nodal, RS cells, curable. NHL: varied spread, monoclonal.",
    "l": [
     "W12 4.8"
    ]
   },
   {
    "c": "Biopsy and lab tests",
-   "p": "Marcus, 52, has a 3 cm node and suspected lymphoma. Which feature of an excisional biopsy makes it the most informative option?",
+   "p": "Marcus, 52, has a 3 cm neck node and suspected lymphoma. He is a busy executive and asks for the quickest, least invasive test. The hematologist recommends a surgeon remove the whole node.\n\nWhich feature of an excisional biopsy makes it the most informative option?",
    "o": [
     "It needs no surgeon and costs the least of the three options",
     "It is the least invasive option and gives the fastest results",
@@ -264,14 +264,14 @@
     "It suits severely sick patients who cannot go to the OR"
    ],
    "a": 2,
-   "e": "Correct: C. Excisional biopsy is always representative, has no false negatives and shows the architecture. It also gives enough tissue for every study.\nA: No surgeon and lowest cost describe FNA.\nB: Least invasive and fastest describe FNA.\nD: Excisional biopsy cannot be done on severely sick compromised patients.\nTakeaway: Excisional biopsy is the most complete sample but needs a surgeon.",
+   "e": "Correct: C. Excisional biopsy is always representative, has no false negatives and shows the architecture. It also gives enough tissue for every study.\nA: No surgeon and lowest cost describe FNA.\nB: Least invasive and fastest describe FNA.\nD: Excisional biopsy cannot be done on severely sick compromised patients.\nRed herring: His wish for the quickest test tempts FNA or core biopsy. Excisional biopsy is more invasive but shows architecture and has no false negatives.\nTakeaway: Excisional biopsy is the most complete sample but needs a surgeon.",
    "l": [
     "W12 4.4"
    ]
   },
   {
    "c": "Hodgkin lymphoma",
-   "p": "Patient A is a 22-year-old man with nodes that have spread from his neck to his mediastinum in order. Patient B is a 70-year-old woman with a lymphoma in her stomach and scattered nodes. Which type of lymphoma best fits each patient, in order?",
+   "p": "Two patients have lymphoma.\n\nPatient A, a 22-year-old man, has nodes that spread in order from his neck to his mediastinum. He has itchy skin.\n\nPatient B, a 70-year-old woman, has a lymphoma in her stomach and scattered nodes that skip node groups. She had H. pylori years ago.\n\nWhich type of lymphoma best fits each patient, in order?",
    "o": [
     "Both non-Hodgkin",
     "A non-Hodgkin, B Hodgkin",
@@ -279,14 +279,14 @@
     "A Hodgkin, B non-Hodgkin"
    ],
    "a": 3,
-   "e": "Correct: D. Hodgkin lymphoma affects younger patients, mostly males, and spreads contiguously through nodes. Non-Hodgkin lymphoma affects older patients and can be extranodal and non-contiguous.\nA: Patient A is young with contiguous nodal spread, which fits HL.\nB: This reverses the age and spread patterns.\nC: Patient B has extranodal disease in an older adult, which fits NHL.\nTakeaway: Young, nodal and contiguous points to HL. Older and extranodal points to NHL.",
+   "e": "Correct: D. Hodgkin lymphoma affects younger patients, mostly males, and spreads contiguously through nodes. Non-Hodgkin lymphoma affects older patients and can be extranodal and non-contiguous.\nA: Patient A is young with contiguous nodal spread, which fits HL.\nB: This reverses the age and spread patterns.\nC: Patient B has extranodal disease in an older adult, which fits NHL.\nRed herring: Itch and H. pylori are real associations but are not needed. Young, male and contiguous spread fits Hodgkin. Older, extranodal and non-contiguous fits non-Hodgkin.\nTakeaway: Young, nodal and contiguous points to HL. Older and extranodal points to NHL.",
    "l": [
     "W12 5.1"
    ]
   },
   {
    "c": "Radiation",
-   "p": "Which of these effects of radiation is classed as a late effect rather than a subacute one?",
+   "p": "Mia, 26, finished neck and mediastinal radiation for Hodgkin lymphoma. Over the next years, her doctor watches for effects. At 3 months she had tingling on neck flexion. At 2 years her TSH rose.\n\nWhich of these effects of radiation is classed as a late effect rather than a subacute one?",
    "o": [
     "L'Hermitte's sign",
     "Hypothyroidism",
@@ -294,14 +294,14 @@
     "Radiation pneumonitis"
    ],
    "a": 1,
-   "e": "Correct: B. Hypothyroidism is listed as a late effect, and thyroid replacement is recommended.\nA: L'Hermitte's sign is a subacute effect from transient demyelination.\nC: Myelosuppression is subacute, after high volume pelvic marrow radiation.\nD: Radiation pneumonitis is subacute, within 6 to 12 weeks.\nTakeaway: Late effects: hypothyroidism, zoster, infertility, secondary cancers.",
+   "e": "Correct: B. Hypothyroidism is listed as a late effect, and thyroid replacement is recommended.\nA: L'Hermitte's sign is a subacute effect from transient demyelination.\nC: Myelosuppression is subacute, after high volume pelvic marrow radiation.\nD: Radiation pneumonitis is subacute, within 6 to 12 weeks.\nRed herring: L'Hermitte's sign and pneumonitis both appear after radiation, which makes them tempting. They are subacute. Hypothyroidism is a late effect.\nTakeaway: Late effects: hypothyroidism, zoster, infertility, secondary cancers.",
    "l": [
     "W12 12.3"
    ]
   },
   {
    "c": "Lymphadenopathy",
-   "p": "Hana, 45, has enlarged nodes in her neck and in her right axilla. How is her lymphadenopathy best classified?",
+   "p": "Hana, 45, has enlarged nodes in her neck and in her right axilla. She had a viral illness 3 weeks ago, and the neck nodes are mildly tender. Her doctor calls the nodes \"probably reactive\".\n\nHow is her lymphadenopathy best classified?",
    "o": [
     "Isolated",
     "Localized",
@@ -309,14 +309,14 @@
     "Reactive"
    ],
    "a": 2,
-   "e": "Correct: C. Two separate anatomic areas are involved. More than one area is generalized, which raises concern for malignancy or another systemic condition.\nA: Isolated means a single node.\nB: Localized means one anatomic area.\nD: Reactive is a cause, not a description of extent.\nTakeaway: Isolated is one node, localized is one area, generalized is more than one area.",
+   "e": "Correct: C. Two separate anatomic areas are involved. More than one area is generalized, which raises concern for malignancy or another systemic condition.\nA: Isolated means a single node.\nB: Localized means one anatomic area.\nD: Reactive is a cause, not a description of extent.\nRed herring: The viral illness tempts \"reactive\", but that describes a cause, not the distribution. Two separate areas is generalized.\nTakeaway: Isolated is one node, localized is one area, generalized is more than one area.",
    "l": [
     "W12 2.2"
    ]
   },
   {
    "c": "Hodgkin lymphoma",
-   "p": "Chloe, 23, has 2 months of a dry cough, itchy skin and night sweats. She noticed a painless lump above her left collarbone. Chest X-ray shows a large anterior mediastinal mass.\n\nHb 122 g/L (ref 115-160)\nWBC 10.8 × 10⁹/L (ref 4-10)\nEosinophils mildly high\nPlatelets 410 × 10⁹/L (ref 150-450)\nLDH normal\nNode biopsy: Reed-Sternberg cells and lacunar cells in a nodular pattern with collagen bands, in a background of eosinophils, lymphocytes and plasma cells.\nStains: CD15 and CD30 positive, CD20 and CD45 negative.\n\nWhat is the most likely diagnosis?",
+   "p": "Chloe, 23, has 2 months of a dry cough, itchy skin and night sweats. She noticed a painless lump above her left collarbone. Her doctor first thought it was asthma and gave her an inhaler, which did not help. Her sister has myasthenia gravis. She had mono at 16.\n\nShe has lost 2 kg. She is a graduate student and does not smoke.\n\nReview of systems: no chest pain, abdominal pain or bone pain. Her itch is worse at night and not linked to showers. She takes no medications apart from the inhaler.\n\nVitals: HR 96, BP 112/70, T 37.6°C.\nExam: Firm, painless left supraclavicular node. No wheeze. No spleen.\n\nChest X-ray: large anterior mediastinal mass.\n\nHb 122 g/L (ref 115-160)\nWBC 10.8 × 10⁹/L (ref 4-10)\nEosinophils mildly high\nPlatelets 410 × 10⁹/L (ref 150-450)\nLDH normal\nNode biopsy: Reed-Sternberg cells and lacunar cells in a nodular pattern with collagen bands, in a background of eosinophils, lymphocytes and plasma cells.\nStains: CD15 and CD30 positive, CD20 and CD45 negative.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Thymoma",
     "Lymphoblastic lymphoma",
@@ -325,7 +325,7 @@
     "Nodular sclerosis Hodgkin lymphoma"
    ],
    "a": 4,
-   "e": "Correct: E. A young adult with a mediastinal mass, RS and lacunar cells, collagen bands, and a CD15 and CD30 positive, CD20 negative stain has nodular sclerosis HL, 70% of all HL.\nA: Thymoma is a tumour of adults over 40 and is resected without a biopsy.\nB: Lymphoblastic lymphoma comes on over days and shows immature blasts.\nC: NLPHL shows popcorn cells that are CD20 positive and CD15 and CD30 negative, and rarely a mediastinal mass.\nD: DLBCL has no Reed-Sternberg cells or inflammatory background.\nTakeaway: Nodular sclerosis: mostly stage I to II, with a very good to excellent prognosis.",
+   "e": "Correct: E. A young adult with a mediastinal mass, RS and lacunar cells, collagen bands, and a CD15 and CD30 positive, CD20 negative stain has nodular sclerosis HL, 70% of all HL.\nA: Thymoma is a tumour of adults over 40 and is resected without a biopsy.\nB: Lymphoblastic lymphoma comes on over days and shows immature blasts.\nC: NLPHL shows popcorn cells that are CD20 positive and CD15 and CD30 negative, and rarely a mediastinal mass.\nD: DLBCL has no Reed-Sternberg cells or inflammatory background.\nRed herring: Her sister's myasthenia tempts thymoma, which is linked to myasthenia in the patient, not a relative. The past mono tempts EBV. Lacunar cells with collagen bands and CD15 and CD30 positivity mean nodular sclerosis HL.\nTakeaway: Nodular sclerosis: mostly stage I to II, with a very good to excellent prognosis.",
    "l": [
     "W12 4.2",
     "W12 5.4"
@@ -333,7 +333,7 @@
   },
   {
    "c": "Mediastinal mass",
-   "p": "Imaging shows a mass in the posterior mediastinum beside the spine. Which category of lesion is most likely?",
+   "p": "Imaging in a 50-year-old with back pain shows a mass in the posterior mediastinum beside the spine. He also has a history of a benign cyst near his heart found years ago, and he had myasthenia gravis in his 30s that resolved.\n\nWhich category of lesion is most likely?",
    "o": [
     "Bronchogenic or pericardial cyst",
     "Thymoma",
@@ -341,14 +341,14 @@
     "Neurogenic tumour"
    ],
    "a": 3,
-   "e": "Correct: D. The posterior paravertebral compartment holds the sympathetic trunk and nerves. Its differential is neurogenic tumours, meningoceles and spine lesions.\nA: Bronchogenic cysts are middle compartment lesions.\nB: Thymoma is an anterior compartment lesion.\nC: Teratoma is an anterior compartment lesion.\nTakeaway: Anterior 5Ts, middle nodes and cysts, posterior nerves.",
+   "e": "Correct: D. The posterior paravertebral compartment holds the sympathetic trunk and nerves. Its differential is neurogenic tumours, meningoceles and spine lesions.\nA: Bronchogenic cysts are middle compartment lesions.\nB: Thymoma is an anterior compartment lesion.\nC: Teratoma is an anterior compartment lesion.\nRed herring: The old pericardial cyst and myasthenia tempt middle and anterior compartment lesions. The posterior paravertebral compartment holds nerves, so neurogenic tumours lead its differential.\nTakeaway: Anterior 5Ts, middle nodes and cysts, posterior nerves.",
    "l": [
     "W12 6.1"
    ]
   },
   {
    "c": "Plasma cell disorders",
-   "p": "Viktor, 66, has 4 months of swelling in his legs and shortness of breath on exertion. Echo shows thick heart walls, and his urine has heavy protein. He has no bone pain.\n\nHb 132 g/L (ref 135-170)\nPlatelets 240 × 10⁹/L (ref 150-450)\nCalcium normal\nCreatinine mildly high\nSerum free light chains monoclonal light chain excess\nFat pad biopsy: deposits of insoluble protein.\nSkeletal survey: no lytic lesions.\n\nWhat is the most likely diagnosis?",
+   "p": "Viktor, 66, has 4 months of swelling in his legs and shortness of breath on exertion. His tongue has grown larger, and his voice is hoarse. He has heavy protein in his urine. He had a heart attack 10 years ago. He takes amlodipine, which his doctor blames for the ankle swelling.\n\nHe has no bone pain. He does not smoke.\n\nReview of systems: no fevers, night sweats or bone pain. He has noticed easy bruising around his eyes after coughing. He takes amlodipine and atorvastatin.\n\nVitals: HR 96, BP 104/66.\nExam: Enlarged tongue. Raised JVP. Pitting leg edema.\nEcho: thick heart walls.\n\nHb 132 g/L (ref 135-170)\nPlatelets 240 × 10⁹/L (ref 150-450)\nCalcium normal\nCreatinine mildly high\nSerum free light chains: monoclonal light chain excess\nFat pad biopsy: deposits of insoluble protein.\nSkeletal survey: no lytic lesions.\n\nWhat is the most likely diagnosis?",
    "o": [
     "POEMS syndrome",
     "Multiple myeloma",
@@ -357,7 +357,7 @@
     "AL amyloidosis"
    ],
    "a": 4,
-   "e": "Correct: E. An abnormal light chain that becomes insoluble and deposits in the heart and kidneys, proven on biopsy, fits AL amyloidosis.\nA: POEMS brings neuropathy, organomegaly, endocrine and skin changes.\nB: Myeloma needs the CRAB pattern, and he has no lytic lesions, anemia or hypercalcemia.\nC: MGUS has no organ damage.\nD: Plasma cell leukemia needs plasma cells in the blood.\nTakeaway: AL amyloidosis may be idiopathic, primary, or secondary to myeloma.",
+   "e": "Correct: E. An abnormal light chain that becomes insoluble and deposits in the heart and kidneys, proven on biopsy, fits AL amyloidosis.\nA: POEMS brings neuropathy, organomegaly, endocrine and skin changes.\nB: Myeloma needs the CRAB pattern, and he has no lytic lesions, anemia or hypercalcemia.\nC: MGUS has no organ damage.\nD: Plasma cell leukemia needs plasma cells in the blood.\nRed herring: Amlodipine and his old heart attack offer innocent explanations for swelling and heart failure. A large tongue, thick heart walls, proteinuria and insoluble protein deposits mean AL amyloidosis.\nTakeaway: AL amyloidosis may be idiopathic, primary, or secondary to myeloma.",
    "l": [
     "W12 8.1",
     "W12 7.1"
@@ -365,7 +365,7 @@
   },
   {
    "c": "Lymphadenopathy",
-   "p": "Jade, 22, has a tender lump in her right armpit for 10 days. Three weeks ago her new kitten scratched her right forearm, and a small bump formed at the scratch. She has a low-grade fever and no night sweats or weight loss. On exam she has one tender, mobile 2.5 cm axillary node and no other nodes or spleen.\n\nHb 134 g/L (ref 115-160)\nWBC 9.8 × 10⁹/L (ref 4-10)\nLymphocytes normal\nPlatelets 270 × 10⁹/L (ref 150-450)\nLDH normal\nFilm: normal.\n\nWhat is the most likely diagnosis?",
+   "p": "Jade, 22, has a tender lump in her right armpit for 10 days. Three weeks ago her new kitten scratched her right forearm, and a small bump formed at the scratch. Her mother had breast cancer at 45. Jade had a sore throat last month. She started a new antiepileptic drug 6 weeks ago.\n\nShe has a low-grade fever and no night sweats or weight loss.\n\nReview of systems: no cough, rash, breast lumps or joint pain. She works at a vet clinic. She does not smoke and drinks socially.\n\nVitals: HR 88, T 37.8°C.\nExam: One tender, mobile 2.5 cm right axillary node. Healing papule on the right forearm. No other nodes or spleen. Normal breast exam.\n\nHb 134 g/L (ref 115-160)\nWBC 9.8 × 10⁹/L (ref 4-10)\nLymphocytes normal\nPlatelets 270 × 10⁹/L (ref 150-450)\nLDH normal\nFilm: normal.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Drug reaction",
     "Hodgkin lymphoma",
@@ -374,7 +374,7 @@
     "Cat-scratch disease"
    ],
    "a": 4,
-   "e": "Correct: E. A single tender, mobile axillary node draining a recent kitten scratch, with a normal CBC and film, fits cat-scratch disease, a listed cause of axillary nodes.\nA: She takes no new drugs.\nB: Hodgkin lymphoma gives painless nodes that spread in order.\nC: Breast cancer nodes are usually fixed and painless, and she has a clear infectious source.\nD: Mono causes sore throat, neck nodes and atypical lymphocytes.\nTakeaway: Look at the area the node drains.",
+   "e": "Correct: E. A single tender, mobile axillary node draining a recent kitten scratch, with a normal CBC and film, fits cat-scratch disease, a listed cause of axillary nodes.\nA: She takes no new drugs.\nB: Hodgkin lymphoma gives painless nodes that spread in order.\nC: Breast cancer nodes are usually fixed and painless, and she has a clear infectious source.\nD: Mono causes sore throat, neck nodes and atypical lymphocytes.\nRed herring: Her mother's breast cancer, the new antiepileptic and the sore throat all point elsewhere. A single tender node draining a recent kitten scratch with a papule fits cat-scratch disease.\nTakeaway: Look at the area the node drains.",
    "l": [
     "W12 2.1",
     "W12 2.2"
@@ -382,7 +382,7 @@
   },
   {
    "c": "Biopsy and lab tests",
-   "p": "Which statement about core needle biopsy of a lymph node is correct?",
+   "p": "Sandra, 58, has a neck mass, and the radiologist plans an ultrasound-guided core needle biopsy rather than surgery. Sandra asks how reliable it will be.\n\nWhich statement about core needle biopsy of a lymph node is correct?",
    "o": [
     "Results are best with 16-18 gauge needles plus flow cytometry",
     "It is always representative and has no false negative results",
@@ -390,14 +390,14 @@
     "It is usually performed by a surgeon in the operating room"
    ],
    "a": 0,
-   "e": "Correct: A. Core biopsy works best with 16 to 18 gauge needles and a flow cytometry study.\nB: Always representative with no false negatives describes excisional biopsy.\nC: A limited core sample may be insufficient for cytogenetics and molecular studies.\nD: Core biopsy is mostly performed by radiologists.\nTakeaway: Core biopsy is the middle option between FNA and excision.",
+   "e": "Correct: A. Core biopsy works best with 16 to 18 gauge needles and a flow cytometry study.\nB: Always representative with no false negatives describes excisional biopsy.\nC: A limited core sample may be insufficient for cytogenetics and molecular studies.\nD: Core biopsy is mostly performed by radiologists.\nRed herring: \"Always representative, no false negatives\" sounds reassuring, but that describes excisional biopsy. Core biopsy works best with 16 to 18 gauge needles plus flow cytometry.\nTakeaway: Core biopsy is the middle option between FNA and excision.",
    "l": [
     "W12 4.5"
    ]
   },
   {
    "c": "Plasma cell disorders",
-   "p": "Which explanations of myeloma symptoms match the notes?\ni) Bone pain from an imbalance between osteoclasts and osteoblasts\nii) Infections from neutropenia and a weakened immune system\niii) Hypercalcemia from calcium released by damaged bones\niv) Fatigue caused only by high calcium",
+   "p": "Walter, 69, has myeloma with back pain, two pneumonias this year, a high calcium and fatigue. A resident explains each symptom to his family.\n\nWhich explanations of myeloma symptoms match the notes?\ni) Bone pain from an imbalance between osteoclasts and osteoblasts\nii) Infections from neutropenia and a weakened immune system\niii) Hypercalcemia from calcium released by damaged bones\niv) Fatigue caused only by high calcium",
    "o": [
     "i) and iii) only",
     "i), ii) and iii) only",
@@ -405,14 +405,14 @@
     "All of the above"
    ],
    "a": 1,
-   "e": "Correct: B. Bone pain, infections and hypercalcemia are explained as listed in the notes.\nA: This leaves out infections, which come from neutropenia and weak immunity.\nC: Fatigue has several causes, so iv) is wrong.\nD: Statement iv) is wrong. Fatigue comes from anemia, psychological factors, drugs and infections.\nTakeaway: CRAB features each have a mechanism you should be able to explain.",
+   "e": "Correct: B. Bone pain, infections and hypercalcemia are explained as listed in the notes.\nA: This leaves out infections, which come from neutropenia and weak immunity.\nC: Fatigue has several causes, so iv) is wrong.\nD: Statement iv) is wrong. Fatigue comes from anemia, psychological factors, drugs and infections.\nRed herring: High calcium does cause fatigue, which makes iv) tempting. The word \"only\" makes it wrong.\nTakeaway: CRAB features each have a mechanism you should be able to explain.",
    "l": [
     "W12 8.3"
    ]
   },
   {
    "c": "Plasma cell disorders",
-   "p": "Gordon, 59, has 6 months of numbness and weakness in both feet, low libido and darkening of his skin. On exam he has reduced sensation in a stocking pattern, an enlarged liver and spleen, and skin thickening.\n\nHb 142 g/L (ref 135-170)\nPlatelets 420 × 10⁹/L (ref 150-450)\nTestosterone low\nSerum M protein present\nCalcium normal\nCreatinine normal\n\nWhat is the most likely diagnosis?",
+   "p": "Gordon, 59, has 6 months of numbness and weakness in both feet, low libido and darkening of his skin. He has type 2 diabetes, which his family doctor blamed for the numbness. He drinks 4 beers a day. He has a tan from a recent holiday.\n\nHe has no bone pain or infections. He takes metformin.\n\nReview of systems: no cough, chest pain or bleeding. He has noticed his breasts have grown slightly. He works as a mechanic.\n\nVitals: HR 80, BP 132/80.\nExam: Reduced sensation in a stocking pattern. Enlarged liver and spleen. Skin thickening and darkening.\n\nHb 142 g/L (ref 135-170)\nPlatelets 420 × 10⁹/L (ref 150-450)\nTestosterone low\nSerum M protein present\nCalcium normal\nCreatinine normal\n\nWhat is the most likely diagnosis?",
    "o": [
     "Smoldering myeloma",
     "AL amyloidosis",
@@ -421,14 +421,14 @@
     "POEMS syndrome"
    ],
    "a": 4,
-   "e": "Correct: E. Polyneuropathy, organomegaly, endocrinopathy, an M protein and skin changes spell POEMS syndrome.\nA: Smoldering myeloma has no organ involvement.\nB: AL amyloidosis deposits in organs such as the heart and kidneys, without this endocrine and skin pattern.\nC: Myeloma needs CRAB organ damage, and his calcium, creatinine and Hb are normal.\nD: MGUS has no organ involvement.\nTakeaway: POEMS may be primary or secondary to myeloma.",
+   "e": "Correct: E. Polyneuropathy, organomegaly, endocrinopathy, an M protein and skin changes spell POEMS syndrome.\nA: Smoldering myeloma has no organ involvement.\nB: AL amyloidosis deposits in organs such as the heart and kidneys, without this endocrine and skin pattern.\nC: Myeloma needs CRAB organ damage, and his calcium, creatinine and Hb are normal.\nD: MGUS has no organ involvement.\nRed herring: Diabetes explains neuropathy, alcohol explains a large liver, and the holiday explains dark skin. Together with an M protein and low testosterone they spell POEMS.\nTakeaway: POEMS may be primary or secondary to myeloma.",
    "l": [
     "W12 8.1"
    ]
   },
   {
    "c": "Non-Hodgkin lymphoma",
-   "p": "Which translocation and lymphoma pairs are correct?\ni) t(14;18) and follicular lymphoma\nii) t(11;18) and MALT lymphoma\niii) t(2;5) and Burkitt lymphoma\niv) t(11;14) and mantle cell lymphoma",
+   "p": "A pathology resident matches translocations to lymphomas. She remembers t(2;5) involves ALK and wonders which lymphoma it belongs to.\n\nWhich translocation and lymphoma pairs are correct?\ni) t(14;18) and follicular lymphoma\nii) t(11;18) and MALT lymphoma\niii) t(2;5) and Burkitt lymphoma\niv) t(11;14) and mantle cell lymphoma",
    "o": [
     "ii), iii) and iv) only",
     "i) and iv) only",
@@ -436,14 +436,14 @@
     "All of the above"
    ],
    "a": 2,
-   "e": "Correct: C. Follicular is t(14;18), MALT is t(11;18) and mantle cell is t(11;14). These three pairs are correct.\nA: t(2;5) is anaplastic large cell lymphoma, not Burkitt.\nB: This leaves out the correct MALT pairing.\nD: Statement iii) is wrong. Burkitt is t(8;14).\nTakeaway: Know all five translocations in the notes table.",
+   "e": "Correct: C. Follicular is t(14;18), MALT is t(11;18) and mantle cell is t(11;14). These three pairs are correct.\nA: t(2;5) is anaplastic large cell lymphoma, not Burkitt.\nB: This leaves out the correct MALT pairing.\nD: Statement iii) is wrong. Burkitt is t(8;14).\nRed herring: Burkitt is the famous translocation lymphoma, which tempts iii). Burkitt is t(8;14). t(2;5) with ALK belongs to anaplastic large cell lymphoma.\nTakeaway: Know all five translocations in the notes table.",
    "l": [
     "W12 4.6"
    ]
   },
   {
    "c": "Radiation",
-   "p": "Between radiation fractions, hypoxic tumour cells regain oxygen and become more sensitive to the next dose. Which of the four Rs of radiobiology is this?",
+   "p": "A radiation oncologist explains why daily fractions work. Between fractions, normal cells fix DNA damage, cells move into more sensitive phases, tumour cells regrow, and hypoxic tumour cells regain oxygen and become more sensitive to the next dose.\n\nWhich of the four Rs of radiobiology describes hypoxic cells regaining oxygen?",
    "o": [
     "Repopulation",
     "Redistribution",
@@ -451,14 +451,14 @@
     "Reoxygenation"
    ],
    "a": 3,
-   "e": "Correct: D. Reoxygenation of hypoxic cells makes them more sensitive to radiation.\nA: Repopulation is regrowth of cells between fractions.\nB: Redistribution moves cells into radiosensitive phases of the cell cycle.\nC: Repair is the fixing of sublethal damage between fractions.\nTakeaway: Repair, repopulation, redistribution, reoxygenation.",
+   "e": "Correct: D. Reoxygenation of hypoxic cells makes them more sensitive to radiation.\nA: Repopulation is regrowth of cells between fractions.\nB: Redistribution moves cells into radiosensitive phases of the cell cycle.\nC: Repair is the fixing of sublethal damage between fractions.\nRed herring: All four Rs happen between fractions, which makes them easy to swap. Regaining oxygen is reoxygenation.\nTakeaway: Repair, repopulation, redistribution, reoxygenation.",
    "l": [
     "W12 12.1"
    ]
   },
   {
    "c": "Plasma cell disorders",
-   "p": "Lionel, 66, has myeloma. Over two days he has developed back pain, weak legs and trouble passing urine. Which management is most urgent?",
+   "p": "Lionel, 66, has myeloma. Over two days he has developed back pain, weak legs and trouble passing urine. His calcium is mildly high and his creatinine has risen. He has a known vertebral fracture from 6 months ago that is stable.\n\nWhich management is most urgent?",
    "o": [
     "Urgent surgery or radiation for cord compression",
     "IV hydration with an intravenous bisphosphonate infusion",
@@ -466,14 +466,14 @@
     "A planned outpatient vertebroplasty"
    ],
    "a": 0,
-   "e": "Correct: A. New leg weakness and urinary symptoms with back pain suggest cord compression. It is a medical emergency treated with urgent surgery and or radiation.\nB: Hydration and bisphosphonates treat hypercalcemia.\nC: Hemodialysis is for renal dysfunction.\nD: Vertebroplasty is for bone pain and fractures, not cord compression.\nTakeaway: Myeloma emergencies: cord compression, renal dysfunction, plasma cell leukemia.",
+   "e": "Correct: A. New leg weakness and urinary symptoms with back pain suggest cord compression. It is a medical emergency treated with urgent surgery and or radiation.\nB: Hydration and bisphosphonates treat hypercalcemia.\nC: Hemodialysis is for renal dysfunction.\nD: Vertebroplasty is for bone pain and fractures, not cord compression.\nRed herring: His high calcium and rising creatinine need treatment too, and the old fracture tempts a planned vertebroplasty. New leg weakness and urinary symptoms mean cord compression, an emergency.\nTakeaway: Myeloma emergencies: cord compression, renal dysfunction, plasma cell leukemia.",
    "l": [
     "W12 8.6"
    ]
   },
   {
    "c": "Biopsy and lab tests",
-   "p": "Walter, 61, has an enlarging node. Flow cytometry on the biopsy shows a monoclonal B-cell population. Which diagnosis does this support?",
+   "p": "Walter, 61, has an enlarging neck node. He had a viral illness 2 months ago. Flow cytometry on the excised node shows a monoclonal B-cell population. The report also mentions a mixed inflammatory background.\n\nWhich diagnosis does this support?",
    "o": [
     "Reactive lymphadenopathy from a viral infection",
     "Classical Hodgkin lymphoma",
@@ -481,14 +481,14 @@
     "Nodular lymphocyte predominant Hodgkin lymphoma"
    ],
    "a": 2,
-   "e": "Correct: C. A monoclonal pattern on flow cytometry is a feature of non-Hodgkin lymphoma.\nA: A reactive node gives a polyclonal population.\nB: Hodgkin lymphoma shows no monoclonal pattern on flow cytometry.\nD: This subtype shows no light chain restriction.\nTakeaway: Monoclonal means one clone. Polyclonal means a reactive mix.",
+   "e": "Correct: C. A monoclonal pattern on flow cytometry is a feature of non-Hodgkin lymphoma.\nA: A reactive node gives a polyclonal population.\nB: Hodgkin lymphoma shows no monoclonal pattern on flow cytometry.\nD: This subtype shows no light chain restriction.\nRed herring: The viral illness tempts reactive nodes, and the inflammatory background tempts Hodgkin. A monoclonal B-cell population on flow supports non-Hodgkin lymphoma.\nTakeaway: Monoclonal means one clone. Polyclonal means a reactive mix.",
    "l": [
     "W12 4.1"
    ]
   },
   {
    "c": "Mediastinal mass",
-   "p": "Carol, 55, has drooping eyelids and double vision that get worse through the day, and her arms tire when she brushes her hair. Symptoms have crept up over 2 years. She has no fevers, night sweats or weight loss. CT shows a well-defined anterior mediastinal mass with no lymphadenopathy.\n\nHb 136 g/L (ref 115-160)\nWBC 6.2 × 10⁹/L (ref 4-10)\nPlatelets 240 × 10⁹/L (ref 150-450)\nLDH normal\n\nWhat is the most likely diagnosis?",
+   "p": "Carol, 55, has drooping eyelids and double vision that get worse through the day, and her arms tire when she brushes her hair. Symptoms have crept up over 2 years. She had a mild stroke scare last year that turned out to be a migraine. Her nephew had Hodgkin lymphoma. She smokes.\n\nShe has no fevers, night sweats or weight loss. She takes no medications.\n\nReview of systems: no trouble swallowing or breathing at rest, no chest pain and no bleeding. She works as a librarian and has two adult children.\n\nVitals: HR 76, BP 138/84.\nExam: Bilateral ptosis that worsens on sustained upgaze. Normal reflexes. No lymph nodes.\n\nCT: well-defined anterior mediastinal mass, no lymphadenopathy.\n\nHb 136 g/L (ref 115-160)\nWBC 6.2 × 10⁹/L (ref 4-10)\nPlatelets 240 × 10⁹/L (ref 150-450)\nLDH normal\n\nWhat is the most likely diagnosis?",
    "o": [
     "Neurogenic tumour",
     "Lymphoblastic lymphoma",
@@ -497,7 +497,7 @@
     "Non-seminomatous germ cell tumour"
    ],
    "a": 3,
-   "e": "Correct: D. An adult over 40 with a slowly growing anterior mass and myasthenia gravis, a paraneoplastic syndrome, has a thymoma. It is resected without a biopsy first.\nA: Neurogenic tumours sit in the posterior mediastinum.\nB: Lymphoblastic lymphoma comes on over days.\nC: Hodgkin lymphoma affects younger adults and brings nodes and B symptoms.\nE: Germ cell tumours present quickly in young men.\nTakeaway: Mediastinal masses: rapid onset suggests lymphoma or germ cell tumour, slow onset suggests thymoma or teratoma.",
+   "e": "Correct: D. An adult over 40 with a slowly growing anterior mass and myasthenia gravis, a paraneoplastic syndrome, has a thymoma. It is resected without a biopsy first.\nA: Neurogenic tumours sit in the posterior mediastinum.\nB: Lymphoblastic lymphoma comes on over days.\nC: Hodgkin lymphoma affects younger adults and brings nodes and B symptoms.\nE: Germ cell tumours present quickly in young men.\nRed herring: The past migraine tempts a neurological cause, and her nephew tempts Hodgkin lymphoma. Fatigable weakness with a slow-growing anterior mass and no nodes points to thymoma with myasthenia gravis.\nTakeaway: Mediastinal masses: rapid onset suggests lymphoma or germ cell tumour, slow onset suggests thymoma or teratoma.",
    "l": [
     "W12 6.2",
     "W12 6.5"
@@ -505,7 +505,7 @@
   },
   {
    "c": "Mediastinal mass",
-   "p": "A trauma patient has a supine AP chest x-ray. The mediastinum measures 7 cm wide. Using the notes, how should this be read?",
+   "p": "A trauma patient has a supine AP chest x-ray in the ED because he cannot stand. The mediastinum measures 7 cm wide. The resident remembers \"over 6 cm is widened\" and wants a CT aorta.\n\nUsing the notes, how should this be read?",
    "o": [
     "Not widened, since the supine AP cutoff is 8 cm",
     "Widened, since any width over 6 cm counts",
@@ -513,14 +513,14 @@
     "Not widened, since every film uses a 10 cm cutoff"
    ],
    "a": 0,
-   "e": "Correct: A. A widened mediastinum is over 6 cm on an upright PA film or over 8 cm on a supine AP film. At 7 cm on a supine AP film, it is not widened.\nB: The 6 cm cutoff applies to upright PA films.\nC: This swaps the PA and AP cutoffs.\nD: No 10 cm cutoff is used.\nTakeaway: 6 cm upright PA, 8 cm supine AP.",
+   "e": "Correct: A. A widened mediastinum is over 6 cm on an upright PA film or over 8 cm on a supine AP film. At 7 cm on a supine AP film, it is not widened.\nB: The 6 cm cutoff applies to upright PA films.\nC: This swaps the PA and AP cutoffs.\nD: No 10 cm cutoff is used.\nRed herring: The 6 cm cutoff is for upright PA films. A supine AP film magnifies the mediastinum, so the cutoff is 8 cm. At 7 cm, it is not widened.\nTakeaway: 6 cm upright PA, 8 cm supine AP.",
    "l": [
     "W12 6.3"
    ]
   },
   {
    "c": "Lymphadenopathy",
-   "p": "George, 64, smokes and has lost weight. You feel a firm node just above his left clavicle. Which regions drain to this node group?",
+   "p": "George, 64, smokes and has lost weight. You feel a firm node just above his left clavicle. He also has a sore tooth and a small scalp cyst.\n\nWhich regions drain to this node group?",
    "o": [
     "Breast, upper limb and the chest wall",
     "GI tract, GU tract and lungs",
@@ -528,14 +528,14 @@
     "Oral cavity, teeth and the upper airway"
    ],
    "a": 1,
-   "e": "Correct: B. A node above the clavicle is supraclavicular. It drains the GI tract, GU tract and lungs, so abdominal and thoracic cancers are on the differential.\nA: Breast, upper limb and chest wall drain to the axillary nodes.\nC: Scalp and skin drain to the preauricular and posterior cervical nodes.\nD: The oral cavity drains to the submandibular nodes.\nTakeaway: Supraclavicular nodes are a red flag for malignancy.",
+   "e": "Correct: B. A node above the clavicle is supraclavicular. It drains the GI tract, GU tract and lungs, so abdominal and thoracic cancers are on the differential.\nA: Breast, upper limb and chest wall drain to the axillary nodes.\nC: Scalp and skin drain to the preauricular and posterior cervical nodes.\nD: The oral cavity drains to the submandibular nodes.\nRed herring: The sore tooth and scalp cyst point to regions drained by other node groups. Supraclavicular nodes drain the GI tract, GU tract and lungs.\nTakeaway: Supraclavicular nodes are a red flag for malignancy.",
    "l": [
     "W12 2.2"
    ]
   },
   {
    "c": "Radiation",
-   "p": "Why is radiation therapy given as many small daily fractions over several weeks?",
+   "p": "Omar, 45, asks why his radiation is split into 20 small daily doses instead of one big dose. His friend told him cancer cells repair damage faster, so small doses give them time to recover.\n\nWhy is radiation therapy given as many small daily fractions over several weeks?",
    "o": [
     "Cancer cells repair radiation damage faster than normal cells",
     "Slow-growing tumours respond fastest when doses are kept small",
@@ -543,14 +543,14 @@
     "Splitting the dose waits until cells leave the sensitive G2-M phase"
    ],
    "a": 2,
-   "e": "Correct: C. Fractionation takes advantage of the different repair abilities of normal and malignant tissue. Cancer cells do not repair as well as normal cells.\nA: This reverses the repair difference.\nB: Fast-growing tumours are more radiosensitive and respond more quickly.\nD: Cells are most susceptible in G2-M, not least.\nTakeaway: Fractionation exploits the four Rs.",
+   "e": "Correct: C. Fractionation takes advantage of the different repair abilities of normal and malignant tissue. Cancer cells do not repair as well as normal cells.\nA: This reverses the repair difference.\nB: Fast-growing tumours are more radiosensitive and respond more quickly.\nD: Cells are most susceptible in G2-M, not least.\nRed herring: His friend has it backwards. Normal cells repair damage between fractions better than cancer cells do.\nTakeaway: Fractionation exploits the four Rs.",
    "l": [
     "W12 12.1"
    ]
   },
   {
    "c": "Biopsy and lab tests",
-   "p": "A pathologist suspects a peripheral T-cell lymphoma. Which panel of immunohistochemistry markers identifies T cells?",
+   "p": "A node biopsy in a 50-year-old shows atypical lymphoid cells. The pathologist suspects a peripheral T-cell lymphoma rather than DLBCL or Hodgkin lymphoma, and orders stains.\n\nWhich panel of immunohistochemistry markers identifies T cells?",
    "o": [
     "CD3, CD5 and CD7",
     "CD15 and CD30",
@@ -558,14 +558,14 @@
     "CD20 and CD45"
    ],
    "a": 0,
-   "e": "Correct: A. Clusters of differentiation identify cell types. T cells carry CD3, CD5 and CD7.\nB: CD15 and CD30 mark the Reed-Sternberg cells of classical Hodgkin lymphoma.\nC: CD19, CD20 and CD79a mark B cells.\nD: CD20 and CD45 are positive in nodular lymphocyte predominant Hodgkin lymphoma.\nTakeaway: B cells CD19, CD20, CD79a. T cells CD3, CD5, CD7.",
+   "e": "Correct: A. Clusters of differentiation identify cell types. T cells carry CD3, CD5 and CD7.\nB: CD15 and CD30 mark the Reed-Sternberg cells of classical Hodgkin lymphoma.\nC: CD19, CD20 and CD79a mark B cells.\nD: CD20 and CD45 are positive in nodular lymphocyte predominant Hodgkin lymphoma.\nRed herring: CD15 and CD30 identify Hodgkin cells, and CD19, CD20 and CD79a identify B cells. T cells carry CD3, CD5 and CD7.\nTakeaway: B cells CD19, CD20, CD79a. T cells CD3, CD5, CD7.",
    "l": [
     "W12 1.5"
    ]
   },
   {
    "c": "Mediastinal mass",
-   "p": "Which are recognized complications of a large mediastinal mass?\ni) Hoarseness from recurrent laryngeal nerve compression\nii) Ptosis, miosis and anhidrosis from sympathetic chain involvement\niii) Hypotension from compression of the heart\niv) Mydriasis with eyelid retraction from sympathetic chain compression",
+   "p": "A patient with a large anterior mediastinal mass has a hoarse voice, a drooping right eyelid with a small pupil, and low blood pressure. A student adds a fourth possible effect.\n\nWhich are recognized complications of a large mediastinal mass?\ni) Hoarseness from recurrent laryngeal nerve compression\nii) Ptosis, miosis and anhidrosis from sympathetic chain involvement\niii) Hypotension from compression of the heart\niv) Mydriasis with eyelid retraction from sympathetic chain compression",
    "o": [
     "i) and iii) only",
     "i), ii) and iii) only",
@@ -573,14 +573,14 @@
     "All of the above"
    ],
    "a": 1,
-   "e": "Correct: B. Hoarseness, Horner syndrome and hypotension from tamponade physiology are all listed effects of a mediastinal mass.\nA: This leaves out Horner syndrome.\nC: Horner syndrome gives miosis and ptosis, not mydriasis and eyelid retraction.\nD: Statement iv) reverses the Horner findings.\nTakeaway: Horner syndrome is not specific to a mediastinal mass. A Pancoast tumour can cause it.",
+   "e": "Correct: B. Hoarseness, Horner syndrome and hypotension from tamponade physiology are all listed effects of a mediastinal mass.\nA: This leaves out Horner syndrome.\nC: Horner syndrome gives miosis and ptosis, not mydriasis and eyelid retraction.\nD: Statement iv) reverses the Horner findings.\nRed herring: Statement iv) mentions the sympathetic chain, which sounds right, but it describes the opposite of Horner syndrome.\nTakeaway: Horner syndrome is not specific to a mediastinal mass. A Pancoast tumour can cause it.",
    "l": [
     "W12 6.4"
    ]
   },
   {
    "c": "Plasma cell disorders",
-   "p": "Walter, 69, has 3 months of back pain, fatigue and constipation. He is thirsty and urinating often. He had pneumonia twice this year. X-rays show lytic lesions in his spine, pelvis and skull.\n\nHb 86 g/L (ref 135-170)\nWBC 4.0 × 10⁹/L (ref 4-10)\nPlatelets 158 × 10⁹/L (ref 150-450)\nCalcium 2.94 mmol/L\nCreatinine 220 µmol/L\nSerum M protein present\nMarrow plasma cells 35%, monoclonal\nFilm: rouleaux.\n\nWhat is the most likely diagnosis?",
+   "p": "Walter, 69, has 3 months of back pain, fatigue and constipation. He blames the back pain on shovelling snow. He is thirsty and urinating often, which his doctor first thought was diabetes, but his glucose is normal. He had pneumonia twice this year. He had a PSA test last year that was normal.\n\nHe takes hydrochlorothiazide for blood pressure. He does not smoke.\n\nReview of systems: no fevers, bleeding, numbness or tingling. He worked as a farmer and was exposed to pesticides for many years. His wife says he has been more confused this week.\n\nVitals: HR 94, BP 108/66.\nExam: Dry mucous membranes. Tender lumbar spine.\n\nX-rays: lytic lesions in his spine, pelvis and skull.\n\nHb 86 g/L (ref 135-170)\nWBC 4.0 × 10⁹/L (ref 4-10)\nPlatelets 158 × 10⁹/L (ref 150-450)\nCalcium 2.94 mmol/L\nCreatinine 220 µmol/L\nSerum M protein present\nMarrow plasma cells 35%, monoclonal\nFilm: rouleaux.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Plasma cell leukemia",
     "MGUS",
@@ -589,7 +589,7 @@
     "Multiple myeloma"
    ],
    "a": 4,
-   "e": "Correct: E. Monoclonal plasma cells over 10% in the marrow with CRAB organ damage (calcium over 2.52, creatinine over 175, Hb under 100, lytic lesions) is overt multiple myeloma.\nA: Plasma cell leukemia needs plasma cells in the blood.\nB: MGUS has fewer than 10% plasma cells and no organ damage.\nC: Smoldering myeloma has no organ damage.\nD: AL amyloidosis deposits light chains in organs, and CRAB with 35% plasma cells defines myeloma.\nTakeaway: Bone pain comes from an imbalance between osteoclasts and osteoblasts.",
+   "e": "Correct: E. Monoclonal plasma cells over 10% in the marrow with CRAB organ damage (calcium over 2.52, creatinine over 175, Hb under 100, lytic lesions) is overt multiple myeloma.\nA: Plasma cell leukemia needs plasma cells in the blood.\nB: MGUS has fewer than 10% plasma cells and no organ damage.\nC: Smoldering myeloma has no organ damage.\nD: AL amyloidosis deposits light chains in organs, and CRAB with 35% plasma cells defines myeloma.\nRed herring: Snow shovelling explains back pain, and hydrochlorothiazide can raise calcium. Neither explains lytic skull lesions, rouleaux and 35% monoclonal plasma cells with CRAB features: multiple myeloma.\nTakeaway: Bone pain comes from an imbalance between osteoclasts and osteoblasts.",
    "l": [
     "W12 8.2",
     "W12 8.4"
@@ -597,7 +597,7 @@
   },
   {
    "c": "Plasma cell disorders",
-   "p": "Which tests belong in the essential workup for suspected multiple myeloma?\ni) Peripheral blood smear for rouleaux\nii) Blood and 24-hour urine protein electrophoresis\niii) Serum free light chain assay\niv) FISH for t(9;22)",
+   "p": "Harold, 68, has suspected myeloma. A resident orders a set of tests, including one she remembers from a CML patient last week.\n\nWhich tests belong in the essential workup for suspected multiple myeloma?\ni) Peripheral blood smear for rouleaux\nii) Blood and 24-hour urine protein electrophoresis\niii) Serum free light chain assay\niv) FISH for t(9;22)",
    "o": [
     "ii) and iii) only",
     "i), ii) and iii) only",
@@ -605,14 +605,14 @@
     "All of the above"
    ],
    "a": 1,
-   "e": "Correct: B. Smear for rouleaux, protein electrophoresis of blood and urine, and the serum free light chain assay are all listed myeloma investigations.\nA: This leaves out the smear, which shows rouleaux.\nC: t(9;22) is not a myeloma FISH target. FISH looks for t(4;14), t(14;16) and del(17p).\nD: Statement iv) is wrong for myeloma.\nTakeaway: Myeloma FISH: t(4;14), t(14;16), del(17p).",
+   "e": "Correct: B. Smear for rouleaux, protein electrophoresis of blood and urine, and the serum free light chain assay are all listed myeloma investigations.\nA: This leaves out the smear, which shows rouleaux.\nC: t(9;22) is not a myeloma FISH target. FISH looks for t(4;14), t(14;16) and del(17p).\nD: Statement iv) is wrong for myeloma.\nRed herring: FISH is used in myeloma, which makes iv) tempting, but t(9;22) is the CML translocation.\nTakeaway: Myeloma FISH: t(4;14), t(14;16), del(17p).",
    "l": [
     "W12 8.4"
    ]
   },
   {
    "c": "Non-Hodgkin lymphoma",
-   "p": "Nora, 65, has a painless neck mass that doubled in size over 4 weeks. She has drenching night sweats and lost 8 kg. CT shows enlarged nodes in her neck, chest and abdomen.\n\nHb 114 g/L (ref 115-160)\nWBC 8.4 × 10⁹/L (ref 4-10)\nPlatelets 290 × 10⁹/L (ref 150-450)\nLDH high\nUric acid high\nNode biopsy: loss of normal node structure, sheets of large cells with large nuclei and visible nucleoli, and high mitotic activity.\nFlow cytometry: monoclonal B cells.\n\nWhat is the most likely diagnosis?",
+   "p": "Nora, 65, has a painless neck mass that doubled in size over 4 weeks. She has drenching night sweats and lost 8 kg. She had a dental abscess 6 weeks ago. Her sister had follicular lymphoma. She takes hormone replacement therapy, which she blames for the sweats.\n\nShe has had no fevers. She does not smoke.\n\nReview of systems: no cough, abdominal pain or bone pain. She works part-time as a bookkeeper. Her last CBC a year ago was normal.\n\nVitals: HR 92, BP 126/78, T 37.4°C.\nExam: Large, firm, non-tender neck mass. Nodes in both axillae. Spleen tip palpable.\n\nCT: enlarged nodes in her neck, chest and abdomen.\n\nHb 114 g/L (ref 115-160)\nWBC 8.4 × 10⁹/L (ref 4-10)\nPlatelets 290 × 10⁹/L (ref 150-450)\nLDH high\nUric acid high\nNode biopsy: loss of normal node structure, sheets of large cells with large nuclei and visible nucleoli, and high mitotic activity.\nFlow cytometry: monoclonal B cells.\n\nWhat is the most likely diagnosis?",
    "o": [
     "Burkitt lymphoma",
     "Follicular lymphoma",
@@ -621,7 +621,7 @@
     "Diffuse large B-cell lymphoma"
    ],
    "a": 4,
-   "e": "Correct: E. A painless, rapidly enlarging mass with B symptoms, advanced disease, and large monoclonal B cells that erase the node structure fit DLBCL, the most common NHL.\nA: Burkitt shows a starry-sky pattern and is mostly seen in children.\nB: Follicular lymphoma is indolent, with a follicular pattern.\nC: SLL is indolent, with small cells and smudge cells.\nD: Hodgkin lymphoma shows Reed-Sternberg cells and is not monoclonal on flow.\nTakeaway: DLBCL: CHOP-R, 3 cycles for stage I to II and 6 for stage III to IV.",
+   "e": "Correct: E. A painless, rapidly enlarging mass with B symptoms, advanced disease, and large monoclonal B cells that erase the node structure fit DLBCL, the most common NHL.\nA: Burkitt shows a starry-sky pattern and is mostly seen in children.\nB: Follicular lymphoma is indolent, with a follicular pattern.\nC: SLL is indolent, with small cells and smudge cells.\nD: Hodgkin lymphoma shows Reed-Sternberg cells and is not monoclonal on flow.\nRed herring: Her sister's follicular lymphoma tempts the same diagnosis, but follicular lymphoma is slow. HRT explains some sweats, and the abscess tempts reactive nodes. Rapid growth with large cells that erase the node structure means DLBCL.\nTakeaway: DLBCL: CHOP-R, 3 cycles for stage I to II and 6 for stage III to IV.",
    "l": [
     "W12 4.2",
     "W12 5.5"
